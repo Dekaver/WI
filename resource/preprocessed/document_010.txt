@@ -1,0 +1,113 @@
+Don't understand why there I get "TypeError: 'str' object cannot be interpreted as an integer" in my code | Treehouse Community
+Home
+Free Trial
+Sign In
+Techdegree
+Tracks
+Library
+Community
+Support
+Watch Video
+Python
+Object-Oriented Python
+Dice Roller
+Giving a Hand
+PRO
+Jonathan Dell'Ova
+Pro Student
+6,283 Points
+Posted September 30, 2019
+2:46pm by Jonathan Dell'Ova
+Jonathan Dell'Ova
+Pro Student
+6,283 Points
+Don't understand why there I get "TypeError: 'str' object cannot be interpreted as an integer" in my code
+from Yatzy import dice
+class Hand(list):
+def __init__(self, size=0, die_class=None, *args, **kwargs):
+if not die_class:
+raise ValueError("You must provide a die class!")
+super().__init__()
+for _ in range(size):
+self.append(die_class())
+def __len__(self):
+str_num = str(super().__len__())
+return "There are {} die in this hand".format(str_num)
+hand = Hand(size=5, die_class=dice.D6)
+print(hand)
+print(len(hand))
+When I try to run this code it gives me this error:
+TypeError: 'str' object cannot be interpreted as an integer
+I've tried analyzing the problem with is instance() for example but I've not come to any conclusions where the problem lies.
+I know that print() can take a string as an argument. I also know that if I check the instance of super()__len__() I get back True when I check for an int. If I then do str(super()__len__()) and check what type of instance it is, I get back True for a string and False for an int. When I then return it to be used in print() I get this weird error.
+What is happening here?
+This is just something extra I wanted to add to keep practicing with overwriting inbuilt methods but I would really like to learn from this.
+1 Answer
+Steven Parker
+207,608 Points
+Steven Parker
+Steven Parker
+207,608 Points
+September 30, 2019
+3:19pm
+The override of "__len__" is returning a string message, but the system expects it to return a numeric value.
+Did you perhaps intend to override "__str__" instead using this code?
+Jonathan Dell'Ova
+Pro Student
+6,283 Points
+Jonathan Dell'Ova
+Jonathan Dell'Ova
+Pro Student
+6,283 Points
+September 30, 2019
+4:00pm
+Yes, this was the issue. I didn't realize that the system was expecting a numeric value that had to be filled.
+Overriding __str__ with the exact same syntax for the body made it work when using print(hand) and also print(str(hand)) which obviously give the same output.
+Thanks!
+Steven Parker
+207,608 Points
+Steven Parker
+Steven Parker
+207,608 Points
+September 30, 2019
+6:26pm
+That's right, because "print" implicitly performs string conversion so you get the same output either way.
+Posting to the forum is only allowed for members with active accounts.
+Please sign in or sign up to post.
+Treehouse Logo
+Our mission is to bring affordable technology education to people everywhere in order to help them achieve their dreams and change the world.
+Company
+Careers
+Contact
+Library
+Tracks
+Community
+Stories
+Perks
+Affiliate Program
+Treehouse for Libraries
+Topics
+HTML
+CSS
+Design
+JavaScript
+Ruby
+View all 24 Topics
+Tracks
+Front End Web Development
+Full Stack JavaScript
+Beginning Python
+UX: Interaction Design
+Digital Literacy
+View all 44 Tracks
+Twitter
+YouTube
+Facebook
+LinkedIn
+Instagram
+About Treehouse
+Blog
+Shop
+Privacy Policy
+Terms & Conditions
+© 2021 Treehouse Island, Inc.

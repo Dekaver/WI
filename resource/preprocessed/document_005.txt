@@ -1,0 +1,67 @@
+Help: Index out of range · YourBasic Go
+About
+Home
+Algorithms
+Go
+Index out of range
+yourbasic.org/golang
+Why does this program crash?
+a := []int{1, 2, 3}
+for i := 1; i <= len(a); i++ {
+fmt.Println(a[i])
+}
+panic: runtime error: index out of range
+goroutine 1 [running]:
+main.main()
+../main.go:3 +0xe0
+Answer
+In the last iteration, i equals len(a) which is outside the bounds of a.
+Arrays, slices and strings are indexed starting from zero so the values of a are found at a[0], a[1], a[2], …, a[len(a)-1].
+Loop from 0 to len(a)-1 instead.
+for i := 0; i < len(a); i++ {
+fmt.Println(a[i])
+}
+Or, better yet, use a range loop.
+for _, n := range a {
+fmt.Println(n)
+}
+« Prev
+Index
+Next »
+Share this page:
+Go Gotchas
+Assignment to entry in nil map
+Invalid memory address or nil pointer dereference
+Multiple-value in single-value context
+Array won’t change
+Shadowed variables
+Unexpected newline
+Immutable strings
+How does characters add up?
+What happened to ABBA?
+Where is my copy?
+Why doesn’t append work every time? [scary bug]
+Constant overflows int
+Unexpected ++, expecting expression
+Get your priorities right
+Go and Pythagoras
+No end in sight
+Numbers that start with zero
+Whatever remains
+Time is not a number
+» Index out of range
+Unexpected values in range loop
+Can’t change entries in range loop
+Iteration variable doesn’t see change in range loop
+Iteration variables and closures
+No JSON in sight
+Is "three" a digit?
+Nil is not nil
+Follow on Twitter
+Algorithms to Go
+Related
+4 basic range loop (for-each) patterns
+A range loop is used to iterate over the values in a slice, array or channel, the keys and values in a map, or the characters in a string.
+yourbasic.org
+See all 178 Go articles
+This work is licensed under a CC BY 3.0 license.
