@@ -1,7 +1,7 @@
 from sklearn.feature_extraction.text import TfidfVectorizer
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
-from nltk.stem import PorterStemmer
+from nltk.stem import WordNetLemmatizer, PorterStemmer
 import pandas as pd
 import numpy as np
 import json
@@ -11,6 +11,7 @@ import time
 dataframe = []
 dataset = json.load(open('resource/preprocessed/data_preprocessed.json',))
 
+# nltk.download('wordnet')
 st = PorterStemmer()
 
 for i in dataset['doc']:
@@ -30,6 +31,8 @@ X = vectorizer.fit_transform(dataframe)
 X = X.T.toarray()
 df = pd.DataFrame(X, index=vectorizer.get_feature_names())
 print(df.head(20))
+print(df.size)
+print(df.shape)
 
 def ranking(q, df):
     start_time = time.time()

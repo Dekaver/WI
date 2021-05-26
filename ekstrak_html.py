@@ -22,8 +22,8 @@ data = json.load(f)
 data_preproccess = {}
 data_preproccess['doc'] = {}
 for i in data['url']:
-    # if int(i) <= 23 :
-    #     continue
+    if int(i) <= 71 :
+        continue
     url = data['url'][i]
     try:
         html = urllib.request.urlopen(url).read()
@@ -54,5 +54,5 @@ for i in data['url']:
     with open(f'resource/preprocessed/document_{str(number)[1::]}.txt', 'w') as f:
         f.write(doc)
         print(f'write success document_{str(number)[1::]}.txt')
-with open('resource/preprocessed/data_preprocessed.json', 'w') as f:
-    json.dump(data_preproccess, f)
+# with open('resource/preprocessed/data_preprocessed.json', 'w') as f:
+#     json.dump(data_preproccess, f)
