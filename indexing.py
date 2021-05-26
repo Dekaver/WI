@@ -1,12 +1,9 @@
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.feature_extraction.text import TfidfVectorizer
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
+from nltk.stem import PorterStemmer
 import pandas as pd
 import numpy as np
-import base64
-import re
 import json
 import nltk
 import time
@@ -14,8 +11,8 @@ import time
 dataframe = []
 dataset = json.load(open('resource/preprocessed/data_preprocessed.json',))
 
-#stopword english
-nltk.download('punkt')
+st = PorterStemmer()
+
 stopwords=stopwords.words('english')
 
 
@@ -25,11 +22,13 @@ for i in dataset['doc']:
     name_doc = dataset['doc'][i]
     with open(f'resource/preprocessed/{name_doc}', 'rb') as f:
         text = f.read().decode("utf-8") 
-        text = text.split()
-        print(text)
+        print(len(text))
         text = word_tokenize(text)
-        print(text)
-        break
+        stem = []
+        for word in text:
+            stem.append(st.stem(word))
+        text = " ".join(text)
+        print(len(text))
         dataframe.append(text)
 
 vectorizer = TfidfVectorizer()
