@@ -15,31 +15,22 @@ dataframe = []
 dataset = json.load(open('resource/preprocessed/data_preprocessed.json',))
 
 #stopword english
-# nltk.download('punkt')
+nltk.download('punkt')
 stopwords=stopwords.words('english')
 
 
-def pre_process(text):
-    # lowercase
-    text=text.lower()
-    #remove tags
-    text=re.sub("</?.*?>"," <> ",text)
-    # remove special characters and digits
-    text=re.sub("(\\d|\\W)+"," ",text)
-    return text
+
 
 for i in dataset['doc']:
     name_doc = dataset['doc'][i]
     with open(f'resource/preprocessed/{name_doc}', 'rb') as f:
         text = f.read().decode("utf-8") 
-        text = ' '.join(' '.join(str(text).split()).split('\\n'))
-        # text = word_tokenize(text)
-        # dataframe.append(pre_process(text))
-        text = pre_process(text).split()
-        tokens_without_sw = [word for word in text if not word in stopwords]
-        doc = ' '.join(tokens_without_sw)
-
-        dataframe.append(doc)
+        text = text.split()
+        print(text)
+        text = word_tokenize(text)
+        print(text)
+        break
+        dataframe.append(text)
 
 vectorizer = TfidfVectorizer()
 X = vectorizer.fit_transform(dataframe)
@@ -55,8 +46,10 @@ def get_similar_articles(q, df):
     q = [q]
     q_vec = vectorizer.transform(q).toarray().reshape(df.shape[0],)
     sim = {}  
-    for i in range(16):
-        sim[i] = np.dot(df.loc[:, i].values, q_vec) / np.linalg.norm(df.loc[:, i]) * np.linalg.norm(q_vec)
+    for i in range(len(df.columns)):
+        value = np.dot(df.loc[:, i].values, q_vec) / np.linalg.norm(df.loc[:, i]) * np.linalg.norm(q_vec)
+        if (value != 0.0):
+            sim[i] = value
     end_time = time.time()
 
     sim_sorted = sorted(sim.items(), key=lambda x: x[1], reverse=True)  

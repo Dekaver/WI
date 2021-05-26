@@ -4,12 +4,15 @@
         "1" : "https://sekolahkoding.com/forum/index-out-of-range-python-1544622527",
         "2" : "https://blog.finxter.com/python-indexerror-list-index-out-of-range/",
         "3" : "https://kotakode.com/pertanyaan/6694",
+        "4" : "https://pythonexamples.org/python-nameerror-name-string-is-not-defined/",
         "5" : "https://yourbasic.org/golang/gotcha-index-out-of-range/",
         "6" : "https://www.edureka.co/community/86345/how-solve-this-indexerror-list-index-range-python-streamlit",
         "7" : "https://stackoverflow.com/questions/19234598/typeerror-str-object-cannot-be-interpreted-as-an-integer",
         "8" : "https://careerkarma.com/blog/python-typeerror-str-object-cannot-be-interpreted-as-an-integer/",
         "9" : "https://github.com/hfawaz/InceptionTime/issues/2",
         "10" : "https://teamtreehouse.com/community/dont-understand-why-there-i-get-typeerror-str-object-cannot-be-interpreted-as-an-integer-in-my-code",
+        "11" : "https://stackoverflow.com/questions/35168508/raw-input-is-not-defined",
+        "12" : "https://qastack.id/programming/16627227/http-error-403-in-python-3-web-scraping",
         "13" : "https://stackoverflow.com/questions/1841565/valueerror-invalid-literal-for-int-with-base-10",
         "14" : "https://www.edureka.co/community/30685/this-valueerror-invalid-literal-for-with-base-error-python",
         "15" : "https://qastack.id/programming/1841565/valueerror-invalid-literal-for-int-with-base-10",
@@ -17,6 +20,12 @@
         "17" : "http://net-informations.com/python/err/int.htm",
         "18" : "https://www.geeksforgeeks.org/what-is-the-meaning-of-invalid-literal-for-int-with-base/",
         "19" : "https://stackoverflow.com/questions/31216428/python-pop-from-empty-list",
-        "20" : "https://github.com/elastic/apm-agent-python/issues/227"
+        "20" : "https://github.com/elastic/apm-agent-python/issues/227",
+        "21" : "https://stackoverflow.com/questions/54645343/laravel-htmlspecialchars-expects-parameter-1-to-be-string-object-given-in-my",
+        "22" : "https://askubuntu.com/questions/1179754/urllib-error-httperror-http-error-404-not-found",
+        "23" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/JSON_bad_parse",
+        "24" : "https://www.pythonanywhere.com/forums/topic/14781/",
+        "25" : "https://stackoverflow.com/questions/3768895/how-to-make-a-class-json-serializable",
+        "26" : "https://stackoverflow.com/questions/67699963/attributeerror-sequential-object-has-no-attribute-send-in-keras"
     }
 }
