@@ -13,22 +13,15 @@ dataset = json.load(open('resource/preprocessed/data_preprocessed.json',))
 
 st = PorterStemmer()
 
-stopwords=stopwords.words('english')
-
-
-
-
 for i in dataset['doc']:
     name_doc = dataset['doc'][i]
     with open(f'resource/preprocessed/{name_doc}', 'rb') as f:
         text = f.read().decode("utf-8") 
-        print(len(text))
         text = word_tokenize(text)
         stem = []
         for word in text:
             stem.append(st.stem(word))
-        text = " ".join(text)
-        print(len(text))
+        text = " ".join(stem)
         dataframe.append(text)
 
 vectorizer = TfidfVectorizer()
@@ -38,7 +31,7 @@ X = X.T.toarray()
 df = pd.DataFrame(X, index=vectorizer.get_feature_names())
 print(df.head(20))
 
-def get_similar_articles(q, df):
+def ranking(q, df):
     start_time = time.time()
     print("query:", q)
     print("Berikut artikel dengan nilai cosine similarity tertinggi: ") 
@@ -62,7 +55,5 @@ def get_similar_articles(q, df):
 
 query = input("masukkan query ('Q' to exit) :").lower()
 while(query != 'q'):
-    get_similar_articles(query, df)
+    ranking(query, df)
     query = input("\n\n\n\n\nmasukkan query ('Q' to exit) :").lower()
-
-
