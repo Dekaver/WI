@@ -31,13 +31,13 @@ def indexing(folder_dataset, json_dataset):
             
             dataframe.append(text)
     #menghitung term frekuensi
-    cv = CountVectorizer(max_features=50000, binary=True, ngram_range=(1, 3))
+    cv = CountVectorizer(max_features=50000, binary=True, ngram_range=(1, 2))
     ct = cv.fit_transform(dataframe)
 
     norm_ct = normalize(ct, norm = "l1", axis=1)
 
     #menghitung documen frekuensi
-    tv = TfidfVectorizer(max_features=50000, binary=True, norm=None , smooth_idf=False, ngram_range=(1, 3))
+    tv = TfidfVectorizer(max_features=50000, binary=True, norm=None , smooth_idf=False, ngram_range=(1, 2))
     tv.fit_transform(dataframe)
 
     #menghitung invers dokumen frekuensi
