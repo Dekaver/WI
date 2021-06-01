@@ -1,0 +1,42 @@
+<style>
+    form{
+        display: flex;
+        align-items: center;
+        /* justify-content: center; */
+    }
+    input,button {
+        font-size: 18px;
+        border: 1px solid #aaa;
+        border-radius: 6px;
+    }
+    input {
+        width: 40vw;
+        padding: 6px 20px;
+        height: 50px;
+    }
+    button {
+        height: 50px;
+        margin: 0 6px;
+        padding: 6px 20px;
+        background: #ddd;
+    }
+</style>
+{% block body %}
+    {% macro input(name, value='', type='text', size=20) -%}
+        <input type="{{ type }}" name="{{ name }}" value="{{
+            value|e }}" size="{{ size }}">
+    {%- endmacro %}
+    <form action="/search" method="get">
+        <p>{{ input("q",value=query) }}</p>
+        <button type="submit">Search</button>
+    </form>
+    
+    <p>result of {{query}}</p>
+    <br>
+    <p>sekitar {{docs|length}} hasil ({{waktu}} detik)</p>
+    <ul>
+    {% for doc in docs %}
+        <li>{{dataframe[doc][:100:]}}...</li>
+    {% endfor %}
+    </ul>
+{% endblock %}
