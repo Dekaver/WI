@@ -2,21 +2,14 @@ from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 from sklearn.preprocessing import normalize
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
-from nltk.stem import WordNetLemmatizer, PorterStemmer
+
 import pandas as pd
-import numpy as np
 import json
-import nltk
-import time
 import re
+
 dataframe = []
 dataset = json.load(open('resource/preprocessed/data_preprocessed.json',))
-from nltk.corpus import stopwords
 stopwords=stopwords.words('english')
-# print(stopwords)
-# nltk.download('wordnet')
-
-st = PorterStemmer()
 
 def indexing(folder_dataset, json_dataset):
     dataset = json.load(open(folder_dataset + json_dataset,))
@@ -35,10 +28,6 @@ def indexing(folder_dataset, json_dataset):
             text_without_sw = [word for word in text if not word in stopwords]
             
             text = " ".join(text_without_sw)
-            
-            # stem = []
-            # for word in text:
-            #     stem.append(st.stem(word))
             
             dataframe.append(text)
     #menghitung term frekuensi
@@ -62,8 +51,7 @@ def indexing(folder_dataset, json_dataset):
     indexing = df.sort_values('rank', ascending=False)
     indexing.pop('rank')
 
-
-    return indexing, tv.get_feature_names()
+    return indexing, indexing.index.tolist()
 
 def get_dict_feature_name(terms):
     feature_name = {}
@@ -78,8 +66,8 @@ def save_to_json(Data, json_filename):
 if __name__ == "__main__":
     df, term = indexing("resource/preprocessed/","data_preprocessed.json")
     print(df.head(10))
+    # print(df.index.tolist())
     from scipy import sparse
-
     # save sparse matrix unigram, bigram and trigram to .npz file
     sparse.save_npz("tfidf_mat.npz", sparse.csr_matrix(df))
     save_to_json( get_dict_feature_name(term),"tfidf_feature_name.json")
