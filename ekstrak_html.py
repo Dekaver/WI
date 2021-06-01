@@ -4,11 +4,8 @@ from bs4 import BeautifulSoup
 # from nltk.corpus import stopwords
  
 import json
-# import re
 
 f = open('resource/dataset.json',)
-# stopwords=stopwords.words('english')
-
 
 data = json.load(f)
 data_preproccess = {}
@@ -29,16 +26,6 @@ for i in data['url']:
     lines = (line.strip() for line in text.splitlines())
     chunks = (phrase.strip() for line in lines for phrase in line.split("  "))
     text = '\n'.join(chunk for chunk in chunks if chunk)
-
-    # text.replace('\n', ' ')
-    # text = pre_process(text)
-    # text = ' '.join(' '.join(str(text).split()).split('\\n'))
-        # text = word_tokenize(text)
-        # dataframe.append(pre_process(text))
-    # text = pre_process(text).split()
-    # tokens_without_sw = [word for word in text if not word in stopwords]
-    # doc = ' '.join(tokens_without_sw)
-
 
     number = 1000 + int(i)
     data_preproccess['doc'][i] = f'document_{str(number)[1::]}.txt'

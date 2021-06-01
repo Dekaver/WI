@@ -8,7 +8,6 @@ import json
 import re
 
 dataframe = []
-dataset = json.load(open('resource/preprocessed/data_preprocessed.json',))
 stopwords=stopwords.words('english')
 
 def indexing(folder_dataset, json_dataset):
@@ -30,6 +29,7 @@ def indexing(folder_dataset, json_dataset):
             text = " ".join(text_without_sw)
             
             dataframe.append(text)
+            
     #menghitung term frekuensi
     cv = CountVectorizer(max_features=50000, binary=True, ngram_range=(1, 2))
     ct = cv.fit_transform(dataframe)
