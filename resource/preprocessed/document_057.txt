@@ -1,1 +1,480 @@
-list python typeerror int object iterable stack overflow stack overflow products teams stack overflow public questions answers stack overflow teams developers technologists share private knowledge coworkers jobs programming related technical career opportunities talent recruit tech talent build employer brand advertising reach developers technologists worldwide company loading log sign current community stack overflow help chat meta stack overflow communities sign log customize list stack exchange communities company blog people code want input take survey join stack overflow learn share knowledge build career sign email sign sign google sign github sign facebook home public questions tags users find job jobs companies teams stack overflow teams collaborate share knowledge private group create free team teams teams create free team teams q work connect share knowledge within single location structured easy search learn python typeerror int object iterable ask question asked years months ago active months ago viewed k times code import math print hey lets solve task number input many digits want look number input would like digits add number cow range elif number cow range elif number cow range elif number cow range elif number cow range elif number cow range elif number cow range elif number cow range elif number cow range elif number cow range number cow n n number number list cow n n looking make loop element list get broken characters example say number list would turned want add numbers together started bit yet idea however keep getting error message typeerror int object iterable try run wrong python list loops iterable share improve question follow edited sep perror gold badges silver badges bronze badges asked oct user user expect list cow n jon clements oct hint give range dynamic arguments cow range number number else number would give exact results statements one line martijn pieters oct martijnpieters thinking think iirc jon clements oct jonclements adjusted quite inconsistent case numbers powers martijn pieters oct add comment answers active oldest votes problem line number list cow n tries take cow n returns integer make list work demonstrated list traceback recent call last file line typeerror int object iterable perhaps meant put cow n inside list number cow n see demonstration also wanted address two things statement missing end considered dangerous use input like since evaluates input real python code would better use raw_input convert input integer int split digits add like want would first make number string since strings iterable use sum str way common preferred sum int x x also works sum map int share improve answer follow edited oct answered oct user user thanks answering quickly would split number individual characters tried putting list number beneath causes run forever run terminal user oct integers characters however could convert string str might need convert list depending intend strings iterable yield constituent characters kindall oct mikey see edit could use loop quickest option use sum user oct great guys thank much started learning code still confused repeat get repeat without using loop example say user want look digits must work e g sum integers sum integers user oct mikey hmm might use loop however since topic question typeerror post fixes first close question answered click tick next answer ask another question focuses problem particular get better help way definitely make number string first though split digits user oct show comment simple trying convert integer list object course fail demonstrate prove using example provided use type function case results speak type cow type cow type list traceback recent call last file line typeerror int object iterable share improve answer follow answered dec grepitgrepit k gold badges silver badges bronze badges add comment case n int input instead n gives error int object iterable use range n works fine share improve answer follow answered dec augustine joseaugustine jose silver badges bronze badges add comment answer thanks contributing answer stack overflow please sure answer question provide details share research avoid asking help clarification responding answers making statements based opinion back references personal experience learn see tips writing great answers draft saved draft discarded sign log sign using google sign using facebook sign using email password submit post guest name email required never shown post guest name email required never shown post answer discard clicking post answer agree terms service privacy policy cookie policy overflow blog podcast blocking haters service developer survey open featured meta testing three vote close reopen network sites future community promotion open source hot network questions ads rule proposal one delete undelete per post take developer survey linked type casting happens python list tuple python program reverse list iterable problem list comprehension vs iterable python newbie failing understand simple error message print lists side side python loop python python web scraping error typeerror int object iterable compare number integer create function python takes list numbers integer problems listing gmail messages user created label via google api see linked questions related merge two dictionaries single expression taking union dictionaries metaclasses python best way iterate dictionary python ternary conditional operator loop enumerate javascript object concatenate two lists python python determine object iterable iterating dictionaries using loops python string contains substring method iterate object properties hot network questions ti display interference would physics explain un fold paper blind rivet nuts ebike battery frame aluminium steel colleagues learned opposite definitions test validation sets wrong key signature score f dorian important brand name type string overall sound guitar proper river horse canon legend explanation symbols two vessels inside tantive iv hermeneutic paul employing approach corinthians rip man apart like rag doll read like rip apart rag doll instead like rag doll rip apart man forbid transformation max x milp country ever diverted international flight order arrest wanted person jovanka houska introduced wgm holds prestigious im title maintain cooperation declining meetings scheduled past local bed time rotten eggs float water nelson mandela directly compare accuse israel apartheid ants trees ok bad voltage increase batteries connected parallel c standard card deck proof variance always greater zero colorful plate puzzle word trafficking mean freight transportation without conveying meaning illegal especially following sentence output descriptor arbitrary script browser based wallet like metamask planned cardano hot questions question feed subscribe rss question feed subscribe rss feed copy paste url rss reader lang py stack overflow questions jobs developer jobs directory salary calculator help mobile products teams talent advertising enterprise company press work legal privacy policy terms service contact us cookie settings cookie policy stack exchange network technology life arts culture recreation science stack overflow server fault super user web applications ask ubuntu webmasters game development tex latex software engineering unix linux ask different apple wordpress development geographic information systems electrical engineering android enthusiasts information security database administrators drupal answers sharepoint user experience mathematica salesforce expressionengine answers stack overflow em português blender network engineering cryptography code review magento software recommendations signal processing emacs raspberry pi stack overflow на русском code golf stack overflow en español ethereum data science arduino bitcoin software quality assurance testing sound design windows phone photography science fiction fantasy graphic design movies tv music practice theory worldbuilding video production seasoned advice cooking home improvement personal finance money academia law physical fitness gardening landscaping parenting english language usage skeptics mi yodeya judaism travel christianity english language learners japanese language chinese language french language german language biblical hermeneutics history spanish language islam русский язык russian language arqade gaming bicycles role playing games anime manga puzzling motor vehicle maintenance repair board card games bricks homebrewing martial arts great outdoors poker chess sports mathoverflow mathematics cross validated stats theoretical computer science physics chemistry biology computer science philosophy linguistics psychology neuroscience computational science meta stack exchange stack apps api data blog facebook twitter linkedin instagram site design logo stack exchange inc user contributions licensed cc sa rev stack overflow works best javascript enabled privacy clicking accept cookies agree stack exchange store cookies device disclose information accordance cookie policy accept cookies customize settings
+list - Python - TypeError: 'int' object is not iterable - Stack Overflow
+Stack Overflow
+About
+Products
+For Teams
+Stack Overflow
+Public questions & answers
+Stack Overflow for Teams
+Where developers & technologists share private knowledge with coworkers
+Jobs
+Programming & related technical career opportunities
+Talent
+Recruit tech talent & build your employer brand
+Advertising
+Reach developers & technologists worldwide
+About the company
+Loading…
+Log in
+Sign up
+current community
+Stack Overflow
+help
+chat
+Meta Stack Overflow
+your communities
+Sign up or log in to customize your list.
+more stack exchange communities
+company blog
+People who code: we want your input.
+Take the Survey
+Join Stack Overflow to learn, share knowledge, and build your career.
+Sign up with email
+Sign up
+Sign up with Google
+Sign up with GitHub
+Sign up with Facebook
+Home
+Public
+Questions
+Tags
+Users
+Find a Job
+Jobs
+Companies
+Teams
+Stack Overflow for Teams
+– Collaborate and share knowledge with a private group.
+Create a free Team
+What is Teams?
+Teams
+What’s this?
+Create free Team
+Teams
+Q&A for work
+Connect and share knowledge within a single location that is structured and easy to search.
+Learn more
+Python - TypeError: 'int' object is not iterable
+Ask Question
+Asked
+7 years, 7 months ago
+Active
+5 months ago
+Viewed
+849k times
+80
+31
+Here's my code:
+import math
+print "Hey, lets solve Task 4 :)"
+number1 = input ("How many digits do you want to look at? ")
+number2 = input ("What would you like the digits to add up to? ")
+if number1 == 1:
+cow = range(0,10)
+elif number1 == 2:
+cow = range(10,100)
+elif number1 == 3:
+cow = range(100,1000)
+elif number1 == 4:
+cow = range(1000,10000)
+elif number1 == 5:
+cow = range(10000,100000)
+elif number1 == 6:
+cow = range(100000,1000000)
+elif number1 == 7:
+cow = range(1000000,10000000)
+elif number1 == 8:
+cow = range(10000000,100000000)
+elif number1 == 9:
+cow = range(100000000,1000000000)
+elif number1 == 10:
+cow = range(1000000000,10000000000)
+number3 = cow[-1] + 1
+n = 0
+while n < number3:
+number4 = list(cow[n])
+n += 1
+I am looking to make a loop so that for each element in the list, it will get broken down into each of it's characters. For example, say the number 137 was in the list then it would be turned into [1,3,7]. Then I want to add these numbers together (I haven't started that bit yet but I have some idea of how to do it).
+However, I keep getting the error message
+TypeError: 'int' object is not iterable
+when I try and run this.
+What am I doing wrong?
+python list loops iterable
+Share
+Follow
+edited Sep 3 '15 at 11:08
+perror
+6,3291616 gold badges5656 silver badges7272 bronze badges
+asked Oct 22 '13 at 16:37
+user2908001user2908001
+4
+3
+What do you expect list(cow[n]) to do ?
+– Jon Clements♦
+Oct 22 '13 at 16:39
+12
+Hint: you can give range() dynamic arguments too: cow = range(10 ** (number1 - 1) if number1 > 1 else 0, 10 ** number1) would give you the exact same results as all your if statements, in just one line.
+– Martijn Pieters♦
+Oct 22 '13 at 16:42
+1
+@MartijnPieters I was just thinking about that - but think IIRC, 10 ** 0 is 1 not 0
+– Jon Clements♦
+Oct 22 '13 at 16:43
+1
+@JonClements: adjusted. :-) That 0 is quite inconsistent in this case; all the other numbers are powers of 10..
+– Martijn Pieters♦
+Oct 22 '13 at 16:45
+Add a comment
+|
+3 Answers
+3
+Active
+Oldest
+Votes
+112
+Your problem is with this line:
+number4 = list(cow[n])
+It tries to take cow[n], which returns an integer, and make it a list.
+This doesn't work, as demonstrated below:
+>>> a = 1
+>>> list(a)
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+TypeError: 'int' object is not iterable
+>>>
+Perhaps you meant to put cow[n] inside a list:
+number4 = [cow[n]]
+See a demonstration below:
+>>> a = 1
+>>> [a]
+[1]
+>>>
+Also, I wanted to address two things:
+Your while-statement is missing a : at the end.
+It is considered very dangerous to use input like that, since it evaluates its input as real Python code.
+It would be better here to use raw_input and then convert the input to an integer with int.
+To split up the digits and then add them like you want, I would first make the number a string.
+Then, since strings are iterable, you can use sum:
+>>> a = 137
+>>> a = str(a)
+>>> # This way is more common and preferred
+>>> sum(int(x) for x in a)
+11
+>>> # But this also works
+>>> sum(map(int, a))
+11
+>>>
+Share
+Follow
+edited Oct 22 '13 at 17:02
+answered Oct 22 '13 at 16:40
+user2555451user2555451
+6
+Thanks for answering so quickly. How would I then split the number up into individual characters? I tried putting a list(number4) beneath it but that then causes it to run forever when I run it on terminal.
+– user2908001
+Oct 22 '13 at 16:48
+Integers don't have characters. However, you could convert it to a string, which does: str(..).
+You might not need to convert it to a list after that, depending on what you intend to do with it, because strings are iterable and yield their constituent characters.
+– kindall
+Oct 22 '13 at 16:54
+@Mikey6743 - See my edit.
+While you could use a for-loop for this, the quickest option is to use sum.
+– user2555451
+Oct 22 '13 at 16:58
+This is great guys, thank you so much! I've just started learning how to code :) I'm still confused on how to repeat get this to repeat without using a loop. For example, say the user want's to look at 3 digits then I must work it out from 100 to 999. E.g. sum of the integers in 100 = 1 and sum of the integers in 999 = 27.
+– user2908001
+Oct 22 '13 at 19:28
+@Mikey6743 - Hmm, then you might have to use a loop.
+However, since the topic of this question was the TypeError (which my post fixes), why not first close this question as answered (click the tick next to my answer) and then ask another question that focuses on that problem in particular?
+You'll get better help that way.
+You definitely have to make the number a string first though so that you can split it into digits.
+– user2555451
+Oct 22 '13 at 20:07
+|
+Show 1 more comment
+3
+This is very simple you are trying to convert an integer to a list object !!! of course it will fail and it should ...
+To demonstrate/prove this to you by using the example you provided ...just use type function for each case as below and the results will speak for itself !
+>>> type(cow)
+<class 'range'>
+>>>
+>>> type(cow[0])
+<class 'int'>
+>>>
+>>> type(0)
+<class 'int'>
+>>>
+>>> >>> list(0)
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+TypeError: 'int' object is not iterable
+>>>
+Share
+Follow
+answered Dec 29 '18 at 23:19
+grepitgrepit
+16.5k66 gold badges8383 silver badges7171 bronze badges
+Add a comment
+|
+1
+If the case is:
+n=int(input())
+Instead of -> for i in n: -> gives error- 'int' object is not iterable
+Use -> for i in range(0,n): -> works fine..!
+Share
+Follow
+answered Dec 30 '20 at 20:22
+Augustine JoseAugustine Jose
+72944 silver badges66 bronze badges
+Add a comment
+|
+Your Answer
+Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
+Draft saved
+Draft discarded
+Sign up or log in
+Sign up using Google
+Sign up using Facebook
+Sign up using Email and Password
+Submit
+Post as a guest
+Name
+Email
+Required, but never shown
+Post as a guest
+Name
+Email
+Required, but never shown
+Post Your Answer
+Discard
+By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
+The Overflow Blog
+Level Up: Linear Regression in Python – Part 2
+Shipping confetti to Stack Overflow’s design system
+Featured on Meta
+The future of Community Promotion, Open Source, and Hot Network Questions Ads
+Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
+Take the 2021 Developer Survey
+Visit chat
+Linked
+-1
+How does type casting happens in Python between list and tuple?
+-2
+python program to reverse the list iterable problem
+3
+list comprehension vs iterable. Python newbie
+0
+Failing to understand simple error message
+0
+How do I print lists side by side in Python?
+-3
+For Loop at Python
+0
+Python Web Scraping Error TypeError: 'int' object is not iterable
+-3
+Compare each number from the same integer
+-3
+How can I create a function in Python that takes a list of numbers and an integer?
+0
+Problems Listing Gmail Messages with User Created Label via Google API
+See more linked questions
+Related
+5656
+How do I merge two dictionaries in a single expression (taking union of dictionaries)?
+6178
+What are metaclasses in Python?
+2856
+What is the best way to iterate over a dictionary?
+6671
+Does Python have a ternary conditional operator?
+3164
+How do I loop through or enumerate a JavaScript object?
+2947
+How do I concatenate two lists in Python?
+1201
+In Python, how do I determine if an object is iterable?
+3520
+Iterating over dictionaries using 'for' loops
+3596
+Does Python have a string 'contains' substring method?
+2183
+Iterate through object properties
+Hot Network Questions
+Calculating the hexagons in a hexagon of hexagons
+identify M.2 SSD from BASH Script
+How to rotate a circle around y-aixs and calculate the volume of the 3D solid?
+Why is this result no contradiction to length contraction?
+Why do Macs mount an additional drive every time I install software?
+Meaning of せないかんのよ
+A huge forest native almost solely to elves who are widely regarded with hatred. What's to stop an army from simply burning the entire forest?
+How do computers perform operations on numbers that are larger than 64 bits?
+The usage of can't
+How can I specify the qubits on quantum computers that I want to use?
+Why did SMARTDRV have to be started with /x when DOS started?
+newpxmath: accents are always bold
+Where can people allergic to dairy food eat when travelling in France?
+Why can't the piano play middle eastern music?
+How to stop games from reading your RAM?
+Does an IFR flight-plan includes the approach as well?
+Strange vertical spacing after colored equation
+What does this line: `T=C/2=INT(C/2)` do? Why is it valid syntax?
+Engine failure: how to detect?
+Should forcing open doors be Strength or Strength (Athletics)
+Can a rest be taken in a moving cart?
+Can I replace an STM32F105-RBT6 with a STM32F103-RET6? (ie. are they pin compatible?)
+I have a postdoc interview tomorrow and I think I have overstated my abilities in my CV. How do I address it during the interview?
+What's a lot of money {out of curiosity}?
+more hot questions
+Question feed
+Subscribe to RSS
+Question feed
+To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+lang-py
+Stack Overflow
+Questions
+Jobs
+Developer Jobs Directory
+Salary Calculator
+Help
+Mobile
+Products
+Teams
+Talent
+Advertising
+Enterprise
+Company
+About
+Press
+Work Here
+Legal
+Privacy Policy
+Terms of Service
+Contact Us
+Cookie Settings
+Cookie Policy
+Stack Exchange Network
+Technology
+Life / Arts
+Culture / Recreation
+Science
+Other
+Stack Overflow
+Server Fault
+Super User
+Web Applications
+Ask Ubuntu
+Webmasters
+Game Development
+TeX - LaTeX
+Software Engineering
+Unix & Linux
+Ask Different (Apple)
+WordPress Development
+Geographic Information Systems
+Electrical Engineering
+Android Enthusiasts
+Information Security
+Database Administrators
+Drupal Answers
+SharePoint
+User Experience
+Mathematica
+Salesforce
+ExpressionEngine® Answers
+Stack Overflow em Português
+Blender
+Network Engineering
+Cryptography
+Code Review
+Magento
+Software Recommendations
+Signal Processing
+Emacs
+Raspberry Pi
+Stack Overflow на русском
+Code Golf
+Stack Overflow en español
+Ethereum
+Data Science
+Arduino
+Bitcoin
+Software Quality Assurance & Testing
+Sound Design
+Windows Phone
+more (29)
+Photography
+Science Fiction & Fantasy
+Graphic Design
+Movies & TV
+Music: Practice & Theory
+Worldbuilding
+Video Production
+Seasoned Advice (cooking)
+Home Improvement
+Personal Finance & Money
+Academia
+Law
+Physical Fitness
+Gardening & Landscaping
+Parenting
+more (10)
+English Language & Usage
+Skeptics
+Mi Yodeya (Judaism)
+Travel
+Christianity
+English Language Learners
+Japanese Language
+Chinese Language
+French Language
+German Language
+Biblical Hermeneutics
+History
+Spanish Language
+Islam
+Русский язык
+Russian Language
+Arqade (gaming)
+Bicycles
+Role-playing Games
+Anime & Manga
+Puzzling
+Motor Vehicle Maintenance & Repair
+Board & Card Games
+Bricks
+Homebrewing
+Martial Arts
+The Great Outdoors
+Poker
+Chess
+Sports
+more (16)
+MathOverflow
+Mathematics
+Cross Validated (stats)
+Theoretical Computer Science
+Physics
+Chemistry
+Biology
+Computer Science
+Philosophy
+Linguistics
+Psychology & Neuroscience
+Computational Science
+more (10)
+Meta Stack Exchange
+Stack Apps
+API
+Data
+Blog
+Facebook
+Twitter
+LinkedIn
+Instagram
+site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
+rev 2021.5.28.39383
+Stack Overflow works best with JavaScript enabled
+Your privacy
+By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
+Accept all cookies
+Customize settings

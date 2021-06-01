@@ -1,0 +1,623 @@
+inheritance - How to fix java error? - Stack Overflow
+Stack Overflow
+About
+Products
+For Teams
+Stack Overflow
+Public questions & answers
+Stack Overflow for Teams
+Where developers & technologists share private knowledge with coworkers
+Jobs
+Programming & related technical career opportunities
+Talent
+Recruit tech talent & build your employer brand
+Advertising
+Reach developers & technologists worldwide
+About the company
+Loading…
+Log in
+Sign up
+current community
+Stack Overflow
+help
+chat
+Meta Stack Overflow
+your communities
+Sign up or log in to customize your list.
+more stack exchange communities
+company blog
+People who code: we want your input.
+Take the Survey
+Join Stack Overflow to learn, share knowledge, and build your career.
+Sign up with email
+Sign up
+Sign up with Google
+Sign up with GitHub
+Sign up with Facebook
+Home
+Public
+Questions
+Tags
+Users
+Find a Job
+Jobs
+Companies
+Teams
+Stack Overflow for Teams
+– Collaborate and share knowledge with a private group.
+Create a free Team
+What is Teams?
+Teams
+What’s this?
+Create free Team
+Teams
+Q&A for work
+Connect and share knowledge within a single location that is structured and easy to search.
+Learn more
+How to fix java error?
+Ask Question
+Asked
+6 years, 6 months ago
+Active
+4 years, 4 months ago
+Viewed
+193 times
+1
+So I have to create a program where I use polymorphism and inheritance to create arrows that point left and arrow and I did that. however, when I created my main class and try to invoke the methods, say for example "LeftArrow.drawHere" to draw the arrow i get errors saying I cannot make a static reference to the non static field "drawHere() from the class LeftArrow". I was wondering then if I can't do that how can I design my main method so it draws the arrows?
+here is my code, note that there are several classes but I will post all of them here.
+import java.util.Scanner;
+public class LeftArrow extends ShapeBasic
+{
+private int tail, width;
+private static int inside;
+public LeftArrow()
+{
+super();
+tail = 0;
+width = 0;
+}
+public LeftArrow(int noff, int ntail, int nwidth)
+{
+super(noff);
+tail = ntail;
+setWidth(nwidth);
+}
+public void setTail(int ntail)
+{
+tail = ntail;
+}
+public int getTail()
+{
+return tail;
+}
+public void setWidth(int nwidth)
+{
+if (nwidth % 2 == 1)
+{
+width = nwidth;
+}
+else
+{
+System.out.println(" Width must be odd");
+System.out.println("Enter a new width");
+Scanner key = new Scanner(System.in);
+int wid = key.nextInt();
+setWidth(wid);
+}
+}
+public int getWidth()
+{
+return width;
+}
+public void drawHere()
+{
+drawTriangle();
+drawTail();
+drawBTriangle();
+//System.out.println();
+}
+public void drawTriangle()
+{
+inside = 1;
+int split = (width/2);
+skipSpaces(getOffset());
+System.out.println('*');
+for(int count = 0; count < split; count ++)
+{
+skipSpaces(getOffset() - (inside + 1));
+System.out.print('*');
+skipSpaces(inside);
+System.out.print('*');
+inside = inside + 2;
+System.out.println();
+}
+}
+public void drawTail()
+{
+skipSpaces(getOffset() - getInside() - 1);
+System.out.print('*');
+skipSpaces(getInside());
+for (int count = 0; count < tail ; count++)
+{
+System.out.print('*');
+}
+}
+public void drawBTriangle()
+{
+int inside = getInside();
+int split = (width/2);
+System.out.println();
+for(int count = 0; count < split; count ++)
+{
+skipSpaces(getOffset() - (inside - 1));
+System.out.print('*');
+inside = inside - 2;
+skipSpaces(inside);
+System.out.print('*');
+System.out.println();
+}
+skipSpaces(getOffset());
+System.out.print('*');
+}
+public int getInside()
+{
+return inside;
+}
+private static void skipSpaces(int number)
+{
+for (int count = 0; count < number; count++)
+System.out.print(' ');
+}
+@Override
+public void setOffset(int noff) {
+// TODO Auto-generated method stub
+}
+@Override
+public int getOffset() {
+// TODO Auto-generated method stub
+return 0;
+}
+}
+import java.util.Scanner;
+public class RightArrow extends ShapeBasic
+{
+private int tail, width;
+private static int inside;
+public RightArrow()
+{
+super();
+tail = 0;
+width = 0;
+}
+public RightArrow(int noff, int ntail, int nwidth)
+{
+super(noff);
+tail = ntail;
+setWidth(nwidth); // must be odd
+}
+public void setTail(int ntail)
+{
+tail = ntail;
+}
+public int getTail()
+{
+return tail;
+}
+public void setWidth(int nwidth)
+{
+if (nwidth % 2 == 1)
+{
+width = nwidth;
+}
+else
+{
+System.out.println(" Width must be odd");
+System.out.println("Enter a new width");
+Scanner key = new Scanner(System.in);
+int wid = key.nextInt();
+setWidth(wid);
+}
+}
+public int getWidth()
+{
+return width;
+}
+public void drawHere()
+{
+drawTriangle();
+drawTail();
+drawBTriangle();
+System.out.println();
+}
+public void drawTail()
+{
+skipSpaces(getOffset() + 1);
+for (int count = 0; count < tail ; count++)
+{
+System.out.print('*');
+}
+skipSpaces(getInside());
+System.out.print('*');
+// fix
+}
+public void drawTriangle()
+{
+inside = 1;
+int split = (width/2);
+skipSpaces(getOffset() + tail);
+System.out.println('*');
+for(int count = 0; count < split; count ++)
+{
+skipSpaces(getOffset() + tail);
+System.out.print('*');
+skipSpaces(inside);
+System.out.print('*');
+inside = inside + 2;
+System.out.println();
+}
+}
+public void drawBTriangle()
+{
+int inside = getInside();
+int split = (width/2);
+System.out.println();
+for(int count = 0; count < split; count ++)
+{
+skipSpaces(getOffset() + tail);
+System.out.print('*');
+inside = inside - 2;
+skipSpaces(inside);
+System.out.print('*');
+System.out.println();
+}
+skipSpaces(getOffset() + tail);
+System.out.print('*');
+}
+public int getInside()
+{
+return inside;
+}
+private static void skipSpaces(int number)
+{
+for (int count = 0; count < number; count++)
+System.out.print(' ');
+}
+}
+public abstract class ShapeBase implements ShapeInterface {
+private int offset;
+public abstract void drawHere();
+public void drawAt(int lineNumber) {
+for (int count = 0; count < lineNumber; count++)
+System.out.println();
+drawHere();
+}
+}
+public class ShapeBasic implements ShapeInterface
+{
+private int offset;
+public ShapeBasic()
+{
+offset = 0;
+}
+public ShapeBasic( int noff)
+{
+offset = noff;
+}
+public void setOffset(int noff)
+{
+offset = noff;
+}
+public int getOffset()
+{
+return offset;
+}
+public void drawAt(int linnumber)
+{
+for (int count = 0; count < linnumber; count++)
+System.out.println();
+drawHere();
+}
+public void drawHere()
+{
+for (int count = 0; count < offset; count++)
+System.out.print(' ');
+System.out.println('*');
+}
+}
+public interface ShapeInterface
+{
+public void setOffset(int noff);
+// set how many space from left
+public int getOffset(); // returns offset
+public void drawAt(int linnumber);
+// moves down equal to line number Ex. 5 = 5 down
+public void drawHere(); // draws shape after moving left equal to offset
+}
+java inheritance polymorphism mainclass
+Share
+Follow
+edited Jan 3 '17 at 13:06
+fabian
+67.6k1212 gold badges7474 silver badges102102 bronze badges
+asked Nov 11 '14 at 16:39
+Rocketsm46Rocketsm46
+2122 silver badges77 bronze badges
+1
+thank you guys for the help, i would upvote your comments but i don't have enough reputation points.
+– Rocketsm46
+Nov 11 '14 at 21:00
+Add a comment
+|
+3 Answers
+3
+Active
+Oldest
+Votes
+1
+I'd ask to see your main method, but I don't have the reputation.
+At a guess, I'd say maybe you are not actually instantiating objects of these classes in your main method, but trying to call the methods from them. If, for instance, you do this:
+LeftArrow lArrow = new LeftArrow();
+lArrow.drawHere();
+it should work.
+Share
+Follow
+answered Nov 11 '14 at 16:43
+DaaaahWhooshDaaaahWhoosh
+31911 gold badge44 silver badges1414 bronze badges
+0
+Add a comment
+|
+1
+The method drawHere is declared as non-static. Instead of LeftArrow.drawHere() you should call
+LeftArrow left = new LefArrow(a, b, c);
+left.drawHere();
+Share
+Follow
+answered Nov 11 '14 at 16:44
+Simon ZambrovskiSimon Zambrovski
+71755 silver badges1717 bronze badges
+0
+Add a comment
+|
+0
+main is static. It needs to create instances of LeftArrow before it can use them. Something like this:
+LeftArrow myArrow = new LeftArrow();
+myArrow.drawHere();
+Share
+Follow
+answered Nov 11 '14 at 16:43
+user1879313user1879313
+1,07422 gold badges88 silver badges2222 bronze badges
+0
+Add a comment
+|
+Your Answer
+Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
+Draft saved
+Draft discarded
+Sign up or log in
+Sign up using Google
+Sign up using Facebook
+Sign up using Email and Password
+Submit
+Post as a guest
+Name
+Email
+Required, but never shown
+Post as a guest
+Name
+Email
+Required, but never shown
+Post Your Answer
+Discard
+By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
+Not the answer you're looking for? Browse other questions tagged java inheritance polymorphism mainclass
+or ask your own question.
+The Overflow Blog
+Level Up: Linear Regression in Python – Part 2
+Shipping confetti to Stack Overflow’s design system
+Featured on Meta
+The future of Community Promotion, Open Source, and Hot Network Questions Ads
+Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
+Take the 2021 Developer Survey
+Visit chat
+Related
+3964
+What are the differences between a HashMap and a Hashtable in Java?
+7059
+Is Java “pass-by-reference” or “pass-by-value”?
+3555
+How do I efficiently iterate over each entry in a Java Map?
+4190
+Avoiding NullPointerException in Java
+4332
+How do I read / convert an InputStream into a String in Java?
+3294
+When to use LinkedList over ArrayList in Java?
+3731
+How do I generate random integers within a specific range in Java?
+3214
+How do I convert a String to an int in Java?
+2523
+How to fix 'android.os.NetworkOnMainThreadException'?
+3428
+How can I create a memory leak in Java?
+Hot Network Questions
+newpxmath: accents are always bold
+Is there any realistic explanation for Earth-like climate on a Sun-sized planet?
+Efficient ragged path for text
+Should most brahmins today be considered as shudras?
+Is the the word order of "Iura novit curia" used for emphasis?
+Is there a precise definition of "Supermoon"?
+Print the last answerer's first submission
+Do phone chargers communicate with the phone?
+Where and how are raw transactions stored on the blockchain?
+How to rotate a circle around y-aixs and calculate the volume of the 3D solid?
+Sanctuary spell and Using magic Items that cause damage?
+Why do we have two kidneys but one liver?
+A bracket amphitheater
+What is the difference between “they” and “it” for people, especially for those people who choose to be identified as non-binary?
+Why does sleep, when run in a shell script, ignore SIGINT?
+Should forcing open doors be Strength or Strength (Athletics)
+How can I use a control variable that is non-normal in linear regression with other variabels that are normal?
+Triangle-style sequences
+A huge forest native almost solely to elves who are widely regarded with hatred. What's to stop an army from simply burning the entire forest?
+If cost can be ignored, is a higher-value capacitor for ripple suppression always a good choice?
+Is it significantly faster to hike along a river bank?
+How can objects be neither vector nor scalar?
+Why is this result no contradiction to length contraction?
+Peer review 2.0
+more hot questions
+Question feed
+Subscribe to RSS
+Question feed
+To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+lang-java
+Stack Overflow
+Questions
+Jobs
+Developer Jobs Directory
+Salary Calculator
+Help
+Mobile
+Products
+Teams
+Talent
+Advertising
+Enterprise
+Company
+About
+Press
+Work Here
+Legal
+Privacy Policy
+Terms of Service
+Contact Us
+Cookie Settings
+Cookie Policy
+Stack Exchange Network
+Technology
+Life / Arts
+Culture / Recreation
+Science
+Other
+Stack Overflow
+Server Fault
+Super User
+Web Applications
+Ask Ubuntu
+Webmasters
+Game Development
+TeX - LaTeX
+Software Engineering
+Unix & Linux
+Ask Different (Apple)
+WordPress Development
+Geographic Information Systems
+Electrical Engineering
+Android Enthusiasts
+Information Security
+Database Administrators
+Drupal Answers
+SharePoint
+User Experience
+Mathematica
+Salesforce
+ExpressionEngine® Answers
+Stack Overflow em Português
+Blender
+Network Engineering
+Cryptography
+Code Review
+Magento
+Software Recommendations
+Signal Processing
+Emacs
+Raspberry Pi
+Stack Overflow на русском
+Code Golf
+Stack Overflow en español
+Ethereum
+Data Science
+Arduino
+Bitcoin
+Software Quality Assurance & Testing
+Sound Design
+Windows Phone
+more (29)
+Photography
+Science Fiction & Fantasy
+Graphic Design
+Movies & TV
+Music: Practice & Theory
+Worldbuilding
+Video Production
+Seasoned Advice (cooking)
+Home Improvement
+Personal Finance & Money
+Academia
+Law
+Physical Fitness
+Gardening & Landscaping
+Parenting
+more (10)
+English Language & Usage
+Skeptics
+Mi Yodeya (Judaism)
+Travel
+Christianity
+English Language Learners
+Japanese Language
+Chinese Language
+French Language
+German Language
+Biblical Hermeneutics
+History
+Spanish Language
+Islam
+Русский язык
+Russian Language
+Arqade (gaming)
+Bicycles
+Role-playing Games
+Anime & Manga
+Puzzling
+Motor Vehicle Maintenance & Repair
+Board & Card Games
+Bricks
+Homebrewing
+Martial Arts
+The Great Outdoors
+Poker
+Chess
+Sports
+more (16)
+MathOverflow
+Mathematics
+Cross Validated (stats)
+Theoretical Computer Science
+Physics
+Chemistry
+Biology
+Computer Science
+Philosophy
+Linguistics
+Psychology & Neuroscience
+Computational Science
+more (10)
+Meta Stack Exchange
+Stack Apps
+API
+Data
+Blog
+Facebook
+Twitter
+LinkedIn
+Instagram
+site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
+rev 2021.5.28.39383
+Stack Overflow works best with JavaScript enabled
+Your privacy
+By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
+Accept all cookies
+Customize settings

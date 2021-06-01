@@ -1,1 +1,323 @@
-python raw_input defined stack overflow stack overflow products teams stack overflow public questions answers stack overflow teams developers technologists share private knowledge coworkers jobs programming related technical career opportunities talent recruit tech talent build employer brand advertising reach developers technologists worldwide company loading log sign current community stack overflow help chat meta stack overflow communities sign log customize list stack exchange communities company blog people code want input take survey join stack overflow learn share knowledge build career sign email sign sign google sign github sign facebook home public questions tags users find job jobs companies teams stack overflow teams collaborate share knowledge private group create free team teams teams create free team teams q work connect share knowledge within single location structured easy search learn raw_input defined duplicate ask question asked years months ago active years months ago viewed k times question already answers use raw_input python answers closed years ago seventh grade programmer may missing lot things program coding club instructor asked us make guess number game limited knowledge subject since attended four classes anyway run program python idle says traceback recent call last file c users morrris appdata local programs python python guess_that_number py line name raw_input nameerror name raw_input defined tried changing code seems like raw_input python undefined raw input share improve question follow edited nov olivier pons k gold badges silver badges bronze badges asked feb makailah morrismakailah morris gold badge silver badges bronze badges python raw_input input andy feb future post code try post minimum needed exhibit symptom asking case name raw_input quite sufficient see stackoverflow com help mcve terry jan reedy feb sorry know makailah morris feb add comment answer active oldest votes python x use input python x use raw_input forget add prompt string input call create one less print statement input guess number share improve answer follow answered feb heinstheinst gold badges silver badges bronze badges add comment answer looking browse questions tagged python undefined raw input ask question overflow blog podcast blocking haters service developer survey open featured meta testing three vote close reopen network sites future community promotion open source hot network questions ads rule proposal one delete undelete per post take developer survey linked use raw_input python come name error python error name raw_input defined show matplotlib plots python else statement asking input python related check defined variable javascript javascript check variable exists defined initialized pydev interactive console raw_input python dice sim issue problems installing tensor flow windows could interpret optimizer identifier error keras hot network questions increasing k point grid take dos calculation voltage dosen increase batteries added parallel countries get manifest every passenger flying airspace knows boarded plane local network loses internet certain device connects hermeneutic paul employing approach corinthians supposed report status standups recreate translucent subsurface material usual feasible european universities accept phd candidates right bachelor degree computer science field rosamund pike amy spits glass sasha johnson state white man equal slave randomly programmatically generate good next chord legal store accept payment debit card able refund even event staff mistake identify geometry type layer qgis expressions thought understood tenses book referring software provide facts conclusion want reach colorful plate puzzle would physics explain un fold paper decides congressional district removed nelson mandela directly compare accuse israel apartheid jovanka houska introduced wgm holds prestigious im title rotten eggs float water deal soft alpha gamer player stop interrupting session correct dm mistakes fixture natural gas fired forced air furnace smoke detector hot questions lang py stack overflow questions jobs developer jobs directory salary calculator help mobile products teams talent advertising enterprise company press work legal privacy policy terms service contact us cookie settings cookie policy stack exchange network technology life arts culture recreation science stack overflow server fault super user web applications ask ubuntu webmasters game development tex latex software engineering unix linux ask different apple wordpress development geographic information systems electrical engineering android enthusiasts information security database administrators drupal answers sharepoint user experience mathematica salesforce expressionengine answers stack overflow em português blender network engineering cryptography code review magento software recommendations signal processing emacs raspberry pi stack overflow на русском code golf stack overflow en español ethereum data science arduino bitcoin software quality assurance testing sound design windows phone photography science fiction fantasy graphic design movies tv music practice theory worldbuilding video production seasoned advice cooking home improvement personal finance money academia law physical fitness gardening landscaping parenting english language usage skeptics mi yodeya judaism travel christianity english language learners japanese language chinese language french language german language biblical hermeneutics history spanish language islam русский язык russian language arqade gaming bicycles role playing games anime manga puzzling motor vehicle maintenance repair board card games bricks homebrewing martial arts great outdoors poker chess sports mathoverflow mathematics cross validated stats theoretical computer science physics chemistry biology computer science philosophy linguistics psychology neuroscience computational science meta stack exchange stack apps api data blog facebook twitter linkedin instagram site design logo stack exchange inc user contributions licensed cc sa rev stack overflow works best javascript enabled privacy clicking accept cookies agree stack exchange store cookies device disclose information accordance cookie policy accept cookies customize settings
+python - Raw_Input() Is Not Defined - Stack Overflow
+Stack Overflow
+About
+Products
+For Teams
+Stack Overflow
+Public questions & answers
+Stack Overflow for Teams
+Where developers & technologists share private knowledge with coworkers
+Jobs
+Programming & related technical career opportunities
+Talent
+Recruit tech talent & build your employer brand
+Advertising
+Reach developers & technologists worldwide
+About the company
+Loading…
+Log in
+Sign up
+current community
+Stack Overflow
+help
+chat
+Meta Stack Overflow
+your communities
+Sign up or log in to customize your list.
+more stack exchange communities
+company blog
+People who code: we want your input.
+Take the Survey
+Join Stack Overflow to learn, share knowledge, and build your career.
+Sign up with email
+Sign up
+Sign up with Google
+Sign up with GitHub
+Sign up with Facebook
+Home
+Public
+Questions
+Tags
+Users
+Find a Job
+Jobs
+Companies
+Teams
+Stack Overflow for Teams
+– Collaborate and share knowledge with a private group.
+Create a free Team
+What is Teams?
+Teams
+What’s this?
+Create free Team
+Teams
+Q&A for work
+Connect and share knowledge within a single location that is structured and easy to search.
+Learn more
+Raw_Input() Is Not Defined [duplicate]
+Ask Question
+Asked
+5 years, 3 months ago
+Active
+3 years, 7 months ago
+Viewed
+183k times
+49
+6
+This question already has answers here:
+How do I use raw_input in Python 3
+(8 answers)
+Closed 5 years ago.
+I'm a seventh grade programmer so I may be missing a lot of things in this program, but for my coding club my instructor asked us to make a guess the number game. I have very limited knowledge on this subject, since I've only attended four classes. Anyway, when I run this program in Python IDLE 3.5 this is what it says:
+Traceback (most recent call last):
+File "C:\Users\morrris\AppData\Local\Programs\Python\Python35-32\guess_that_number.py", line 7, in <module>
+name= raw_input()
+NameError: name 'raw_input' is not defined
+I tried changing the code, but it seems to not like the raw_input().
+python undefined raw-input
+Share
+Follow
+edited Nov 3 '17 at 11:39
+Olivier Pons
+14k2424 gold badges9898 silver badges190190 bronze badges
+asked Feb 3 '16 at 4:26
+Makailah MorrisMakailah Morris
+50111 gold badge44 silver badges33 bronze badges
+3
+5
+Python 3.5 doesn't have raw_input. It has input()
+– Andy♦
+Feb 3 '16 at 4:27
+In the future, when you post code, try to post the minimum needed to exhibit the symptom you are asking about.
+In this case, name= raw_input() is quite sufficient.
+See stackoverflow.com/help/mcve
+– Terry Jan Reedy
+Feb 3 '16 at 14:53
+I'm sorry, I didn't know
+– Makailah Morris
+Feb 3 '16 at 21:53
+Add a comment
+|
+1 Answer
+1
+Active
+Oldest
+Votes
+97
+For Python 3.x, use input(). For Python 2.x, use raw_input(). Don't forget you can add a prompt string in your input() call to create one less print statement. input("GUESS THAT NUMBER!").
+Share
+Follow
+answered Feb 3 '16 at 4:28
+heinstheinst
+7,46855 gold badges3434 silver badges7373 bronze badges
+0
+Add a comment
+|
+Not the answer you're looking for? Browse other questions tagged python undefined raw-input
+or ask your own question.
+The Overflow Blog
+Level Up: Linear Regression in Python – Part 2
+Shipping confetti to Stack Overflow’s design system
+Featured on Meta
+The future of Community Promotion, Open Source, and Hot Network Questions Ads
+Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
+Take the 2021 Developer Survey
+Linked
+608
+How do I use raw_input in Python 3
+-2
+How i over come with name error in python
+-3
+Have this error (name 'raw_input' is not defined)
+62
+How to show matplotlib plots in python
+0
+If-Else statement not asking for input in Python
+Related
+965
+How to check a not-defined variable in JavaScript
+2018
+JavaScript check if variable exists (is defined/initialized)
+2
+pydev interactive console and raw_input
+0
+Python 3 Dice Sim issue
+0
+Problems Installing Tensor Flow Windows 10
+40
+“Could not interpret optimizer identifier” error in Keras
+Hot Network Questions
+What can I do about a parent who is discouraging their child from learning violin, a child who really wants to learn, so that the child will drop out
+Where was this scene of 'Highlander: The series' with standing columns shot?
+Why is g3 a bad move here?
+3 verbs in one sentence - how is that?
+What does research indicate about how one should treat units in elementary school?
+Is it significantly faster to hike along a river bank?
+How to rotate a circle around y-aixs and calculate the volume of the 3D solid?
+Does 'graduate program' mean MSc or Ph.D.?
+Colour ramp for maps
+How can I specify the qubits on quantum computers that I want to use?
+newpxmath: accents are always bold
+Peer review 2.0
+What's the cohomology ring structure of a blow-up?
+Are vertices in a clockwise order?
+How do I make a "ragged" table?
+What's a lot of money {out of curiosity}?
+Does the inside of a lid used to cook rice or steam vegetables have anything besides water on it?
+Do phone chargers communicate with the phone?
+Can a rest be taken in a moving cart?
+Why do we have two kidneys but one liver?
+Advice needed – I can't reach my collaborator, but there's a short deadline for revising our journal article submission
+Is it better to resize an image by minus 10% or by minus 50%?
+I ran a nail through a wire at home, should I worry?
+Is there any realistic explanation for Earth-like climate on a Sun-sized planet?
+more hot questions
+lang-py
+Stack Overflow
+Questions
+Jobs
+Developer Jobs Directory
+Salary Calculator
+Help
+Mobile
+Products
+Teams
+Talent
+Advertising
+Enterprise
+Company
+About
+Press
+Work Here
+Legal
+Privacy Policy
+Terms of Service
+Contact Us
+Cookie Settings
+Cookie Policy
+Stack Exchange Network
+Technology
+Life / Arts
+Culture / Recreation
+Science
+Other
+Stack Overflow
+Server Fault
+Super User
+Web Applications
+Ask Ubuntu
+Webmasters
+Game Development
+TeX - LaTeX
+Software Engineering
+Unix & Linux
+Ask Different (Apple)
+WordPress Development
+Geographic Information Systems
+Electrical Engineering
+Android Enthusiasts
+Information Security
+Database Administrators
+Drupal Answers
+SharePoint
+User Experience
+Mathematica
+Salesforce
+ExpressionEngine® Answers
+Stack Overflow em Português
+Blender
+Network Engineering
+Cryptography
+Code Review
+Magento
+Software Recommendations
+Signal Processing
+Emacs
+Raspberry Pi
+Stack Overflow на русском
+Code Golf
+Stack Overflow en español
+Ethereum
+Data Science
+Arduino
+Bitcoin
+Software Quality Assurance & Testing
+Sound Design
+Windows Phone
+more (29)
+Photography
+Science Fiction & Fantasy
+Graphic Design
+Movies & TV
+Music: Practice & Theory
+Worldbuilding
+Video Production
+Seasoned Advice (cooking)
+Home Improvement
+Personal Finance & Money
+Academia
+Law
+Physical Fitness
+Gardening & Landscaping
+Parenting
+more (10)
+English Language & Usage
+Skeptics
+Mi Yodeya (Judaism)
+Travel
+Christianity
+English Language Learners
+Japanese Language
+Chinese Language
+French Language
+German Language
+Biblical Hermeneutics
+History
+Spanish Language
+Islam
+Русский язык
+Russian Language
+Arqade (gaming)
+Bicycles
+Role-playing Games
+Anime & Manga
+Puzzling
+Motor Vehicle Maintenance & Repair
+Board & Card Games
+Bricks
+Homebrewing
+Martial Arts
+The Great Outdoors
+Poker
+Chess
+Sports
+more (16)
+MathOverflow
+Mathematics
+Cross Validated (stats)
+Theoretical Computer Science
+Physics
+Chemistry
+Biology
+Computer Science
+Philosophy
+Linguistics
+Psychology & Neuroscience
+Computational Science
+more (10)
+Meta Stack Exchange
+Stack Apps
+API
+Data
+Blog
+Facebook
+Twitter
+LinkedIn
+Instagram
+site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
+rev 2021.5.28.39383
+Stack Overflow works best with JavaScript enabled
+Your privacy
+By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
+Accept all cookies
+Customize settings

@@ -1,4 +1,5 @@
-from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
+from sklearn.preprocessing import normalize
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer, PorterStemmer
@@ -7,56 +8,79 @@ import numpy as np
 import json
 import nltk
 import time
-
+import re
 dataframe = []
 dataset = json.load(open('resource/preprocessed/data_preprocessed.json',))
-
+from nltk.corpus import stopwords
+stopwords=stopwords.words('english')
+# print(stopwords)
 # nltk.download('wordnet')
+
 st = PorterStemmer()
 
-for i in dataset['doc']:
-    name_doc = dataset['doc'][i]
-    with open(f'resource/preprocessed/{name_doc}', 'rb') as f:
-        text = f.read().decode("utf-8") 
-        text = word_tokenize(text)
-        stem = []
-        for word in text:
-            stem.append(st.stem(word))
-        text = " ".join(stem)
-        dataframe.append(text)
+def indexing(folder_dataset, json_dataset):
+    dataset = json.load(open(folder_dataset + json_dataset,))
 
-vectorizer = TfidfVectorizer()
-X = vectorizer.fit_transform(dataframe)
+    for i in dataset['doc']:
+        name_doc = dataset['doc'][i]
+        with open(f'{folder_dataset}{name_doc}', 'rb') as f:
+            text = f.read().decode("utf-8")
 
-X = X.T.toarray()
-df = pd.DataFrame(X, index=vectorizer.get_feature_names())
-print(df.head(20))
-print(df.size)
-print(df.shape)
+            text = text.lower()
+            text=re.sub("</?.*?>"," <> ",text)
+            text=re.sub("(\\d|\\W)+"," ",text)
 
-def ranking(q, df):
-    start_time = time.time()
-    print("query:", q)
-    print("Berikut artikel dengan nilai cosine similarity tertinggi: ") 
-    q = [q]
-    q_vec = vectorizer.transform(q).toarray().reshape(df.shape[0],)
-    sim = {}  
-    for i in range(len(df.columns)):
-        value = np.dot(df.loc[:, i].values, q_vec) / np.linalg.norm(df.loc[:, i]) * np.linalg.norm(q_vec)
-        if (value != 0.0):
-            sim[i] = value
-    end_time = time.time()
+            text = word_tokenize(text)
 
-    sim_sorted = sorted(sim.items(), key=lambda x: x[1], reverse=True)  
-    print('result :', len(sim_sorted), '\t time :', end_time - start_time, '\n\n\n')
-    for k, v in sim_sorted:
-        if v != 0.0:
-            print("Nilai Similaritas:", v)
-            print('index dokumen', k)
-            print(dataframe[k][:100:])
-            print()
+            text_without_sw = [word for word in text if not word in stopwords]
+            
+            text = " ".join(text_without_sw)
+            
+            # stem = []
+            # for word in text:
+            #     stem.append(st.stem(word))
+            
+            dataframe.append(text)
+    #menghitung term frekuensi
+    cv = CountVectorizer(max_features=50000, binary=True, ngram_range=(1, 3))
+    ct = cv.fit_transform(dataframe)
 
-query = input("masukkan query ('Q' to exit) :").lower()
-while(query != 'q'):
-    ranking(query, df)
-    query = input("\n\n\n\n\nmasukkan query ('Q' to exit) :").lower()
+    norm_ct = normalize(ct, norm = "l1", axis=1)
+
+    #menghitung documen frekuensi
+    tv = TfidfVectorizer(max_features=50000, binary=True, norm=None , smooth_idf=False, ngram_range=(1, 3))
+    tv.fit_transform(dataframe)
+
+    #menghitung invers dokumen frekuensi
+    tfidf_mat = norm_ct.multiply(tv.idf_).T.toarray()
+
+    #menyimpan pada pandas
+    df = pd.DataFrame(tfidf_mat, index=tv.get_feature_names())
+
+    #mengurutkan data descending sesuai total idf terbesar
+    df['rank'] = df.sum(axis=1)
+    indexing = df.sort_values('rank', ascending=False)
+    indexing.pop('rank')
+
+
+    return indexing, tv.get_feature_names()
+
+def get_dict_feature_name(terms):
+    feature_name = {}
+    feature_name['feature'] = terms
+    return feature_name
+
+
+def save_to_json(Data, json_filename):
+    with open(json_filename, mode='w') as json_config:
+        json.dump(Data, json_config)
+
+if __name__ == "__main__":
+    df, term = indexing("resource/preprocessed/","data_preprocessed.json")
+    print(df.head(10))
+    from scipy import sparse
+
+    # save sparse matrix unigram, bigram and trigram to .npz file
+    sparse.save_npz("tfidf_mat.npz", sparse.csr_matrix(df))
+    save_to_json( get_dict_feature_name(term),"tfidf_feature_name.json")
+

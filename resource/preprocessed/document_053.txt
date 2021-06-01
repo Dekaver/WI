@@ -1,1 +1,380 @@
-nameerror name nltk defined quabr answers find explore tags advanced dictionary chrome translate worlds phrases translation unknown words phrases selection text small pop bubble add flashcards create cards one click translated words build vocabulary lists organize flashcards different themed decks wish get free extension related questions incrementing using python code fastapi data rows postgresql database map pydantic schema testcases passing know issue since cannot see testcase difficulties completely purge disable default channel anaconda switch conda forge conda fails build inside docker container machine learning opencv vadersentiment list tokens instead sentence creating bigrams list list tuples list strings words combined finding related columns data frame python nameerror name nltk defined midsummer imported stackoverflow python anaconda nltk python notebook used work without problems try run get nameerror name nltk defined error sure changed since system tried far installing nltk library pip downloading nltk library python interpreter pip install nltk requirement already satisfied nltk applications anaconda lib python site packages python import nltk nltk download python python python applications anaconda bin python usr bin python applications anaconda bin python pip pip pip applications anaconda bin pip applications anaconda bin pip python version python echo path applications anaconda bin applications anaconda condabin usr bin bin usr sbin sbin usr local bin usr x bin usr local bin usr bin bin usr sbin sbin users testimo rvm bin users testimo rvm bin path wrong fix tips thank answer answered eklavya chandra happens use google colab change directory python files resolves issue make new folder remember make subfolder existing ones move files see also questions close topic incrementing using python code workflow file consisting test case inside number test steps example testcase_ teststep type step text pre condition teststep type step text post condition type substep text substep previously id teststep need change teststep test steps usually also consists substeps e step inside step code substep substeps need thanks advance fastapi data rows postgresql database map pydantic schema using fastapi framework asyncio recently switched postgresql mysql swapped aiomysql asyncpg accordingly mysql could fetch database would cast pydantic schema automatically async def get_device device_id str device query devicetable select devicetable c id device_id return await db fetch_one query pydantic schema class device basemodel id str type devicetype created_at datetime last_login_at datetime is_banned bool however using postgres conversion seem happen anymore device device await crud_device get_device body device_id device is_banned get error message attributeerror record object attribute is_banned device object case record object instead pydantic schema still access values like device is_banned would fastapi behaviour change picked different database find anything documentation update model devicetable sqlalchemy table device metadata column id string primary_key true column type enum devicetype nullable false column created_at timestamp nullable false default func server_default func column last_login_at timestamp nullable true column expires_at timestamp column account_type enum accounttype nullable false column strikes integer nullable true column is_banned boolean nullable false server_default sql false default sql false column account_id foreignkey account id nullable true index true seem found workaround cast record explicitly pydantic schema async def get_device device_id str device query devicetable select devicetable c id device_id record await db fetch_one query return device record quite odd happen automatically change code underlying database changed worse part record found cast crash hence make repetitive changes async def get_device device_id str optional device query devicetable select devicetable c id device_id record await db fetch_one query record return device record else return none testcases passing know issue since cannot see testcase difficulties asked write program linear regression following steps load r data set mtcars pandas dataframe build another linear regression model considering log independent variable wt log dependent variable mpg fit model data display r squared value tried following models tests passing issue code case import statsmodels api sm import numpy np mtcars sm datasets get_rdataset mtcars mtcars_data mtcars data liner_model sm formula ols np log wt np log mpg mtcars_data liner_result liner_model fit print liner_result rsquared case import statsmodels api sa import statsmodels formula api sfa import numpy np import pandas pd mtcars sa datasets get_rdataset mtcars cars_data mtcars data lin_mod pd dataframe cars_data lin_mod wt np log lin_mod wt lin_mod mpg np log lin_mod mpg lin_mod sfa ols wt mpg lin_mod print lin_mod fit rsquared import statsmodels api sm import numpy np import pandas pd import statsmodels formula api smf mtcars sm datasets get_rdataset mtcars datasets cache true data df pd dataframe mtcars model smf ols formula np log wt np log mpg data df fit r model rsquared print r completely purge disable default channel anaconda switch conda forge way completely purge disable defaults channel anaconda switch conda forge reason anaconda term service limits use repository non commercial activities switching conda forge avoid issue conda fails build inside docker container trying build docker image full dockerfile ubuntu env lang c utf lc_all c utf env path opt conda bin path env tz europe athens run ln snf usr share zoneinfo tz etc localtime echo tz etc timezone run apt get update fix missing apt get install wget bzip ca certificates libglib libxext libsm libxrender git mercurial subversion run wget quiet https repo anaconda com miniconda miniconda linux x _ sh miniconda sh bin bash miniconda sh b p opt conda rm miniconda sh ln opt conda etc profile conda sh etc profile conda sh echo opt conda etc profile conda sh bashrc echo conda activate base bashrc run apt get install curl grep sed dpkg tini_version curl https github com krallin tini releases latest grep v sed curl l https github com krallin tini releases download v tini_version tini_ tini_version deb tini deb dpkg tini deb rm tini deb apt get clean entrypoint usr bin tini cmd bin bash second part run apt install libgl mesa glx run conda install conda build run apt get install git workdir run git clone https github com cadquery cadquery git workdir cadquery run conda env create n cq f environment yml run echo source activate cq bashrc env path opt conda envs cq bin path workdir testing however time conda build specifically step line run conda install conda build get errors seems installing packages normally fails proceed n ruamel_yaml kb readline kb bzip kb tzdata f kb xz kb tk mb conda build kb cffi kb ld_impl_linux kb urllib kb pyyaml kb pip mb lz c kb beautifulsoup kb python mb pkginfo kb tqdm kb setuptools kb python libarchive c kb cryptography mb icu mb pysocks kb libxml mb certifi kb openssl k mb libgcc ng mb patchelf kb glob kb idna kb liblief mb pycparser kb chardet kb py lief mb markupsafe kb zlib kb wheel kb conda mb libffi kb yaml kb libarchive mb ca certificates kb conda package handli kb filelock kb requests kb ncurses mb pytz kb pycosat kb psutil kb sqlite mb zstd kb jinja kb brotlipy kb ripgrep mb _libgcc_mutex kb six kb soupsieve kb pyopenssl kb downloading extracting packages unicodedecodeerror ascii info test tests data xed x x xeb xa x c xea xb xb xeb x e xa zip json ordinal range command bin sh c conda install conda build returned non zero code machine learning opencv guys please help following error df size plot box command used jupyter notebook following error displayed typeerror traceback recent call last df size plot box c anaconda anaconda lib site packages pandas plotting _core py __call__ self args kwargs plot_backend _get_plot_backend kwargs pop backend none x kind kwargs self _get_call_args plot_backend __name__ self _parent args kwargs c anaconda anaconda lib site packages pandas plotting _core py _get_call_args backend_name data args kwargs f series plot positional_args raise typeerror msg pos_args name value value name _ zip args arg_def typeerror series plot called positional arguments keyword arguments order positional arguments change future use series plot kind box instead series plot box vadersentiment list tokens instead sentence suppose list tokens longing rusted seventeen daybreak furnace nine benign homecoming one freight car calculate vadersentiment score paste back sentence vadersentiment vadersentiment import sentimentintensityanalyzer def sentiment_scores sentence analyzer sentimentintensityanalyzer sentiment_dict analyzer polarity_scores join sentence return sentiment_dict compound thanks creating bigrams list list tuples list strings words combined using code create bigrams tokenization list titles headlines nltk util import ngrams def bigram_creator headlines bigrams line headlines bigrm nltk bigrams line split bigrams extend bigrm return bigrams however code giving list tuples ex opinion one one good would like output list strings words together ex opinion one one good anybody know code change thank advance finding related columns data frame python suppose data frame columns car_id number_car bike_id number_bike df product_id category order_id order customer_id customer name pd car service cus jack pd bike repair cus swan pd car repair cus tom pd car cleaning cus ram make product_id relation category order_id relation order customer_id relation customer name curious finding using nltk way possible find relation columns using nltk word vec like sending sentence list send column list possible nltk way data science method related data science best way quabr com stackoverflow proxy site sitemap
+NameError: name 'nltk' is not defined
+Quabr
+answers we find
+Explore tags
+Advanced Dictionary for Chrome
+1
+Translate worlds/phrases
+Translation unknown words or phrases by selection text in a small pop-up bubble.
+2
+Add flashcards
+Create cards in one click with the translated words.
+3
+Build vocabulary lists
+Organize flashcards in different themed decks as you wish.
+Get Free Extension
+Related questions
+MatPlotLib Scatter not working Inside Function
+python plotting with error bar in seaborn scatter plot
+How to control label positions and spacing in Tkinter grid
+Trying to perform an optimized simple moving average crossover strategy on historial data
+How to handle very large integers in python?
+Why does the turtle window stops responding?
+Is there a way to look for pattern in large texts using python?
+Dynamically add text to a chatbox HTML
+Counting all co-occurrences of a large list of nouns and verbs/adjectives within reviews
+NameError: name 'nltk' is not defined
+2021-01-03 08:00
+midsummer
+imported from Stackoverflow
+python
+anaconda
+nltk
+I have a Python notebook that used to work before without problems.
+Now if I try to run it, I get an "NameError: name 'nltk' is not defined" error.
+I'm not sure what has changed since on my system.
+I tried so far:
+Installing nltk library with pip
+Downloading nltk library with python interpreter
+pip3 install nltk
+Requirement already satisfied: nltk in /Applications/anaconda3/lib/python3.8/site-packages (3.5)
+python
+>>>import nltk
+>>>nltk.download('all')
+$ which python python2 python3
+/Applications/anaconda3/bin/python
+/usr/bin/python2
+/Applications/anaconda3/bin/python3
+$ which pip pip2 pip3
+/Applications/anaconda3/bin/pip
+/Applications/anaconda3/bin/pip3
+$ python3 --version
+Python 3.8.3
+$ echo $PATH
+/Applications/anaconda3/bin:/Applications/anaconda3/condabin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/testimo/.rvm/bin:/Users/testimo/.rvm/bin
+Is this path wrong? How can I fix it?
+Or any other tips? Thank you!
+1 answer
+answered 2021-01-03 08:05
+Eklavya Chandra
+This happens with me; but when I use Google Colab or change the directory to where the python files are, this resolves the issue. You should make a new folder (remember not to make a subfolder in the existing ones) and move the files into it.
+See also questions close to this topic
+MatPlotLib Scatter not working Inside Function
+I am a beginner in Python. I have been trying my hands on MatPlotLib to compare the stats of soccer players in FIFA 20. Basically the problem I'm facing is:
+def make_graph(value1, value2, namevalue, label1, label2):
+print(value1, value2, namevalue)
+plt.scatter(value1, value2)
+plt.xlabel(label1)
+plt.ylabel(label2)
+for i in range(len(namevalue)):
+plt.text(value1[i] + 0.3, value2[i] + 0.3, namevalue[i], fontdict=dict(color='red', size=10), bbox=dict(facecolor = 'yellow', alpha=0.5))
+plt.xlim(min(value1) - 5, max(value2) + 5)
+plt.ylim(min(value1) - 5, max(value2) + 5)
+plt.show()
+def Test():
+df = xlrd.open_workbook(path)
+data = df.sheet_by_index(0)
+data.cell_value(0,0)
+name = []
+pace = []
+shoot = []
+for i in range(1, 450):
+#print(data.cell_value(i, 3))
+buff = str(data.cell_value(i,2)).strip()
+if buff == "LM" or buff == "RM":
+pacebuffer = int(data.cell_value(i, 4))
+shootbuffer = int(data.cell_value(i, 5))
+if pacebuffer >= 90:
+name.append(data.cell_value(i, 3).strip("\n"))
+pace.append(pacebuffer)
+shoot.append(shootbuffer)
+#print(name)
+make_graph(pace, shoot, name, "Pace", "Shoot")
+The particular code is showing me an empty graph.
+BUT
+When I write the same piece of code inside Test() which I wrote inside make_graph() , it gives me the desired output.
+But in this way I have to rewrite that plotting thing every time I write some other functions and that's really a problem. Any idea how to fix this?
+python plotting with error bar in seaborn scatter plot
+I want scatterplot with another column as error in my data. Below is the code sns.scatterplot(x="time_MJD", y="rate",hue='mode', data=data)
+I want data['error'] column as errorbar. The error bar color and the hue colour should be same.
+How to control label positions and spacing in Tkinter grid
+When I change the grid row to 2 (for foodop), the output is this
+Now I want to make the food price at the same row therefore I change that to row 2 as well but then the output is this
+the food goes back to row 0, why does it do that? I am trying to get something like this:
+Here is the code I use for layout
+(label positioning marked by # <-- comments):
+foodprice=['3','2','1.50']
+drinks = ['Water','Hot water','Medium water']
+drinksprice = ['1','2','3']
+myFrame3 = Frame(root, bg = '')
+myFrame3.pack()
+myFrame3.columnconfigure(0, weight=1)
+myFrame3.columnconfigure(1, weight=2)
+for x in range (len(food)):
+foodop = Label(myFrame3, font=("Impact", "15"), text = food[x])
+foodop.grid(row = 2+x, column = 4) # <--
+for x in range (len(foodprice)):
+fprice = Label(myFrame3, font=("Impact", "15"), text = foodprice[x])
+fprice.grid(row = 2+x, column = 8) # <--
+for x in range (len(drinks)):
+drinksop = Label(myFrame3, font=("Impact", "15"), text = drinks[x])
+drinksop.grid(row = 4+(len(food))+x, column = 4) # <--
+for x in range (len(drinksprice)):
+drinksp = Label(myFrame3, font=("Impact", "15"), text = drinksprice[x])
+drinksp.grid(row = 4+(len(food))+x, column = 8) # <--
+Trying to perform an optimized simple moving average crossover strategy on historial data
+I am trying to optimize a two simple moving average crossover mechanism on historical ethereum daily closing prices over the last 73 days using a brute force approach. I am in search of the best performing parameter combinations of all those backtested. I then want to record the results and rank those strategies afterward. The strategy only consist of going long when the shorter moving average crosses over the long moving average. No short positions will occur if the opposite occurs. Therefore, this is explained in the code below with where roll1>roll2(1, ). Here is the code:
+from itertools import product
+SMA1=5
+SMA2=20
+sma1=range(4, 9)
+sma2=range(5, 10)
+resultz=pd.DataFrame(data=experiment['Close'])
+for SMA1, SMA2 in product(sma1, sma2):
+dataz=pd.DataFrame(experiment['Close'])
+dataz['rets']=np.log(dataz['Close']/dataz['Close'].shift(1))
+roll1=dataz['Close'].rolling(SMA1).mean()
+roll2=dataz['Close'].rolling(SMA2).mean()
+dataz['position']=np.where(roll1>roll2,1, 0)
+dataz['strat']=dataz['position'].shift(1)*dataz['rets']
+perf=np.exp(dataz[['rets','strat']].sum())
+results=resultz.append(pd.DataFrame(
+{'SMA1':SMA1, 'SMA2': SMA2,
+'MARKET': perf['rets'],
+'Strategy':perf['strat'],
+'OUT':perf['strat']-perf['rets']},
+index=[0]), ignore_index=True)
+sma1=range(4, 9) specifies the parameter values for the SMA1. sma2=range(5, 10) specifies the parameter values for SMA2. for SMA1, SMA2 in product(sma1, sma2) combines all values for SMA1 with those for SMA2.index=[0]), ignore_index=True) records the vectorized backtesting results in a DataFrame object.
+When I get the information about the results I get the following:
+results.info()
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 74 entries, 0 to 73
+Data columns (total 6 columns):
+#
+Column
+Non-Null Count
+Dtype
+---
+------
+--------------
+-----
+0
+Close
+73 non-null
+float64
+1
+SMA1
+1 non-null
+float64
+2
+SMA2
+1 non-null
+float64
+3
+MARKET
+1 non-null
+float64
+4
+Strategy
+1 non-null
+float64
+5
+OUT
+1 non-null
+float64
+dtypes: float64(6)
+memory usage: 3.6 KB
+When I attempt to sort the strategies based on performance I get the following:
+results.sort_values('OUT', ascending=False).head(7)
+Close
+SMA1
+SMA2
+MARKET
+Strategy
+OUT
+73
+NaN
+8.0
+9.0
+1.341168 1.83493
+0.493761
+0
+1834.727905 NaN NaN
+NaN
+NaN
+NaN
+1
+1868.048828 NaN NaN
+NaN
+NaN
+NaN
+2
+1799.166260 NaN NaN
+NaN
+NaN
+NaN
+3
+1826.194946 NaN NaN
+NaN
+NaN
+NaN
+4
+1772.102417 NaN NaN
+NaN
+NaN
+NaN
+5
+1924.685425 NaN NaN
+NaN
+NaN
+NaN
+Each strategy should have under SMA1 and SMA2 the parameters and the returns compared to just going long in the market (this is what the column Market is for). I am confused as to why I keep getting NaN values in those columns. I have even tried to insert more data and I still get the same problem. I am trying to figure out why the code is not testing several different simple moving average crossover parameters and giving displaying the information to me in a manner where it ranks the best ones along with their return. Some help would seriously be appreciated.
+How to handle very large integers in python?
+I wrote a code for getting the Fibonacci sequence, using the concept of the Fibonacci matrix, inspired from this Instagram post
+def f(n):
+import numpy as np
+m=np.array([[1,1],[1,0]],dtype=np.int64)
+m1=m
+for i in range(0,n):
+m1=np.matmul(m1,m)
+return m1[0,1]
+but after n=93, it starts to give negative numbers. If I use np.int32 as dtype then after n=47, it starts to give negative and erroneous results.
+I am using python 3.9 and I want my result to be integers(not float) what to do so that I can get correct results for n=1000 or larger?
+Why does the turtle window stops responding?
+I am trying to use the turtle module for a python, but it stops responding in further compilations after the first successful compilation. I have tried this both in Spyder and Jupyter but the result is the same.
+Edit 1: This is the code I used, it is not self-made I learnt it from youtube.
+Edit 2: The kernel keeps dying after I close the turtle window due to it not responding
+import turtle
+wn=turtle.Screen()
+wn.title("Made by ")
+wn.bgcolor("black")
+wn.setup(width=800,height=600)
+wn.tracer(0)
+#Keeps the screen up
+#Paddle A
+paddle_a=turtle.Turtle()
+#object of turtle
+paddle_a.speed(0)
+#speed of animation
+paddle_a.shape("square")
+paddle_a.color("red")
+paddle_a.shapesize(stretch_wid=5, stretch_len=1)
+#default size is 20*20
+paddle_a.penup()
+#not to draw lines
+paddle_a.goto(-350,0)
+#Paddle B
+paddle_b=turtle.Turtle()
+#object of turtle
+paddle_b.speed(0)
+#speed of animation
+paddle_b.shape("square")
+paddle_b.color("blue")
+paddle_b.shapesize(stretch_wid=5, stretch_len=1)
+#default size is 20*20
+paddle_b.penup()
+#not to draw lines
+paddle_b.goto(350,0)
+#Ball
+ball=turtle.Turtle()
+#object of turtle
+ball.speed(0)
+#speed of animation
+ball.shape("circle")
+ball.color("white")
+ball.penup()
+#not to draw lines
+ball.goto(0,0)
+ball.dx=0.09
+#moves by 2 pixels
+ball.dy=0.09
+#Function
+def paddle_a_up():
+y=paddle_a.ycor()
+#mentions the y coordinate
+y=y+20
+paddle_a.sety(y)
+#set y coordinate to new y
+def paddle_a_down():
+y=paddle_a.ycor()
+#mentions the y coordinate
+y=y-20
+paddle_a.sety(y)
+#set y coordinate to new y
+def paddle_b_up():
+y=paddle_b.ycor()
+#mentions the y coordinate
+y=y+20
+paddle_b.sety(y)
+#set y coordinate to new y
+def paddle_b_down():
+y=paddle_b.ycor()
+#mentions the y coordinate
+y=y-20
+paddle_b.sety(y)
+#set y coordinate to new y
+#Keyboard binding
+wn.listen()
+#listen keyboard input
+wn.onkeypress(paddle_a_up,'w')
+wn.onkeypress(paddle_a_down,'s')
+wn.onkeypress(paddle_b_up,"Up")
+wn.onkeypress(paddle_b_down,"Down")
+#Main loop
+running=True
+while running:
+wn.update()
+#updates the screen
+#movement the ball
+ball.setx(ball.xcor()+ball.dx)
+ball.sety(ball.ycor()+ball.dy)
+Is there a way to look for pattern in large texts using python?
+I am currently doing some research work for advertisements of different types. Is there a way (model/library/program) that could help me look if a set template is being used for multiple similar use cases?
+Eg in case of a job posting:
+String 1: We are looking for position1 in XYZ company. Our mission is to advance the state-of-the-art in Language Understanding, Speech Recognition and Synthesis, Multi-modal Scene Understanding, and Conversational AI. In everything we do, we strive to achieve outstanding computational performance by working with the latest hardware and advanced deep learning software tools.
+String 2: We are looking for postion2 in ABC company. Our mission is to advance the state-of-the-art in Language Understanding, Speech Recognition and Synthesis, Multi-modal Scene Understanding, and Conversational AI. In everything we do, we strive to achieve outstanding computational performance by working with the latest hardware and advanced deep learning software tools.
+As visible, most of the text is same, just with slight differences. So are there pre-made libraries that can look for such patterns (whether a line is being repeated, or the text is similar in some cases, or if there are similar bigrams and trigrams in the strings), preferably in python?
+Dynamically add text to a chatbox HTML
+I just recently started programming, I have basic knowledge and I was wondering how could I a take an NLTK very basic chatbot I just did in python to dynamically interact with an HTML chatbox.
+I started using Flask and JS, I can obtain what is typed in the chatbox, but have no clue how to make it go through the chatbot to get it's response and dynamically show it through the HTML chatbox.
+Counting all co-occurrences of a large list of nouns and verbs/adjectives within reviews
+I have a dataframe that contains a large number of reviews, a large list with noun words (1000) and another large list with verbs/adjectives (1000).
+Example dataframe and lists:
+import pandas as pd
+data = {'reviews':['Very professional operation. Room is very clean and comfortable',
+'Daniel is the most amazing host! His place is extremely clean, and he provides everything you could possibly want (comfy bed, guidebooks & maps, mini-fridge, towels, even toiletries). He is extremely friendly and helpful.',
+'The room is very quiet, and well decorated, very clean.',
+'He provides the room with towels, tea, coffee and a wardrobe.',
+'Daniel is a great host. Always recomendable.',
+'My friend and I were very satisfied with our stay in his apartment.']}
+df = pd.DataFrame(data)
+nouns = ['place','Amsterdam','apartment','location','host','stay','city','room','everything','time','house',
+'area','home','’','center','restaurants','centre','Great','tram','très','minutes','walk','space','neighborhood',
+'à','station','bed','experience','hosts','Thank','bien']
+verbs_adj = ['was','is','great','nice','had','clean','were','recommend','stay','are','good','perfect','comfortable',
+'have','easy','be','quiet','helpful','get','beautiful',"'s",'has','est','located','un','amazing','wonderful',]
+I want to create a dictionary of dictionaries to store all the co-occurrences of nouns and verbs/adjectives in each review, e.g.
+'Very professional operation. Room is very clean and comfortable.'
+{'room': {'is': 1, 'clean': 1, 'comfortable': 1}
+Using the following code:
+def count_co_occurences(reviews):
+# Iterate on each review and count
+occurences_per_review = {
+f"review_{i+1}": {
+noun: dict(Counter(review.lower().split(" ")))
+for noun in nouns
+if noun in review.lower()
+}
+for i, review in enumerate(reviews)
+}
+# Remove verb_adj not found in main list
+opr = deepcopy(occurences_per_review)
+for review, occurences in opr.items():
+for noun, counts in occurences.items():
+for verb_adj in counts.keys():
+if verb_adj not in verbs_adj:
+del occurences_per_review[review][noun][verb_adj]
+return occurences_per_review
+pprint(count_co_occurences(data["reviews"]))
+Works for when the lists and the number of reviews are small, but my notebook crashes when this function is used on large lists/large no. of reviews. How can I modify the code in order to handle this?
+Quabr.com is StackOverFlow proxy site | Sitemap

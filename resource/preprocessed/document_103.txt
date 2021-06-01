@@ -1,0 +1,340 @@
+Exception in thread "main" java.lang.ArithmeticException: / by zero - Stack Overflow
+Stack Overflow
+About
+Products
+For Teams
+Stack Overflow
+Public questions & answers
+Stack Overflow for Teams
+Where developers & technologists share private knowledge with coworkers
+Jobs
+Programming & related technical career opportunities
+Talent
+Recruit tech talent & build your employer brand
+Advertising
+Reach developers & technologists worldwide
+About the company
+Loading…
+Log in
+Sign up
+current community
+Stack Overflow
+help
+chat
+Meta Stack Overflow
+your communities
+Sign up or log in to customize your list.
+more stack exchange communities
+company blog
+People who code: we want your input.
+Take the Survey
+Join Stack Overflow to learn, share knowledge, and build your career.
+Sign up with email
+Sign up
+Sign up with Google
+Sign up with GitHub
+Sign up with Facebook
+Home
+Public
+Questions
+Tags
+Users
+Find a Job
+Jobs
+Companies
+Teams
+Stack Overflow for Teams
+– Collaborate and share knowledge with a private group.
+Create a free Team
+What is Teams?
+Teams
+What’s this?
+Create free Team
+Teams
+Q&A for work
+Connect and share knowledge within a single location that is structured and easy to search.
+Learn more
+Exception in thread “main” java.lang.ArithmeticException: / by zero
+Ask Question
+Asked
+9 years ago
+Active
+2 months ago
+Viewed
+43k times
+4
+0
+I have two questions about Exceptions. Firstly, I got this message from my code...
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+This error message means dividing by zero, such as by doing int a = 5 / 0;
+A method can throw an Exception class instance, can't it? But this is an expression. Why can an expression throw an Exception class instance ?
+My second question is about thread "main". What is thread "main"? Does "main" mean the static main method?
+java exception main arithmeticexception
+Share
+Follow
+edited May 30 '12 at 14:00
+wattostudios
+8,4461313 gold badges4040 silver badges5454 bronze badges
+asked May 30 '12 at 13:51
+Akira
+NoguchiAkira
+Noguchi
+72333 gold badges1111 silver badges1818 bronze badges
+0
+Add a comment
+|
+3 Answers
+3
+Active
+Oldest
+Votes
+4
+java.lang.ArithmeticException is a type of Exception that aims to better describe what the problem actually is. There's no point just creating an Exception, as it really could be caused by anything. By generating an ArithmeticException, the user can immediately know that the problem is something to do with a calculation. An Exception can be thrown by any piece of code, including in calculations such as your example.
+Exception in thread "main" means that the exception is thrown by the main() method, which also happens to be the primary Thread that is running your code.
+Share
+Follow
+edited May 30 '12 at 14:02
+answered May 30 '12 at 13:57
+wattostudioswattostudios
+8,4461313 gold badges4040 silver badges5454 bronze badges
+Add a comment
+|
+2
+Method can throw exception class instance, isn't it?
+Yes they can.
+But this is statement. Why can statement throw exception class instance ?
+Exception can occur anywhere. So even statements can throw exceptions. And in case you meant why can't statements throw exceptions,well they can. Here's an example:
+if ((a/b) == 0) {
+throw new ArithmeticException();
+}
+Second question is about thread "main". What is thread "main" ?
+When a Java program starts up, one thread begins running immediately. This is usually called the main thread of your program, because it is the one that is executed when your program begins.
+Share
+Follow
+answered May 30 '12 at 13:58
+Kazekage GaaraKazekage Gaara
+14.5k1313 gold badges5353 silver badges104104 bronze badges
+Add a comment
+|
+0
+Its Arithmetic exception case: means something in logic which not exist in Mathematical arithmetic;
+Check the condition of the "for loop" or any other logical functions.
+An example is when somewhere you write something like: (n % i == 0) and give initialization i = 0, now every one knows that number can not be divided by Zero. So, you may need to change the initialization to i = 1.
+Share
+Follow
+edited Feb 13 '20 at 20:26
+Bernardo Duarte
+3,11244 gold badges1515 silver badges2929 bronze badges
+answered Feb 13 '20 at 19:06
+vedant davevedant dave
+4577 bronze badges
+Add a comment
+|
+Highly active question. Earn 10 reputation in order to answer this question. The reputation requirement helps protect this question from spam and non-answer activity.
+Not the answer you're looking for? Browse other questions tagged java exception main arithmeticexception
+or ask your own question.
+The Overflow Blog
+Level Up: Linear Regression in Python – Part 2
+Shipping confetti to Stack Overflow’s design system
+Featured on Meta
+The future of Community Promotion, Open Source, and Hot Network Questions Ads
+Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
+Take the 2021 Developer Survey
+Related
+2100
+How do you assert that a certain exception is thrown in JUnit 4 tests?
+522
+What are the effects of exceptions on performance in Java?
+2213
+“implements Runnable” vs “extends Thread” in Java
+481
+The case against checked exceptions
+300
+Throwing exceptions from constructors
+2551
+Manually raising (throwing) an exception in Python
+233
+Catch a thread's exception in the caller thread in Python
+1124
+Can't execute jar- file: “no main manifest attribute”
+1563
+What does “Could not find or load main class” mean?
+Hot Network Questions
+Why would birds fall from the sky due to a lack of moisture?
+What is the difference between “they” and “it” for people, especially for those people who choose to be identified as non-binary?
+Is the burden of proof a fallacy?
+Did medieval kingdoms issue health related guidelines?
+Where can people allergic to dairy food eat when travelling in France?
+Why is g3 a bad move here?
+Factorising blinear forms with Mathematica
+removing multiple lines - d3d vs 3dd
+How can I use a control variable that is non-normal in linear regression with other variabels that are normal?
+Vocal range of a crowd
+What technical reasons prevented the Win9x Virtual Machine Monitor from running multiple threads simultaneously?
+The usage of can't
+Generate a British numberplate
+I think I've sh-- myself
+Is it significantly faster to hike along a river bank?
+Strange vertical spacing after colored equation
+The famous "Charaiveti" mantra is mentioned in which Vedic verse?
+Why can't the piano play middle eastern music?
+What's the cohomology ring structure of a blow-up?
+A planet with toxic air
+Resigning will cripple my department, but I am resigning because of a near crippled department
+Did ancient Greek mathematicians consider numbers independently of geometry?
+unknown pieces of a set - stickers on round corner bricks
+Concatenate column names in one column conditional on using mutate, across and case_when
+more hot questions
+Question feed
+Subscribe to RSS
+Question feed
+To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+lang-java
+Stack Overflow
+Questions
+Jobs
+Developer Jobs Directory
+Salary Calculator
+Help
+Mobile
+Products
+Teams
+Talent
+Advertising
+Enterprise
+Company
+About
+Press
+Work Here
+Legal
+Privacy Policy
+Terms of Service
+Contact Us
+Cookie Settings
+Cookie Policy
+Stack Exchange Network
+Technology
+Life / Arts
+Culture / Recreation
+Science
+Other
+Stack Overflow
+Server Fault
+Super User
+Web Applications
+Ask Ubuntu
+Webmasters
+Game Development
+TeX - LaTeX
+Software Engineering
+Unix & Linux
+Ask Different (Apple)
+WordPress Development
+Geographic Information Systems
+Electrical Engineering
+Android Enthusiasts
+Information Security
+Database Administrators
+Drupal Answers
+SharePoint
+User Experience
+Mathematica
+Salesforce
+ExpressionEngine® Answers
+Stack Overflow em Português
+Blender
+Network Engineering
+Cryptography
+Code Review
+Magento
+Software Recommendations
+Signal Processing
+Emacs
+Raspberry Pi
+Stack Overflow на русском
+Code Golf
+Stack Overflow en español
+Ethereum
+Data Science
+Arduino
+Bitcoin
+Software Quality Assurance & Testing
+Sound Design
+Windows Phone
+more (29)
+Photography
+Science Fiction & Fantasy
+Graphic Design
+Movies & TV
+Music: Practice & Theory
+Worldbuilding
+Video Production
+Seasoned Advice (cooking)
+Home Improvement
+Personal Finance & Money
+Academia
+Law
+Physical Fitness
+Gardening & Landscaping
+Parenting
+more (10)
+English Language & Usage
+Skeptics
+Mi Yodeya (Judaism)
+Travel
+Christianity
+English Language Learners
+Japanese Language
+Chinese Language
+French Language
+German Language
+Biblical Hermeneutics
+History
+Spanish Language
+Islam
+Русский язык
+Russian Language
+Arqade (gaming)
+Bicycles
+Role-playing Games
+Anime & Manga
+Puzzling
+Motor Vehicle Maintenance & Repair
+Board & Card Games
+Bricks
+Homebrewing
+Martial Arts
+The Great Outdoors
+Poker
+Chess
+Sports
+more (16)
+MathOverflow
+Mathematics
+Cross Validated (stats)
+Theoretical Computer Science
+Physics
+Chemistry
+Biology
+Computer Science
+Philosophy
+Linguistics
+Psychology & Neuroscience
+Computational Science
+more (10)
+Meta Stack Exchange
+Stack Apps
+API
+Data
+Blog
+Facebook
+Twitter
+LinkedIn
+Instagram
+site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
+rev 2021.5.28.39383
+Stack Overflow works best with JavaScript enabled
+Your privacy
+By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
+Accept all cookies
+Customize settings

@@ -1,1 +1,263 @@
-str object attribute append python members online sign join new post home posts topics members faq home topics python questions str object attribute append post question community developers quick easy str object attribute append pyth nnewbie expand select wrap line numbers cars honda ford kia toyota jaguar daimler citroen peugeot skoda print longest shortest words gunners list shortest longest shortest cars len len longest longest print longest cars shortest cars len len shortest shortest elif len len shortest shortest shortest append print shortest try execute code get error shortest shortest append line new programming go easy thanks feb follow post reply bvdet expert mod gb need initialize shortest initialize list named longest loop assign longest string mixing data types next loop calling list method append append object list place return none assignment shortest get nowhere try something like expand select wrap line numbers cars honda ford kia toyota jaguar daimler citroen peugeot skoda lenlist len car car cars car cars len car min lenlist print shortest car len car max lenlist print longest car shortest kia longest daimler longest citroen longest peugeot feb reply bvdet expert mod gb hi tried code makes sense thanks much still getting error though telling len list len car car cars syntax error cant assign function call ideas thanks anthony apparently misread post list comprehension code right side character must assigned identifier len list valid identifier actually returns following executed expand select wrap line numbers len list traceback recent call last file line typeerror object type type len feb reply pyth nnewbie sorry dont understand new programming need fix feb reply bvdet expert mod gb creating list use determining length longest shortest strings must assign list identifier basic concept need understand simple example expand select wrap line numbers b b case create list assign valid identofier similar b example expand select wrap line numbers c len car car cars access list referring c use descriptive name recognize purpose like list_of_word_lengths valid identifier must start letter underscore z z _ identifier use letter digit underscore feb reply message cancel changes post reply sign post reply sign free account post reply similar topics python object attribute vs object getattribute posts views thread roy smith last post python referencing object attribute sort indirectly within list posts views thread python newbie last post c c sharp find object inside arraylists object attribute posts views thread arjen last post python typeerror str object callable posts views thread randall parker last post python inheriting str object posts views thread kungfoobar last post python typeerror str object callable post views thread traclo last post python convert string literal object attribute posts views thread birarai last post python attributeerror str object attribute write post views thread loren last post python django base py str object callable post views thread imhomer last post python python dictionary nonetype object attribute append post views thread gintare last post java implement singly linked list java reply views thread ravipankaj last post software development doubly linked list java implement dll data structure reply views thread ravipankaj last post c c low invasive c language library reply views thread npc last post html css create html back button reply views thread slotstar last post microsoft access vba fetching access table data form post views thread mounika mallipe last post c c sharp redefinition int main post views thread pojbgh last post general net framework implement api rate limiting throttling post views thread rony last post java printing problem post views thread bitty last post visual basic net vb vs rs eof true reply views thread ferry last post bytes com us advertise terms use privacy policy manage cookies contact us sitemap follow us get latest bytes updates using site agree privacy policy terms use ok
+'str' object has no attribute 'append' - Python
+468,384 Members | 2,121 Online
+Sign in
+Join Now
+New Post
+Home Posts Topics Members FAQ
+home > topics > python > questions
+>
+'str' object has no attribute 'append'
+Post your question to a community of 468,384 developers.
+It's quick & easy.
+'str' object has no attribute 'append'
+pyth0nnewbie
+5
+Expand|Select|Wrap|Line Numbers
+cars = ['honda' , 'ford' , 'kia' , 'toyota' , 'jaguar' , 'daimler' , 'citroen' , 'peugeot' , 'skoda']
+# Print the longest and the shortest words in the gunners list
+shortest=[]
+longest=[]
+shortest=[]
+for i in cars:
+if len(i) > len(longest):
+longest = i
+print longest
+for i in cars:
+shortest = cars[0]
+if len(i) < len(shortest):
+shortest = [i]
+elif len(i) == len(shortest):
+shortest = shortest.append[i]
+print shortest
+when i try to execute the code i get the above error on the shortest = shortest.append[i] line.
+i'm new to programming so go easy!
+thanks!!
+Feb 22 '15
+#1
+Follow Post Reply
+4
+7804
+bvdet
+2,851
+Expert Mod 2GB
+You only need to initialize shortest once.
+You initialize a list named longest, but in the for loop you assign longest to a string.
+You are mixing up your data types in the next for loop.
+Calling list method append will append an object to the list in place and return None, so your assignment to shortest will get you nowhere.
+Try something like this:
+Expand|Select|Wrap|Line Numbers
+>>> cars = ['honda' , 'ford' , 'kia' , 'toyota' , 'jaguar' , 'daimler' , 'citroen' , 'peugeot' , 'skoda']
+>>> lenList = [len(car) for car in cars]
+>>> for car in cars:
+...     if len(car) == min(lenList):
+...         print "Shortest: %s" % car
+...     if len(car) == max(lenList):
+...         print "Longest: %s" % car
+...
+Shortest: kia
+Longest: daimler
+Longest: citroen
+Longest: peugeot
+>>>
+Feb 22 '15
+#2
+reply
+bvdet
+2,851
+Expert Mod 2GB
+hi
+i've tried your code and it makes sense.
+thanks very much.
+i'm still getting an error though.
+now its telling me:
+len(list) = [len(car) for car in cars]
+Syntax Error:cant assign to function call.
+any ideas?
+thanks again
+anthony
+Apparently you misread my post. The list comprehension (code on the right side of the "=" character) must be assigned to an identifier. len(list) is not a valid identifier and actually returns the following when executed:
+Expand|Select|Wrap|Line Numbers
+>>> len(list)
+Traceback (most recent call last):
+File "<interactive input>", line 1, in <module>
+TypeError: object of type 'type' has no len()
+>>>
+Feb 23 '15
+#3
+reply
+pyth0nnewbie
+5
+sorry i dont understand.
+I'm new to programming.
+What do i need to do to fix it?
+Feb 23 '15
+#4
+reply
+bvdet
+2,851
+Expert Mod 2GB
+You are creating a list to use in determining the length of the longest and shortest strings. You must assign this list to an identifier. This is a very basic concept that you need to understand.
+A simple example:
+Expand|Select|Wrap|Line Numbers
+>>> a = 1
+>>> b = 2
+>>> a+b
+3
+>>>
+So in your case, create the list and assign to a VALID identofier similar to a and b in the example.
+Expand|Select|Wrap|Line Numbers
+c = [len(car) for car in cars]
+Now you have access to the list by referring to c. Use a descriptive name so you can recognize its purpose like "list_of_word_lengths".
+A valid identifier must start with a letter or an underscore.
+a-z
+A-Z
+_
+After that, the identifier can use a letter, digit(0-9) or underscore.
+Feb 23 '15
+#5
+reply
+Message
+Cancel Changes
+Post your reply
+Sign in to post your reply or Sign up for a free account.
+Post Reply
+Similar topics
+Python
+object.attribute vs. object.getAttribute()
+8 posts
+views
+Thread by Roy Smith |
+last post:
+by
+Python
+referencing an object attribute
+sort of indirectly from within list
+4 posts
+views
+Thread by python newbie |
+last post:
+by
+C# / C Sharp
+Find object inside arraylists by object attribute
+4 posts
+views
+Thread by Arjen |
+last post:
+by
+Python
+Why TypeError: 'str' object is not callable?
+5 posts
+views
+Thread by Randall Parker |
+last post:
+by
+Python
+Inheriting str object
+5 posts
+views
+Thread by kungfoobar |
+last post:
+by
+Python
+TypeError: 'str' object is not callable
+1 post
+views
+Thread by Traclo |
+last post:
+by
+Python
+convert string literal to object attribute
+2 posts
+views
+Thread by BiraRai |
+last post:
+by
+Python
+AttributeError: 'str' object has no attribute 'write'
+1 post
+views
+Thread by loren41 |
+last post:
+by
+Python
+Django base.py: 'str' object is not callable
+1 post
+views
+Thread by imhomer |
+last post:
+by
+Python
+python33, dictionary, NoneType' object has no attribute 'append'
+1 post
+views
+Thread by gintare |
+last post:
+by
+Java
+How to implement ArrayList data structure in Java
+reply
+views
+Thread by ravipankaj |
+last post:
+by
+HTML / CSS
+How to create an HTML back button
+reply
+views
+Thread by slotstar |
+last post:
+by
+General
+[.Net Framework 4] How to Implement API Rate Limiting/Throttling .5]
+1 post
+views
+Thread by rony22 |
+last post:
+by
+Java
+printing problem
+1 post
+views
+Thread by bitty121 |
+last post:
+by
+Python
+Is there another type of function that can replace turtle.goto?
+1 post
+views
+Thread by selyn9507 |
+last post:
+by
+Visual Basic .NET
+Vb6 VS RS.EOF is true
+reply
+views
+Thread by Ferry1975 |
+last post:
+by
+Microsoft Access / VBA
+make invoice number linked with year access
+1 post
+views
+Thread by ahmedmob |
+last post:
+by
+General
+Suggestions for selecting tools for software development
+1 post
+views
+Thread by justele026 |
+last post:
+by
+Microsoft Access / VBA
+Import Text files from multiple folders
+2 posts
+views
+Thread by jackjee |
+last post:
+by
+BYTES.COM © 2021 About Us Advertise Terms Of Use Privacy Policy Manage Cookies Contact Us
+Sitemap
+Follow us! Get the Latest Bytes Updates
+By using this site, you agree to our Privacy Policy and Terms of Use.
+Ok

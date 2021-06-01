@@ -1,0 +1,414 @@
+java - Uncompilable source code - Erroneous tree type error and cannot find symbol error - Stack Overflow
+Stack Overflow
+About
+Products
+For Teams
+Stack Overflow
+Public questions & answers
+Stack Overflow for Teams
+Where developers & technologists share private knowledge with coworkers
+Jobs
+Programming & related technical career opportunities
+Talent
+Recruit tech talent & build your employer brand
+Advertising
+Reach developers & technologists worldwide
+About the company
+Loading…
+Log in
+Sign up
+current community
+Stack Overflow
+help
+chat
+Meta Stack Overflow
+your communities
+Sign up or log in to customize your list.
+more stack exchange communities
+company blog
+People who code: we want your input.
+Take the Survey
+Join Stack Overflow to learn, share knowledge, and build your career.
+Sign up with email
+Sign up
+Sign up with Google
+Sign up with GitHub
+Sign up with Facebook
+Home
+Public
+Questions
+Tags
+Users
+Find a Job
+Jobs
+Companies
+Teams
+Stack Overflow for Teams
+– Collaborate and share knowledge with a private group.
+Create a free Team
+What is Teams?
+Teams
+What’s this?
+Create free Team
+Teams
+Q&A for work
+Connect and share knowledge within a single location that is structured and easy to search.
+Learn more
+Uncompilable source code - Erroneous tree type error and cannot find symbol error
+Ask Question
+Asked
+5 years, 3 months ago
+Active
+2 years, 6 months ago
+Viewed
+25k times
+0
+I was getting "Uncompilable source code - Erroneous tree type" error and "cannot
+find symbol" error I turned off compile on save and now get cannot find symbol. The area that seems to be breaking it is where I initialize Asteroid() in AsteroidFields generate method, so I feel like my initialization is incorrect but I haven't been able to figure out how.
+package asteroidfield;
+import java.util.TreeSet;
+import blobzx.BlobGUI;
+import blobzx.SandBox;
+import blobzx.SandBoxMode;
+public class AsteroidField implements BlobGUI {
+SandBox ast;
+public static void main (String [] Args){
+new AsteroidField();
+}
+public AsteroidField (){
+ast = new SandBox();
+ast.setSandBoxMode(SandBoxMode.FLOW);
+ast.setFrameRate(15);
+ast.init(this);
+}
+@Override
+public void generate() {
+// This is the line that is breaking the code.
+Asteroid asteroid = new Asteroid();
+}
+}
+package AsteroidField;
+import blobzx.BlobUtils;
+import blobzx.PolyBlob;
+import java.awt.Point;
+import java.util.Random;
+public class Asteroid extends PolyBlob{
+// private static Random random = new Random();
+public Asteroid(int velX, int velY, double rot) {
+super(-100, -100, rot);
+setDelta(velX, velY);
+Random sides = new Random();
+Random dist = new Random();
+int si = sides.nextInt(9 - 5 + 1) + 5;
+int di =
+dist.nextInt(15 - 5 + 1) + 5;
+double region = (2 * Math.PI) / si;
+double []angle = new double [si];
+int [] xInt = new int[si];
+int [] yInt = new int[si];
+double [] x = new double [si];
+double [] y = new double [si];
+System.out.print("m");
+for(int i = 0; i < si; i++){
+angle[i] = (i*region)+(Math.random()*region);
+Point cord = BlobUtils.rotatePoint(di, angle[i]);
+x[i] = cord.getX();
+y[i] = cord.getY();
+}
+for (int i = 0; i > x.length; i ++){
+xInt[i] = (int) x[i];
+yInt[i] = (int) y[i];
+}
+setPolygon(xInt, yInt);
+}
+}
+java
+Share
+Follow
+edited Feb 26 '16 at 22:20
+Nayuki
+16.7k55 gold badges4747 silver badges7575 bronze badges
+asked Feb 26 '16 at 22:07
+MouseGordonMouseGordon
+2111 gold badge11 silver badge33 bronze badges
+Add a comment
+|
+2 Answers
+2
+Active
+Oldest
+Votes
+2
+I see two problems:
+1) May be because, you write:
+Asteroid asteroid = new Asteroid();
+but Asteroid class hasn't got a default construstor (at least, I not see it in your code)
+public Asteroid(int velX, int velY, double rot) {
+2) Or may be because you use not same package and not use import in AsteroidField
+package asteroidfield;
+...
+package AsteroidField;
+You should or use one package or add import AsteroidField.Asteroid; in
+AsteroidField, I think.
+Share
+Follow
+edited Feb 26 '16 at 22:17
+answered Feb 26 '16 at 22:12
+Slava VedeninSlava Vedenin
+49.9k1313 gold badges3636 silver badges5757 bronze badges
+4
+So would I need need to add a constructor to the Asteroid code?
+– MouseGordon
+Feb 26 '16 at 22:16
+Yes, you need or add public Asteroid() construstor or use Asteroid asteroid = new Asteroid(velX, velY, rot); in AsteroidField
+– Slava Vedenin
+Feb 26 '16 at 22:19
+It was the packaging issue i cant believe I didnt see that that. Thank You!
+– MouseGordon
+Feb 26 '16 at 22:21
+If this answer solve your problem, can you accept it?
+– Slava Vedenin
+Feb 26 '16 at 22:23
+Add a comment
+|
+4
+Recheck the package declarations in all your classes!
+This behaviour has been observed in NetBeans, when the package declaration in one of the classes of the package refers to a non-existent or wrong package. NetBeans normally detects and highlights this error but has been known to fail and misleadingly report the package as free of errors when this is not the case.
+Share
+Follow
+edited Dec 8 '17 at 15:58
+answered Dec 8 '17 at 15:53
+IqbalHamidIqbalHamid
+1,57011 gold badge1212 silver badges1515 bronze badges
+Add a comment
+|
+Your Answer
+Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
+Draft saved
+Draft discarded
+Sign up or log in
+Sign up using Google
+Sign up using Facebook
+Sign up using Email and Password
+Submit
+Post as a guest
+Name
+Email
+Required, but never shown
+Post as a guest
+Name
+Email
+Required, but never shown
+Post Your Answer
+Discard
+By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
+Not the answer you're looking for? Browse other questions tagged java
+or ask your own question.
+The Overflow Blog
+Level Up: Linear Regression in Python – Part 2
+Shipping confetti to Stack Overflow’s design system
+Featured on Meta
+The future of Community Promotion, Open Source, and Hot Network Questions Ads
+Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
+Take the 2021 Developer Survey
+Linked
+1
+Java says “Uncompilable source code - Erroneous tree type: culminatinggF.Flight” issue
+0
+Not sure why my JavaFX GUI won't load?
+Related
+653
+IntelliJ inspection gives “Cannot resolve symbol” but still compiles code
+0
+Uncompilable Source Code: Erroneous Sym Error
+4
+Java- RuntimeException- Uncompilable source code - Erroneous tree type
+447
+What does a “Cannot find symbol” or “Cannot resolve symbol” error mean?
+0
+RuntimeException: Uncompilable source code - cannot find symbol
+0
+Error when invoking method - java.lang.RuntimeException: Uncompilable source code - Erroneous tree type: <any>
+13
+Uncompilable source code - Erroneous sym type:
+0
+Uncompilable source code - cannot find symbol error
+Hot Network Questions
+Resigning will cripple my department, but I am resigning because of a near crippled department
+Calculating the hexagons in a hexagon of hexagons
+How can I offset 6" ducting by just a few inches?
+Why isn't it the norm to have research repeated immediately by other academics?
+Selecting elements of sublists or reshaping a list of lists
+Sanctuary spell and Using magic Items that cause damage?
+Why is bad behavior more tolerated in academia compared to the rest of the industry?
+How can I make a keyboard shortcut to strikethrough text in the Notes app?
+Colour ramp for maps
+Where and how are raw transactions stored on the blockchain?
+The famous "Charaiveti" mantra is mentioned in which Vedic verse?
+unknown pieces of a set - stickers on round corner bricks
+Why is the ortho product major in the nitration of anisole with nitric acid and acetic anhydride?
+Efficient ragged path for text
+Do phone chargers communicate with the phone?
+How do computers perform operations on numbers that are larger than 64 bits?
+Is the the word order of "Iura novit curia" used for emphasis?
+Does mass have an effect on Centripetal Acceleration?
+What does research indicate about how one should treat units in elementary school?
+Triangle-style sequences
+I have a postdoc interview tomorrow and I think I have overstated my abilities in my CV. How do I address it during the interview?
+Please Identify this outdoor plant?
+Is there a misprint on this note in the Maple Leaf Rag?
+Engine failure: how to detect?
+more hot questions
+Question feed
+Subscribe to RSS
+Question feed
+To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+lang-java
+Stack Overflow
+Questions
+Jobs
+Developer Jobs Directory
+Salary Calculator
+Help
+Mobile
+Products
+Teams
+Talent
+Advertising
+Enterprise
+Company
+About
+Press
+Work Here
+Legal
+Privacy Policy
+Terms of Service
+Contact Us
+Cookie Settings
+Cookie Policy
+Stack Exchange Network
+Technology
+Life / Arts
+Culture / Recreation
+Science
+Other
+Stack Overflow
+Server Fault
+Super User
+Web Applications
+Ask Ubuntu
+Webmasters
+Game Development
+TeX - LaTeX
+Software Engineering
+Unix & Linux
+Ask Different (Apple)
+WordPress Development
+Geographic Information Systems
+Electrical Engineering
+Android Enthusiasts
+Information Security
+Database Administrators
+Drupal Answers
+SharePoint
+User Experience
+Mathematica
+Salesforce
+ExpressionEngine® Answers
+Stack Overflow em Português
+Blender
+Network Engineering
+Cryptography
+Code Review
+Magento
+Software Recommendations
+Signal Processing
+Emacs
+Raspberry Pi
+Stack Overflow на русском
+Code Golf
+Stack Overflow en español
+Ethereum
+Data Science
+Arduino
+Bitcoin
+Software Quality Assurance & Testing
+Sound Design
+Windows Phone
+more (29)
+Photography
+Science Fiction & Fantasy
+Graphic Design
+Movies & TV
+Music: Practice & Theory
+Worldbuilding
+Video Production
+Seasoned Advice (cooking)
+Home Improvement
+Personal Finance & Money
+Academia
+Law
+Physical Fitness
+Gardening & Landscaping
+Parenting
+more (10)
+English Language & Usage
+Skeptics
+Mi Yodeya (Judaism)
+Travel
+Christianity
+English Language Learners
+Japanese Language
+Chinese Language
+French Language
+German Language
+Biblical Hermeneutics
+History
+Spanish Language
+Islam
+Русский язык
+Russian Language
+Arqade (gaming)
+Bicycles
+Role-playing Games
+Anime & Manga
+Puzzling
+Motor Vehicle Maintenance & Repair
+Board & Card Games
+Bricks
+Homebrewing
+Martial Arts
+The Great Outdoors
+Poker
+Chess
+Sports
+more (16)
+MathOverflow
+Mathematics
+Cross Validated (stats)
+Theoretical Computer Science
+Physics
+Chemistry
+Biology
+Computer Science
+Philosophy
+Linguistics
+Psychology & Neuroscience
+Computational Science
+more (10)
+Meta Stack Exchange
+Stack Apps
+API
+Data
+Blog
+Facebook
+Twitter
+LinkedIn
+Instagram
+site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
+rev 2021.5.28.39383
+Stack Overflow works best with JavaScript enabled
+Your privacy
+By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
+Accept all cookies
+Customize settings

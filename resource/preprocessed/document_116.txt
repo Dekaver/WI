@@ -1,0 +1,774 @@
+E-22: Common Java Errors
+E-22
+Data Structures
+Home
+Lectures
+Sections
+Problem Sets
+Resources
+Syllabus
+Schedule
+Staff
+Policies
+Piazza
+Canvas
+Gradescope
+Common Java Errors
+cannot find symbol
+class X is public, should be declared in a file named X.java
+class, interface, or enum expected
+X expected
+<identifier> expected
+illegal start of expression
+incompatible types
+invalid method declaration; return type required
+ArrayIndexOutOfBoundsException
+StringIndexOutOfBoundsException
+method X in class Y cannot be applied to given types
+missing return statement
+possible loss of precision
+reached end of file while parsing
+unreachable statement
+variable might not have been initialized
+Encountering an error that you don’t see above? Ask on Piazza!
+cannot find symbol
+“Cannot find symbol” errors generally occur when you try to
+reference an undeclared variable in your code. Consider the
+following example:
+public class Test {
+public static void main(String[] args) {
+int a = 3;
+int b = 4;
+int c = 20;
+average = (a + b + c)/5.0;
+System.out.println(average);
+}
+}
+And the compiler’s output:
+1 error found:
+File: Test.java
+[line: 7]
+Error: Test.java:7: cannot find symbol
+symbol
+: variable average
+location: class Test
+Here, the variable average has not been declared — you need to
+tell the compiler what the type of average is; for example:
+double average = (a + b + c)/5.0;
+Secondly, sometimes this error occurs because you are trying to
+reference a method in your code, but forget to include the
+parentheses that indicate a reference to a method, even when there
+are no parameters. For example:
+public class Test {
+public static void main(String[] args) {
+my_method;
+}
+public static void my_method() {
+System.out.println("Hello, world!");
+}
+}
+And the compiler’s output:
+1 error found:
+File: Test.java
+[line: 7]
+Error: Test.java:7: cannot find symbol
+symbol
+: variable my_method
+location: class Test
+Here, the compiler is looking for a variable called my_method in
+the main method; instead, you want to initiate a method call to
+my_method:
+public class Test {
+public static void main(String[] args) {
+my_method();
+// a method call!
+}
+public static void my_method() {
+System.out.println("Hello, world!");
+}
+}
+Thirdly, this error could also occur if you forget to import a Java
+package that you need to use. For example, consider the following
+program that reads in an integer from the user:
+public class Test {
+public static void main(String[] args) {
+Scanner console = new Scanner(System.in);
+int n = console.nextInt();
+}
+}
+And the compiler reports:
+2 errors found:
+File: Test.java
+[line: 3]
+Error: cannot find symbol
+symbol:
+class Scanner
+location: class Test
+File: Test.java
+[line: 3]
+Error: cannot find symbol
+symbol:
+class Scanner
+location: class Test
+The issue here is that the program must import java.util.Scanner
+(or, more generally, java.util.*). Otherwise, the compiler does
+not know what a Scanner type is. You may encounter a similar error
+if you forget to import java.util.Arrays or java.io.* when
+working with file input/output. To fix the code above:
+import java.util.*; // or import java.util.Scanner;
+public class Test {
+public static void main(String[] args) {
+Scanner console = new Scanner(System.in);
+int n = console.nextInt();
+}
+}
+Finally, this error can occur if you have case-sensitive errors with
+variables. All identifiers in Java are case sensitive. This means
+that if you declare a variable named average and try to later
+refer to it using Average, the compiler will complain that it
+cannot find a symbol named Average.
+class X is public, should be declared in a file named X.java
+This error occurs when the class name and the filename of a
+given Java program do not match. For example, say that the following
+program is saved in a file named Foo.java:
+public class Bar {
+public static void main(String[] args) {
+System.out.println("Hello, world!");
+}
+}
+And the compiler outputs:
+1 error found:
+File: Foo.java
+[line: 1]
+Error: class Bar is public, should be declared in a file named Bar.java
+Since Foo does not match with Bar, the code will not compile. To fix
+this error, either rename the file or change the class name.
+class, interface, or enum expected
+This error is another form of problems with curly braces. Typically
+this error arises when there are too many curly braces at the end of
+a program; for example:
+public class Test {
+public static void main(String[] args) {
+System.out.println("Hello!");
+}
+}
+}
+And the compiler’s output:
+1 error found:
+File: Test.java
+[line: 6]
+Error: class, interface, or enum expected
+One way of figuring out where this error is occurring (as with all
+problems with curly braces) is to correctly indent the code. Again,
+one way of doing this in DrJava is to press CTRL-A (to highlight
+the entire program) and then TAB (to correctly indent the
+highlighted code). In our example program above, notice that the two
+curly braces at the end of the program are at the same indentation
+level, which cannot happen in a valid program. Therefore, simply
+delete one of the curly braces for the code to compile:
+public class Test {
+public static void main(String[] args) {
+System.out.println("Hello!");
+}
+}
+X expected
+Errors of the form “X expected” happen when the compiler
+detects a missing character in your code. The error message will
+tell you which character is missing and on which line. Consider the
+following program:
+public class Test
+public static void main(String[] args) {
+my_method();
+}
+public static void my_method() {
+System.out.println("Hello, world!")
+}
+}
+And the compiler’s output:
+2 errors found:
+File: Test.java
+[line: 1]
+Error: Test.java:1: '{' expected
+File:.java
+[line: 7]
+Error: Test.java:7: ';' expected
+These error messages tell you there is a missing curly brace on the
+first line and a missing semicolon on the seventh line. To fix this
+kind of error, simply place the missing character in the correct
+position in the code:
+public class Test {
+public static void main(String[] args) {
+my_method();
+}
+public static void my_method() {
+System.out.println("Hello, world!");
+}
+}
+<identifier> expected
+This error occurs when code is written outside of a method; it is
+typically caused by a mistake in curly braces. Consider the
+following example:
+public class Test {
+System.out.println("Hello!");
+public static void main(String[] args) {
+System.out.println("World!");
+}
+}
+And the compiler’s output:
+2 errors found:
+File: Test.java
+[line: 2]
+Error: <identifier> expected
+File: Test.java
+[line: 2]
+Error: illegal start of type
+In this case, it is somewhat clear that the first print statement
+must be inside the main method for the code to compile. However,
+when there is more than one method and a curly brace error, the
+“<identifier> expected” error can be harder to see:
+public class Test {
+public static void main(String[] args) {
+System.out.println("Hello!");}
+System.out.println("World!");
+}
+}
+But the compiler does provide this information:
+3 errors found:
+File: Test.java
+[line: 4]
+Error: <identifier> expected
+File: Test.java
+[line: 4]
+Error: illegal start of type
+File: Test.java
+[line: 6]
+Error: class, interface, or enum expected
+There is an extra curly brace in the code above, but the code is not
+properly indented so it is difficult to see. The effect of this is
+to end the main method immediately after the line that prints
+“Hello!,” which leaves the print statement that prints “World!”
+outside of any method. To fix the error above, simply remove the
+curly brace at the end of the third line:
+public class Test {
+public static void main(String[] args) {
+System.out.println("Hello!");
+System.out.println("World!");
+}
+}
+illegal start of expression
+An “illegal start of expression” error occurs when the compiler
+encounters an inappropriate statement in the code. Consider the
+following example:
+public class Test {
+public static void main(String[] args) {
+my_method();
+public static void my_method() {
+System.out.println("Hello, world!");
+}
+}
+And the compiler’s output:
+5 errors found:
+File: Test.java
+[line: 6]
+Error: Test.java:6: illegal start of expression
+File: Test.java
+[line: 6]
+Error: Test.java:6: illegal start of expression
+File: Test.java
+[line: 6]
+Error: Test.java:6: ';' expected
+File: Test.java
+[line: 6]
+Error: Test.java:6: ';' expected
+File: Test.java
+[line: 9]
+Error: Test.java:9: reached end of file while parsing
+Here, there is a missing closing curly brace for the main method.
+Since the main method is not closed, the compiler is expecting the
+line after the call to my_method to be a part of the main
+method’s code. However, it instead encounters public static
+void my_method() {, which is not a valid statement
+inside a method.
+The “illegal start of expression” error message is not as helpful as
+the “... expected” error message that we encountered above. For this
+error (and for many other errors), it may be necessary to look at
+the lines that come before the error to see where the problem is. In
+this case, we simply need to add a curly brace to close the main
+method on the line before where the compiler issued the warning.
+After recompiling, all of the errors are resolved.
+public class Test {
+public static void main(String[] args) {
+my_method();
+}
+public static void my_method() {
+System.out.println("Hello, world!");
+}
+}
+For “illegal start of expression” errors, try looking at the lines
+preceding the error for a missing ')' or '}'.
+incompatible types
+This error occurs when there are type issues with your program. It
+is possible to convert between some kinds of types; for example, you
+can freely convert a char to an int and vice versa, and you can
+also convert a double to an int with some typecasting. However,
+you can not convert between primitive types and objects such as
+String. For example:
+public class Test {
+public static void main(String[] args) {
+int num = "Hello, world!";
+}
+}
+And the compiler’s output:
+1 error found:
+File: Test.java
+[line: 3]
+Error: Test.java:3: incompatible types
+found
+: java.lang.String
+required: int
+Typically, you cannot “fix” this error as you can for most other
+errors. This is not a syntax error, but rather an error in type
+logic. It usually does not make sense to try to put a String into
+an integer type. However, there are some applications where you need
+to do something like a String to int conversion, such as when
+the String is a representation of a number:
+public class Test {
+public static void main(String[] args) {
+int num = "500";
+}
+}
+The compiler produces:
+1 error found:
+File: Test.java
+[line: 3]
+Error: Test.java:3: incompatible types
+found
+: java.lang.String
+required: int
+To fix something like this, you might be able to depend on Java
+classes such as the Integer class, which is capable of taking a
+String that represents a number and converting it to an integer
+type:
+public class Test {
+public static void main(String[] args) {
+int num = Integer.parseInt("500");
+}
+}
+However, this kind of solution to an “incompatible types” error is
+the exception and not the rule, as this error usually comes from a
+mistake in logic.
+invalid method declaration; return type required
+Every method in Java requires that you explicitly state the return
+type of the method. Even methods that do not return a value must
+explicitly say void in the method signature, just as the main
+method does.
+When a method declaration does not contain a return type, this error
+will occur:
+public class Test {
+public static void main(String[] args) {
+int x = getValue();
+System.out.println(x);
+}
+public static getValue() {
+return 10;
+}
+}
+And the compiler will produce:
+1 error found:
+File: Test.java
+[line: 7]
+Error: Test.java:7: invalid method declaration; return type required
+To fix this, simply insert the appropriate return type in the method
+signature:
+public class Test {
+public static void main(String[] args) {
+int x = getValue();
+System.out.println(x);
+}
+// inserted type below
+public static int getValue() {
+return 10;
+}
+}
+ArrayIndexOutOfBoundsException
+An ArrayIndexOutOfBoundsException is thrown when an attempt is
+made to access an index in an array that is not valid. The only
+valid indices for an array arr are in the range [0,
+arr.length - 1]; any attempt to access an index outside of this
+range will result in this error. For example:
+public class Test {
+public static void main(String[] args) {
+int[] arr = {1, 2, 3};
+for (int i = 0; i <= arr.length; i++) {
+System.out.println(arr[i]);
+}
+}
+}
+The compiler produces:
+java.lang.ArrayIndexOutOfBoundsException: 3
+at Test.main(Test.java:5)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:606)
+at edu.rice.cs.drjava.model.compiler.JavacCompiler.runCommand(JavacCompiler.java:272)
+This error is quite similar to the StringIndexOutOfBoundsException error.
+The error message for this kind of error is similarly irrelevant
+toward the end of the message. However, the first line lets you know
+that a problem with an array index was encountered, and the index in
+error was 3, in this case. The next line tells you that it
+encountered this error on line 5 of Test.java, inside the main
+method.
+In this case, the error occurred because the for loop iterates too
+many times; the value of the loop index, i, reaches 4 and is
+therefore out of bounds. Instead, the upper bound should use the <
+boolean operator, or an equivalent statement.
+public class Test {
+public static void main(String[] args) {
+int[] arr = {1, 2, 3};
+for (int i = 0; i < arr.length; i++) {
+System.out.println(arr[i]);
+}
+}
+}
+When dealing with an ArrayIndexOutOfBoundsException, it is usually
+helpful to print out the value of the index variable that is
+accessing the array and try to trace through to code to find out why
+it is reaching that (invalid) value.
+StringIndexOutOfBoundsException
+A StringIndexOutOfBoundsException is thrown when an attempt is
+made to access an index in the String that is not valid. The only
+valid indices for a String str are in the range [0,
+str.length() - 1]; any attempt to access an index outside of this
+range will result in this error. For example:
+public class Test {
+public static void main(String[] args) {
+String str = "Hello, world!";
+String a = str.substring(-1, 3);
+String b = str.charAt(str.length());
+String c = str.substring(0, 20);
+}
+}
+The compiler produces:
+java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+at java.lang.String.substring(Unknown Source)
+at Test.main(Test.java:5)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at edu.rice.cs.drjava.model.compiler.JavacCompiler.runCommand(JavacCompiler.java:271)
+The error message for this kind of error becomes less relevant
+towards the end. However, the first line lets you know that a
+problem with a String index was encountered, and the index in
+error was -1. The next line tells you that it encountered this error
+while trying to perform the substring routine, which was called
+from the Test class on line 5. This “backtrace” of the error tells
+you the line numbers of the method calls involved so that you can
+trace your error to the source and correct it.
+Note that all of a, b, and c would have thrown this error,
+but the program was halted after the first occurred.
+This is not a compile-time error, but rather a runtime error. In
+other words, the compiler will accept this kind of error because it
+is a logical error. Additionally, it may not be known before the
+program is run that the error will occur. To fix this error, you
+often have to correct the logic of your program to ensure that the
+program will not try to access an invalid index.
+method X in class Y cannot be applied to given types
+This error occurs when you try to call a method using the wrong
+number or wrong order of parameters. For example, consider the
+following program:
+public class Test {
+public static void main(String[] args) {
+myMethod(1.0, 2, "Hello!");
+}
+public static void myMethod(double d, String s, int x) {
+System.out.println(s + " " + d + " " + x);
+}
+}
+The compiler produces:
+1 error found:
+File: Test.java
+[line: 3]
+Error: method myMethod in class Test cannot be applied to given types;
+required: double,java.lang.String,int
+found: double,int,java.lang.String
+reason: actual argument int cannot be converted to java.lang.String by method invocation conversion
+The error message for this error is very helpful. The line that says
+“required” tells you about what the method is expecting. It lists
+the order of the arguments that are required. In the example above,
+the parameters for myMethod should be a double, then a String,
+and then an int.
+The next line of the error message (which says “found”) tells you
+what you (incorrectly) tried to use to call the method. In this
+example, we invoked the method using a double, then an int, and
+then a String — which is the wrong order!
+We can fix this by ensuring that the number and ordering of the
+method parameters is correct:
+public class Test {
+public static void main(String[] args) {
+myMethod(1.0, "Hello!", 2);
+}
+public static void myMethod(double d, String s, int x) {
+System.out.println(s + " " + d + " " + x);
+}
+}
+missing return statement
+This method happens when you declare that a method will return a
+value, but then fail to actually return the value. For example:
+public class Test {
+public static void main(String[] args) {
+int x = twice(5);
+System.out.println(x);
+}
+public static int twice(int x) {
+int value = 2 * x;
+}
+}
+The compiler produces:
+1 error found:
+File: Test.java
+[line: 9]
+Error: Test.java:9: missing return statement
+We have informed the compiler that the twice method will return an
+int, but we are missing the return statement:
+public class Test {
+public static void main(String[] args) {
+int x = twice(5);
+System.out.println(x);
+}
+public static int twice(int x) {
+int value = 2 * x;
+return value;
+}
+}
+Returning values in if statements can also trick the compiler into
+thinking that it’s possible no value will be returned, as in the
+following example:
+public class Test {
+public static void main(String[] args) {
+int x = absVal(-5);
+System.out.println(x);
+}
+public static int absVal(int x) {
+if (x < 0) {
+return -x;
+}
+if (x >= 0) {
+return x;
+}
+}
+}
+The compiler produces:
+1 error found:
+File: Test.java
+[line: 15]
+Error: Test.java:15: missing return statement
+To avoid this, we can either use an else statement (as we did in
+the variable might not have been initialized example, or we can simply not
+use the second if statement because we know that if we’ve reached that point
+in the method we can just return x:
+public class Test {
+public static void main(String[] args) {
+int x = absVal(-5);
+System.out.println(x);
+}
+public static int absVal(int x) {
+if (x < 0) {
+return -x;
+}
+return x;
+}
+}
+possible loss of precision
+A “possible loss of precision” error occurs when you attempt to
+store more information in a variable than it can hold. The most
+common example of this error is trying to assign a double to an int:
+public class Test {
+public static void main(String[] args) {
+int pi = 3.14159;
+System.out.println("The value of pi is: " + pi);
+}
+}
+The compiler produces:
+1 error found:
+File: Test.java
+[line: 3]
+Error: Test.java:3: possible loss of precision
+found
+: double
+required: int
+This error happens because the amount of space that a computer needs
+to store a double is typically twice as much as the space needed
+to store an int. You’re allowed to do this by acknowledging to the
+compiler that you know that you’re going to lose precision if you do
+the assignment. To acknowledge this, you can use a typecast:
+public class Test {
+public static void main(String[] args) {
+int pi = (int)3.14159;
+System.out.println("The value of pi is: " + pi);
+}
+}
+Now the compiler does not complain, but the pi variable only
+contains the value 3 due to integer rounding.
+reached end of file while parsing
+This error typically happens when you are not adequately closing
+your program using curly braces. The error message is essentially
+saying that the compiler has reached the end of the file without any
+acknowledgement that the file has ended. For example:
+public class Test {
+public static void main(String[] args) {
+my_method();
+}
+public static void my_method() {
+System.out.println("Hello, world!");
+}
+The compiler produces:
+1 error found:
+File: Test.java
+[line: 9]
+Error: Test.java:9: reached end of file while parsing
+To fix this, all you have to do is correct your ending curly braces
+('}'). Sometimes all you need is a curly brace at the end of your
+file; other times you may have missed a curly brace or added an
+extra curly brace in the middle of your code.
+One way to diagnose where the problem is occuring is to use the
+CTRL-A + TAB shortcut to attempt to properly indent your code.
+Since we have a curly brace problem, however, the code will not be
+properly indented. Search for the place in the file where the
+indentation first becomes incorrect. This is where your error is
+happening!
+Once the curly braces in the program match up appropriately, the
+compiler will not complain:
+public class Test {
+public static void main(String[] args) {
+my_method();
+}
+public static void my_method() {
+System.out.println("Hello, world!");
+}
+}
+unreachable statement
+An “unreachable statement” error occurs when the compiler detects
+that it is impossible to reach a given statement during the flow of
+a program. This error is often caused by placing statements after
+return or break. For example:
+public class Test {
+public static void main(String[] args) {
+int value = twice(5);
+System.out.println(value);
+}
+public static int twice(int x) {
+int twice = 2 * x;
+return twice;
+System.out.println("Returning " + twice);
+}
+}
+The compiler produces:
+2 errors found:
+File: Test.java
+[line: 10]
+Error: Test.java:10: unreachable statement
+File: Test.java
+[line: 11]
+Error: Test.java:11: missing return statement
+The compiler gives two errors: one to indicate that the line
+System.out.println("Returning " + twice); is an unreachable
+statement, and another because it assumes that if we can get to
+that print statement, then we would need a return statement
+somewhere after it.
+We can fix this by placing the print statement before the return
+so it can be executed:
+public class Test {
+public static void main(String[] args) {
+int value = twice(5);
+System.out.println(value);
+}
+public static int twice(int x) {
+int twice = 2 * x;
+System.out.println("Returning " + twice);
+return twice;
+}
+}
+variable might not have been initialized
+This error occurs when the compiler believes you’re trying to use a
+variable that has not been “initialized” — or given an initial
+value — yet. In a very simple case:
+public class Test {
+public static void main(String[] args) {
+int x = 2;
+int y;
+System.out.println(x + y);
+}
+}
+The compiler produces:
+1 error found:
+File: Test.java
+[line: 5]
+Error: Test.java:5: variable y might not have been initialized
+Here, you have not told the compiler what the value of y is.
+Therefore, y cannot be printed; it needs to be initialized as x
+is in this example.
+In more complicated scenarios, if statements can cause this error
+if you are not careful about ensuring that a variable is
+initialized. For example:
+public class Test {
+public static void main(String[] args) {
+int x;
+boolean setX = false;
+if (setX) {
+x = 10;
+}
+System.out.println(x);
+}
+}
+In this case, the compiler produces:
+1 error found:
+File: Test.java
+[line: 8]
+Error: Test.java:8: variable x might not have been initialized
+Here again it is clear that the variable x will not be
+initialized, and therefore an error occurs. However, cases can also
+arise where it is clear to us that one of the cases has to be
+reached and therefore the error should not happen. However, the
+compiler is not always smart enough to see cases that we as humans
+can see. For example:
+public class Test {
+public static void main(String[] args) {
+int x;
+boolean setToTen = false;
+if (setToTen) {
+x = 10;
+}
+if (!setToTen) {
+x = 0;
+}
+System.out.println(x);
+}
+}
+From the compiler, we get:
+1 error found:
+File: Test.java
+[line: 14]
+Error: Test.java:14: variable x might not have been initialized
+It may appear obvious that x will get set to a value one way or
+another, but the compiler cannot see this. One way to fix this error
+is to use an else statement. When using an else statement, the
+compiler is smart enough to see that in at least one case x will
+be initialized:
+public class Test {
+public static void main(String[] args) {
+int x;
+boolean setToTen = false;
+if (setToTen) {
+x = 10;
+} else {
+x = 0;
+}
+System.out.println(x);
+}
+}
+Original document created by Cody Doucette (2012).
+Copyedited and updated for syntax coloring by Alexander Breen (2015).
+Last updated on September 24, 2020.
+

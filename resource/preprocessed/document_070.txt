@@ -1,1 +1,162 @@
-typeerror int object iterable lemma soft forums lemma soft forums supporting creators visual novels story based games since visit new games list blog aggregator irc channel discord nanoreno ends april begins activation problem email pytom skip content search advanced search quick links unanswered topics active topics search members team faq login register board index ren py visual novel engine ren py questions announcements search unanswered topics active topics typeerror int object iterable discuss use ren py engine create visual novels story based games new releases announced section forum rules right place ren py help please ask one question per thread use descriptive subject like notfound error option rpy include relevant information especially relevant code traceback messages use code tag format scripts post reply print view search advanced search posts page message author trickwithaknife eileen class veteran posts joined fri mar projects rika organization solo irc nick trick location tokyo japan contact contact trickwithaknife send private message twitter typeerror int object iterable quote post trickwithaknife fri jun keep getting error typeerror int object iterable apparently two lines marked code select next line causes errors generate_random_cards u init python def generate_random_cards number_of_cards card card card card none card none card none card none card none card none card none card none card none card none assigned_card_value_ false none next line causes errors number_of_cards assigned_card_value_ false none number_of_cards temp_random_number assigned_card_value_ temp_random_number none assigned_card_value_ temp_random_number temp_random_number renpy random randint number_of_cards assigned_card_value_ temp_random_number none assigned_card_value_ temp_random_number card global assigned_card_value_ temp_random_number return must teach tools comfortable renpy irc channel great place chat devs due nature irc timezone differences people probably reply right away like view use code vn pm code freely available without restriction also without warranty much support top anima veteran posts joined wed nov completed loren projects ps location germany contact contact anima send private message icq typeerror int object iterable quote post anima fri jun pm need range function code select allfor range number_of_cards though looks like going way overcomplicated approach purpose function avatar created deviation crysa currently working winterwolves planet stronghold rpg framework phase iii top trickwithaknife eileen class veteran posts joined fri mar projects rika organization solo irc nick trick location tokyo japan contact contact trickwithaknife send private message twitter typeerror int object iterable quote post trickwithaknife fri jun pm group flashcards hiragana written one flashcard romaji written player must drag matching hiragana flashcard top romaji flashcard wanted make function easy reuse randomize cards must teach tools comfortable renpy irc channel great place chat devs due nature irc timezone differences people probably reply right away like view use code vn pm code freely available without restriction also without warranty much support top apricotorange veteran posts joined tue jun contact contact apricotorange send private message typeerror int object iterable quote post apricotorange fri jun pm note following might interest code select foo range unshuffled foo renpy random shuffle foo shuffled foo top post reply print view display posts day days weeks month months months year sort authorpost timesubject direction ascendingdescending posts page return ren py questions announcements online users browsing forum majestic bot ocelot board index times utc delete cookies members team style developed forum tricolor powered phpbb forum software phpbb limited gzip load
+TypeError: 'int' object is not iterable - Lemma Soft Forums
+Lemma Soft Forums
+Supporting creators of visual novels and story-based games since 2003.
+Visit our
+new games list,
+blog aggregator,
+IRC channel,
+and Discord.
+NaNoRenO ends when April begins.
+Activation problem? Email PyTom.
+Skip to content
+Search
+Advanced search
+Quick links
+Unanswered topics
+Active topics
+Search
+Members
+The team
+FAQ
+Login
+Register
+Board index
+Ren'Py Visual Novel Engine
+Ren'Py Questions and Announcements
+Search
+Unanswered topics
+Active topics
+TypeError: 'int' object is not iterable
+Discuss how to use the Ren'Py engine to create visual novels and story-based games.
+New releases are announced in this section.
+Forum rules
+This is the right place for Ren'Py help. Please ask one question per thread, use a descriptive subject like 'NotFound error in option.rpy' , and include all the relevant information - especially any relevant code and traceback messages. Use the code tag to format scripts.
+Post Reply
+Print view
+Search
+Advanced search
+4 posts
+• Page 1 of 1
+Message
+Author
+TrickWithAKnife
+Eileen-Class Veteran
+Posts: 1261		Joined: Fri Mar 16, 2012 11:38 am
+Projects: Rika
+Organization: Solo (for now)
+IRC Nick: Trick
+Location: Tokyo, Japan
+Contact:
+Contact TrickWithAKnife
+Send private message
+Twitter
+TypeError: 'int' object is not iterable
+Quote
+#1
+Post
+by TrickWithAKnife » Fri Jun 28, 2013 11:58 am
+So, I keep getting the error "TypeError: 'int' object is not iterable"
+Apparently it's from the two lines I've marked.
+Code: Select all### THIS NEXT LINE CAUSES ERRORS ###
+$ generate_random_cards(3, "a", "i", "u")
+init python:
+def generate_random_cards(number_of_cards, card1, card2, card3): #card1="None", card2="None", card3="None", card4="None", card5="None", card6="None", card7="None", card8="None", card9="None", card10="None"):
+assigned_card_value_0 = False # "None"
+### THIS NEXT LINE CAUSES ERRORS ###
+for [i] in number_of_cards:
+assigned_card_value_[i] = False #"None"
+for [i] in number_of_cards:
+temp_random_number = 0
+#while assigned_card_value_[temp_random_number] == "None":
+while not assigned_card_value_[temp_random_number]:
+temp_random_number = renpy.random.randint(1, number_of_cards)
+if not assigned_card_value_[temp_random_number]: # == "None":
+assigned_card_value_[temp_random_number] = card[i]
+#global assigned_card_value_[temp_random_number]
+return
+"We must teach them through the tools with which they are comfortable."
+The #renpy IRC channel is a great place to chat with other devs. Due to the nature of IRC and timezone differences, people probably won't reply right away.
+If you'd like to view or use any code from my VN PM me. All code is freely available without restriction, but also without warranty or (much) support.
+Top
+Anima
+Veteran
+Posts: 448		Joined: Wed Nov 18, 2009 11:17 am
+Completed: Loren
+Projects: PS2
+Location: Germany
+Contact:
+Contact Anima
+Send private message
+ICQ
+Re: TypeError: 'int' object is not iterable
+Quote
+#2
+Post
+by Anima » Fri Jun 28, 2013 12:05 pm
+You need the range function for that.
+Code: Select allfor i in range(number_of_cards):
+Though it looks like you're going for a way overcomplicated approach.
+What's the purpose of this function?
+Avatar created with this deviation by Crysa
+Currently working on:
+Winterwolves "Planet Stronghold 2" - RPG Framework: Phase III
+Top
+TrickWithAKnife
+Eileen-Class Veteran
+Posts: 1261		Joined: Fri Mar 16, 2012 11:38 am
+Projects: Rika
+Organization: Solo (for now)
+IRC Nick: Trick
+Location: Tokyo, Japan
+Contact:
+Contact TrickWithAKnife
+Send private message
+Twitter
+Re: TypeError: 'int' object is not iterable
+Quote
+#3
+Post
+by TrickWithAKnife » Fri Jun 28, 2013 12:39 pm
+I will have a group of 3-10 flashcards with Hiragana written on them.
+There will be one more flashcard with Romaji written on it.
+The player must drag the matching Hiragana flashcard on top of the Romaji flashcard.
+I wanted to make a function that will be easy to reuse, and will randomize the cards.
+"We must teach them through the tools with which they are comfortable."
+The #renpy IRC channel is a great place to chat with other devs. Due to the nature of IRC and timezone differences, people probably won't reply right away.
+If you'd like to view or use any code from my VN PM me. All code is freely available without restriction, but also without warranty or (much) support.
+Top
+apricotorange
+Veteran
+Posts: 479		Joined: Tue Jun 05, 2012 2:01 am
+Contact:
+Contact apricotorange
+Send private message
+Re: TypeError: 'int' object is not iterable
+Quote
+#4
+Post
+by apricotorange » Fri Jun 28, 2013 1:03 pm
+Note that the following might be of interest:
+Code: Select all
+$foo = range(10)
+"Unshuffled [foo]"
+$renpy.random.shuffle(foo)
+"Shuffled [foo]"
+Top
+Post Reply
+Print view
+Display: All posts1 day7 days2 weeks1 month3 months6 months1 year
+Sort by: AuthorPost timeSubject
+Direction: AscendingDescending
+4 posts
+• Page 1 of 1
+Return to “Ren'Py Questions and Announcements”
+Who is online
+Users browsing this forum: Google [Bot]
+Board index
+All times are UTC-04:00
+Delete cookies
+Members
+The team
+Style developed by forum tricolor, Powered by phpBB® Forum Software © phpBB Limited
+GZIP: On | Load: 0.79

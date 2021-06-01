@@ -1,1 +1,694 @@
-python valueerror invalid literal int base stack overflow stack overflow products teams stack overflow public questions answers stack overflow teams developers technologists share private knowledge coworkers jobs programming related technical career opportunities talent recruit tech talent build employer brand advertising reach developers technologists worldwide company loading log sign current community stack overflow help chat meta stack overflow communities sign log customize list stack exchange communities company blog people code want input take survey join stack overflow learn share knowledge build career sign email sign sign google sign github sign facebook home public questions tags users find job jobs companies teams stack overflow teams collaborate share knowledge private group create free team teams teams create free team teams q work connect share knowledge within single location structured easy search learn valueerror invalid literal int base ask question asked years months ago active months ago viewed times creating program reads file first line file blank reads next four lines calculations performed lines next line read line empty continues however getting error valueerror invalid literal int base reading first line convert integer fix problem code file_to_read raw_input enter file name tests empty string end program try infile open file_to_read r file_to_read file_to_write raw_input enter output file name csv appended file_to_write file_to_write csv outfile open file_to_write w readings infile readline print readings readings global count readings int readings minimum infile readline maximum infile readline python share improve question follow edited feb kqw k gold badges silver badges bronze badges asked dec sarah coxsarah cox gold badges silver badges bronze badges consider using open file_to_read r infile omnifarious sep anyone currently looking error may one lines integer form eg yes correct form question first line may convert int crupeng jul got error input string space digits error basically means input string valid string integer conversion conversion string contain following characters j_cfalt aug add comment answers active oldest votes record int traceback recent call last file line valueerror invalid literal int base got int float used share improve answer follow edited may soviut k gold badges silver badges bronze badges answered jan fdobadfdobad gold badge silver badges bronze badges add provide clarity future readers indeed int float works int throws valueerror katyhuff apr accepted top answer question almost closed page see thanks iturki jun add answer int float question get int realy top answer max mar answer appear anything question question asking one could prevent valueerror call int empty string use float instead solve problem still get valueerror kevin may update answer per kevin comment highly active question confusing someone directly search specific error question title austin jun show comments following totally acceptable python passing string representation integer int passing string representation float float passing string representation integer float passing float int passing integer float get valueerror pass string representation float int string representation anything integer including empty string want pass string representation float int katyhuff points convert float first integer int float float int float int traceback recent call last file line valueerror invalid literal int base int float share improve answer follow edited may answered dec peterpeter gold badge silver badges bronze badges answer appear anything question question asking one could prevent valueerror call int empty string use float instead solve problem still get valueerror kevin may kevin even though directly answer op question however help people problem mind int float x first question pop searching error kerwin sneijders sep wow incredibly silly make int accept string exactly expecting typecast float first bufu sep add comment pythonic way iterating file converting int line open fname line strip line contains eol character n int line assuming single integer line trying slightly complicated still straight forward h open fname line h line strip int next h strip _ range list integers way processes lines time use h next instead next h prior python reason valueerror int cannot convert empty string integer case need either check content string conversion except error try int except valueerror pass whatever share improve answer follow edited dec peter mortensen k gold badges silver badges bronze badges answered dec silentghostsilentghost k gold badges silver badges bronze badges try except distinguish something reasonable expectable blank empty line something nasty like non integer john machin dec would want distinguish things silentghost dec one reasonably expectable ignorable indicative error john machin dec blank line reasonably expectable non integer silentghost dec good sure list actually list stringified integers sure n int line line is_integer else int float line mike furlender jul add comment found work around python convert number float simply calling float first converting int work output int float input share improve answer follow answered apr brad brad silver badges bronze badges add comment reason getting empty string string argument int check empty contains alpha characters contains characters simply ignore part share improve answer follow edited apr toluwalemi silver badge bronze badges answered jun rajender kumarrajender kumar silver badges bronze badges looks like comment sufficient reputation able comment post joshua drake jun exactly needed thank get people forum obsessed micromanaging site john nov add comment reason getting error trying convert space character integer totally impossible restricted getting error check code correct work fine share improve answer follow answered mar joishjoish silver badges bronze badges add comment floatinstring convert int floatinint int float floatinstring share improve answer follow answered dec harveyharvey gold badges silver badges bronze badges add comment got problem line file_to_read find empty string finds string consisting one space presumably looking listen everyone else advice idiomatic python code would much clearer iterate file directly think problem worth noting well share improve answer follow answered dec jcdyerjcdyer k gold badges silver badges bronze badges add comment please test function split simple file facing issue found split written properly exception handling share improve answer follow edited jun elixenide k gold badges silver badges bronze badges answered jun user user add comment recently came across case none answers worked encountered csv data null bytes mixed data null bytes get stripped numeric string stripping consisted bytes like x x x x x counter countstr fields replace x strip count int countstr fields list csv values resulting splitting line share improve answer follow answered jan reedt reed bronze badges sir genius thanks alioua walid jul hero thanks nikki feb add comment readings infile readline print readings readings global count readings int readings problem code readings new line read file string therefore compare convert integer unless sure indeed one example empty lines produce errors surely found need global count certainly bad design python share improve answer follow answered dec eli benderskyeli bendersky k gold badges silver badges bronze badges add comment could also happen map space separated integers list enter integers line line using input like example solving problem hackerrank bon appetit got following error compiling instead giving input program line line try map space separated integers list using map method share improve answer follow answered nov amit kumaramit kumar gold badges silver badges bronze badges add comment creating program reads file first line file blank reads next four lines calculations performed lines next line read something like work line infile next_lines line strip xrange try next_lines append infile next except stopiteration break calculation lines share improve answer follow answered dec imranimran k gold badges silver badges bronze badges add comment getting similar errors turns dataset blank values python could convert integer share improve answer follow answered mar user user bronze badges could elaborate bit examples op could solve fmendez mar blank value means empty converted string float try convert float also show error saravanan saminathan dec add comment got issue trying use readlines inside loop file object suspicion firing readling inside readline file object caused error best solution use seek reset file pointer handle condition setting flag create new object file checking set condition share improve answer follow answered dec abhishek jainabhishek jain silver badges bronze badges add comment seems like readings sometimes empty string obviously error crops add extra check loop int readings command like readings readings global count readings int readings share improve answer follow answered feb kanishk mairkanishk mair silver badges bronze badges add comment hard time figuring actual reason happens dont read properly file need open file read readlines method open content drive pre processed users tsv f file f readlines corrects formatted output share improve answer follow answered may shaina razashaina raza silver badges bronze badges add comment answer throwing errors line readings int readings trying convert string int type base convert string int base otherwise throw valueerror stating invalid literal int base share improve answer follow answered may shubhamshubham bronze badges add comment highly active question earn reputation order answer question reputation requirement helps protect question spam non answer activity answer looking browse questions tagged python ask question overflow blog podcast blocking haters service developer survey open featured meta testing three vote close reopen network sites future community promotion open source hot network questions ads rule proposal one delete undelete per post take developer survey linked string int conversion list python adding items set python invalid literal error converting hex int python got valueerror invalid literal int base django project convert float string integer value python keep getting following error try take user input valueerror invalid literal int base use str int shows valueerror invalid literal int base trying fix error form book excersise input letter instead number python says valueerror invalid literal int base convert string integer loop python see linked questions related valueerror invalid literal int base invalid literal int base xef xbb xbf python valueerror invalid literal float python valueerror invalid literal int base prevent valueerror invalid literal int base defined functions valueerror invalid literal int base hot network questions want potatoes baked within hour forgot preheat oven put preheating identify geometry type layer qgis expressions looking spider man comic telepathic man child controls town defeated spidey deafens purpose oiling wooden chopping board use score highest sentence primary school child writing music proof variance always greater zero deal soft alpha gamer player happens mutate top creature control end turn friends us often barter babysitting time owe taxes colorful plate puzzle rotten eggs float water prior odds hundred one voldemort surviving probability voldemort alive token burn point time future would probable reaction belarusian planes entered lithuanian airspace usual feasible european universities accept phd candidates right bachelor degree computer science field possible eletronically disable ejection seat repeat process infinite loop rulings ants trees ok bad decides congressional district removed rainbow steady even though droplets causing different states exactly carries energy transformer primary secondary colleagues learned opposite definitions test validation sets wrong key signature score f dorian hot questions question feed subscribe rss question feed subscribe rss feed copy paste url rss reader lang py stack overflow questions jobs developer jobs directory salary calculator help mobile products teams talent advertising enterprise company press work legal privacy policy terms service contact us cookie settings cookie policy stack exchange network technology life arts culture recreation science stack overflow server fault super user web applications ask ubuntu webmasters game development tex latex software engineering unix linux ask different apple wordpress development geographic information systems electrical engineering android enthusiasts information security database administrators drupal answers sharepoint user experience mathematica salesforce expressionengine answers stack overflow em português blender network engineering cryptography code review magento software recommendations signal processing emacs raspberry pi stack overflow на русском code golf stack overflow en español ethereum data science arduino bitcoin software quality assurance testing sound design windows phone photography science fiction fantasy graphic design movies tv music practice theory worldbuilding video production seasoned advice cooking home improvement personal finance money academia law physical fitness gardening landscaping parenting english language usage skeptics mi yodeya judaism travel christianity english language learners japanese language chinese language french language german language biblical hermeneutics history spanish language islam русский язык russian language arqade gaming bicycles role playing games anime manga puzzling motor vehicle maintenance repair board card games bricks homebrewing martial arts great outdoors poker chess sports mathoverflow mathematics cross validated stats theoretical computer science physics chemistry biology computer science philosophy linguistics psychology neuroscience computational science meta stack exchange stack apps api data blog facebook twitter linkedin instagram site design logo stack exchange inc user contributions licensed cc sa rev stack overflow works best javascript enabled privacy clicking accept cookies agree stack exchange store cookies device disclose information accordance cookie policy accept cookies customize settings
+python - ValueError: invalid literal for int() with base 10: '' - Stack Overflow
+Stack Overflow
+About
+Products
+For Teams
+Stack Overflow
+Public questions & answers
+Stack Overflow for Teams
+Where developers & technologists share private knowledge with coworkers
+Jobs
+Programming & related technical career opportunities
+Talent
+Recruit tech talent & build your employer brand
+Advertising
+Reach developers & technologists worldwide
+About the company
+Loading…
+Log in
+Sign up
+current community
+Stack Overflow
+help
+chat
+Meta Stack Overflow
+your communities
+Sign up or log in to customize your list.
+more stack exchange communities
+company blog
+People who code: we want your input.
+Take the Survey
+Join Stack Overflow to learn, share knowledge, and build your career.
+Sign up with email
+Sign up
+Sign up with Google
+Sign up with GitHub
+Sign up with Facebook
+Home
+Public
+Questions
+Tags
+Users
+Find a Job
+Jobs
+Companies
+Teams
+Stack Overflow for Teams
+– Collaborate and share knowledge with a private group.
+Create a free Team
+What is Teams?
+Teams
+What’s this?
+Create free Team
+Teams
+Q&A for work
+Connect and share knowledge within a single location that is structured and easy to search.
+Learn more
+ValueError: invalid literal for int() with base 10: ''
+Ask Question
+Asked
+11 years, 6 months ago
+Active
+5 days ago
+Viewed
+2.0m times
+440
+101
+I am creating a program that reads a file and if the first line of the file is not blank, it reads the next four lines.
+Calculations are performed on those lines and then the next line is read.
+If that line is not empty it continues.
+However, I am getting this error:
+ValueError: invalid literal for int() with base 10: ''.
+It is reading the first line but can't convert it to an integer.
+What can I do to fix this problem?
+The code:
+file_to_read = raw_input("Enter file name of tests (empty string to end program):")
+try:
+infile = open(file_to_read, 'r')
+while file_to_read != " ":
+file_to_write = raw_input("Enter output file name (.csv will be appended to it):")
+file_to_write = file_to_write + ".csv"
+outfile = open(file_to_write, "w")
+readings = (infile.readline())
+print readings
+while readings != 0:
+global count
+readings = int(readings)
+minimum = (infile.readline())
+maximum = (infile.readline())
+python
+Share
+Follow
+edited Feb 10 '19 at 10:55
+kqw
+17.7k1111 gold badges6161 silver badges9292 bronze badges
+asked Dec 3 '09 at 17:34
+Sarah CoxSarah Cox
+4,41733 gold badges1414 silver badges33 bronze badges
+3
+5
+You should consider using with open(file_to_read, 'r') as infile: there.
+– Omnifarious
+Sep 14 '17 at 11:48
+1
+For anyone currently looking here. The error may be that one of the lines isn't in integer form. Eg: "yes" isn't in the correct form but "3" is. For this question the first line may not have any "1"s, "2"s, "3"s... to convert to an int.
+– Crupeng
+Jul 24 '20 at 17:58
+i got this error when input string had space between digits. this error basically means your input string is not valid for string to integer conversion. for conversion, your string should only and only contain
+following characters:
++-.0123456789
+– M9J_cfALt
+Aug 5 '20 at 12:41
+Add a comment
+|
+18 Answers
+18
+Active
+Oldest
+Votes
+463
+Just for the record:
+>>> int('55063.000000')
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+ValueError: invalid literal for int() with base 10: '55063.000000'
+Got me here...
+>>> int(float('55063.000000'))
+55063
+Has to be used!
+Share
+Follow
+edited May 26 at 10:14
+Roshin Raphel
+2,28533 gold badges1212 silver badges3131 bronze badges
+answered Jan 20 '12 at 21:49
+FdoBadFdoBad
+4,67111 gold badge1111 silver badges22 bronze badges
+9
+117
+I'll just add, to provide more clarity for future readers, that indeed, int(float('1.0')) works when int('1.0') throws the ValueError.
+– katyhuff
+Apr 26 '13 at 16:53
+6
+This should be the accepted top answer to this question. I almost closed the page and didn't see it. Thanks!
+– iTurki
+Jun 21 '16 at 21:44
+2
+add to answer int(float('55063.000000')) as question is get int(). Than it will
+realy top answer
+– Max
+Mar 15 '17 at 8:41
+11
+This answer doesn't appear to have anything to do with the question. The question is asking how one could prevent a ValueError when you call int() on an empty string. "Use float() instead" doesn't solve that problem. You still get a ValueError.
+– Kevin
+May 1 '18 at 18:50
+1
+Why not update your answer as per @Kevin's comment above? This is a highly active question and should not be confusing to someone who directly search for the specific error in question title.
+– Austin
+Jun 29 '20 at 4:17
+|
+Show 4 more comments
+107
+The following are totally acceptable in python:
+passing a string representation of an integer into int
+passing a string representation of a float into float
+passing a string representation of an integer into float
+passing a float into int
+passing an integer into float
+But you get a ValueError if you pass a string representation of a float into int, or a string representation of anything but an integer (including empty string). If you do want to pass a string representation of a float to an int, as @katyhuff points out above, you can convert to a float first, then to an integer:
+>>> int('5')
+5
+>>> float('5.0')
+5.0
+>>> float('5')
+5.0
+>>> int(5.0)
+5
+>>> float(5)
+5.0
+>>> int('5.0')
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+ValueError: invalid literal for int() with base 10: '5.0'
+>>> int(float('5.0'))
+5
+Share
+Follow
+edited May 23 '18 at 0:24
+answered Dec 12 '17 at 2:26
+PeterPeter
+1,33711 gold badge88 silver badges99 bronze badges
+3
+9
+This answer doesn't appear to have anything to do with the question. The question is asking how one could prevent a ValueError when you call int() on an empty string. "Use float() instead" doesn't solve that problem. You still get a ValueError.
+– Kevin
+May 1 '18 at 18:53
+5
+@Kevin Even though this does not directly answer the OP's question. It does however help people that have this problem and don't mind the int(float(x)). As this is the first question to pop up when searching for this error.
+– Kerwin Sneijders
+Sep 16 '19 at 17:23
+Wow that's incredibly silly. Why not make int() accept a string? That's exactly what I was expecting it to do and not typecast it into float first.....
+– BUFU
+Sep 22 '20 at 11:57
+Add a comment
+|
+62
+Pythonic way of iterating over a file and converting to int:
+for line in open(fname):
+if line.strip():
+# line contains eol character(s)
+n = int(line)
+# assuming single integer on each line
+What you're trying to do is slightly more complicated, but still not straight-forward:
+h = open(fname)
+for line in h:
+if line.strip():
+[int(next(h).strip()) for _ in range(4)]
+# list of integers
+This way it processes 5 lines at the time. Use h.next() instead of next(h) prior to Python 2.6.
+The reason you had ValueError is because int cannot convert an empty string to the integer. In this case you'd need to either check the content of the string before conversion, or except an error:
+try:
+int('')
+except ValueError:
+pass
+# or whatever
+Share
+Follow
+edited Dec 9 '09 at 10:21
+Peter Mortensen
+28.3k2121 gold badges9595 silver badges123123 bronze badges
+answered Dec 3 '09 at 17:40
+SilentGhostSilentGhost
+265k5858 gold badges291291 silver badges279279 bronze badges
+5
+4
+Your try/except doesn't distinguish between something reasonable expectable (blank/empty line) and something nasty like a non-integer.
+– John Machin
+Dec 3 '09 at 19:47
+and why would you want to distinguish those things?
+– SilentGhost
+Dec 4 '09 at 1:34
+3
+because one is reasonably expectable and ignorable but the other is indicative of an error
+– John Machin
+Dec 4 '09 at 21:07
+3
+and why is a blank line reasonably expectable and non-integer is not?
+– SilentGhost
+Dec 5 '09 at 2:18
+1
+this is good if you are sure that your list is actually a list of stringified integers. If you are not sure you can do n = int(line) if line.is_integer() else int(float(line))
+– Mike Furlender
+Jul 25 '18 at 15:30
+Add a comment
+|
+25
+I found a work around. Python will convert the number to a float. Simply calling float first then converting that to an int will work:
+output = int(float(input))
+Share
+Follow
+answered Apr 23 '19 at 3:21
+Brad123Brad123
+62477 silver badges99 bronze badges
+Add a comment
+|
+15
+The reason is that you are getting an empty string or a string as an argument into int. Check if it is empty or it contains alpha characters. If it contains characters, then simply ignore that part.
+Share
+Follow
+edited Apr 8 '20 at 7:11
+Toluwalemi
+17922 silver badges1414 bronze badges
+answered Jun 23 '17 at 13:19
+rajender kumarrajender kumar
+40433 silver badges1111 bronze badges
+2
+2
+This looks more like a comment.
+When you have sufficient reputation you will be able to comment on any post.
+– Joshua Drake
+Jun 23 '17 at 13:39
+3
+this was exactly what i needed, thank you. I don't get why people on this forum are so obsessed with micromanaging this site
+– John D
+Nov 21 '20 at 9:38
+Add a comment
+|
+11
+The reason you are getting this error is that you are trying to convert a space character to an integer, which is totally impossible and restricted.And that's why you are getting this error.
+Check your code and correct it, it will work fine
+Share
+Follow
+answered Mar 27 '18 at 6:59
+JoishJoish
+1,1041414 silver badges2020 bronze badges
+Add a comment
+|
+9
+So if you have
+floatInString = '5.0'
+You can convert it to int with floatInInt = int(float(floatInString))
+Share
+Follow
+answered Dec 13 '19 at 11:12
+HarveyHarvey
+6,92333 gold badges5252 silver badges5454 bronze badges
+Add a comment
+|
+4
+You've got a problem with this line:
+while file_to_read != " ":
+This does not find an empty string.
+It finds a string consisting of one space.
+Presumably this is not what you are looking for.
+Listen to everyone else's advice.
+This is not very idiomatic python code, and would be much clearer if you iterate over the file directly, but I think this problem is worth noting as well.
+Share
+Follow
+answered Dec 3 '09 at 17:56
+jcdyerjcdyer
+17.3k55 gold badges3939 silver badges4848 bronze badges
+Add a comment
+|
+3
+Please test this function (split()) on a simple file. I was facing the same issue and found that it was because split() was not written properly (exception handling).
+Share
+Follow
+edited Jun 5 '14 at 15:00
+elixenide
+42.4k1414 gold badges7070 silver badges9393 bronze badges
+answered Jun 5 '14 at 11:46
+user3446207user3446207
+Add a comment
+|
+2
+I recently came across a case where none of these answers worked. I encountered CSV data where there were null bytes mixed in with the data, and those null bytes did not get stripped. So, my numeric string, after stripping, consisted of bytes like this:
+\x00\x31\x00\x0d\x00
+To counter this, I did:
+countStr = fields[3].replace('\x00', '').strip()
+count = int(countStr)
+...where fields is a list of csv values resulting from splitting the line.
+Share
+Follow
+answered Jan 10 '20 at 17:42
+T. ReedT. Reed
+14977 bronze badges
+2
+You sir are a genius ! Thanks
+– alioua walid
+Jul 17 '20 at 23:50
+You are my hero! Thanks!
+– Nikki
+Feb 15 at 19:20
+Add a comment
+|
+1
+readings = (infile.readline())
+print readings
+while readings != 0:
+global count
+readings = int(readings)
+There's a problem with that code. readings is a new line read from the file - it's a string. Therefore you should not compare it to 0. Further, you can't just convert it to an integer unless you're sure it's indeed one. For example, empty lines will produce errors here (as you've surely found out).
+And why do you need the global count? That's most certainly bad design in Python.
+Share
+Follow
+answered Dec 3 '09 at 17:43
+Eli BenderskyEli Bendersky
+232k7878 gold badges333333 silver badges394394 bronze badges
+Add a comment
+|
+1
+This could also happen when you have to map space separated integers to a list but you enter the integers line by line using the .input().
+Like for example I was solving this problem on HackerRank Bon-Appetit, and the got the following error while compiling
+So instead of giving input to the program line by line try to map the space separated integers into a list using the map() method.
+Share
+Follow
+answered Nov 28 '17 at 6:32
+Amit KumarAmit Kumar
+46822 gold badges66 silver badges1515 bronze badges
+0
+Add a comment
+|
+0
+I am creating a program that reads a
+file and if the first line of the file
+is not blank, it reads the next four
+lines. Calculations are performed on
+those lines and then the next line is
+read.
+Something like this should work:
+for line in infile:
+next_lines = []
+if line.strip():
+for i in xrange(4):
+try:
+next_lines.append(infile.next())
+except StopIteration:
+break
+# Do your calculation with "4 lines" here
+Share
+Follow
+answered Dec 3 '09 at 17:49
+ImranImran
+76.1k2323 gold badges9393 silver badges124124 bronze badges
+Add a comment
+|
+0
+I was getting similar errors, turns out that the dataset had blank values which python could not convert to integer.
+Share
+Follow
+answered Mar 12 '13 at 19:38
+user2162611user2162611
+1311010 bronze badges
+2
+4
+Could you elaborate a bit more with some examples on how the OP could solve it?
+– fmendez
+Mar 12 '13 at 20:00
+blank value means empty which can be converted to string float. If you try to convert to float also it will show error
+– saravanan saminathan
+Dec 13 '19 at 7:18
+Add a comment
+|
+0
+I got into the same issue when trying to use readlines() inside for loop for same file object... My suspicion is firing readling() inside readline() for same file object caused this error.
+Best solution can be use seek(0) to reset file pointer or
+Handle condition with setting some flag then create new object for same file by checking set condition....
+Share
+Follow
+answered Dec 5 '18 at 8:43
+Abhishek JainAbhishek Jain
+2,3151717 silver badges1919 bronze badges
+Add a comment
+|
+0
+This seems like readings is sometimes an empty string and obviously an error crops up.
+You can add an extra check to your while loop before the int(readings) command like:
+while readings != 0 | readings != '':
+global count
+readings = int(readings)
+Share
+Follow
+answered Feb 12 '20 at 5:07
+Kanishk MairKanishk Mair
+30544 silver badges77 bronze badges
+Add a comment
+|
+0
+I had hard time figuring out the actual reason, it happens when we dont read properly from file.
+you need to open file and read with readlines() method as below:
+with open('/content/drive/pre-processed-users1.1.tsv') as f:
+file=f.readlines()
+It corrects the formatted output
+Share
+Follow
+answered May 15 '20 at 20:25
+Shaina RazaShaina Raza
+61155 silver badges77 bronze badges
+Add a comment
+|
+0
+your answer is throwing errors because of this line
+readings = int(readings)
+Here you are trying to convert a string into int type which is not base-10. you can convert a string into int only if it is base-10 otherwise it will throw ValueError, stating invalid literal for int() with base 10.
+Share
+Follow
+answered May 28 '20 at 21:10
+shubhamshubham
+3633 bronze badges
+Add a comment
+|
+Highly active question. Earn 10 reputation in order to answer this question. The reputation requirement helps protect this question from spam and non-answer activity.
+Not the answer you're looking for? Browse other questions tagged python
+or ask your own question.
+The Overflow Blog
+Level Up: Linear Regression in Python – Part 2
+Shipping confetti to Stack Overflow’s design system
+Featured on Meta
+The future of Community Promotion, Open Source, and Hot Network Questions Ads
+Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
+Take the 2021 Developer Survey
+Linked
+0
+string to int conversion of list in python
+0
+adding items to a set in python
+0
+invalid literal error when converting hex to int python
+0
+I got this “ValueError: invalid literal for int() with base 10” in my Django project
+0
+how to convert float and string into integer value in python3
+1
+I keep getting the following error when I try to take in user input - ValueError: invalid literal for int() with base 10: ''
+0
+When I use str(int) it shows this “ValueError: invalid literal for int() with base 10”
+-1
+Trying to fix an error form a book excersise
+-3
+When the input is letter instead of number, Python says (ValueError: invalid literal for int() with base 10: '')
+-3
+Can't convert string to integer under while loop in python
+See more linked questions
+Related
+79
+ValueError: invalid literal for int () with base 10
+1
+invalid literal for int() with base 10: \xef\xbb\xbf10
+21
+python ValueError: invalid literal for float()
+0
+Python 3: ValueError: invalid literal for int() with base 10: 'd'
+0
+How do you prevent the "ValueError: invalid literal for int() with base 10: '', with defined functions?
+0
+ValueError: invalid literal for int() with base 10:
+Hot Network Questions
+How can I make a keyboard shortcut to strikethrough text in the Notes app?
+How do they enforce rules on declaring funds?
+How would transportation evolve in a world where everyone can teleport?
+Advice needed – I can't reach my collaborator, but there's a short deadline for revising our journal article submission
+select distinct columns over multiple databases sql server
+Calculating the hexagons in a hexagon of hexagons
+I ran a nail through a wire at home, should I worry?
+Starting play at higher levels and ability point buy
+newpxmath: accents are always bold
+Resigning will cripple my department, but I am resigning because of a near crippled department
+Why is this result no contradiction to length contraction?
+Please Identify this outdoor plant?
+Is it significantly faster to hike along a river bank?
+identify M.2 SSD from BASH Script
+Should most brahmins today be considered as shudras?
+According to international law, when is first-use nuclear strike justified?
+Is there a precise definition of "Supermoon"?
+Why is bad behavior more tolerated in academia compared to the rest of the industry?
+How can I use a control variable that is non-normal in linear regression with other variabels that are normal?
+Why can't the piano play middle eastern music?
+Does the inside of a lid used to cook rice or steam vegetables have anything besides water on it?
+Stop, in the name of the law
+How can I state an axiom without enumeration?
+Factorising blinear forms with Mathematica
+more hot questions
+Question feed
+Subscribe to RSS
+Question feed
+To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+lang-py
+Stack Overflow
+Questions
+Jobs
+Developer Jobs Directory
+Salary Calculator
+Help
+Mobile
+Products
+Teams
+Talent
+Advertising
+Enterprise
+Company
+About
+Press
+Work Here
+Legal
+Privacy Policy
+Terms of Service
+Contact Us
+Cookie Settings
+Cookie Policy
+Stack Exchange Network
+Technology
+Life / Arts
+Culture / Recreation
+Science
+Other
+Stack Overflow
+Server Fault
+Super User
+Web Applications
+Ask Ubuntu
+Webmasters
+Game Development
+TeX - LaTeX
+Software Engineering
+Unix & Linux
+Ask Different (Apple)
+WordPress Development
+Geographic Information Systems
+Electrical Engineering
+Android Enthusiasts
+Information Security
+Database Administrators
+Drupal Answers
+SharePoint
+User Experience
+Mathematica
+Salesforce
+ExpressionEngine® Answers
+Stack Overflow em Português
+Blender
+Network Engineering
+Cryptography
+Code Review
+Magento
+Software Recommendations
+Signal Processing
+Emacs
+Raspberry Pi
+Stack Overflow на русском
+Code Golf
+Stack Overflow en español
+Ethereum
+Data Science
+Arduino
+Bitcoin
+Software Quality Assurance & Testing
+Sound Design
+Windows Phone
+more (29)
+Photography
+Science Fiction & Fantasy
+Graphic Design
+Movies & TV
+Music: Practice & Theory
+Worldbuilding
+Video Production
+Seasoned Advice (cooking)
+Home Improvement
+Personal Finance & Money
+Academia
+Law
+Physical Fitness
+Gardening & Landscaping
+Parenting
+more (10)
+English Language & Usage
+Skeptics
+Mi Yodeya (Judaism)
+Travel
+Christianity
+English Language Learners
+Japanese Language
+Chinese Language
+French Language
+German Language
+Biblical Hermeneutics
+History
+Spanish Language
+Islam
+Русский язык
+Russian Language
+Arqade (gaming)
+Bicycles
+Role-playing Games
+Anime & Manga
+Puzzling
+Motor Vehicle Maintenance & Repair
+Board & Card Games
+Bricks
+Homebrewing
+Martial Arts
+The Great Outdoors
+Poker
+Chess
+Sports
+more (16)
+MathOverflow
+Mathematics
+Cross Validated (stats)
+Theoretical Computer Science
+Physics
+Chemistry
+Biology
+Computer Science
+Philosophy
+Linguistics
+Psychology & Neuroscience
+Computational Science
+more (10)
+Meta Stack Exchange
+Stack Apps
+API
+Data
+Blog
+Facebook
+Twitter
+LinkedIn
+Instagram
+site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
+rev 2021.5.28.39383
+Stack Overflow works best with JavaScript enabled
+Your privacy
+By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
+Accept all cookies
+Customize settings

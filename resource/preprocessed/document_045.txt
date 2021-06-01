@@ -1,1 +1,208 @@
-nameerror name pandas defined issue ibm db samples github skip content sign github features mobile actions codespaces packages security code review project management integrations github sponsors customer stories team enterprise explore explore github learn contribute topics collections trending learning lab open source guides connect others readme project events community forum github education github stars program marketplace pricing plans compare plans contact sales education repository github jump suggested jump results repository github jump organization github jump repository github jump sign sign message ibm db samples notifications star fork code issues pull requests actions wiki security insights code issues pull requests actions wiki security insights new issue question project sign free github account open issue contact maintainers community pick username email address password sign github clicking sign github agree terms service privacy statement occasionally send account related emails already github sign account jump bottom nameerror name pandas defined closed junsulee opened issue aug comments closed nameerror name pandas defined junsulee opened issue aug comments comments copy link member junsulee commented aug running notebook python environment encountered following error wine pandas read_sql sql hdbi nameerror name pandas defined changing relevant lines like worked fine wine pandas read_sql sql hdbi wine pd read_sql sql hdbi guess declared start code import pandas pd posting case need change text updated successfully errors encountered copy link member kdrodger commented oct thanks feedback junsulee welcome submit pr propose change otherwise try get corrected later today tomorrow kdrodger added commit referenced issue oct correct possible typo h notebook sample verified commit created github com signed github verified signature gpg key id aee f afdeb learn vigilant mode e e fixes issue kdrodger mentioned issue oct correct possible typo h notebook sample merged copy link member author junsulee commented oct hello kelly thank change kdrodger added commit referenced issue oct correct possible typo h notebook sample verified commit created github com signed github verified signature gpg key id aee f afdeb learn vigilant mode cbf fixes issue kdrodger closed oct sign free join conversation github already account sign comment assignees one assigned labels none yet projects none yet milestone milestone linked pull requests successfully merging pull request may close issue none yet participants github inc terms privacy security status docs contact github pricing api training blog perform action time signed another tab window reload refresh session signed another tab window reload refresh session
+NameError: name 'pandas' is not defined · Issue #8 · IBM/db2-samples · GitHub
+Skip to content
+Sign up
+Why GitHub?
+Features →
+Mobile →
+Actions →
+Codespaces →
+Packages →
+Security →
+Code review →
+Project management →
+Integrations →
+GitHub Sponsors →
+Customer stories→
+Team
+Enterprise
+Explore
+Explore GitHub →
+Learn and contribute
+Topics →
+Collections →
+Trending →
+Learning Lab →
+Open source guides →
+Connect with others
+The ReadME Project →
+Events →
+Community forum →
+GitHub Education →
+GitHub Stars program →
+Marketplace
+Pricing
+Plans →
+Compare plans →
+Contact Sales →
+Education →
+In this repository
+All GitHub
+↵
+Jump to
+↵
+No suggested jump to results
+In this repository
+All GitHub
+↵
+Jump to
+↵
+In this organization
+All GitHub
+↵
+Jump to
+↵
+In this repository
+All GitHub
+↵
+Jump to
+↵
+Sign in
+Sign up
+{{ message }}
+IBM
+/
+db2-samples
+Notifications
+Star
+41
+Fork
+52
+Code
+Issues
+1
+Pull requests
+2
+Actions
+Wiki
+Security
+Insights
+More
+Code
+Issues
+Pull requests
+Actions
+Wiki
+Security
+Insights
+New issue
+Have a question about this project? Sign up for a free GitHub account to open an issue and contact its maintainers and the community.
+Pick a username
+Email Address
+Password
+Sign up for GitHub
+By clicking “Sign up for GitHub”, you agree to our terms of service and
+privacy statement. We’ll occasionally send you account related emails.
+Already on GitHub?
+Sign in
+to your account
+Jump to bottom
+NameError: name 'pandas' is not defined
+#8
+Closed
+junsulee75
+opened this issue
+Aug 23, 2019
+· 2 comments
+Closed
+NameError: name 'pandas' is not defined
+#8
+junsulee75
+opened this issue
+Aug 23, 2019
+· 2 comments
+Comments
+Copy link
+Member
+junsulee75
+commented
+Aug 23, 2019
+When running this notebook on my python 3.7 environment, I encountered the following error
+---> 14 wine = pandas.read_sql(sql,hdbi) .. NameError: name 'pandas' is not defined
+Changing the relevant lines like below, it worked fine.
+#wine = pandas.read_sql(sql,hdbi) wine = pd.read_sql(sql,hdbi)
+I guess that is because we declared in the start of code
+import pandas as pd
+Posting this just in case we need to change it.
+The text was updated successfully, but these errors were encountered:
+Copy link
+Member
+kdrodger
+commented
+Oct 5, 2019
+Thanks for the feedback @junsulee75 .
+You're welcome to submit a PR to propose that change yourself, otherwise I'll try to get that corrected later today or tomorrow.
+👍
+1
+kdrodger
+added a commit
+that referenced
+this issue
+Oct 5, 2019
+Correct possible typo in H2o notebook sample
+…
+Verified
+This commit was created on GitHub.com and signed with GitHub’s verified signature.
+GPG key ID: 4AEE18F83AFDEB23
+Learn about vigilant mode.
+0e9e5a5
+Fixes issue #8
+kdrodger
+mentioned this issue
+Oct 5, 2019
+Correct possible typo in H2o notebook sample
+#12
+Merged
+Copy link
+Member
+Author
+junsulee75
+commented
+Oct 9, 2019
+Hello Kelly, Thank you for the change.
+kdrodger
+added a commit
+that referenced
+this issue
+Oct 10, 2019
+Correct possible typo in H2o notebook sample (#12)
+…
+Verified
+This commit was created on GitHub.com and signed with GitHub’s verified signature.
+GPG key ID: 4AEE18F83AFDEB23
+Learn about vigilant mode.
+7161cbf
+Fixes issue #8
+kdrodger
+closed this
+Oct 10, 2019
+Sign up for free
+to join this conversation on GitHub.
+Already have an account?
+Sign in to comment
+Assignees
+No one assigned
+Labels
+None yet
+Projects
+None yet
+Milestone
+No milestone
+Linked pull requests
+Successfully merging a pull request may close this issue.
+None yet
+2 participants
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+You can’t perform that action at this time.
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.

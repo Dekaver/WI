@@ -1,1 +1,392 @@
-get error message try freqdist nltk nameerror name nltk defined stack overflow stack overflow products teams stack overflow public questions answers stack overflow teams developers technologists share private knowledge coworkers jobs programming related technical career opportunities talent recruit tech talent build employer brand advertising reach developers technologists worldwide company loading log sign current community stack overflow help chat meta stack overflow communities sign log customize list stack exchange communities company blog people code want input take survey join stack overflow learn share knowledge build career sign email sign sign google sign github sign facebook home public questions tags users find job jobs companies teams stack overflow teams collaborate share knowledge private group create free team teams teams create free team teams q work connect share knowledge within single location structured easy search learn get error message try freqdist nltk nameerror name nltk defined ask question asked years months ago active year months ago viewed k times learning nltk mac working fine except trouble freqdist saw another question freqdist getting different error message typeerror unhashable type list example nltk corpus import brown news_text brown words categories news fdist nltk freqdist w lower w news_text traceback recent call last file line nameerror name nltk defined error message pretty consistent get message every time try freqdist commands like brown fileids fine thanks help nltk share improve question follow edited mar alvas k gold badges silver badges bronze badges asked nov user user gold badge silver badge bronze badges add comment answers active oldest votes use freqdist need import add line follows import nltk want use freqdist try nltk corpus import brown nltk import freqdist news_text brown words categories news fdist freqdist w lower w news_text share improve answer follow edited mar alvas k gold badges silver badges bronze badges answered nov spaceghostspaceghost gold badges silver badges bronze badges want save typing long term nltk import freqdist allow write freqdist place nltk freqdist verbsintransit nov tried still get error run code mindbrain jul add comment means installed nltk follow steps install nltk go link https pypi python org pypi setuptools end page find setuptools zip md download unzip find easy_install py python script use command sudo easy_install pip time pip installed ready use make sure directory find easy_install script file use command sudo pip install u nltk successful execution ensure nltk installed open idle type following import nltk nltk installed properly returned console share improve answer follow answered oct manjunath nmanjunath n silver badges bronze badges add comment setuptools required older versions python need running easily download https pypi python org pypi nltk information http www nltk org install html share improve answer follow answered jun ssssss silver badges bronze badges add comment nltk requires data need download first run following code import nltk nltk download stopwords nltk corpus import stopwords stopwords words english share improve answer follow edited aug marc silver badges bronze badges answered aug mr codermr coder silver badge bronze badges add comment answer thanks contributing answer stack overflow please sure answer question provide details share research avoid asking help clarification responding answers making statements based opinion back references personal experience learn see tips writing great answers draft saved draft discarded sign log sign using google sign using facebook sign using email password submit post guest name email required never shown post guest name email required never shown post answer discard clicking post answer agree terms service privacy policy cookie policy answer looking browse questions tagged nltk ask question overflow blog podcast blocking haters service developer survey open featured meta testing three vote close reopen network sites future community promotion open source hot network questions ads rule proposal one delete undelete per post take developer survey linked using nltk nltk function related tokenizer errors nltk pos tagging gae get error message try freqdist nltk nameerror name nltk defined attributeerror set attribute nltk book import sorting freqdist nltk get vs get python nltk nameerror name load_parser defined name nltk defined hot network questions forbid transformation max x milp country ever diverted international flight order arrest wanted person possible airplane enter another airplane duct tape medical tape would ok replace map light bulb led english equivalent russian idiom притянуть за уши opposite abbreviate rip man apart like rag doll read like rip apart rag doll instead like rag doll rip apart man tex allow numbers command names turning second offer proper river horse name superman enemy c b bad white flight simulation instructors stop simulator simulated crash someone help make fish better legal store accept payment debit card able refund even event staff mistake word trafficking mean freight transportation without conveying meaning illegal especially following sentence cvd used manufacture nmos gate oxides nelson mandela directly compare accuse israel apartheid hermeneutic paul employing approach corinthians trading indices buying venezuela stock market crashed march th happened sin kill mosquito hinduism poor writer serious impediment researcher rainbow steady even though droplets causing different states hot questions question feed subscribe rss question feed subscribe rss feed copy paste url rss reader stack overflow questions jobs developer jobs directory salary calculator help mobile products teams talent advertising enterprise company press work legal privacy policy terms service contact us cookie settings cookie policy stack exchange network technology life arts culture recreation science stack overflow server fault super user web applications ask ubuntu webmasters game development tex latex software engineering unix linux ask different apple wordpress development geographic information systems electrical engineering android enthusiasts information security database administrators drupal answers sharepoint user experience mathematica salesforce expressionengine answers stack overflow em português blender network engineering cryptography code review magento software recommendations signal processing emacs raspberry pi stack overflow на русском code golf stack overflow en español ethereum data science arduino bitcoin software quality assurance testing sound design windows phone photography science fiction fantasy graphic design movies tv music practice theory worldbuilding video production seasoned advice cooking home improvement personal finance money academia law physical fitness gardening landscaping parenting english language usage skeptics mi yodeya judaism travel christianity english language learners japanese language chinese language french language german language biblical hermeneutics history spanish language islam русский язык russian language arqade gaming bicycles role playing games anime manga puzzling motor vehicle maintenance repair board card games bricks homebrewing martial arts great outdoors poker chess sports mathoverflow mathematics cross validated stats theoretical computer science physics chemistry biology computer science philosophy linguistics psychology neuroscience computational science meta stack exchange stack apps api data blog facebook twitter linkedin instagram site design logo stack exchange inc user contributions licensed cc sa rev stack overflow works best javascript enabled privacy clicking accept cookies agree stack exchange store cookies device disclose information accordance cookie policy accept cookies customize settings
+I get an error message when I try FreqDist() in NLTK -- NameError: name 'nltk' is not defined - Stack Overflow
+Stack Overflow
+About
+Products
+For Teams
+Stack Overflow
+Public questions & answers
+Stack Overflow for Teams
+Where developers & technologists share private knowledge with coworkers
+Jobs
+Programming & related technical career opportunities
+Talent
+Recruit tech talent & build your employer brand
+Advertising
+Reach developers & technologists worldwide
+About the company
+Loading…
+Log in
+Sign up
+current community
+Stack Overflow
+help
+chat
+Meta Stack Overflow
+your communities
+Sign up or log in to customize your list.
+more stack exchange communities
+company blog
+People who code: we want your input.
+Take the Survey
+Join Stack Overflow to learn, share knowledge, and build your career.
+Sign up with email
+Sign up
+Sign up with Google
+Sign up with GitHub
+Sign up with Facebook
+Home
+Public
+Questions
+Tags
+Users
+Find a Job
+Jobs
+Companies
+Teams
+Stack Overflow for Teams
+– Collaborate and share knowledge with a private group.
+Create a free Team
+What is Teams?
+Teams
+What’s this?
+Create free Team
+Teams
+Q&A for work
+Connect and share knowledge within a single location that is structured and easy to search.
+Learn more
+I get an error message when I try FreqDist() in NLTK — NameError: name 'nltk' is not defined
+Ask Question
+Asked
+8 years, 6 months ago
+Active
+1 year, 9 months ago
+Viewed
+22k times
+8
+1
+I'm learning about the NLTK and my mac
+is working fine except I have trouble with the FreqDist(). (I saw another question about FreqDist() but he was getting a different error message. TypeError: unhashable type: 'list')
+Here's an example:
+>>> from nltk.corpus import brown
+>>> news_text = brown.words(categories='news')
+>>> fdist = nltk.FreqDist([w.lower() for w in news_text])
+Traceback (most recent call last):
+`
+File "<stdin>", line 1, in <module>`
+`NameError: name 'nltk' is not defined`
+This error message is pretty consistent. I get this message every time I try the FreqDist(). Other commands like - >>> brown.fileids() are fine.
+Thanks for your help!
+nltk
+Share
+Follow
+edited Mar 31 '13 at 22:43
+alvas
+94.8k9090 gold badges365365 silver badges641641 bronze badges
+asked Nov 20 '12 at 15:42
+user1839239user1839239
+7911 gold badge11 silver badge55 bronze badges
+Add a comment
+|
+4 Answers
+4
+Active
+Oldest
+Votes
+16
+Before you can use FreqDist, you need to import it.
+Add a line as follows:
+import nltk
+or if you just want to use FreqDist you should try this:
+>>> from nltk.corpus import brown
+>>> from nltk import FreqDist
+>>> news_text = brown.words(categories='news')
+>>> fdist = FreqDist([w.lower() for w in news_text])
+Share
+Follow
+edited Mar 31 '13 at 22:49
+alvas
+94.8k9090 gold badges365365 silver badges641641 bronze badges
+answered Nov 21 '12 at 13:06
+SpaceghostSpaceghost
+6,06733 gold badges2525 silver badges4141 bronze badges
+2
+1
+or if you want to save yourself some typing in the long term, do "from nltk import FreqDist". That will allow you to write "FreqDist" in place of "nltk.FreqDist".
+– verbsintransit
+Nov 21 '12 at 17:00
+I have tried all the above and still get an error when I run the above code as below:
+– MindBrain
+Jul 15 '14 at 14:23
+Add a comment
+|
+1
+which means you haven't installed nltk.
+follow these steps to install nltk:
+1:go to this link https://pypi.python.org/pypi/setuptools at the end of page you find setuptools-7.0.zip (md5) download it, then unzip it. you can find easy_install.py python script.
+2:use the command sudo easy_install pip. By this time pip will be installed ready to use, (make sure you are in the directory where you can find easy_install script file).
+3:use this command sudo pip install -U nltk. successful execution ensure that nltk is now installed.
+4:open the IDLE then you type the following:
+import nltk
+if nltk is installed properly then you will be returned with console.
+Share
+Follow
+answered Oct 22 '14 at 11:27
+Manjunath NManjunath N
+1,1951010 silver badges2020 bronze badges
+Add a comment
+|
+0
+setuptools are required for older versions of Python. There is no need for the same if you are running 3.2+
+You can easily download the same from https://pypi.python.org/pypi/nltk
+For more information on http://www.nltk.org/install.html
+Share
+Follow
+answered Jun 14 '16 at 17:55
+ssssss
+40855 silver badges1818 bronze badges
+0
+Add a comment
+|
+0
+nltk requires data you need to download first.
+Then run the following code:
+import nltk
+nltk.download('stopwords')
+from nltk.corpus import stopwords
+stopwords.words("english")
+Share
+Follow
+edited Aug 17 '19 at 7:32
+marc
+85966 silver badges1818 bronze badges
+answered Aug 17 '19 at 6:38
+Mr S CoderMr S Coder
+37811 silver badge1212 bronze badges
+Add a comment
+|
+Your Answer
+Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
+Draft saved
+Draft discarded
+Sign up or log in
+Sign up using Google
+Sign up using Facebook
+Sign up using Email and Password
+Submit
+Post as a guest
+Name
+Email
+Required, but never shown
+Post as a guest
+Name
+Email
+Required, but never shown
+Post Your Answer
+Discard
+By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
+Not the answer you're looking for? Browse other questions tagged nltk
+or ask your own question.
+The Overflow Blog
+Level Up: Linear Regression in Python – Part 2
+Shipping confetti to Stack Overflow’s design system
+Featured on Meta
+The future of Community Promotion, Open Source, and Hot Network Questions Ads
+Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
+Take the 2021 Developer Survey
+Visit chat
+Linked
+2
+When using nltk. before a nltk function
+Related
+0
+tokenizer errors with nltk
+1
+POS tagging on GAE
+2
+I get an error message when I try FreqDist() in NLTK — NameError: name 'nltk' is not defined
+7
+AttributeError: can't set attribute from nltk.book import *
+1
+Sorting FreqDist in NLTK with get vs get()
+1
+Python, NLTK: NameError: name 'load_parser' is not defined
+0
+name 'nltk' is not defined
+Hot Network Questions
+Why is this result no contradiction to length contraction?
+removing multiple lines - d3d vs 3dd
+Do phone chargers communicate with the phone?
+The usage of can't
+How can I use a control variable that is non-normal in linear regression with other variabels that are normal?
+I think I've sh-- myself
+Can I replace an STM32F105-RBT6 with a STM32F103-RET6? (ie. are they pin compatible?)
+Why is the ortho product major in the nitration of anisole with nitric acid and acetic anhydride?
+Why do we have two kidneys but one liver?
+Should most brahmins today be considered as shudras?
+Where and how are raw transactions stored on the blockchain?
+Is there a misprint on this note in the Maple Leaf Rag?
+How could publicly accessible information proving that a public figure is corrupt go undetected for at least a year?
+Is there any realistic explanation for Earth-like climate on a Sun-sized planet?
+Factorising blinear forms with Mathematica
+Should forcing open doors be Strength or Strength (Athletics)
+How would transportation evolve in a world where everyone can teleport?
+Triangle-style sequences
+unknown pieces of a set - stickers on round corner bricks
+How can I state an axiom without enumeration?
+Meaning of せないかんのよ
+Why isn't it the norm to have research repeated immediately by other academics?
+Where was this scene of 'Highlander: The series' with standing columns shot?
+Why is bad behavior more tolerated in academia compared to the rest of the industry?
+more hot questions
+Question feed
+Subscribe to RSS
+Question feed
+To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+Stack Overflow
+Questions
+Jobs
+Developer Jobs Directory
+Salary Calculator
+Help
+Mobile
+Products
+Teams
+Talent
+Advertising
+Enterprise
+Company
+About
+Press
+Work Here
+Legal
+Privacy Policy
+Terms of Service
+Contact Us
+Cookie Settings
+Cookie Policy
+Stack Exchange Network
+Technology
+Life / Arts
+Culture / Recreation
+Science
+Other
+Stack Overflow
+Server Fault
+Super User
+Web Applications
+Ask Ubuntu
+Webmasters
+Game Development
+TeX - LaTeX
+Software Engineering
+Unix & Linux
+Ask Different (Apple)
+WordPress Development
+Geographic Information Systems
+Electrical Engineering
+Android Enthusiasts
+Information Security
+Database Administrators
+Drupal Answers
+SharePoint
+User Experience
+Mathematica
+Salesforce
+ExpressionEngine® Answers
+Stack Overflow em Português
+Blender
+Network Engineering
+Cryptography
+Code Review
+Magento
+Software Recommendations
+Signal Processing
+Emacs
+Raspberry Pi
+Stack Overflow на русском
+Code Golf
+Stack Overflow en español
+Ethereum
+Data Science
+Arduino
+Bitcoin
+Software Quality Assurance & Testing
+Sound Design
+Windows Phone
+more (29)
+Photography
+Science Fiction & Fantasy
+Graphic Design
+Movies & TV
+Music: Practice & Theory
+Worldbuilding
+Video Production
+Seasoned Advice (cooking)
+Home Improvement
+Personal Finance & Money
+Academia
+Law
+Physical Fitness
+Gardening & Landscaping
+Parenting
+more (10)
+English Language & Usage
+Skeptics
+Mi Yodeya (Judaism)
+Travel
+Christianity
+English Language Learners
+Japanese Language
+Chinese Language
+French Language
+German Language
+Biblical Hermeneutics
+History
+Spanish Language
+Islam
+Русский язык
+Russian Language
+Arqade (gaming)
+Bicycles
+Role-playing Games
+Anime & Manga
+Puzzling
+Motor Vehicle Maintenance & Repair
+Board & Card Games
+Bricks
+Homebrewing
+Martial Arts
+The Great Outdoors
+Poker
+Chess
+Sports
+more (16)
+MathOverflow
+Mathematics
+Cross Validated (stats)
+Theoretical Computer Science
+Physics
+Chemistry
+Biology
+Computer Science
+Philosophy
+Linguistics
+Psychology & Neuroscience
+Computational Science
+more (10)
+Meta Stack Exchange
+Stack Apps
+API
+Data
+Blog
+Facebook
+Twitter
+LinkedIn
+Instagram
+site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
+rev 2021.5.28.39383
+Stack Overflow works best with JavaScript enabled
+Your privacy
+By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
+Accept all cookies
+Customize settings

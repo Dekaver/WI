@@ -1,1 +1,188 @@
-typeerror int object iterable python register login python photoshop sap java php android c hadoop oracle interview questions articles homelearn python programmingpython online compilerpython training tutorials beginnerssquare root pythonaddition two numbers pythonnull object pythonpython vs phptypeerror int object subscriptablepip recognizedpython commentpython min python factorialpython continue statementarmstrong number pythonpython lowercasepython uppercasepython map python string replacepython string findpython max functioninvalid literal int base pythontop online python compilerpolymorphism pythoninheritance pythonpython end parameter print python string concatenationpython pass statementpython enumeratepython new featurespython input python string containspython evalpython zip python range python ideinstall opencv python pip windowspython string title methodstring index range pythonpython print without newlineid function pythonpython split reverse words string pythonord function pythononly size arrays converted python scalarsarea circle pythonpython reverse stringbubble sort pythonattribute error pythonpython combine listspython slice functionconvert list string pythonpython list append extendpython sort dictionary key valueindentationerror unindent match outer indentation level pythonremove punctuation pythoncompare two lists pythonpython infinitypython keyerrorpython return outside functionpangram program python python python tutorial typeerror int object iterable python programming python common practice use loops loops loops used iterating lists dictionaries performing variety operations elements programmers often encounter error called typeerror int object iterable type error occurs code trying iterate list integer elements let us understand help example example initializing integer variable var iterating loop using integer value var print raise error output file none py line var typeerror int object iterable explanation example trying iterate loop using integer value integers iterable var variable holds single integer value cannot iterated using loop loop absence __iter__ method discussed example thus error typeerror int object iterable occurs example initializing list mylist iterating list x myllist print x output explanation example printing elements list using loop since list iterable object thus use loop iterate thus typeerror encountered dictionaries also iterable python using loops know whether object iterable use dir method check magic method __iter__ magic method present properties specified objects item said iterable check dir list dir code list print dir list output __add__ __class__ __contains__ __delattr__ __delitem__ __dir__ __doc__ __eq__ __format__ __ge__ __getattribute__ __getitem__ __gt__ __hash__ __iadd__ __imul__ __init__ __init_subclass__ __iter__ __le__ __len__ __lt__ __mul__ __ne__ __new__ __reduce__ __reduce_ex__ __repr__ __reversed__ __rmul__ __setattr__ __setitem__ __sizeof__ __str__ __subclasshook__ append clear copy count extend index insert pop remove reverse sort __iter__ magic method present code initializing integer variable var printing methods associated integer print dir var output __abs__ __add__ __bool__ __class__ __delattr__ __dir__ __divmod__ __doc__ __eq__ __float__ __floordiv__ __format__ __ge__ __getattribute__ __getformat__ __getnewargs__ __gt__ __hash__ __init__ __init_subclass__ __int__ __le__ __lt__ __mod__ __mul__ __ne__ __neg__ __new__ __pos__ __pow__ __radd__ __rdivmod__ __reduce__ __reduce_ex__ __repr__ __rfloordiv__ __rmod__ __rmul__ __round__ __rpow__ __rsub__ __rtruediv__ __set_format__ __setattr__ __sizeof__ __str__ __sub__ __subclasshook__ __truediv__ __trunc__ as_integer_ratio conjugate fromhex hex imag is_integer real reviewing output code notice __iter__ magic method absent thus integers iterable conclusion presence magic method __iter__ makes object iterable article conclude __iter__ method absent float object whereas present list object thus integer iterable object unlike list recommended posts learn python programming square root python addition two numbers python typeerror int object subscriptable pip recognized python uppercase python string replace python pass statement python string contains python range string index range python area circle python bubble sort python python combine lists python slice function convert list string python indentationerror unindent match outer indentation level python remove punctuation python python keyerror python return outside function tutorials learn python programming python online compiler python training tutorials beginners square root python addition two numbers python null object python python vs php typeerror int object subscriptable pip recognized python comment python min python factorial python continue statement armstrong number python python lowercase python uppercase python map python string replace python string find python max function invalid literal int base python top online python compiler polymorphism python inheritance python python end parameter print python string concatenation python pass statement python enumerate python new features python input python string contains python eval python zip python range python ide install opencv python pip windows python string title method string index range python python print without newline id function python python split reverse words string python ord function python size arrays converted python scalars area circle python python reverse string bubble sort python attribute error python python combine lists python slice function convert list string python python list append extend python sort dictionary key value indentationerror unindent match outer indentation level python remove punctuation python compare two lists python python infinity python keyerror python return outside function pangram program python follow us contact information sector gurgaon haryana india pin contact stechies com top tutorials sap tutorial sap hana tutorial sap basis tutorial android tutorial python tutorial java tutorial hadoop tutorial photoshop tutorial difference article interview questions top interview questions abap interview questions basis interview questions hana interview questions sd interview questions fico interview questions hibernate interview questions qtp uft interview questions tableau interview questions testng interview questions hive interview questions quick links write us career guidance tool sap transaction codes sample resume institutes sap pdf books classifieds recent articles contact us us terms use privacy policy cookies policy
+TypeError: 'int' object is not iterable in Python
+Register
+Login
+Python
+Photoshop
+SAP
+Java
+PHP
+Android
+C++
+Hadoop
+Oracle
+Interview Questions
+Articles
+Other
+HomeLearn Python ProgrammingPython Online CompilerPython Training Tutorials for BeginnersSquare Root in PythonAddition of two numbers in PythonNull Object in PythonPython vs PHPTypeError: 'int' object is not subscriptablepip is not recognizedPython CommentPython Min()Python FactorialPython Continue StatementArmstrong Number in PythonPython lowercasePython UppercasePython map()Python String ReplacePython String findPython Max() FunctionInvalid literal for int() with base 10 in PythonTop Online Python CompilerPolymorphism in PythonInheritance in PythonPython : end parameter in print()Python String ConcatenationPython Pass StatementPython EnumeratePython New 3.6 FeaturesPython input()Python String ContainsPython evalPython zip()Python Range Python IDEInstall Opencv Python PIP WindowsPython String Title() MethodString Index Out of Range PythonPython Print Without NewlineId() function in PythonPython Split()Reverse Words in a String PythonOrd Function in PythonOnly Size-1 Arrays Can be Converted to Python ScalarsArea of Circle in PythonPython Reverse StringBubble Sort in PythonAttribute Error PythonPython Combine ListsPython slice() functionConvert List to String PythonPython list append and extendPython Sort Dictionary by Key or Valueindentationerror: unindent does not match any outer indentation level in PythonRemove Punctuation PythonCompare Two Lists in PythonPython InfinityPython KeyErrorPython Return Outside FunctionPangram Program in Python
+Python » Python Tutorial					TypeError: 'int' object is not iterable in Python
+While programming in Python, it is a common practice to use loops such as for loops and while loops. These are used for iterating over lists and dictionaries for performing a variety of operations on the elements. But programmers often encounter an error called TypeError: 'int' object is not iterable.
+This type of error occurs when the code is trying to iterate over a list of integer elements.
+Let us understand it more with the help of an example.
+Example 1
+# Initializing an integer variable
+Var = 5
+# Iterating through a loop
+# Using an integer value
+for i in Var:
+print("This will raise an error")
+Output
+File "none3.py", line 6, in <module>
+for i in var:
+TypeError: 'int' object is not iterable
+Explanation
+In the above example, we are trying to iterate through a for loop using an integer value. But the integers are not iterable. As the Var variable holds a single integer value 5, it cannot be iterated using a for loop or any other loop.
+This is because of the absence of __iter__ method. Which we have discussed about below in example 2.
+Thus the error “TypeError: int object is not iterable” occurs.
+Example 2
+# Initializing the list
+MyList = [2,4,8,3]
+# Iterating through a List
+for x in MyLlist:
+print(x)
+Output
+2
+4
+8
+3
+Explanation
+In the above example, we printing the elements of the list using the for loop. since the list is an iterable object, thus we can use the for loop to iterate through it. Thus, the TypeError is not encountered here. Dictionaries are also iterable in Python using the loops.
+To know whether an object is iterable or not we can use the dir() method to check for the magic method __iter__ . If this magic method is present in the properties of specified objects then that item is said to be iterable
+To check, do: dir(list) or dir(5)
+Code
+List= [ ]
+print(dir(list))
+Output
+['__add__', '__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+__iter__ magic method is present.
+Code
+# Initializing an integer variable
+Var = 5
+# Printing methods associated with integer
+print(dir(Var))
+Output
+['__abs__', '__add__', '__bool__', '__class__', '__delattr__', '__dir__', '__divmod__', '__doc__', '__eq__', '__float__', '__floordiv__', '__format__', '__ge__', '__getattribute__', '__getformat__', '__getnewargs__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__int__', '__le__', '__lt__', '__mod__', '__mul__', '__ne__', '__neg__', '__new__', '__pos__', '__pow__', '__radd__', '__rdivmod__', '__reduce__', '__reduce_ex__', '__repr__', '__rfloordiv__', '__rmod__', '__rmul__', '__round__', '__rpow__', '__rsub__', '__rtruediv__', '__set_format__', '__setattr__', '__sizeof__', '__str__', '__sub__', '__subclasshook__', '__truediv__', '__trunc__', 'as_integer_ratio', 'conjugate', 'fromhex', 'hex', 'imag', 'is_integer', 'real']
+On reviewing the output of the code. We notice that __iter__ magic method is absent. Thus, integers are not iterable.
+Conclusion
+The presence of the magic method __iter__ is what makes an object iterable. From the above article, we can conclude that. The __iter__ method is absent in the float object. Whereas it is present in the list object. Thus integer is not iterable object, unlike list.
+Recommended Posts:
+Learn Python Programming
+Python Online Compiler
+Addition of two numbers in Python
+Python vs PHP
+pip is not recognized
+Python Factorial
+Python String find
+Python Max() Function
+Python String Concatenation
+Python IDE
+Install Opencv Python PIP Windows
+String Index Out of Range Python
+Id() function in Python
+Ord Function in Python
+Python Reverse String
+Bubble Sort in Python
+Attribute Error Python
+Python Combine Lists
+Python Infinity
+Python KeyError
+Tutorials
+Learn Python Programming
+Python Online Compiler
+Python Training Tutorials for Beginners
+Square Root in Python
+Addition of two numbers in Python
+Null Object in Python
+Python vs PHP
+TypeError: 'int' object is not subscriptable
+pip is not recognized
+Python Comment
+Python Min()
+Python Factorial
+Python Continue Statement
+Armstrong Number in Python
+Python lowercase
+Python Uppercase
+Python map()
+Python String Replace
+Python String find
+Python Max() Function
+Invalid literal for int() with base 10 in Python
+Top Online Python Compiler
+Polymorphism in Python
+Inheritance in Python
+Python : end parameter in print()
+Python String Concatenation
+Python Pass Statement
+Python Enumerate
+Python New 3.6 Features
+Python input()
+Python String Contains
+Python eval
+Python zip()
+Python Range
+Python IDE
+Install Opencv Python PIP Windows
+Python String Title() Method
+String Index Out of Range Python
+Python Print Without Newline
+Id() function in Python
+Python Split()
+Reverse Words in a String Python
+Ord Function in Python
+Only Size-1 Arrays Can be Converted to Python Scalars
+Area of Circle in Python
+Python Reverse String
+Bubble Sort in Python
+Attribute Error Python
+Python Combine Lists
+Python slice() function
+Convert List to String Python
+Python list append and extend
+Python Sort Dictionary by Key or Value
+indentationerror: unindent does not match any outer indentation level in Python
+Remove Punctuation Python
+Compare Two Lists in Python
+Python Infinity
+Python KeyError
+Python Return Outside Function
+Pangram Program in Python
+Follow Us
+Contact Information
+#3940 Sector 23,Gurgaon, Haryana (India)Pin :- 122015
+contact@stechies.com
+Top Tutorials
+SAP Tutorial
+SAP HANA Tutorial
+SAP BASIS Tutorial
+Android Tutorial
+Python Tutorial
+Java Tutorial
+Hadoop Tutorial
+Photoshop Tutorial
+Difference Between Article
+Interview Questions
+Top Interview Questions
+ABAP Interview Questions
+BASIS Interview Questions
+HANA Interview Questions
+SD Interview Questions
+FICO Interview Questions
+Hibernate Interview Questions
+QTP/UFT Interview Questions
+Tableau Interview Questions
+TestNG Interview Questions
+Hive Interview Questions
+Quick Links
+Write for us
+Career Guidance Tool
+SAP Transaction Codes
+Sample Resume
+Institutes
+SAP PDF Books
+Classifieds
+Recent Articles
+Contact Us
+About Us
+Terms of Use
+Privacy Policy
+Cookies Policy

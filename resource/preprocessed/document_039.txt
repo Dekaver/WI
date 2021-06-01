@@ -1,1 +1,70 @@
-could possible nameerror name np defined please explain sololearn learn code free courses code playground discuss top learners blog sign could possible nameerror name np defined please explain https code sololearn com cnqecwnazrr ref app codeplayground pm iryna shevchenko answers new answer sort votes date np maybe object class must define daniel need write import numpy np new code work ferhat sevim try set random loop daniel np means numpy first code working second many thanks https code sololearn com codfq xpcme ref app iryna shevchenko many thanks iryna shevchenko trying mistake thanks https code sololearn com ck cwx maham ref app iryna shevchenko hot today working separate two avatars solved guys coding part phones better learn html java python reverse string java proper way creating web application part written first getting weird output idea take number n input output sum numbers n including n sample input sample output size array different function sololearn sololearn sololearn inc embarcadero center suite san francisco ca email us home courses blog contact terms use privacy policy faq sololearn inc send us message name email message
+How could be possible to this: NameError: name'np' is not defined??? Please, explain me :) | SoloLearn: Learn to code for FREE!
+COURSES
+CODE PLAYGROUND
+DISCUSS
+TOP LEARNERS
+BLOG
+SIGN IN
+0
+How could be possible to this: NameError: name'np' is not defined??? Please, explain me :)
+https://code.sololearn.com/cNqeCWNAzrr3/?ref=app
+codeplayground
+10/12/2017 12:33:51 PM
+Iryna Shevchenko
+6 Answers
+New Answer
+Sort by:
+Votes
+Date
++3
+what is "np"? maybe an object from a class? you must to define it
+Daniel
++3
+You need to write "import numpy as np" again in the new code. Then it will work.
+Ferhat Sevim
++2
+Try to set random to 100 and the same for loop
+Daniel
++1
+np means Numpy
+I have first code this. He is working...but second - no.
+Many thanks 😊
+https://code.sololearn.com/cOdfq9XpcmE1/?ref=app
+Iryna Shevchenko
++1
+many thanks 😊
+Iryna Shevchenko
+0
+I'm trying...but-no😔😔😔 Where is my mistake??
+Thanks😊
+https://code.sololearn.com/ck0cWX8maHaM/?ref=app
+Iryna Shevchenko
+Hot Today
+Help me to solve this
+Level 21 - not ready for users?
+Help
+write c++ program that calculates the averge of two numbers using functions
+why this line is not executed?
+I don't know how to copy link
+Can you solve it
+please help me... question is in the description
+Help me with this question please.
+Can anyone tell me how to print this series (in separate lines ) : I IC ICS ICSE
+@SoloLearn
+SoloLearn
+SoloLearn Inc.
+4 Embarcadero Center, Suite 1455
+San Francisco, CA 94111
+Email Us
+Home
+Courses
+Blog
+Contact
+Terms of Use
+Privacy Policy
+FAQ
+© 2021 SoloLearn, Inc.
+Send us a message
+Name:
+Email:
+Message:

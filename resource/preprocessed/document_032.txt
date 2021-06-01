@@ -1,1 +1,79 @@
-append function python freecodecamp forum append function python kiwiseth june pm hi anyone help trying append number list jupyter notebook work stuck restart jupyter note book dorps error code print append attributeerror traceback recent call last append attributeerror set object attribute append itay june pm brackets arent square change bracket square bracket work correct im wrong kiwiseth june pm hi thank helping results append attributeerror traceback recent call last append attributeerror set object attribute append append file line append syntaxerror invalid syntax weird thing code append exactly person work jupyter notebook even restarted downloaded person code run jupyter notebook working itay june pm code needs look like print append print kiwiseth june pm found rel problem first code wrote thank anyway kiwiseth june pm yes also found thank much ieahleen closed february pm home subforums faq guidelines terms service privacy policy powered discourse best viewed javascript enabled
+Append function - Python - The freeCodeCamp Forum
+Append function
+Python
+KiwiSeth
+June 28, 2018,
+2:20pm
+#1
+Hi can anyone help me?
+I was trying to append a number into the list on jupyter notebook but it didn’t work and I’m stuck. (I did restart the jupyter note book but it dorps the same error.)
+So my code was:
+a = {44, 9, -10}
+print(a)
+{9, 44, -10}
+a.append(1)
+AttributeError
+Traceback (most recent call last)
+in ()
+----> 1 a.append(1)
+AttributeError: ‘set’ object has no attribute ‘append’
+itay445
+June 28, 2018,
+2:45pm
+#2
+because the brackets arent square.
+change
+the bracket to square bracket and it will work, correct me if im wrong
+KiwiSeth
+June 28, 2018,
+3:48pm
+#3
+Hi There, thank you for helping me out.
+Here are the results:
+a.append[1]
+AttributeError
+Traceback (most recent call last)
+in ()
+----> 1 a.append[1]
+AttributeError: ‘set’ object has no attribute ‘append’
+or:
+a.append{1}
+File “”, line 1
+a.append{1}
+^
+SyntaxError: invalid syntax
+The weird thing is that my this code (a.append(1)) is exactly the same to a person’s but it just wouldn’t work on my jupyter notebook even I restarted it again and again.
+I downloaded this person’s code and run it on my jupyter notebook and it’s working.
+itay445
+June 28, 2018,
+4:00pm
+#4
+your code needs to look like this:
+<p>
+a = [44, 9,-10]
+print(a)
+a.append(1)
+print(a)
+KiwiSeth
+June 28, 2018,
+4:00pm
+#5
+I just found out the rel problem is from the first code:
+I wrote a = {44, 9, -10}, but it should be a = [44, 9, -10].
+Thank you anyway!
+KiwiSeth
+June 28, 2018,
+4:01pm
+#6
+Yes I also just found out. Thank you very much!
+ieahleen
+closed
+February 17, 2021,
+5:37pm
+#8
+Home
+Subforums
+FAQ/Guidelines
+Terms of Service
+Privacy Policy
+Powered by Discourse, best viewed with JavaScript enabled

@@ -1,0 +1,238 @@
+Exception in thread main java.lang.RuntimeException: Uncompilable source code - Erroneous tree typ [Solved] (Beginning Java forum at Coderanch)
+Search...
+FAQs
+Subscribe
+Pie
+FAQs
+Recent topics
+Flagged topics
+Hot topics
+Best topics
+Search...
+Search within Beginning Java
+Search Coderanch
+Advance search
+Google search
+Register / Login
+Post Reply
+Bookmark Topic
+Watch Topic
+New Topic
+programming forums
+Java
+Mobile
+Certification
+Databases
+Caching
+Books
+Engineering
+Micro Controllers
+OS
+Languages
+Paradigms
+IDEs
+Build Tools
+Frameworks
+Application Servers
+Open Source
+This Site
+Careers
+Other
+Pie Elite
+all forums
+this forum made possible by our volunteer staff, including ...
+Marshals:
+Campbell Ritchie
+Paul Clapham
+Ron McLeod
+paul wheaton
+Devaka Cooray
+Sheriffs:
+Jeanne Boyarsky
+Tim Cooke
+Liutauras Vilda
+Saloon Keepers:
+Tim Moores
+Tim Holloway
+Stephan van Hulst
+Carey Brown
+Piet Souris
+Bartenders:
+salvin francis
+Mikalai Zaikin
+Himai Minh
+Forum:
+Beginning Java
+Exception in thread "main" java.lang.RuntimeException: Uncompilable source code - Erroneous tree typ
+Ross Gerard
+Ranch Hand
+Posts: 53
+I like...
+posted 5 years ago
+Number of slices to send:
+Optional 'thank-you' note:
+Send
+Trying to get code to compile but getting strange error message.
+public class
+App
+{
+public static void main(String args[])
+{
+myJFrame mjf = new myJFrame();
+}
+}
+import javax.swing.*;
+public class MyJFrame extends JFrame
+{
+public MyJFrame ()
+{
+super ("My First Frame");
+MyJPanel mjp = new MyJPanel();
+getContentPane().add(mjp,"Center");
+setDefaultCloseOperation(EXIT_ON_CLOSE);
+setSize (640, 480);
+setVisible(true);
+}
+}
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+public class MyJPanel extends JPanel
+{
+public MyJPanel()
+{
+super();
+setBackground(Color.gray);
+Student s1 = new Student("Ross","Ross",25);
+setLayout(new BorderLayout());
+MyJPanel1 p1 = new MyJPanel1();
+MyJPanel2 p2 = new MyJPanel2();
+p2.b2 = new JButton("Whatsup");
+p1.b1 = new JButton(s1.firstName);
+p2.add(p2.b2);
+p2.b2.setVisible(false);
+p1.b1.addActionListener(new ActionListener() {
+public void actionPerformed(ActionEvent e)
+{
+//Execute when button is pressed
+//System.out.println("You clicked the button");
+p2.b2.setVisible(true);
+}
+});
+p1.add(p1.b1);
+add(p1,"North");
+add(p2,"Center");
+}
+}
+import java.awt.*;
+import javax.swing.*;
+public class MyJPanel1 extends JPanel
+{
+JButton b1;
+public MyJPanel1()
+{
+super();
+setBackground(Color.yellow);
+b1 = new JButton("student info will be here later ...");
+//		add(b1);
+}
+}
+import java.awt.*;
+import javax.swing.*;
+public class MyJPanel2 extends JPanel
+{
+JButton b2;
+public MyJPanel2()
+{
+super();
+setBackground(Color.pink);
+b2 = new JButton("Whats Up will be shown here" );
+//		add(b2);
+}
+}
+public class Student
+{
+String firstName;
+String lastName;
+int age;
+public Student(String a, String b, int x)
+{
+super();
+firstName = a;
+lastName = b;
+age = x;
+}
+String getInfo()
+{
+return "NAME = "+firstName+ "
+"+lastName+"
+"+"Age = "+age;
+}
+String whatsUp()
+{
+double r = Math.random();
+int myNumber = (int) (r * 3f); //comment: a random number between 0 and 2
+String answer = "I don't know";
+if(myNumber == 0) answer = "searching the web";
+if(myNumber == 1) answer = "doing Java";
+if(myNumber == 2) answer = "Listening to endless lecture";
+return answer;
+}
+}
+Paul Clapham
+Marshal
+Posts: 26558
+81
+I like...
+posted 5 years ago
+1
+Number of slices to send:
+Optional 'thank-you' note:
+Send
+No, you aren't trying to compile that code. That error message happens when you try to run the code before successfully compiling it.
+I expect you are using some kind of IDE like NetBeans maybe. So review the compiler errors before you click the Run button.
+Ross Gerard
+Ranch Hand
+Posts: 53
+I like...
+posted 5 years ago
+Number of slices to send:
+Optional 'thank-you' note:
+Send
+thanks, that worked. What a strange message.
+Campbell Ritchie
+Marshal
+Posts: 72762
+317
+posted 5 years ago
+Number of slices to send:
+Optional 'thank-you' note:
+Send
+No, if you use IDEs regularly, you will see that sort of message frequently. We have an FAQ about it.
+If you look at the code, you will see little red marks against some lines. Those are where the compiler errors are
+Ross Gerard
+Ranch Hand
+Posts: 53
+I like...
+posted 5 years ago
+Number of slices to send:
+Optional 'thank-you' note:
+Send
+I dont use IDES on a regular basis. Thanks for the link!
+reply
+reply
+Bookmark Topic
+Watch Topic
+New Topic
+Boost this thread!
+Similar Threads
+Actionlistener in seperate class question
+Buttons not working properly
+Need something similar for setTitle but for a button? When b1 is clicked I need b2 to run.
+Understanding the concept of passing objects through class constructors
+JPanel communication
+More...
+current ranch time (not your local time) is May 31, 2021 11:41:48
+all times are in ranch time: GMT-6 in summer, GMT-7 in winter
+contact us | advertise |
+| Powered by JForum | copyright © 1998-2021 paul wheaton, missoula, MT

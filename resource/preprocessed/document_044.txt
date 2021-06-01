@@ -1,1 +1,406 @@
-python pandas nameerror name defined stack overflow stack overflow products teams stack overflow public questions answers stack overflow teams developers technologists share private knowledge coworkers jobs programming related technical career opportunities talent recruit tech talent build employer brand advertising reach developers technologists worldwide company loading log sign current community stack overflow help chat meta stack overflow communities sign log customize list stack exchange communities company blog people code want input take survey join stack overflow learn share knowledge build career sign email sign sign google sign github sign facebook home public questions tags users find job jobs companies teams stack overflow teams collaborate share knowledge private group create free team teams teams create free team teams q work connect share knowledge within single location structured easy search learn python pandas nameerror name defined ask question asked years months ago active months ago viewed k times ok first python pandas program hard time figuring column name reference function call code parsedevicetype calling function parse useragentstring call using think column name get error name defined df pd read_csv user_agent_strings txt index_col none na_values na sep dt parsedevicetype user_agent_string print df columns nameerror name user_agent_string defined index u user_agent_string dtype object header first row data input file containing useragentstrings user_agent_string mozilla ipad cpu os _ _ like mac os x applewebkit khtml like gecko version mobile safari help understand reference column name dt parsedevicetype user_agent_string call like also know reference column number possible call function thanks python pandas share improve question follow edited may hatshepsut gold badges silver badges bronze badges asked feb jazzminejazzmine gold badges silver badges bronze badges user_agent_string string like dt parsedevicetype user_agent_string feb hi trying pass column name putting user_agent_string quotes imply passing literal rather variable jazzmine feb jazzmine try df user_agent_string liam foley feb code variable seem exist feb shown code parsedevicetype guess trying pass variable name rather string column selection df tried figs suggested wrapping quotes around user_agent_string edchum feb show comment answers active oldest votes import pandas package read data import pandas pd df pd read_csv user_agent_strings index_col none na_values na sep share improve answer follow edited jun zoe k gold badges silver badges bronze badges answered jun sunitha gsunitha g silver badge bronze badges add comment first thing need understand error message seeing nameerror python exception related pandas case get exactly error trying use name interpreter know b traceback recent call last file line nameerror name defined important know python commands magically create names create name would almost always need assignment name general rule done name exist code name created df need go get data use two different ways access data dataframe equivalent df user_agent_string df user_agent_string recommend trying interactive environment see results passing function also going guess function parsedevicetype one string based comments want call function every item file would need apply parsed_types df user_agent_string apply parsedevicetype access columns number instead name recommend use iloc allows access rows first colum dataframe object user_agent_string df iloc share improve answer follow edited dec answered dec chthonicdaemonchthonicdaemon k silver badges bronze badges add comment didnt import pandas import pandas pd pd pd read_csv anythinf csv save file open later time get error need restart project compile code start use jupyter notebook easily erase errors share improve answer follow answered dec rohitrohit bronze badges add comment try remove txt file name might help like following df pd read_csv user_agent_strings index_col none na_values na sep share improve answer follow edited jul answered jul zmatrixzmatrix bronze badges could please provide explanation correct bcdan jul add comment answer thanks contributing answer stack overflow please sure answer question provide details share research avoid asking help clarification responding answers making statements based opinion back references personal experience learn see tips writing great answers draft saved draft discarded sign log sign using google sign using facebook sign using email password submit post guest name email required never shown post guest name email required never shown post answer discard clicking post answer agree terms service privacy policy cookie policy answer looking browse questions tagged python pandas ask question overflow blog podcast blocking haters service developer survey open featured meta testing three vote close reopen network sites future community promotion open source hot network questions ads rule proposal one delete undelete per post take developer survey related execute program call system command python metaclasses python python ternary conditional operator get current time python concatenate two lists python python string contains substring method renaming columns pandas adding new column existing dataframe python pandas delete column pandas dataframe iterate rows dataframe pandas hot network questions possible airplane enter another airplane formal requirements cite universal declaration human rights u courts cable shielding adequate video audio frequencies months based moon months longer gregorian calendar lunation sasha johnson state white man equal slave script generate input files benchmark purpose poor writer serious impediment researcher friends us often barter babysitting time owe taxes mobile phone chargers produce regulated voltage would probable reaction belarusian planes entered lithuanian airspace valid esta got refused b b us visa sin kill mosquito hinduism deal soft alpha gamer player browser based wallet like metamask planned cardano important brand name type string overall sound guitar password hash contained x middle resulting valueerror bcrypt hashpw voltage increase batteries connected parallel c b bad white usual feasible european universities accept phd candidates right bachelor degree computer science field forbid transformation max x milp randomly programmatically generate good next chord ti display interference decides congressional district removed fixture natural gas fired forced air furnace smoke detector hot questions question feed subscribe rss question feed subscribe rss feed copy paste url rss reader lang py stack overflow questions jobs developer jobs directory salary calculator help mobile products teams talent advertising enterprise company press work legal privacy policy terms service contact us cookie settings cookie policy stack exchange network technology life arts culture recreation science stack overflow server fault super user web applications ask ubuntu webmasters game development tex latex software engineering unix linux ask different apple wordpress development geographic information systems electrical engineering android enthusiasts information security database administrators drupal answers sharepoint user experience mathematica salesforce expressionengine answers stack overflow em português blender network engineering cryptography code review magento software recommendations signal processing emacs raspberry pi stack overflow на русском code golf stack overflow en español ethereum data science arduino bitcoin software quality assurance testing sound design windows phone photography science fiction fantasy graphic design movies tv music practice theory worldbuilding video production seasoned advice cooking home improvement personal finance money academia law physical fitness gardening landscaping parenting english language usage skeptics mi yodeya judaism travel christianity english language learners japanese language chinese language french language german language biblical hermeneutics history spanish language islam русский язык russian language arqade gaming bicycles role playing games anime manga puzzling motor vehicle maintenance repair board card games bricks homebrewing martial arts great outdoors poker chess sports mathoverflow mathematics cross validated stats theoretical computer science physics chemistry biology computer science philosophy linguistics psychology neuroscience computational science meta stack exchange stack apps api data blog facebook twitter linkedin instagram site design logo stack exchange inc user contributions licensed cc sa rev stack overflow works best javascript enabled privacy clicking accept cookies agree stack exchange store cookies device disclose information accordance cookie policy accept cookies customize settings
+Python Pandas: NameError: name is not defined - Stack Overflow
+Stack Overflow
+About
+Products
+For Teams
+Stack Overflow
+Public questions & answers
+Stack Overflow for Teams
+Where developers & technologists share private knowledge with coworkers
+Jobs
+Programming & related technical career opportunities
+Talent
+Recruit tech talent & build your employer brand
+Advertising
+Reach developers & technologists worldwide
+About the company
+Loading…
+Log in
+Sign up
+current community
+Stack Overflow
+help
+chat
+Meta Stack Overflow
+your communities
+Sign up or log in to customize your list.
+more stack exchange communities
+company blog
+People who code: we want your input.
+Take the Survey
+Join Stack Overflow to learn, share knowledge, and build your career.
+Sign up with email
+Sign up
+Sign up with Google
+Sign up with GitHub
+Sign up with Facebook
+Home
+Public
+Questions
+Tags
+Users
+Find a Job
+Jobs
+Companies
+Teams
+Stack Overflow for Teams
+– Collaborate and share knowledge with a private group.
+Create a free Team
+What is Teams?
+Teams
+What’s this?
+Create free Team
+Teams
+Q&A for work
+Connect and share knowledge within a single location that is structured and easy to search.
+Learn more
+Python Pandas: NameError: name is not defined
+Ask Question
+Asked
+6 years, 3 months ago
+Active
+6 months ago
+Viewed
+42k times
+2
+Ok, this is my first Python Pandas program and I'm having a hard time figuring out what the column name is so I can reference it in a function call.
+Below is my code. parseDeviceType is calling a function to parse useragentstring. But when I call it using what I think the column name is, I get an error that name is not defined:
+df = pd.read_csv('user_agent_strings.txt',index_col=None, na_values=['NA'],sep=',')
+dt=parseDeviceType(user_agent_string)
+print df.columns
+NameError: name 'user_agent_string' is not defined
+Index([u'user_agent_string'], dtype='object')
+And here's the
+header and first row of data from the input file containing the useragentstrings:
+"user_agent_string"
+"Mozilla/5.0 (iPad; CPU OS 7_1_1 like Mac OS X) AppleWebKit/537.51.2 (KHTML, like Gecko) Version/7.0 Mobile/11D201 Safari/9537.53"
+Can you help me understand how to reference the column name in the dt=parseDeviceType(user_agent_string) call? I'd like to also know how to reference it by column number if that is possible in a call to a function.
+Thanks
+python pandas
+Share
+Follow
+edited May 30 '19 at 5:48
+Hatshepsut
+4,06044 gold badges2828 silver badges6161 bronze badges
+asked Feb 16 '15 at 3:47
+JazzmineJazzmine
+1,60566 gold badges3131 silver badges4949 bronze badges
+6
+1
+Should user_agent_string be a string? Like: dt=parseDeviceType('user_agent_string').
+– 101
+Feb 16 '15 at 3:58
+Hi: I'm trying to pass a column name. Wouldn't putting the user_agent_string in quotes imply that I'm passing a literal rather than a variable?
+– Jazzmine
+Feb 16 '15 at 4:01
+1
+@Jazzmine try df. user_agent_string
+– Liam Foley
+Feb 16 '15 at 4:13
+As your code is now that variable doesn't seem to exist ;)
+– 101
+Feb 16 '15 at 4:20
+As you've not shown the code for parseDeviceType my guess is that you are trying to pass a variable name rather than a string for column selection from your df, have you tried what figs has suggested and wrapping quotes around user_agent_string?
+– EdChum
+Feb 16 '15 at 9:18
+|
+Show 1 more comment
+4 Answers
+4
+Active
+Oldest
+Votes
+1
+Import pandas package to read data
+import pandas as pd
+df = pd.read_csv('user_agent_strings', index_col=None, na_values=['NA'],sep=',')
+Share
+Follow
+edited Jun 6 '18 at 7:26
+Zoe
+23.7k1616 gold badges9999 silver badges132132 bronze badges
+answered Jun 6 '18 at 6:59
+Sunitha GSunitha G
+13511 silver badge66 bronze badges
+Add a comment
+|
+1
+The first thing you need to understand is the error message you are seeing:
+NameError is a Python exception and is not related to Pandas in this case. You can get exactly the same error by trying to use any name which the interpreter doesn't know about:
+>>> b = a
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+NameError: name 'a' is not defined
+It is important to know that very few Python commands will "magically" create names. To create a name, you would almost always need an assignment (name = ...). So as a general rule if you you haven't done this, name will not exist. In your code, the name you have created is df, so you will need to go through that to get to your data.
+You can use two different ways to access the data in the dataframe, which are equivalent: df['user_agent_string'] or df.user_agent_string. I recommend trying this out in an interactive environment so that you can see the results before passing it to a function.
+I'm also going to guess that your function parseDeviceType only does this for one string (based on the comments), but you want to call this function on every item in your file. To do this you would need apply:
+parsed_types = df.user_agent_string.apply(parseDeviceType)
+To access columns by number instead of name (which I don't recommend), you can use iloc. This allows you to access all the rows (:) and the first colum (0) from the dataframe object:
+user_agent_string = df.iloc[:, 0]
+Share
+Follow
+edited Dec 30 '18 at 7:48
+answered Dec 30 '18 at 7:40
+chthonicdaemonchthonicdaemon
+16.7k11 gold badge3939 silver badges5959 bronze badges
+Add a comment
+|
+-1
+In here , you didnt import the pandas
+import pandas as pd
+pd = pd.read_csv('anythinf.csv')
+When you save your file and open later this time you will get same error so you need to restart your project and compile your code from the start ...if you use jupyter notebook..
+you can easily erase all the errors
+Share
+Follow
+answered Dec 2 '20 at 16:29
+ROHITROHIT
+122 bronze badges
+Add a comment
+|
+-2
+Try to remove .txt from your file name might help.
+Like the following:
+df = pd.read_csv('user_agent_strings', index_col=None, na_values=['NA'],sep=',')
+Share
+Follow
+edited Jul 10 '15 at 22:14
+answered Jul 10 '15 at 22:05
+ZMatrixZMatrix
+133 bronze badges
+1
+2
+Could you please provide some explanation as to why this is correct?
+– bcdan
+Jul 10 '15 at 22:22
+Add a comment
+|
+Your Answer
+Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
+Draft saved
+Draft discarded
+Sign up or log in
+Sign up using Google
+Sign up using Facebook
+Sign up using Email and Password
+Submit
+Post as a guest
+Name
+Email
+Required, but never shown
+Post as a guest
+Name
+Email
+Required, but never shown
+Post Your Answer
+Discard
+By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
+Not the answer you're looking for? Browse other questions tagged python pandas
+or ask your own question.
+The Overflow Blog
+Level Up: Linear Regression in Python – Part 2
+Shipping confetti to Stack Overflow’s design system
+Featured on Meta
+The future of Community Promotion, Open Source, and Hot Network Questions Ads
+Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
+Take the 2021 Developer Survey
+Related
+5316
+How to execute a program or call a system command from Python
+6178
+What are metaclasses in Python?
+6671
+Does Python have a ternary conditional operator?
+3261
+How to get the current time in Python
+2947
+How do I concatenate two lists in Python?
+3596
+Does Python have a string 'contains' substring method?
+2218
+Renaming columns in Pandas
+1136
+Adding new column to existing DataFrame in Python pandas
+1648
+Delete column from pandas DataFrame
+2759
+How to iterate over rows in a DataFrame in Pandas
+Hot Network Questions
+Is it significantly faster to hike along a river bank?
+What does this line: `T=C/2=INT(C/2)` do? Why is it valid syntax?
+How to rotate a circle around y-aixs and calculate the volume of the 3D solid?
+Print the last answerer's first submission
+Lunar Terrain Model in Apollo Guidance Computer
+Doorbell switch internals
+How to use Zwift workouts with stationary bike
+Did ancient Greek mathematicians consider numbers independently of geometry?
+Why does decriminalisation/legalisation not reduce the cost of drugs?
+identify M.2 SSD from BASH Script
+Why is bad behavior more tolerated in academia compared to the rest of the industry?
+Why do Igors (but not Igorinas) lisp when they speak?
+newpxmath: accents are always bold
+What's a lot of money {out of curiosity}?
+Do phone chargers communicate with the phone?
+Are vertices in a clockwise order?
+Is the burden of proof a fallacy?
+Selecting elements of sublists or reshaping a list of lists
+Is there a misprint on this note in the Maple Leaf Rag?
+Efficient ragged path for text
+Generate a British numberplate
+How would transportation evolve in a world where everyone can teleport?
+Is the the word order of "Iura novit curia" used for emphasis?
+Resigning will cripple my department, but I am resigning because of a near crippled department
+more hot questions
+Question feed
+Subscribe to RSS
+Question feed
+To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+lang-py
+Stack Overflow
+Questions
+Jobs
+Developer Jobs Directory
+Salary Calculator
+Help
+Mobile
+Products
+Teams
+Talent
+Advertising
+Enterprise
+Company
+About
+Press
+Work Here
+Legal
+Privacy Policy
+Terms of Service
+Contact Us
+Cookie Settings
+Cookie Policy
+Stack Exchange Network
+Technology
+Life / Arts
+Culture / Recreation
+Science
+Other
+Stack Overflow
+Server Fault
+Super User
+Web Applications
+Ask Ubuntu
+Webmasters
+Game Development
+TeX - LaTeX
+Software Engineering
+Unix & Linux
+Ask Different (Apple)
+WordPress Development
+Geographic Information Systems
+Electrical Engineering
+Android Enthusiasts
+Information Security
+Database Administrators
+Drupal Answers
+SharePoint
+User Experience
+Mathematica
+Salesforce
+ExpressionEngine® Answers
+Stack Overflow em Português
+Blender
+Network Engineering
+Cryptography
+Code Review
+Magento
+Software Recommendations
+Signal Processing
+Emacs
+Raspberry Pi
+Stack Overflow на русском
+Code Golf
+Stack Overflow en español
+Ethereum
+Data Science
+Arduino
+Bitcoin
+Software Quality Assurance & Testing
+Sound Design
+Windows Phone
+more (29)
+Photography
+Science Fiction & Fantasy
+Graphic Design
+Movies & TV
+Music: Practice & Theory
+Worldbuilding
+Video Production
+Seasoned Advice (cooking)
+Home Improvement
+Personal Finance & Money
+Academia
+Law
+Physical Fitness
+Gardening & Landscaping
+Parenting
+more (10)
+English Language & Usage
+Skeptics
+Mi Yodeya (Judaism)
+Travel
+Christianity
+English Language Learners
+Japanese Language
+Chinese Language
+French Language
+German Language
+Biblical Hermeneutics
+History
+Spanish Language
+Islam
+Русский язык
+Russian Language
+Arqade (gaming)
+Bicycles
+Role-playing Games
+Anime & Manga
+Puzzling
+Motor Vehicle Maintenance & Repair
+Board & Card Games
+Bricks
+Homebrewing
+Martial Arts
+The Great Outdoors
+Poker
+Chess
+Sports
+more (16)
+MathOverflow
+Mathematics
+Cross Validated (stats)
+Theoretical Computer Science
+Physics
+Chemistry
+Biology
+Computer Science
+Philosophy
+Linguistics
+Psychology & Neuroscience
+Computational Science
+more (10)
+Meta Stack Exchange
+Stack Apps
+API
+Data
+Blog
+Facebook
+Twitter
+LinkedIn
+Instagram
+site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
+rev 2021.5.28.39383
+Stack Overflow works best with JavaScript enabled
+Your privacy
+By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
+Accept all cookies
+Customize settings

@@ -1,0 +1,73 @@
+Bug ID: JDK-4690912 mod by zero reports a divide by zero error
+Toggle navigation
+Oracle Technology Network
+Java
+Java SE
+Community
+Bug Database
+JDK-4690912 :
+mod by zero reports a divide by zero error
+Type: Enhancement
+Component: hotspot
+Sub-Component: runtime
+Affected Version: 1.4.0
+Priority: P4
+Status: Closed
+Resolution: Won't Fix
+OS: linux
+CPU: x86
+Submitted: 2002-05-24
+Updated: 2010-09-03
+Resolved: 2010-09-03
+Description
+Name: nt126004			Date: 05/23/2002
+FULL PRODUCT VERSION :
+java version "1.4.0"
+Java(TM) 2 Runtime Environment, Standard Edition (build 1.4.0-b92)
+Java HotSpot(TM) Client VM (build 1.4.0-b92, mixed mode)
+OS:
+linux kernel 2.4.18 glibc 2.2.4
+redhat 7.2
+A DESCRIPTION OF THE PROBLEM :
+Technically it is not incorrect to report a divide by zero error, I just think it would be make life simpler if the exception indicated the error is from a modulus rather than a normal division.
+STEPS TO FOLLOW TO REPRODUCE THE PROBLEM :
+compile and run the source.
+EXPECTED VERSUS ACTUAL BEHAVIOR :
+It throws:
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+at t.main(t.java:5)
+Whereas I'd rather see
+Exception in thread "main" java.lang.ArithmeticException: % by zero
+at t.main(t.java:5)
+or
+Exception in thread "main" java.lang.ArithmeticException: / (%) by zero
+at t.main(t.java:5)
+---------- BEGIN SOURCE ----------
+public class t
+{
+static public void main(String [] arg)
+{
+System.out.println(""+1%0);
+}
+}
+---------- END SOURCE ----------
+(Review ID: 146888)
+======================================================================
+Comments
+EVALUATION
+This really isn't a trivial fix because even though the string only appears in a few places, it's because it's associated with throw_ArithmeticException so lrem would have to throw a different Arithmetic exception in the VM to have a different string.
+It's not that hard but I have to agree with the David's comment that the potential harm and the age of this request makes it not worth changing.
+It's not a typical message that users will get.
+03-09-2010
+EVALUATION
+Not an unreasonable request; vm changes would be required.
+###@###.### 2002-12-03
+03-12-2002
+Subscribe
+About Oracle
+Careers
+Contact Us
+Site Maps
+Legal Notices
+Terms of Use
+Your Privacy Rights

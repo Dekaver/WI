@@ -1,0 +1,265 @@
+exception in thread "main" java.lang.arithmeticexception: / by zero - Kodlogs
+menu
+Login
+Register
+search
+Log Inaccount_circle
+Log In
+Email or Username
+Password
+Remember
+Log In
+Register
+I forgot my password
+Register
+Username
+Email
+Password
+Register
+add
+Q&A
+Questions
+Unanswered
+Tags
+Users
+Ask a Question
+Articles
+Post An Article
+Recent Posts
+How to break or end a for loop in java
+Display data from SQL database into HTML table using PHP
+Static methods can be accessed directly in non-static methods
+Pair Class in Java
+how to find a specific character in a string java
+Tips for Faster Java Debugging
+How to take string input from user in java using bufferedreader
+How to find square root in java
+How to get the first day of month in Sql server
+Print an array in c++
+exception in thread "main" java.lang.arithmeticexception: / by zero
+0 votes
+687 views
+Problem :I got bellow message from my codeException in thread "main" java.lang.ArithmeticException: / by zero
+java
+exception
+main
+arithmeticexception
+asked
+Nov 1, 2019
+peterlaw
+6.9k points
+answer
+Please log in or register to answer this question.
+2 Answers
+0 votes
+Solution :Usually one would come across “java.lang.ArithmeticException: / by zero” when tried to divide two numbers and the number in the denominator is zero.Handling the ArithmeticException using try-catch block.1. Firstly Surround the statements that could throw ArithmeticException with try-catch block.2. Catch ArithmeticException3. When any exception occurs, the execution falls onto the catch block from the point of occurrence of exception. 4. It executes the statement in catch block and continues with the statement present after the try-catch block. 5. So care has to be taken while handling the exceptions.
+answered
+Nov 1, 2019
+AbhijitJ
+38.6k points
+edited
+Nov 2, 2019
+by AbhijitJ
+ask related question
+comment
+Your comment on this answer:
+Your name to display (optional):
+Email me at this address if a comment is added after mine:Email me if a comment is added after mine
+Privacy: Your email address will only be used for sending these notifications.
+Anti-spam verification:
+What is the color of the sky?
+To avoid this verification in future, please log in or register.
+Add comment
+Cancel
+0 votes
+Solution:The java.lang.ArithmeticException is an unchecked exception in Java. Generally, one would meet up java.lang.ArithmeticException: / by zero which happens at the time an try is made to divide two numbers and the number in the denominator is zero. ArithmeticException objects may be created by the JVM.Examplepublic class ArithmeticExceptionTest {
+public static void main(String[] args) {
+int a = 0, b = 10;
+int c = b/a;
+System.out.println("Value of c is : "+ c);
+}
+}ArithmeticExeption is happened since denominator value is zero.java.lang.ArithmeticException: Exception thrown by java at the time of division./ by zero: is the detail message provided to ArithmeticException class while making the ArithmeticException object.Let us handle the ArithmeticException employing try and catch blocks.Enclose the statements that can throw ArithmeticException with try and catch blocks.Also, we can Catch the ArithmeticExceptionTake requires action for our program, as the execution doesn’t abort.Example:public class ArithmeticExceptionTest {
+public static void main(String[] args) {
+int a = 0, b = 10 ;
+int c = 0;
+try {
+c = b/a;
+} catch (ArithmeticException e) {
+e.printStackTrace();
+System.out.println("We are just printing the stack trace.\n"+ "ArithmeticException is handled. But take care of the variable \"c\"");
+}
+System.out.println("Value of c :"+ c);
+}
+}At the time of an exception happens, the execution falls to the catch block from the point of instance of an exception. It executes the statement in the catch block and maintain with the statement present after the try and catch blocks.java.lang.ArithmeticException is a type of Exception that tagget to better describe what the problem really is. There's no point onluy making an Exception, as it truly could be happened by anything. By originating an ArithmeticException, the user can instantly know that the issue is something to do with a estimation. An Exception can be funded by any piece of code, adding in estiminations such as your example.Exception in thread "main" refers that the exception is thrown by the main() method, which also occurs to be the primary Thread that is running your code.List of all invalid operations that entrusted an ArithmeticException() in JavaDividing by an integer ZeroNon-terminating decimal numbers employing BigDecimalDividing by an integer Zero:Java funded an Arithmetic exception at the time a calculation try is done to divide by zero, where the zero is an integer. Take the conforming piece of code as an example:package co.java.exception;
+public class ArithmaticExceptionEx
+{
+void divide(int a,int b)
+{
+int q=a/b;
+System.out.println("Sucessfully Divided");
+System.out.println("The Value After Divide Is :-" +q);
+}
+public static void main(String[] args)
+{
+ArithmaticExceptionEx obj=new ArithmaticExceptionEx();
+obj.divide(10, 0);
+}
+}
+answered
+May 31, 2020
+Tushar Shuvro
+31.1k points
+edited
+Jun 12, 2020
+by Tushar Shuvro
+ask related question
+comment
+Your comment on this answer:
+Your name to display (optional):
+Email me at this address if a comment is added after mine:Email me if a comment is added after mine
+Privacy: Your email address will only be used for sending these notifications.
+Anti-spam verification:
+To avoid this verification in future, please log in or register.
+Add comment
+Cancel
+Related questions
+0 votes
+1 answer
+11 views
+11 views
+Exception in thread "main" java.lang.numberformatexception: empty string
+Problem: Exception in thread "main" java.lang.numberformatexception: empty string.
+asked
+May 6
+Ryan evans
+1.5k points
+java
+exception
+null
+1 vote
+1 answer
+12 views
+12 views
+Exception in thread "main" java.lang.numberformatexception:
+Problem: Any solution to this error. Exception in thread "main" java.lang.numberformatexception:
+asked
+Apr 26
+PkGuy
+25.9k points
+java
+smartcard
+exception
+0 votes
+1 answer
+26 views
+26 views
+exception in thread "main" java.lang.stringindexoutofboundsexception: string index out of range: 11
+Problem: I have written code for exception. It's building a file but not letting it run, it just throws exception This is code : public static void main(String args[]) { String name = "Umer Hassan"; String name1 = "Hassan Umer"; char[] name2 = new ...
+at Anagram.main(Anagram.java:24)exception in thread "main" java.lang.stringindexoutofboundsexception: string index out of range: 11, Why is that???
+asked
+Apr 26
+nabin
+4.6k points
+exception
+java
+0 votes
+1 answer
+8 views
+8 views
+Exception in thread "main" java.lang.classnotfoundexception: com.mysql.jdbc.driver
+Problem: Any ideas on how to fix this > Exception in thread "main" java.lang.classnotfoundexception: com.mysql.jdbc.driver
+asked
+Apr 26
+ummeshani
+10.8k points
+java
+exception
+0 votes
+1 answer
+805 views
+805 views
+no main methods javafx applications applets or midlets found in file
+Problem : In my code have main method in it. The program compiles on jgrasp with no errors but it keeps giving me a message as bellow: "no main methods, applets, or Midlets found in file jgrasp"
+asked
+Nov 1, 2019
+peterlaw
+6.9k points
+java
+file
+exception
+main
+1 vote
+1 answer
+14 views
+14 views
+Exception in thread "main" java.util.inputmismatchexception.
+Problem: Any help will be appreciated to solve this error: Exception in thread "main" java.util.inputmismatchexception.
+asked
+Apr 26
+PkGuy
+25.9k points
+java
+junit
+exception
+jakarta-mail
+smartcard
+1 vote
+1 answer
+9 views
+9 views
+Exception in thread "main" java.util.nosuchelementexception.
+Problem: How to get rid of this error? Exception in thread "main" java.util.nosuchelementexception.
+asked
+Apr 25
+PkGuy
+25.9k points
+java
+junit
+exception
+0 votes
+1 answer
+15 views
+15 views
+Exception in thread "main" java.util.concurrentmodificationexception
+Problem: Hello! I do not have a lot of knowledge about Java and I keep trying random stuff that I find on the web. I saw following program somewhere: import java.util.HashMap; import java.util.Map; public class Main { public static void main(String[] ... .util.HashMap$KeyIterator.next(HashMap.java:1469) at Main.main(Main.java:13) Please explain why this exception is being thrown by this program.
+asked
+Mar 31
+Code Learner
+10.4k points
+java
+exception
+0 votes
+1 answer
+1.3k views
+1.3k views
+Exception in thread "awt-eventqueue-0" java.lang.unsupportedoperationexception: not supported yet.
+Problem : I want to input some of the details about student to my program. But when I press a save button its giving me the below listed exception error: "Exception in thread "AWT-EventQueue-0" java.lang.UnsupportedOperationException: Not supported yet."
+asked
+Jan 31, 2020
+jwilliam
+3.9k points
+java
+swing
+oop
+exception
+0 votes
+1 answer
+19 views
+19 views
+error: could not find or load main class caused by: java.lang.classnotfoundexception:
+Problem: Any ideas on what I need to fix the error: could not find or load main class main caused by: java.lang.classnotfoundexception: main?
+asked
+Mar 27
+ashik
+14.6k points
+java
+exception
+Send feedback
+About Us
+Privacy Policy
+Guest Blog
+XML Sitemap
+Facebook
+Twitter
+Pinterest
+Dark theme

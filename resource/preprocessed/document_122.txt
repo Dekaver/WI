@@ -1,0 +1,380 @@
+[Solved] Please, help me.i can't find what is error in my program in NETBEANS IDE - CodeProject
+14,902,734 members
+Sign in
+Email
+Password
+Forgot your password?
+Sign in with
+Search within:
+Articles
+Quick Answers
+Messages
+Use my saved content filters
+home
+articles
+Browse Topics>
+Latest Articles
+Top Articles
+Posting/Update Guidelines
+Article Help Forum
+Submit an article or tip
+Import GitHub Project
+Import your Blog
+quick answersQ&A
+Ask a Question
+View Unanswered Questions
+View All Questions
+View C# questions
+View C++ questions
+View Visual Basic questions
+View Javascript questions
+View Python questions
+discussionsforums
+All Message Boards...
+Application Lifecycle>
+Running a Business
+Sales / Marketing
+Collaboration / Beta Testing
+Work
+Issues
+Design and Architecture
+Artificial Intelligence
+ASP.NET
+JavaScript
+Internet of Things
+C / C++ / MFC>
+ATL /
+WTL / STL
+Managed C++/CLI
+C#
+Free Tools
+Objective-C and Swift
+Database
+Hardware & Devices>
+System Admin
+Hosting and Servers
+Java
+Linux Programming
+.NET (Core and Framework)
+Android
+iOS
+Mobile
+WPF
+Visual Basic
+Web Development
+Site Bugs / Suggestions
+Spam and Abuse Watch
+featuresstuff
+Competitions
+Conferences
+News
+The Insider Newsletter
+The Daily Build Newsletter
+Newsletter archive
+Surveys
+Product Showcase
+CodeProject Stuff
+communitylounge
+Who's Who
+Most Valuable Professionals
+The Lounge
+Where I Am: Member Photos
+The Insider News
+The Weird & The Wonderful
+help?
+What is 'CodeProject'?
+General FAQ
+Ask a Question
+Bugs and Suggestions
+Article Help Forum
+About Us
+Ask a Question
+All Questions
+All Unanswered
+FAQ
+Please, help me.i can't find what is error in my program in NETBEANS IDE
+Please Sign up or sign in
+to vote.
+0.00/5
+(No votes)
+See more:
+JavaJavaSEJavaSE6netbeans
+C#Copy Code
+public class JavaApplication19 {
+public static void main(String[] args) {
+Lesson A = new Lesson();
+Lesson B = new Lesson();
+Lesson C = new Lesson();
+Lesson D = new Lesson("CMS 202", "Applied Linear Algebra", 3, 94);
+A.setCode("CMS 205");
+B.setCode("CMS 220");
+C.setCode("GERM 201");
+A.setName("Object Oriented Programming");
+B.setName("Web Programming 1");
+C.setName("German Language 1");
+A.setNote(99);
+B.setNote(97);
+C.setNote(95);
+A.setCredit(3);
+B.setCredit(3);
+C.setCredit(3);
+Student s = new Student("Nazli Elizade");
+System.out.println("Nazli's GPA is" + s.getGPA());
+System.out.println("Nazli's GPA is" +s.getTotalcredit());
+}
+}
+C#Copy Code
+package javaapplication19;
+public class Student {
+private String name;
+private Lesson listLesson[];
+private int size = 20;
+private int number = 0;
+public Student(String name) {
+this.name = name;
+listLesson = new Lesson[size];
+}
+public void addLesson(Lesson l) {
+if (number == size)
+{
+Lesson ListNew[] = new Lesson[size + 1];
+for (int i = 0; i < size; i++) {
+ListNew[i] = listLesson[i];
+}
+listLesson = ListNew;
+size++;
+}
+}
+public double getTotalcredit() {
+double t1;
+double total = 0;
+for (int i = 0; i < number; i++) {
+if (k.getNote() > 60) {
+t1 = k.getNote() * k.getCredit();
+total += t1;
+}
+}
+return total;
+}
+public double getGPA() {
+double GPA = 0.0;
+double t1;
+double total = 0.0;
+double totalcredit=1;
+for (int i = 0; i < number; i++) {
+if (k.getNote() > 60) {
+t1 = k.getNote() * k.getCredit();
+totalcredit += k.getCredit();
+total += t1;
+}
+GPA = total / (totalcredit-1);
+return GPA;
+}
+C#Copy Code
+public class Lesson {
+private String code;
+private String name;
+private double note;
+private int credit;
+public Lesson() {
+this.code = null;
+this.name = null;
+this.note = 0.0;
+this.credit = 0;
+}
+public Lesson(String c, String n, double note, int cre) {
+this.code = c;
+this.name = n;
+this.note = note;
+this.credit = cre;
+}
+public String getCode() {
+return code;
+}
+public void setCode(String code) {
+this.code = code;
+}
+public String getName() {
+return name;
+}
+public void setName(String name) {
+this.name = name;
+}
+public double getNote() {
+return note;
+}
+public void setNote(double note) {
+this.note = note;
+}
+public int getCredit() {
+return credit;
+}
+public void setCredit(int credit) {
+this.credit = credit;
+}
+public String toString() {
+return ("code=" + code + " " + "name=" + name + " " + "note=" + note + " " + "credit=" + credit);
+}
+}
+What I have tried:
+There is no any error in this program,but when i run it ,error appears and it is like this:
+C#Copy Code
+Exception in thread "main" java.lang.RuntimeException: Uncompilable source code - missing return statement
+at javaapplication19.Student.getGPA(Student.java:52)
+at javaapplication19.JavaApplication19.main(JavaApplication19.java:32)
+C:\Users\User\AppData\Local\NetBeans\Cache\8.1\executor-snippets\run.xml:53: Java returned: 1
+BUILD FAILED (total time: 1 second)
+When i click what this error points,i am reached to getGPA function.but please,help me what is problem in my program?
+i wan to get student's GPA with this program.
+I have searched about it,but i can't solve it.
+Posted 25-Oct-16 2:02am
+Member 12702056
+Updated 25-Oct-16 2:25am
+v4
+Add a Solution
+Comments
+[no name]
+25-Oct-16 8:12am
+What is returned from that function when the for loop doesn't do anything? It's exactly what the error message is telling you. Why did you feel the need to post so much code that has nothing to do with your problem?
+2
+solutions
+Top Rated
+Most Recent
+Please Sign up or sign in
+to vote.
+Solution 1
+Accept Solution
+Reject Solution
+Come on!!!
+Can't you read error messages and trace?
+Quote:Exception in thread "main" java.lang.RuntimeException: Uncompilable source code - missing return statement
+It means you have a method somewhere that does not return a value, but should...So it can not be compiled...
+Quote:at javaapplication19.Student.getGPA(Student.java:52)
+This one tells you where you missed the return...
+Now looking into getGPA...
+JavaCopy Code
+public double getGPA() {
+// ...
+for (int i = 0; i < number; i++) {
+// ...
+return GPA;
+}
+}
+Now, who told you it will enter the for loop?
+Permalink
+Posted 25-Oct-16 2:19am
+Kornfeld Eliyahu Peter
+Please Sign up or sign in
+to vote.
+Solution 2
+Accept Solution
+Reject Solution
+Can you bring return GPA; statement out side the for loop and try.
+Permalink
+Posted 25-Oct-16 2:22am
+rah_sin
+Comments
+Member 12702056
+25-Oct-16 8:27am
+thank you a lot,i tried,but now problem with "k" variable, i don't know how can i solve it?
+Richard MacCutchan
+25-Oct-16 8:55am
+Because there is no k variable initialised anywhere. You should go back to your study notes and look more closely at classes and object. It would also help you to use meaningful variable names rather than single letters.
+Add a Solution
+Add your solution here
+B
+I
+U
+S
+small
+BIG
+code
+Plain TextASMASPASP.NETBASICBATC#C++COBOLCoffeeScriptCSSDartdbaseF#FORTRANHTMLJavaJavascriptKotlinLuaMIDLMSILObjectiveCPascalPERLPHPPowerShellPythonRazorRubyScalaShellSLNSQLSwiftT4TerminalTypeScriptVBVBScriptXMLvar
+<
+>
+&
+link
+[^]
+encode
+untab
+case
+indent
+outdent
+OKPaste as
+Strip HTMLEncode HTMLPaste as-isCode blockQuoted TextBest guess
+To display as
+Treat my content as plain text, not as HTML
+Preview 0
+…
+Existing Members
+Sign in to your account
+...or Join us
+Download, Vote, Comment, Publish.
+Your Email
+Password
+Forgot your password?
+Your Email
+This
+email is in use. Do you need your password?
+Optional Password
+I have read and agree to the Terms of Service and Privacy Policy
+Please subscribe me to the CodeProject newsletters
+Submit your solution!
+When answering a question please:
+Read the question carefully.
+Understand that English isn't everyone's first language so be lenient of bad
+spelling and grammar.
+If a question is poorly phrased then either ask for clarification, ignore it, or
+edit the question and fix the problem. Insults are not welcome.
+Don't tell someone to read the manual. Chances are they have and don't get it.
+Provide an answer or move on to the next question.
+Let's work to help developers, not make them feel stupid.
+This content, along with any associated source code and files, is licensed under The Code Project Open License (CPOL)
+Top Experts
+Last 24hrsThis month
+Dave Kreskowiak
+110
+Patrice T
+100
+OriginalGriff
+98
+Richard MacCutchan
+95
+Wendelius
+40
+OriginalGriff
+6,430
+Richard MacCutchan
+3,763
+Patrice T
+1,672
+Dave Kreskowiak
+1,276
+CPallini
+815
+Related Questions
+Importing Libraries into Netbeans IDE
+Someone please help me to find out error
+Routing information in networking using java program (Netbeans IDE)
+(C language) can't run a basic hello program in codeblocks IDE?
+Please help in java coding on elipse IDE
+Sql error. Please help
+What I can use in netbeans java code , to save output
+Netbeans IDE Java Free Video Tutorials
+How to create executable jar in NetBeans IDE 6.9.1
+How do i set up my cygwin64 with my netbeans ide 8.1
+Advertise
+Privacy
+Cookies
+Terms of Use
+Last Updated 25 Oct 2016
+Layout: fixed
+|
+fluid
+Copyright © CodeProject, 1999-2021
+All Rights Reserved.
+Web01
+2.8.20210530.1
+CodeProject,
+20 Bay Street, 11th Floor Toronto, Ontario, Canada M5J 2N8
++1 (416) 849-8900

@@ -1,1 +1,1443 @@
-python make class json serializable stack overflow stack overflow products teams stack overflow public questions answers stack overflow teams developers technologists share private knowledge coworkers jobs programming related technical career opportunities talent recruit tech talent build employer brand advertising reach developers technologists worldwide company loading log sign current community stack overflow help chat meta stack overflow communities sign log customize list stack exchange communities company blog people code want input take survey join stack overflow learn share knowledge build career sign email sign sign google sign github sign facebook home public questions tags users find job jobs companies teams stack overflow teams collaborate share knowledge private group create free team teams teams create free team teams q work connect share knowledge within single location structured easy search learn make class json serializable ask question asked years months ago active days ago viewed k times make python class serializable simple class class fileitem def __init__ self fname self fname fname able get output import json my_file fileitem foo bar json dumps my_file typeerror object type fileitem json serializable without error python json serialization share improve question follow edited nov fraggamuffin gold badges silver badges bronze badges asked sep sergeysergey k gold badges silver badges bronze badges unfortunate answers seem answer question serialize class rather action question make class serializable answers assume serialization rather passing object along module serializes kyle delaney oct using python could use jsons convert object attributes recursively dict import jsons see answer works perfectly fine tswaehn apr kyledelaney really hoping interface magic method could implement become searializable guess implement to_dict function something called object passed module tries serialize felix b sep see stackoverflow com start jsonable mixin wolfgang fahl sep felixb use built vars function combination json dumps see answer stackoverflow com user nov add comment answers active oldest votes next idea expected output example f fileitem foo bar magic f fname foo bar case merely call json dumps f __dict__ want customized output subclass jsonencoder implement custom serialization trivial example see json import jsonencoder class myencoder jsonencoder def default self return __dict__ myencoder encode f fname foo bar pass class json dumps method cls kwarg json dumps cls myencoder also want decode supply custom object_hook jsondecoder class example def from_json json_object fname json_object return fileitem json_object fname f jsondecoder object_hook from_json decode fname foo bar f share improve answer follow edited jun mkrieger k gold badges silver badges bronze badges answered sep manoj govindanmanoj govindan k gold badges silver badges bronze badges using __dict__ work cases attributes set object instantiated __dict__ may fully populated example ok class attributes also want encode listed __dict__ unless modified class __init__ call way object instantiated kris hardy dec from_json function used object hook else return json_object statement deal general objects well jogojapan mar krishardy __dict__ also work use __slots__ new style class badp dec could use custom jsonencoder create custom protocol checking existence __json_serializable__ method calling obtain json serializable representation object would keeping python patterns like __getitem__ __str__ __eq__ __len__ jpmc jul __dict__ also work recursively e g attribute object another object neel apr show comments simple solution simple feature tojson method instead json serializable class implement serializer method import json class object def tojson self return json dumps self default lambda __dict__ sort_keys true indent call serialize object name onur age dog object dog name apollo print tojson output age dog name apollo name onur share improve answer follow edited may answered mar onur yıldırımonur yıldırım k gold badges silver badges bronze badges limited dict foo bar baz bat serialize json easily instead foo bar baz myobject cannot ideal situation would nested objects serialized json recursively explicitly mark e haase aug still work missing __dict___ try example class myobject def __init__ self self prop j json dumps foo bar baz myobject default lambda __dict__ onur yıldırım aug solution reversible e easy reconstruct object json jorge leitao apr j c leitão could two different classes fields objects b class probably properties would __dict__ b __dict__ martin thoma jun work datetime datetime instances throws following error datetime datetime object attribute __dict__ bruno finger jun show comments complex classes could consider tool jsonpickle jsonpickle python library serialization deserialization complex python objects json standard python libraries encoding python json stdlib json simplejson demjson handle python primitives direct json equivalent e g dicts lists strings ints etc jsonpickle builds top libraries allows complex data structures serialized json jsonpickle highly configurable extendable allowing user choose json backend add additional backends link jsonpickle pypi share improve answer follow edited apr mrnom silver badge bronze badges answered dec geccogecco k gold badges silver badges bronze badges coming c expecting simple one liner messing classes jerther dec jsonpickle awesome worked perfectly huge complex messy object many levels classes wisbucky mar example proper way save file documentation shows encode decode jsonpickle object also able decode dict dicts containing pandas dataframes user aug user use obj jsonpickle decode file read file write jsonpickle encode obj kilian batzner jan question specifically django use jsonpickle serializing session data vulnerability pickle described docs djangoproject com en topics http sessions paul bormans jun show comments answers involve changing call json dumps always possible desirable may happen inside framework component example want able call json dumps obj simple solution inheriting dict class fileitem dict def __init__ self fname dict __init__ self fname fname f fileitem tasks txt json dumps f need change anything works class basic data representation trickier things always set keys explicitly share improve answer follow answered jul andyhasitandyhasit k gold badges silver badges bronze badges really nice solution believe case benefits communicate shape object making class init inherently serializable looks interpretable repr pascalvkooten sep though dot access still missing pascalvkooten sep ahh seems work thanks sure accepted answer totally agree changing dumps good solution way cases probably want dict inheritance together delegation means dict type attribute inside class pass attribute parameter initialisation something like super __init__ self elements cglacet aug use case needed store data invisible json dumps used method class dictwithrider takes arbitrary object stores member makes accessible via function get_rider_obj pass dict __init__ parts application want see hidden data call get_rider_obj json dumps sees basically empty dict pascalvkooten mentioned access regular members dot notation access functions gkimsey jul simple use ideal dot notation easily enabled additional lines subsequent dict __init__ line self fname fname object deserialised f fileitem json loads serialised_f paddyg jan show comment like onur answer would expand include optional tojson method objects serialize def dumper obj try return obj tojson except return obj __dict__ print json dumps some_big_object default dumper indent share improve answer follow edited may community silver badge answered jan jason sjason k gold badges silver badges bronze badges found best balance using existing json dumps introducing custom handling thanks daniel buckmaster apr actually really like rather try catch would probably something like tojson obj __attrs__ avoid silent failure event failure tojson reason failure potentially leads data corruption thclark nov thclark understand idomatic python asks forgiveness permission try except right approach correct exception caught attributeerror case phil sep phil years older wiser agree thclark sep really catching attributeerror explicitly juanpa arrivillaga feb show comment add to_json method class like def to_json self return self message want serialized add code answer somewhere top everything json import jsonencoder def _default self obj return getattr obj __class__ to_json _default default obj _default default jsonencoder default jsonencoder default _default monkey patch json module imported jsonencoder default automatically checks special to_json method uses encode object found like onur said time update every json dumps project share improve answer follow edited apr samuel liew k gold badges silver badges bronze badges answered aug fancy johnfancy john k gold badges silver badges bronze badges big thanks answer allows want able serialize object without changing existing code methods mostly work object defined third party library serialization code third party changing awkward method need theobject to_json my_serializer yongwei wu oct add comment another option wrap json dumping class import json class fileitem def __init__ self fname self fname fname def __repr__ self return json dumps self __dict__ even better subclassing fileitem class jsonserializable class import json class jsonserializable object def tojson self return json dumps self __dict__ def __repr__ self return self tojson class fileitem jsonserializable def __init__ self fname self fname fname testing f fileitem foo bar f tojson fname foo bar f fname foo bar str f string coercion fname foo bar share improve answer follow edited dec answered jun paulo freitaspaulo freitas k gold badges silver badges bronze badges hi really like custom encoder approach would better u make class json seriazable try try try nothing idea thing json module test class built python types even says custom classes make encoder faked could something class behave like simple list json module try subclasscheck instancecheck nothing bojan radojevic aug adrenalin could inherit primary type probably dict class attribute values serializable mind hacks could also use jsonpickle json_tricks something instead standard one still custom encoder one need write call former pickles instance latter stores dict attributes change implementing __json__encode__ __json_decode__ disclosure made last one mark oct make object serializeable json class provides method get json string returned trivial thus json dumps f fail asked omni sep add comment using python could use jsons convert object attributes recursively dict import jsons a_dict jsons dump your_object wanted string a_str jsons dumps your_object class implemented jsons jsonserializable a_dict your_object json share improve answer follow answered dec r hr h gold badge silver badges bronze badges able use python found cleanest solution convert python classes dicts json strings viceversa mix jsons library dataclasses far good ruluk feb external library built standard python install noumenon jul class slots attribute yehudahs dec need use slots dumping according signature specific class need slots upcoming version also longer case r h dec add comment came across problem day implemented general version encoder python objects handle nested objects inherited fields import json import inspect class objectencoder json jsonencoder def default self obj hasattr obj to_json return self default obj to_json elif hasattr obj __dict__ dict key value key value inspect getmembers obj key startswith __ inspect isabstract value inspect isbuiltin value inspect isfunction value inspect isgenerator value inspect isgeneratorfunction value inspect ismethod value inspect ismethoddescriptor value inspect isroutine value return self default return obj example class c object c def to_json self return c yes class b object b b def __init__ self self def f self print f class b def __init__ self self b ab b self c c print json dumps cls objectencoder indent sort_keys true result b ab b b c c yes share improve answer follow edited may np_ silver badges bronze badges answered feb tobiguetobigue gold badges silver badges bronze badges although bit old facing circular imports error instead return obj last line return super objectencoder self default obj reference sometypefoo apr add comment mentioned many answers pass function json dumps convert objects one types supported default supported type surprisingly none mentions simplest case use built function vars convert objects dict containing attributes json dumps obj default vars note covers basic cases need specific serialization certain types e g exluding certain attributes objects __dict__ attribute need use custom function jsonencoder desribed answers share improve answer follow edited feb answered oct user user silver badges bronze badges unclear mean default vars mean vars default serializer really solve case influence json dumps called simply pass object library library calls json dumps object really help implemented vars library use dumps way sense equivalent custom jsonencoder felix b nov correct nothing else simple choice custom serializer solve case describe see correctly solution case control json dumps invoked user nov resolved case simply brilliant rub dec objects approach throw vars argument must __dict__ attribute justamartin feb add comment import simplejson class user object def __init__ self name mail self name name self mail mail def _asdict self return self __dict__ print simplejson dumps user alice alice mail com using standard json need define default function import json def default return _asdict print json dumps user alice alice mail com default default share improve answer follow edited may jtlz gold badges silver badges bronze badges answered jun tryer tryer silver badges bronze badges simplifed removing _asdict function lambda json dumps user alice alice mail com default lambda x x __dict__ justengland nov add comment json limited terms objects print jsonpickle may need pip install jsonpickle limited terms indent text would like inspect contents object whose class change still find straighter way import json import jsonpickle print json dumps json loads jsonpickle encode object indent note still print object methods share improve answer follow edited jul martlark k gold badges silver badges bronze badges answered apr ribamarribamar silver badges bronze badges add comment class trick converts object standard json import json class serializer object staticmethod def serialize object return json dumps object default lambda __dict__ values usage serializer serialize my_object working python python share improve answer follow answered oct lost koderlost koder silver badges bronze badges liked method ran issues trying serialize complex objects whos members methods serializable implementation works objects class serializer object staticmethod def serialize obj def check k v __dict__ items try _ json dumps v __dict__ k v except typeerror __dict__ k str v return return json dumps check obj __dict__ indent charlton nov add comment import json class foo object def __init__ self self bar baz self _qux flub def somemethod self pass def default instance return k v k v vars instance items str k startswith _ json_foo json dumps foo default default assert bar baz json_foo print json_foo share improve answer follow answered jul rectangletanglerectangletangle k gold badges silver badges bronze badges doc parameter default obj function return serializable version obj raise typeerror default default simply raises typeerror luckydonald jun add comment jaraco gave pretty neat answer needed fix minor things works code custom class class mycustom object def __json__ self return self b self b __python__ mymodule submodule mycustom from_json to_json __json__ supported simplejson classmethod def from_json cls json obj cls obj json obj b json b return obj dumping loading import simplejson obj mycustom obj obj b json simplejson dumps obj for_json true two step loading obj _dict simplejson loads json obj mycustom from_json obj _dict make sure correct thing assert isinstance obj mycustom assert obj __dict__ obj __dict__ note need two steps loading __python__ property used common using method aljohri check popularity approaches serialization python json to_json tojson __json__ for_json deserialization json python from_json share improve answer follow edited jul answered jun martin thomamartin thoma k gold badges silver badges bronze badges add comment worked well class jsonserializable object def serialize self return json dumps self __dict__ def __repr__ self return self serialize staticmethod def dumper obj serialize dir obj return obj serialize return obj __dict__ class fileitem jsonserializable log debug json dumps default jsonserializable dumper indent share improve answer follow answered jan jmhostaletjmhostalet gold badges silver badges bronze badges add comment cents demonstrates explicit json serialization tree like python object note actually wanted code like could use twisted filepath class import json sys os class file def __init__ self path self path path def isdir self return os path isdir self path def isfile self return os path isfile self path def children self return file os path join self path f f os listdir self path def getsize self return os path getsize self path def getmodificationtime self return os path getmtime self path def _default path path isfile isfile isdir isdir mtime int getmodificationtime size getsize isfile else isdir children children return folder os path abspath json dump file folder sys stdout default _default share improve answer follow answered jul dan broughdan brough silver badges bronze badges add comment mind installing package use json tricks pip install json tricks need import dump json_tricks instead json usually work json_tricks import dumps json_str dumps cls_instance indent give __instance_type__ module_name test_class mytestcls attributes attr val dct_attr hello basically work great general exceptions e g special things happen __new__ metaclass magic going obviously loading also works otherwise point json_tricks import loads json_str loads json_str assume module_name test_class mytestcls imported changed non compatible ways get back instance dictionary something identical copy one dumped want customize something gets de serialized add special methods class like class customencodecls def __init__ self self relevant self irrelevant def __json_encode__ self return primitive serializable types like dict list int string float return relevant self relevant def __json_decode__ self attrs initialize properties note __init__ called implicitly self relevant attrs relevant self irrelevant serializes part attributes parameters example free bonus get de serialization numpy arrays date times ordered maps well ability include comments json disclaimer created json_tricks problem share improve answer follow answered nov markmark k gold badges silver badges bronze badges tested json_tricks worked beautify pauljohn nov add comment kyle delaney comment correct tried use answer https stackoverflow com well improved version https stackoverflow com create jsonable mixin make class json serializeable use jsonable super class either call instance tojson instance asjson two offered methods could also extend jsonable class approaches offered test example unit test family person sample results tojson members flintstone fred firstname fred lastname flintstone flintstone wilma firstname wilma lastname flintstone name flintstones asjson name flintstones members flintstone fred firstname fred lastname flintstone flintstone wilma firstname wilma lastname flintstone unit test family person sample def testjsonable self family family flintstones family add person fred flintstone family add person wilma flintstone json family tojson json family asjson print json print json class family jsonable def __init__ self name self name name self members def add self person self members person lastname person firstname person class person jsonable def __init__ self firstname lastname self firstname firstname self lastname lastname jsonable py defining jsonable mixin created author wf import json class jsonable object mixin allow classes json serializable see https stackoverflow com questions make class json serializable def __init__ self constructor def tojson self return json dumps self default lambda __dict__ sort_keys true indent def getvalue self v hasattr v asjson return v asjson elif type v dict return self reprdict v elif type v list vlist vitem v vlist append self getvalue vitem return vlist else return v def reprdict self srcdict get dict elements dict v srcdict items self getvalue v return def asjson self recursively return dict elements return self reprdict self __dict__ find approaches integrated https github com wolfgangfahl pylodstorage project available https pypi org project pylodstorage share improve answer follow edited oct answered sep wolfgang fahlwolfgang fahl k gold badges silver badges bronze badges add comment jsonweb seems best solution see http www jsonweb info en latest jsonweb encode import to_object dumper to_object class datamodel object def __init__ self id value self id id self value value data datamodel foo dumper data __type__ datamodel id value foo share improve answer follow answered oct matthewlentmatthewlent silver badges bronze badges work well nested objects including decoding encoding simone zandara dec add comment class dobject json jsonencoder def delete_not_related_keys self _dict key skipkeys ensure_ascii check_circular allow_nan sort_keys indent try del _dict key except continue def default self hasattr __dict__ my_dict __dict__ copy self delete_not_related_keys my_dict return my_dict else return dobject name abdul wahid b dobject b name print json dumps b cls dobject share improve answer follow edited jun answered jun sheikh abdul wahidsheikh abdul wahid gold badge silver badges bronze badges add comment building quinten cabo answer def sterilize obj make object ameniable dumping json type obj str float int bool type none return obj elif isinstance obj dict return k sterilize v k v obj items list_ret dict_ret dir obj __iter__ callable obj __iter__ list_ret extend sterilize v v obj elif __dict__ dict_ret update k sterilize v k v obj __dict__ items k __module__ __dict__ __weakref__ __doc__ elif __doc__ __module__ aval getattr obj type aval str float int bool type none dict_ret aval elif __class__ __objclass__ isinstance aval type dict_ret sterilize aval len list_ret len dict_ret return repr obj return dict_ret else len dict_ret return list_ret return list_ret dict_ret differences works iterable instead list tuple works numpy arrays etc works dynamic types ones contain __dict__ includes native types float none get converted string classes __dict__ members mostly work __dict__ member names collide get one likely member classes lists members look like tuple list dictionary python isinstance call may thing needs changing share improve answer follow edited jul answered may mheymanmheyman silver badges bronze badges add comment ran problem tried store peewee model postgresql jsonfield struggling general solution key solution going python source code realizing code documentation described already explains extend existing json dumps support data types suppose current model contains fields serializable json model contains json field originally looks like class someclass model json_field jsonfield define custom jsonencoder like class customjsonencoder json jsonencoder def default self obj isinstance obj sometypeunsupportedbyjsondumps return return json jsonencoder default self obj staticmethod def json_dumper obj return json dumps obj cls customjsonencoder use jsonfield like class someclass model json_field jsonfield dumps customjsonencoder json_dumper key default self obj method every single json serializable complaint receive python add code handle unserializable json type enum datetime example support class inheriting enum class transactiontype enum current stacked def default self obj isinstance obj transactiontype return obj value return json jsonencoder default self obj finally code implemented like convert peewee models json seriazable object like peewee_model whateverpeeweemodel new_model someclass new_model json_field model_to_dict peewee_model though code somewhat specific peewee think applicable orms django etc general also understood json dumps works solution also works python sans orm general questions please post comments section thanks share improve answer follow answered jul sivabudhsivabudh k gold badges silver badges bronze badges add comment first need make object json compliant dump using standard json module way def serialize isinstance dict return k serialize v k v items isinstance list return serialize e e isinstance bytes return decode utf return share improve answer follow answered feb adi deganiadi degani silver badges bronze badges add comment function uses recursion iterate every part dictionary calls repr methods classes build types def sterilize obj object_type type obj isinstance obj dict return k sterilize v k v obj items elif object_type list tuple return sterilize v v obj elif object_type str int bool float return obj else return obj __repr__ share improve answer follow edited nov answered mar quinten caboquinten cabo bronze badges add comment came solution use method pass document dict list objectid etc serialize def getserializable doc check list isinstance doc list val enumerate doc doc getserializable doc return doc check dict isinstance doc dict key doc keys doc key getserializable doc key return doc process objectid isinstance doc objectid doc str doc return doc use custom serializting stuff rest stuff return doc share improve answer follow answered may dewsworlddewsworld k gold badges silver badges bronze badges add comment liked lost koder method ran issues trying serialize complex objects whos members methods serializable implementation works objects class serializer object staticmethod def serialize obj def check k v __dict__ items try _ json dumps v __dict__ k v except typeerror __dict__ k str v return return json dumps check obj __dict__ indent share improve answer follow answered nov charltonwill charlton silver badges bronze badges add comment able install package recommend trying dill worked fine project nice thing package interface pickle already using pickle project simply substitute dill see script runs without changing code cheap solution try full anti disclosure way affiliated never contributed dill project install package pip install dill edit code import dill instead pickle import pickle import dill pickle run script see works may want clean code longer shadowing pickle module name specifics datatypes dill cannot serialize project page dill pickle following standard types none type bool int long float complex str unicode tuple list dict file buffer builtin old new style classes instances old new style classes set frozenset array functions exceptions dill also pickle exotic standard types functions yields nested functions lambdas cell method unboundmethod module code methodwrapper dictproxy methoddescriptor getsetdescriptor memberdescriptor wrapperdescriptor xrange slice notimplemented ellipsis quit dill cannot yet pickle standard types frame generator traceback share improve answer follow answered dec thedavidmothedavidmo add comment see mention serial versioning backcompat post solution using bit probably lot learn specifically java javascript probably mature goes https gist github com andy b c ed fd fe share improve answer follow answered aug fletch f fletchfletch f fletch silver badges bronze badges add comment add another option use attrs package asdict method class objectencoder jsonencoder def default self return attr asdict json dumps objects cls objectencoder convert back def from_json _obj_name type_ _obj_name del _obj_name return globals type_ else return data jsondecoder object_hook from_json decode data class looks like attr class foo object x attr ib _obj_name attr ib init false default foo share improve answer follow answered oct machinekodermachinekoder silver badge bronze badges add comment next highly active question earn reputation order answer question reputation requirement helps protect question spam non answer activity answer looking browse questions tagged python json serialization ask question overflow blog podcast blocking haters service developer survey open featured meta testing three vote close reopen network sites future community promotion open source hot network questions ads rule proposal one delete undelete per post take developer survey visit chat linked flask store object directly session turn python object json output python flask convert dictionary object json serialize complex objects json flask class json serializable object json serializable python serialize class json make json object serializable use class object json python serialize object contains list objects see linked questions related merge two dictionaries single expression taking union dictionaries check whether file exists without exceptions comments used json pretty print json shell script correct json content type make function decorators chain together make flat list list lists google prepend json responses pretty print json using javascript post json data curl hot network questions use score highest sentence token burn point time future ants trees ok bad name superman enemy valid esta got refused b b us visa ya fantasy golden spots eyes much oil necessary fry cook eggs important brand name type string overall sound guitar jovanka houska introduced wgm holds prestigious im title c b bad white local network loses internet certain device connects ti display interference eigenvalue pattern purpose oiling wooden chopping board good fire resistant material write anyone recognize identity location octagonal structure different pdf output source files primary school child writing music venezuela stock market crashed march th happened way limit players currency system resource system elementary proof distal maps invertible increasing k point grid take dos calculation nelson mandela directly compare accuse israel apartheid want potatoes baked within hour forgot preheat oven put preheating hot questions question feed subscribe rss question feed subscribe rss feed copy paste url rss reader lang py stack overflow questions jobs developer jobs directory salary calculator help mobile products teams talent advertising enterprise company press work legal privacy policy terms service contact us cookie settings cookie policy stack exchange network technology life arts culture recreation science stack overflow server fault super user web applications ask ubuntu webmasters game development tex latex software engineering unix linux ask different apple wordpress development geographic information systems electrical engineering android enthusiasts information security database administrators drupal answers sharepoint user experience mathematica salesforce expressionengine answers stack overflow em português blender network engineering cryptography code review magento software recommendations signal processing emacs raspberry pi stack overflow на русском code golf stack overflow en español ethereum data science arduino bitcoin software quality assurance testing sound design windows phone photography science fiction fantasy graphic design movies tv music practice theory worldbuilding video production seasoned advice cooking home improvement personal finance money academia law physical fitness gardening landscaping parenting english language usage skeptics mi yodeya judaism travel christianity english language learners japanese language chinese language french language german language biblical hermeneutics history spanish language islam русский язык russian language arqade gaming bicycles role playing games anime manga puzzling motor vehicle maintenance repair board card games bricks homebrewing martial arts great outdoors poker chess sports mathoverflow mathematics cross validated stats theoretical computer science physics chemistry biology computer science philosophy linguistics psychology neuroscience computational science meta stack exchange stack apps api data blog facebook twitter linkedin instagram site design logo stack exchange inc user contributions licensed cc sa rev stack overflow works best javascript enabled privacy clicking accept cookies agree stack exchange store cookies device disclose information accordance cookie policy accept cookies customize settings
+python - How to make a class JSON serializable - Stack Overflow
+Stack Overflow
+About
+Products
+For Teams
+Stack Overflow
+Public questions & answers
+Stack Overflow for Teams
+Where developers & technologists share private knowledge with coworkers
+Jobs
+Programming & related technical career opportunities
+Talent
+Recruit tech talent & build your employer brand
+Advertising
+Reach developers & technologists worldwide
+About the company
+Loading…
+Log in
+Sign up
+current community
+Stack Overflow
+help
+chat
+Meta Stack Overflow
+your communities
+Sign up or log in to customize your list.
+more stack exchange communities
+company blog
+People who code: we want your input.
+Take the Survey
+Join Stack Overflow to learn, share knowledge, and build your career.
+Sign up with email
+Sign up
+Sign up with Google
+Sign up with GitHub
+Sign up with Facebook
+Home
+Public
+Questions
+Tags
+Users
+Find a Job
+Jobs
+Companies
+Teams
+Stack Overflow for Teams
+– Collaborate and share knowledge with a private group.
+Create a free Team
+What is Teams?
+Teams
+What’s this?
+Create free Team
+Teams
+Q&A for work
+Connect and share knowledge within a single location that is structured and easy to search.
+Learn more
+How to make a class JSON serializable
+Ask Question
+Asked
+10 years, 8 months ago
+Active
+8 days ago
+Viewed
+914k times
+997
+227
+How to make a Python class serializable?
+A simple class:
+class FileItem:
+def __init__(self, fname):
+self.fname = fname
+What should I do to be able to get output of:
+>>> import json
+>>> my_file = FileItem('/foo/bar')
+>>> json.dumps(my_file)
+TypeError: Object of type 'FileItem' is not JSON serializable
+Without the error
+python json serialization
+Share
+Follow
+edited Nov 12 '19 at 5:12
+FraggaMuffin
+3,01622 gold badges1717 silver badges2424 bronze badges
+asked Sep 22 '10 at 11:52
+SergeySergey
+15.3k1313 gold badges3333 silver badges5757 bronze badges
+5
+93
+It's unfortunate that the answers all seem to answer the question "How do I serialize a class?" rather than the action question "How do I make a class serializable?" These answers assume that you're doing the serialization yourself, rather than passing the object along to some other module that serializes it.
+– Kyle Delaney
+Oct 17 '19 at 23:59
+If you're using Python3.5+, you could use jsons. It will convert your object (and all its attributes recursively) to a dict.
+import jsons see answer below - it works perfectly fine
+– tswaehn
+Apr 2 '20 at 13:07
+6
+@KyleDelaney I was really hoping for an interface/magic method I could implement to become searializable too. I guess I will have to implement a .to_dict() function or something which can be called on the object before it is passed to the module which tries to serialize it.
+– Felix B.
+Sep 1 '20 at 19:09
+see stackoverflow.com/a/63718624/1497139 for a start for a JSONAble mixin
+– Wolfgang Fahl
+Sep 3 '20 at 7:17
+@FelixB. You can use the built-in vars function in combination with json.dumps (see my answer stackoverflow.com/a/64469761/1587520)
+– user1587520
+Nov 23 '20 at 15:47
+Add a comment
+|
+34 Answers
+34
+Active
+Oldest
+Votes
+1
+2
+Next
+632
+Do you have an idea about the expected output? For example, will this do?
+>>> f
+= FileItem("/foo/bar")
+>>> magic(f)
+'{"fname": "/foo/bar"}'
+In that case you can merely call json.dumps(f.__dict__).
+If you want more customized output then you will have to subclass JSONEncoder and implement your own custom serialization.
+For a trivial example, see below.
+>>> from json import JSONEncoder
+>>> class MyEncoder(JSONEncoder):
+def default(self, o):
+return o.__dict__
+>>> MyEncoder().encode(f)
+'{"fname": "/foo/bar"}'
+Then you pass this class into the json.dumps() method as cls kwarg:
+json.dumps(cls=MyEncoder)
+If you also want to decode then you'll have to supply a custom object_hook to the JSONDecoder class. For example:
+>>> def from_json(json_object):
+if 'fname' in json_object:
+return FileItem(json_object['fname'])
+>>> f = JSONDecoder(object_hook = from_json).decode('{"fname": "/foo/bar"}')
+>>> f
+<__main__.FileItem object at 0x9337fac>
+>>>
+Share
+Follow
+edited Jun 13 '20 at 22:00
+mkrieger1
+10.8k44 gold badges3939 silver badges4747 bronze badges
+answered Sep 22 '10 at 12:02
+Manoj GovindanManoj Govindan
+64.4k2121 gold badges123123 silver badges132132 bronze badges
+8
+50
+Using __dict__ will not work in all cases.
+If the attributes have not been set after the object was instantiated, __dict__ may not be fully populated.
+In the example above, you're OK, but if you have class attributes that you also want to encode, those will not be listed in __dict__ unless they have been modified in the class' __init__ call or by some other way after the object was instantiated.
+– Kris Hardy
+Dec 29 '11 at 16:41
+10
++1, but the from_json() function used as object-hook should have an else: return json_object statement, so it can deal with general objects as well.
+– jogojapan
+Mar 19 '13 at 7:51
+10
+@KrisHardy __dict__ also doesn't work if you use __slots__ on a new style class.
+– badp
+Dec 13 '13 at 17:53
+12
+You could use a custom JSONEncoder as above to create a custom protocol, such as checking for the existence of __json_serializable__ method and calling it to obtain a JSON serializable representation of the object. This would be in keeping with other Python patterns, like __getitem__, __str__, __eq__, and __len__.
+– jpmc26
+Jul 15 '15 at 0:53
+6
+__dict__ also won't work recursively, e.g., if an attribute of your object is another object.
+– Neel
+Apr 10 '18 at 19:12
+|
+Show 3 more comments
+721
++50
+Here is a simple solution for a simple feature:
+.toJSON() Method
+Instead of a JSON serializable class, implement a serializer method:
+import json
+class Object:
+def toJSON(self):
+return json.dumps(self, default=lambda o: o.__dict__,
+sort_keys=True, indent=4)
+So you just call it to serialize:
+me = Object()
+me.name = "Onur"
+me.age = 35
+me.dog = Object()
+me.dog.name = "Apollo"
+print(me.toJSON())
+will output:
+{
+"age": 35,
+"dog": {
+"name": "Apollo"
+},
+"name": "Onur"
+}
+Share
+Follow
+edited May 7 at 0:31
+answered Mar 21 '13 at 2:26
+Onur YıldırımOnur Yıldırım
+27.9k1111 gold badges7878 silver badges9696 bronze badges
+12
+108
+Very limited. If you have a dict {"foo":"bar","baz":"bat"}, that will serialize to JSON easily. If instead you have {"foo":"bar","baz":MyObject()}, then you cannot. The ideal situation would be that nested objects are serialized to JSON recursively, not explicitly.
+– Mark E. Haase
+Aug 22 '13 at 18:51
+35
+It will still work. You're missing o.__dict___. Try your own example:
+class MyObject(): def __init__(self): self.prop = 1 j = json.dumps({ "foo": "bar", "baz": MyObject() }, default=lambda o: o.__dict__)
+– Onur Yıldırım
+Aug 22 '13 at 22:56
+15
+Is this solution reversible? I.e. Is it easy to reconstruct the object from json?
+– Jorge Leitao
+Apr 26 '15 at 18:20
+3
+@J.C.Leitão No. You could have two different classes with the same fields. Objects a and b of that class (probably with the same properties) would have the same a.__dict__ / b.__dict__.
+– Martin Thoma
+Jun 16 '15 at 12:30
+7
+This does not work with datetime.datetime instances. It throws the following error: 'datetime.datetime' object has no attribute '__dict__'
+– Bruno Finger
+Jun 17 '15 at 12:43
+|
+Show 7 more comments
+198
+For more complex classes you could consider the tool jsonpickle:
+jsonpickle is a Python library for serialization and deserialization of complex Python objects to and from JSON.
+The standard Python libraries for encoding Python into JSON, such as the stdlib’s json, simplejson, and demjson, can only handle Python primitives that have a direct JSON equivalent (e.g. dicts, lists, strings, ints, etc.). jsonpickle builds on top of these libraries and allows more complex data structures to be serialized to JSON. jsonpickle is highly configurable and extendable–allowing the user to choose the JSON backend and add additional backends.
+(link to jsonpickle on PyPi)
+Share
+Follow
+edited Apr 16 at 12:39
+mrnom
+511 silver badge33 bronze badges
+answered Dec 23 '11 at 9:11
+geccogecco
+15.3k99 gold badges4646 silver badges6868 bronze badges
+7
+41
+Coming from C#, this is what I was expecting. A simple one liner and no messing with the classes.
+– Jerther
+Dec 13 '15 at 22:34
+2
+jsonpickle is awesome. It worked perfectly for a huge, complex, messy object with many levels of classes
+– wisbucky
+Mar 4 '16 at 18:23
+is there an example of the proper way to save this to a file? The documentation only shows how to encode and decode a jsonpickle object. Also, this was not able to decode a dict of dicts containing pandas dataframes.
+– user5359531
+Aug 16 '16 at 17:14
+4
+@user5359531 you can use obj = jsonpickle.decode(file.read()) and file.write(jsonpickle.encode(obj)).
+– Kilian Batzner
+Jan 2 '17 at 8:04
+1
+A question specifically for django: does use of jsonpickle for serializing session data have the same vulnerability as pickle? (as described here docs.djangoproject.com/en/1.11/topics/http/sessions/…)?
+– Paul Bormans
+Jun 23 '17 at 14:24
+|
+Show 2 more comments
+131
+Most of the answers involve changing the call to json.dumps(), which is not always possible or desirable (it may happen inside a framework component for example).
+If you want to be able to call
+json.dumps(obj) as is, then a simple solution is inheriting from dict:
+class FileItem(dict):
+def __init__(self, fname):
+dict.__init__(self, fname=fname)
+f = FileItem('tasks.txt')
+json.dumps(f)
+#No need to change anything here
+This works if your class is just basic data representation, for trickier things you can always set keys explicitly.
+Share
+Follow
+answered Jul 3 '15 at 13:22
+andyhasitandyhasit
+11k55 gold badges3939 silver badges4444 bronze badges
+6
+6
+This can really be a nice solution :) I believe for my case it is. Benefits: you communicate the "shape" of the object by making it a class with init, it is inherently serializable and it looks interpretable as repr.
+– PascalVKooten
+Sep 22 '16 at 19:41
+1
+Though "dot-access" is still missing :(
+– PascalVKooten
+Sep 22 '16 at 19:46
+2
+Ahh that seems to work! Thanks, not sure why this is not the accepted answer. I totally agree that changing the dumps is not a good solution.
+By the way, in most cases you probably want to have dict inheritance together with delegation, which means that you will have some dict type attribute inside your class, you will then pass this attribute as parameter as initialisation something like super().__init__(self.elements).
+– cglacet
+Aug 24 '18 at 13:52
+In my use case I needed to store data that was "invisible" to json.dumps(), so I used this method.
+The class DictWithRider takes in an arbitrary object, stores it as a member, and makes it accessible via a function get_rider_obj() but does not pass it to dict.__init__().
+So parts of the application who want to see the "hidden" data can call d.get_rider_obj() but json.dumps() sees basically an empty dict.
+As @PascalVKooten mentioned, you can't access regular members with dot notation, but you can access functions.
+– gkimsey
+Jul 21 '20 at 15:48
+for simple use this is ideal. dot notation can be easily enabled by additional lines subsequent to dict.__init__( line as self.fname = fname and the object can be deserialised with f = FileItem(**json.loads(serialised_f))
+– paddyg
+Jan 21 at 9:34
+|
+Show 1 more comment
+57
+I like Onur's answer but would expand to include an optional toJSON() method for objects to serialize themselves:
+def dumper(obj):
+try:
+return obj.toJSON()
+except:
+return obj.__dict__
+print json.dumps(some_big_object, default=dumper, indent=2)
+Share
+Follow
+edited May 23 '17 at 12:34
+Community♦
+111 silver badge
+answered Jan 27 '15 at 16:04
+Jason SJason S
+172k155155 gold badges551551 silver badges900900 bronze badges
+6
+I found this to be the best balance between using the existing json.dumps and introducing custom handling. Thanks!
+– Daniel Buckmaster
+Apr 15 '15 at 0:52
+15
+I actually really like this; but rather than try-catch would probably do something like if 'toJSON' in obj.__attrs__():... to avoid a silent failure (in the event of failure in toJSON() for some other reason than it not being there)... a failure which potentially leads to data corruption.
+– thclark
+Nov 22 '17 at 18:29
+7
+@thclark as I understand it, idomatic python asks for forgiveness, not permission, so try-except is the right approach, but the correct exception should be caught, an AttributeError in this case.
+– Phil
+Sep 8 '20 at 4:43
+4
+@phil a few years older and wiser now, I'd agree with you.
+– thclark
+Sep 8 '20 at 9:49
+1
+This really should be catching an AttributeError explicitly
+– juanpa.arrivillaga
+Feb 4 at 16:08
+|
+Show 1 more comment
+45
+Just add to_json method to your class like this:
+def to_json(self):
+return self.message # or how you want it to be serialized
+And add this code (from this answer), to somewhere at the top of everything:
+from json import JSONEncoder
+def _default(self, obj):
+return getattr(obj.__class__, "to_json", _default.default)(obj)
+_default.default = JSONEncoder().default
+JSONEncoder.default = _default
+This will monkey-patch json module when it's imported so
+JSONEncoder.default() automatically checks for a special "to_json()"
+method and uses it to encode the object if found.
+Just like Onur said, but this time you don't have to update every json.dumps() in your project.
+Share
+Follow
+edited Apr 27 '18 at 2:13
+Samuel Liew♦
+68.4k105105 gold badges140140 silver badges225225 bronze badges
+answered Aug 4 '16 at 10:27
+Fancy JohnFancy John
+35.4k22 gold badges2222 silver badges2424 bronze badges
+1
+8
+Big thanks! This is the only answer that allows me to do what I want: be able to serialize an object without changing the existing code. The other methods mostly do not work for me. The object is defined in a third-party library, and the serialization code is third-party too. Changing them will be awkward. With your method, I only need to do TheObject.to_json = my_serializer.
+– Yongwei Wu
+Oct 11 '17 at 13:12
+Add a comment
+|
+42
+Another option is to wrap JSON dumping in its own class:
+import json
+class FileItem:
+def __init__(self, fname):
+self.fname = fname
+def __repr__(self):
+return json.dumps(self.__dict__)
+Or, even better, subclassing FileItem class from a JsonSerializable class:
+import json
+class JsonSerializable(object):
+def toJson(self):
+return json.dumps(self.__dict__)
+def __repr__(self):
+return self.toJson()
+class FileItem(JsonSerializable):
+def __init__(self, fname):
+self.fname = fname
+Testing:
+>>> f = FileItem('/foo/bar')
+>>> f.toJson()
+'{"fname": "/foo/bar"}'
+>>> f
+'{"fname": "/foo/bar"}'
+>>> str(f) # string coercion
+'{"fname": "/foo/bar"}'
+Share
+Follow
+edited Dec 2 '17 at 17:59
+answered Jun 16 '12 at 10:30
+Paulo FreitasPaulo Freitas
+11.4k1313 gold badges6868 silver badges9393 bronze badges
+3
+3
+Hi,
+I don't really like this "custom encoder" approach, it would be better if u can make your class json seriazable. I try, and try and try and nothing. Is there any idea how to do this. The thing is that json module test your class against built in python types, and even says for custom classes make your encoder :).
+Can it be faked? So I could do something to my class so it behave like simple list to json module? I try subclasscheck and instancecheck but nothing.
+– Bojan Radojevic
+Aug 15 '12 at 12:43
+@ADRENALIN You could inherit from a primary type (probably dict), if all class attribute values are serializable and you don't mind hacks. You could also use jsonpickle or json_tricks or something instead of the standard one (still a custom encoder, but not one you need to write or call). The former pickles the instance, the latter stores it as dict of attributes, which you can change by implementing __json__encode__ / __json_decode__ (disclosure: I made the last one).
+– Mark
+Oct 20 '16 at 13:02
+1
+That doesn't make the object serializeable for the json class. It only provides a method to get a json string returned (trivial). Thus json.dumps(f) will fail. That's not what's been asked.
+– omni
+Sep 21 '20 at 14:38
+Add a comment
+|
+28
+If you're using Python3.5+, you could use jsons. It will convert your object (and all its attributes recursively) to a dict.
+import jsons
+a_dict = jsons.dump(your_object)
+Or if you wanted a string:
+a_str = jsons.dumps(your_object)
+Or if your class implemented jsons.JsonSerializable:
+a_dict = your_object.json
+Share
+Follow
+answered Dec 19 '18 at 9:34
+R HR H
+1,06911 gold badge1111 silver badges1111 bronze badges
+4
+4
+If you are able to use Python 3.7+, I found that the cleanest solution to convert python classes to dicts and JSON strings (and viceversa) is to mix the jsons library with dataclasses. So far, so good for me!
+– Ruluk
+Feb 26 '19 at 16:02
+15
+This is an external library, not built into the standard Python install.
+– Noumenon
+Jul 10 '19 at 2:44
+only for class that has slots attribute
+– yehudahs
+Dec 3 '19 at 20:41
+You can, but you don't need to use slots. Only when dumping according to the signature of a specific class you'll need slots. In the upcoming version 1.1.0 that is also no longer the case.
+– R H
+Dec 4 '19 at 13:30
+Add a comment
+|
+28
+I came across this problem the other day and implemented a more general version of an Encoder for Python objects that can handle nested objects and inherited fields:
+import json
+import inspect
+class ObjectEncoder(json.JSONEncoder):
+def default(self, obj):
+if hasattr(obj, "to_json"):
+return self.default(obj.to_json())
+elif hasattr(obj, "__dict__"):
+d = dict(
+(key, value)
+for key, value in inspect.getmembers(obj)
+if not key.startswith("__")
+and not inspect.isabstract(value)
+and not inspect.isbuiltin(value)
+and not inspect.isfunction(value)
+and not inspect.isgenerator(value)
+and not inspect.isgeneratorfunction(value)
+and not inspect.ismethod(value)
+and not inspect.ismethoddescriptor(value)
+and not inspect.isroutine(value)
+)
+return self.default(d)
+return obj
+Example:
+class C(object):
+c = "NO"
+def to_json(self):
+return {"c": "YES"}
+class B(object):
+b = "B"
+i = "I"
+def __init__(self, y):
+self.y = y
+def f(self):
+print "f"
+class A(B):
+a = "A"
+def __init__(self):
+self.b = [{"ab": B("y")}]
+self.c = C()
+print json.dumps(A(), cls=ObjectEncoder, indent=2, sort_keys=True)
+Result:
+{
+"a": "A",
+"b": [
+{
+"ab": {
+"b": "B",
+"i": "I",
+"y": "y"
+}
+}
+],
+"c": {
+"c": "YES"
+},
+"i": "I"
+}
+Share
+Follow
+edited May 6 at 9:33
+np_6
+50666 silver badges1717 bronze badges
+answered Feb 18 '16 at 14:10
+tobiguetobigue
+3,27733 gold badges2222 silver badges2626 bronze badges
+1
+1
+Although this is a bit old..I'm facing some circular imports error. So instead of return obj in the last line I did this return super(ObjectEncoder, self).default(obj). Reference HERE
+– SomeTypeFoo
+Apr 11 '17 at 13:44
+Add a comment
+|
+24
+As mentioned in many other answers you can pass a function to json.dumps to convert objects that are not one of the types supported by default to a supported type. Surprisingly none of them mentions the simplest case, which is to use the built-in function vars to convert objects into a dict containing all their attributes:
+json.dumps(obj, default=vars)
+Note that this covers only basic cases, if you need more specific serialization for certain types (e.g. exluding certain attributes or objects that don't have a __dict__ attribute) you need to use a custom function or a JSONEncoder as desribed in the other answers.
+Share
+Follow
+edited Feb 25 at 10:57
+answered Oct 21 '20 at 18:40
+user1587520user1587520
+1,5091414 silver badges1717 bronze badges
+4
+it is unclear what you mean by default=vars, does that mean that vars is the default serializer? If not: This does not really solve the case where you can not influence how json.dumps is called. If you simply pass an object to a library and that library calls json.dumps on that object, it doesn't really help that you have implemented vars if that library does not use dumps this way. In that sense it is equivalent to a custom JSONEncoder.
+– Felix B.
+Nov 24 '20 at 14:39
+You are correct, it is nothing else than just a simple choice for a custom serializer and doesn't solve the case you describe. If I see it correctly there is no solution to the case were you don't control how json.dumps is invoked.
+– user1587520
+Nov 25 '20 at 8:01
+1
+Resolved my case. Simply brilliant!
+– Rub
+Dec 2 '20 at 3:30
+For some objects, this approach will throw vars() argument must have __dict__ attribute
+– JustAMartin
+Feb 24 at 14:04
+Add a comment
+|
+12
+import simplejson
+class User(object):
+def __init__(self, name, mail):
+self.name = name
+self.mail = mail
+def _asdict(self):
+return self.__dict__
+print(simplejson.dumps(User('alice', 'alice@mail.com')))
+if using standard json, you need to define a default function
+import json
+def default(o):
+return o._asdict()
+print(json.dumps(User('alice', 'alice@mail.com'), default=default))
+Share
+Follow
+edited May 23 at 7:00
+jtlz2
+4,92366 gold badges4343 silver badges8484 bronze badges
+answered Jun 17 '15 at 3:17
+tryer3000tryer3000
+76999 silver badges1414 bronze badges
+1
+2
+I simplifed this by removing the _asdict function with a lambda
+json.dumps(User('alice', 'alice@mail.com'), default=lambda x: x.__dict__)
+– JustEngland
+Nov 29 '18 at 16:56
+Add a comment
+|
+8
+json is limited in terms of objects it can print, and jsonpickle (you may need a pip install jsonpickle) is limited in terms it can't indent text. If you would like to inspect the contents of an object whose class you can't change, I still couldn't find a straighter way than:
+import json
+import jsonpickle
+...
+print
+json.dumps(json.loads(jsonpickle.encode(object)), indent=2)
+Note: that still they can't print the object methods.
+Share
+Follow
+edited Jul 24 '19 at 11:40
+Martlark
+12.2k1212 gold badges7373 silver badges8989 bronze badges
+answered Apr 4 '16 at 13:41
+ribamarribamar
+1,2351414 silver badges2020 bronze badges
+Add a comment
+|
+5
+This class can do the trick, it converts object to standard json .
+import json
+class Serializer(object):
+@staticmethod
+def serialize(object):
+return json.dumps(object, default=lambda o: o.__dict__.values()[0])
+usage:
+Serializer.serialize(my_object)
+working in python2.7 and python3.
+Share
+Follow
+answered Oct 9 '16 at 14:14
+Lost KoderLost Koder
+8441313 silver badges3232 bronze badges
+1
+I liked this method the most. I ran into issues when trying to serialize more complex objects whos members/methods aren't serializable. Here's my implementation that works on more objects:
+``` class Serializer(object):
+@staticmethod
+def serialize(obj):
+def check(o):
+for k, v in o.__dict__.items():
+try:
+_ = json.dumps(v)
+o.__dict__[k] = v
+except TypeError:
+o.__dict__[k] = str(v)
+return o
+return json.dumps(check(obj).__dict__, indent=2) ```
+– Will Charlton
+Nov 11 '17 at 5:34
+Add a comment
+|
+4
+Here is my 3 cents ...
+This demonstrates explicit json serialization for a tree-like python object.
+Note: If you actually wanted some code like this you could use the twisted
+FilePath class.
+import json, sys, os
+class File:
+def __init__(self, path):
+self.path = path
+def isdir(self):
+return os.path.isdir(self.path)
+def isfile(self):
+return os.path.isfile(self.path)
+def children(self):
+return [File(os.path.join(self.path, f))
+for f in os.listdir(self.path)]
+def getsize(self):
+return os.path.getsize(self.path)
+def getModificationTime(self):
+return os.path.getmtime(self.path)
+def _default(o):
+d = {}
+d['path'] = o.path
+d['isFile'] = o.isfile()
+d['isDir'] = o.isdir()
+d['mtime'] = int(o.getModificationTime())
+d['size'] = o.getsize() if o.isfile() else 0
+if o.isdir(): d['children'] = o.children()
+return d
+folder = os.path.abspath('.')
+json.dump(File(folder), sys.stdout, default=_default)
+Share
+Follow
+answered Jul 10 '13 at 17:59
+Dan BroughDan Brough
+2,2671919 silver badges2323 bronze badges
+Add a comment
+|
+4
+import json
+class Foo(object):
+def __init__(self):
+self.bar = 'baz'
+self._qux = 'flub'
+def somemethod(self):
+pass
+def default(instance):
+return {k: v
+for k, v in vars(instance).items()
+if not str(k).startswith('_')}
+json_foo = json.dumps(Foo(), default=default)
+assert '{"bar": "baz"}' == json_foo
+print(json_foo)
+Share
+Follow
+answered Jul 17 '15 at 6:20
+rectangletanglerectangletangle
+43k8686 gold badges186186 silver badges264264 bronze badges
+1
+From doc: The parameter default(obj) is a function that should return a serializable version
+of obj or raise TypeError.
+The default default simply raises TypeError.
+– luckydonald
+Jun 28 '16 at 16:09
+Add a comment
+|
+4
+jaraco gave a pretty neat answer. I needed to fix some minor things, but this works:
+Code
+# Your custom class
+class MyCustom(object):
+def __json__(self):
+return {
+'a': self.a,
+'b': self.b,
+'__python__': 'mymodule.submodule:MyCustom.from_json',
+}
+to_json = __json__
+# supported by simplejson
+@classmethod
+def from_json(cls, json):
+obj = cls()
+obj.a = json['a']
+obj.b = json['b']
+return obj
+# Dumping and loading
+import simplejson
+obj = MyCustom()
+obj.a = 3
+obj.b = 4
+json = simplejson.dumps(obj, for_json=True)
+# Two-step loading
+obj2_dict = simplejson.loads(json)
+obj2 = MyCustom.from_json(obj2_dict)
+# Make sure we have the correct thing
+assert isinstance(obj2, MyCustom)
+assert obj2.__dict__ == obj.__dict__
+Note that we need two steps for loading. For now, the __python__ property
+is not used.
+How common is this?
+Using the method of AlJohri, I check popularity of approaches:
+Serialization (Python -> JSON):
+to_json: 266,595 on 2018-06-27
+toJSON: 96,307 on 2018-06-27
+__json__: 8,504 on 2018-06-27
+for_json: 6,937 on 2018-06-27
+Deserialization (JSON -> Python):
+from_json: 226,101 on 2018-06-27
+Share
+Follow
+edited Jul 9 '18 at 11:24
+answered Jun 27 '18 at 5:24
+Martin ThomaMartin Thoma
+91.9k114114 gold badges489489 silver badges768768 bronze badges
+Add a comment
+|
+4
+This has worked well for me:
+class JsonSerializable(object):
+def serialize(self):
+return json.dumps(self.__dict__)
+def __repr__(self):
+return self.serialize()
+@staticmethod
+def dumper(obj):
+if "serialize" in dir(obj):
+return obj.serialize()
+return obj.__dict__
+and then
+class FileItem(JsonSerializable):
+...
+and
+log.debug(json.dumps(<my object>, default=JsonSerializable.dumper, indent=2))
+Share
+Follow
+answered Jan 18 '19 at 8:10
+jmhostaletjmhostalet
+3,57133 gold badges3333 silver badges3939 bronze badges
+Add a comment
+|
+3
+If you don't mind installing a package for it, you can use json-tricks:
+pip install json-tricks
+After that you just need to import dump(s) from json_tricks instead of json, and it'll usually work:
+from json_tricks import dumps
+json_str = dumps(cls_instance, indent=4)
+which'll give
+{
+"__instance_type__": [
+"module_name.test_class",
+"MyTestCls"
+],
+"attributes": {
+"attr": "val",
+"dct_attr": {
+"hello": 42
+}
+}
+}
+And that's basically it!
+This will work great in general. There are some exceptions, e.g. if special things happen in __new__, or more metaclass magic is going on.
+Obviously loading also works (otherwise what's the point):
+from json_tricks import loads
+json_str = loads(json_str)
+This does assume that module_name.test_class.MyTestCls can be imported and hasn't changed in non-compatible ways. You'll get back an instance, not some dictionary or something, and it should be an identical copy to the one you dumped.
+If you want to customize how something gets (de)serialized, you can add special methods to your class, like so:
+class CustomEncodeCls:
+def __init__(self):
+self.relevant = 42
+self.irrelevant = 37
+def __json_encode__(self):
+# should return primitive, serializable types like dict, list, int, string, float...
+return {'relevant': self.relevant}
+def __json_decode__(self, **attrs):
+# should initialize all properties; note that __init__ is not called implicitly
+self.relevant = attrs['relevant']
+self.irrelevant = 12
+which serializes only part of the attributes parameters, as an example.
+And as a free bonus, you get (de)serialization of numpy arrays, date & times, ordered maps, as well as the ability to include comments in json.
+Disclaimer: I created json_tricks, because I had the same problem as you.
+Share
+Follow
+answered Nov 10 '16 at 12:53
+MarkMark
+15.3k66 gold badges9595 silver badges113113 bronze badges
+1
+1
+I've just tested json_tricks and it worked beautify (in 2019).
+– pauljohn32
+Nov 6 '19 at 17:01
+Add a comment
+|
+3
+Kyle Delaney's comment is correct so i tried to use the answer https://stackoverflow.com/a/15538391/1497139 as well as an improved version of https://stackoverflow.com/a/10254820/1497139
+to create a "JSONAble" mixin.
+So to make a class JSON serializeable use "JSONAble" as a super class and either call:
+instance.toJSON()
+or
+instance.asJSON()
+for the two offered methods. You could also extend the JSONAble class with other approaches offered here.
+The test example for the Unit Test with Family and Person sample results in:
+toJSOn():
+{
+"members": {
+"Flintstone,Fred": {
+"firstName": "Fred",
+"lastName": "Flintstone"
+},
+"Flintstone,Wilma": {
+"firstName": "Wilma",
+"lastName": "Flintstone"
+}
+},
+"name": "The Flintstones"
+}
+asJSOn():
+{'name': 'The Flintstones', 'members': {'Flintstone,Fred': {'firstName': 'Fred', 'lastName': 'Flintstone'}, 'Flintstone,Wilma': {'firstName': 'Wilma', 'lastName': 'Flintstone'}}}
+Unit Test with Family and Person sample
+def testJsonAble(self):
+family=Family("The Flintstones")
+family.add(Person("Fred","Flintstone"))
+family.add(Person("Wilma","Flintstone"))
+json1=family.toJSON()
+json2=family.asJSON()
+print(json1)
+print(json2)
+class Family(JSONAble):
+def __init__(self,name):
+self.name=name
+self.members={}
+def add(self,person):
+self.members[person.lastName+","+person.firstName]=person
+class Person(JSONAble):
+def __init__(self,firstName,lastName):
+self.firstName=firstName;
+self.lastName=lastName;
+jsonable.py defining JSONAble mixin
+'''
+Created on 2020-09-03
+@author: wf
+'''
+import json
+class JSONAble(object):
+'''
+mixin to allow classes to be JSON serializable see
+https://stackoverflow.com/questions/3768895/how-to-make-a-class-json-serializable
+'''
+def __init__(self):
+'''
+Constructor
+'''
+def toJSON(self):
+return json.dumps(self, default=lambda o: o.__dict__,
+sort_keys=True, indent=4)
+def getValue(self,v):
+if (hasattr(v, "asJSON")):
+return v.asJSON()
+elif type(v) is dict:
+return self.reprDict(v)
+elif type(v) is list:
+vlist=[]
+for vitem in v:
+vlist.append(self.getValue(vitem))
+return vlist
+else:
+return v
+def reprDict(self,srcDict):
+'''
+get my dict elements
+'''
+d = dict()
+for a, v in srcDict.items():
+d[a]=self.getValue(v)
+return d
+def asJSON(self):
+'''
+recursively return my dict elements
+'''
+return self.reprDict(self.__dict__)
+You'll find these approaches now integrated in the https://github.com/WolfgangFahl/pyLoDStorage project which is available at https://pypi.org/project/pylodstorage/
+Share
+Follow
+edited Oct 8 '20 at 9:56
+answered Sep 3 '20 at 7:16
+Wolfgang FahlWolfgang Fahl
+12.1k99 gold badges7575 silver badges150150 bronze badges
+Add a comment
+|
+2
+jsonweb seems to be the best solution for me. See http://www.jsonweb.info/en/latest/
+from jsonweb.encode import to_object, dumper
+@to_object()
+class DataModel(object):
+def __init__(self, id, value):
+self.id = id
+self.value = value
+>>> data = DataModel(5, "foo")
+>>> dumper(data)
+'{"__type__": "DataModel", "id": 5, "value": "foo"}'
+Share
+Follow
+answered Oct 7 '14 at 5:32
+matthewlentmatthewlent
+51944 silver badges1818 bronze badges
+1
+Does it work well for nested objects? Including decoding and encoding
+– Simone Zandara
+Dec 22 '15 at 8:43
+Add a comment
+|
+2
+class DObject(json.JSONEncoder):
+def delete_not_related_keys(self, _dict):
+for key in ["skipkeys", "ensure_ascii", "check_circular", "allow_nan", "sort_keys", "indent"]:
+try:
+del _dict[key]
+except:
+continue
+def default(self, o):
+if hasattr(o, '__dict__'):
+my_dict = o.__dict__.copy()
+self.delete_not_related_keys(my_dict)
+return my_dict
+else:
+return o
+a = DObject()
+a.name = 'abdul wahid'
+b = DObject()
+b.name = a
+print(json.dumps(b, cls=DObject))
+Share
+Follow
+edited Jun 21 '20 at 6:48
+answered Jun 19 '20 at 15:15
+Sheikh Abdul WahidSheikh Abdul Wahid
+1,96211 gold badge1919 silver badges2323 bronze badges
+Add a comment
+|
+2
+Building on Quinten Cabo's answer:
+def sterilize(obj):
+"""Make an object more ameniable to dumping as json
+"""
+if type(obj) in (str, float, int, bool, type(None)):
+return obj
+elif isinstance(obj, dict):
+return {k: sterilize(v) for k, v in obj.items()}
+list_ret = []
+dict_ret = {}
+for a in dir(obj):
+if a == '__iter__' and callable(obj.__iter__):
+list_ret.extend([sterilize(v) for v in obj])
+elif a == '__dict__':
+dict_ret.update({k: sterilize(v) for k, v in obj.__dict__.items() if k not in ['__module__', '__dict__', '__weakref__', '__doc__']})
+elif a not in ['__doc__', '__module__']:
+aval = getattr(obj, a)
+if type(aval) in (str, float, int, bool, type(None)):
+dict_ret[a] = aval
+elif a != '__class__' and a != '__objclass__' and isinstance(aval, type):
+dict_ret[a] = sterilize(aval)
+if len(list_ret) == 0:
+if len(dict_ret) == 0:
+return repr(obj)
+return dict_ret
+else:
+if len(dict_ret) == 0:
+return list_ret
+return (list_ret, dict_ret)
+The differences are
+Works for any iterable instead of just list and tuple (it works for NumPy arrays, etc.)
+Works for dynamic types (ones that contain a __dict__).
+Includes native types float and None so they don't get converted to string.
+Classes that have __dict__ and members will mostly work (if the __dict__ and member names collide, you will only get one - likely the member)
+Classes that are lists and have members will look like a tuple of the list and a dictionary
+Python3 (that isinstance() call may be the only thing that needs changing)
+Share
+Follow
+edited Jul 19 '20 at 11:51
+answered May 2 '20 at 11:29
+mheymanmheyman
+3,7033232 silver badges3333 bronze badges
+Add a comment
+|
+1
+I ran into this problem when I tried to store Peewee's model into PostgreSQL JSONField.
+After struggling for a while, here's the general solution.
+The key to my solution is going through Python's source code and realizing that the code documentation (described here) already explains how to extend the existing json.dumps to support other data types.
+Suppose you current have a model that contains some fields that are not serializable to JSON and the model that contains the JSON field originally looks like this:
+class SomeClass(Model):
+json_field = JSONField()
+Just define a custom JSONEncoder like this:
+class CustomJsonEncoder(json.JSONEncoder):
+def default(self, obj):
+if isinstance(obj, SomeTypeUnsupportedByJsonDumps):
+return < whatever value you want >
+return json.JSONEncoder.default(self, obj)
+@staticmethod
+def json_dumper(obj):
+return json.dumps(obj, cls=CustomJsonEncoder)
+And then just use it in your JSONField like below:
+class SomeClass(Model):
+json_field = JSONField(dumps=CustomJsonEncoder.json_dumper)
+The key is the default(self, obj) method above. For every single ... is not JSON serializable complaint you receive from Python, just add code to handle the unserializable-to-JSON type (such as Enum or datetime)
+For example, here's how I support a class inheriting from Enum:
+class TransactionType(Enum):
+CURRENT = 1
+STACKED = 2
+def default(self, obj):
+if isinstance(obj, TransactionType):
+return obj.value
+return json.JSONEncoder.default(self, obj)
+Finally, with the code implemented like above, you can just convert any Peewee models to be a JSON-seriazable object like below:
+peewee_model = WhateverPeeweeModel()
+new_model = SomeClass()
+new_model.json_field = model_to_dict(peewee_model)
+Though the code above was (somewhat) specific to Peewee, but I think:
+It's applicable to other ORMs (Django, etc) in general
+Also, if you understood how json.dumps works, this solution also works with Python (sans ORM) in general too
+Any questions, please post in the comments section. Thanks!
+Share
+Follow
+answered Jul 30 '18 at 15:04
+sivabudhsivabudh
+29.3k5656 gold badges156156 silver badges219219 bronze badges
+Add a comment
+|
+1
+First we need to make our object JSON-compliant, so we can dump it using the standard JSON module. I did it this way:
+def serialize(o):
+if isinstance(o, dict):
+return {k:serialize(v) for k,v in o.items()}
+if isinstance(o, list):
+return [serialize(e) for e in o]
+if isinstance(o, bytes):
+return o.decode("utf-8")
+return o
+Share
+Follow
+answered Feb 27 '20 at 8:06
+Adi DeganiAdi Degani
+12922 silver badges33 bronze badges
+Add a comment
+|
+1
+This function uses recursion to iterate over every part of the dictionary and then calls the repr() methods of classes that are not build-in types.
+def sterilize(obj):
+object_type = type(obj)
+if isinstance(obj, dict):
+return {k: sterilize(v) for k, v in obj.items()}
+elif object_type in (list, tuple):
+return [sterilize(v) for v in obj]
+elif object_type in (str, int, bool, float):
+return obj
+else:
+return obj.__repr__()
+Share
+Follow
+edited Nov 12 '20 at 13:34
+answered Mar 30 '20 at 20:12
+Quinten CaboQuinten Cabo
+18411 silver badge1111 bronze badges
+Add a comment
+|
+0
+I came up with my own solution. Use this method, pass any document (dict,list, ObjectId etc) to serialize.
+def getSerializable(doc):
+# check if it's a list
+if isinstance(doc, list):
+for i, val in enumerate(doc):
+doc[i] = getSerializable(doc[i])
+return doc
+# check if it's a dict
+if isinstance(doc, dict):
+for key in doc.keys():
+doc[key] = getSerializable(doc[key])
+return doc
+# Process ObjectId
+if isinstance(doc, ObjectId):
+doc = str(doc)
+return doc
+# Use any other custom serializting stuff here...
+# For the rest of stuff
+return doc
+Share
+Follow
+answered May 21 '15 at 5:06
+DewsworldDewsworld
+11.2k1818 gold badges5757 silver badges9999 bronze badges
+Add a comment
+|
+0
+I liked Lost Koder's method the most. I ran into issues when trying to serialize more complex objects whos members/methods aren't serializable. Here's my implementation that works on more objects:
+class Serializer(object):
+@staticmethod
+def serialize(obj):
+def check(o):
+for k, v in o.__dict__.items():
+try:
+_ = json.dumps(v)
+o.__dict__[k] = v
+except TypeError:
+o.__dict__[k] = str(v)
+return o
+return json.dumps(check(obj).__dict__, indent=2)
+Share
+Follow
+answered Nov 11 '17 at 5:35
+Will CharltonWill Charlton
+65277 silver badges99 bronze badges
+Add a comment
+|
+0
+If you are able to install a package, I'd recommend trying dill, which worked just fine for my project. A nice thing about this package is that it has the same interface as pickle, so if you have already been using pickle in your project you can simply substitute in dill and see if the script runs, without changing any code. So it is a very cheap solution to try!
+(Full anti-disclosure: I am in no way affiliated with and have never contributed to the dill project.)
+Install the package:
+pip install dill
+Then edit your code to import dill instead of pickle:
+# import pickle
+import dill as pickle
+Run your script and see if it works. (If it does you may want to clean up your code so that you are no longer shadowing the pickle module name!)
+Some specifics on datatypes that dill can and cannot serialize, from the project page:
+dill can pickle the following standard types:
+none, type, bool, int, long, float, complex, str, unicode, tuple,
+list, dict, file, buffer, builtin, both old and new style classes,
+instances of old and new style classes, set, frozenset, array,
+functions, exceptions
+dill can also pickle more ‘exotic’ standard types:
+functions with yields, nested functions, lambdas, cell, method,
+unboundmethod, module, code, methodwrapper, dictproxy,
+methoddescriptor, getsetdescriptor, memberdescriptor,
+wrapperdescriptor, xrange, slice, notimplemented, ellipsis, quit
+dill cannot yet pickle these standard types:
+frame, generator, traceback
+Share
+Follow
+answered Dec 18 '18 at 16:48
+thedavidmothedavidmo
+1
+Add a comment
+|
+0
+I see no mention here of serial versioning or backcompat, so I will post my solution which I've been using for a bit. I probably have a lot more to learn from, specifically Java and Javascript are probably more mature than me here but here goes
+https://gist.github.com/andy-d/b7878d0044a4242c0498ed6d67fd50fe
+Share
+Follow
+answered Aug 27 '19 at 21:39
+Fletch F FletchFletch F Fletch
+32333 silver badges77 bronze badges
+Add a comment
+|
+0
+To add another option: You can use the attrs package and the asdict method.
+class ObjectEncoder(JSONEncoder):
+def default(self, o):
+return attr.asdict(o)
+json.dumps(objects, cls=ObjectEncoder)
+and to convert back
+def from_json(o):
+if '_obj_name' in o:
+type_ = o['_obj_name']
+del o['_obj_name']
+return globals()[type_](**o)
+else:
+return o
+data = JSONDecoder(object_hook=from_json).decode(data)
+class looks like this
+@attr.s
+class Foo(object):
+x = attr.ib()
+_obj_name = attr.ib(init=False, default='Foo')
+Share
+Follow
+answered Oct 15 '19 at 17:12
+machinekodermachinekoder
+16611 silver badge99 bronze badges
+Add a comment
+|
+1
+2
+Next
+Highly active question. Earn 10 reputation in order to answer this question. The reputation requirement helps protect this question from spam and non-answer activity.
+Not the answer you're looking for? Browse other questions tagged python json serialization
+or ask your own question.
+The Overflow Blog
+Level Up: Linear Regression in Python – Part 2
+Shipping confetti to Stack Overflow’s design system
+Featured on Meta
+The future of Community Promotion, Open Source, and Hot Network Questions Ads
+Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
+Take the 2021 Developer Survey
+Visit chat
+Linked
+12
+Flask - store object directly in a session
+5
+Turn Python object into JSON output
+3
+Python Flask : How to convert a dictionary object to json?
+4
+How to serialize complex objects to JSON with Flask
+1
+Why is this class not JSon serializable?
+1
+Object is not Json serializable?
+1
+Python serialize class to JSON
+0
+How to make a JSON object serializable
+0
+Use my class object as JSON in python
+0
+How to serialize an object that contains a list of other objects
+See more linked questions
+Related
+5656
+How do I merge two dictionaries in a single expression (taking union of dictionaries)?
+6149
+How do I check whether a file exists without exceptions?
+8288
+Can comments be used in JSON?
+3276
+How can I pretty-print JSON in a shell script?
+10721
+What is the correct JSON content type?
+2901
+How to make function decorators and chain them together?
+4076
+How to make a flat list out of a list of lists?
+4244
+Why does Google prepend while(1); to their JSON responses?
+2766
+pretty-print JSON using JavaScript
+3233
+How do I POST JSON data with cURL?
+Hot Network Questions
+Where can people allergic to dairy food eat when travelling in France?
+Why is bad behavior more tolerated in academia compared to the rest of the industry?
+What can I do about a parent who is discouraging their child from learning violin, a child who really wants to learn, so that the child will drop out
+How to use Zwift workouts with stationary bike
+identify M.2 SSD from BASH Script
+Is it significantly faster to hike along a river bank?
+How to rotate a circle around y-aixs and calculate the volume of the 3D solid?
+Efficient ragged path for text
+Factorising blinear forms with Mathematica
+How can objects be neither vector nor scalar?
+How can I state an axiom without enumeration?
+select distinct columns over multiple databases sql server
+Lunar Terrain Model in Apollo Guidance Computer
+Why is the ortho product major in the nitration of anisole with nitric acid and acetic anhydride?
+I ran a nail through a wire at home, should I worry?
+What technical reasons prevented the Win9x Virtual Machine Monitor from running multiple threads simultaneously?
+Stop, in the name of the law
+Why do we have two kidneys but one liver?
+How do I make a "ragged" table?
+The famous "Charaiveti" mantra is mentioned in which Vedic verse?
+Does mass have an effect on Centripetal Acceleration?
+Vocal range of a crowd
+Please Identify this outdoor plant?
+Does 'graduate program' mean MSc or Ph.D.?
+more hot questions
+Question feed
+Subscribe to RSS
+Question feed
+To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+lang-py
+Stack Overflow
+Questions
+Jobs
+Developer Jobs Directory
+Salary Calculator
+Help
+Mobile
+Products
+Teams
+Talent
+Advertising
+Enterprise
+Company
+About
+Press
+Work Here
+Legal
+Privacy Policy
+Terms of Service
+Contact Us
+Cookie Settings
+Cookie Policy
+Stack Exchange Network
+Technology
+Life / Arts
+Culture / Recreation
+Science
+Other
+Stack Overflow
+Server Fault
+Super User
+Web Applications
+Ask Ubuntu
+Webmasters
+Game Development
+TeX - LaTeX
+Software Engineering
+Unix & Linux
+Ask Different (Apple)
+WordPress Development
+Geographic Information Systems
+Electrical Engineering
+Android Enthusiasts
+Information Security
+Database Administrators
+Drupal Answers
+SharePoint
+User Experience
+Mathematica
+Salesforce
+ExpressionEngine® Answers
+Stack Overflow em Português
+Blender
+Network Engineering
+Cryptography
+Code Review
+Magento
+Software Recommendations
+Signal Processing
+Emacs
+Raspberry Pi
+Stack Overflow на русском
+Code Golf
+Stack Overflow en español
+Ethereum
+Data Science
+Arduino
+Bitcoin
+Software Quality Assurance & Testing
+Sound Design
+Windows Phone
+more (29)
+Photography
+Science Fiction & Fantasy
+Graphic Design
+Movies & TV
+Music: Practice & Theory
+Worldbuilding
+Video Production
+Seasoned Advice (cooking)
+Home Improvement
+Personal Finance & Money
+Academia
+Law
+Physical Fitness
+Gardening & Landscaping
+Parenting
+more (10)
+English Language & Usage
+Skeptics
+Mi Yodeya (Judaism)
+Travel
+Christianity
+English Language Learners
+Japanese Language
+Chinese Language
+French Language
+German Language
+Biblical Hermeneutics
+History
+Spanish Language
+Islam
+Русский язык
+Russian Language
+Arqade (gaming)
+Bicycles
+Role-playing Games
+Anime & Manga
+Puzzling
+Motor Vehicle Maintenance & Repair
+Board & Card Games
+Bricks
+Homebrewing
+Martial Arts
+The Great Outdoors
+Poker
+Chess
+Sports
+more (16)
+MathOverflow
+Mathematics
+Cross Validated (stats)
+Theoretical Computer Science
+Physics
+Chemistry
+Biology
+Computer Science
+Philosophy
+Linguistics
+Psychology & Neuroscience
+Computational Science
+more (10)
+Meta Stack Exchange
+Stack Apps
+API
+Data
+Blog
+Facebook
+Twitter
+LinkedIn
+Instagram
+site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
+rev 2021.5.28.39383
+Stack Overflow works best with JavaScript enabled
+Your privacy
+By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
+Accept all cookies
+Customize settings

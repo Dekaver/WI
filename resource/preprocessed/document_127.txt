@@ -1,0 +1,97 @@
+CS125: Introduction to Programming Principles
+CS125: Introduction to Programming Principles
+Announcements
+Assignments
+Course Grade
+Course Outline
+Exams
+Labs
+Resources
+Staff
+Student Admin
+Tutors
+Boolean and If Statements
+Compilation Errors
+Error Message Name: 	Error: incompatible types
+Example:
+String aString = "Hello";
+Scanner in = new Scanner(System.in);
+char a = aString.charAt(in.nextInt());
+char b =
+aString.charAt(in.nexIntt());
+if (a = b)
+System.out.println("Same character!");
+Cause: The assignment operator "=" is used instead of the comparison operator "==". Remember that "=" assigns the value of the expression on the right hand side to the variable on the left hand side. "==" is used to compare primitive types (boolean, int, char, double or float).
+Solution: Change "=" to "==":
+if (a == b)
+System.out.println("Same character!");
+Error Message Name:
+Error: 'else' without 'if'
+Example:
+Scanner s = new Scanner(System.in);
+String input = s.nextLine();
+if (input.charAt(0) == "a")
+{ if (input.charAt(1) == "b")
+{ System.out.pritnln("The input begins with ab");
+else
+System.out.println("The input does not begin with ab");
+}
+}
+Cause: The key word else has being misplaced (Java cannot find a corresponding if keyword). To use else, you must have the keyword if in the same scope (e.g., both if and else exist within the same pair of open and close braces)
+Solution: First, line up the braces so you can easily distinguish between the different scopes. Next, make sure you have an if in the same scope as else (often this involves moving around some braces). A fix to the above example would be:
+Scanner s = new Scanner(System.in);
+String input = s.nextLine();
+if (input.charAt(0) == "a")
+{ if (input.charAt(1) == "b")
+{ System.out.pritnln("The input begins with ab");
+}
+else
+{ System.out.println("The input does not begin with ab");
+}
+}
+Error Message Name: 	Error: incomparable types: boolean and {primitive type}
+Example:
+Scanner in = new Scanner(System.in);
+int a = in.nextInt();
+int b = in.nextInt();
+int c=in.nextInt();
+if (a == b == c)
+System.out.println("All three integers are equal");
+This would return the following error message:
+Error: incomparable types: boolean and int
+Cause: Java cannot compare more than two operations/values at once.
+Solution: Break down the Boolean statement into pieces, and link them using the && operator. In the above example, we would have:
+if (a == b && b == c)
+System.out.println("All three integers are equal");
+Logic Errors
+Description: When comparing two Strings, the result is always false (the two Strings are never equal in value)
+Example:
+Scanner in = new Scanner(System.in);
+String a = in.nextLine();
+String b = in.nextLine();
+if (a == b)
+System.out.println("The two Strings are equal");
+Cause: You are using the wrong operator when comparing two Strings.
+Solution: Recall, to compare primitive types, we use the "==" operator. To compare values of objects, we would use the equals method. While the former compares memory locations, the latter compares the values of two objects (assuming the equals method has being properly implemented). Since a String is not a primitive type, we would use equals for comparison purposes. To fix the problem, we would have:
+if (a.equals(b))
+System.out.println("The two Strings are equal");
+Description: You have a compound Boolean statement. However, it does not work as intended.
+Example: Suppose a String is read in. If it does not begin with nor end with "A", then print out the String.
+You may have the following code:
+Scanner in = new Scanner(System.in);
+String input = in.nextLine();
+if
+( ! ( input.charAt(0) == ‘A’
+&& input.charAt ( input.length() - 1 )
+== ‘A’ ) )
+System.out.println(input);
+When testing this program, you noticed that the Boolean statement is not working: the program still prints out Strings that begin or end with "A".
+Cause: This is a case of not using/understanding de Morgan’s Law. De Morgan’s Law states that given Boolean expressions A and B, NOT(A AND B) is equivalent to (NOT A) OR (NOT B). Hence, in the above case, our Boolean expression is equal to
+input.charAt(0) != ‘A’ || input.charAt ( input.length() - 1 ) != ‘A’ , which clearly is incorrect.
+Solution: We need to change the && to || (changing the Boolean statement from using "and" to using "or"):
+if
+( ! ( input.charAt(0) == ‘A’
+||
+input.charAt ( input.length() - 1 )
+== ‘A’ ) )
+System.out.println(input);

@@ -1,0 +1,143 @@
+AttributeError: 'numpy.ndarray' object has no attribute 'toarray' - Discoverbits Q&A - Find Answers to Your Technical Questions
+Login
+Remember
+Register
+Questions
+Unanswered
+Tags
+Categories
+Ask a Question
+Blogs
+Contact Us
+Ask a Question
+AttributeError: 'numpy.ndarray' object has no attribute 'toarray'
++3 votes
+asked
+Jan 8, 2018
+in Programming Languages
+by
+phpuser
+(7.3k points)
+I saved a CSR_matrix as .npy file on the disk using np.save(), but when I load the .npy file and try to see the matrix using toarray(), it gives error.>>> X=np.load('rr.npy')>>> X.toarray()Traceback (most recent call last):  File "<stdin>", line 1, in <module>AttributeError: 'numpy.ndarray' object has no attribute 'toarray'How can I see the data in the matrix?
+python
+numpy
+toarray
+Please log in or register to add a comment.
+Please log in or register to answer this question.
+1 Answer
+0 votes
+answered
+Jan 8, 2018
+by
+pkumar81
+(29.7k points)
+np.load() converts CSR matrix to an object, so you cannot use toarray() to see the matrix. You need to first use tolist() and then toarray() to see the data.See the value of X with and without tolist().>>> Xarray(<3x3 sparse matrix of type '<class 'numpy.int64'>'        with 6 stored elements in Compressed Sparse Row format>, dtype=object)Here dtype is object, so toarray() will give error.>>> X=np.load('rr.npy').tolist()>>> X<3x3 sparse matrix of type '<class 'numpy.int64'>'        with 6 stored elements in Compressed Sparse Row format> Using tolist(), you can convert object to a list and then use toarray() to see the data.>>> X.toarray()array([[1, 0, 2],       [0, 0, 3],       [4, 5, 6]])
+Please log in or register to add a comment.
+Related questions
++2 votes
+1 answer
+AttributeError: 'dict' object has no attribute 'most_common' in Python
+asked
+Jan 10, 2020
+in Programming Languages
+by
+pythonuser
+(17.0k points)
+python
+dictionary
+attributeerror
++2 votes
+1 answer
+Python - AttributeError: 'Namespace' object has no attribute 'rfileTr'
+asked
+Dec 4, 2019
+in Programming Languages
+by
+pythonuser
+(17.0k points)
+python
+attributeerror
+argparse
++2 votes
+1 answer
+TypeError: 'numpy.ndarray' object is not callable
+asked
+Oct 12, 2019
+in Programming Languages
+by
+pythonuser
+(17.0k points)
+python
+callable
+numpy
++2 votes
+1 answer
+TypeError: unhashable type: 'numpy.ndarray'
+asked
+Feb 1
+in Programming Languages
+by
+pythonuser
+(17.0k points)
+python
+numpy
+array
+typeerror
++2 votes
+1 answer
+Python:
+TypeError: 'numpy.float64' object cannot be interpreted as an integer
+asked
+Apr 26, 2018
+in Programming Languages
+by
+pythonuser
+(17.0k points)
+python
+numpy
+typerror
+Categories
+All categories
+General
+(35)
+CMS Tips
+(12)
+Operating Systems
+(80)
+Web & Google
+(59)
+Programming Languages
+(396)
+Databases
+(60)
+Most popular tags
+python
+list
+array
+numpy
+linux
+ubuntu
+php
+pandas
+file
+string
+dataframe
+postgresql
+dictionary
+command
+apache
+mysql
+csr_matrix
+directory
+csv
+vps
+matrix
+sort
+windows
+typeerror
+sql
+Send feedback
+XML Sitemap
+Snow Theme by Q2A Market
+Powered by Question2Answer
+...

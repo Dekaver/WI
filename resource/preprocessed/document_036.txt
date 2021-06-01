@@ -1,1 +1,218 @@
-nameerror name np defined kodlogs menu login register search log inaccount_circle log email username password remember log register forgot password register username email password register add q questions unanswered tags users ask question articles post article recent posts javascript convert array comma separated string use document getelement id javascript date birth validation javascript selecting many options switch statements javascript uncaught reference error defined checkbox checked show textbox javascript find longest word string javascript choose number x random set numbers link word document cell excel get selected date datepicker android nameerror name np defined vote views problem hello new python programming well forum enrolled online python programming course develop knowledge skill going quite well however written something basic using python language script working supposed spite produces error nameerror name np definedi attaching snippet better understanding numpy import n np random randint low high size print n error part isnameerror name np definedwhat problem within could please explain searched problem unable figure hoping legitimate solution thanks advance kind help python name error np asked may adamsw k points reopened may adamsw answer please log register answer question answer vote best answer solution reviewed script problem pop um immediately write fast line script probably want write import line import numpy np reason numpy import imports every function resides numpy np function numpy import numpy like import numpy np solution remove np part ofnp random randint low high size make like random randint low high size since random function numpy hope everything clear good day answered may naymulhasan k points selected may adamsw ask related question comment comment answer name display optional email address comment added mine email comment added mine privacy email address used sending notifications anti spam verification color sky avoid verification future please log register add comment cancel related questions votes answer views views traceback recent call last nameerror name defined problem need know problem traceback recent call last nameerror name hellip defined asked mar wafa abu yousef k points python name error python votes answer views views traceback recent call last nameerror name defined problem help traceback recent call last nameerror name hellip defined asked mar wafa abu yousef k points python name error python votes answer views views nameerror name defined python peroblem fix issue thanks concern nameerror name defined python asked mar wafa abu yousef k points name error python votes answer views views nameerror name pd defined problem could anybody help nameerror name pd defined asked mar wafa abu yousef k points name error python votes answer views views python nameerror name defined function problem solve python nameerror name defined function help need help understanding python nameerror name defined function someone please help solve new python someone idea solve thanks asked mar mashhoodch k points name error python votes answer views views nameerror name include defined problem solve nameerror name include defined help need help understanding nameerror name include defined someone please help solve new python someone idea solve thanks asked mar mashhoodch k points name error python votes answer views views nameerror name unicode defined python problem hello kodlogs code giving nameerror name unicode defined code utf need unicode isinstance unicode_or_str unicode text unicode_or_str decoded false else text unicode_or_str decode encoding isinstance unicode_or_str unicode nameerror global name unicode defined started happening python please help asked nov hashq k points python name error votes answer views views solve nameerror name python defined encountering error windows command line done wide search could get perfect answer please find error help solving python traceback recent call last file line nameerror name python defined thanks include word python right ndash elazar may asked oct psandprop k points name error python python votes answer views views solve nameerror name pip defined installed python ran python bit typed pip received message traceback recent call last file line pip nameerror name pip defined see scripts directories path scripts folder result install python actually works ie run pip install modules etc asked oct psandprop k points name error python votes answers views views traceback recent call last nameerror name defined error trying run script input_variable input enter name print name input_variable let say type dude error getting line input_variable input enter name file line nameerror name dude defined running scripts python asked oct psandprop k points name error python python send feedback us privacy policy guest blog xml sitemap facebook twitter pinterest dark theme
+NameError: name 'np' is not defined - Kodlogs
+menu
+Login
+Register
+search
+Log Inaccount_circle
+Log In
+Email or Username
+Password
+Remember
+Log In
+Register
+I forgot my password
+Register
+Username
+Email
+Password
+Register
+add
+Q&A
+Questions
+Unanswered
+Tags
+Users
+Ask a Question
+Articles
+Post An Article
+Recent Posts
+How to break or end a for loop in java
+Display data from SQL database into HTML table using PHP
+Static methods can be accessed directly in non-static methods
+Pair Class in Java
+how to find a specific character in a string java
+Tips for Faster Java Debugging
+How to take string input from user in java using bufferedreader
+How to find square root in java
+How to get the first day of month in Sql server
+Print an array in c++
+NameError: name 'np' is not defined
+1 vote
+483 views
+Problem:Hello all,I am new in python programming as well as this forum. I've enrolled in an online python programming course to develop my knowledge and skill. It is going quite well. However, I’ve written something very basic using the python language but the script is not working as it was supposed to do. In spite of that, it produces an error of: nameerror: name 'np' is not definedI am attaching the snippet here for your better understanding. Here it is…from numpy import *
+n = np.random.randint(low=20, high=30, size=10)
+print(n)And the error part isNameError: name 'np' is not definedWhat is the problem within it? Could you please explain it to me? I’ve searched the problem but unable to figure it out. I am hoping a legitimate solution. Thanks in advance for your kind help.
+python-3
+name-error
+np
+asked
+May 9, 2020
+adamSw
+11.3k points
+reopened
+May 9, 2020
+by adamSw
+answer
+Please log in or register to answer this question.
+1 Answer
+1 vote
+Best answer
+Solution:I’ve reviewed your script and the problem has pop um immediately. You can’t write the very fast line as it is in your script. Probably, you want to write the import line as:import numpy as np
+The reason is,  from numpy import *, it imports every function resides in numpy, So, np is not a function of numpy, that’s why you have to Import numpy like import numpy as np, The other solution is,  you have to remove the np part ofnp.random.randint(low=20, high=30, size=10)and make it like this:random.randint(low=20, high=30, size=10)it's all since random is a function of numpy. I hope everything is clear to you now. Good Day!
+answered
+May 9, 2020
+Naymulhasan
+94.3k points
+selected
+May 9, 2020
+by adamSw
+ask related question
+comment
+Your comment on this answer:
+Your name to display (optional):
+Email me at this address if a comment is added after mine:Email me if a comment is added after mine
+Privacy: Your email address will only be used for sending these notifications.
+Anti-spam verification:
+What is the color of the sky?
+To avoid this verification in future, please log in or register.
+Add comment
+Cancel
+Related questions
+0 votes
+1 answer
+32 views
+32 views
+traceback (most recent call last): NameError: name '…' is not defined .
+Problem: I need to know what is the problem: traceback (most recent call last): NameError: name '&hellip;' is not defined
+asked
+Mar 19
+Wafa Abu Yousef
+6.1k points
+python
+name-error
+python-3
+0 votes
+1 answer
+18 views
+18 views
+traceback (most recent call last): NameError: name '…' is not defined.
+Problem: Any help: traceback (most recent call last): NameError: name '&hellip;' is not defined
+asked
+Mar 19
+Wafa Abu Yousef
+6.1k points
+python
+name-error
+python-3
+0 votes
+1 answer
+30 views
+30 views
+Nameerror name is not defined python 3 .
+Peroblem: How can I fix the issue? Thanks for your concern:Nameerror name is not defined python 3 .
+asked
+Mar 15
+Wafa Abu Yousef
+6.1k points
+name-error
+python-3
+0 votes
+1 answer
+75 views
+75 views
+NameError: name 'pd' is not defined.
+Problem: could anybody help me ! NameError: name 'pd' is not defined.
+asked
+Mar 6
+Wafa Abu Yousef
+6.1k points
+name-error
+python-3
+0 votes
+1 answer
+35 views
+35 views
+python nameerror name is not defined function
+Problem: How to I Solve this: python nameerror name is not defined function HELP! I need help understanding this: python nameerror name is not defined function Can someone please help solve this, I am new in python(). Someone have idea to solve this thanks!
+asked
+Mar 5
+Mashhoodch
+13k points
+name-error
+python-3
+0 votes
+1 answer
+24 views
+24 views
+nameerror: name 'include' is not defined
+Problem: How to I Solve this: nameerror: name 'include' is not defined HELP! I need help understanding this: nameerror: name 'include' is not defined Can someone please help solve this, I am new in python(). Someone have idea to solve this thanks!
+asked
+Mar 3
+Mashhoodch
+13k points
+name-error
+python-3
+0 votes
+1 answer
+500 views
+500 views
+Nameerror: name 'unicode' is not defined in Python 3
+Problem Hello Kodlogs, My code is giving me nameerror: name 'unicode' is not defined. Here is the code # utf-8 ? we need unicode if isinstance(unicode_or_str, unicode): text = unicode_or_str decoded = False else: text = unicode_or_str.decode(encoding) ...
+if isinstance(unicode_or_str, unicode): NameError: global name 'unicode' is not defined It started happening on Python 3. Please help
+asked
+Nov 3, 2020
+hashq
+1.1k points
+python-3
+name-error
+0 votes
+1 answer
+147 views
+147 views
+how to solve nameerror: name 'python' is not defined
+Am encountering this error in Windows Command line,done a wide search but could not get a perfect answer.Please find the error below and help in solving. python Traceback (most recent call last): File "<stdin>", line 1, in <module> NameError: name 'python' is not defined >>> Thanks
+...
+31 '13 at 12:21 you did not include the >>> before the word 'python', right? &ndash; Elazar May 31 '13 at 12:23
+asked
+Oct 25, 2020
+psandprop
+2.4k points
+name-error
+python
+python-3
+0 votes
+1 answer
+743 views
+743 views
+how to solve nameerror: name 'pip' is not defined -
+I've just installed python 3.5, ran Python 3.5 (32-bit) and typed pip and received the message: Traceback (most recent call last): File "<pyshell#2>", line 1, in <module> pip NameError: name 'pip' is not defined I don't see any scripts directories in my path,
+...
+Scripts folder from above, same result. How do I install python so that it actually works (ie. I can run pip, install modules, etc.)?
+asked
+Oct 25, 2020
+psandprop
+2.4k points
+name-error
+python-3
+0 votes
+2 answers
+116 views
+116 views
+traceback (most recent call last): NameError: name '…' is not defined
+There has been an error when trying to run this script : input_variable = input ("Enter your name: ") print ("your name is" + input_variable) Let's say I type in "dude", the error I am getting is: line 1, in <module> input_variable = input ("Enter your name: ") File "<string>", line 1, in <module> NameError: name 'dude' is not defined I am running these scripts with Python 2.7.
+asked
+Oct 24, 2020
+psandprop
+2.4k points
+name-error
+python
+python-3
+Send feedback
+About Us
+Privacy Policy
+Guest Blog
+XML Sitemap
+Facebook
+Twitter
+Pinterest
+Dark theme

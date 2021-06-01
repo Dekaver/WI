@@ -1,1 +1,204 @@
-valueerror empty vocabulary perhaps documents contain stop words tfidfvectorizer issue cdqa suite cdqa github skip content sign github features mobile actions codespaces packages security code review project management integrations github sponsors customer stories team enterprise explore explore github learn contribute topics collections trending learning lab open source guides connect others readme project events community forum github education github stars program marketplace pricing plans compare plans contact sales education repository github jump suggested jump results repository github jump organization github jump repository github jump sign sign message cdqa suite cdqa notifications star fork code issues pull requests actions projects wiki security insights code issues pull requests actions projects wiki security insights new issue question project sign free github account open issue contact maintainers community pick username email address password sign github clicking sign github agree terms service privacy statement occasionally send account related emails already github sign account jump bottom valueerror empty vocabulary perhaps documents contain stop words tfidfvectorizer open dskaarthick opened issue may comments open valueerror empty vocabulary perhaps documents contain stop words tfidfvectorizer dskaarthick opened issue may comments comments copy link dskaarthick commented may executing code getting valueerror empty vocabulary perhaps documents contain stop words tfidfvectorizer error vectorizer tfidfvectorizer decode_error ignore strip_accents unicode stop_words english min_df analyzer word tfidf vectorizer fit_transform str convid query_text lower str convid query_text lower python code import pandas pd import nltk nltk corpus import stopwords nltk tokenize import word_tokenize import gensim gensim models import fasttext sklearn feature_extraction text import tfidfvectorizer difflib import sequencematcher loading query text corpus building qt pd read_csv c demo query_text csv qt shape loading querytext comparing convid pd read_csv c demo convid_may csv convid shape sentences qt convid convid sort_values user_puid eventinfo_time ascending true true convid convid reset_index convid fasttextresult float convid tfidf float convid tfidfwc float model_ted fasttext qt window min_count sg range len convid query_text print len convid break print fasttext output ft model_ted wv similarity str convid query_text lower str convid query_text lower ft round ft print ft convid loc convid fasttextresult ft convid fasttextresult ft print vector output vectorizer tfidfvectorizer decode_error ignore strip_accents unicode stop_words english min_df analyzer word tfidf vectorizer fit_transform str convid query_text lower str convid query_text lower product tfidf tfidf pro product pro round pro print pro convid tfidf pro print widlchar wildchar_value sequencematcher str convid query_text lower str convid query_text lower ratio wildchar_value round wildchar_value convid tfidfwc wildchar_value print wildchar_value convid to_csv c demo convidoutput_may csv text updated successfully errors encountered sign free join conversation github already account sign comment assignees one assigned labels none yet projects none yet milestone milestone linked pull requests successfully merging pull request may close issue none yet participant github inc terms privacy security status docs contact github pricing api training blog perform action time signed another tab window reload refresh session signed another tab window reload refresh session
+ValueError: empty vocabulary; perhaps the documents only contain stop words in TfidfVectorizer · Issue #365 · cdqa-suite/cdQA · GitHub
+Skip to content
+Sign up
+Why GitHub?
+Features →
+Mobile →
+Actions →
+Codespaces →
+Packages →
+Security →
+Code review →
+Project management →
+Integrations →
+GitHub Sponsors →
+Customer stories→
+Team
+Enterprise
+Explore
+Explore GitHub →
+Learn and contribute
+Topics →
+Collections →
+Trending →
+Learning Lab →
+Open source guides →
+Connect with others
+The ReadME Project →
+Events →
+Community forum →
+GitHub Education →
+GitHub Stars program →
+Marketplace
+Pricing
+Plans →
+Compare plans →
+Contact Sales →
+Education →
+In this repository
+All GitHub
+↵
+Jump to
+↵
+No suggested jump to results
+In this repository
+All GitHub
+↵
+Jump to
+↵
+In this organization
+All GitHub
+↵
+Jump to
+↵
+In this repository
+All GitHub
+↵
+Jump to
+↵
+Sign in
+Sign up
+{{ message }}
+cdqa-suite
+/
+cdQA
+Notifications
+Star
+524
+Fork
+165
+Code
+Issues
+53
+Pull requests
+2
+Actions
+Projects
+1
+Wiki
+Security
+Insights
+More
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+New issue
+Have a question about this project? Sign up for a free GitHub account to open an issue and contact its maintainers and the community.
+Pick a username
+Email Address
+Password
+Sign up for GitHub
+By clicking “Sign up for GitHub”, you agree to our terms of service and
+privacy statement. We’ll occasionally send you account related emails.
+Already on GitHub?
+Sign in
+to your account
+Jump to bottom
+ValueError: empty vocabulary; perhaps the documents only contain stop words in TfidfVectorizer
+#365
+Open
+DSKaarthick
+opened this issue
+May 11, 2020
+· 0 comments
+Open
+ValueError: empty vocabulary; perhaps the documents only contain stop words in TfidfVectorizer
+#365
+DSKaarthick
+opened this issue
+May 11, 2020
+· 0 comments
+Comments
+Copy link
+DSKaarthick
+commented
+May 11, 2020
+when i am executing the below code ,i am getting
+ValueError: empty vocabulary; perhaps the documents only contain stop words in TfidfVectorizer error:
+vectorizer = TfidfVectorizer(decode_error='ignore',strip_accents='unicode',stop_words='english',min_df=1,analyzer='word')
+tfidf= vectorizer.fit_transform([str(convid['Query_Text'][i]).lower(),str(convid['Query_Text'][i+1]).lower()])
+Python Code:
+"""
+import pandas as pd
+import nltk
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+import gensim
+from gensim.models import FastText
+from sklearn.feature_extraction.text import TfidfVectorizer
+from difflib import SequenceMatcher
+#Loading Query Text for Corpus Building
+qt=pd.read_csv('C:/Demo/Query_Text.csv')
+qt.shape
+#Loading QueryText for comparing
+convid =pd.read_csv('C:/Demo/ConvId_May06.csv')
+convid.shape
+sentences = qt
+convid = convid.sort_values(['User_PUID','EventInfo_Time'], ascending=[True,True])
+convid = convid.reset_index()
+convid['FastTextResult'] =float()
+convid['Tfidf'] = float()
+convid['TfidfWc'] = float()
+model_ted = FastText(qt,
+window=1, min_count=1, sg=0)
+for i in range(len(convid['Query_Text'])):
+print('i',i)
+if(i == len(convid)-1):
+break
+print("The FastText Output")
+ft=model_ted.wv.similarity(str(convid['Query_Text'][i]).lower(),str(convid['Query_Text'][i+1]).lower())
+ft=round(ft,4)
+print(ft)
+#convid.loc[convid['FastTextResult'][i+1]]=ft
+convid['FastTextResult'][i+1]=ft
+print("vector output ")
+vectorizer = TfidfVectorizer(decode_error='ignore',strip_accents='unicode',stop_words='english',min_df=1,analyzer='word')
+tfidf= vectorizer.fit_transform([str(convid['Query_Text'][i]).lower(),str(convid['Query_Text'][i+1]).lower()])
+product=(tfidf *tfidf.T).A
+pro = product[0,1]
+pro = round(pro,4)
+print(pro)
+convid['Tfidf'][i+1]=pro
+print("widlchar")
+wildchar_value = SequenceMatcher(str(convid['Query_Text'][i]).lower(),str(convid['Query_Text'][i+1]).lower()).ratio()
+wildchar_value = round(wildchar_value,4)
+convid['TfidfWc'][i+1]=wildchar_value
+print(wildchar_value)
+convid.to_csv('C:/Demo/ConvIdOutput_May061.csv')
+The text was updated successfully, but these errors were encountered:
+Sign up for free
+to join this conversation on GitHub.
+Already have an account?
+Sign in to comment
+Assignees
+No one assigned
+Labels
+None yet
+Projects
+None yet
+Milestone
+No milestone
+Linked pull requests
+Successfully merging a pull request may close this issue.
+None yet
+1 participant
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+You can’t perform that action at this time.
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.

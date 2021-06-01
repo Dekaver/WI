@@ -1,0 +1,125 @@
+How to handle the ArithmeticException (unchecked) in Java?
+×
+Home
+Jobs
+Tools
+Coding Ground
+Current Affairs
+UPSC Notes
+Online Tutors
+Whiteboard
+Net Meeting
+Tutorix
+Login
+Packages
+Categories
+Java
+JSP
+iOS
+HTML
+Android
+Python
+C Programming
+C++ Programming
+C#
+PHP
+CSS
+Javascript
+jQuery
+SAP
+SAP HANA
+Data Structure
+RDBMS
+MySQL
+Mathematics
+8085 Microprocessor
+Operating System
+Digital Electronics
+Analysis of Algorithms
+Mobile Development
+Front End
+Web Development
+Selenium
+MongoDB
+Computer Network
+General Topics
+Library
+Videos
+Q/A
+eBooks
+Login
+Library
+Videos
+eBooks
+Related Questions & Answers
+How to handle the StringIndexOutOfBoundsException (unchecked) in Java?
+How to handle the NumberFormatException (unchecked) in Java?
+How to handle the ArrayStoreException (unchecked) in Java?
+How to handle the Runtime Exception in Java?
+How to create a custom unchecked exception in Java?
+How to handle StringIndexOutOfBoundsException in Java?
+How to handle MalformedURLException in java?
+How to handle EOFException in java?
+How to handle the exception using UncaughtExceptionHandler in Java?
+What are unchecked exceptions in Java?
+Checked vs Unchecked exceptions in Java
+How to handle Assertion Error in Java?
+Checked Vs unchecked exceptions in Java programming.
+How to handle proxy in Selenium in Java?
+How to handle conflicts in the workplace?
+Selected Reading
+UPSC IAS Exams Notes
+Developer's Best Practices
+Questions and Answers
+Effective Resume Writing
+HR Interview Questions
+Computer Glossary
+Who is Who
+How to handle the ArithmeticException (unchecked) in Java?
+JavaObject Oriented ProgrammingProgramming
+The java.lang.ArithmeticException is an unchecked exception in Java. Usually, one would come across java.lang.ArithmeticException: / by zero which occurs when an attempt is made to divide two numbers and the number in the denominator is zero. ArithmeticException objects may be constructed by the JVM.Example1Live Demopublic class ArithmeticExceptionTest {
+public static void main(String[] args) {
+int a = 0, b = 10;
+int c = b/a;
+System.out.println("Value of c is : "+ c);
+}
+}In the above example,  ArithmeticExeption is occurred due to denominator value is zero.java.lang.ArithmeticException: Exception thrown by java during division./ by zero: is the detail message given to ArithmeticException class while creating the ArithmeticException object.OutputException in thread "main" java.lang.ArithmeticException: / by zero
+at ArithmeticExceptionTest.main(ArithmeticExceptionTest.java:5)How to handle ArithmeticExceptionLet us handle the ArithmeticException using try and catch blocks.Surround the statements that can throw ArithmeticException with try and catch blocks.We can Catch the ArithmeticExceptionTake necessary action for our program, as the execution doesn’t abort.Example2Live Demopublic class ArithmeticExceptionTest {
+public static void main(String[] args) {
+int a = 0, b = 10 ;
+int c = 0;
+try {
+c = b/a;
+} catch (ArithmeticException e) {
+e.printStackTrace();
+System.out.println("We are just printing the stack trace.\n"+ "ArithmeticException is handled. But take care of the variable \"c\"");
+}
+System.out.println("Value of c :"+ c);
+}
+}When an exception occurs, the execution falls to the catch block from the point of occurrence of an exception. It executes the statement in the catch block and continues with the statement present after the try and catch blocks.OutputWe are just printing the stack trace.
+ArithmeticException is handled. But take care of the variable "c"
+Value of c is : 0
+java.lang.ArithmeticException: / by zero
+at ArithmeticExceptionTest.main(ArithmeticExceptionTest.java:6)
+Raja
+Published on 25-Jun-2019 15:15:13
+Previous Page
+Print Page
+Next Page
+Advertisements
+Print
+Add Notes
+Bookmark this page
+Report Error
+Suggestions
+Save
+Close
+Dashboard
+Logout
+About us
+Terms of use
+Cookies Policy
+FAQ's
+Helping
+Contact
+© Copyright 2021. All Rights Reserved.

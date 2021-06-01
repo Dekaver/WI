@@ -1,1 +1,165 @@
-kesalahan http dalam scraping web python pemrograman tag account sign signup kesalahan http dalam scraping web python saya mencoba membatalkan situs web untuk latihan tetapi saya terus mendapatkan kesalahan http apakah menurutnya saya bot ini kode saya import requests import urllib request bs import beautifulsoup urllib import urlopen import webpage urllib request urlopen http www cmegroup com trading products sortfield oi sortasc false venues page cleared group read findrows compile findlink compile row_array findall findrows webpage links finall findlink webpate print len row_array iterator kesalahan yang saya dapatkan adalah file c python lib urllib request py line urlopen return opener open url data timeout file c python lib urllib request py line open response meth req response file c python lib urllib request py line http_response http request response code msg hdrs file c python lib urllib request py line error return self _call_chain args file c python lib urllib request py line _call_chain result func args file c python lib urllib request py line http_error_default raise httperror req full_url code msg hdrs fp urllib error httperror http error forbidden python http web http status code josh sumber jawaban ini mungkin karena mod_securityatau beberapa fitur keamanan server serupa yang memblokir agen pengguna spider bot yang dikenal urllibmenggunakan sesuatu seperti python urllib itu mudah dideteksi coba setel agen pengguna browser yang dikenal dengan urllib request import request urlopen req request http www cmegroup com trading products sortfield oi sortasc false venues page cleared group headers user agent mozilla webpage urlopen req read ini berhasil untuk saya way dalam kode anda anda yang hilang setelah readdi urlopenline tapi saya pikir bahwa itu salah ketik tips karena ini adalah latihan pilih situs lain yang tidak membatasi mungkin mereka memblokir urllibkarena suatu alasan stefano sanfilippo sumber saya menganggap aman untuk digunakan kembali requntuk beberapa urlopenpanggilan acumenus mungkin sedikit terlambat tetapi saya sudah memiliki agen pengguna di kode saya tetap saja saya munculerror access denied reema parakh ini berfungsi tetapi saya merasa mereka pasti memiliki alasan yang baik untuk memblokir bot dan saya melanggar persyaratan layanan mereka xjcl jelas itu memblokir karena penggunaan urllib anda berdasarkan agen pengguna hal yang sama terjadi pada saya dengan offerup anda dapat membuat kelas baru bernama appurlopener yang menggantikan agen pengguna dengan mozilla import urllib request class appurlopener urllib request fancyurlopener version mozilla opener appurlopener response opener open http httpbin org user agent sumber zeta sumber jawaban teratas tidak berhasil untuk saya sementara jawaban anda berhasil terima kasih banyak tarun uday ini berfungsi dengan baik tetapi saya perlu melampirkan konfigurasi ssl untuk ini bagaimana saya melakukan ini sebelumnya saya baru saja menambahkannya sebagai parameter kedua urlopen request konteks ctx hauke sepertinya itu benar benar terbuka tetapi dikatakan valueerror membaca file yang ditutup martian zeta bagaimana anda bisa mengikis offerup dan memberikan koordinat geografis yang diperlukan untuk melakukan pencarian dari skrip cj travis cjtravis saya tidak mengorek offerup saya baru saja mengambil nilai item berdasarkan url item yang tepat itu tidak memerlukan koordinat geografis apa pun untuk saya zeta ini mungkin karena mod_security atau beberapa fitur keamanan server serupa yang memblokir yang diketahui laba laba bot agen pengguna urllib menggunakan sesuatu seperti python urllib ini mudah dideteksi seperti yang telah disebutkan oleh stefano sanfilippo urllib request import request urlopen url https stackoverflow com search q html error req request url headers user agent mozilla web_byte urlopen req read webpage web_byte decode utf web_byte adalah objek byte dikembalikan oleh server dan jenis hadir konten dalam halaman web ini kebanyakan utf oleh karena itu anda perlu memecahkan kode web_byte menggunakan metode dekode ini menyelesaikan masalah lengkap ketika saya mencoba untuk menghapus dari situs web menggunakan pycharm ps saya menggunakan python royatirek sumber berdasarkan jawaban sebelumnya urllib request import request urlopen specify url url https xyz xyz req request url headers user agent xyz response urlopen req timeout read ini berhasil bagi saya dengan memperpanjang waktu tunggu victor iwuoha sumber karena halaman berfungsi di browser dan bukan saat memanggil dalam program python tampaknya aplikasi web yang melayani url tersebut mengenali bahwa anda meminta konten bukan oleh browser demonstrasi curl dump header r txt http www cmegroup com trading products sortfield oi sortasc false venues page cleared group access denied access denied permission access dan konten di r txt memiliki baris status http forbidden coba posting tajuk user agent yang memalsukan klien web catatan halaman ini berisi panggilan ajax yang membuat tabel yang mungkin ingin anda parse anda harus memeriksa logika javascript halaman atau cukup menggunakan browser debugger seperti tab firebug net untuk melihat url mana yang perlu anda panggil untuk mendapatkan konten tabel robert lujo sumber anda dapat mencoba dengan dua cara detailnya ada di tautan ini melalui pip pip install upgrade certifi jika tidak berhasil coba jalankan cerificates command yang dibundel dengan python untuk mac buka lokasi instalasi python anda dan klik dua kali file tersebut buka aplikasi python instal certificates command johnson sumber jika anda merasa bersalah karena memalsukan agen pengguna sebagai mozilla komentar di jawaban teratas dari stefano ini juga dapat bekerja dengan agen pengguna non urllib ini berfungsi untuk situs yang saya rujuk req urlrequest request link headers user agent xyz urlrequest urlopen req timeout read aplikasi saya adalah untuk menguji validitas dengan mengorek tautan tertentu yang saya rujuk di artikel saya bukan pengikis umum sudeep prasad sumber berdasarkan jawaban sebelumnya ini berhasil untuk saya dengan python urllib request import request urlopen req request url_link headers user agent xyz webpage urlopen req timeout read print webpage jonny_p sumber dengan menggunakan situs kami anda mengakui telah membaca dan memahami kebijakan cookie dan kebijakan privasi kami licensed cc sa attribution required
+Kesalahan HTTP 403 dalam Scraping Web Python 3
+Pemrograman
+Tag
+Account
+Sign In
+Signup
+Kesalahan HTTP 403 dalam Scraping Web Python 3
+100
+Saya mencoba membatalkan situs web untuk latihan, tetapi saya terus mendapatkan Kesalahan HTTP 403 (apakah menurutnya saya bot)?
+Ini kode saya:
+#import requests
+import urllib.request
+from bs4 import BeautifulSoup
+#from urllib import urlopen
+import re
+webpage = urllib.request.urlopen('http://www.cmegroup.com/trading/products/#sortField=oi&sortAsc=false&venues=3&page=1&cleared=1&group=1').read
+findrows = re.compile('<tr class="- banding(?:On|Off)>(.*?)</tr>')
+findlink = re.compile('<a href =">(.*)</a>')
+row_array = re.findall(findrows, webpage)
+links = re.finall(findlink, webpate)
+print(len(row_array))
+iterator = []
+Kesalahan yang saya dapatkan adalah:
+File "C:\Python33\lib\urllib\request.py", line 160, in urlopen
+return opener.open(url, data, timeout)
+File "C:\Python33\lib\urllib\request.py", line 479, in open
+response = meth(req, response)
+File "C:\Python33\lib\urllib\request.py", line 591, in http_response
+'http', request, response, code, msg, hdrs)
+File "C:\Python33\lib\urllib\request.py", line 517, in error
+return self._call_chain(*args)
+File "C:\Python33\lib\urllib\request.py", line 451, in _call_chain
+result = func(*args)
+File "C:\Python33\lib\urllib\request.py", line 599, in http_error_default
+raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 403: Forbidden
+python
+http
+web
+http-status-code-403
+—
+Josh
+sumber
+Jawaban:
+209
+Ini mungkin karena mod_securityatau beberapa fitur keamanan server serupa yang memblokir agen pengguna spider / bot yang dikenal ( urllibmenggunakan sesuatu seperti python urllib/3.3.0itu, mudah dideteksi). Coba setel agen pengguna browser yang dikenal dengan:
+from urllib.request import Request, urlopen
+req = Request('http://www.cmegroup.com/trading/products/#sortField=oi&sortAsc=false&venues=3&page=1&cleared=1&group=1', headers={'User-Agent': 'Mozilla/5.0'})
+webpage = urlopen(req).read()
+Ini berhasil untuk saya.
+By the way, dalam kode Anda Anda yang hilang ()setelah .readdi urlopenline, tapi saya pikir bahwa itu salah ketik.
+TIPS: karena ini adalah latihan, pilih situs lain yang tidak membatasi. Mungkin mereka memblokir urllibkarena suatu alasan ...
+—
+Stefano Sanfilippo
+sumber
+Saya menganggap aman untuk digunakan kembali requntuk beberapa urlopenpanggilan.
+—
+Acumenus
+Mungkin sedikit terlambat, tetapi saya sudah memiliki Agen-Pengguna di kode saya, tetap saja saya munculError 404: Access denied
+—
+Reema Parakh
+Ini berfungsi tetapi saya merasa mereka pasti memiliki alasan yang baik untuk memblokir bot dan saya melanggar persyaratan layanan mereka
+—
+xjcl
+39
+Jelas itu memblokir karena penggunaan urllib Anda berdasarkan agen pengguna. Hal yang sama terjadi pada saya dengan OfferUp. Anda dapat membuat kelas baru bernama AppURLopener yang menggantikan agen pengguna dengan Mozilla.
+import urllib.request
+class AppURLopener(urllib.request.FancyURLopener):
+version = "Mozilla/5.0"
+opener = AppURLopener()
+response = opener.open('http://httpbin.org/user-agent')
+Sumber
+—
+zeta
+sumber
+2
+Jawaban teratas tidak berhasil untuk saya, sementara jawaban Anda berhasil. Terima kasih banyak!
+—
+Tarun Uday
+Ini berfungsi dengan baik tetapi saya perlu melampirkan konfigurasi ssl untuk ini. Bagaimana saya melakukan ini? Sebelumnya saya baru saja menambahkannya sebagai parameter kedua (urlopen (request, konteks = ctx))
+—
+Hauke
+2
+sepertinya itu benar-benar terbuka tetapi dikatakan 'ValueError: membaca file yang ditutup'
+—
+Martian2049
+@zeta Bagaimana Anda bisa mengikis OfferUp dan memberikan koordinat geografis yang diperlukan untuk melakukan pencarian dari skrip?
+—
+CJ Travis
+@CJTravis, saya tidak mengorek OfferUp. Saya baru saja mengambil nilai item berdasarkan URL item yang tepat. Itu tidak memerlukan koordinat geografis apa pun untuk saya
+—
+zeta
+13
+"Ini mungkin karena mod_security atau beberapa fitur keamanan server serupa yang memblokir yang diketahui
+laba-laba / bot
+agen pengguna (urllib menggunakan sesuatu seperti python urllib / 3.3.0, ini mudah dideteksi) "- seperti yang telah disebutkan oleh Stefano Sanfilippo
+from urllib.request import Request, urlopen
+url="https://stackoverflow.com/search?q=html+error+403"
+req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+web_byte = urlopen(req).read()
+webpage = web_byte.decode('utf-8')
+The web_byte adalah objek byte dikembalikan oleh server dan jenis hadir konten dalam halaman web ini kebanyakan utf-8 . Oleh karena itu, Anda perlu memecahkan kode web_byte menggunakan metode dekode.
+Ini menyelesaikan masalah lengkap ketika saya mencoba untuk menghapus dari situs web menggunakan PyCharm
+PS -> Saya menggunakan python 3.4
+—
+royatirek
+sumber
+2
+Berdasarkan jawaban sebelumnya,
+from urllib.request import Request, urlopen
+#specify url
+url = 'https://xyz/xyz'
+req = Request(url, headers={'User-Agent': 'XYZ/3.0'})
+response = urlopen(req, timeout=20).read()
+Ini berhasil bagi saya dengan memperpanjang waktu tunggu.
+—
+VICTOR IWUOHA
+sumber
+1
+Karena halaman berfungsi di browser dan bukan saat memanggil dalam program python, tampaknya aplikasi web yang melayani url tersebut mengenali bahwa Anda meminta konten bukan oleh browser.
+Demonstrasi:
+curl --dump-header r.txt http://www.cmegroup.com/trading/products/#sortField=oi&sortAsc=false&venues=3&page=1&cleared=1&group=1
+...
+<HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+You don't have permission to access ...
+</HTML>
+dan konten di r.txt memiliki baris status:
+HTTP/1.1 403 Forbidden
+Coba posting tajuk 'User-Agent' yang memalsukan klien web.
+CATATAN: Halaman ini berisi panggilan Ajax yang membuat tabel yang mungkin ingin Anda parse. Anda harus memeriksa logika javascript halaman atau cukup menggunakan browser debugger (seperti tab Firebug / Net) untuk melihat url mana yang perlu Anda panggil untuk mendapatkan konten tabel.
+—
+Robert Lujo
+sumber
+1
+Anda dapat mencoba dengan dua cara. Detailnya ada di tautan ini .
+1) Melalui pip
+pip install --upgrade certifi
+2) Jika tidak berhasil, coba jalankan cerificates.command yang dibundel dengan Python 3. * untuk Mac: (Buka lokasi instalasi python Anda dan klik dua kali file tersebut)
+buka / Aplikasi / Python \ 3. * / Instal \ Certificates.command
+—
+Johnson
+sumber
+0
+Jika Anda merasa bersalah karena memalsukan agen pengguna sebagai Mozilla (komentar di jawaban teratas dari Stefano), ini juga dapat bekerja dengan Agen Pengguna non-urllib. Ini berfungsi untuk situs yang saya rujuk:
+req = urlrequest.Request(link, headers={'User-Agent': 'XYZ/3.0'})
+urlrequest.urlopen(req, timeout=10).read()
+Aplikasi saya adalah untuk menguji validitas dengan mengorek tautan tertentu yang saya rujuk, di artikel saya. Bukan pengikis umum.
+—
+Sudeep Prasad
+sumber
+0
+Berdasarkan jawaban sebelumnya, ini berhasil untuk saya dengan Python 3.7
+from urllib.request import Request, urlopen
+req = Request('Url_Link', headers={'User-Agent': 'XYZ/3.0'})
+webpage = urlopen(req, timeout=10).read()
+print(webpage)
+—
+Jonny_P
+sumber
+Dengan menggunakan situs kami, Anda mengakui telah membaca dan memahami Kebijakan Cookie dan Kebijakan Privasi kami.
+Licensed under cc by-sa 3.0
+with attribution required.

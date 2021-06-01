@@ -1,0 +1,145 @@
+Arithmetic exception In Java - Class java.lang.ArithmeticException
+Skip to primary navigation Skip to main content Skip to primary sidebarSoftwareTestingo - Jira Selenium Protractor Testing SDLC Agile MethodologyJava Selenium Tutorial & Testing Interview Questions
+Home
+Interview Questions
+Java
+Java Programs
+Test Cases
+Selenium
+Manual Testing
+Difference
+Search
+Search this website
+SoftwareTestingo » Java » Java Tutorial » What Is Arithmetic exception In Java – Class java.lang.ArithmeticExceptionWhat Is Arithmetic exception In Java – Class java.lang.ArithmeticException
+Last Updated on: August 16, 2020 By Softwaretestingo Editorial Board
+What Is Arithmetic exception?
+Thrown when an exceptional arithmetic condition has occurred. For example, an integer “divide by zero” throws an instance of this class.
+In this tutorial, we will take a look at a few examples that will highlight the causes of getting an ArithmeticException in the Java program. Also, we will discuss the common causes of Arithmetic exception and how can we handle this exception.
+An arithmetic exception is an error that is thrown when a “wrong” arithmetic situation occurs. This usually happens when mathematical or calculation errors occur within a program during run-time. There various causes to an ArithmeticException, the following are a few of them:
+List of all invalid operations that throw an ArithmeticException() in Java
+Dividing by an integer Zero
+Non-terminating decimal numbers using BigDecimal
+Dividing by an integer Zero:
+Java throws an Arithmetic exception when a calculation attempt is done to divide by zero, where the zero is an integer. Take the following piece of code as an example:
+package co.java.exception;
+public class ArithmaticExceptionEx
+{
+void divide(int a,int b)
+{
+int q=a/b;
+System.out.println("Sucessfully Divided");
+System.out.println("The Value After Divide Is :-" +q);
+}
+public static void main(String[] args)
+{
+ArithmaticExceptionEx obj=new ArithmaticExceptionEx();
+obj.divide(10, 0);
+}
+}
+When you run the above program you will get, link
+When we run the code, we get the following error:
+Exception in thread "main" java.lang.ArithmeticException: / by zero at co.java.exception.ArithmaticExceptionEx.divide(ArithmaticExceptionEx.java:7) at co.java.exception.ArithmaticExceptionEx.main(ArithmaticExceptionEx.java:14)
+Since we divided 10 by 0, where 0 is an integer, java throws the above exception. However, if the zero is a floating-point as in the following code, we get a completely different result.
+Arithmetic Exception Divide By Float
+Here, no exception is thrown, and “Q” now has a value of infinity.  Note that is (almost) always a bad idea to divide by zero, even if no exception is thrown.
+Non-terminating decimal numbers using BigDecimal:
+The BigDecimal class is a Java class used to represent decimal numbers up to a very high number of precision digits. The class also offers a set of functionalities that are not available using primitive data types such as doubles and floats. These functionalities include rounding up/down, defining the number of decimal places we need from a number, etc.
+Since BigDecimals are used to represent numbers to a high degree of accuracy, a problem might occur with some numbers, for example, when dividing 1 by 3, or 2 by 12. These numbers do not have a specific number of decimal places, for example, 1/3 = 0.33333333333333333…
+Take the following program for example :
+package co.java.exception;
+import java.math.BigDecimal;
+public class ArithmeticExceptionExamples {
+public static void main(String[] args) {
+// TODO Auto-generated method stub
+BigDecimal x = new BigDecimal(1);
+BigDecimal y = new BigDecimal(3);
+x = x.divide(y);
+System.out.println(x.toString());
+}
+}
+Take a Look On The Execution:
+Arithmetic exception – Divide By BigDecimal
+In the program above, since the class doesn’t know what to do with the division result, an exception is thrown.
+Exception in thread "main" java.lang.ArithmeticException: Non-terminating decimal expansion; no exact representable decimal result. at java.math.BigDecimal.divide(Unknown Source) at co.java.exception.ArithmeticExceptionExamples.main(ArithmeticExceptionExamples.java:11)
+As we said, the program doesn’t know what to do with the result of the division, hence an exception is thrown with the message “Non-terminating decimal expansion”. One possible solution to the above problem is to define the number of decimal places we require from a big decimal, and the form of rounding that will be used to limit the value to a certain number of decimals. For example, we could  say that z should be limited to 7 decimal places, by rounding up at the 7th decimal place:
+package co.java.exception;
+import java.math.BigDecimal;
+public class ArithmeticExceptionExamples {
+public static void main(String[] args) {
+// TODO Auto-generated method stub
+BigDecimal x = new BigDecimal(1);
+BigDecimal y = new BigDecimal(3);
+x = x.divide(y, 7, BigDecimal.ROUND_DOWN);//here we limit the # of decimal places
+System.out.println(x.toString());
+}
+}
+Here, the program runs properly, since we defined a limit to the number of places the variable “x”  could assume.
+Arithmetic exception – Divide By BigDecimal Solution
+If You Have any doubts feel free to drop your doubts in the Comment Section.
+Filed Under: Java Tutorial Reader Interactions
+Leave a Reply Cancel replyYour email address will not be published. Required fields are marked *Comment Name *
+Email *
+Primary Sidebar
+Search this website
+Tutorials Important Links
+Software Testing Jobs
+Manual Testing Tutorial
+Selenium Tutorial
+Core Java Tutorial
+TestNG Tutorial
+Java Programs
+Selenium Programs
+Manual Test Cases
+Interview Tips
+Contact US
+www.softwaretestingo.com
+Important Links
+Software Testing Interview Questions
+Agile Interview Questions
+Manual Testing Interview Questions
+Testing Interview Questions
+Selenium Interview Questions
+Selenium Real Time Interview Questions
+Selenium WebDriver Interview Questions
+Automation Framework Interview Questions
+Appium Interview Questions
+TestNG Interview Questions
+Java Interview Questions
+Core Java Interview Questions
+Categories
+Categories
+Select Category
+Arts & Crafts Courses
+Bangalore Testing Jobs
+Design Courses
+Development Course
+Difference
+Exception
+GIT
+Interview Questions
+Java
+Java Courses
+Java Programs
+Java Tutorial
+Jenkins
+JIRA
+JMeter
+Manual Testing
+Manual Testing Tutorial
+Other IT & Software
+Python Courses
+Selenium
+Selenium Programs
+Selenium Tutorial
+Social Courses
+Software Testing Courses
+Software Testing Tools Courses
+SQL
+SQL Courses
+Test Cases Example
+Testing Question & Answers
+Tips & Tricks
+Tools
+Udemy Free Courses
+Unix
+Copyright © 2021 SoftwareTestingo.com ~ Contact Us ~ Sitemap ~ Privacy Policy

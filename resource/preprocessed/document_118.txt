@@ -1,0 +1,138 @@
+Bug ID: JDK-8199234 Code compiles in java8 but not in java9 : "incompatible types: java.lang.Object cannot be converted ..."
+Toggle navigation
+Oracle Technology Network
+Java
+Java SE
+Community
+Bug Database
+JDK-8199234 :
+Code compiles in java8 but not in java9 : "incompatible types: java.lang.Object cannot be converted ..."
+Type: Bug
+Component: tools
+Sub-Component: javac
+Affected Version: 9,10,11
+Priority: P3
+Status: Resolved
+Resolution: Not an Issue
+OS: generic
+CPU: generic
+Submitted: 2018-03-07
+Updated: 2018-05-04
+Resolved: 2018-05-01
+Versions (Unresolved/Resolved/Fixed)
+The Version table provides details related to the release that this issue/RFE will be addressed.
+Unresolved : Release in which this issue/RFE will be addressed.Resolved: Release in which this issue/RFE has been resolved.
+Fixed : Release in which this issue/RFE has been fixed. The release containing this fix may be available for download as an Early Access Release or a General Availability Release.
+To download the current JDK release, click here.
+JDK 11
+11Resolved
+Related Reports
+Relates :
+JDK-8146362 - Type inference fails with Function.identity() as params
+Relates :
+JDK-8016196 - Inference: define supertype parameterization for wildcard-parameterized types
+Description
+FULL PRODUCT VERSION :
+java version "9.0.4"
+Java(TM) SE Runtime Environment (build 9.0.4+11)
+Java HotSpot(TM) 64-Bit Server VM (build 9.0.4+11, mixed mode)
+ADDITIONAL OS VERSION INFORMATION :
+Windows 10 Enterprise 64-bit
+A DESCRIPTION OF THE PROBLEM :
+The attached code does not compile in java 9, intellij idea do not suggest any problems with it. To make it compiling one must do a implicit cast or assign intermediate result to a typed variable.
+REGRESSION.
+Last worked in version 8u161
+STEPS TO FOLLOW TO REPRODUCE THE PROBLEM :
+Try to compile the attached code in java 9
+EXPECTED VERSUS ACTUAL BEHAVIOR :
+EXPECTED -
+it compiles since it is compilable in java 8 ant development tool (intellij idea) do not report any problems with the code.
+ACTUAL -
+Error:(20, 113) java: incompatible types: java.lang.Object cannot be converted to /package name here/.Base
+ERROR MESSAGES/STACK TRACES THAT OCCUR :
+Error:(20, 113) java: incompatible types: java.lang.Object cannot be converted to /package name here/.Base
+REPRODUCIBILITY :
+This bug can be reproduced always.
+---------- BEGIN SOURCE ----------
+public class StreamOfStreams {
+public static void main(String[] args) {
+Helper h = new Helper();
+Stream.of(h.get(A.class).stream(), h.get(B.class).stream()).flatMap(Function.identity()).filter(r -> h.test(r));
+}
+}
+class Base {
+}
+class A extends Base {
+}
+class B extends Base {
+}
+class Helper {
+public <T extends Base> Set<T> get(final Class<T> clazz) {
+return new HashSet<>();
+}
+public boolean test(Base b) {
+return true;
+}
+}
+---------- END SOURCE ----------
+CUSTOMER SUBMITTED WORKAROUND :
+public class StreamOfStreams {
+public static void main(String[] args) {
+Helper h = new Helper();
+Stream.of(h.get(A.class).stream(), h.get(B.class).stream()).flatMap(Function.identity()).filter(r -> h.test((Base)r));
+}
+}
+class Base {
+}
+class A extends Base {
+}
+class B extends Base {
+}
+class Helper {
+public <T extends Base> Set<T> get(final Class<T> clazz) {
+return new HashSet<>();
+}
+public boolean test(Base b) {
+return true;
+}
+}
+Comments
+Simpler test case:
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+public class Test {
+void foo(Helper h, Stream<Stream<? extends Base>> streamOfStream) {
+streamOfStream.flatMap(Function.identity()).filter(r -> h.test(r)); // doesn't work
+streamOfStream.flatMap(Function.<Stream<? extends Base>>identity()).filter(r -> h.test(r)); // works
+}
+}
+class Base {}
+class Helper {
+public boolean test(Base b) {
+return true;
+}
+}
+this is not a bug, javac just don't have enough information to infer all the variables involved in: streamOfStream.flatMap(Function.identity()) which is evaluated as a standalone expression, this would be equivalent to:
+Object res = streamOfStream.flatMap(Function.identity()); thus the "unexpected" result. Check that the second line that adds additional type information works. Another simpler workaround is to use a lambda instead of Function::identity, as in:
+streamOfStream.flatMap(x -> x).filter(r -> h.test(r));
+02-05-2018
+Issue is reproducible on 9, 10
+and 11. This is regression started from 9 ea b94 onwards.
+8u172 ea b03 - Pass
+9 ea b93 - Pass
+9 ea b94 - Fail
+<-- Regression started from here
+9 GA - Fail
+9.0.4 - Fail
+10 ea b44 - Fail
+11 ea b03 - Fail
+07-03-2018
+Subscribe
+About Oracle
+Careers
+Contact Us
+Site Maps
+Legal Notices
+Terms of Use
+Your Privacy Rights

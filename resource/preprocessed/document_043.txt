@@ -1,1 +1,403 @@
-python pandas importing nameerror global name pandas defined stack overflow stack overflow products teams stack overflow public questions answers stack overflow teams developers technologists share private knowledge coworkers jobs programming related technical career opportunities talent recruit tech talent build employer brand advertising reach developers technologists worldwide company loading log sign current community stack overflow help chat meta stack overflow communities sign log customize list stack exchange communities company blog people code want input take survey join stack overflow learn share knowledge build career sign email sign sign google sign github sign facebook home public questions tags users find job jobs companies teams stack overflow teams collaborate share knowledge private group create free team teams teams create free team teams q work connect share knowledge within single location structured easy search learn pandas importing nameerror global name pandas defined ask question asked years months ago active years months ago viewed k times getting errors think due pandas importing greyed problem would fix c anaconda python exe c users nickd documents sklearn stocks stock mach py traceback recent call last file c users nickd documents sklearn stocks stock mach py line key_stats file c users nickd documents sklearn stocks stock mach py line key_stats df pandas dataframe columns date unix ticker de ratio nameerror global name pandas defined process finished exit code import pandas pd import os import time datetime import datetime location data files path c users nickd documents sklearn stocks specific field want grab files directory def key_stats gather total debt equity mrq statspath path _keystats stock_list x x os walk statspath df pandas dataframe columns date unix ticker de ratio each_dir stock_list each_file os listdir each_dir ticker each_dir split len each_file file each_file date_stamp datetime strptime file h html unix_time time mktime date_stamp timetuple print date_stamp unix_time full_file_path each_file file print full_file_path source open full_file_path r read print source try value float source split gather split df df append date date_stamp unix unix_time ticker ticker de ratio value ignore_index true except exception e pass print ticker value save gather replace replace replace replace csv print save df to_csv save time sleep key_stats python python pandas machine learning share improve question follow asked jul nick duddynick duddy gold badges silver badges bronze badges add comment answers active oldest votes imported import pandas pd calling pandas df pandas dataframe columns date unix ticker de ratio could either change import pandas pd import pandas df pandas dataframe columns date unix ticker de ratio df pd dataframe columns date unix ticker de ratio edit error due missing save gather replace replace replace replace csv share improve answer follow edited jul biogeek k gold badges silver badges bronze badges answered jul thsensethe thsense gold badges silver badges bronze badges hi thanks really new python coding outsite html appreciate example made pd dataframe getting error confusing thought set save function c anaconda python exe c users nickd documents sklearn stocks stock mach py file c users nickd documents sklearn stocks stock mach py line print save syntaxerror invalid syntax process finished exit code nick duddy jul thanks got terrible eyes working nick duddy jul nickduddy solved question accept answer ticking right sign thsense jul add comment imported pandas pd either refer throughout remove pd import plus never ever ever except exception pass swallow sorts errors never know going handle catch share improve answer follow answered jul daniel rosemandaniel roseman k gold badges silver badges bronze badges add comment answer thanks contributing answer stack overflow please sure answer question provide details share research avoid asking help clarification responding answers making statements based opinion back references personal experience learn see tips writing great answers draft saved draft discarded sign log sign using google sign using facebook sign using email password submit post guest name email required never shown post guest name email required never shown post answer discard clicking post answer agree terms service privacy policy cookie policy answer looking browse questions tagged python python pandas machine learning ask question overflow blog podcast blocking haters service developer survey open featured meta testing three vote close reopen network sites future community promotion open source hot network questions ads rule proposal one delete undelete per post take developer survey linked specify type arbitrary data types related reloading module giving nameerror name reload defined nameerror name self defined nameerror name reduce defined python python nameerror global name __file__ defined nameerror global name xrange defined python pandas index column title name nameerror global name unicode defined python filter pandas dataframe using like sql input error nameerror name defined hot network questions use score highest sentence months based moon months longer gregorian calendar lunation difference stream intstream range stop interrupting session correct dm mistakes c standard card deck countries get manifest every passenger flying airspace knows boarded plane purpose oiling wooden chopping board password hash contained x middle resulting valueerror bcrypt hashpw sin kill mosquito hinduism possible airplane enter another airplane randomly programmatically generate good next chord wrong key signature score f dorian country ever diverted international flight order arrest wanted person proof variance always greater zero decides congressional district removed much oil necessary fry cook eggs poor writer serious impediment researcher would ways balance energy mass parallel universe another someone something travels wormhole someone recognize fps sceenshot prevent pencil colour drawings fading away still drawing monochrome link pix solvability legal store accept payment debit card able refund even event staff mistake tex allow numbers command names thought understood tenses hot questions question feed subscribe rss question feed subscribe rss feed copy paste url rss reader lang py stack overflow questions jobs developer jobs directory salary calculator help mobile products teams talent advertising enterprise company press work legal privacy policy terms service contact us cookie settings cookie policy stack exchange network technology life arts culture recreation science stack overflow server fault super user web applications ask ubuntu webmasters game development tex latex software engineering unix linux ask different apple wordpress development geographic information systems electrical engineering android enthusiasts information security database administrators drupal answers sharepoint user experience mathematica salesforce expressionengine answers stack overflow em português blender network engineering cryptography code review magento software recommendations signal processing emacs raspberry pi stack overflow на русском code golf stack overflow en español ethereum data science arduino bitcoin software quality assurance testing sound design windows phone photography science fiction fantasy graphic design movies tv music practice theory worldbuilding video production seasoned advice cooking home improvement personal finance money academia law physical fitness gardening landscaping parenting english language usage skeptics mi yodeya judaism travel christianity english language learners japanese language chinese language french language german language biblical hermeneutics history spanish language islam русский язык russian language arqade gaming bicycles role playing games anime manga puzzling motor vehicle maintenance repair board card games bricks homebrewing martial arts great outdoors poker chess sports mathoverflow mathematics cross validated stats theoretical computer science physics chemistry biology computer science philosophy linguistics psychology neuroscience computational science meta stack exchange stack apps api data blog facebook twitter linkedin instagram site design logo stack exchange inc user contributions licensed cc sa rev stack overflow works best javascript enabled privacy clicking accept cookies agree stack exchange store cookies device disclose information accordance cookie policy accept cookies customize settings
+python - Is Pandas not importing? 'NameError: global name 'pandas' is not defined' - Stack Overflow
+Stack Overflow
+About
+Products
+For Teams
+Stack Overflow
+Public questions & answers
+Stack Overflow for Teams
+Where developers & technologists share private knowledge with coworkers
+Jobs
+Programming & related technical career opportunities
+Talent
+Recruit tech talent & build your employer brand
+Advertising
+Reach developers & technologists worldwide
+About the company
+Loading…
+Log in
+Sign up
+current community
+Stack Overflow
+help
+chat
+Meta Stack Overflow
+your communities
+Sign up or log in to customize your list.
+more stack exchange communities
+company blog
+People who code: we want your input.
+Take the Survey
+Join Stack Overflow to learn, share knowledge, and build your career.
+Sign up with email
+Sign up
+Sign up with Google
+Sign up with GitHub
+Sign up with Facebook
+Home
+Public
+Questions
+Tags
+Users
+Find a Job
+Jobs
+Companies
+Teams
+Stack Overflow for Teams
+– Collaborate and share knowledge with a private group.
+Create a free Team
+What is Teams?
+Teams
+What’s this?
+Create free Team
+Teams
+Q&A for work
+Connect and share knowledge within a single location that is structured and easy to search.
+Learn more
+Is Pandas not importing? 'NameError: global name 'pandas' is not defined'
+Ask Question
+Asked
+5 years, 10 months ago
+Active
+5 years, 10 months ago
+Viewed
+24k times
+3
+I'm getting a few errors here but I think it's due to pandas not importing as it's greyed out. If that is the problem, how would I fix this?
+C:\Anaconda\python.exe
+C:/Users/nickd/Documents/SKLEARN-STOCKS/stock-mach.py Traceback (most
+recent call last):
+File
+"C:/Users/nickd/Documents/SKLEARN-STOCKS/stock-mach.py", line 38, in
+Key_Stats()
+File "C:/Users/nickd/Documents/SKLEARN-STOCKS/stock-mach.py", line 12, in
+Key_Stats
+df = pandas.DataFrame(columns = ['Date','Unix','Ticker','DE Ratio']) NameError: global name 'pandas' is not defined
+Process finished with exit code 1
+import pandas as pd
+import os
+import time
+from datetime import datetime
+#location of the data files
+path = 'C:\Users\nickd\Documents\SKLEARN-STOCKS'
+#what specific field do you want to grab and in all files in that directory
+def Key_Stats(gather="Total Debt/Equity (mrq) "):
+statspath = path+'/_KeyStats'
+stock_list = [x[0] for x in os.walk(statspath)]
+df = pandas.DataFrame(columns = ['Date','Unix','Ticker','DE Ratio'])
+for each_dir in stock_list[1:5]:
+each_file = os.listdir(each_dir)
+ticker = each_dir.split("//")[1]
+if len(each_file) >0:
+for file in each_file:
+date_stamp = datetime.strptime(file, '%Y%m%d%H%M%S.html')
+#unix_time = time.mktime(date_stamp.timetuple())
+print(date_stamp,unix_time)
+full_file_path = each_file+'/'+file
+#print(full_file_path)
+source = open(full_file_path, 'r').read()
+#print(source)
+try:
+value = float(source.split(gather+':</td><td class="yfnc_tabledata1">')[1].split('</td>')[0])
+df = df.append({'Date':date_stamp,'Unix':unix_time,'Ticker':ticker,'DE Ratio':value,}, ignore_index = True)
+except Exception as e:
+pass
+#print(ticker+":",value)
+save = gather.replace(' ','').replace(')','').replace('(','').replace('/',''+('.csv')
+print(save)
+df.to_csv(save)
+#time.sleep(15)
+Key_Stats()
+python python-2.7 pandas machine-learning
+Share
+Follow
+asked Jul 30 '15 at 11:01
+Nick DuddyNick Duddy
+68044 gold badges1616 silver badges3030 bronze badges
+0
+Add a comment
+|
+2 Answers
+2
+Active
+Oldest
+Votes
+5
+You have imported it as
+import pandas as pd
+and calling
+#pandas
+df = pandas.DataFrame(columns = ['Date','Unix','Ticker','DE Ratio'])
+You could either change
+import pandas as pd to import pandas or
+df = pandas.DataFrame(columns = ['Date','Unix','Ticker','DE Ratio']) to df = pd.DataFrame(columns = ['Date','Unix','Ticker','DE Ratio']).
+edit:
+error is due to missing )
+save = gather.replace(' ','').replace(')','').replace('(','').replace('/',''+('.csv'))
+Share
+Follow
+edited Jul 30 '15 at 12:25
+BioGeek
+19.2k2121 gold badges7575 silver badges123123 bronze badges
+answered Jul 30 '15 at 11:03
+The6thSenseThe6thSense
+7,07366 gold badges2828 silver badges6262 bronze badges
+3
+Hi, Thanks! I'm really new to python (and coding outsite of HTML) so appreciate the example.
+I made the "pd.DataFrame"
+and I'm not getting the below error. Which I confusing because I thought I set the save function above.
+C:\Anaconda\python.exe C:/Users/nickd/Documents/SKLEARN-STOCKS/stock-mach.py
+File "C:/Users/nickd/Documents/SKLEARN-STOCKS/stock-mach.py", line 36
+print(save)
+^ SyntaxError: invalid syntax
+Process finished with exit code 1
+– Nick Duddy
+Jul 30 '15 at 11:38
+Thanks!! I've got terrible eyes :) That's it working now!
+– Nick Duddy
+Jul 30 '15 at 12:15
+@NickDuddy if this solved your question can you accept the answer by ticking the right sign
+– The6thSense
+Jul 30 '15 at 12:16
+Add a comment
+|
+1
+You imported pandas as pd. Either refer to it as such throughout, or remove the as pd from the import.
+(Plus, never ever ever do except Exception... pass. You'll swallow all sorts of errors and never know what they were. If you aren't going to handle them, don't catch them at all.)
+Share
+Follow
+answered Jul 30 '15 at 11:02
+Daniel RosemanDaniel Roseman
+542k5555 gold badges754754 silver badges786786 bronze badges
+Add a comment
+|
+Your Answer
+Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
+Draft saved
+Draft discarded
+Sign up or log in
+Sign up using Google
+Sign up using Facebook
+Sign up using Email and Password
+Submit
+Post as a guest
+Name
+Email
+Required, but never shown
+Post as a guest
+Name
+Email
+Required, but never shown
+Post Your Answer
+Discard
+By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
+Not the answer you're looking for? Browse other questions tagged python python-2.7 pandas machine-learning
+or ask your own question.
+The Overflow Blog
+Level Up: Linear Regression in Python – Part 2
+Shipping confetti to Stack Overflow’s design system
+Featured on Meta
+The future of Community Promotion, Open Source, and Hot Network Questions Ads
+Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
+Take the 2021 Developer Survey
+Linked
+-2
+Specify type for arbitrary data types
+Related
+169
+Reloading module giving NameError: name 'reload' is not defined
+161
+NameError: name 'self' is not defined
+212
+NameError: name 'reduce' is not defined in Python
+125
+python NameError: global name '__file__' is not defined
+340
+NameError: global name 'xrange' is not defined in Python 3
+314
+Pandas index column title or name
+155
+NameError: global name 'unicode' is not defined - in Python 3
+587
+How to filter Pandas dataframe using 'in' and 'not in' like in SQL
+243
+input() error - NameError: name '…' is not defined
+Hot Network Questions
+Starting play at higher levels and ability point buy
+Stop, in the name of the law
+Are there any papers about this observation of the distribution of the zeros of the zeta function?
+How to stop games from reading your RAM?
+I think I've sh-- myself
+Why does sleep, when run in a shell script, ignore SIGINT?
+Is there a precise definition of "Supermoon"?
+Trying to identify an old sci-fi novel: a group of space travellers visiting a planet previously long-inhabited but regressed?
+Where can people allergic to dairy food eat when travelling in France?
+Why do Macs mount an additional drive every time I install software?
+Does mass have an effect on Centripetal Acceleration?
+Why is g3 a bad move here?
+How to use Zwift workouts with stationary bike
+Generate a British numberplate
+unknown pieces of a set - stickers on round corner bricks
+Is the burden of proof a fallacy?
+Resigning will cripple my department, but I am resigning because of a near crippled department
+Why is bad behavior more tolerated in academia compared to the rest of the industry?
+Should forcing open doors be Strength or Strength (Athletics)
+What's the cohomology ring structure of a blow-up?
+Vocal range of a crowd
+Why would birds fall from the sky due to a lack of moisture?
+How do I make a "ragged" table?
+I ran a nail through a wire at home, should I worry?
+more hot questions
+Question feed
+Subscribe to RSS
+Question feed
+To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+lang-py
+Stack Overflow
+Questions
+Jobs
+Developer Jobs Directory
+Salary Calculator
+Help
+Mobile
+Products
+Teams
+Talent
+Advertising
+Enterprise
+Company
+About
+Press
+Work Here
+Legal
+Privacy Policy
+Terms of Service
+Contact Us
+Cookie Settings
+Cookie Policy
+Stack Exchange Network
+Technology
+Life / Arts
+Culture / Recreation
+Science
+Other
+Stack Overflow
+Server Fault
+Super User
+Web Applications
+Ask Ubuntu
+Webmasters
+Game Development
+TeX - LaTeX
+Software Engineering
+Unix & Linux
+Ask Different (Apple)
+WordPress Development
+Geographic Information Systems
+Electrical Engineering
+Android Enthusiasts
+Information Security
+Database Administrators
+Drupal Answers
+SharePoint
+User Experience
+Mathematica
+Salesforce
+ExpressionEngine® Answers
+Stack Overflow em Português
+Blender
+Network Engineering
+Cryptography
+Code Review
+Magento
+Software Recommendations
+Signal Processing
+Emacs
+Raspberry Pi
+Stack Overflow на русском
+Code Golf
+Stack Overflow en español
+Ethereum
+Data Science
+Arduino
+Bitcoin
+Software Quality Assurance & Testing
+Sound Design
+Windows Phone
+more (29)
+Photography
+Science Fiction & Fantasy
+Graphic Design
+Movies & TV
+Music: Practice & Theory
+Worldbuilding
+Video Production
+Seasoned Advice (cooking)
+Home Improvement
+Personal Finance & Money
+Academia
+Law
+Physical Fitness
+Gardening & Landscaping
+Parenting
+more (10)
+English Language & Usage
+Skeptics
+Mi Yodeya (Judaism)
+Travel
+Christianity
+English Language Learners
+Japanese Language
+Chinese Language
+French Language
+German Language
+Biblical Hermeneutics
+History
+Spanish Language
+Islam
+Русский язык
+Russian Language
+Arqade (gaming)
+Bicycles
+Role-playing Games
+Anime & Manga
+Puzzling
+Motor Vehicle Maintenance & Repair
+Board & Card Games
+Bricks
+Homebrewing
+Martial Arts
+The Great Outdoors
+Poker
+Chess
+Sports
+more (16)
+MathOverflow
+Mathematics
+Cross Validated (stats)
+Theoretical Computer Science
+Physics
+Chemistry
+Biology
+Computer Science
+Philosophy
+Linguistics
+Psychology & Neuroscience
+Computational Science
+more (10)
+Meta Stack Exchange
+Stack Apps
+API
+Data
+Blog
+Facebook
+Twitter
+LinkedIn
+Instagram
+site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
+rev 2021.5.28.39383
+Stack Overflow works best with JavaScript enabled
+Your privacy
+By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
+Accept all cookies
+Customize settings

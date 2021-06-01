@@ -1,1 +1,223 @@
-python attributeerror list object attribute append latest lq deal latest lq deals blogs recent entries best entries best blogs blog list search blogs home forums reviews tutorials articles register search today posts mark forums read linuxquestions org forums non nix forums programming python attributeerror list object attribute append user name remember password programming forum programming questions question directly related linux language fair game notices welcome linuxquestions org friendly active linux community currently viewing lq guest joining community ability post topics receive newsletter use advanced search subscribe threads access many special features registration quick simple absolutely free join community today note registered members see fewer ads contentlink completely disabled log new linuxquestions org visit following links site howto site faq sitemap register problems registration process account login please contact us need reset password click problem logging please visit page clear lq related cookies get virtual cloud desktop linux distro want less five minutes shells pre installed distros choose worry free installation life whether digital nomad looking flexibility shells put linux machine device want use exclusive lq members get per month click info search thread browny_amiga member registered dec location mnt unv mlkway earth usa california silicon valley distribution kubuntu debian buster stable windoze posts rep python attributeerror list object attribute append hi working wxpython application create buttons want destroy buttons display others like main menu keep track objects destroy ed want add list code self term_list self chords_button wx button self panel label train chords self bind wx evt_button self chords self chords_button self term_list append self chords_button python drops error attributeerror list object attribute append make sense lists always append attribute right stumped markus browny_amiga view public profile view lq blog view review entries find posts browny_amiga taylor_venable member registered jun location indiana usa distribution openbsd ubuntu posts rep right append append case sensitive taylor_venable view public profile view lq blog view review entries view lq wiki contributions visit taylor_venable homepage find posts taylor_venable browny_amiga member registered dec location mnt unv mlkway earth usa california silicon valley distribution kubuntu debian buster stable windoze posts original poster rep blast right miss something thought python case insensitive certain things case sensivite markus browny_amiga view public profile view lq blog view review entries find posts browny_amiga taylor_venable member registered jun location indiana usa distribution openbsd ubuntu posts rep think case sensitive programming languages nowadays java like restrictions name classes modules though taylor_venable view public profile view lq blog view review entries view lq wiki contributions visit taylor_venable homepage find posts taylor_venable thread tools search thread show printable version email page search thread advanced search posting rules may post new threads may post replies may post attachments may edit posts bb code smilies img code html code forum rules similar threads thread thread starter forum replies last post lxer object oriented programming python lxer syndicated linux news gentoo env update attributeerror module object attribute env_update linux_mopper linux newbie pm javascript control loop attribute embed object briank programming change group attribute according find list mad linux linux general pm attribute error python code digitalbrutus programming pm linuxquestions org forums non nix forums programming times gmt time contact us advertising info rules privacy lq merchandise donations contributing member lq sitemap main menu linux forum search lq tags linux tutorials lq job marketplace lq deals linux wiki distro reviews book reviews download linux social groups lq blogs con advertisement lq login register write lq linuxquestions org looking people interested writing editorials articles reviews like contribute content let us know main menu lq calendar lq rules lq sitemap site faq view new posts view latest posts zero reply threads lq wiki wanted jeremy blog report lq bug syndicate latest threads lq news twitter linuxquestions open source consulting domain registration
+python: AttributeError: 'list' object has no attribute 'Append'
+Visit Jeremy's Blog.
+Blogs
+Recent Entries
+Best Entries
+Best Blogs
+Blog List
+Search Blogs
+Home
+Forums
+Reviews
+Tutorials
+Articles
+Register
+Search
+Today's Posts
+Mark Forums Read
+LinuxQuestions.org
+> Forums
+> Non-*NIX Forums
+> Programming
+python: AttributeError: 'list' object has no attribute 'Append'
+User Name
+Remember Me?
+Password
+Programming This forum is for all programming questions.
+The question does not have to be directly related to Linux and any language is fair game.
+Notices
+Welcome to LinuxQuestions.org, a friendly and active Linux Community.
+You are currently viewing LQ as a guest. By joining our community you will have the ability to post topics, receive our newsletter, use the advanced search, subscribe to threads and access many other special features. Registration is quick, simple and absolutely free. Join our community today!
+Note that registered members see fewer ads, and ContentLink is completely disabled once you log in.
+Are you new to LinuxQuestions.org? Visit the following links:
+Site Howto |
+Site FAQ |
+Sitemap |
+Register Now
+If you have any problems with the registration process or your account login, please contact us. If you need to reset your password, click here.
+Having a problem logging in? Please visit this page to clear all LQ-related cookies.
+Get a virtual cloud desktop with the Linux distro that you want in less than five minutes with Shells! With over 10 pre-installed distros to choose from, the worry-free installation life is here! Whether you are a digital nomad or just looking for flexibility, Shells can put your Linux machine on the device that you want to use.
+Exclusive for LQ members, get up to 45% off per month. Click here for more info.
+Search this Thread
+01-12-2009, 04:47 AM
+#1
+browny_amiga
+Member
+Registered: Dec 2001
+Location: /mnt/UNV/Mlkway/Earth/USA/California/Silicon Valley
+Distribution: Kubuntu, Debian Buster Stable, Windoze 7
+Posts: 670
+Rep:
+python: AttributeError: 'list' object has no attribute 'Append'
+Hi
+I am working on a Wxpython application, where I create buttons and then want to destroy all the buttons again, so I can display others (like in a main menu)
+To keep track of what objects have to be destroy()ed, I want to add them to a list:
+code:
+----------------
+self.term_list = []
+self.chords_button = wx.Button(self.panel, label="Train Chords")
+self.Bind(wx.EVT_BUTTON, self.chords, self.chords_button)
+self.term_list.Append(self.chords_button)
+On this, Python drops the error,
+AttributeError: 'list' object has no attribute 'Append'
+which does not make sense, because lists always has a append attribute, right?
+Stumped...
+Markus
+browny_amiga
+View Public Profile
+View LQ Blog
+View Review Entries
+Find More Posts by browny_amiga
+01-12-2009, 04:49 AM
+#2
+taylor_venable
+Member
+Registered: Jun 2005
+Location: Indiana, USA
+Distribution: OpenBSD, Ubuntu
+Posts: 892
+Rep:
+Right, no "Append" but "append". Case-sensitive.
+taylor_venable
+View Public Profile
+View LQ Blog
+View Review Entries
+View LQ Wiki Contributions
+Visit taylor_venable's homepage!
+Find More Posts by taylor_venable
+01-12-2009, 04:56 AM
+#3
+browny_amiga
+Member
+Registered: Dec 2001
+Location: /mnt/UNV/Mlkway/Earth/USA/California/Silicon Valley
+Distribution: Kubuntu, Debian Buster Stable, Windoze 7
+Posts: 670
+Original Poster
+Rep:
+blast, you are right!!
+Did I miss something here? I thought python is case insensitive?
+Or only certain things are case sensivite?
+Markus
+browny_amiga
+View Public Profile
+View LQ Blog
+View Review Entries
+Find More Posts by browny_amiga
+01-12-2009, 04:58 AM
+#4
+taylor_venable
+Member
+Registered: Jun 2005
+Location: Indiana, USA
+Distribution: OpenBSD, Ubuntu
+Posts: 892
+Rep:
+No, I think it's all case-sensitive.
+Most programming languages nowadays are.
+There aren't Java-like restrictions on how you name classes and modules, though.
+taylor_venable
+View Public Profile
+View LQ Blog
+View Review Entries
+View LQ Wiki Contributions
+Visit taylor_venable's homepage!
+Find More Posts by taylor_venable
+Thread Tools
+Search this Thread
+Show Printable Version
+Email this Page
+Search this Thread:
+Advanced Search
+Posting Rules
+You may not post new threads
+You may not post replies
+You may not post attachments
+You may not edit your posts
+BB code is On
+Smilies are On
+[IMG] code is Off
+HTML code is Off
+Forum Rules
+Similar Threads
+Thread
+Thread Starter
+Forum
+Replies
+Last Post
+LXer: Object Oriented Programming in Python
+LXer
+Syndicated Linux News
+0
+01-07-2009 06:20 AM
+gentoo env-update AttributeError: 'module' object has no attribute 'env_update'
+linux_mopper
+Linux - Newbie
+2
+08-06-2008 01:20 PM
+can javascript control the loop attribute of an embed object?
+BrianK
+Programming
+3
+06-27-2008 10:09 AM
+Change group attribute according to a find list
+mad4linux
+Linux - General
+8
+04-19-2007 01:30 PM
+Attribute error in python code
+digitalbrutus
+Programming
+1
+08-15-2006 03:39 PM
+LinuxQuestions.org
+> Forums
+> Non-*NIX Forums
+> Programming
+All times are GMT -5. The time now is 12:38 PM.
+Contact Us -
+Advertising Info -
+Rules - Privacy -
+LQ Merchandise -
+Donations -
+Contributing Member -
+LQ Sitemap -
+Main Menu
+Linux Forum
+Search
+LQ Tags
+Linux Tutorials
+LQ Job Marketplace
+LQ Deals
+Linux Wiki
+Distro Reviews
+Book Reviews
+Download Linux
+Social Groups
+LQ Blogs
+(Con't)
+Advertisement
+My LQ
+Login
+Register
+Write for LQ
+LinuxQuestions.org is looking for people interested in writing
+Editorials, Articles, Reviews, and more. If you'd like to contribute
+content, let us know.
+Main Menu
+LQ Calendar
+LQ Rules
+LQ Sitemap
+Site FAQ
+View New Posts
+View Latest Posts
+Zero Reply Threads
+LQ Wiki Most Wanted
+Jeremy's Blog
+Report LQ Bug
+Syndicate
+Latest Threads
+LQ News
+Twitter: @linuxquestions
+Open Source Consulting |
+Domain Registration

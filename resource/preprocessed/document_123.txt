@@ -1,0 +1,392 @@
+"Exception in thread "main" java.lang.IndexOutOfBoundsException: Index: 0, Size: 0" with ArrayList? - Stack Overflow
+Stack Overflow
+About
+Products
+For Teams
+Stack Overflow
+Public questions & answers
+Stack Overflow for Teams
+Where developers & technologists share private knowledge with coworkers
+Jobs
+Programming & related technical career opportunities
+Talent
+Recruit tech talent & build your employer brand
+Advertising
+Reach developers & technologists worldwide
+About the company
+Loading…
+Log in
+Sign up
+current community
+Stack Overflow
+help
+chat
+Meta Stack Overflow
+your communities
+Sign up or log in to customize your list.
+more stack exchange communities
+company blog
+People who code: we want your input.
+Take the Survey
+Join Stack Overflow to learn, share knowledge, and build your career.
+Sign up with email
+Sign up
+Sign up with Google
+Sign up with GitHub
+Sign up with Facebook
+Home
+Public
+Questions
+Tags
+Users
+Find a Job
+Jobs
+Companies
+Teams
+Stack Overflow for Teams
+– Collaborate and share knowledge with a private group.
+Create a free Team
+What is Teams?
+Teams
+What’s this?
+Create free Team
+Teams
+Q&A for work
+Connect and share knowledge within a single location that is structured and easy to search.
+Learn more
+“Exception in thread ”main“ java.lang.IndexOutOfBoundsException: Index: 0, Size: 0” with ArrayList?
+Ask Question
+Asked
+6 years, 7 months ago
+Active
+1 year, 2 months ago
+Viewed
+69k times
+3
+0
+"Exception in thread "main" java.lang.IndexOutOfBoundsException: Index: 0, Size: 0" is the main error I get when I compile this method:
+public static ArrayList<ArrayList<Integer>> createSparseArray(int len, double den) {
+int counter = 0;
+ArrayList<Integer> placeHolder = new ArrayList<Integer>();
+for (int j = 0; j < len; j++) {
+double randomNumber = Math.random();
+if (randomNumber < den) {
+counter++;
+placeHolder.add(j);
+}
+}
+ArrayList<ArrayList<Integer>> list = new ArrayList<ArrayList<Integer>>();
+for (int k = 0; k < counter; k++) {
+for (int m = 0; m < 2; m++) {
+list.get(0).set(placeHolder.get(k), (int) (Math.random() * (99999) + 1));
+}
+}
+return list;
+}
+How can I fix this?
+java arraylist
+Share
+Follow
+asked Oct 9 '14 at 7:20
+Jake UrbanJake Urban
+4111 gold badge11 silver badge55 bronze badges
+1
+2
+The new list doesn't contain any item in it. list.get(0) will result in Exception. First add the empty ArrayList in list then use it.
+– Braj
+Oct 9 '14 at 7:23
+Add a comment
+|
+4 Answers
+4
+Active
+Oldest
+Votes
+5
+ArrayList<ArrayList<Integer>> list doesnt contain any element in (0)th postion
+and the compiler throws out of bounds exception on iterating when it doesn't find any element in the specified postion.
+when you try executing list.get(0).set(placeHolder.get(k), (int) (Math.random() * (99999) + 1)); statement , your list doesnt contain any element inside it. you need to iterate the inner list to set the values for the list.
+Share
+Follow
+edited Oct 9 '14 at 7:47
+answered Oct 9 '14 at 7:24
+SanthoshSanthosh
+8,04522 gold badges2626 silver badges5454 bronze badges
+2
+1
+where OP is iterating empty list? Iterating empty list doesn't throw this Exception.
+– Braj
+Oct 9 '14 at 7:25
+Re-frame this line exception on iterating the empty list
+– Braj
+Oct 9 '14 at 7:27
+Add a comment
+|
+4
+Do not use list.set(index, element) on a nonexistent element, since it replaces the old (nonexistent) element with a new one and returns the old one. Instead, use list.add(index, element) and it will work.
+Share
+Follow
+edited Dec 23 '16 at 10:49
+answered Oct 4 '16 at 10:22
+borgmaterborgmater
+36022 gold badges55 silver badges2626 bronze badges
+Add a comment
+|
+0
+I thingk u have mistake here
+list.get(0).set(placeHolder.get(k), (int) (Math.random() * (99999) + 1));
+The java.util.ArrayList.get(int index) method returns the element at the specified position in this list.
+You are setting just to first element in the list arrray
+Share
+Follow
+answered Oct 9 '14 at 7:25
+VlaVla
+2588 bronze badges
+Add a comment
+|
+0
+Here, the main problem is Array indexing and real logic indexing difference...
+Start with facts that ArrayList not start with index 0
+*
+but in your logic when you use X.add("Y") with i = 0 then logic can not find place 0 or can not recover position element 0;
+*
+that means ... it show indexing error of outbound;
+solution ;
+first solution : use i< istead of i<=
+second solution : use i = 1 for initialization instead of i = 0;
+Share
+Follow
+answered Mar 9 '20 at 1:01
+vedant davevedant dave
+4577 bronze badges
+Add a comment
+|
+Your Answer
+Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
+Draft saved
+Draft discarded
+Sign up or log in
+Sign up using Google
+Sign up using Facebook
+Sign up using Email and Password
+Submit
+Post as a guest
+Name
+Email
+Required, but never shown
+Post as a guest
+Name
+Email
+Required, but never shown
+Post Your Answer
+Discard
+By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
+Not the answer you're looking for? Browse other questions tagged java arraylist
+or ask your own question.
+The Overflow Blog
+Level Up: Linear Regression in Python – Part 2
+Shipping confetti to Stack Overflow’s design system
+Featured on Meta
+The future of Community Promotion, Open Source, and Hot Network Questions Ads
+Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
+Take the 2021 Developer Survey
+Visit chat
+Linked
+1
+Code is throwing an IndexOutOfBoundsException?
+-2
+How to debug “java.lang.IndexOutOfBoundsException” in a Java program?
+Related
+0
+Multidimentional Arraylist (Index error)
+1
+Exception in thread “main” java.lang.IndexOutOfBoundsException: Index: 10, Size: 10
+2
+java.lang.IndexOutOfBoundsException: Invalid index 18, size is 18
+4
+java.lang.IndexOutOfBoundsException: Index: 1, Size: 1
+0
+How to add item to ArrayList by Thread in Java
+0
+Exception in thread “main” java.lang.IndexOutOfBoundsException: Index: 10, Size: 0
+0
+Index out of bounds exception but the size and index are the same
+Hot Network Questions
+Why do we have two kidneys but one liver?
+Starting play at higher levels and ability point buy
+What is the difference between “they” and “it” for people, especially for those people who choose to be identified as non-binary?
+A huge forest native almost solely to elves who are widely regarded with hatred. What's to stop an army from simply burning the entire forest?
+According to international law, when is first-use nuclear strike justified?
+Trying to identify an old sci-fi novel: a group of space travellers visiting a planet previously long-inhabited but regressed?
+Why would birds fall from the sky due to a lack of moisture?
+If cost can be ignored, is a higher-value capacitor for ripple suppression always a good choice?
+removing multiple lines - d3d vs 3dd
+unknown pieces of a set - stickers on round corner bricks
+Why is bad behavior more tolerated in academia compared to the rest of the industry?
+I think I've sh-- myself
+What does research indicate about how one should treat units in elementary school?
+select distinct columns over multiple databases sql server
+"a man/woman of difficult situations", does this sound idiomatic?
+What can I do about a parent who is discouraging their child from learning violin, a child who really wants to learn, so that the child will drop out
+How do computers perform operations on numbers that are larger than 64 bits?
+Is it significantly faster to hike along a river bank?
+Did ancient Greek mathematicians consider numbers independently of geometry?
+How can I specify the qubits on quantum computers that I want to use?
+Why do Macs mount an additional drive every time I install software?
+Does the inside of a lid used to cook rice or steam vegetables have anything besides water on it?
+Why do Igors (but not Igorinas) lisp when they speak?
+Generate a British numberplate
+more hot questions
+Question feed
+Subscribe to RSS
+Question feed
+To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+lang-java
+Stack Overflow
+Questions
+Jobs
+Developer Jobs Directory
+Salary Calculator
+Help
+Mobile
+Products
+Teams
+Talent
+Advertising
+Enterprise
+Company
+About
+Press
+Work Here
+Legal
+Privacy Policy
+Terms of Service
+Contact Us
+Cookie Settings
+Cookie Policy
+Stack Exchange Network
+Technology
+Life / Arts
+Culture / Recreation
+Science
+Other
+Stack Overflow
+Server Fault
+Super User
+Web Applications
+Ask Ubuntu
+Webmasters
+Game Development
+TeX - LaTeX
+Software Engineering
+Unix & Linux
+Ask Different (Apple)
+WordPress Development
+Geographic Information Systems
+Electrical Engineering
+Android Enthusiasts
+Information Security
+Database Administrators
+Drupal Answers
+SharePoint
+User Experience
+Mathematica
+Salesforce
+ExpressionEngine® Answers
+Stack Overflow em Português
+Blender
+Network Engineering
+Cryptography
+Code Review
+Magento
+Software Recommendations
+Signal Processing
+Emacs
+Raspberry Pi
+Stack Overflow на русском
+Code Golf
+Stack Overflow en español
+Ethereum
+Data Science
+Arduino
+Bitcoin
+Software Quality Assurance & Testing
+Sound Design
+Windows Phone
+more (29)
+Photography
+Science Fiction & Fantasy
+Graphic Design
+Movies & TV
+Music: Practice & Theory
+Worldbuilding
+Video Production
+Seasoned Advice (cooking)
+Home Improvement
+Personal Finance & Money
+Academia
+Law
+Physical Fitness
+Gardening & Landscaping
+Parenting
+more (10)
+English Language & Usage
+Skeptics
+Mi Yodeya (Judaism)
+Travel
+Christianity
+English Language Learners
+Japanese Language
+Chinese Language
+French Language
+German Language
+Biblical Hermeneutics
+History
+Spanish Language
+Islam
+Русский язык
+Russian Language
+Arqade (gaming)
+Bicycles
+Role-playing Games
+Anime & Manga
+Puzzling
+Motor Vehicle Maintenance & Repair
+Board & Card Games
+Bricks
+Homebrewing
+Martial Arts
+The Great Outdoors
+Poker
+Chess
+Sports
+more (16)
+MathOverflow
+Mathematics
+Cross Validated (stats)
+Theoretical Computer Science
+Physics
+Chemistry
+Biology
+Computer Science
+Philosophy
+Linguistics
+Psychology & Neuroscience
+Computational Science
+more (10)
+Meta Stack Exchange
+Stack Apps
+API
+Data
+Blog
+Facebook
+Twitter
+LinkedIn
+Instagram
+site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
+rev 2021.5.28.39383
+Stack Overflow works best with JavaScript enabled
+Your privacy
+By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
+Accept all cookies
+Customize settings

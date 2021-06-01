@@ -1,0 +1,391 @@
+Error vs. Exception in Dart - Stack Overflow
+Stack Overflow
+About
+Products
+For Teams
+Stack Overflow
+Public questions & answers
+Stack Overflow for Teams
+Where developers & technologists share private knowledge with coworkers
+Jobs
+Programming & related technical career opportunities
+Talent
+Recruit tech talent & build your employer brand
+Advertising
+Reach developers & technologists worldwide
+About the company
+Loading…
+Log in
+Sign up
+current community
+Stack Overflow
+help
+chat
+Meta Stack Overflow
+your communities
+Sign up or log in to customize your list.
+more stack exchange communities
+company blog
+People who code: we want your input.
+Take the Survey
+Join Stack Overflow to learn, share knowledge, and build your career.
+Sign up with email
+Sign up
+Sign up with Google
+Sign up with GitHub
+Sign up with Facebook
+Home
+Public
+Questions
+Tags
+Users
+Find a Job
+Jobs
+Companies
+Teams
+Stack Overflow for Teams
+– Collaborate and share knowledge with a private group.
+Create a free Team
+What is Teams?
+Teams
+What’s this?
+Create free Team
+Teams
+Q&A for work
+Connect and share knowledge within a single location that is structured and easy to search.
+Learn more
+Error vs. Exception in Dart
+Ask Question
+Asked
+7 years, 11 months ago
+Active
+9 months ago
+Viewed
+11k times
+50
+4
+Why are there Errors AND Exceptions in Dart and not either Errors OR Exceptions?
+Is the reason a historical one oder what?
+I can throw an Error, I can throw an Exception. None of them is checked by the Analyzer like in Java (Exception vs. RuntimeException)
+dart
+Share
+Follow
+asked Jun 26 '13 at 9:10
+Mike MittererMike Mitterer
+5,30922 gold badges3535 silver badges5151 bronze badges
+Add a comment
+|
+3 Answers
+3
+Active
+Oldest
+Votes
+69
+From this post, quoting Bob Nystrom:
+Error and its subclasses are for programmatic errors. If one of those
+occurs, your code is bad and you should fix your code.
+Non-Error exception classes are for runtime errors. Sometimes you can
+prevent them from being thrown, but often you cannot.
+Except in a few special circumstances, idiomatic Dart should throw
+Errors, but never catch them. They exists specifically to not be
+caught so that they take down the app and alert the programmer to the
+location of the bug.
+In other words, you should expect (and check for) exceptions (it is intended that you should handle them).
+If you get an error, then you need to check how you're using the API that's throwing the error - you're probably using it wrong.
+If you're writing an API, then you should use the same pattern.
+Errors are messages to downstream developers about how they are using your API.
+Share
+Follow
+answered Jun 26 '13 at 9:38
+Chris BuckettChris Buckett
+11k22 gold badges3434 silver badges4545 bronze badges
+1
+2
+Thx Chris for the clarification! I think thats missing in the documentation. There is already an issue for this: code.google.com/p/dart/issues/detail?id=9377
+– Mike Mitterer
+Jun 26 '13 at 10:52
+Add a comment
+|
+14
+Exception
+An Exception in Dart should be thrown for regular, expected program flow and is intended to be caught:
+An Exception is intended to convey information to the user about a failure, so that the error can be addressed programmatically. It is intended to be caught, and it should contain useful data fields.
+Example: TimeoutException
+A TimeoutException will be thrown "when a scheduled timeout happens while waiting for an async result", which is expected program flow.
+If we have a download task for example and that download task is not finished after our specified timeout time of thirty seconds (which can happen), we want to communicate that to our user, hence, we need to catch the Exception.
+Error
+An Error in Dart should be thrown for unexpected program flow and should not be caught but addressed by the programmer:
+An Error object represents a program failure that the programmer should have avoided.
+Example: AssertionError
+An AssertionError is thrown "when an assert statement fails", i.e. it should never happen because we assert that it should not.
+If we see such an error, it means that we should change our code and we should definitely not catch the error.
+In practice you can catch Errors, but you should not. There is a linter rule to help enforce that.
+The fact that Dart allows it can still be useful, e.g. when testing assertions or other errors.
+See this answer for a complete example scenario.
+Share
+Follow
+edited Oct 15 '19 at 11:43
+answered Oct 13 '19 at 8:49
+creativecreatorormaybenotcreativecreatorormaybenot
+62.2k3030 gold badges174174 silver badges278278 bronze badges
+2
+It would be nice nice if you had provided a simple example for both Exception and Error.
+– user6274128
+Oct 15 '19 at 11:30
+Now it is adding more value to your post (+1)
+– user6274128
+Oct 15 '19 at 14:34
+Add a comment
+|
+1
+Exceptions are considered conditions that you can plan ahead for and catch.
+Errors are conditions that you don't expect or plan for.
+For more detailed ans
+Thanks to Chris and from here
+Exceptions should be used when there is a problem that is expected.
+A common one is any type of I/O operation (like network traffic), where the socket closes early, and trying to write data to that socket fails.
+Errors occur when there is a problem that was not expected. Things like null pointers (you expected this variable to not be null), running our of memory, etc... When you try to use the API in a wrong way or stuffs like that.
+For the most part you, as an app developer, will always use exceptions.
+Errors tend to be reserved for unexpected and fatal problems.
+Share
+Follow
+edited Aug 24 '20 at 11:11
+answered May 20 '20 at 1:47
+iDecodeiDecode
+4,23522 gold badges1717 silver badges4343 bronze badges
+Add a comment
+|
+Your Answer
+Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
+Draft saved
+Draft discarded
+Sign up or log in
+Sign up using Google
+Sign up using Facebook
+Sign up using Email and Password
+Submit
+Post as a guest
+Name
+Email
+Required, but never shown
+Post as a guest
+Name
+Email
+Required, but never shown
+Post Your Answer
+Discard
+By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
+Not the answer you're looking for? Browse other questions tagged dart
+or ask your own question.
+The Overflow Blog
+Level Up: Linear Regression in Python – Part 2
+Shipping confetti to Stack Overflow’s design system
+Featured on Meta
+The future of Community Promotion, Open Source, and Hot Network Questions Ads
+Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
+Take the 2021 Developer Survey
+Linked
+15
+What's the recommended way in Dart: asserts or throw Errors
+2
+How do I test an assertion?
+2
+Throwing Exceptions in Dart for Invalid Parameters (e.g. Sign In)?
+0
+Proper way to throw Errors in Dart
+Related
+5
+Unhandled Exception in Dart
+58
+Dart catch clause
+218
+Dart SDK is not configured
+4
+Dart: No Message specification for Exception?
+0
+Why does Dart allow arbitrary types to be thrown as exceptions?
+1
+In Dart, how to verify a void method that does not throw exception in unit tests?
+1
+What is the correct way to catch both Error and Exception following `effective dart`?
+0
+Why dart analyzer fails to recognize a type error?
+Hot Network Questions
+select distinct columns over multiple databases sql server
+Efficient ragged path for text
+The usage of can't
+What does this line: `T=C/2=INT(C/2)` do? Why is it valid syntax?
+Is the burden of proof a fallacy?
+Is there any realistic explanation for Earth-like climate on a Sun-sized planet?
+"a man/woman of difficult situations", does this sound idiomatic?
+Are there any papers about this observation of the distribution of the zeros of the zeta function?
+newpxmath: accents are always bold
+What is the difference between “they” and “it” for people, especially for those people who choose to be identified as non-binary?
+Why does decriminalisation/legalisation not reduce the cost of drugs?
+How to mark directories in the output of the `find` command?
+unknown pieces of a set - stickers on round corner bricks
+Why is this result no contradiction to length contraction?
+Is it better to resize an image by minus 10% or by minus 50%?
+Triangle-style sequences
+Lunar Terrain Model in Apollo Guidance Computer
+3 verbs in one sentence - how is that?
+According to international law, when is first-use nuclear strike justified?
+How could publicly accessible information proving that a public figure is corrupt go undetected for at least a year?
+Vocal range of a crowd
+What can I do about a parent who is discouraging their child from learning violin, a child who really wants to learn, so that the child will drop out
+Why do Igors (but not Igorinas) lisp when they speak?
+Is there a precise definition of "Supermoon"?
+more hot questions
+Question feed
+Subscribe to RSS
+Question feed
+To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+lang-dart
+Stack Overflow
+Questions
+Jobs
+Developer Jobs Directory
+Salary Calculator
+Help
+Mobile
+Products
+Teams
+Talent
+Advertising
+Enterprise
+Company
+About
+Press
+Work Here
+Legal
+Privacy Policy
+Terms of Service
+Contact Us
+Cookie Settings
+Cookie Policy
+Stack Exchange Network
+Technology
+Life / Arts
+Culture / Recreation
+Science
+Other
+Stack Overflow
+Server Fault
+Super User
+Web Applications
+Ask Ubuntu
+Webmasters
+Game Development
+TeX - LaTeX
+Software Engineering
+Unix & Linux
+Ask Different (Apple)
+WordPress Development
+Geographic Information Systems
+Electrical Engineering
+Android Enthusiasts
+Information Security
+Database Administrators
+Drupal Answers
+SharePoint
+User Experience
+Mathematica
+Salesforce
+ExpressionEngine® Answers
+Stack Overflow em Português
+Blender
+Network Engineering
+Cryptography
+Code Review
+Magento
+Software Recommendations
+Signal Processing
+Emacs
+Raspberry Pi
+Stack Overflow на русском
+Code Golf
+Stack Overflow en español
+Ethereum
+Data Science
+Arduino
+Bitcoin
+Software Quality Assurance & Testing
+Sound Design
+Windows Phone
+more (29)
+Photography
+Science Fiction & Fantasy
+Graphic Design
+Movies & TV
+Music: Practice & Theory
+Worldbuilding
+Video Production
+Seasoned Advice (cooking)
+Home Improvement
+Personal Finance & Money
+Academia
+Law
+Physical Fitness
+Gardening & Landscaping
+Parenting
+more (10)
+English Language & Usage
+Skeptics
+Mi Yodeya (Judaism)
+Travel
+Christianity
+English Language Learners
+Japanese Language
+Chinese Language
+French Language
+German Language
+Biblical Hermeneutics
+History
+Spanish Language
+Islam
+Русский язык
+Russian Language
+Arqade (gaming)
+Bicycles
+Role-playing Games
+Anime & Manga
+Puzzling
+Motor Vehicle Maintenance & Repair
+Board & Card Games
+Bricks
+Homebrewing
+Martial Arts
+The Great Outdoors
+Poker
+Chess
+Sports
+more (16)
+MathOverflow
+Mathematics
+Cross Validated (stats)
+Theoretical Computer Science
+Physics
+Chemistry
+Biology
+Computer Science
+Philosophy
+Linguistics
+Psychology & Neuroscience
+Computational Science
+more (10)
+Meta Stack Exchange
+Stack Apps
+API
+Data
+Blog
+Facebook
+Twitter
+LinkedIn
+Instagram
+site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
+rev 2021.5.28.39383
+Stack Overflow works best with JavaScript enabled
+Your privacy
+By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
+Accept all cookies
+Customize settings

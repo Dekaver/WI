@@ -1,0 +1,459 @@
+arrays - Java Program - "Erroneous tree type" Issue - Stack Overflow
+Stack Overflow
+About
+Products
+For Teams
+Stack Overflow
+Public questions & answers
+Stack Overflow for Teams
+Where developers & technologists share private knowledge with coworkers
+Jobs
+Programming & related technical career opportunities
+Talent
+Recruit tech talent & build your employer brand
+Advertising
+Reach developers & technologists worldwide
+About the company
+Loading…
+Log in
+Sign up
+current community
+Stack Overflow
+help
+chat
+Meta Stack Overflow
+your communities
+Sign up or log in to customize your list.
+more stack exchange communities
+company blog
+People who code: we want your input.
+Take the Survey
+Join Stack Overflow to learn, share knowledge, and build your career.
+Sign up with email
+Sign up
+Sign up with Google
+Sign up with GitHub
+Sign up with Facebook
+Home
+Public
+Questions
+Tags
+Users
+Find a Job
+Jobs
+Companies
+Teams
+Stack Overflow for Teams
+– Collaborate and share knowledge with a private group.
+Create a free Team
+What is Teams?
+Teams
+What’s this?
+Create free Team
+Teams
+Q&A for work
+Connect and share knowledge within a single location that is structured and easy to search.
+Learn more
+Java Program - “Erroneous tree type” Issue
+Ask Question
+Asked
+5 years, 9 months ago
+Active
+3 years, 5 months ago
+Viewed
+6k times
+0
+I have been going thorough some practice problems and have a question on this code. I was able to figure it out using a different method, but I don't understand why this example doesn't work.The code asks for input until the user enters the same input twice, where it should then display the duplicate input before ending the program.
+I am getting:
+Exception in thread "main" java.lang.RuntimeException: Uncompilable source code - Erroneous tree type: any>
+Error on the last line with the word variable. Any ideas?
+import java.util.ArrayList;
+import java.util.Scanner;
+public class MoreThanOnce {
+public static void main(String[] args) {
+Scanner reader = new Scanner(System.in);
+// create here the ArrayList
+ArrayList<String> words = new ArrayList<String>();
+while (true){
+System.out.print("Type a word: ");
+String word = reader.nextLine();
+if(!words.contains(word)){
+words.add(word);
+}else{
+break;
+}
+}
+System.out.println("You gave the word " + word + " twice");
+}
+}
+java arrays loops types tree
+Share
+Follow
+edited Aug 12 '15 at 5:52
+Sufian
+6,0071414 gold badges6060 silver badges111111 bronze badges
+asked Aug 12 '15 at 5:28
+xCargotxCargot
+111 silver badge22 bronze badges
+6
+Add the complete stacktrace please.
+– Jens
+Aug 12 '15 at 5:33
+As i copy you code i got a compiler error: "word cannot be resolved to a variable" in last line
+– Jens
+Aug 12 '15 at 5:34
+Other than what Jens noted, I was able to run your program without any errors. I used JDK 1.7
+– Teena George
+Aug 12 '15 at 5:35
+If i comment out the last line your code is working fine for me.
+– Jens
+Aug 12 '15 at 5:35
+how would it get compiled I m getting confuse?
+– SSH
+Aug 12 '15 at 5:40
+|
+Show 1 more comment
+3 Answers
+3
+Active
+Oldest
+Votes
+0
+Your code does not compile. The variable "word" you want to display at the end is not in the right scope : you declare it in the while loop but try to use it outside this loop.
+Just change thing like this :
+import java.util.ArrayList;
+import java.util.Scanner;
+public class MoreThanOnce {
+public static void main(String[] args) {
+Scanner reader = new Scanner(System.in);
+// create here the ArrayList
+String word; //variable declared before loop
+ArrayList<String> words = new ArrayList<String>();
+while (true){
+System.out.print("Type a word: ");
+word = reader.nextLine();
+if(!words.contains(word)){
+words.add(word);
+}else{
+break;
+}
+}
+System.out.println("You gave the word " + word + " twice");
+}
+Hope it helps.
+Mathias
+Share
+Follow
+answered Aug 12 '15 at 5:36
+Mathias AboudouMathias Aboudou
+10944 bronze badges
+6
+This doesn't seem to work either. I am getting the same error even with your changes.
+– xCargot
+Aug 12 '15 at 5:44
+Hi, its strange because it works fine for me with this change. Are your sure the change as been taken into account when you tried. What editor do you use ? What version of Java ?
+– Mathias Aboudou
+Aug 12 '15 at 5:51
+Thanks for the responses. I got it working after saving it to a new file. I don't know what the issue was, but it is working after implementing your change. Thanks.
+– xCargot
+Aug 12 '15 at 5:55
+Another question - why do you have to declare it before the while loop? Are the variables that are declared inside the while loop local to the while loop itself - so they cant
+be used anywhere outside the loop block?
+– xCargot
+Aug 12 '15 at 6:01
+Yes exactly ! And this is true for every block (for, if, method...) you declare a variable in.
+– Mathias Aboudou
+Aug 12 '15 at 6:04
+|
+Show 1 more comment
+0
+Are you using NetBeans ?
+If yes then there is an open bug
+Share
+Follow
+answered Aug 12 '15 at 5:49
+AnkitAnkit
+4566 bronze badges
+3
+Yes, I am. What is the bug, specifically?
+– xCargot
+Aug 12 '15 at 5:54
+check this out stackoverflow.com/questions/20165965/…
+– Ankit
+Aug 12 '15 at 5:59
+here is the bug
+netbeans.org /bugzilla/ show_bug.cgi ? id=199293
+– Ankit
+Aug 12 '15 at 6:00
+Add a comment
+|
+0
+Declare "String word" variable before while loop.
+import java.util.ArrayList;
+import java.util.Scanner;
+public class MoreThanOnce {
+public static void main(String[] args) {
+Scanner reader = new Scanner(System.in);
+// create here the ArrayList
+String word;
+ArrayList<String> words = new ArrayList<String>();
+while (true) {
+System.out.print("Type a word: ");
+word = reader.nextLine();
+if (!words.contains(word)) {
+words.add(word);
+} else {
+break;
+}
+}
+System.out.println("You gave the word " + word + " twice");
+}
+}
+Share
+Follow
+edited Aug 12 '15 at 5:50
+answered Aug 12 '15 at 5:36
+RafiqRafiq
+72211 gold badge55 silver badges1515 bronze badges
+2
+Still getting the same error after implementing your changes.
+– xCargot
+Aug 12 '15 at 5:45
+I check your code in Netbeans IDE
+and got output:Type a word: rafiq Type a word: rafiq You gave the word rafiq twice
+– Rafiq
+Aug 12 '15 at 5:48
+Add a comment
+|
+Your Answer
+Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
+Draft saved
+Draft discarded
+Sign up or log in
+Sign up using Google
+Sign up using Facebook
+Sign up using Email and Password
+Submit
+Post as a guest
+Name
+Email
+Required, but never shown
+Post as a guest
+Name
+Email
+Required, but never shown
+Post Your Answer
+Discard
+By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
+Not the answer you're looking for? Browse other questions tagged java arrays loops types tree
+or ask your own question.
+The Overflow Blog
+Level Up: Linear Regression in Python – Part 2
+Shipping confetti to Stack Overflow’s design system
+Featured on Meta
+The future of Community Promotion, Open Source, and Hot Network Questions Ads
+Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
+Take the 2021 Developer Survey
+Linked
+4
+Java- RuntimeException- Uncompilable source code - Erroneous tree type
+Related
+3964
+What are the differences between a HashMap and a Hashtable in Java?
+7059
+Is Java “pass-by-reference” or “pass-by-value”?
+4190
+Avoiding NullPointerException in Java
+4332
+How do I read / convert an InputStream into a String in Java?
+3731
+How do I generate random integers within a specific range in Java?
+1908
+How do I break out of nested loops in Java?
+2422
+How do I determine whether an array contains a particular value in Java?
+2225
+How do I declare and initialize an array in Java?
+1913
+Determine the type of an object?
+3428
+How can I create a memory leak in Java?
+Hot Network Questions
+Where and how are raw transactions stored on the blockchain?
+How do I make a "ragged" table?
+How to use Zwift workouts with stationary bike
+Triangle-style sequences
+What's the cohomology ring structure of a blow-up?
+Concatenate column names in one column conditional on using mutate, across and case_when
+The usage of can't
+A planet with toxic air
+newpxmath: accents are always bold
+Sanctuary spell and Using magic Items that cause damage?
+I ran a nail through a wire at home, should I worry?
+select distinct columns over multiple databases sql server
+Why is the ortho product major in the nitration of anisole with nitric acid and acetic anhydride?
+Why isn't it the norm to have research repeated immediately by other academics?
+unknown pieces of a set - stickers on round corner bricks
+Advice needed – I can't reach my collaborator, but there's a short deadline for revising our journal article submission
+How to mark directories in the output of the `find` command?
+Print the last answerer's first submission
+Why did SMARTDRV have to be started with /x when DOS started?
+How can I offset 6" ducting by just a few inches?
+Why do Macs mount an additional drive every time I install software?
+Why would birds fall from the sky due to a lack of moisture?
+Is there a precise definition of "Supermoon"?
+According to international law, when is first-use nuclear strike justified?
+more hot questions
+Question feed
+Subscribe to RSS
+Question feed
+To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+lang-java
+Stack Overflow
+Questions
+Jobs
+Developer Jobs Directory
+Salary Calculator
+Help
+Mobile
+Products
+Teams
+Talent
+Advertising
+Enterprise
+Company
+About
+Press
+Work Here
+Legal
+Privacy Policy
+Terms of Service
+Contact Us
+Cookie Settings
+Cookie Policy
+Stack Exchange Network
+Technology
+Life / Arts
+Culture / Recreation
+Science
+Other
+Stack Overflow
+Server Fault
+Super User
+Web Applications
+Ask Ubuntu
+Webmasters
+Game Development
+TeX - LaTeX
+Software Engineering
+Unix & Linux
+Ask Different (Apple)
+WordPress Development
+Geographic Information Systems
+Electrical Engineering
+Android Enthusiasts
+Information Security
+Database Administrators
+Drupal Answers
+SharePoint
+User Experience
+Mathematica
+Salesforce
+ExpressionEngine® Answers
+Stack Overflow em Português
+Blender
+Network Engineering
+Cryptography
+Code Review
+Magento
+Software Recommendations
+Signal Processing
+Emacs
+Raspberry Pi
+Stack Overflow на русском
+Code Golf
+Stack Overflow en español
+Ethereum
+Data Science
+Arduino
+Bitcoin
+Software Quality Assurance & Testing
+Sound Design
+Windows Phone
+more (29)
+Photography
+Science Fiction & Fantasy
+Graphic Design
+Movies & TV
+Music: Practice & Theory
+Worldbuilding
+Video Production
+Seasoned Advice (cooking)
+Home Improvement
+Personal Finance & Money
+Academia
+Law
+Physical Fitness
+Gardening & Landscaping
+Parenting
+more (10)
+English Language & Usage
+Skeptics
+Mi Yodeya (Judaism)
+Travel
+Christianity
+English Language Learners
+Japanese Language
+Chinese Language
+French Language
+German Language
+Biblical Hermeneutics
+History
+Spanish Language
+Islam
+Русский язык
+Russian Language
+Arqade (gaming)
+Bicycles
+Role-playing Games
+Anime & Manga
+Puzzling
+Motor Vehicle Maintenance & Repair
+Board & Card Games
+Bricks
+Homebrewing
+Martial Arts
+The Great Outdoors
+Poker
+Chess
+Sports
+more (16)
+MathOverflow
+Mathematics
+Cross Validated (stats)
+Theoretical Computer Science
+Physics
+Chemistry
+Biology
+Computer Science
+Philosophy
+Linguistics
+Psychology & Neuroscience
+Computational Science
+more (10)
+Meta Stack Exchange
+Stack Apps
+API
+Data
+Blog
+Facebook
+Twitter
+LinkedIn
+Instagram
+site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
+rev 2021.5.28.39383
+Stack Overflow works best with JavaScript enabled
+Your privacy
+By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
+Accept all cookies
+Customize settings

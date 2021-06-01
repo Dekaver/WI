@@ -1,1 +1,93 @@
-countvectorizer throwing valueerror empty vocabulary perhaps documents contain stop words users discussions python org countvectorizer throwing valueerror empty vocabulary perhaps documents contain stop words users piyushkyushu piyush kyushu october first clustered text data combined documents label single document code combine documents docs_df pd dataframe data columns doc docs_df topic cluster labels_ docs_df doc_id range len docs_df docs_per_topic docs_df dropna subset doc groupby topic as_index false agg doc join want tf idf using countvectorizer using code import numpy np sklearn feature_extraction text import countvectorizer def c_tf_idf documents ngram_range count countvectorizer ngram_range ngram_range stop_words english fit documents count transform documents toarray w sum axis tf np divide w sum_t sum axis idf np log np divide sum_t reshape tf_idf np multiply tf idf return tf_idf count tf_idf count c_tf_idf docs_per_topic doc values len data getting error valueerror traceback recent call last return tf_idf count tf_idf count c_tf_idf docs_per_topic doc values len data c_tf_idf documents ngram_range def c_tf_idf documents ngram_range count countvectorizer ngram_range ngram_range stop_words english fit documents count transform documents toarray w sum axis opt anaconda envs tensorflow lib python site packages sklearn feature_extraction text py fit self raw_documents self _warn_for_unused_params self fit_transform raw_documents return self opt anaconda envs tensorflow lib python site packages sklearn feature_extraction text py fit_transform self raw_documents vocabulary x self count_vocab raw_documents self fixed_vocabulary self binary opt anaconda envs tensorflow lib python site packages sklearn feature_extraction text py _count_vocab self raw_documents fixed_vocab vocabulary dict vocabulary vocabulary raise valueerror empty vocabulary perhaps documents contain stop words valueerror empty vocabulary perhaps documents contain stop words tried using split forum suggested giving another error would appreciate suggestions solutions problem thank lrjball lewis ball october hi piyush think issue something dataset preprocessing happens part countvectorizer words actually counted default word alphanumeric characters surrounded whitespace punctuation meaning single letter words get removed also choose remove english stopwords like using stopwords english etc words also removed words left count countvectorizer give error getting example fail words stripped preprocessing sklearn feature_extraction text import countvectorizer cv countvectorizer fit b c fail cv countvectorizer fit valid sentence contains words home categories faq guidelines terms service privacy policy powered discourse best viewed javascript enabled
+CountVectorizer throwing ValueError: empty vocabulary; perhaps the documents only contain stop words - Users - Discussions on Python.org
+CountVectorizer throwing ValueError: empty vocabulary; perhaps the documents only contain stop words
+Users
+PiyushKyushu
+(Piyush Kyushu)
+October 8, 2020, 12:56am
+#1
+First I clustered my text data and then I combined all the documents that have the same label into a single document.
+The code to combine all documents is:
+docs_df = pd.DataFrame(data, columns=["Doc"])
+docs_df['Topic'] = cluster.labels_
+docs_df['Doc_ID'] = range(len(docs_df))
+docs_per_topic = docs_df.dropna(subset=['Doc']).groupby(['Topic'], as_index = False).agg({'Doc': ' '.join})
+Now I want tf-idf and for that, I am using CountVectorizer using the below code:
+import numpy as np
+from sklearn.feature_extraction.text import CountVectorizer
+def c_tf_idf(documents, m, ngram_range=(1, 1)):
+count = CountVectorizer(ngram_range=ngram_range, stop_words="english").fit(documents)
+t = count.transform(documents).toarray()
+w = t.sum(axis=1)
+tf = np.divide(t.T, w)
+sum_t = t.sum(axis=0)
+idf = np.log(np.divide(m, sum_t)).reshape(-1, 1)
+tf_idf = np.multiply(tf, idf)
+return tf_idf, count
+tf_idf, count = c_tf_idf(docs_per_topic.Doc.values, m=len(data))
+But I am getting the below error:
+ValueError
+Traceback (most recent call last)
+in
+13
+return tf_idf, count
+14
+—> 15 tf_idf, count = c_tf_idf(docs_per_topic.Doc.values, m=len(data))
+in c_tf_idf(documents, m, ngram_range)
+3
+4 def c_tf_idf(documents, m, ngram_range=(1, 1)):
+----> 5
+count = CountVectorizer(ngram_range=ngram_range, stop_words=“english”).fit(documents)
+6
+t = count.transform(documents).toarray()
+7
+w = t.sum(axis=1)
+~/opt/anaconda3/envs/tensorflow/lib/python3.7/site-packages/sklearn/feature_extraction/text.py in fit(self, raw_documents, y)
+1184
+“”"
+1185
+self._warn_for_unused_params()
+-> 1186
+self.fit_transform(raw_documents)
+1187
+return self
+1188
+~/opt/anaconda3/envs/tensorflow/lib/python3.7/site-packages/sklearn/feature_extraction/text.py in fit_transform(self, raw_documents, y)
+1218
+1219
+vocabulary, X = self.count_vocab(raw_documents,
+-> 1220
+self.fixed_vocabulary)
+1221
+1222
+if self.binary:
+~/opt/anaconda3/envs/tensorflow/lib/python3.7/site-packages/sklearn/feature_extraction/text.py in _count_vocab(self, raw_documents, fixed_vocab)
+1148
+vocabulary = dict(vocabulary)
+1149
+if not vocabulary:
+-> 1150
+raise ValueError(“empty vocabulary; perhaps the documents only”
+1151
+" contain stop words")
+1152
+ValueError: empty vocabulary; perhaps the documents only contain stop words
+I tried using split as some forum suggested but that is giving another error.
+I would appreciate suggestions or solutions to my problem.
+Thank you.
+lrjball
+(Lewis Ball)
+October 10, 2020, 12:12am
+#2
+Hi Piyush,
+I think this issue is something to do with your dataset. There is some preprocessing that happens as part of CountVectorizer before the words are actually counted. By default a ‘word’ is 2 or more alphanumeric characters surrounded by whitespace/punctuation, meaning single letter words get removed. Also, if you choose to remove english stopwords like you have using stopwords='english' (‘the’, ‘is’, ‘and’ etc.) then these words will also be removed. If there are no words left to count after this then CountVectorizer will give the error you are getting.
+For example, this will fail as all the words are stripped out in preprocessing:
+from sklearn.feature_extraction.text import CountVectorizer
+cv = CountVectorizer().fit(['a', 'b', 'c'])
+but this will not fail:
+cv = CountVectorizer().fit(['this is a valid sentence that contains words'])
+Home
+Categories
+FAQ/Guidelines
+Terms of Service
+Privacy Policy
+Powered by Discourse, best viewed with JavaScript enabled

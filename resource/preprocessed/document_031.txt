@@ -1,1 +1,361 @@
-django python object attribute append error stack overflow stack overflow products teams stack overflow public questions answers stack overflow teams developers technologists share private knowledge coworkers jobs programming related technical career opportunities talent recruit tech talent build employer brand advertising reach developers technologists worldwide company loading log sign current community stack overflow help chat meta stack overflow communities sign log customize list stack exchange communities company blog people code want input take survey join stack overflow learn share knowledge build career sign email sign sign google sign github sign facebook home public questions tags users find job jobs companies teams stack overflow teams collaborate share knowledge private group create free team teams teams create free team teams q work connect share knowledge within single location structured easy search learn python object attribute append error ask question asked years months ago active years month ago viewed k times dashboard function profile profiles tags trying throw tag went parser list list template import feedparser rss_result tags profile tags tag tags rss feedparser parse tag tag_rss tag tag_rss url string rss append rss_result context tag_rss rss_result throwing error exception value object attribute append wrong thanks help advance python django parsing share improve question follow asked mar modelesqmodelesq gold badges silver badges bronze badges add comment answers active oldest votes think meant rss_result append rss backwards also could write fewer lines list comprehension entirely though import feedparser tags profile tags context tag_rss feedparser parse tag tag_rss tag tags need use rss_result work okay share improve answer follow edited apr answered mar anorovanorov silver badges bronze badges add comment change rss append rss_result rss_result append rss want append item rss list rss_result error like helpful try parse error actually telling exception value object attribute append seems problem trying call attribute append look back code see place trying append something rss append rss_result case easily see trying call append rss looking code see rss container feedparser output want append anything want object appended something else case want take list rss_result append rss variable end empty list hence rss_result append rss share improve answer follow answered mar gordonsbeardgordonsbeard silver badges bronze badges add comment mixed line rss append rss_result rss_result append rss share improve answer follow answered mar benjaminbenjamin silver badges bronze badges add comment answer thanks contributing answer stack overflow please sure answer question provide details share research avoid asking help clarification responding answers making statements based opinion back references personal experience learn see tips writing great answers draft saved draft discarded sign log sign using google sign using facebook sign using email password submit post guest name email required never shown post guest name email required never shown post answer discard clicking post answer agree terms service privacy policy cookie policy answer looking browse questions tagged python django parsing ask question overflow blog podcast blocking haters service developer survey open featured meta testing three vote close reopen network sites future community promotion open source hot network questions ads rule proposal one delete undelete per post take developer survey related execute program call system command python metaclasses python difference python list methods append extend python ternary conditional operator get current time python know object attribute python concatenate two lists python manually raising throwing exception python python parse json data python string contains substring method hot network questions primary school child writing music duct tape medical tape deal soft alpha gamer player colleagues learned opposite definitions test validation sets would probable reaction belarusian planes entered lithuanian airspace book referring software provide facts conclusion want reach fixture natural gas fired forced air furnace smoke detector word trafficking mean freight transportation without conveying meaning illegal especially following sentence blind rivet nuts ebike battery frame aluminium steel short way writing x x b x c simplify ijk string us government mandate people allowed eat use score highest sentence exactly carries energy transformer primary secondary possible make toffoli gate using cnots ancillas voltage increase batteries connected parallel possible eletronically disable ejection seat possible airplane enter another airplane ants trees ok bad prevent pencil colour drawings fading away still drawing thought understood tenses valid esta got refused b b us visa c standard card deck way limit players currency system resource system hot questions question feed subscribe rss question feed subscribe rss feed copy paste url rss reader lang py stack overflow questions jobs developer jobs directory salary calculator help mobile products teams talent advertising enterprise company press work legal privacy policy terms service contact us cookie settings cookie policy stack exchange network technology life arts culture recreation science stack overflow server fault super user web applications ask ubuntu webmasters game development tex latex software engineering unix linux ask different apple wordpress development geographic information systems electrical engineering android enthusiasts information security database administrators drupal answers sharepoint user experience mathematica salesforce expressionengine answers stack overflow em português blender network engineering cryptography code review magento software recommendations signal processing emacs raspberry pi stack overflow на русском code golf stack overflow en español ethereum data science arduino bitcoin software quality assurance testing sound design windows phone photography science fiction fantasy graphic design movies tv music practice theory worldbuilding video production seasoned advice cooking home improvement personal finance money academia law physical fitness gardening landscaping parenting english language usage skeptics mi yodeya judaism travel christianity english language learners japanese language chinese language french language german language biblical hermeneutics history spanish language islam русский язык russian language arqade gaming bicycles role playing games anime manga puzzling motor vehicle maintenance repair board card games bricks homebrewing martial arts great outdoors poker chess sports mathoverflow mathematics cross validated stats theoretical computer science physics chemistry biology computer science philosophy linguistics psychology neuroscience computational science meta stack exchange stack apps api data blog facebook twitter linkedin instagram site design logo stack exchange inc user contributions licensed cc sa rev stack overflow works best javascript enabled privacy clicking accept cookies agree stack exchange store cookies device disclose information accordance cookie policy accept cookies customize settings
+django - Python: Object has no attribute 'append' Error - Stack Overflow
+Stack Overflow
+About
+Products
+For Teams
+Stack Overflow
+Public questions & answers
+Stack Overflow for Teams
+Where developers & technologists share private knowledge with coworkers
+Jobs
+Programming & related technical career opportunities
+Talent
+Recruit tech talent & build your employer brand
+Advertising
+Reach developers & technologists worldwide
+About the company
+Loading…
+Log in
+Sign up
+current community
+Stack Overflow
+help
+chat
+Meta Stack Overflow
+your communities
+Sign up or log in to customize your list.
+more stack exchange communities
+company blog
+People who code: we want your input.
+Take the Survey
+Join Stack Overflow to learn, share knowledge, and build your career.
+Sign up with email
+Sign up
+Sign up with Google
+Sign up with GitHub
+Sign up with Facebook
+Home
+Public
+Questions
+Tags
+Users
+Find a Job
+Jobs
+Companies
+Teams
+Stack Overflow for Teams
+– Collaborate and share knowledge with a private group.
+Create a free Team
+What is Teams?
+Teams
+What’s this?
+Create free Team
+Teams
+Q&A for work
+Connect and share knowledge within a single location that is structured and easy to search.
+Learn more
+Python: Object has no attribute 'append' Error
+Ask Question
+Asked
+8 years, 3 months ago
+Active
+8 years, 2 months ago
+Viewed
+5k times
+0
+In my dashboard function I have a profile. Profiles have tags. What i'm trying to do is throw each tag that went through the parser into a list. And then that list to the template:
+import feedparser
+rss_result = []
+tags = profile.tags.all()
+for tag in tags:
+rss = feedparser.parse(tag.tag_rss) #tag.tag_rss is a url string
+rss.append(rss_result)
+context['tag_rss'] = rss_result
+It's throwing this error: Exception Value: object has no attribute 'append
+What am I doing wrong? Thanks for your help in advance.
+python django parsing
+Share
+Follow
+asked Mar 1 '13 at 21:06
+ModelesqModelesq
+4,4101515 gold badges5252 silver badges7676 bronze badges
+0
+Add a comment
+|
+3 Answers
+3
+Active
+Oldest
+Votes
+5
+I think you meant to do rss_result.append(rss). You have it backwards.
+Also, you could write it in fewer lines with a list comprehension. Entirely up to you, though.
+import feedparser
+tags = profile.tags.all()
+context['tag_rss'] = [feedparser.parse(tag.tag_rss) for tag in tags]
+# if you don't need to re-use rss_result, this should work okay
+Share
+Follow
+edited Apr 2 '13 at 1:11
+answered Mar 1 '13 at 21:09
+AnorovAnorov
+1,8601313 silver badges1818 bronze badges
+0
+Add a comment
+|
+2
+Change
+rss.append(rss_result)
+to
+rss_result.append(rss)
+You want to append the item rss to the list, which is rss_result.
+When you have an error like this it's helpful to try and parse out what the error is actually telling you:
+Exception Value: object has no attribute 'append'
+There seems to be a problem here when trying to call the attribute, append, so if you look back in your code you can see the only place you're trying to append something, is when you have rss.append(rss_result). In this case you can easily see that it's trying to call append on rss, and by looking at your code you can see that rss is the container for the feedparser output, and you don't want to append anything to that, you want that object to be appended to something else.
+In this case you want to take your list, rss_result, and append the rss variable to the end of this empty list. hence: rss_result.append(rss)
+Share
+Follow
+answered Mar 1 '13 at 21:10
+GordonsBeardGordonsBeard
+52833 silver badges1414 bronze badges
+Add a comment
+|
+0
+your mixed up this line: rss.append(rss_result)
+should be rss_result.append(rss)
+Share
+Follow
+answered Mar 1 '13 at 21:10
+BenjaminBenjamin
+61133 silver badges88 bronze badges
+Add a comment
+|
+Your Answer
+Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
+Draft saved
+Draft discarded
+Sign up or log in
+Sign up using Google
+Sign up using Facebook
+Sign up using Email and Password
+Submit
+Post as a guest
+Name
+Email
+Required, but never shown
+Post as a guest
+Name
+Email
+Required, but never shown
+Post Your Answer
+Discard
+By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
+Not the answer you're looking for? Browse other questions tagged python django parsing
+or ask your own question.
+The Overflow Blog
+Level Up: Linear Regression in Python – Part 2
+Shipping confetti to Stack Overflow’s design system
+Featured on Meta
+The future of Community Promotion, Open Source, and Hot Network Questions Ads
+Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
+Take the 2021 Developer Survey
+Related
+5316
+How to execute a program or call a system command from Python
+6178
+What are metaclasses in Python?
+3114
+What is the difference between Python's list methods append and extend?
+6671
+Does Python have a ternary conditional operator?
+3261
+How to get the current time in Python
+1914
+How to know if an object has an attribute in Python
+2947
+How do I concatenate two lists in Python?
+2551
+Manually raising (throwing) an exception in Python
+1490
+Why can't Python parse this JSON data?
+3596
+Does Python have a string 'contains' substring method?
+Hot Network Questions
+The usage of can't
+Efficient ragged path for text
+What technical reasons prevented the Win9x Virtual Machine Monitor from running multiple threads simultaneously?
+Can a rest be taken in a moving cart?
+A bracket amphitheater
+Is the the word order of "Iura novit curia" used for emphasis?
+identify M.2 SSD from BASH Script
+How can I state an axiom without enumeration?
+The famous "Charaiveti" mantra is mentioned in which Vedic verse?
+Factorising blinear forms with Mathematica
+Advice needed – I can't reach my collaborator, but there's a short deadline for revising our journal article submission
+How do I make a "ragged" table?
+Why do we have two kidneys but one liver?
+Engine failure: how to detect?
+select distinct columns over multiple databases sql server
+Generate a British numberplate
+According to international law, when is first-use nuclear strike justified?
+Why isn't it the norm to have research repeated immediately by other academics?
+Why didn't Japan call for the ICJ to settle the dispute over the Senkaku/Diaoyu Islands?
+What's a lot of money {out of curiosity}?
+Stop, in the name of the law
+How can I specify the qubits on quantum computers that I want to use?
+How can objects be neither vector nor scalar?
+Why is g3 a bad move here?
+more hot questions
+Question feed
+Subscribe to RSS
+Question feed
+To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+lang-py
+Stack Overflow
+Questions
+Jobs
+Developer Jobs Directory
+Salary Calculator
+Help
+Mobile
+Products
+Teams
+Talent
+Advertising
+Enterprise
+Company
+About
+Press
+Work Here
+Legal
+Privacy Policy
+Terms of Service
+Contact Us
+Cookie Settings
+Cookie Policy
+Stack Exchange Network
+Technology
+Life / Arts
+Culture / Recreation
+Science
+Other
+Stack Overflow
+Server Fault
+Super User
+Web Applications
+Ask Ubuntu
+Webmasters
+Game Development
+TeX - LaTeX
+Software Engineering
+Unix & Linux
+Ask Different (Apple)
+WordPress Development
+Geographic Information Systems
+Electrical Engineering
+Android Enthusiasts
+Information Security
+Database Administrators
+Drupal Answers
+SharePoint
+User Experience
+Mathematica
+Salesforce
+ExpressionEngine® Answers
+Stack Overflow em Português
+Blender
+Network Engineering
+Cryptography
+Code Review
+Magento
+Software Recommendations
+Signal Processing
+Emacs
+Raspberry Pi
+Stack Overflow на русском
+Code Golf
+Stack Overflow en español
+Ethereum
+Data Science
+Arduino
+Bitcoin
+Software Quality Assurance & Testing
+Sound Design
+Windows Phone
+more (29)
+Photography
+Science Fiction & Fantasy
+Graphic Design
+Movies & TV
+Music: Practice & Theory
+Worldbuilding
+Video Production
+Seasoned Advice (cooking)
+Home Improvement
+Personal Finance & Money
+Academia
+Law
+Physical Fitness
+Gardening & Landscaping
+Parenting
+more (10)
+English Language & Usage
+Skeptics
+Mi Yodeya (Judaism)
+Travel
+Christianity
+English Language Learners
+Japanese Language
+Chinese Language
+French Language
+German Language
+Biblical Hermeneutics
+History
+Spanish Language
+Islam
+Русский язык
+Russian Language
+Arqade (gaming)
+Bicycles
+Role-playing Games
+Anime & Manga
+Puzzling
+Motor Vehicle Maintenance & Repair
+Board & Card Games
+Bricks
+Homebrewing
+Martial Arts
+The Great Outdoors
+Poker
+Chess
+Sports
+more (16)
+MathOverflow
+Mathematics
+Cross Validated (stats)
+Theoretical Computer Science
+Physics
+Chemistry
+Biology
+Computer Science
+Philosophy
+Linguistics
+Psychology & Neuroscience
+Computational Science
+more (10)
+Meta Stack Exchange
+Stack Apps
+API
+Data
+Blog
+Facebook
+Twitter
+LinkedIn
+Instagram
+site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
+rev 2021.5.28.39383
+Stack Overflow works best with JavaScript enabled
+Your privacy
+By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
+Accept all cookies
+Customize settings

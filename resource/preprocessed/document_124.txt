@@ -1,0 +1,461 @@
+java - Uncompilable source code - Erroneous sym type: - Stack Overflow
+Stack Overflow
+About
+Products
+For Teams
+Stack Overflow
+Public questions & answers
+Stack Overflow for Teams
+Where developers & technologists share private knowledge with coworkers
+Jobs
+Programming & related technical career opportunities
+Talent
+Recruit tech talent & build your employer brand
+Advertising
+Reach developers & technologists worldwide
+About the company
+Loading…
+Log in
+Sign up
+current community
+Stack Overflow
+help
+chat
+Meta Stack Overflow
+your communities
+Sign up or log in to customize your list.
+more stack exchange communities
+company blog
+People who code: we want your input.
+Take the Survey
+Join Stack Overflow to learn, share knowledge, and build your career.
+Sign up with email
+Sign up
+Sign up with Google
+Sign up with GitHub
+Sign up with Facebook
+Home
+Public
+Questions
+Tags
+Users
+Find a Job
+Jobs
+Companies
+Teams
+Stack Overflow for Teams
+– Collaborate and share knowledge with a private group.
+Create a free Team
+What is Teams?
+Teams
+What’s this?
+Create free Team
+Teams
+Q&A for work
+Connect and share knowledge within a single location that is structured and easy to search.
+Learn more
+Uncompilable source code - Erroneous sym type:
+Ask Question
+Asked
+5 years, 4 months ago
+Active
+9 months ago
+Viewed
+34k times
+13
+4
+There was error occurred in Line 14.
+Exception in thread "main" java.lang.RuntimeException: Uncompilable
+source code - Erroneous sym type:
+Hard to find solution.
+package example;
+public class Num
+{
+public static void main(String [] args)
+{
+String s = "42";
+try
+{
+s = s.concat(".5");
+double d = Double.parseDouble(s);
+s = Double.toString(d);
+int x = (int) Math.ceil(Double.valueOf(s).doubleValue()); //Line 14
+System.out.println(x);
+}
+catch (NumberFormatException e)
+{
+System.out.println("Wrong Number");
+}
+}
+}
+java
+Share
+Follow
+edited Jan 31 '16 at 12:51
+SatyaTNV
+4,05333 gold badges1313 silver badges3030 bronze badges
+asked Jan 31 '16 at 12:49
+Dis_ProDis_Pro
+58311 gold badge1010 silver badges2121 bronze badges
+3
+3
+It compiles and runs perfectly on my computer, with the output 43
+– dryairship
+Jan 31 '16 at 12:50
+1
+I think it is problem on my Netbeans IDE
+– Dis_Pro
+Jan 31 '16 at 12:59
+@Dissanayake Please accept the answer which helped you most in solving your problem. It helps future readers. If the answers weren't helpful leave comments below them. So the poster can update them accordingly.
+– Roshana Pitigala
+Sep 23 '18 at 18:54
+Add a comment
+|
+7 Answers
+7
+Active
+Oldest
+Votes
+31
+The code you provided runs fine on my computer.
+I'm guessing you are using Netbeans and may be affected by a bug.
+Try this:
+Open the project properties, select the Build-Compiling, uncheck "Compile on save" and rerun the application. This will make sure all your source code becomes recompiled before running it.
+Link:
+https://forums.netbeans.org/topic43241.html
+Share
+Follow
+answered Jan 31 '16 at 12:54
+sinclairsinclair
+2,41644 gold badges2020 silver badges4848 bronze badges
+2
+Yeah. It is problem with my netbeans IDE. I have tried by changing project properties but not compiled. Then I move to the eclips instead
+– Dis_Pro
+Feb 28 '16 at 7:14
+1
+I just had this issue on NetBeans 11.2 and this answer solved the issue. Thanks!
+– Nomad
+Mar 29 '20 at 14:56
+Add a comment
+|
+8
+This is a common issue which I get while working. What I do is clean and build the project. It solves the problem.
+Right Click on the project name >> Clean and build
+Share
+Follow
+answered Mar 30 '18 at 11:54
+Roshana PitigalaRoshana Pitigala
+7,12388 gold badges3838 silver badges6666 bronze badges
+1
+In my case the i got the same error when i renamed a method in repository and forgot to rename the call to the same method in ServiceImpl.
+Clean build pointed me to the real problem.
+– Slobodan Margetić
+Sep 18 '20 at 18:11
+Add a comment
+|
+1
+Download/install JDK major version number the same as NetBeans.
+i.e.
+If You have NetBeans 9 version, but your JDK is version 10,then try use NetBeans 10 version... or download/install JDK 9 (the same as NetBeans).
+Create new java platform for new jdk installation.
+Open netbeans menubar->tools->Java Platforms->Add Platform
+Specify the folder that contains the Java platform as well as the sources and Javadoc needed for debugging.
+Set new java platform to your project
+Right click on project ->properties->Libraries->Java Platform->select the jdk version that
+same as NetBeans
+Select source format of your project
+Right click on project ->properties->Sources->Sources/binary format->select the jdk version that
+same as NetBeans.
+If it still gives errors like,
+Exception in thread "main" java.lang.RuntimeException:
+at javaapplication2.JavaApplication2.main(JavaApplication2.java:1)
+C:\Users\James\AppData\Local\NetBeans\Cache\dev\executor-snippets\run.xml:111: The following error occurred while executing this line:
+C:\Users\James\AppData\Local\NetBeans\Cache\dev\executor-snippets\run.xml:68: Java returned: 1
+BUILD FAILED (total time: 1 second)
+do as "sinclair" has mentioned above.
+Open the project properties, select the Build-Compiling, uncheck "Compile on save" and rerun the application. This will make sure all your source code becomes recompiled before running it.
+Share
+Follow
+edited Aug 24 '20 at 9:50
+answered Aug 24 '20 at 9:14
+Yasitha BandaraYasitha Bandara
+1,09511 gold badge1111 silver badges1818 bronze badges
+Add a comment
+|
+0
+I received this error after I'd changed the type of a function parameter and it was the calling page that was in error - but I didn't see this until a magical Clean and Build pointed me to the actual issue!
+Share
+Follow
+answered Oct 28 '19 at 13:47
+DaveDave
+2,4492626 silver badges3030 bronze badges
+Add a comment
+|
+-1
+I got this error message because I copied and pasted code without including the package name. I added the package name and it was fixed.
+Share
+Follow
+answered Jul 16 '18 at 15:34
+AbdoAbdo
+922 bronze badges
+0
+Add a comment
+|
+-2
+in my case
+i have solved using import with package name and class name
+like this import package.class1;
+Share
+Follow
+answered Dec 15 '18 at 9:06
+Shah HarshShah Harsh
+144 bronze badges
+Add a comment
+|
+-2
+Please uncheck "Compile on save"
+Share
+Follow
+edited May 15 '20 at 19:41
+Paul Roub
+35.1k2727 gold badges7272 silver badges8383 bronze badges
+answered May 15 '20 at 15:14
+Milad TazikehMilad Tazikeh
+7111 silver badge33 bronze badges
+Add a comment
+|
+Your Answer
+Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
+Draft saved
+Draft discarded
+Sign up or log in
+Sign up using Google
+Sign up using Facebook
+Sign up using Email and Password
+Submit
+Post as a guest
+Name
+Email
+Required, but never shown
+Post as a guest
+Name
+Email
+Required, but never shown
+Post Your Answer
+Discard
+By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
+Not the answer you're looking for? Browse other questions tagged java
+or ask your own question.
+The Overflow Blog
+Level Up: Linear Regression in Python – Part 2
+Shipping confetti to Stack Overflow’s design system
+Featured on Meta
+The future of Community Promotion, Open Source, and Hot Network Questions Ads
+Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
+Take the 2021 Developer Survey
+Visit chat
+Linked
+0
+How to access methods from main regarding an array
+2
+Java HashMap<int[], Integer>
+-1
+I want to find even and odd number using two thread evenCount and oddCount
+0
+Strange error in Netbeans when moving class to new folder
+1
+Problem in running java code in netbeans ide
+Related
+1715
+How can I avoid Java code in JSP files, using JSP 2?
+45
+Why is this Java code 6x faster than the identical C# code?
+1818
+Why does this code using random strings print “hello world”?
+0
+Uncompilable source code Error?
+9
+ExecutorService workStealingPool and cancel method
+0
+How to manage multithread in java?
+0
+Erroneous sym type
+Hot Network Questions
+Peer review 2.0
+What is the difference between “they” and “it” for people, especially for those people who choose to be identified as non-binary?
+Why is g3 a bad move here?
+What's the cohomology ring structure of a blow-up?
+Why would birds fall from the sky due to a lack of moisture?
+The usage of can't
+Is there any realistic explanation for Earth-like climate on a Sun-sized planet?
+I think I've sh-- myself
+How could publicly accessible information proving that a public figure is corrupt go undetected for at least a year?
+Did ancient Greek mathematicians consider numbers independently of geometry?
+Why do we have two kidneys but one liver?
+Why can't the piano play middle eastern music?
+The famous "Charaiveti" mantra is mentioned in which Vedic verse?
+Is it significantly faster to hike along a river bank?
+Movie where someone's wife is secretly a monster
+unknown pieces of a set - stickers on round corner bricks
+Please Identify this outdoor plant?
+Is it better to resize an image by minus 10% or by minus 50%?
+removing multiple lines - d3d vs 3dd
+A planet with toxic air
+How can I specify the qubits on quantum computers that I want to use?
+"a man/woman of difficult situations", does this sound idiomatic?
+Triangle-style sequences
+Why isn't it the norm to have research repeated immediately by other academics?
+more hot questions
+Question feed
+Subscribe to RSS
+Question feed
+To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+lang-java
+Stack Overflow
+Questions
+Jobs
+Developer Jobs Directory
+Salary Calculator
+Help
+Mobile
+Products
+Teams
+Talent
+Advertising
+Enterprise
+Company
+About
+Press
+Work Here
+Legal
+Privacy Policy
+Terms of Service
+Contact Us
+Cookie Settings
+Cookie Policy
+Stack Exchange Network
+Technology
+Life / Arts
+Culture / Recreation
+Science
+Other
+Stack Overflow
+Server Fault
+Super User
+Web Applications
+Ask Ubuntu
+Webmasters
+Game Development
+TeX - LaTeX
+Software Engineering
+Unix & Linux
+Ask Different (Apple)
+WordPress Development
+Geographic Information Systems
+Electrical Engineering
+Android Enthusiasts
+Information Security
+Database Administrators
+Drupal Answers
+SharePoint
+User Experience
+Mathematica
+Salesforce
+ExpressionEngine® Answers
+Stack Overflow em Português
+Blender
+Network Engineering
+Cryptography
+Code Review
+Magento
+Software Recommendations
+Signal Processing
+Emacs
+Raspberry Pi
+Stack Overflow на русском
+Code Golf
+Stack Overflow en español
+Ethereum
+Data Science
+Arduino
+Bitcoin
+Software Quality Assurance & Testing
+Sound Design
+Windows Phone
+more (29)
+Photography
+Science Fiction & Fantasy
+Graphic Design
+Movies & TV
+Music: Practice & Theory
+Worldbuilding
+Video Production
+Seasoned Advice (cooking)
+Home Improvement
+Personal Finance & Money
+Academia
+Law
+Physical Fitness
+Gardening & Landscaping
+Parenting
+more (10)
+English Language & Usage
+Skeptics
+Mi Yodeya (Judaism)
+Travel
+Christianity
+English Language Learners
+Japanese Language
+Chinese Language
+French Language
+German Language
+Biblical Hermeneutics
+History
+Spanish Language
+Islam
+Русский язык
+Russian Language
+Arqade (gaming)
+Bicycles
+Role-playing Games
+Anime & Manga
+Puzzling
+Motor Vehicle Maintenance & Repair
+Board & Card Games
+Bricks
+Homebrewing
+Martial Arts
+The Great Outdoors
+Poker
+Chess
+Sports
+more (16)
+MathOverflow
+Mathematics
+Cross Validated (stats)
+Theoretical Computer Science
+Physics
+Chemistry
+Biology
+Computer Science
+Philosophy
+Linguistics
+Psychology & Neuroscience
+Computational Science
+more (10)
+Meta Stack Exchange
+Stack Apps
+API
+Data
+Blog
+Facebook
+Twitter
+LinkedIn
+Instagram
+site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
+rev 2021.5.28.39383
+Stack Overflow works best with JavaScript enabled
+Your privacy
+By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
+Accept all cookies
+Customize settings

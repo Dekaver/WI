@@ -1,1 +1,536 @@
-python cannot import data using pandas edureka community python cannot import data using pandas toggle navigation back ask question blogs browse categories browse categories apache kafkaapache sparkbig data hadoopblockchaincareer counsellingcloud computingcyber security ethical hackingdata analyticsdatabasedevops agileevents trending topicsiot internet things javalinux administrationmachine learningmicrostrategypmppower bipythonrpaseleniumsoftware testingtableautalendweb developmentask us anything others log sign home community categories data analytics python cannot import data using pandas python cannot import data using pandas votes tried work following machine learning tutorial http machinelearningmastery com machine learning python step step mac development environment python scipy b numpy rc matplotlib pandas sklearn try run script load data url containing csv data get following error traceback recent call last file load_data py line dataset pandas read_csv url names names nameerror name pandas defined script load dataset url https archive ics uci edu ml machine learning databases iris iris data names sepal length sepal width petal length petal width class dataset pandas read_csv url names names python python pandas machine learning dec data analytics shubham points views answer comment flag similar error fix thank much commented may anonymous flag reply hi forgotten import pandas library imported library code worked fine import pandas commented may shubham flag reply comment question name display optional email address comment added mine email comment added mine privacy email address used sending notifications add comment cancel answer question answer name display optional email address answer selected commented email answer selected commented privacy email address used sending notifications add answer cancel votes error says dataset pandas read_csv url names names nameerror name pandas defined probably means trying use pandas read_csv without importing pandas first want use external library import installed machine may install first assuming pandas installed machine code work import pandas url https archive ics uci edu ml machine learning databases iris iris data names sepal length sepal width petal length petal width class dataset pandas read_csv url names names output dataset head sepal length sepal width petal length petal width class iris setosa iris setosa iris setosa answered dec upasana points comment flag ask related question modulenotfounderror traceback recent call last import pandas url https archive ics uci edu ml machine learning databases iris iris data names sepal length sepal width petal length petal width class dataset pandas read_csv url names names modulenotfounderror module named pandas commented sep dmitrii voitovich flag reply trying import pandas module installed system install pandas run command terminal pip install pandas commented sep omkar points flag reply comment answer name display optional email address comment added mine email comment added mine privacy email address used sending notifications add comment cancel related questions data analytics votes answer package used data import r python import sas data data import using multiple read answered aug data analytics abhi points views data science python r vote answer error saying vector size cannot na using r data mining use removesparseterm function removes sparse read answered nov data analytics maverick points views r programming data science data mining data analytics votes answer achieve pivot like data using tidyverse library r need spread twice read answered apr data analytics kappa points views data science data science using r r dataframe tidyverse votes answer join list data frames using map call use reduce set seed r map c read answered apr data analytics sahiti points views data science r data science using r votes answer join list data frames using map use reduce set seed r map c read answered apr data analytics kappa points views r data science tidyverse dataframe votes answer merge data frames using joins use merge function read answered apr data analytics kappa points views r joins merge git devops tools devops dataframe votes answer change string list suppose string read answered may python mohammad points views python string python datatypes python python test processing python services python list python functions python sequence types python types votes answers randomly select items list also use random library read answered apr python patrick views python programming python python list python datatypes python functions python sequence types python types vote answers count items list syntax list count value code colors red green read answered jul python neha points edited jul kalgi views python programming python python list python datatypes python functions python sequence types python types votes answers use enumerate function inside list give example using read may python waseem points views python list python datatypes python python functions python sequence types python types python programming recent data analyticshow combine list data frames one data frame dec access profile assignment pubg analysis data science webinar dec code sum imported data set rstudio dec following applicable bigdata technologies select applicable dec dual platform architecture mean dec categories apache kafka apache spark big data hadoop blockchain career counselling cloud computing cyber security ethical hacking data analytics database devops agile events trending topics iot internet things java linux administration machine learning microstrategy pmp power bi python rpa selenium software testing tableau talend web development ask us anything others join world active tech community welcome back world active tech community sign gmail sign facebook please provide valid input sign already edureka account login please enter valid emailid forgot password login edureka account sign resend reset password edureka account sign reset password edureka account sign send code edureka account sign subscribe newsletter get personalized recommendations sign google signup facebook already account sign trending certification courses devops certification training aws architect certification training big data hadoop certification training tableau training certification python certification training data science selenium certification training pmp certification exam training robotic process automation training using uipath apache spark scala certification training microsoft power bi training online java course training python certification course trending masters courses data scientist masters program devops engineer masters program cloud architect masters program big data architect masters program machine learning engineer masters program full stack web developer masters program business intelligence masters program data analyst masters program test automation engineer masters program post graduate program artificial intelligence machine learning post graduate program big data engineering company us news media reviews contact us blog community sitemap blog sitemap community sitemap work us careers become instructor become affiliate become partner hire edureka download app categories categories cloud computing devops big data data science bi visualization programming frameworks software testing project management methodologies robotic process automation frontend development data warehousing etl artificial intelligence blockchain databases cyber security mobile development operating systems architecture design patterns digital marketing trending blog articles trending blog articles selenium tutorial selenium interview questions java tutorial html java interview questions php tutorial javascript interview questions spring tutorial php interview questions inheritance java polymorphism java spring interview questions pointers c linux commands android tutorial javascript tutorial jquery tutorial sql interview questions mysql tutorial machine learning tutorial python tutorial machine learning ethical hacking tutorial sql injection aws certification career opportunities aws tutorial cloud computing blockchain hadoop tutorial artificial intelligence node tutorial collections java exception handling java python programming language python interview questions multithreading java reactjs tutorial data science vs big data vs data analytics software testing interview questions r tutorial java programs javascript reserved words keywords implement thread yield java examples implement optical character recognition python need know implements java brain ce education solutions pvt ltd rights reserved terms conditions legal privacy pmp pmi pmi acp pmbok registered marks project management institute inc mongodb mongo leaf logo registered trademarks mongodb inc
+Python
+Cannot Import Data using Pandas | Edureka Community
+32589/python-cannot-import-data-using-pandas
+Toggle navigation
+Back
+Ask a question
+Blogs
+Browse Categories
+Browse Categories
+Apache KafkaApache SparkBig Data HadoopBlockchainCareer CounsellingCloud ComputingCyber Security & Ethical HackingData AnalyticsDatabaseDevOps & AgileEvents & Trending TopicsIoT (Internet of Things)JavaLinux AdministrationMachine LearningMicroStrategyPMPPower BIPythonRPASeleniumSoftware TestingTableauTalendWeb DevelopmentAsk us Anything!Others
+Log In
+Sign Up
+Home
+Community
+Categories
+Data Analytics
+Python
+Cannot Import Data using Pandas
+Python
+Cannot Import Data using Pandas
+0 votes
+So, I tried to work through the following machine learning tutorial:
+http://machinelearningmastery.com/machine-learning-in-python-step-by-step/
+This is my (mac) development environment:
+Python 2.7.10
+scipy: 0.13.0b1
+numpy: 1.8.0rc1
+matplotlib: 1.3.1
+pandas: 0.20.2
+sklearn: 0.18.1
+When I try to run a script, to load the data from a URL containing the CSV data, I get the following error:
+Traceback (most recent call last):
+File "load_data.py", line 4, in <module>
+dataset = pandas.read_csv(url, names=names)
+NameError: name 'pandas' is not defined
+Here's the script:
+# Load dataset
+url = "https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
+names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']
+dataset = pandas.read_csv(url, names=names)
+python
+python-2-7
+pandas
+machine-learning
+Dec 7, 2018
+in Data Analytics
+by
+Shubham
+• 13,480 points
+•
+3,770 views
+answer
+comment
+flag
+I have the  similar error. And how did you fix it? Thank you very much!
+commented
+May 5, 2019
+by
+anonymous
+flag
+reply
+Hi. I had forgotten to import pandas library. I imported the library before my code and it worked fine:
+import pandas
+commented
+May 6, 2019
+by
+Shubham
+flag
+reply
+Your comment on this question:
+Your name to display (optional):
+Email me at this address if a comment is added after mine:Email me if a comment is added after mine
+Privacy: Your email address will only be used for sending these notifications.
+Add comment
+Cancel
+1 answer to this question.
+Your answer
+Your name to display (optional):
+Email me at this address if my answer is selected or commented on:Email me if my answer is selected or commented on
+Privacy: Your email address will only be used for sending these notifications.
+Add answer
+Cancel
+0 votes
+So< if your error says:
+dataset = pandas.read_csv(url, names=names)
+NameError: name 'pandas' is not defined
+It probably means you're trying to use pandas.read_csv() without importing Pandas first.When you want to use an external library, you have to import it. if it's not installed on your machine, you may have to install it first too. assuming pandas is installed on your machine, this code will work:
+import pandas
+url = "https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
+names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']
+dataset = pandas.read_csv(url, names=names)
+output:
+dataset.head(3)
+sepal-length
+sepal-width
+petal-length
+petal-width
+class
+0
+5.1
+3.5
+1.4
+0.2
+Iris-setosa
+1
+4.9
+3.0
+1.4
+0.2
+Iris-setosa
+2
+4.7
+3.2
+1.3
+0.2
+Iris-setosa
+answered
+Dec 7, 2018
+by
+Upasana
+• 8,620 points
+comment
+flag
+ask related question
+ModuleNotFoundError
+Traceback (most recent call last)
+<ipython-input-2-da7c156ccdfe> in <module>
+----> 1 import pandas
+2 url = "https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
+3 names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']
+4 dataset = pandas.read_csv(url, names=names)
+ModuleNotFoundError: No module named 'pandas'
+commented
+Sep 27, 2019
+by
+Dmitrii Voitovich
+flag
+reply
+You are trying to import the pandas module but it is not installed on your system. To install pandas run the below command in the terminal:
+pip install pandas
+commented
+Sep 30, 2019
+by
+Omkar
+• 69,130 points
+flag
+reply
+Your comment on this answer:
+Your name to display (optional):
+Email me at this address if a comment is added after mine:Email me if a comment is added after mine
+Privacy: Your email address will only be used for sending these notifications.
+Add comment
+Cancel
+Related Questions In Data Analytics
+0 votes
+1 answer
+Which package is used to do data import in R and Python
+and How do you import SAS data?
+We can do data import using multiple ...READ MORE
+answered
+Aug 24, 2018
+in Data Analytics
+by
+Abhi
+• 3,720 points
+•
+192 views
+data-science
+python
+r
++1 vote
+1 answer
+Error saying "vector size cannot be NA" when using R with data mining
+You can use the removesparseterm function.
+Removes sparse ...READ MORE
+answered
+Nov 15, 2018
+in Data Analytics
+by
+Maverick
+• 10,840 points
+•
+2,118 views
+r-programming
+data-science
+data-mining
+data-analytics
+0 votes
+1 answer
+How to achieve pivot like data using tidyverse library in R?
+You need not spread twice, if you ...READ MORE
+answered
+Apr 4, 2018
+in Data Analytics
+by
+kappa3010
+• 2,090 points
+•
+325 views
+data-science
+data-science-using-r
+r
+dataframe
+tidyverse
+0 votes
+1 answer
+Join list of data.frames using map() call
+You can use Reduce
+set.seed(24)
+r1 <- map(c(5, 10, 15), ...READ MORE
+answered
+Apr 5, 2018
+in Data Analytics
+by
+Sahiti
+• 6,380 points
+•
+404 views
+data-science
+r
+data-science-using-r
+0 votes
+1 answer
+How to join a list of data frames using map()
+You can use reduce
+set.seed(24)
+r1 <- map(c(5, 10, ...READ MORE
+answered
+Apr 11, 2018
+in Data Analytics
+by
+kappa3010
+• 2,090 points
+•
+346 views
+r
+data-science
+tidyverse
+dataframe
+0 votes
+1 answer
+How to merge data frames using joins?
+You can use the merge function with ...READ MORE
+answered
+Apr 12, 2018
+in Data Analytics
+by
+kappa3010
+• 2,090 points
+•
+232 views
+r
+joins
+merge
+git
+devops-tools
+devops
+dataframe
+0 votes
+1 answer
+how do i change string to a list?
+suppose you have a string with a ...READ MORE
+answered
+May 20, 2019
+in Python
+by
+Mohammad
+• 3,230 points
+•
+1,206 views
+python-string
+python-datatypes
+python
+python-test-processing
+python-services
+python-list
+python-functions
+python-sequence-types
+python-types
+0 votes
+2 answers
+how can i randomly select items from a list?
+You can also use the random library's ...READ MORE
+answered
+Apr 9, 2020
+in Python
+by
+Patrick
+•
+2,646 views
+python-programming
+python
+python-list
+python-datatypes
+python-functions
+python-sequence-types
+python-types
++1 vote
+2 answers
+how can i count the items in a list?
+Syntax :
+list. count(value)
+Code:
+colors = ['red', 'green', ...READ MORE
+answered
+Jul 6, 2019
+in Python
+by
+Neha
+• 330 points
+edited
+Jul 8, 2019
+by Kalgi
+•
+2,112 views
+python-programming
+python
+python-list
+python-datatypes
+python-functions
+python-sequence-types
+python-types
+0 votes
+0 answers
+how do i use the enumerate function inside a list?
+can you give an example using a ...READ MORE
+May 7, 2019
+in Python
+by
+Waseem
+• 4,540 points
+•
+1,500 views
+python-list
+python-datatypes
+python
+python-functions
+python-sequence-types
+python-types
+python-programming
+Recent in Data AnalyticsHow to combine a list of data frames into one data frame? Dec 17, 2020 how can i access my profile and assignment for pubg analysis data science webinar? Dec 13, 2020 How to code for the sum of imported data set in rstudio Dec 9, 2020 2) Which of the following are applicable to Bigdata technologies(Select all applicable) Dec 2, 2020 7) What does "Dual platform architecture" mean? Dec 2, 2020
+All categories
+Apache Kafka
+(84)
+Apache Spark
+(598)
+Big Data Hadoop
+(1,860)
+Blockchain
+(1,513)
+Career Counselling
+(1,058)
+Cloud Computing
+(3,097)
+Cyber Security & Ethical Hacking
+(90)
+Data Analytics
+(1,196)
+Database
+(270)
+DevOps & Agile
+(3,096)
+Events & Trending Topics
+(27)
+IoT (Internet of Things)
+(361)
+Java
+(968)
+Linux Administration
+(234)
+Machine Learning
+(173)
+MicroStrategy
+(5)
+PMP
+(367)
+Power BI
+(460)
+Python
+(2,950)
+RPA
+(649)
+Selenium
+(1,550)
+Software Testing
+(55)
+Tableau
+(474)
+Talend
+(73)
+Web Development
+(1,457)
+Ask us Anything!
+(62)
+Others
+(303)
+×
+Join the world's most active Tech Community!
+Welcome back to the World's most active Tech Community!
+Sign up with Gmail
+Sign up with Facebook
+OR
+Please provide a valid input
+SIGN UP
+Already have an Edureka Account? Login
+Please enter a valid emailid
+Forgot Password?
+LOGIN
+Don’t have edureka account? Sign Up
+resend ?
+reset password
+Don’t have edureka account? Sign Up
+reset password
+Don’t have edureka account? Sign Up
+Send Code
+Don’t have edureka account? Sign Up
+Subscribe to our Newsletter, and get personalized recommendations.
+Sign up with Google
+Signup with Facebook
+Already have an account? Sign in.
+×
+TRENDING CERTIFICATION COURSES
+DevOps Certification Training
+AWS Architect Certification Training
+Big Data Hadoop Certification Training
+Tableau Training & Certification
+Python Certification Training for Data Science
+Selenium Certification Training
+PMP® Certification Exam Training
+Robotic Process Automation Training using UiPath
+Apache Spark and Scala Certification Training
+Microsoft Power BI Training
+Online Java Course and Training
+Python Certification Course
+TRENDING MASTERS COURSES
+Data Scientist Masters Program
+DevOps Engineer Masters Program
+Cloud Architect Masters Program
+Big Data Architect Masters Program
+Machine Learning Engineer Masters Program
+Full Stack Web Developer Masters Program
+Business Intelligence Masters Program
+Data Analyst Masters Program
+Test Automation Engineer Masters Program
+Post-Graduate Program in Artificial Intelligence & Machine Learning
+Post-Graduate Program in Big Data Engineering
+COMPANY
+About us
+News & Media
+Reviews
+Contact us
+Blog
+Community
+Sitemap
+Blog Sitemap
+Community Sitemap
+WORK WITH US
+Careers
+Become an Instructor
+Become an Affiliate
+Become a Partner
+Hire from Edureka
+DOWNLOAD APP
+CATEGORIES
+CATEGORIES
+Cloud Computing
+DevOps
+Big Data
+Data Science
+BI and Visualization
+Programming & Frameworks
+Software Testing
+Project Management and Methodologies
+Robotic Process Automation
+Frontend Development
+Data Warehousing and ETL
+Artificial Intelligence
+Blockchain
+Databases
+Cyber Security
+Mobile Development
+Operating Systems
+Architecture & Design Patterns
+Digital Marketing
+TRENDING BLOG ARTICLES
+TRENDING BLOG ARTICLES
+Selenium tutorial
+Selenium interview questions
+Java tutorial
+What is HTML
+Java interview questions
+PHP tutorial
+JavaScript interview questions
+Spring tutorial
+PHP interview questions
+Inheritance in Java
+Polymorphism in Java
+Spring interview questions
+Pointers in C
+Linux commands
+Android tutorial
+JavaScript tutorial
+jQuery tutorial
+SQL interview questions
+MySQL tutorial
+Machine learning tutorial
+Python tutorial
+What is machine learning
+Ethical hacking tutorial
+SQL injection
+AWS certification career opportunities
+AWS tutorial
+What Is cloud computing
+What is blockchain
+Hadoop tutorial
+What is artificial intelligence
+Node Tutorial
+Collections in Java
+Exception handling in java
+Python Programming Language
+Python interview questions
+Multithreading in Java
+ReactJS Tutorial
+Data Science vs Big Data vs Data Analytics
+Software Testing Interview Questions
+R Tutorial
+Java Programs
+JavaScript Reserved Words and Keywords
+Implement thread.yield() in Java: Examples
+Implement Optical Character Recognition in Python
+All you Need to Know About Implements In Java
+© 2021 Brain4ce Education Solutions Pvt. Ltd. All rights Reserved.
+Terms & Conditions
+Legal & Privacy
+"PMP®","PMI®", "PMI-ACP®" and "PMBOK®" are registered marks of the Project Management Institute, Inc.
+MongoDB®, Mongo and the leaf logo are the registered trademarks of MongoDB, Inc.

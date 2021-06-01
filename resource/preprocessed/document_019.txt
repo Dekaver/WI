@@ -1,1 +1,439 @@
-python pop empty list stack overflow stack overflow products teams stack overflow public questions answers stack overflow teams developers technologists share private knowledge coworkers jobs programming related technical career opportunities talent recruit tech talent build employer brand advertising reach developers technologists worldwide company loading log sign current community stack overflow help chat meta stack overflow communities sign log customize list stack exchange communities company blog people code want input take survey join stack overflow learn share knowledge build career sign email sign sign google sign github sign facebook home public questions tags users find job jobs companies teams stack overflow teams collaborate share knowledge private group create free team teams teams create free team teams q work connect share knowledge within single location structured easy search learn python pop empty list ask question asked years months ago active year months ago viewed k times using line loop code importer exporterslist pop exporterslist entries null returns error indexerror pop empty list bypass exporterslist entries one idea think exporterslist null importer exporterslist pop else get next entry loop idea correct code python python python share improve question follow edited aug zoe k gold badges silver badges bronze badges asked jul karvy karvy gold badges silver badges bronze badges mean get next entry loop dlask jul add comment answers active oldest votes right track exporterslist empty_list evaluate false importer exporterslist pop else get next entry something else share improve answer follow answered jul nightshadequeennightshadequeen gold badges silver badges bronze badges must use else karvy jul nope need else clause use nightshadequeen jul add comment also use try except try importer exporterslist pop except indexerror e print e always popping front may find deque better option deque popleft share improve answer follow answered jul padraic cunninghampadraic cunningham k gold badges silver badges bronze badges upvoting keep thread safe property pop eafp ofaurax mar add comment one exporterslist pop exporterslist else false somewhat accepted answer nightshadequeen shorter exporterslist exporterslist pop exporterslist else false false maybe could use get return exporterslist pop exporterslist else none exporterslist exporterslist pop exporterslist else none share improve answer follow edited oct answered oct gergely mgergely silver badges bronze badges add comment use exporterslist importer exporterslist pop share improve answer follow edited dec answered jul utsav tutsav gold badges silver badges bronze badges exporterslist job padraic cunningham jul pedjjj thank suggestion included utsav dec add comment also pop list items determining length list len exporterslist importer exporterslist pop share improve answer follow answered aug josh woodsjosh woods bronze badge len exporterslist rapt feb add comment answer thanks contributing answer stack overflow please sure answer question provide details share research avoid asking help clarification responding answers making statements based opinion back references personal experience learn see tips writing great answers draft saved draft discarded sign log sign using google sign using facebook sign using email password submit post guest name email required never shown post guest name email required never shown post answer discard clicking post answer agree terms service privacy policy cookie policy answer looking browse questions tagged python python ask question overflow blog podcast blocking haters service developer survey open featured meta testing three vote close reopen network sites future community promotion open source hot network questions ads rule proposal one delete undelete per post take developer survey linked pop index range python pop inside loop returns error pop empty list assignment statement cycle executes python pop element list list lists deleting nth element list python python list pop gives index error list full pygame datetime troubles pop empty list error lists even number elements index error pop empty list see linked questions related merge two dictionaries single expression taking union dictionaries check list empty execute program call system command python metaclasses python finding index item list python ternary conditional operator make flat list list lists proper way declare custom exceptions modern python list files directory python string contains substring method hot network questions happens mutate top creature control end turn browser based wallet like metamask planned cardano canon legend explanation symbols two vessels inside tantive iv flight simulation instructors stop simulator simulated crash use score highest sentence proper river horse rotten eggs float water usual feasible european universities accept phd candidates right bachelor degree computer science field rainbow steady even though droplets causing different states country ever diverted international flight order arrest wanted person mobile phone chargers produce regulated voltage derive carr madan like equation stop interrupting session correct dm mistakes anyone recognize identity location octagonal structure multi database ag decides databases redo thread sasha johnson state white man equal slave password length complexity make difference hashes leaked colleagues learned opposite definitions test validation sets us government mandate people allowed eat thought understood tenses randomly programmatically generate good next chord colorful plate puzzle poor writer serious impediment researcher supposed report status standups hot questions question feed subscribe rss question feed subscribe rss feed copy paste url rss reader lang py stack overflow questions jobs developer jobs directory salary calculator help mobile products teams talent advertising enterprise company press work legal privacy policy terms service contact us cookie settings cookie policy stack exchange network technology life arts culture recreation science stack overflow server fault super user web applications ask ubuntu webmasters game development tex latex software engineering unix linux ask different apple wordpress development geographic information systems electrical engineering android enthusiasts information security database administrators drupal answers sharepoint user experience mathematica salesforce expressionengine answers stack overflow em português blender network engineering cryptography code review magento software recommendations signal processing emacs raspberry pi stack overflow на русском code golf stack overflow en español ethereum data science arduino bitcoin software quality assurance testing sound design windows phone photography science fiction fantasy graphic design movies tv music practice theory worldbuilding video production seasoned advice cooking home improvement personal finance money academia law physical fitness gardening landscaping parenting english language usage skeptics mi yodeya judaism travel christianity english language learners japanese language chinese language french language german language biblical hermeneutics history spanish language islam русский язык russian language arqade gaming bicycles role playing games anime manga puzzling motor vehicle maintenance repair board card games bricks homebrewing martial arts great outdoors poker chess sports mathoverflow mathematics cross validated stats theoretical computer science physics chemistry biology computer science philosophy linguistics psychology neuroscience computational science meta stack exchange stack apps api data blog facebook twitter linkedin instagram site design logo stack exchange inc user contributions licensed cc sa rev stack overflow works best javascript enabled privacy clicking accept cookies agree stack exchange store cookies device disclose information accordance cookie policy accept cookies customize settings
+Python: pop from empty list - Stack Overflow
+Stack Overflow
+About
+Products
+For Teams
+Stack Overflow
+Public questions & answers
+Stack Overflow for Teams
+Where developers & technologists share private knowledge with coworkers
+Jobs
+Programming & related technical career opportunities
+Talent
+Recruit tech talent & build your employer brand
+Advertising
+Reach developers & technologists worldwide
+About the company
+Loading…
+Log in
+Sign up
+current community
+Stack Overflow
+help
+chat
+Meta Stack Overflow
+your communities
+Sign up or log in to customize your list.
+more stack exchange communities
+company blog
+People who code: we want your input.
+Take the Survey
+Join Stack Overflow to learn, share knowledge, and build your career.
+Sign up with email
+Sign up
+Sign up with Google
+Sign up with GitHub
+Sign up with Facebook
+Home
+Public
+Questions
+Tags
+Users
+Find a Job
+Jobs
+Companies
+Teams
+Stack Overflow for Teams
+– Collaborate and share knowledge with a private group.
+Create a free Team
+What is Teams?
+Teams
+What’s this?
+Create free Team
+Teams
+Q&A for work
+Connect and share knowledge within a single location that is structured and easy to search.
+Learn more
+Python: pop from empty list
+Ask Question
+Asked
+5 years, 11 months ago
+Active
+1 year, 5 months ago
+Viewed
+58k times
+18
+2
+I am using below line in a loop in my code
+importer = exporterslist.pop(0)
+If exporterslist has no entries or it is null, it returns error: IndexError: pop from empty list. How can I bypass exporterslist with no entries in it?
+One idea I can think of is if exporterslist is not null then importer = exporterslist.pop(0)
+else get the next entry in the loop.
+If the idea is correct, how to code it in python?
+python python-2.7
+Share
+Follow
+edited Aug 24 '19 at 20:47
+Zoe
+23.7k1616 gold badges9999 silver badges132132 bronze badges
+asked Jul 4 '15 at 2:57
+Karvy1Karvy1
+71244 gold badges99 silver badges2424 bronze badges
+1
+What do you mean by "get the next entry in the loop"?
+– dlask
+Jul 4 '15 at 3:01
+Add a comment
+|
+5 Answers
+5
+Active
+Oldest
+Votes
+21
+You're on the right track.
+if exporterslist: #if empty_list will evaluate as false.
+importer = exporterslist.pop(0)
+else:
+#Get next entry? Do something else?
+Share
+Follow
+answered Jul 4 '15 at 3:01
+NightShadeQueenNightShadeQueen
+2,94633 gold badges1919 silver badges3535 bronze badges
+2
+is it must to use 'else' after 'if'?
+– Karvy1
+Jul 4 '15 at 3:18
+3
+nope! You don't need the else clause, you don't have to use it.
+– NightShadeQueen
+Jul 4 '15 at 3:20
+Add a comment
+|
+10
+You can also use a try/except
+try:
+importer = exporterslist.pop(0)
+except IndexError as e:
+print(e)
+If you are always popping from the front you may find a deque a better option as deque.popleft() is
+0(1).
+Share
+Follow
+answered Jul 4 '15 at 19:47
+Padraic CunninghamPadraic Cunningham
+161k2020 gold badges201201 silver badges286286 bronze badges
+1
+Upvoting as this keep the thread-safe property of pop, and is EAFP
+– ofaurax
+Mar 5 at 9:46
+Add a comment
+|
+10
+This one..
+exporterslist.pop(0) if exporterslist else False
+..is somewhat the same as the accepted answer of @nightshadequeen's just shorter:
+>>> exporterslist = []
+>>> exporterslist.pop(0) if exporterslist else False
+False
+or maybe you could use this to get no return at all:
+exporterslist.pop(0) if exporterslist else None
+>>> exporterslist = []
+>>> exporterslist.pop(0) if exporterslist else None
+>>>
+Share
+Follow
+edited Oct 16 '17 at 17:16
+answered Oct 16 '17 at 17:10
+Gergely MGergely M
+33722 silver badges1010 bronze badges
+Add a comment
+|
+2
+Use this:
+if exporterslist:
+importer = exporterslist.pop(0)
+Share
+Follow
+edited Dec 17 '19 at 0:07
+answered Jul 4 '15 at 3:01
+Utsav TUtsav T
+1,41522 gold badges2121 silver badges3939 bronze badges
+2
+3
+if exporterslist: will do the same job
+– Padraic Cunningham
+Jul 4 '15 at 19:45
+@pedjjj Thank you for your suggestion. Have included it.
+– Utsav T
+Dec 17 '19 at 0:08
+Add a comment
+|
+-1
+You can also .pop() only if the list has items in it by determining if the length of the list is 1 or more:
+if len(exporterslist) > 1:
+importer = exporterslist.pop()
+Share
+Follow
+answered Aug 9 '16 at 0:31
+Josh WoodsJosh Woods
+111 bronze badge
+1
+4
+if len(exporterslist) > 0
+– rapt
+Feb 11 '17 at 18:40
+Add a comment
+|
+Your Answer
+Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
+Draft saved
+Draft discarded
+Sign up or log in
+Sign up using Google
+Sign up using Facebook
+Sign up using Email and Password
+Submit
+Post as a guest
+Name
+Email
+Required, but never shown
+Post as a guest
+Name
+Email
+Required, but never shown
+Post Your Answer
+Discard
+By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
+Not the answer you're looking for? Browse other questions tagged python python-2.7
+or ask your own question.
+The Overflow Blog
+Level Up: Linear Regression in Python – Part 2
+Shipping confetti to Stack Overflow’s design system
+Featured on Meta
+The future of Community Promotion, Open Source, and Hot Network Questions Ads
+Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
+Take the 2021 Developer Survey
+Linked
+4
+Pop index out of range
+0
+Python : pop() inside while loop returns error
+2
+Pop from empty list
+1
+why do the assignment statement in cycle only executes once in python
+0
+Pop() an element of a list in the list of lists
+0
+Deleting nth element from a list Python 2.7
+0
+Python: list.pop(0) gives index error while list is full
+0
+Pygame datetime troubles
+0
+Pop from empty list error ONLY on lists with even number of elements
+0
+Index error: pop from empty list
+See more linked questions
+Related
+5656
+How do I merge two dictionaries in a single expression (taking union of dictionaries)?
+3231
+How do I check if a list is empty?
+5316
+How to execute a program or call a system command from Python
+6178
+What are metaclasses in Python?
+3629
+Finding the index of an item in a list
+6671
+Does Python have a ternary conditional operator?
+4076
+How to make a flat list out of a list of lists?
+1465
+Proper way to declare custom exceptions in modern Python?
+3467
+How do I list all files of a directory?
+3596
+Does Python have a string 'contains' substring method?
+Hot Network Questions
+Vocal range of a crowd
+Colour ramp for maps
+Lunar Terrain Model in Apollo Guidance Computer
+What can I do about a parent who is discouraging their child from learning violin, a child who really wants to learn, so that the child will drop out
+Does the inside of a lid used to cook rice or steam vegetables have anything besides water on it?
+What's the cohomology ring structure of a blow-up?
+Why is bad behavior more tolerated in academia compared to the rest of the industry?
+A bracket amphitheater
+select distinct columns over multiple databases sql server
+What technical reasons prevented the Win9x Virtual Machine Monitor from running multiple threads simultaneously?
+What does research indicate about how one should treat units in elementary school?
+Engine failure: how to detect?
+Why do Macs mount an additional drive every time I install software?
+Why is the ortho product major in the nitration of anisole with nitric acid and acetic anhydride?
+Does mass have an effect on Centripetal Acceleration?
+Where was this scene of 'Highlander: The series' with standing columns shot?
+If cost can be ignored, is a higher-value capacitor for ripple suppression always a good choice?
+How would transportation evolve in a world where everyone can teleport?
+How could publicly accessible information proving that a public figure is corrupt go undetected for at least a year?
+Movie where someone's wife is secretly a monster
+3 verbs in one sentence - how is that?
+How to rotate a circle around y-aixs and calculate the volume of the 3D solid?
+Is it better to resize an image by minus 10% or by minus 50%?
+Selecting elements of sublists or reshaping a list of lists
+more hot questions
+Question feed
+Subscribe to RSS
+Question feed
+To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+lang-py
+Stack Overflow
+Questions
+Jobs
+Developer Jobs Directory
+Salary Calculator
+Help
+Mobile
+Products
+Teams
+Talent
+Advertising
+Enterprise
+Company
+About
+Press
+Work Here
+Legal
+Privacy Policy
+Terms of Service
+Contact Us
+Cookie Settings
+Cookie Policy
+Stack Exchange Network
+Technology
+Life / Arts
+Culture / Recreation
+Science
+Other
+Stack Overflow
+Server Fault
+Super User
+Web Applications
+Ask Ubuntu
+Webmasters
+Game Development
+TeX - LaTeX
+Software Engineering
+Unix & Linux
+Ask Different (Apple)
+WordPress Development
+Geographic Information Systems
+Electrical Engineering
+Android Enthusiasts
+Information Security
+Database Administrators
+Drupal Answers
+SharePoint
+User Experience
+Mathematica
+Salesforce
+ExpressionEngine® Answers
+Stack Overflow em Português
+Blender
+Network Engineering
+Cryptography
+Code Review
+Magento
+Software Recommendations
+Signal Processing
+Emacs
+Raspberry Pi
+Stack Overflow на русском
+Code Golf
+Stack Overflow en español
+Ethereum
+Data Science
+Arduino
+Bitcoin
+Software Quality Assurance & Testing
+Sound Design
+Windows Phone
+more (29)
+Photography
+Science Fiction & Fantasy
+Graphic Design
+Movies & TV
+Music: Practice & Theory
+Worldbuilding
+Video Production
+Seasoned Advice (cooking)
+Home Improvement
+Personal Finance & Money
+Academia
+Law
+Physical Fitness
+Gardening & Landscaping
+Parenting
+more (10)
+English Language & Usage
+Skeptics
+Mi Yodeya (Judaism)
+Travel
+Christianity
+English Language Learners
+Japanese Language
+Chinese Language
+French Language
+German Language
+Biblical Hermeneutics
+History
+Spanish Language
+Islam
+Русский язык
+Russian Language
+Arqade (gaming)
+Bicycles
+Role-playing Games
+Anime & Manga
+Puzzling
+Motor Vehicle Maintenance & Repair
+Board & Card Games
+Bricks
+Homebrewing
+Martial Arts
+The Great Outdoors
+Poker
+Chess
+Sports
+more (16)
+MathOverflow
+Mathematics
+Cross Validated (stats)
+Theoretical Computer Science
+Physics
+Chemistry
+Biology
+Computer Science
+Philosophy
+Linguistics
+Psychology & Neuroscience
+Computational Science
+more (10)
+Meta Stack Exchange
+Stack Apps
+API
+Data
+Blog
+Facebook
+Twitter
+LinkedIn
+Instagram
+site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
+rev 2021.5.28.39383
+Stack Overflow works best with JavaScript enabled
+Your privacy
+By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
+Accept all cookies
+Customize settings

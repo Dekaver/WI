@@ -1,0 +1,130 @@
+How to Throw Exceptions in Java | RollbarSee Continuous Code Improvement in Action.
+Join Rollbar's live product demo!×ProductFeaturesPlatformsIntegrationsComplianceSolutionsError MonitoringMicroservicesPricingCustomersSupportResourcesLog InTry NowProductFeaturesPlatformsIntegrationsComplianceSolutionsError MonitoringMicroservicesPricingCustomersSupportBlogLog InTry NowBlogKnowledge BaseGuidesLibraryQuickstartLogging ErrorsThrowing ExceptionsHandling ExceptionsDebugging ErrorsQuickstartLogging ErrorsThrowing ExceptionsHandling ExceptionsDebugging ErrorsThrowing exceptions in Java
+It is important to understand how to throw exceptions in Java. This will allow you to create higher quality code where errors are checked at compile time instead of runtime, and create custom exceptions that make debugging and recovery easier.
+How to throw exceptions in Java
+Throwing an exception is as simple as using the "throw" statement. You then specify the Exception object you wish to throw. Every Exception includes a message which is a human-readable error description. It can often be related to problems with user input, server, backend, etc. Here is an example that shows how to throw an exception:
+throw new Exception("Exception message");
+It’s limiting to use a generic exception because it makes it difficult for the calling code to catch it. It’s better to throw custom exceptions, which we will come back to in a bit.
+Using the Throws keyword
+Throws is a keyword used to indicate that this method could throw this type of exception. The caller has to handle the exception using a try-catch block or propagate the exception. We can throw either checked or unchecked exceptions.
+The throws keyword allows the compiler to help you write code that handles this type of error, but it does not prevent the abnormal termination of the program. With the help of the throws keyword, we can provide information to the caller of the method about the types of exceptions the method might throw.
+type method_name(parameters) throws exception_list
+In the above syntax, exception_list is a comma-separated list of all the exceptions a method might throw. For example:
+void testMethod() throws ArithmeticException, ArrayIndexOutOfBoundsException {
+// rest of code
+}
+In the example below, we have created a test method to demonstrate throwing an exception. The toString() method returns a textual representation of an object, but in this case the variable is null. Calling a method on a null reference or trying to access a field of a null reference will trigger a NullPointerException.
+static void testMethod() throws Exception {
+String test = null;
+test.toString();
+}
+This must be handled with a try/catch block:
+public class Example {
+public static void main(String[] arg) {
+try {
+testMethod();
+} catch (Exception e) {
+e.printStackTrace();
+}
+}
+}
+The Exception class
+To use exceptions within your application more effectively, it is important to understand how to create and throw your own. But before we get into throwing exceptions, let’s first take under the hood: We’ll describe what an exception is and how to define your own, starting with the global exception class that all Java exceptions stem from:
+package java.lang;
+public class Exception extends Throwable {
+static final long serialVersionUID = -3387516993124229948L;
+public Exception() {
+super();
+}
+public Exception(String message) {
+super(message);
+}
+public Exception(String message, Throwable cause) {
+super(message, cause);
+}
+public Exception(Throwable cause) {
+super(cause);
+}
+protected Exception(String message, Throwable cause, boolean enableSuppression, boolean
+writableStackTrace) {
+super(message, cause, enableSuppression, writableStackTrace);
+}
+}
+The Exception class is the superclass of all classes that represent recoverable exceptions. When exceptions are thrown, they may be caught by the application code. The exception class extends Throwable. The constructor contains two parameters: message and cause. The detailMessage parameter gives the details of the message for this exception, and the throwable parameter gives the cause of this exception.
+Types of exceptions
+There are two types of exceptions in Java: checked (compile time) exceptions and unchecked (runtime) exceptions. For clarity, we’ll also discuss how errors are different than exceptions in Java.
+Checked exception (compile time exception)
+Checked exceptions must be caught and handled during compile time. If the compiler does not see a try or catch block or throws keyword to handle a checked exception, it throws a compilation error. Checked exceptions are generally caused by faults outside code like missing files, invalid class names, and networking errors.
+FileInputStream fis = null;
+try {
+fis = new FileInputStream("B:/myfile.txt");
+} catch (FileNotFoundException e) {
+e.printStackTrace();
+}
+Unchecked exception (runtime exception)
+Unchecked exceptions do not need to be explicitly handled; they occur at the time of execution, also known as run time. These exceptions can usually be avoided by good coding practices. They are typically caused by programming bugs, such as logic errors or improper use of APIs. These exceptions are ignored at the time of compilation. For example:
+public class Main {
+public static void main(String[] args) {
+int a = 10, b = 0;
+System.out.println(a/b);
+}
+}
+The example above will cause an ArithmeticException at the time of program, since a number can’t be divided by 0. It would throw an unhandled exception and the program would end.
+Errors
+People often refer to "errors" and “exceptions” as the same thing colloquially. However, in Java these are separate concepts. Errors are thrown by the Java Virtual Machine and cannot be caught or handled. They derive from java.lang.Error and they occur because of some fault in the environment in which the application is running. For example, stack overflows and out of memory exceptions are environment errors that result in the application exiting.
+Custom exceptions
+Java’s built-in exceptions don’t always provide the information we need. So, we sometimes need to supplement these exceptions with our own. During some specific operation, if an exception occurs in your application, you need to recover and make the user know about it. A custom exception gives you more control to provide extra data about the problem and to handle the exception in your code.
+The best practice is to extend the java.lang.Exception class with a new class, following the general naming convention as provided by the JDK (Java Development Kit). The new class requires a constructor that will take a string as the error message—it is called the parent class constructor.
+public class HandledException extends Exception {
+private String code;
+public HandledException(String code, String message) {
+super(message);
+this.setCode(code);
+}
+public HandledException(String code, String message, Throwable cause) {
+super(message, cause);
+this.setCode(code);
+}
+public String getCode() {
+return code;
+}
+public void setCode(String code) {
+this.code = code;
+}
+}
+For example, let’s say a program fails to connect to a database. You could use a custom exception to collect information like the database URL, username, password, etc. In the catch block, you could write this information to the log and display a basic message to the user like "failed to connect to database."
+public class MainClass {
+private static String DATABASE_EXCEPTION = "DATABASE_EXCEPTION";
+private static final Logger logger = Logger.getLogger(MainClass.class);
+public static void main(String[] args) {
+try {
+makeDatabaseConnection();
+} catch (HandledException e) {
+// Display custom message to the user
+System.out.println("Code: "+e.getCode()+” Exception Message : ”+e.getMessage());
+// Log the exception detail
+logger.error("Exception: ", e);
+}
+}
+static void makeDatabaseConnection() throws HandledException {
+String dbURL = "jdbc:sqlserver://localhost\\sqlexpress";
+String userName = "sa";
+String password = "secret";
+Connection conn = null;
+try {
+conn = DriverManager.getConnection(dbURL, userName, password);
+} catch (SQLException e) {
+throw new HandledException(DATABASE_EXCEPTION,"Failed to connect to database", e);
+}
+}
+}TABLE OF CONTENTS
+Throwing exceptions in Java
+How to throw exceptions in Java
+Using the Throws keyword
+The Exception class
+Types of exceptions
+Checked exception (compile time exception)
+Unchecked exception (runtime exception)
+Errors
+Custom exceptions
+Try Rollbar for FreeJoin 100,000+ developers, improving millions of software experiencesTry for freeRequest a demo ProductProductPricingCustomersPlatformsIntegrationsComplianceService StatusPlatformsJavaScriptPHPRubyPythoniOSJava.NETAngularReactLaravelNodeRailsDjangoMore...DocumentationDocs OverviewSetting up RollbarNotificationsDeploy TrackingTelemetrySecurity & ComplianceAPICompanyAbout UsEventsCareersMediaContact UsResourcesRollbar Product BlogLearn How Rollbar Complements New RelicUsing Rollbar with AtlassianUsing Rollbar with GitHubPre-production Error MonitoringLow-Risk Continuous DeliverySalesforce Apex Error LoggingPrivacy PolicyTerms of Service© 2012-21 ROLLBAR, INC.

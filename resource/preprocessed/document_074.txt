@@ -1,1 +1,440 @@
-python attributeerror str object attribute append stack overflow stack overflow products teams stack overflow public questions answers stack overflow teams developers technologists share private knowledge coworkers jobs programming related technical career opportunities talent recruit tech talent build employer brand advertising reach developers technologists worldwide company loading log sign current community stack overflow help chat meta stack overflow communities sign log customize list stack exchange communities company blog people code want input take survey join stack overflow learn share knowledge build career sign email sign sign google sign github sign facebook home public questions tags users find job jobs companies teams stack overflow teams collaborate share knowledge private group create free team teams teams create free team teams q work connect share knowledge within single location structured easy search learn attributeerror str object attribute append ask question asked years months ago active years ago viewed k times mylist form mylist append traceback recent call last file line mylist append attributeerror str object attribute append mylist considered str object mlist returns first item list form cannot append item list mylist thank edit pyfunc thank explanation understand need list lists form list please correct right way mylist form mylist form mylist form mylist mylist form python share improve question follow edited oct zeynel asked oct zeynelzeynel k gold badges silver badges bronze badges mlist returns second item mlist silentghost oct add comment answers active oldest votes mylist element mylist type string mylist str append mylist list appending mylist form mylist form mylist mylist append mylist form mylist append traceback recent call last file line attributeerror str object attribute append share improve answer follow answered oct pyfuncpyfunc k gold badges silver badges bronze badges add comment want append value mylist use mylist append strings immutable append share improve answer follow answered oct bstpierrebstpierre k gold badges silver badges bronze badges add comment mylist considered str object string else form string actually strings sequences e indexed sliced iterated etc well part str class make list something mlist returns first item list form mean mylist form second indexing starts element form big difference difference house person also mylist list short code sample could anything accepts index dict index list tuple sequences etc irrelevant cannot append item list mylist course string append string string immutable concatenate new object consists two strings cannot append specific object end share improve answer follow answered oct user user thanks explanation understand mylist string form zeynel oct add comment trying add additional information item list already created alist form stuff stuff j range len alist temp temp append alist j alist form temp append slot first piece data temp append slot second piece data blist append temp alist additional fields extra stuff assocated item alist share improve answer follow answered mar dr bobdr bob bronze badge add comment simple program showing append list n f g h k range temp temp append n temp append print temp output k share improve answer follow answered may reshmareshma add comment answer thanks contributing answer stack overflow please sure answer question provide details share research avoid asking help clarification responding answers making statements based opinion back references personal experience learn see tips writing great answers draft saved draft discarded sign log sign using google sign using facebook sign using email password submit post guest name email required never shown post guest name email required never shown post answer discard clicking post answer agree terms service privacy policy cookie policy answer looking browse questions tagged python ask question overflow blog podcast blocking haters service developer survey open featured meta testing three vote close reopen network sites future community promotion open source hot network questions ads rule proposal one delete undelete per post take developer survey linked attributeerror str attribute append web scraping links python attributeerror str object attribute append attributeerror str object attribute sign related difference python list methods append extend know object attribute python determine type object append file python attributeerror str object attribute append attributeerror module object attribute fieldstorage tensorflow attributeerror tensor object attribute shape attributeerror str object attribute seek using textfsm module regex hot network questions looking spider man comic telepathic man child controls town defeated spidey deafens ask extension manuscript review important brand name type string overall sound guitar cable yard exposed duct tape medical tape happens mutate top creature control end turn forbid transformation max x milp possible airplane enter another airplane voltage increase batteries connected parallel would probable reaction belarusian planes entered lithuanian airspace difference stream intstream range flight simulation instructors stop simulator simulated crash canon legend explanation symbols two vessels inside tantive iv repeat process infinite loop rulings usual feasible european universities accept phd candidates right bachelor degree computer science field countries get manifest every passenger flying airspace knows boarded plane understanding name person をする movie drive anyone watches insane friends us often barter babysitting time owe taxes content security policy https data meaning turning second offer fantasy novel summoning demons valid esta got refused b b us visa rosamund pike amy spits glass hot questions question feed subscribe rss question feed subscribe rss feed copy paste url rss reader lang py stack overflow questions jobs developer jobs directory salary calculator help mobile products teams talent advertising enterprise company press work legal privacy policy terms service contact us cookie settings cookie policy stack exchange network technology life arts culture recreation science stack overflow server fault super user web applications ask ubuntu webmasters game development tex latex software engineering unix linux ask different apple wordpress development geographic information systems electrical engineering android enthusiasts information security database administrators drupal answers sharepoint user experience mathematica salesforce expressionengine answers stack overflow em português blender network engineering cryptography code review magento software recommendations signal processing emacs raspberry pi stack overflow на русском code golf stack overflow en español ethereum data science arduino bitcoin software quality assurance testing sound design windows phone photography science fiction fantasy graphic design movies tv music practice theory worldbuilding video production seasoned advice cooking home improvement personal finance money academia law physical fitness gardening landscaping parenting english language usage skeptics mi yodeya judaism travel christianity english language learners japanese language chinese language french language german language biblical hermeneutics history spanish language islam русский язык russian language arqade gaming bicycles role playing games anime manga puzzling motor vehicle maintenance repair board card games bricks homebrewing martial arts great outdoors poker chess sports mathoverflow mathematics cross validated stats theoretical computer science physics chemistry biology computer science philosophy linguistics psychology neuroscience computational science meta stack exchange stack apps api data blog facebook twitter linkedin instagram site design logo stack exchange inc user contributions licensed cc sa rev stack overflow works best javascript enabled privacy clicking accept cookies agree stack exchange store cookies device disclose information accordance cookie policy accept cookies customize settings
+python - AttributeError: 'str' object has no attribute 'append' - Stack Overflow
+Stack Overflow
+About
+Products
+For Teams
+Stack Overflow
+Public questions & answers
+Stack Overflow for Teams
+Where developers & technologists share private knowledge with coworkers
+Jobs
+Programming & related technical career opportunities
+Talent
+Recruit tech talent & build your employer brand
+Advertising
+Reach developers & technologists worldwide
+About the company
+Loading…
+Log in
+Sign up
+current community
+Stack Overflow
+help
+chat
+Meta Stack Overflow
+your communities
+Sign up or log in to customize your list.
+more stack exchange communities
+company blog
+People who code: we want your input.
+Take the Survey
+Join Stack Overflow to learn, share knowledge, and build your career.
+Sign up with email
+Sign up
+Sign up with Google
+Sign up with GitHub
+Sign up with Facebook
+Home
+Public
+Questions
+Tags
+Users
+Find a Job
+Jobs
+Companies
+Teams
+Stack Overflow for Teams
+– Collaborate and share knowledge with a private group.
+Create a free Team
+What is Teams?
+Teams
+What’s this?
+Create free Team
+Teams
+Q&A for work
+Connect and share knowledge within a single location that is structured and easy to search.
+Learn more
+AttributeError: 'str' object has no attribute 'append'
+Ask Question
+Asked
+10 years, 7 months ago
+Active
+2 days ago
+Viewed
+261k times
+23
+9
+>>> myList[1]
+'from form'
+>>> myList[1].append(s)
+Traceback (most recent call last):
+File "<pyshell#144>", line 1, in <module>
+myList[1].append(s)
+AttributeError: 'str' object has no attribute 'append'
+>>>
+Why myList[1] is considered a 'str' object? mList[1] returns the first item in the list 'from form' but I cannot append to item 1 in the list myList. Thank you.
+Edit01:
+@pyfunc: Thank you for the explanation; now I understand.
+I need to have a list of lists; so 'from form' should be a list. I did this (please correct if this not the right way):
+>>> myList
+[1, 'from form', [1, 2, 't']]
+>>> s = myList[1]
+>>> s
+'from form'
+>>> s = [myList[1]]
+>>> s
+['from form']
+>>> myList[1] = s
+>>> myList
+[1, ['from form'], [1, 2, 't']]
+>>>
+python
+Share
+Follow
+edited Oct 23 '10 at 20:16
+Zeynel
+asked Oct 23 '10 at 19:59
+ZeynelZeynel
+11.5k2727 gold badges8989 silver badges138138 bronze badges
+1
+1
+mList[1] returns second item of the mList
+– SilentGhost
+Oct 23 '10 at 20:06
+Add a comment
+|
+6 Answers
+6
+Active
+Oldest
+Votes
+23
+myList[1] is an element of myList and it's type is string.
+myList[1] is str, you can not append to it.
+myList is a list, you should have been appending to it.
+>>> myList = [1, 'from form', [1,2]]
+>>> myList[1]
+'from form'
+>>> myList[2]
+[1, 2]
+>>> myList[2].append('t')
+>>> myList
+[1, 'from form', [1, 2, 't']]
+>>> myList[1].append('t')
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+AttributeError: 'str' object has no attribute 'append'
+>>>
+Share
+Follow
+answered Oct 23 '10 at 20:00
+pyfuncpyfunc
+60.3k1414 gold badges138138 silver badges132132 bronze badges
+Add a comment
+|
+7
+If you want to append a value to myList, use myList.append(s).
+Strings are immutable -- you can't append to them.
+Share
+Follow
+answered Oct 23 '10 at 20:00
+bstpierrebstpierre
+26.9k1414 gold badges6363 silver badges100100 bronze badges
+Add a comment
+|
+2
+Why myList[1] is considered a 'str' object?
+Because it is a string. What else is 'from form', if not a string? (Actually, strings are sequences too, i.e. they can be indexed, sliced, iterated, etc. as well - but that's part of the str class and doesn't make it a list or something).
+mList[1] returns the first item in the list 'from form'
+If you mean that myList is 'from form', no it's not!!! The second (indexing starts at 0) element is 'from form'. That's a BIG difference. It's the difference between a house and a person.
+Also, myList doesn't have to be a list from your short code sample - it could be anything that accepts 1 as index - a
+dict with 1 as index, a list, a tuple, most other sequences, etc. But that's irrelevant.
+but I cannot append to item 1 in the list myList
+Of course not, because it's a string and you can't append to string. String are immutable. You can concatenate (as in, "there's a new object that consists of these two") strings. But you cannot append (as in, "this specific object now has this at the end") to them.
+Share
+Follow
+answered Oct 23 '10 at 20:09
+user395760user395760
+1
+Thanks for the explanation; now I understand that myList[1] is the string "from form".
+– Zeynel
+Oct 23 '10 at 20:22
+Add a comment
+|
+0
+What you are trying to do is add additional information to each item in the list that you already created so
+alist[ 'from form', 'stuff 2', 'stuff 3']
+for j in range( 0,len[alist]):
+temp= []
+temp.append(alist[j]) # alist[0] is 'from form'
+temp.append('t') # slot for first piece of data 't'
+temp.append('-') # slot for second piece of data
+blist.append(temp)
+# will be alist with 2 additional fields for extra stuff assocated with each item in alist
+Share
+Follow
+answered Mar 14 '15 at 15:53
+Dr. BobDr. Bob
+111 bronze badge
+Add a comment
+|
+0
+This is simple program showing append('t') to the list.
+n=['f','g','h','i','k']
+for i in range(1):
+temp=[]
+temp.append(n[-2:])
+temp.append('t')
+print(temp)
+Output: [['i', 'k'], 't']
+Share
+Follow
+answered May 3 '19 at 19:45
+ReshmaReshma
+5
+Add a comment
+|
+0
+Instead you can use the += syntax:
+a = "prin"
+a.append("T") #doesn't wok
+a += "t" #works
+Share
+Follow
+answered 2 days ago
+Jesvin Vijesh SJesvin Vijesh S
+43944 silver badges2222 bronze badges
+Add a comment
+|
+Your Answer
+Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
+Draft saved
+Draft discarded
+Sign up or log in
+Sign up using Google
+Sign up using Facebook
+Sign up using Email and Password
+Submit
+Post as a guest
+Name
+Email
+Required, but never shown
+Post as a guest
+Name
+Email
+Required, but never shown
+Post Your Answer
+Discard
+By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
+Not the answer you're looking for? Browse other questions tagged python
+or ask your own question.
+The Overflow Blog
+Level Up: Linear Regression in Python – Part 2
+Shipping confetti to Stack Overflow’s design system
+Featured on Meta
+The future of Community Promotion, Open Source, and Hot Network Questions Ads
+Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
+Take the 2021 Developer Survey
+Linked
+0
+AttributeError: str has no attribute append ( web scraping , links )
+0
+Python AttributeError: 'str' object has no attribute 'append'
+1
+AttributeError: 'str' object has no attribute 'sign'
+Related
+3114
+What is the difference between Python's list methods append and extend?
+1914
+How to know if an object has an attribute in Python
+1913
+Determine the type of an object?
+1754
+How do you append to a file?
+2
+Python - AttributeError: 'str' object has no attribute 'append'
+1
+AttributeError: 'module' object has no attribute 'Fieldstorage'
+18
+TensorFlow: AttributeError: 'Tensor' object has no attribute 'shape'
+2
+AttributeError: 'str' object has no attribute 'seek' using textfsm module (regex)
+Hot Network Questions
+How could publicly accessible information proving that a public figure is corrupt go undetected for at least a year?
+How to mark directories in the output of the `find` command?
+Does 'graduate program' mean MSc or Ph.D.?
+Why does decriminalisation/legalisation not reduce the cost of drugs?
+Is there any realistic explanation for Earth-like climate on a Sun-sized planet?
+How do computers perform operations on numbers that are larger than 64 bits?
+Sanctuary spell and Using magic Items that cause damage?
+I think I've sh-- myself
+How can I state an axiom without enumeration?
+Movie where someone's wife is secretly a monster
+Print the last answerer's first submission
+Engine failure: how to detect?
+How to stop games from reading your RAM?
+Is it better to resize an image by minus 10% or by minus 50%?
+Is there a precise definition of "Supermoon"?
+Where can people allergic to dairy food eat when travelling in France?
+identify M.2 SSD from BASH Script
+Why do Macs mount an additional drive every time I install software?
+Factorising blinear forms with Mathematica
+3 verbs in one sentence - how is that?
+How would transportation evolve in a world where everyone can teleport?
+Is the burden of proof a fallacy?
+What can I do about a parent who is discouraging their child from learning violin, a child who really wants to learn, so that the child will drop out
+Do phone chargers communicate with the phone?
+more hot questions
+Question feed
+Subscribe to RSS
+Question feed
+To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+lang-py
+Stack Overflow
+Questions
+Jobs
+Developer Jobs Directory
+Salary Calculator
+Help
+Mobile
+Products
+Teams
+Talent
+Advertising
+Enterprise
+Company
+About
+Press
+Work Here
+Legal
+Privacy Policy
+Terms of Service
+Contact Us
+Cookie Settings
+Cookie Policy
+Stack Exchange Network
+Technology
+Life / Arts
+Culture / Recreation
+Science
+Other
+Stack Overflow
+Server Fault
+Super User
+Web Applications
+Ask Ubuntu
+Webmasters
+Game Development
+TeX - LaTeX
+Software Engineering
+Unix & Linux
+Ask Different (Apple)
+WordPress Development
+Geographic Information Systems
+Electrical Engineering
+Android Enthusiasts
+Information Security
+Database Administrators
+Drupal Answers
+SharePoint
+User Experience
+Mathematica
+Salesforce
+ExpressionEngine® Answers
+Stack Overflow em Português
+Blender
+Network Engineering
+Cryptography
+Code Review
+Magento
+Software Recommendations
+Signal Processing
+Emacs
+Raspberry Pi
+Stack Overflow на русском
+Code Golf
+Stack Overflow en español
+Ethereum
+Data Science
+Arduino
+Bitcoin
+Software Quality Assurance & Testing
+Sound Design
+Windows Phone
+more (29)
+Photography
+Science Fiction & Fantasy
+Graphic Design
+Movies & TV
+Music: Practice & Theory
+Worldbuilding
+Video Production
+Seasoned Advice (cooking)
+Home Improvement
+Personal Finance & Money
+Academia
+Law
+Physical Fitness
+Gardening & Landscaping
+Parenting
+more (10)
+English Language & Usage
+Skeptics
+Mi Yodeya (Judaism)
+Travel
+Christianity
+English Language Learners
+Japanese Language
+Chinese Language
+French Language
+German Language
+Biblical Hermeneutics
+History
+Spanish Language
+Islam
+Русский язык
+Russian Language
+Arqade (gaming)
+Bicycles
+Role-playing Games
+Anime & Manga
+Puzzling
+Motor Vehicle Maintenance & Repair
+Board & Card Games
+Bricks
+Homebrewing
+Martial Arts
+The Great Outdoors
+Poker
+Chess
+Sports
+more (16)
+MathOverflow
+Mathematics
+Cross Validated (stats)
+Theoretical Computer Science
+Physics
+Chemistry
+Biology
+Computer Science
+Philosophy
+Linguistics
+Psychology & Neuroscience
+Computational Science
+more (10)
+Meta Stack Exchange
+Stack Apps
+API
+Data
+Blog
+Facebook
+Twitter
+LinkedIn
+Instagram
+site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
+rev 2021.5.28.39383
+Stack Overflow works best with JavaScript enabled
+Your privacy
+By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
+Accept all cookies
+Customize settings

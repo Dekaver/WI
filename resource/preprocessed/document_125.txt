@@ -1,0 +1,380 @@
+jakarta ee - Incoparable Java Types boolean and object - Stack Overflow
+Stack Overflow
+About
+Products
+For Teams
+Stack Overflow
+Public questions & answers
+Stack Overflow for Teams
+Where developers & technologists share private knowledge with coworkers
+Jobs
+Programming & related technical career opportunities
+Talent
+Recruit tech talent & build your employer brand
+Advertising
+Reach developers & technologists worldwide
+About the company
+Loading…
+Log in
+Sign up
+current community
+Stack Overflow
+help
+chat
+Meta Stack Overflow
+your communities
+Sign up or log in to customize your list.
+more stack exchange communities
+company blog
+People who code: we want your input.
+Take the Survey
+Join Stack Overflow to learn, share knowledge, and build your career.
+Sign up with email
+Sign up
+Sign up with Google
+Sign up with GitHub
+Sign up with Facebook
+Home
+Public
+Questions
+Tags
+Users
+Find a Job
+Jobs
+Companies
+Teams
+Stack Overflow for Teams
+– Collaborate and share knowledge with a private group.
+Create a free Team
+What is Teams?
+Teams
+What’s this?
+Create free Team
+Teams
+Q&A for work
+Connect and share knowledge within a single location that is structured and easy to search.
+Learn more
+Incoparable Java Types boolean and object
+Ask Question
+Asked
+7 years, 5 months ago
+Active
+7 years, 4 months ago
+Viewed
+1k times
+1
+I have this piece of code which worked in Java 6
+if(false==sess.getAttribute("admin") || null==sess.getAttribute("admin"))
+{
+res.sendRedirect("/myapp/login.jsp?errmsg=You must log in as an administrator to manage resources");
+return;
+}
+I want to familiarize myself with the new features of Java 7 and what it offers new in javaee hence I upgraded netbeans to 7.4 and jdk 7u45.
+My project opened successfully however the file with this code is marked as a java class with an error by netbeans. Running the project I get the error
+java.lang.RuntimeException: Uncompilable source code - incomparable types: boolean and java.lang.Object
+What I want to ask is why this worked in java6 and doesn't work in java7
+FYI HttpSession sess = req.getSession();
+java jakarta-ee servlets
+Share
+Follow
+edited Dec 7 '13 at 21:22
+MaxI
+asked Dec 7 '13 at 21:09
+MaxIMaxI
+76322 gold badges1010 silver badges4343 bronze badges
+3
+2
+I don't believe the code compiled successfully in java 6.
+– Sotirios Delimanolis
+Dec 8 '13 at 5:13
+It did. That is why I am asking.
+– MaxI
+Dec 8 '13 at 11:23
+I want you to take that java file and compile it individually with java 6.
+Then post the contents of the file and the output of javac.
+– Sotirios Delimanolis
+Dec 8 '13 at 13:44
+Add a comment
+|
+3 Answers
+3
+Active
+Oldest
+Votes
+2
+HttpSession.getAttribute returns an Object.
+Change the line to (Boolean.FALSE==sess.getAtrribute)
+Looks like autoboxing (boolean to Boolean) has changed in Java.
+Unfortunately I cannot reproduce your error. I have seen a similar error message in the same Netbeans 7.4/jdk 7u45.
+My code:
+if (true == evt.getNewValue())
+(where evt is a PropertyChangeEvent)
+The message in Netbeans (when I hover over the red cross left to the statement) says "incomparable types: boolean and Object". Notice the difference with your message: the missing "java/lang" before Object.
+And even stranger: my code compiles without any problem.
+Compiler options in Netbeans are: "-version -Xlint:unchecked -Xlint:deprecation"
+Share
+Follow
+answered Jan 9 '14 at 11:32
+Carl van DenzenCarl van Denzen
+2122 bronze badges
+Add a comment
+|
+1
+You should try with
+if(false==(Boolean)sess.getAttribute("admin") || null==sess.getAttribute("admin"))
+{
+res.sendRedirect("/myapp/login.jsp?errmsg=You must log in as an administrator to
+manage resources");
+return;
+}
+Share
+Follow
+answered Jan 10 '14 at 10:07
+jd.carreterojd.carretero
+13911 gold badge11 silver badge66 bronze badges
+Add a comment
+|
+0
+getAttribute probably returns either an Object or a boolean. If it returns a boolean, then null==getAttrubute will not work and if it returns an Object then false==getAttribute will fail.
+Share
+Follow
+answered Dec 7 '13 at 21:14
+user3078468user3078468
+1111 bronze badge
+1
+1
+True. But this does not explain why it worked perfectly in java6 and not working in java7
+– MaxI
+Dec 7 '13 at 21:23
+Add a comment
+|
+Your Answer
+Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
+Draft saved
+Draft discarded
+Sign up or log in
+Sign up using Google
+Sign up using Facebook
+Sign up using Email and Password
+Submit
+Post as a guest
+Name
+Email
+Required, but never shown
+Post as a guest
+Name
+Email
+Required, but never shown
+Post Your Answer
+Discard
+By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
+Not the answer you're looking for? Browse other questions tagged java jakarta-ee servlets
+or ask your own question.
+The Overflow Blog
+Level Up: Linear Regression in Python – Part 2
+Shipping confetti to Stack Overflow’s design system
+Featured on Meta
+The future of Community Promotion, Open Source, and Hot Network Questions Ads
+Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
+Take the 2021 Developer Survey
+Visit chat
+Related
+3964
+What are the differences between a HashMap and a Hashtable in Java?
+7059
+Is Java “pass-by-reference” or “pass-by-value”?
+3555
+How do I efficiently iterate over each entry in a Java Map?
+3353
+What is the difference between public, protected, package-private and private in Java?
+4190
+Avoiding NullPointerException in Java
+4332
+How do I read / convert an InputStream into a String in Java?
+3294
+When to use LinkedList over ArrayList in Java?
+3731
+How do I generate random integers within a specific range in Java?
+2225
+How do I declare and initialize an array in Java?
+3428
+How can I create a memory leak in Java?
+Hot Network Questions
+Meaning of せないかんのよ
+Why does sleep, when run in a shell script, ignore SIGINT?
+How do I make a "ragged" table?
+Where can people allergic to dairy food eat when travelling in France?
+Does an IFR flight-plan includes the approach as well?
+What technical reasons prevented the Win9x Virtual Machine Monitor from running multiple threads simultaneously?
+If cost can be ignored, is a higher-value capacitor for ripple suppression always a good choice?
+How can I use a control variable that is non-normal in linear regression with other variabels that are normal?
+Triangle-style sequences
+Advice needed – I can't reach my collaborator, but there's a short deadline for revising our journal article submission
+Why do Macs mount an additional drive every time I install software?
+Is it better to resize an image by minus 10% or by minus 50%?
+Does 'graduate program' mean MSc or Ph.D.?
+How can objects be neither vector nor scalar?
+Lunar Terrain Model in Apollo Guidance Computer
+unknown pieces of a set - stickers on round corner bricks
+Trying to identify an old sci-fi novel: a group of space travellers visiting a planet previously long-inhabited but regressed?
+What does this line: `T=C/2=INT(C/2)` do? Why is it valid syntax?
+What can I do about a parent who is discouraging their child from learning violin, a child who really wants to learn, so that the child will drop out
+Is the burden of proof a fallacy?
+Should forcing open doors be Strength or Strength (Athletics)
+Why isn't it the norm to have research repeated immediately by other academics?
+Engine failure: how to detect?
+Sanctuary spell and Using magic Items that cause damage?
+more hot questions
+Question feed
+Subscribe to RSS
+Question feed
+To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+lang-java
+Stack Overflow
+Questions
+Jobs
+Developer Jobs Directory
+Salary Calculator
+Help
+Mobile
+Products
+Teams
+Talent
+Advertising
+Enterprise
+Company
+About
+Press
+Work Here
+Legal
+Privacy Policy
+Terms of Service
+Contact Us
+Cookie Settings
+Cookie Policy
+Stack Exchange Network
+Technology
+Life / Arts
+Culture / Recreation
+Science
+Other
+Stack Overflow
+Server Fault
+Super User
+Web Applications
+Ask Ubuntu
+Webmasters
+Game Development
+TeX - LaTeX
+Software Engineering
+Unix & Linux
+Ask Different (Apple)
+WordPress Development
+Geographic Information Systems
+Electrical Engineering
+Android Enthusiasts
+Information Security
+Database Administrators
+Drupal Answers
+SharePoint
+User Experience
+Mathematica
+Salesforce
+ExpressionEngine® Answers
+Stack Overflow em Português
+Blender
+Network Engineering
+Cryptography
+Code Review
+Magento
+Software Recommendations
+Signal Processing
+Emacs
+Raspberry Pi
+Stack Overflow на русском
+Code Golf
+Stack Overflow en español
+Ethereum
+Data Science
+Arduino
+Bitcoin
+Software Quality Assurance & Testing
+Sound Design
+Windows Phone
+more (29)
+Photography
+Science Fiction & Fantasy
+Graphic Design
+Movies & TV
+Music: Practice & Theory
+Worldbuilding
+Video Production
+Seasoned Advice (cooking)
+Home Improvement
+Personal Finance & Money
+Academia
+Law
+Physical Fitness
+Gardening & Landscaping
+Parenting
+more (10)
+English Language & Usage
+Skeptics
+Mi Yodeya (Judaism)
+Travel
+Christianity
+English Language Learners
+Japanese Language
+Chinese Language
+French Language
+German Language
+Biblical Hermeneutics
+History
+Spanish Language
+Islam
+Русский язык
+Russian Language
+Arqade (gaming)
+Bicycles
+Role-playing Games
+Anime & Manga
+Puzzling
+Motor Vehicle Maintenance & Repair
+Board & Card Games
+Bricks
+Homebrewing
+Martial Arts
+The Great Outdoors
+Poker
+Chess
+Sports
+more (16)
+MathOverflow
+Mathematics
+Cross Validated (stats)
+Theoretical Computer Science
+Physics
+Chemistry
+Biology
+Computer Science
+Philosophy
+Linguistics
+Psychology & Neuroscience
+Computational Science
+more (10)
+Meta Stack Exchange
+Stack Apps
+API
+Data
+Blog
+Facebook
+Twitter
+LinkedIn
+Instagram
+site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
+rev 2021.5.28.39383
+Stack Overflow works best with JavaScript enabled
+Your privacy
+By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
+Accept all cookies
+Customize settings

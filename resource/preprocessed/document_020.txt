@@ -1,1 +1,255 @@
-indexerror pop empty list issue elastic apm agent python github skip content sign github features mobile actions codespaces packages security code review project management integrations github sponsors customer stories team enterprise explore explore github learn contribute topics collections trending learning lab open source guides connect others readme project events community forum github education github stars program marketplace pricing plans compare plans contact sales education repository github jump suggested jump results repository github jump organization github jump repository github jump sign sign message elastic apm agent python notifications star fork code issues pull requests discussions actions wiki security insights code issues pull requests discussions actions wiki security insights new issue question project sign free github account open issue contact maintainers community pick username email address password sign github clicking sign github agree terms service privacy statement occasionally send account related emails already github sign account jump bottom indexerror pop empty list closed gusibi opened issue jun comments closed indexerror pop empty list gusibi opened issue jun comments comments copy link contributor gusibi commented jun edited alvarolobato elasticapm traces py def end_span self skip_frames span self span_stack pop span_stack may empty indexerror pop empty list text updated successfully errors encountered gusibi added commit gusibi apm agent python referenced issue jun elastic fix index error e copy link contributor beniwohli commented jun thanks gusibi usually happens caused another bug full stack trace error copy link contributor author gusibi commented jun copy link contributor author gusibi commented jun edited redis server pika https github com qihoo pika beniwohli added commit beniwohli apm agent python referenced issue jun log error trying end span started verified commit signed committer verified signature beniwohli benjamin wohlwend gpg key id b eaa dfb learn vigilant mode cfbc usually happen indication bug still ensure crash instead log message fixes elastic beniwohli mentioned issue jun log error trying end span started closed beniwohli added commit beniwohli apm agent python referenced issue jun log error trying end span started verified commit signed committer verified signature beniwohli benjamin wohlwend gpg key id b eaa dfb learn vigilant mode e e usually happen indication bug still ensure crash instead log message fixes elastic co authored goodspeed copy link contributor beniwohli commented jun thanks update hard say exactly cause place call begin_span capture_span __enter__ place call end_span capture_span __exit__ according context manager protocol __enter__ also always __exit__ explanation transaction object __enter__ different one __exit__ gusibi per chance use asynchronous framework asyncio twisted currently support asynchronous execution see could imagine could cause error like copy link contributor author gusibi commented jun beniwohli thanks use flask used asynchronous framework error process using redis every time error occurs beniwohli closed bb jun sign free join conversation github already account sign comment assignees one assigned labels none yet projects none yet milestone milestone linked pull requests successfully merging pull request may close issue log error trying end span started participants github inc terms privacy security status docs contact github pricing api training blog perform action time signed another tab window reload refresh session signed another tab window reload refresh session
+IndexError: pop from empty list · Issue #227 · elastic/apm-agent-python · GitHub
+Skip to content
+Sign up
+Why GitHub?
+Features →
+Mobile →
+Actions →
+Codespaces →
+Packages →
+Security →
+Code review →
+Project management →
+Integrations →
+GitHub Sponsors →
+Customer stories→
+Team
+Enterprise
+Explore
+Explore GitHub →
+Learn and contribute
+Topics →
+Collections →
+Trending →
+Learning Lab →
+Open source guides →
+Connect with others
+The ReadME Project →
+Events →
+Community forum →
+GitHub Education →
+GitHub Stars program →
+Marketplace
+Pricing
+Plans →
+Compare plans →
+Contact Sales →
+Education →
+In this repository
+All GitHub
+↵
+Jump to
+↵
+No suggested jump to results
+In this repository
+All GitHub
+↵
+Jump to
+↵
+In this organization
+All GitHub
+↵
+Jump to
+↵
+In this repository
+All GitHub
+↵
+Jump to
+↵
+Sign in
+Sign up
+{{ message }}
+elastic
+/
+apm-agent-python
+Notifications
+Star
+317
+Fork
+145
+Code
+Issues
+58
+Pull requests
+13
+Discussions
+Actions
+Wiki
+Security
+Insights
+More
+Code
+Issues
+Pull requests
+Discussions
+Actions
+Wiki
+Security
+Insights
+New issue
+Have a question about this project? Sign up for a free GitHub account to open an issue and contact its maintainers and the community.
+Pick a username
+Email Address
+Password
+Sign up for GitHub
+By clicking “Sign up for GitHub”, you agree to our terms of service and
+privacy statement. We’ll occasionally send you account related emails.
+Already on GitHub?
+Sign in
+to your account
+Jump to bottom
+IndexError: pop from empty list
+#227
+Closed
+gusibi
+opened this issue
+Jun 11, 2018
+· 5 comments
+Closed
+IndexError: pop from empty list
+#227
+gusibi
+opened this issue
+Jun 11, 2018
+· 5 comments
+Comments
+Copy link
+Contributor
+gusibi
+commented
+Jun 11, 2018
+•
+edited by alvarolobato
+elasticapm/traces.py
+def end_span(self, skip_frames):
+span = self.span_stack.pop()
+span_stack may be empty
+IndexError: pop from empty list
+The text was updated successfully, but these errors were encountered:
+gusibi
+added a commit
+to gusibi/apm-agent-python
+that referenced
+this issue
+Jun 11, 2018
+elastic#227 fix index error
+16e582d
+Copy link
+Contributor
+beniwohli
+commented
+Jun 11, 2018
+Thanks @gusibi! Usually, when this happens, it is caused by another bug. Do you have the full stack trace of this error?
+Copy link
+Contributor
+Author
+gusibi
+commented
+Jun 11, 2018
+Copy link
+Contributor
+Author
+gusibi
+commented
+Jun 11, 2018
+•
+edited
+redis server is pika
+https://github.com/Qihoo360/pika
+beniwohli
+added a commit
+to beniwohli/apm-agent-python
+that referenced
+this issue
+Jun 11, 2018
+log error when trying to end a span that hasn't started
+…
+Verified
+This commit was signed with the committer’s verified signature.
+beniwohli
+Benjamin Wohlwend
+GPG key ID: A017B5130EAA4DFB
+Learn about vigilant mode.
+a91cfbc
+Usually, this shouldn't happen and is an indication of a bug. But we
+should still ensure that we don't crash and instead log a message.
+fixes elastic#227
+beniwohli
+mentioned this issue
+Jun 11, 2018
+log error when trying to end a span that hasn't started
+#229
+Closed
+beniwohli
+added a commit
+to beniwohli/apm-agent-python
+that referenced
+this issue
+Jun 11, 2018
+log error when trying to end a span that hasn't started
+…
+Verified
+This commit was signed with the committer’s verified signature.
+beniwohli
+Benjamin Wohlwend
+GPG key ID: A017B5130EAA4DFB
+Learn about vigilant mode.
+e051e94
+Usually, this shouldn't happen and is an indication of a bug. But we
+should still ensure that we don't crash and instead log a message.
+fixes elastic#227
+Co-authored-by: goodspeed <cacique1103@gmail.com>
+Copy link
+Contributor
+beniwohli
+commented
+Jun 11, 2018
+Thanks for the update. It's hard to say what exactly can cause this. The only place where we call begin_span is in capture_span.__enter__, and the only place where we call end_span is in capture_span.__exit__. According to the context manager protocol, if we __enter__, we will also always __exit__.
+So the only explanation that I have is that the transaction object in __enter__ is different than the one in __exit__.
+@gusibi do you per chance use an asynchronous framework (asyncio, twisted, ...)? We currently don't support asynchronous execution (see #16), and I could imagine that it could cause an error like this.
+Copy link
+Contributor
+Author
+gusibi
+commented
+Jun 12, 2018
+@beniwohli Thanks
+I use the flask, not used asynchronous framework.
+This error all in the process of using redis.
+And not every time this error occurs.
+beniwohli
+closed this
+in
+bb56977
+Jun 12, 2018
+Sign up for free
+to join this conversation on GitHub.
+Already have an account?
+Sign in to comment
+Assignees
+No one assigned
+Labels
+None yet
+Projects
+None yet
+Milestone
+No milestone
+Linked pull requests
+Successfully merging a pull request may close this issue.
+log error when trying to end a span that hasn't started
+2 participants
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+You can’t perform that action at this time.
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.

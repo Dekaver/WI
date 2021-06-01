@@ -1,1 +1,241 @@
-typeerror str object cannot interpreted integer issue hfawaz inceptiontime github skip content sign github features mobile actions codespaces packages security code review project management integrations github sponsors customer stories team enterprise explore explore github learn contribute topics collections trending learning lab open source guides connect others readme project events community forum github education github stars program marketplace pricing plans compare plans contact sales education repository github jump suggested jump results repository github jump user github jump repository github jump sign sign
+TypeError: 'str' object cannot be interpreted as an integer · Issue #2 · hfawaz/InceptionTime · GitHub
+Skip to content
+Sign up
+Why GitHub?
+Features →
+Mobile →
+Actions →
+Codespaces →
+Packages →
+Security →
+Code review →
+Project management →
+Integrations →
+GitHub Sponsors →
+Customer stories→
+Team
+Enterprise
+Explore
+Explore GitHub →
+Learn and contribute
+Topics →
+Collections →
+Trending →
+Learning Lab →
+Open source guides →
+Connect with others
+The ReadME Project →
+Events →
+Community forum →
+GitHub Education →
+GitHub Stars program →
+Marketplace
+Pricing
+Plans →
+Compare plans →
+Contact Sales →
+Education →
+In this repository
+All GitHub
+↵
+Jump to
+↵
+No suggested jump to results
+In this repository
+All GitHub
+↵
+Jump to
+↵
+In this user
+All GitHub
+↵
+Jump to
+↵
+In this repository
+All GitHub
+↵
+Jump to
+↵
+Sign in
+Sign up
+{{ message }}
+hfawaz
+/
+InceptionTime
+Notifications
+Star
+336
+Fork
+82
+Code
+Issues
+4
+Pull requests
+14
+Actions
+Projects
+0
+Wiki
+Security
+Insights
+More
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+New issue
+Have a question about this project? Sign up for a free GitHub account to open an issue and contact its maintainers and the community.
+Pick a username
+Email Address
+Password
+Sign up for GitHub
+By clicking “Sign up for GitHub”, you agree to our terms of service and
+privacy statement. We’ll occasionally send you account related emails.
+Already on GitHub?
+Sign in
+to your account
+Jump to bottom
+TypeError: 'str' object cannot be interpreted as an integer
+#2
+Closed
+czarmanu
+opened this issue
+Sep 23, 2019
+· 7 comments
+Closed
+TypeError: 'str' object cannot be interpreted as an integer
+#2
+czarmanu
+opened this issue
+Sep 23, 2019
+· 7 comments
+Comments
+Copy link
+czarmanu
+commented
+Sep 23, 2019
+Traceback (most recent call last):
+File "/usr/lib/python3/dist-packages/pandas/core/indexes/base.py", line 2566, in get_value
+return libts.get_value_box(s, key)
+File "pandas/_libs/tslib.pyx", line 1017, in pandas._libs.tslib.get_value_box
+File "pandas/_libs/tslib.pyx", line 1025, in pandas._libs.tslib.get_value_box
+TypeError: 'str' object cannot be interpreted as an integer
+During handling of the above exception, another exception occurred:
+Traceback (most recent call last):
+File "main.py", line 117, in
+fit_classifier()
+File "main.py", line 49, in fit_classifier
+classifier.fit(x_train, y_train, x_test, y_test, y_true)
+File "/home/pf/pfstaff/projects/LakeIce_2/Experiments/GeoLocalize/InceptionTime/classifiers/inception.py", line 145, in fit
+plot_test_acc=plot_test_acc)
+File "/home/pf/pfstaff/projects/LakeIce_2/Experiments/GeoLocalize/InceptionTime/utils/utils.py", line 211, in save_logs
+df_best_model['best_model_train_acc'] = row_best_model['acc']
+File "/usr/lib/python3/dist-packages/pandas/core/series.py", line 623, in getitem
+result = self.index.get_value(self, key)
+File "/usr/lib/python3/dist-packages/pandas/core/indexes/base.py", line 2574, in get_value
+raise e1
+File "/usr/lib/python3/dist-packages/pandas/core/indexes/base.py", line 2560, in get_value
+tz=getattr(series.dtype, 'tz', None))
+File "pandas/_libs/index.pyx", line 83, in pandas._libs.index.IndexEngine.get_value
+File "pandas/_libs/index.pyx", line 91, in pandas._libs.index.IndexEngine.get_value
+File "pandas/_libs/index.pyx", line 139, in pandas._libs.index.IndexEngine.get_loc
+File "pandas/_libs/hashtable_class_helper.pxi", line 1265, in pandas._libs.hashtable.PyObjectHashTable.get_item
+File "pandas/_libs/hashtable_class_helper.pxi", line 1273, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'acc'
+The text was updated successfully, but these errors were encountered:
+Copy link
+Owner
+hfawaz
+commented
+Sep 23, 2019
+Thanks for posting, what command did you run ?
+Copy link
+Author
+czarmanu
+commented
+Sep 23, 2019
+python3 main.py InceptionTime
+Copy link
+Owner
+hfawaz
+commented
+Sep 23, 2019
+How does this issue relate to the other one you have just opened ?
+Did you resolve this one ?
+Copy link
+Author
+czarmanu
+commented
+Sep 23, 2019
+I am trying on two machines:
+Cluster with GTX 1080 Ti (This issue is solved when i did pip3 install pandas==0.23.0) which throws out [the other error]
+Local PC with GTX 1080 Ti (This issue still exist even after the pip as above)
+Copy link
+Owner
+hfawaz
+commented
+Sep 23, 2019
+Okay I think I cannot help with this error as I am not able to re-produce it.
+I will check out the other error ASAP.
+I guess the problem on your local machine has something to do with your python environment.
+Copy link
+Author
+czarmanu
+commented
+Sep 24, 2019
+It worked fine when the panda version was upgraded to 0.25.1 and the following change was done in utils.py:
+if 'acc' in row_best_model.index:
+df_best_model['best_model_train_acc'] = row_best_model['acc']
+else:
+df_best_model['best_model_train_acc'] = 0
+👍
+1
+czarmanu
+closed this
+Sep 24, 2019
+Copy link
+liadbiz
+commented
+Oct 29, 2019
+same issue here.
+I fixed it by changing two lines of code:
+df_best_model['best_model_train_acc'] = row_best_model['accuracy']
+if plot_test_acc:
+df_best_model['best_model_val_acc'] = row_best_model['val_accuracy']
+I guess this problem is due to the version of pandas or something because I did not install all the lib in requirements.txt. You can print row_best_model to check it out.
+Hope it helps.
+Sign up for free
+to join this conversation on GitHub.
+Already have an account?
+Sign in to comment
+Assignees
+No one assigned
+Labels
+None yet
+Projects
+None yet
+Milestone
+No milestone
+Linked pull requests
+Successfully merging a pull request may close this issue.
+None yet
+3 participants
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+You can’t perform that action at this time.
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.

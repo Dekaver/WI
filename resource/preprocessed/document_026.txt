@@ -1,1 +1,322 @@
-python attributeerror sequential object attribute send keras stack overflow stack overflow products teams stack overflow public questions answers stack overflow teams developers technologists share private knowledge coworkers jobs programming related technical career opportunities talent recruit tech talent build employer brand advertising reach developers technologists worldwide company loading log sign current community stack overflow help chat meta stack overflow communities sign log customize list stack exchange communities company blog people code want input take survey join stack overflow learn share knowledge build career sign email sign sign google sign github sign facebook home public questions tags users find job jobs companies teams stack overflow teams collaborate share knowledge private group create free team teams teams create free team teams q work connect share knowledge within single location structured easy search learn attributeerror sequential object attribute send keras ask question asked today active today viewed times hook sy torchhook torch node sy virtualworker hook id node model tf keras models sequential tf keras layers flatten input_shape tf keras layers dense activation relu tf keras layers dropout tf keras layers dense activation softmax model compile optimizer adam loss sparse_categorical_crossentropy metrics accuracy enter image description tried like code attributeerror like image know error means sequential object ho attribute send solve problem python tensorflow keras pytorch pysyft share improve question follow asked mins ago subin moonsubin moon new contributor subin moon new contributor site take care asking clarification commenting answering check code conduct add comment active oldest votes know someone answer share link question via email twitter facebook answer subin moon new contributor nice check code conduct thanks contributing answer stack overflow please sure answer question provide details share research avoid asking help clarification responding answers making statements based opinion back references personal experience learn see tips writing great answers draft saved draft discarded sign log sign using google sign using facebook sign using email password submit post guest name email required never shown post guest name email required never shown post answer discard clicking post answer agree terms service privacy policy cookie policy browse questions tagged python tensorflow keras pytorch pysyft ask question overflow blog podcast blocking haters service developer survey open featured meta testing three vote close reopen network sites future community promotion open source hot network questions ads rule proposal one delete undelete per post take developer survey related know object attribute python keras attributeerror list object attribute ndim sequential object attribute loss used gridsearchcv tuning keras model valueerror input arrays number samples target arrays found input samples target samples approximating smooth multidimensional function using keras error e pred model predict_classes prepare file_path attributeerror functional object attribute predict_classes hot network questions colorful plate puzzle canon legend explanation symbols two vessels inside tantive iv randomly programmatically generate good next chord way limit players currency system resource system thought understood tenses proof variance always greater zero decides congressional district removed important brand name type string overall sound guitar content security policy https data meaning law state constitution struck unconstitutional obligation legislature repeal password hash contained x middle resulting valueerror bcrypt hashpw exists circle passing three noncollinear points really equivalent euclid parallel postulate tell players necromancers bad guys browser based wallet like metamask planned cardano english equivalent russian idiom притянуть за уши opposite abbreviate purpose oiling wooden chopping board good fire resistant material write would ways balance energy mass parallel universe another someone something travels wormhole proper river horse usual feasible european universities accept phd candidates right bachelor degree computer science field voltage dosen increase batteries added parallel pgfmath rounded number without pgfmathprintnumber increasing k point grid take dos calculation recreate translucent subsurface material hot questions question feed subscribe rss question feed subscribe rss feed copy paste url rss reader lang py stack overflow questions jobs developer jobs directory salary calculator help mobile products teams talent advertising enterprise company press work legal privacy policy terms service contact us cookie settings cookie policy stack exchange network technology life arts culture recreation science stack overflow server fault super user web applications ask ubuntu webmasters game development tex latex software engineering unix linux ask different apple wordpress development geographic information systems electrical engineering android enthusiasts information security database administrators drupal answers sharepoint user experience mathematica salesforce expressionengine answers stack overflow em português blender network engineering cryptography code review magento software recommendations signal processing emacs raspberry pi stack overflow на русском code golf stack overflow en español ethereum data science arduino bitcoin software quality assurance testing sound design windows phone photography science fiction fantasy graphic design movies tv music practice theory worldbuilding video production seasoned advice cooking home improvement personal finance money academia law physical fitness gardening landscaping parenting english language usage skeptics mi yodeya judaism travel christianity english language learners japanese language chinese language french language german language biblical hermeneutics history spanish language islam русский язык russian language arqade gaming bicycles role playing games anime manga puzzling motor vehicle maintenance repair board card games bricks homebrewing martial arts great outdoors poker chess sports mathoverflow mathematics cross validated stats theoretical computer science physics chemistry biology computer science philosophy linguistics psychology neuroscience computational science meta stack exchange stack apps api data blog facebook twitter linkedin instagram site design logo stack exchange inc user contributions licensed cc sa rev stack overflow works best javascript enabled privacy clicking accept cookies agree stack exchange store cookies device disclose information accordance cookie policy accept cookies customize settings
+python - AttributeError: 'Sequential' object has no attribute 'send' in Keras - Stack Overflow
+Stack Overflow
+About
+Products
+For Teams
+Stack Overflow
+Public questions & answers
+Stack Overflow for Teams
+Where developers & technologists share private knowledge with coworkers
+Jobs
+Programming & related technical career opportunities
+Talent
+Recruit tech talent & build your employer brand
+Advertising
+Reach developers & technologists worldwide
+About the company
+Loading…
+Log in
+Sign up
+current community
+Stack Overflow
+help
+chat
+Meta Stack Overflow
+your communities
+Sign up or log in to customize your list.
+more stack exchange communities
+company blog
+People who code: we want your input.
+Take the Survey
+Join Stack Overflow to learn, share knowledge, and build your career.
+Sign up with email
+Sign up
+Sign up with Google
+Sign up with GitHub
+Sign up with Facebook
+Home
+Public
+Questions
+Tags
+Users
+Find a Job
+Jobs
+Companies
+Teams
+Stack Overflow for Teams
+– Collaborate and share knowledge with a private group.
+Create a free Team
+What is Teams?
+Teams
+What’s this?
+Create free Team
+Teams
+Q&A for work
+Connect and share knowledge within a single location that is structured and easy to search.
+Learn more
+AttributeError: 'Sequential' object has no attribute 'send' in Keras
+Ask Question
+Asked
+5 days ago
+Active
+4 days ago
+Viewed
+15 times
+-1
+hook = sy.TorchHook(torch)
+node1 = sy.VirtualWorker(hook, id="node1")
+model = tf.keras.models.Sequential([
+tf.keras.layers.Flatten(input_shape=(28,28)),
+tf.keras.layers.Dense(128, activation='relu'),
+tf.keras.layers.Dropout(0.2),
+tf.keras.layers.Dense(10, activation='softmax')])
+model.compile(optimizer='adam',
+loss='sparse_categorical_crossentropy',
+metrics=['accuracy'])
+I tried like that code. But I had an AttributeError like that image. I don't know what is the error means. Why Sequential object has ho attribute 'send'? What should I do to solve this problem?
+python tensorflow keras pytorch pysyft
+Share
+Follow
+edited May 27 at 2:26
+Black Raven
+1,34155 silver badges2121 bronze badges
+asked May 26 at 6:56
+Subin MoonSubin Moon
+1
+New contributor
+Subin Moon is a new contributor to this site. Take care in asking for clarification, commenting, and answering.
+Check out our Code of Conduct.
+1
+Your code and the one in your screenshot do not match, why are you using this send function on
+Keras Sequential model?
+– Dr. Snoopy
+May 26 at 12:54
+Add a comment
+|
+0
+Active
+Oldest
+Votes
+Know someone who can answer? Share a link to this question via email, Twitter, or Facebook.
+Your Answer
+Subin Moon is a new contributor. Be nice, and check out our Code of Conduct.
+Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
+Draft saved
+Draft discarded
+Sign up or log in
+Sign up using Google
+Sign up using Facebook
+Sign up using Email and Password
+Submit
+Post as a guest
+Name
+Email
+Required, but never shown
+Post as a guest
+Name
+Email
+Required, but never shown
+Post Your Answer
+Discard
+By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
+Browse other questions tagged python tensorflow keras pytorch pysyft
+or ask your own question.
+The Overflow Blog
+Level Up: Linear Regression in Python – Part 2
+Shipping confetti to Stack Overflow’s design system
+Featured on Meta
+The future of Community Promotion, Open Source, and Hot Network Questions Ads
+Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
+Take the 2021 Developer Survey
+Related
+1914
+How to know if an object has an attribute in Python
+22
+Keras AttributeError: 'list' object has no attribute 'ndim'
+4
+'Sequential' object has no attribute 'loss' - When I used GridSearchCV to tuning my Keras model
+0
+ValueError: Input arrays should have the same number of samples as target arrays. Found 1280 input samples and 320 target samples
+0
+Approximating a smooth multidimensional function using Keras to an error of 1e-4
+1
+pred = model.predict_classes([prepare(file_path)]) AttributeError: 'Functional' object has no attribute 'predict_classes'
+Hot Network Questions
+"a man/woman of difficult situations", does this sound idiomatic?
+Did ancient Greek mathematicians consider numbers independently of geometry?
+How would transportation evolve in a world where everyone can teleport?
+Did medieval kingdoms issue health related guidelines?
+Why would birds fall from the sky due to a lack of moisture?
+How could publicly accessible information proving that a public figure is corrupt go undetected for at least a year?
+I have a postdoc interview tomorrow and I think I have overstated my abilities in my CV. How do I address it during the interview?
+Are vertices in a clockwise order?
+Print the last answerer's first submission
+Lunar Terrain Model in Apollo Guidance Computer
+Movie where someone's wife is secretly a monster
+Why is this result no contradiction to length contraction?
+Why is g3 a bad move here?
+Why can't the piano play middle eastern music?
+I ran a nail through a wire at home, should I worry?
+select distinct columns over multiple databases sql server
+Is the the word order of "Iura novit curia" used for emphasis?
+Why does sleep, when run in a shell script, ignore SIGINT?
+3 verbs in one sentence - how is that?
+How to rotate a circle around y-aixs and calculate the volume of the 3D solid?
+Advice needed – I can't reach my collaborator, but there's a short deadline for revising our journal article submission
+Stop, in the name of the law
+How do computers perform operations on numbers that are larger than 64 bits?
+Can a rest be taken in a moving cart?
+more hot questions
+Question feed
+Subscribe to RSS
+Question feed
+To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+lang-py
+Stack Overflow
+Questions
+Jobs
+Developer Jobs Directory
+Salary Calculator
+Help
+Mobile
+Products
+Teams
+Talent
+Advertising
+Enterprise
+Company
+About
+Press
+Work Here
+Legal
+Privacy Policy
+Terms of Service
+Contact Us
+Cookie Settings
+Cookie Policy
+Stack Exchange Network
+Technology
+Life / Arts
+Culture / Recreation
+Science
+Other
+Stack Overflow
+Server Fault
+Super User
+Web Applications
+Ask Ubuntu
+Webmasters
+Game Development
+TeX - LaTeX
+Software Engineering
+Unix & Linux
+Ask Different (Apple)
+WordPress Development
+Geographic Information Systems
+Electrical Engineering
+Android Enthusiasts
+Information Security
+Database Administrators
+Drupal Answers
+SharePoint
+User Experience
+Mathematica
+Salesforce
+ExpressionEngine® Answers
+Stack Overflow em Português
+Blender
+Network Engineering
+Cryptography
+Code Review
+Magento
+Software Recommendations
+Signal Processing
+Emacs
+Raspberry Pi
+Stack Overflow на русском
+Code Golf
+Stack Overflow en español
+Ethereum
+Data Science
+Arduino
+Bitcoin
+Software Quality Assurance & Testing
+Sound Design
+Windows Phone
+more (29)
+Photography
+Science Fiction & Fantasy
+Graphic Design
+Movies & TV
+Music: Practice & Theory
+Worldbuilding
+Video Production
+Seasoned Advice (cooking)
+Home Improvement
+Personal Finance & Money
+Academia
+Law
+Physical Fitness
+Gardening & Landscaping
+Parenting
+more (10)
+English Language & Usage
+Skeptics
+Mi Yodeya (Judaism)
+Travel
+Christianity
+English Language Learners
+Japanese Language
+Chinese Language
+French Language
+German Language
+Biblical Hermeneutics
+History
+Spanish Language
+Islam
+Русский язык
+Russian Language
+Arqade (gaming)
+Bicycles
+Role-playing Games
+Anime & Manga
+Puzzling
+Motor Vehicle Maintenance & Repair
+Board & Card Games
+Bricks
+Homebrewing
+Martial Arts
+The Great Outdoors
+Poker
+Chess
+Sports
+more (16)
+MathOverflow
+Mathematics
+Cross Validated (stats)
+Theoretical Computer Science
+Physics
+Chemistry
+Biology
+Computer Science
+Philosophy
+Linguistics
+Psychology & Neuroscience
+Computational Science
+more (10)
+Meta Stack Exchange
+Stack Apps
+API
+Data
+Blog
+Facebook
+Twitter
+LinkedIn
+Instagram
+site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
+rev 2021.5.28.39383
+Stack Overflow works best with JavaScript enabled
+Your privacy
+By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
+Accept all cookies
+Customize settings

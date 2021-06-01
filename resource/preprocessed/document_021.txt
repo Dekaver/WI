@@ -1,1 +1,494 @@
-php laravel htmlspecialchars expects parameter string object given project stack overflow stack overflow products teams stack overflow public questions answers stack overflow teams developers technologists share private knowledge coworkers jobs programming related technical career opportunities talent recruit tech talent build employer brand advertising reach developers technologists worldwide company loading log sign current community stack overflow help chat meta stack overflow communities sign log customize list stack exchange communities company blog people code want input take survey join stack overflow learn share knowledge build career sign email sign sign google sign github sign facebook home public questions tags users find job jobs companies teams stack overflow teams collaborate share knowledge private group create free team teams teams create free team teams q work connect share knowledge within single location structured easy search learn laravel htmlspecialchars expects parameter string object given project ask question asked years months ago active years months ago viewed k times trying code simple website form htmlspecialchars error tried make message work error controller php namespace app http controllers use mail use illuminate http request class contactmessagecontroller extends controller public function create return view form public function store request request validate request name required email required email address required mail send emails contact message message request message function mail use request mail request email request name mail john example com subject contact message return redirect back flash_message thanks blade customer details invalid feedback display block customer form session flash_message session get flash_message endif csrf_field full name errors name errors first name endif email errors email errors first email endif address errors address errors first address endif message errors message errors first message endif submit contact message blade php message also tried dd message didnt work please help php laravel web laravel blade htmlspecialchars share improve question follow asked feb calvinericocalvinerico gold badge silver badge bronze badges seen stackoverflow com questions brainmaniac feb yes help either calvinerico feb tried checking message contains error even come specific variable nico haase feb nicohaase please explain check message contains newbie laravel calvinerico feb well could use var_dump echo maybe symfony dump works sophisticated approaches would start xdebug want rude want sound arrogant basic craftmanship need learn get efficient programming see pays quickly nico haase feb show comments answers active oldest votes change array key message messages controller like data array messages request message also blade print messages message variable always passed e mail views allows inline embedding attachments best avoid passing message variable view payload check note link http laravel com docs mail basic usage share improve answer follow answered feb md riadul islammd riadul islam silver badges bronze badges welcome calvinerico new let know answer works accept accepting perfect answer add value profile see details stackoverflow com help someone answers md riadul islam feb thanks applies laravel entry message removed documentation sure delroh oct somehow say kinds stuff debug page searched everywhere tried many methods send data oh god akshay kn sep add comment try public function store request request validate request name required email required email address required fromname request name subject mailsent data array message request message fromemail request email toname test toemail john example com mail send emails contact message data function message use toemail toname fromemail fromname subject message fromemail fromname message toemail toname message subject subject return redirect back flash_message thanks share improve answer follow answered feb addweb solution pvt ltdaddweb solution pvt ltd k gold badges silver badges bronze badges please explain exactly changed makes difference nico haase feb nicohaase changed mail send functionality addweb solution pvt ltd feb tried work either still error calvinerico feb exactly changed think solves problem long term user know explanations crucial op able learn answer nico haase feb add comment answer thanks contributing answer stack overflow please sure answer question provide details share research avoid asking help clarification responding answers making statements based opinion back references personal experience learn see tips writing great answers draft saved draft discarded sign log sign using google sign using facebook sign using email password submit post guest name email required never shown post guest name email required never shown post answer discard clicking post answer agree terms service privacy policy cookie policy answer looking browse questions tagged php laravel web laravel blade htmlspecialchars ask question overflow blog podcast blocking haters service developer survey open featured meta testing three vote close reopen network sites future community promotion open source hot network questions ads rule proposal one delete undelete per post take developer survey visit chat linked laravel htmlspecialchars expects parameter string getting error sending email usign laravel related mysql_fetch_array mysql_fetch_assoc mysql_fetch_row mysql_num_rows etc expects parameter resource laravel htmlspecialchars expects parameter string object given htmlspecialchars expects parameter string array laravel htmlspecialchars expects parameter string object given laravel htmlspecialchars expects parameter string array given laravel htmlspecialchars expects parameter string array given laravel sendgrid htmlspecialchars expects parameter string object given edit profile dont worked laravel hot network questions biased estimates logistic regression due class imbalance cable shielding adequate video audio frequencies would group elemental mages defend guns artillery late ww exists circle passing three noncollinear points really equivalent euclid parallel postulate sasha johnson state white man equal slave tell players necromancers bad guys countries get manifest every passenger flying airspace knows boarded plane wrong key signature score f dorian jovanka houska introduced wgm holds prestigious im title someone recognize fps sceenshot randomly programmatically generate good next chord prior odds hundred one voldemort surviving probability voldemort alive supposed report status standups book referring software provide facts conclusion want reach maintain cooperation declining meetings scheduled past local bed time would probable reaction belarusian planes entered lithuanian airspace elementary proof distal maps invertible content security policy https data meaning fixture natural gas fired forced air furnace smoke detector sin kill mosquito hinduism much oil necessary fry cook eggs important brand name type string overall sound guitar rip man apart like rag doll read like rip apart rag doll instead like rag doll rip apart man exactly carries energy transformer primary secondary hot questions question feed subscribe rss question feed subscribe rss feed copy paste url rss reader lang php stack overflow questions jobs developer jobs directory salary calculator help mobile products teams talent advertising enterprise company press work legal privacy policy terms service contact us cookie settings cookie policy stack exchange network technology life arts culture recreation science stack overflow server fault super user web applications ask ubuntu webmasters game development tex latex software engineering unix linux ask different apple wordpress development geographic information systems electrical engineering android enthusiasts information security database administrators drupal answers sharepoint user experience mathematica salesforce expressionengine answers stack overflow em português blender network engineering cryptography code review magento software recommendations signal processing emacs raspberry pi stack overflow на русском code golf stack overflow en español ethereum data science arduino bitcoin software quality assurance testing sound design windows phone photography science fiction fantasy graphic design movies tv music practice theory worldbuilding video production seasoned advice cooking home improvement personal finance money academia law physical fitness gardening landscaping parenting english language usage skeptics mi yodeya judaism travel christianity english language learners japanese language chinese language french language german language biblical hermeneutics history spanish language islam русский язык russian language arqade gaming bicycles role playing games anime manga puzzling motor vehicle maintenance repair board card games bricks homebrewing martial arts great outdoors poker chess sports mathoverflow mathematics cross validated stats theoretical computer science physics chemistry biology computer science philosophy linguistics psychology neuroscience computational science meta stack exchange stack apps api data blog facebook twitter linkedin instagram site design logo stack exchange inc user contributions licensed cc sa rev stack overflow works best javascript enabled privacy clicking accept cookies agree stack exchange store cookies device disclose information accordance cookie policy accept cookies customize settings
+php - Laravel htmlspecialchars() expects parameter 1 to be string, object given in my project? - Stack Overflow
+Stack Overflow
+About
+Products
+For Teams
+Stack Overflow
+Public questions & answers
+Stack Overflow for Teams
+Where developers & technologists share private knowledge with coworkers
+Jobs
+Programming & related technical career opportunities
+Talent
+Recruit tech talent & build your employer brand
+Advertising
+Reach developers & technologists worldwide
+About the company
+Loading…
+Log in
+Sign up
+current community
+Stack Overflow
+help
+chat
+Meta Stack Overflow
+your communities
+Sign up or log in to customize your list.
+more stack exchange communities
+company blog
+People who code: we want your input.
+Take the Survey
+Join Stack Overflow to learn, share knowledge, and build your career.
+Sign up with email
+Sign up
+Sign up with Google
+Sign up with GitHub
+Sign up with Facebook
+Home
+Public
+Questions
+Tags
+Users
+Find a Job
+Jobs
+Companies
+Teams
+Stack Overflow for Teams
+– Collaborate and share knowledge with a private group.
+Create a free Team
+What is Teams?
+Teams
+What’s this?
+Create free Team
+Teams
+Q&A for work
+Connect and share knowledge within a single location that is structured and easy to search.
+Learn more
+Laravel htmlspecialchars() expects parameter 1 to be string, object given in my project?
+Ask Question
+Asked
+2 years, 3 months ago
+Active
+2 years, 3 months ago
+Viewed
+16k times
+5
+1
+So i'm trying to code a simple website form. But it has this htmlspecialchars error.
+I've tried to make {{ $message }} but it didn't work. has the same error.
+this is my controller :
+<?php
+namespace App\Http\Controllers;
+use Mail;
+use Illuminate\Http\Request;
+class ContactMessageController extends Controller
+{
+public function create()
+{
+return view('form');
+}
+public function store(Request $request)
+{
+$this->validate($request, [
+'name' => 'required',
+'email' => 'required|email',
+'address' => 'required',
+]);
+Mail::send('emails.contact-message', [
+'message' => $request->message
+], function($mail) use($request) {
+$mail->from($request->email, $request->name);
+$mail->to('john@example.com')->subject('Contact message');
+});
+return redirect()->back()->with('flash_message', 'thanks');
+}
+}
+and this is my blade
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Customer Details</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+<style>
+.invalid-feedback {
+display: block;
+}
+</style>
+</head>
+<body>
+<div class ="container">
+<h1>Customer Form</h1>
+@if (Session::has('flash_message'))
+<div class="alert alert-success">{{ Session::get('flash_message') }}</div>
+@endif
+<form method="post" action="{{ route('contact.store') }}">
+{{ csrf_field() }}
+<div class="form-group">
+<label>Full Name : </label>
+<input type="text" class="form-control" name="name">
+@if ($errors->has('name'))
+<small class="form-text invalid-feedback">{{ $errors->first('name') }}</small>
+@endif
+</div>
+<div class="form-group">
+<label>Email : </label>
+<input type="text" class="form-control" name="email">
+@if ($errors->has('email'))
+<small class="form-text invalid-feedback">{{ $errors->first('email') }}</small>
+@endif
+</div>
+<div class="form-group">
+<label>Address : </label>
+<textarea name="address" class ="form-control"></textarea>
+@if ($errors->has('address'))
+<small class="form-text invalid-feedback">{{ $errors->first('address') }}</small>
+@endif
+</div>
+<div class="form-group">
+<label>Message : </label>
+<textarea name="message" class ="form-control"></textarea>
+@if ($errors->has('message'))
+<small class="form-text invalid-feedback">{{ $errors->first('message') }}</small>
+@endif
+</div>
+<button class="btn btn-primary">Submit</button>
+</form>
+</div>
+</body>
+</html>
+and this is my contact-message.blade.php
+{{ $message }}
+also i've tried
+{{dd($message)}}
+but it didnt work.
+please help.
+php laravel web laravel-blade htmlspecialchars
+Share
+Follow
+asked Feb 12 '19 at 8:02
+calvinericocalvinerico
+8311 gold badge11 silver badge66 bronze badges
+9
+seen this? stackoverflow.com/questions/40045920/…
+– Brainmaniac
+Feb 12 '19 at 8:07
+yes, but it doesn't help either.
+– calvinerico
+Feb 12 '19 at 8:12
+Have you tried checking what $message contains? Does the error even come from that specific variable?
+– Nico Haase
+Feb 12 '19 at 8:17
+@NicoHaase can you please explain how do I check what $message contains? i'm a newbie in laravel..
+– calvinerico
+Feb 12 '19 at 8:28
+1
+Well, you could use var_dump, echo, maybe Symfony's dump works, more sophisticated approaches would start with XDebug - I don't want to be rude, and I don't want to sound arrogant, but that is basic craftmanship that you need to learn to get more efficient in programming. You will see that it pays out quickly :)
+– Nico Haase
+Feb 12 '19 at 8:32
+|
+Show 4 more comments
+2 Answers
+2
+Active
+Oldest
+Votes
+20
+Just change the array key from message to messages in your controller like below:
+$data = array(
+'messages' => $request->message
+);
+and also in the blade print it as {{$messages}}
+A $message variable is always passed to e-mail views, and allows
+the inline embedding of attachments. So, it is best to avoid passing a
+message variable in your view payload.
+Check the note in this link: http://laravel.com/docs/5.0/mail#basic-usage
+Share
+Follow
+answered Feb 12 '19 at 10:35
+Md Riadul IslamMd Riadul Islam
+86666 silver badges2121 bronze badges
+3
+Welcome @calvinerico . As you are new, just to let you know that if any answer works for you then you can accept it and accepting a perfect answer will add value to your profile. See details from here: stackoverflow.com/help/someone-answers
+– Md Riadul Islam
+Feb 13 '19 at 3:31
+1
+Thanks! This applies to Laravel 5.8 and this entry about the $message was removed from the documentation. Not sure why...
+– delroh
+Oct 28 '19 at 21:25
+1
+They should somehow say these kinds of stuff in the debug page. I searched everywhere and tried many methods to send data. Oh my god.
+– Akshay kn
+Sep 4 '20 at 7:07
+Add a comment
+|
+-1
+You should try this:
+public function store(Request $request)
+{
+$this->validate($request, [
+'name' => 'required',
+'email' => 'required|email',
+'address' => 'required',
+]);
+$fromName = $request->name;
+$subject = "MailSent";
+$data = array(
+'message' => $request->message
+);
+$fromEmail = $request->email;
+$toName = 'test';
+$toEmail = 'john@example.com';
+Mail::send('emails.contact-message', $data, function($message) use ($toEmail, $toName, $fromEmail, $fromName, $subject){
+$message->from($fromEmail, $fromName);
+$message->to($toEmail, $toName);
+$message->subject($subject);
+});
+return redirect()->back()->with('flash_message', 'thanks');
+}
+}
+Share
+Follow
+answered Feb 12 '19 at 8:14
+AddWeb Solution Pvt LtdAddWeb Solution Pvt Ltd
+18.9k33 gold badges2121 silver badges5050 bronze badges
+4
+1
+Please explain what exactly you've changed and why that makes a difference
+– Nico Haase
+Feb 12 '19 at 8:17
+@NicoHaase: I have changed mail send functionality
+– AddWeb Solution Pvt Ltd
+Feb 12 '19 at 8:18
+i've tried it, but it doesn't work either. still the same error.
+– calvinerico
+Feb 12 '19 at 8:19
+1
+What exactly have you changed and why do you think that this solves the problem? As a long-term user of SO, you should know that these explanations are crucial as the OP should be able to learn from your answer
+– Nico Haase
+Feb 12 '19 at 8:20
+Add a comment
+|
+Your Answer
+Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
+Draft saved
+Draft discarded
+Sign up or log in
+Sign up using Google
+Sign up using Facebook
+Sign up using Email and Password
+Submit
+Post as a guest
+Name
+Email
+Required, but never shown
+Post as a guest
+Name
+Email
+Required, but never shown
+Post Your Answer
+Discard
+By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
+Not the answer you're looking for? Browse other questions tagged php laravel web laravel-blade htmlspecialchars
+or ask your own question.
+The Overflow Blog
+Level Up: Linear Regression in Python – Part 2
+Shipping confetti to Stack Overflow’s design system
+Featured on Meta
+The future of Community Promotion, Open Source, and Hot Network Questions Ads
+Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
+Take the 2021 Developer Survey
+Linked
+11
+Laravel 5.3 - htmlspecialchars() expects parameter 1 to be string
+0
+Getting error while sending email usign laravel
+Related
+978
+mysql_fetch_array()/mysql_fetch_assoc()/mysql_fetch_row()/mysql_num_rows etc… expects parameter 1 to be resource
+25
+Laravel - htmlspecialchars() expects parameter 1 to be string, object given
+0
+htmlspecialchars() expects parameter 1 to be string, array laravel?
+1
+htmlspecialchars() expects parameter 1 to be string, object given - laravel
+2
+htmlspecialchars() expects parameter 1 to be string, array given in Laravel
+0
+htmlspecialchars expects parameter 1 to be string, array given
+1
+Laravel + SendGrid htmlspecialchars() expects parameter 1 to be string, object given
+1
+edit profile dont worked :/ laravel 7
+Hot Network Questions
+How would transportation evolve in a world where everyone can teleport?
+Did medieval kingdoms issue health related guidelines?
+Why do we have two kidneys but one liver?
+Movie where someone's wife is secretly a monster
+Why is g3 a bad move here?
+I ran a nail through a wire at home, should I worry?
+Why can't the piano play middle eastern music?
+The famous "Charaiveti" mantra is mentioned in which Vedic verse?
+Vocal range of a crowd
+Print the last answerer's first submission
+Why did SMARTDRV have to be started with /x when DOS started?
+Is there a misprint on this note in the Maple Leaf Rag?
+Why do Igors (but not Igorinas) lisp when they speak?
+Where and how are raw transactions stored on the blockchain?
+How can I offset 6" ducting by just a few inches?
+Why isn't it the norm to have research repeated immediately by other academics?
+A bracket amphitheater
+Should forcing open doors be Strength or Strength (Athletics)
+How to rotate a circle around y-aixs and calculate the volume of the 3D solid?
+What technical reasons prevented the Win9x Virtual Machine Monitor from running multiple threads simultaneously?
+Does 'graduate program' mean MSc or Ph.D.?
+How can objects be neither vector nor scalar?
+The usage of can't
+Starting play at higher levels and ability point buy
+more hot questions
+Question feed
+Subscribe to RSS
+Question feed
+To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+lang-php
+Stack Overflow
+Questions
+Jobs
+Developer Jobs Directory
+Salary Calculator
+Help
+Mobile
+Products
+Teams
+Talent
+Advertising
+Enterprise
+Company
+About
+Press
+Work Here
+Legal
+Privacy Policy
+Terms of Service
+Contact Us
+Cookie Settings
+Cookie Policy
+Stack Exchange Network
+Technology
+Life / Arts
+Culture / Recreation
+Science
+Other
+Stack Overflow
+Server Fault
+Super User
+Web Applications
+Ask Ubuntu
+Webmasters
+Game Development
+TeX - LaTeX
+Software Engineering
+Unix & Linux
+Ask Different (Apple)
+WordPress Development
+Geographic Information Systems
+Electrical Engineering
+Android Enthusiasts
+Information Security
+Database Administrators
+Drupal Answers
+SharePoint
+User Experience
+Mathematica
+Salesforce
+ExpressionEngine® Answers
+Stack Overflow em Português
+Blender
+Network Engineering
+Cryptography
+Code Review
+Magento
+Software Recommendations
+Signal Processing
+Emacs
+Raspberry Pi
+Stack Overflow на русском
+Code Golf
+Stack Overflow en español
+Ethereum
+Data Science
+Arduino
+Bitcoin
+Software Quality Assurance & Testing
+Sound Design
+Windows Phone
+more (29)
+Photography
+Science Fiction & Fantasy
+Graphic Design
+Movies & TV
+Music: Practice & Theory
+Worldbuilding
+Video Production
+Seasoned Advice (cooking)
+Home Improvement
+Personal Finance & Money
+Academia
+Law
+Physical Fitness
+Gardening & Landscaping
+Parenting
+more (10)
+English Language & Usage
+Skeptics
+Mi Yodeya (Judaism)
+Travel
+Christianity
+English Language Learners
+Japanese Language
+Chinese Language
+French Language
+German Language
+Biblical Hermeneutics
+History
+Spanish Language
+Islam
+Русский язык
+Russian Language
+Arqade (gaming)
+Bicycles
+Role-playing Games
+Anime & Manga
+Puzzling
+Motor Vehicle Maintenance & Repair
+Board & Card Games
+Bricks
+Homebrewing
+Martial Arts
+The Great Outdoors
+Poker
+Chess
+Sports
+more (16)
+MathOverflow
+Mathematics
+Cross Validated (stats)
+Theoretical Computer Science
+Physics
+Chemistry
+Biology
+Computer Science
+Philosophy
+Linguistics
+Psychology & Neuroscience
+Computational Science
+more (10)
+Meta Stack Exchange
+Stack Apps
+API
+Data
+Blog
+Facebook
+Twitter
+LinkedIn
+Instagram
+site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
+rev 2021.5.28.39383
+Stack Overflow works best with JavaScript enabled
+Your privacy
+By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
+Accept all cookies
+Customize settings

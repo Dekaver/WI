@@ -1,0 +1,126 @@
+ErrorCode class - error library - Dart API
+analyzer package
+documentation
+error
+ErrorCode abstract class
+ErrorCode
+ErrorCode class
+Null safety
+An error code associated with an AnalysisError.
+Generally, messages should follow the Guide for Writing
+Diagnostics.
+Constructors
+ErrorCode({String? correction, bool hasPublishedDocs = false, bool isUnresolvedIdentifier = false, required String message, required String name, required String uniqueName})
+Initialize a newly created error code to have the given name. The message
+associated with the error will be created from the given message
+template. The correction associated with the error will be created from the
+given correction template.
+const
+ErrorCode.temporary2({String? correction, bool hasPublishedDocs = false, bool isUnresolvedIdentifier = false, required String message, required String name, required String uniqueName})
+const
+Properties
+correction
+→ String?
+The template used to create the correction to be displayed for this error,
+or null if there is no correction information for this error. The
+correction should indicate how the user can fix the error.
+read-only
+errorSeverity
+→ ErrorSeverity
+The severity of the error.
+read-only
+hashCode
+→ int
+The hash code for this object. [...]
+read-only, inherited
+hasPublishedDocs
+→ bool
+Return true if diagnostics with this code have documentation for them
+that has been published.
+final
+isIgnorable
+→ bool
+Whether a finding of this error is ignorable via comments such as
+// ignore: or // ignore_for_file:.
+read-only
+isUnresolvedIdentifier
+→ bool
+Whether this error is caused by an unresolved identifier.
+final
+message
+→ String
+The template used to create the message to be displayed for this error. The
+message should indicate what is wrong and why it is wrong.
+read-only
+name
+→ String
+The name of the error code.
+final
+runtimeType
+→ Type
+A representation of the runtime type of the object.
+read-only, inherited
+type
+→ ErrorType
+The type of the error.
+read-only
+uniqueName
+→ String
+The unique name of this error code.
+final
+url
+→ String?
+Return a URL that can be used to access documentation for diagnostics with
+this code, or null if there is no published documentation.
+read-only
+Methods
+noSuchMethod(Invocation invocation)
+→ dynamic
+Invoked when a non-existent method or property is accessed. [...]
+inherited
+toString()
+→ String
+A string representation of this object. [...]
+override
+Operators
+operator ==(Object other)
+→ bool
+The equality operator. [...]
+inherited
+analyzer package
+documentation
+error
+ErrorCode abstract class
+error library
+Classes
+AnalysisError
+ErrorCode
+ErrorSeverity
+ErrorType
+Constants
+errorCodeValues
+Functions
+errorCodeByUniqueName
+Constructors
+ErrorCode
+temporary2
+Properties
+correction
+errorSeverity
+hashCode
+hasPublishedDocs
+isIgnorable
+isUnresolvedIdentifier
+message
+name
+runtimeType
+type
+uniqueName
+url
+Methods
+noSuchMethod
+toString
+Operators
+operator ==
+analyzer
+1.7.1

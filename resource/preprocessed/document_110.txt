@@ -1,0 +1,151 @@
+Memahami Exception Handling Pada Pemrograman Java – Bahasa Java
+Skip to content
+Bahasa Java
+Belajar Program Java Dasar Bagi Pemula dan Ulasan Gadget
+Menu
+Home
+Daftar Isi
+Umum
+Perkenalan Program Java
+Memahami Exception Handling Pada Pemrograman Java
+April 21, 2021April 13, 2018 by bahasajava
+Jika Java Virtual Machine (JVM) mendeteksi operasi yang tidak mungkin untuk dilakukan, maka saat  program berjalan akan muncul runtime error.
+Sebagai contoh, jika anda mengakses suatu array menggunakan index yang out of bonds, maka anda akan mendapatkan runtime error dengan ArrayIndexOutOfBoundsException.
+Atau misalkan ketika anda memasukkan nilai dengan tipe double, padahal program anda dirancang untuk nilai integer, maka anda akan mendapatkan runtime error InputMismatchException.
+Pada program Java, runtime error ini akan dilemparkan sebagai pengecualian-pengecualian atau exceptions.
+Exceptions ini juga adalah objek yang merepresentasikan suatu error atau kondisi yang mencegah eksekusi berjalan secara normal.
+Jika exception tidak ditangani maka program akan berhenti secara tidak normal.
+Pertanyaannya adalah bagaimana cara anda untuk menangani exception sehingga program bisa terus berjalan atau berhenti dengan baik?
+Exception handling merupakan bagian penting dari penulisan aplikasi Java yang tangguh.
+Oleh sebab itu, bagian ini adalah persyaratan non-fungsional untuk aplikasi apa pun. Bertujuan untuk menangani kondisi di mana terjadi kekeliruan dengan baik seperti resources yang tidak tersedia, input yang tidak valid, input null dan lain sebagainya.
+Java menyediakan beberapa fitur untuk handling exception, terdapat secara built-in dalam bentuk keyword try, catch dan finally. Bahasa pemrograman Java juga memungkinkan anda untuk membuat exception yang baru dan melemparnya dengan menggunakan keyword throw dan throws.
+Ikhtisar Exception Handling
+Exceptions dilemparkan (thrown) dari suatu method. Pemanggil (caller) dari method tersebut dapat menangkap (catch) dan menangani exception itu.
+Untuk memahami exception handing lihat contoh kode program di bawah ini:
+Pada kode di atas ketika user memasukkan angka 0 pada angka ke dua, maka runtime error akan terjadi karena integer tidak bisa di bagi oleh angka 0. Misalkan contoh output seperti di bawah ini:
+Baca Juga:  5 Perbedaan Error dan Exception Pada Program Java Yang Harus Anda KetahuiMasukkan dua buah integer:
+1
+Exception in thread “main” java.lang.ArithmeticException: / by zero
+at Pembagian.main(Pembagian.java:15)
+Cara sederhana untuk mengatasi masalah ini adalah dengan menggunakan kondisional if, seperti pada contoh berikut ini:
+Contoh output:
+Masukkan dua buah integer:
+1
+Angka pembagi tidak boleh nol!
+Sebelum melangkah lebih jauh pada exception handling, kode di atas dapat ditulis ulang dengan menggunakan method untuk pembagian seperti contoh di bawah ini:
+Pada kode di atas method pada line (6-12) akan mengembalikan hasil pembagian dari dua buah integer. Jika angka ke dua adalah 0 sebagai pembagi maka program akan dihentikan pada line 9.
+Ini jelas adalah sebuah masalah karena anda seharusnya tidak membuat method untuk menghentikan program.
+Jadi, bagaimana suatu method dapat memberitahu pemanggilnya bahwa suatu exception telah terjadi? Java mengizinkan suatu method untuk melemparkan suatu exception yang dapat ditangkap dan ditangani oleh caller atau pemanggil.
+Jadi kode di atas dapat ditulis kembali sebagai:
+Pada kode di atas jika angka kedua atau pembagi adalah 0, maka method akan melemparkan exception pada line 9:
+throw new ArithmeticException(“Angka pembagi tidak boleh nol!”);
+Nilai yang dilemparkan, dalam hal ini adalah new ArithmeticException(“Angka pembagi tidak boleh nol!”); disebut dengan suatu exception. Sedangkan eksekusi dari pernyataan throw disebut dengan melemparkan suatu exception atau throwing an exception.
+Objek exception adalah suatu object yang dibuat dari class Exception. Dalam hal ini class Exception adalah java.lang.ArithmeticException.
+Dengan hirarki:
+java.lang.Object
+java.lang.Throwable
+java.lang.Exception
+java.lang.RuntimeException
+java.lang.ArithmeticException
+Konstruktor ArithmeticException(String s) dipanggil untuk mengkonstruksi objek exception. Di mana String s adalah pesan yang menjelaskan mengenai exception.
+Baca Juga:  Memahami throw Exception Pada Program JavaKetika sebuah exception dilemparkan, maka alur eksekusi secara normal akan terganggu. Seperti istilah “throw an exception” yang artinya adalah untuk mem-pass-kan exception dari satu tempat ke tempat lainnya.
+Blok try dan catch
+Pernyataan untuk memanggil method terkandung dalam blok try dan catch. Blok try pada line 23 – 28  berisi kode yang dijalankan pada keadaan normal.
+Sementara itu exception akan ditangkap oleh blok catch pada line 30 – 33. Jadi kode yang terdapat pada blok catch bertujuan untuk menangani exception.
+Kemudian pernyataan pada line 35 akan dieksekusi setelah blok catch dieksekusi.
+Pernyataan throw ini dapat dianalogikan dengan pemanggilan method. Namun, bukan method yang dipanggil, melainkan blok catch.
+Dalam hal ini, suatu blok catch adalah seperti sebuah definisi method dengan parameter yang sesuai dengan tipe nilai yang dilemparkan. Tidak seperti method, bagaimanapun, setelah blok catch dieksekusi, kontrol program tidak kembali lagi kepada pernyataan throw, melainkan akan melanjutkan ekseskusi pada pernyataan selanjutnya setelah blok catch.
+Parameter Blok catch
+Pada line 30:
+catch (ArithmeticException exception)
+Identifier exception berperan sama seperti parameter dalam sebuah method. Dengan demikian, parameter ini disebut sebagai suatu parameter blok catch.
+ArithmeticException di atas, yang ditulis lebih dulu sebelum exception adalah untuk menentukan jenis exception apa yang bisa ditangkap oleh blok catch. Sekali exception ditangkap maka anda bisa mengakses nilai yang dilemparkan dari parameter ini di dalam body dari blok catch.
+Secara ringkas, sebuah template dari blok try-throw-catch akan tampak seperti ini:
+Sebuah exception mungkin dapat dilontarkan secara langsung dengan menggunakan pernyataan throw di dalam blok try. Atau bisa juga dengan menggunakan method yang dapat melemparkan exception.
+Baca Juga:  Contoh Penggunaan Method Untuk Mendapatkan Informasi Pada Exception HandlingPada line 24, method main memanggil hitungPembagian(). Jika method hitungPembagian() berjalan dengan normal maka maka mengembalikan sebuuah nilai pada caller.
+Sebaliknya jika method hitungPembagian() menemukan exception maka ia akan melemparkan kembali exception tersebut pada caller. Selanjutnya blok catch dari caller akan menangani exception tersebut.
+Keuntungan Menggunakan Exception Handling
+Sekarang anda bisa melihat keuntungan menggunakan exception handling. Keuntungannya dalah memungkinkan sebuah method untuk melemparkan exception pada pemanggilnya atau caller dan memungkinkan caller untuk menangani exception tersebut.
+Dapat dibayangkan bila tanpa kapabilitas tersebut method yang dipanggil itu sendiri harus menangani exception atau menghentikan program. Seringkali method yang dipanggil tidak mengetahui apa yang harus dilakukan ketika terjadi error. Ini adalah kasus yang tipikal untuk method-method library. Library method dapat mendeteksi error namun hanya caller yang dapat mengetahui apa yang harus dilakukan ketika error muncul.
+Manfaat utama dari exception handling adalah memisahkan pendeteksian suatu error dari penanganan error.
+Banyak method library melemparkan exceptions. Berikut ini adalah contoh menangani InputMismatchException ketika membaca sebuah input.
+Ketika mengeksekusi input.nextInt() pada line 12, suatu InputMismatchException muncul jika user memasukkan angka yang bukan merupakan integer.
+Misalkan nilai 2.9 diinput, maka  InputMismatchException terjadi dan kontrol program akan dipindahkan ke blok catch line 19-22. Pernyataan di dalam blok tersebut akan dieksekusi.
+Pernyataan input.nextLine() pada line 21 akan memusnahkan input line saat ini dan kemudian user dapat memasukkan input pada line yang baru.
+Variabel lanjutkanInput mengontrol loop. Nilai inisialnya adalah true pada line 7 dan kemudian diubah menjadi false pada line 16 ketika nilai yang valid diterima. Ketika sebuah input nilai yang valid diterima maka tidak diperlukan lagi untuk melanjutkan input angka.
+Categories Exception Tags Exception handling
+Post navigation
+Contoh Penggunaan Method Untuk Mendapatkan Informasi Pada Exception HandlingContoh Program Exception Handling: Mendeklarasikan, Melemparkan, Dan Menangkap Exception Pada
+Java
+Leave a Comment Cancel replyCommentName
+Email
+Website
+Save my name, email, and website in this browser for the next time I comment.
+Recent Posts
+HP Spectre x360 Core i7 Convertible 14 Kelas Top Premium
+Laptop Desain Grafis 10 Jutaan Terbaik Untuk Mahasiswa Dan Karyawan
+Harga Laptop Asus VivoBook 15 S533 dan Review
+Harga Laptop Asus VivoBook 15 F512da Ryzen 3-3200u dan Review
+Memahami Layout Manager: CardLayout Pada GUI Java
+Kursus Online Java Terbaik Untuk Pemula
+Memahami Layout Manager: Box Layout Pada GUI Java
+Tutorial Java Swing Layout Manager
+Search for:
+Categories
+Abstraction
+Algoritma
+Array
+ArrayList
+Binding
+Break dan Continue
+Casting Numerik
+Casting Objek
+Class dan Objek
+Constant
+Constructor
+Contoh Program Java
+Dasar Pemrograman
+Ekspresi Kondisional
+Encapsulation
+Error Java
+Exception
+File dan I/O
+Format Output
+Fungsi Matematika-Karakter-String
+Gadget
+Grafis dan Animasi
+GUI
+Identifiers
+Inheritance
+Interface
+Keyword Java
+Komentar dan Penulisan Program Java
+Komposisi
+Literal
+Loop
+Memulai Program Java
+Method
+Modifiers
+Operator Increment dan Decrement
+Operator Numerik
+Operator Penetapan dan Ekspresi
+Operator Penetapan Tambahan
+Operator Persamaan Dan Relasional
+Perkenalan Program Java
+Polymorphism
+Seleksi
+Sintak Java
+Sorting
+String
+Thread
+Tipe Data
+Umum
+Variabel
+Pages
+About Us
+Contact Us
+Daftar Isi
+Disclaimer
+Privacy Policy
+Terms Of Service
+Copyright: 2021 | Belajar Bahasa Java

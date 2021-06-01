@@ -1,0 +1,398 @@
+Exception in thread "main" java.lang.RuntimeException: Uncompilable source code - Stack Overflow
+Stack Overflow
+About
+Products
+For Teams
+Stack Overflow
+Public questions & answers
+Stack Overflow for Teams
+Where developers & technologists share private knowledge with coworkers
+Jobs
+Programming & related technical career opportunities
+Talent
+Recruit tech talent & build your employer brand
+Advertising
+Reach developers & technologists worldwide
+About the company
+Loading…
+Log in
+Sign up
+current community
+Stack Overflow
+help
+chat
+Meta Stack Overflow
+your communities
+Sign up or log in to customize your list.
+more stack exchange communities
+company blog
+People who code: we want your input.
+Take the Survey
+Join Stack Overflow to learn, share knowledge, and build your career.
+Sign up with email
+Sign up
+Sign up with Google
+Sign up with GitHub
+Sign up with Facebook
+Home
+Public
+Questions
+Tags
+Users
+Find a Job
+Jobs
+Companies
+Teams
+Stack Overflow for Teams
+– Collaborate and share knowledge with a private group.
+Create a free Team
+What is Teams?
+Teams
+What’s this?
+Create free Team
+Teams
+Q&A for work
+Connect and share knowledge within a single location that is structured and easy to search.
+Learn more
+Exception in thread “main” java.lang.RuntimeException: Uncompilable source code
+Ask Question
+Asked
+8 years, 4 months ago
+Active
+3 years, 2 months ago
+Viewed
+20k times
+1
+How can I call a non static method in main class.I am getting the folowing error in my sample console application
+Exception in thread "main" java.lang.RuntimeException: Uncompilable source code - non-static method doSomthing() cannot be referenced from a static context
+at sample.Main.main(Main.java:20)
+and the code is,
+public class Main
+{
+/**
+* @param args the command line arguments
+*/
+public static void main(String[] args) {
+doSomthing();
+System.out.print("From Main");
+}
+protected void doSomthing()
+{
+System.out.print("From Main doSomthing");
+}
+}
+java
+Share
+Follow
+asked Jan 5 '13 at 16:28
+user1869132user1869132
+6511 gold badge11 silver badge99 bronze badges
+1
+1
+Why would you want to call a non static method from a static one?
+– MrSmith42
+Jan 5 '13 at 16:32
+Add a comment
+|
+4 Answers
+4
+Active
+Oldest
+Votes
+5
+problem is you have used non static method in static method which is not allowed in java , change doSomthing() as static method
+protected static void doSomthing()
+{
+System.out.print("From Main doSomthing");
+}
+Or Create an object of Main class and call it
+public static void main(String[] args) {
+Main myMain = new Main();
+myMain.doSomthing();
+System.out.print("From Main");
+}
+Share
+Follow
+edited Mar 25 '18 at 10:19
+answered Jan 5 '13 at 16:31
+someonesomeone
+6,41777 gold badges3333 silver badges5656 bronze badges
+2
+thanks.so in a console application all methods should be in static. Is it?
+– user1869132
+Jan 5 '13 at 16:39
+you can create a object of that class and call your methods not always it should be static.
+– someone
+Jan 5 '13 at 16:45
+Add a comment
+|
+2
+You could create an instance first from your static main method:
+new Main().doSomthing();
+Share
+Follow
+answered Jan 5 '13 at 16:31
+ReimeusReimeus
+153k1212 gold badges195195 silver badges261261 bronze badges
+0
+Add a comment
+|
+2
+public class Main
+{
+/**
+* @param args the command line arguments
+*/
+public static void main(String[] args) {
+Main main = new Main();
+main.doSomthing();
+System.out.print("From Main");
+}
+protected void doSomthing()
+{
+System.out.print("From Main doSomthing");
+}
+}
+Share
+Follow
+answered Jan 5 '13 at 16:34
+ZombieSpyZombieSpy
+1,3031010 silver badges2222 bronze badges
+0
+Add a comment
+|
+2
+You can't call a non static method in main class, unless you instantiate one [Main class].
+Share
+Follow
+edited Jan 5 '13 at 16:41
+answered Jan 5 '13 at 16:33
+Helio SantosHelio Santos
+6,03433 gold badges2323 silver badges3030 bronze badges
+2
+or you can change method as static
+– someone
+Jan 5 '13 at 16:38
+author asked "call a non static method"
+– Helio Santos
+Jan 5 '13 at 16:40
+Add a comment
+|
+Your Answer
+Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
+Draft saved
+Draft discarded
+Sign up or log in
+Sign up using Google
+Sign up using Facebook
+Sign up using Email and Password
+Submit
+Post as a guest
+Name
+Email
+Required, but never shown
+Post as a guest
+Name
+Email
+Required, but never shown
+Post Your Answer
+Discard
+By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
+Not the answer you're looking for? Browse other questions tagged java
+or ask your own question.
+The Overflow Blog
+Level Up: Linear Regression in Python – Part 2
+Shipping confetti to Stack Overflow’s design system
+Featured on Meta
+The future of Community Promotion, Open Source, and Hot Network Questions Ads
+Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
+Take the 2021 Developer Survey
+Linked
+0
+I use Netbeans 8.2 and mysql query browser 1.1.20.build is successful, an error says incompatible source code
+Related
+0
+Java Exception in thread “main” java.lang.RuntimeException: Uncompilable source code - Erroneous tree type:
+0
+Uncompilable source code Error?
+0
+Exception in thread “main” java.lang.RuntimeException issues with public static void
+Hot Network Questions
+Doorbell switch internals
+I have a postdoc interview tomorrow and I think I have overstated my abilities in my CV. How do I address it during the interview?
+How do they enforce rules on declaring funds?
+Why is this result no contradiction to length contraction?
+Advice needed – I can't reach my collaborator, but there's a short deadline for revising our journal article submission
+Is it significantly faster to hike along a river bank?
+Why do we have two kidneys but one liver?
+How can I state an axiom without enumeration?
+Does 'graduate program' mean MSc or Ph.D.?
+unknown pieces of a set - stickers on round corner bricks
+What's a lot of money {out of curiosity}?
+3 verbs in one sentence - how is that?
+Resigning will cripple my department, but I am resigning because of a near crippled department
+How to rotate a circle around y-aixs and calculate the volume of the 3D solid?
+If cost can be ignored, is a higher-value capacitor for ripple suppression always a good choice?
+How can objects be neither vector nor scalar?
+How to stop games from reading your RAM?
+Generate a British numberplate
+What technical reasons prevented the Win9x Virtual Machine Monitor from running multiple threads simultaneously?
+What is the difference between “they” and “it” for people, especially for those people who choose to be identified as non-binary?
+Peer review 2.0
+Please Identify this outdoor plant?
+Why didn't Japan call for the ICJ to settle the dispute over the Senkaku/Diaoyu Islands?
+How can I make a keyboard shortcut to strikethrough text in the Notes app?
+more hot questions
+Question feed
+Subscribe to RSS
+Question feed
+To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+lang-java
+Stack Overflow
+Questions
+Jobs
+Developer Jobs Directory
+Salary Calculator
+Help
+Mobile
+Products
+Teams
+Talent
+Advertising
+Enterprise
+Company
+About
+Press
+Work Here
+Legal
+Privacy Policy
+Terms of Service
+Contact Us
+Cookie Settings
+Cookie Policy
+Stack Exchange Network
+Technology
+Life / Arts
+Culture / Recreation
+Science
+Other
+Stack Overflow
+Server Fault
+Super User
+Web Applications
+Ask Ubuntu
+Webmasters
+Game Development
+TeX - LaTeX
+Software Engineering
+Unix & Linux
+Ask Different (Apple)
+WordPress Development
+Geographic Information Systems
+Electrical Engineering
+Android Enthusiasts
+Information Security
+Database Administrators
+Drupal Answers
+SharePoint
+User Experience
+Mathematica
+Salesforce
+ExpressionEngine® Answers
+Stack Overflow em Português
+Blender
+Network Engineering
+Cryptography
+Code Review
+Magento
+Software Recommendations
+Signal Processing
+Emacs
+Raspberry Pi
+Stack Overflow на русском
+Code Golf
+Stack Overflow en español
+Ethereum
+Data Science
+Arduino
+Bitcoin
+Software Quality Assurance & Testing
+Sound Design
+Windows Phone
+more (29)
+Photography
+Science Fiction & Fantasy
+Graphic Design
+Movies & TV
+Music: Practice & Theory
+Worldbuilding
+Video Production
+Seasoned Advice (cooking)
+Home Improvement
+Personal Finance & Money
+Academia
+Law
+Physical Fitness
+Gardening & Landscaping
+Parenting
+more (10)
+English Language & Usage
+Skeptics
+Mi Yodeya (Judaism)
+Travel
+Christianity
+English Language Learners
+Japanese Language
+Chinese Language
+French Language
+German Language
+Biblical Hermeneutics
+History
+Spanish Language
+Islam
+Русский язык
+Russian Language
+Arqade (gaming)
+Bicycles
+Role-playing Games
+Anime & Manga
+Puzzling
+Motor Vehicle Maintenance & Repair
+Board & Card Games
+Bricks
+Homebrewing
+Martial Arts
+The Great Outdoors
+Poker
+Chess
+Sports
+more (16)
+MathOverflow
+Mathematics
+Cross Validated (stats)
+Theoretical Computer Science
+Physics
+Chemistry
+Biology
+Computer Science
+Philosophy
+Linguistics
+Psychology & Neuroscience
+Computational Science
+more (10)
+Meta Stack Exchange
+Stack Apps
+API
+Data
+Blog
+Facebook
+Twitter
+LinkedIn
+Instagram
+site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
+rev 2021.5.28.39383
+Stack Overflow works best with JavaScript enabled
+Your privacy
+By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
+Accept all cookies
+Customize settings

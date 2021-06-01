@@ -1,1 +1,343 @@
-python urllib error httperror http error found ask ubuntu ubuntucommunityask developerdesignhardwareinsightsjujushopmore appshelpforumlaunchpadmaascanonical stack exchange network stack exchange network consists q communities including stack overflow largest trusted online community developers learn share knowledge build careers visit stack exchange loading tour start quick overview site help center detailed answers questions might meta discuss workings policies site us learn stack overflow company business learn hiring developers posting ads us log sign current community ask ubuntu help chat ask ubuntu meta communities sign log customize list stack exchange communities company blog people code want input take survey ask ubuntu question answer site ubuntu users developers takes minute sign sign join community anybody ask question anybody answer best answers voted rise top home public questions tags users unanswered find job jobs companies teams stack overflow teams collaborate share knowledge private group create free team teams teams create free team teams q work connect share knowledge within single location structured easy search learn urllib error httperror http error found ask question asked year months ago active year months ago viewed k times code get urllib error httperror http error found import urllib request import urllib parse headers headers user agent mozilla x linux values q python programming tutorials data urllib parse urlencode values url https www google com search data req urllib request request url headers headers resp urllib request urlopen req resp_data resp read print resp_data python share improve question follow edited oct darkblue asked oct darkblue darkblue gold badge silver badges bronze badges add comment answer active oldest votes problem adding data query parameter indicated adding search code modified working import urllib request import urllib parse headers headers user agent mozilla x linux values q python programming tutorials data urllib parse urlencode values url https www google com search data req urllib request request url headers headers resp urllib request urlopen req resp_data resp read print resp_data actual difference url url https www google com searchq python programming tutorials modified url url https www google com search q python programming tutorials resource located https www google com searchq reason getting urllib error httperror http error found share improve answer follow answered oct misantorpmisantorp gold badge silver badges bronze badges add comment answer thanks contributing answer ask ubuntu please sure answer question provide details share research avoid asking help clarification responding answers making statements based opinion back references personal experience learn see tips writing great answers draft saved draft discarded sign log sign using google sign using facebook sign using email password submit post guest name email required never shown post guest name email required never shown post answer discard clicking post answer agree terms service privacy policy cookie policy answer looking browse questions tagged python ask question overflow blog podcast blocking haters service developer survey open featured meta testing three vote close reopen network sites future community promotion open source hot network questions ads end support notice ubuntu xenial xerus reaches end standard related mkvirtualenv command found pip install requirements txt command returns many errors including found http error many requests youtube dl stopped working aidl found error installed already pydot invocationexception graphviz executables found makefile python command found hot network questions rip man apart like rag doll read like rip apart rag doll instead like rag doll rip apart man cvd used manufacture nmos gate oxides primary school child writing music happens mutate top creature control end turn proof variance always greater zero multi database ag decides databases redo thread rainbow steady even though droplets causing different states prior odds hundred one voldemort surviving probability voldemort alive valid esta got refused b b us visa would physics explain un fold paper countries get manifest every passenger flying airspace knows boarded plane derive carr madan like equation randomly programmatically generate good next chord name superman enemy way limit players currency system resource system would probable reaction belarusian planes entered lithuanian airspace want potatoes baked within hour forgot preheat oven put preheating supposed report status standups good fire resistant material write recreate translucent subsurface material poor writer serious impediment researcher flight simulation instructors stop simulator simulated crash jovanka houska introduced wgm holds prestigious im title legal store accept payment debit card able refund even event staff mistake hot questions question feed subscribe rss question feed subscribe rss feed copy paste url rss reader lang py ask ubuntu tour help chat contact feedback mobile company stack overflow teams advertise us hire developer developer jobs press legal privacy policy terms service cookie settings cookie policy stack exchange network technology life arts culture recreation science stack overflow server fault super user web applications ask ubuntu webmasters game development tex latex software engineering unix linux ask different apple wordpress development geographic information systems electrical engineering android enthusiasts information security database administrators drupal answers sharepoint user experience mathematica salesforce expressionengine answers stack overflow em português blender network engineering cryptography code review magento software recommendations signal processing emacs raspberry pi stack overflow на русском code golf stack overflow en español ethereum data science arduino bitcoin software quality assurance testing sound design windows phone photography science fiction fantasy graphic design movies tv music practice theory worldbuilding video production seasoned advice cooking home improvement personal finance money academia law physical fitness gardening landscaping parenting english language usage skeptics mi yodeya judaism travel christianity english language learners japanese language chinese language french language german language biblical hermeneutics history spanish language islam русский язык russian language arqade gaming bicycles role playing games anime manga puzzling motor vehicle maintenance repair board card games bricks homebrewing martial arts great outdoors poker chess sports mathoverflow mathematics cross validated stats theoretical computer science physics chemistry biology computer science philosophy linguistics psychology neuroscience computational science meta stack exchange stack apps api data blog facebook twitter linkedin instagram site design logo stack exchange inc user contributions licensed cc sa rev ubuntu canonical registered trademarks canonical ltd ask ubuntu works best javascript enabled privacy clicking accept cookies agree stack exchange store cookies device disclose information accordance cookie policy accept cookies customize settings
+python3 - urllib.error.HTTPError: HTTP Error 404: Not Found - Ask Ubuntu
+UbuntuCommunityAsk!DeveloperDesignHardwareInsightsJujuShopMore ›AppsHelpForumLaunchpadMAASCanonical
+Stack Exchange Network
+Stack Exchange network consists of 177 Q&A communities including Stack Overflow, the largest, most trusted online community for developers to learn, share their knowledge, and build their careers.
+Visit Stack Exchange
+Loading…
+0
++0
+Tour
+Start here for a quick overview of the site
+Help Center
+Detailed answers to any questions you might have
+Meta
+Discuss the workings and policies of this site
+About Us
+Learn more about Stack Overflow the company
+Business
+Learn more about hiring developers or posting ads with us
+Log in
+Sign up
+current community
+Ask Ubuntu
+help
+chat
+Ask Ubuntu Meta
+your communities
+Sign up or log in to customize your list.
+more stack exchange communities
+company blog
+People who code: we want your input.
+Take the Survey
+Ask Ubuntu is a question and answer site for Ubuntu users and developers. It only takes a minute to sign up.
+Sign up to join this community
+Anybody can ask a question
+Anybody can answer
+The best answers are voted up and rise to the top
+Home
+Public
+Questions
+Tags
+Users
+Unanswered
+Find a Job
+Jobs
+Companies
+Teams
+Stack Overflow for Teams
+– Collaborate and share knowledge with a private group.
+Create a free Team
+What is Teams?
+Teams
+What’s this?
+Create free Team
+Teams
+Q&A for work
+Connect and share knowledge within a single location that is structured and easy to search.
+Learn more
+urllib.error.HTTPError: HTTP Error 404: Not Found
+Ask Question
+Asked
+1 year, 7 months ago
+Active
+1 year, 7 months ago
+Viewed
+7k times
+0
+The code's below. And I get "urllib.error.HTTPError: HTTP Error 404: Not Found".
+import urllib.request
+import urllib.parse
+headers = {}
+headers['User-Agent'] = "Mozilla/5.0 (X11; Linux i686)"
+values = {'q': 'python programming tutorials'}
+data = urllib.parse.urlencode(values)
+url = 'https://www.google.com/search'+data
+req = urllib.request.Request(url, headers = headers)
+resp = urllib.request.urlopen(req)
+resp_data = resp.read()
+print(resp_data)
+python3
+Share
+Improve this question
+Follow
+edited Oct 9 '19 at 16:16
+darkblue80
+asked Oct 9 '19 at 14:57
+darkblue80darkblue80
+10511 gold badge22 silver badges77 bronze badges
+Add a comment
+|
+1 Answer
+1
+Active
+Oldest
+Votes
+0
+Your problem is that you're not adding data as a query parameter, indicated by adding a ? after /search
+Here is your code modified and working
+import urllib.request
+import urllib.parse
+headers = {}
+headers['User-Agent'] = "Mozilla/5.0 (X11; Linux i686)"
+values = {'q': 'python programming tutorials'}
+data = urllib.parse.urlencode(values)
+url = 'https://www.google.com/search?'+data
+req = urllib.request.Request(url, headers = headers)
+resp = urllib.request.urlopen(req)
+resp_data = resp.read()
+print(resp_data)
+The actual difference being your url
+>>> url
+'https://www.google.com/searchq=python+programming+tutorials'
+and my modified url
+>>> url
+'https://www.google.com/search?q=python+programming+tutorials'
+There is no resource located at https://www.google.com/searchq and that is the reason you're getting
+urllib.error.HTTPError: HTTP Error 404: Not Found
+Share
+Improve this answer
+Follow
+answered Oct 9 '19 at 17:13
+MisantorpMisantorp
+54811 gold badge55 silver badges88 bronze badges
+Add a comment
+|
+Your Answer
+Thanks for contributing an answer to Ask Ubuntu!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
+Draft saved
+Draft discarded
+Sign up or log in
+Sign up using Google
+Sign up using Facebook
+Sign up using Email and Password
+Submit
+Post as a guest
+Name
+Email
+Required, but never shown
+Post as a guest
+Name
+Email
+Required, but never shown
+Post Your Answer
+Discard
+By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
+Not the answer you're looking for? Browse other questions tagged python3
+or ask your own question.
+The Overflow Blog
+Level Up: Linear Regression in Python – Part 2
+Shipping confetti to Stack Overflow’s design system
+Featured on Meta
+The future of Community Promotion, Open Source, and Hot Network Questions Ads
+Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
+Related
+0
+Mkvirtualenv: command not found 19.04
+4
+“pip install requirements.txt” command returns many errors, including 404 not found
+2
+HTTP Error 429: Too Many Requests - youtube-dl stopped working
+1
+Aidl Not found error but its installed already?
+1
+pydot.InvocationException: GraphViz's executables not found
+0
+Makefile: python: command not found
+Hot Network Questions
+Is there a precise definition of "Supermoon"?
+Did ancient Greek mathematicians consider numbers independently of geometry?
+According to international law, when is first-use nuclear strike justified?
+How can I specify the qubits on quantum computers that I want to use?
+Where was this scene of 'Highlander: The series' with standing columns shot?
+Why didn't Japan call for the ICJ to settle the dispute over the Senkaku/Diaoyu Islands?
+Can a rest be taken in a moving cart?
+How do computers perform operations on numbers that are larger than 64 bits?
+Is there a misprint on this note in the Maple Leaf Rag?
+How can I offset 6" ducting by just a few inches?
+Is the the word order of "Iura novit curia" used for emphasis?
+Is the burden of proof a fallacy?
+Generate a British numberplate
+Why is bad behavior more tolerated in academia compared to the rest of the industry?
+Why did SMARTDRV have to be started with /x when DOS started?
+Should most brahmins today be considered as shudras?
+Meaning of せないかんのよ
+Should forcing open doors be Strength or Strength (Athletics)
+Where can people allergic to dairy food eat when travelling in France?
+Strange vertical spacing after colored equation
+How do they enforce rules on declaring funds?
+Does 'graduate program' mean MSc or Ph.D.?
+If cost can be ignored, is a higher-value capacitor for ripple suppression always a good choice?
+Print the last answerer's first submission
+more hot questions
+Question feed
+Subscribe to RSS
+Question feed
+To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+lang-py
+Ask Ubuntu
+Tour
+Help
+Chat
+Contact
+Feedback
+Mobile
+Company
+Stack Overflow
+For Teams
+Advertise With Us
+Hire a Developer
+Developer Jobs
+About
+Press
+Legal
+Privacy Policy
+Terms of Service
+Cookie Settings
+Cookie Policy
+Stack Exchange Network
+Technology
+Life / Arts
+Culture / Recreation
+Science
+Other
+Stack Overflow
+Server Fault
+Super User
+Web Applications
+Ask Ubuntu
+Webmasters
+Game Development
+TeX - LaTeX
+Software Engineering
+Unix & Linux
+Ask Different (Apple)
+WordPress Development
+Geographic Information Systems
+Electrical Engineering
+Android Enthusiasts
+Information Security
+Database Administrators
+Drupal Answers
+SharePoint
+User Experience
+Mathematica
+Salesforce
+ExpressionEngine® Answers
+Stack Overflow em Português
+Blender
+Network Engineering
+Cryptography
+Code Review
+Magento
+Software Recommendations
+Signal Processing
+Emacs
+Raspberry Pi
+Stack Overflow на русском
+Code Golf
+Stack Overflow en español
+Ethereum
+Data Science
+Arduino
+Bitcoin
+Software Quality Assurance & Testing
+Sound Design
+Windows Phone
+more (29)
+Photography
+Science Fiction & Fantasy
+Graphic Design
+Movies & TV
+Music: Practice & Theory
+Worldbuilding
+Video Production
+Seasoned Advice (cooking)
+Home Improvement
+Personal Finance & Money
+Academia
+Law
+Physical Fitness
+Gardening & Landscaping
+Parenting
+more (10)
+English Language & Usage
+Skeptics
+Mi Yodeya (Judaism)
+Travel
+Christianity
+English Language Learners
+Japanese Language
+Chinese Language
+French Language
+German Language
+Biblical Hermeneutics
+History
+Spanish Language
+Islam
+Русский язык
+Russian Language
+Arqade (gaming)
+Bicycles
+Role-playing Games
+Anime & Manga
+Puzzling
+Motor Vehicle Maintenance & Repair
+Board & Card Games
+Bricks
+Homebrewing
+Martial Arts
+The Great Outdoors
+Poker
+Chess
+Sports
+more (16)
+MathOverflow
+Mathematics
+Cross Validated (stats)
+Theoretical Computer Science
+Physics
+Chemistry
+Biology
+Computer Science
+Philosophy
+Linguistics
+Psychology & Neuroscience
+Computational Science
+more (10)
+Meta Stack Exchange
+Stack Apps
+API
+Data
+Blog
+Facebook
+Twitter
+LinkedIn
+Instagram
+site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
+rev 2021.5.28.39383
+Ubuntu and Canonical are registered trademarks of Canonical Ltd.
+Ask Ubuntu works best with JavaScript enabled
+Your privacy
+By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
+Accept all cookies
+Customize settings

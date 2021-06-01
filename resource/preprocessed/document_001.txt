@@ -1,1 +1,455 @@
-index range python forum sekolah koding belajar kelas panduan perjalanan nongkrong forum artikel mading upacara non teknis login index range python permisi gan jadi ane lagi bikin program k nn buat klasifikasi teks tweet ke trending topic tertentu kodingan seperti ini coding utf created tue dec author jonathan simanjuntak import matplotlib pyplot plt import sastrawi stemmer stemmerfactory import stemmerfactory sastrawi stopwordremover stopwordremoverfactory import stopwordremoverfactory import math import string factory stemmerfactory stemmer factory create_stemmer open tweets txt r file data file read split data berdasar newline data data split n data print train membagi data berdasar masing masing kalimat data list kalimat split train int list append list print hasil stemming n range x j train j sub j j stemmer stem j train x j x x range j train print j factory stopwordremoverfactory data factory get_stop_words stopword factory create_stop_word_remover print hasil stopword removal n stopword removal range x j train j stopword remove j train x j x x range j train print j def tfidfnorm dokumen jumlahdokumen len dokumen idf text dokumen term text term idf idf term idf term else idf term term idf idf term math log jumlahdokumen idf term data range jumlahdokumen tempakarzigmakuadrat term dokumen data term kategori continue dokumen data term dokumen data term idf term tempakarzigmakuadrat tempakarzigmakuadrat math pow dokumen data term term dokumen data term kategori continue tempakarzigmakuadrat math sqrt tempakarzigmakuadrat dokumen data term dokumen data term tempakarzigmakuadrat return dokumen dokumen range text train tempdict textsplit text split kata textsplit kata tempdict tempdict kata tempdict kata else tempdict kata dokumen append tempdict range len dokumen key dokumen dokumen key math log dokumen key range dokumen kategori persija juara elif dokumen kategori psm elif dokumen kategori reuni elif dokumen kategori ahmad dhani else dokumen kategori marion jola train dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen train dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen train dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen test dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen dokumen train tfidfnorm train train tfidfnorm train train tfidfnorm train test tfidfnorm test def calcdist test train cossim term data term kategori continue term train cossim test term train term return cossim def klust data k data sorted data data sorted data data sorted data data sorted data data sorted data jlpersija jlpsm jldemo jlahmad jlmarion range k data data data data data data data data data data data data data data pop jlpersija jlpersija elif data data data data data data data pop jlpsm jlpsm elif data data data data data pop jldemo jldemo elif data data data pop jlahmad jlahmad else data pop jlmarion jlmarion elif data data data data data data data data data data data pop jlpersija jlpersija elif data data data data data pop jlpsm jlpsm elif data data data pop jldemo jldemo else data pop jlahmad jlahmad elif data data data data data data data data data data data pop jlpsm jlpsm elif data data data data data pop jldemo jldemo elif data data data pop jlahmad jlahmad else data pop jlmarion jlmarion elif data data data data data data data data pop jlpersija jlpersija elif data data data pop jlpsm jlpsm else data pop jldemo jldemo elif data data data data data data data data pop jlpsm jlpsm elif data data data pop jldemo jldemo else data pop jlahmad jlahmad elif data data data data data data data data pop jldemo jldemo elif data data data pop jlahmad jlahmad else data pop jlmarion jlmarion elif data data data data data pop jlpersija jlpersija else data pop jlpsm jlpsm elif data data data data data pop jlpsm jlpsm else data pop jldemo jldemo elif data data data data data pop jldemo jldemo else data pop jlahmad jlahmad elif data data data data data pop jlahmad jlahmad else data pop jlmarion jlmarion elif data data pop jlpersija jlpersija elif data data pop jlpsm jlpsm elif data data pop jldemo jldemo elif data data pop jlahmad jlahmad elif data data pop jlmarion jlmarion jlpersija jlpsm jlpersija jldemo jlpersija jlahmad jlpersija jlmarion return persija elif jlpsm jldemo jlpsm jlahmad jlpsm jlmarion return psm makassar elif jldemo jlahmad jldemo jlmarion return reuni elif jlahmad jlmarion return kasus ahmad dhani else return marion jola distance data test train train distance append calcdist data train perbagian data distance data data x x x range len data data distance data data x x x range len data data distance data data x x x range len data data distance data data x x x range len data data distance data data x x x range len data data distance data data x x x range len data data distance data data x x x range len data data distance data data x x x range len data data distance data data x x x range len data data distance data data x x x range len data print data kat klust data klust data klust data klust data klust data klust data klust data klust data klust data klust data print kat data sample nya ada dan kira kira trending topic ada artikel trending ada jadinya isinya seperti ini selamat buat persija_jkt yang telah menjuarai liga indonesia selamat juga untuk gubernur jakarta pak aniesbaswedan yang pada kepemimpinan beliau di jakarta dapat mengantarkan persija juara liga indonesia persija juara selamat persija jakarta persijaday yang penting persija juara abaikan gubernur dan selebrasi jarinya modyar kowe bong alhamdulilah semenjak pak anies jadi gubernur persija juara kali persija juara salam jari prabowo sandi menggelora mantap persija dan jakmania persijaday bang anis datang persija juara congrats champions keep fighting time loser persija juara hanya butuh waktu satu tahun setelah anies jadi gubernur ia bisa membawa persija juara salam dua jari anies dan bang yos dan juga para pemain semoga menjadi pertanda kemenangan juga bagi pasangan prabowo sandi di april nyanyian kami untuk sukacita pasca match penutup musim ini persija juara lagi akhirnya persija juara selama tahun lamanya jak mania menunggu kota jakarta penuh dengan lautan orange real champions thanks psm real champion indonesia psm_makassar kvu_mksr liga match psmjuara psmsday psmjuarasejati psmjuaraliga congrats real winner brothers psmday psm makassar real champions hahaha real champions psm_makassar bali united real champions psm makassar real champions persijajuara keep strong psm_makassar selamat psm_makassar real champions anyway congrats psm_makassar champs psm liga orange selamat melakukan reuni sobat persaudaraan alumni allahu akbar dari sungai barito kalimantan berlayar ke jakarta ikut reuni akbar god bless reuni akbar tahun reuni akbar semua jamaah maunya ke biar bisa gantipresiden bosan tidak ada perubahan mahasiswa akademi dakwah indonesia metro lampung berangkat menuju jakarta monas menggunakan sepeda demi menghadiri reuni akbar semangat saudaraku semoga keringat kalian akan menjadi bukti kecintaan kalian kepada islam allahu akbar melalui reuni akbar kita juga tunjukkan kepada dunia inilah islam yang ada di indonesia dan islam yang memberi kesejukan dan islam yang penuh toleransi dan islam yang mengajarkan kebaikan kepada semua umat assalamu alaikum wr wb kepada peserta reuni akbar yg datang dari luar kota jika ingin bermalam kami dkm al ikhlas kebagusan siap menampung untuk semua jamaah yang ikut aksi seruan ditujukan untuk seluruh habib hanif kepada antum semua agar bisa hadir reuni akbar nih buat cebong dan yang gak setuju dengan reuni akbar charlie simarmata saya katolik pancasilais siap hadir reuni ustadz abdul somad aa gym dan jutaan jama ah akan hadiri reuni akbar sampai ketemu di monas kawan ingat di monas ahmad dhani girang lagu sontoloyo yang dinyanyikan bareng fadli zon jadi hit ahmad dhani dituntut tahun ini harapan dul kepada hakim dituntut tahun penjara dalam kasus ujaran kebencian musisi ahmad dhani sebut ada motif dendam agar ia mendapat hukuman yang sama dengan ahok ahmad dhani diproses hukum krn kata idiot walau tidak jelas siapa subjeknya harusnya yang sebut anies bangsat jauh lebih pantas diproses hukum ahmad dhani dituntut tahun buni yani tahun pembakar bendera tauhid penjara minggu denda ribu mantap kan ahmad dhani menyebut ada motif dendam dalam tuntutan tahun penjara terhadapnya pasalnya lama masa tahanan sama dengan yang diterima ahok dituntut tahun penjara ahmad dhani siapkan nota pembelaan saya terkadang bingung dgn divhumas_polri kenapa soal kasus ahok begitu cepat tapi soal kasus ratna sarumpaet dan buni yani dan ahmad dhani dan bahar terkesan lamban dituntut tahun penjara dalam kasus ujaran kebencian maka ahmad dhani sebut ada motif dendam agar ia mendapat hukuman yang sama dengan ahok kasus ahmad dhani dan habib bahar smith belakangan ini melengkapi penindasan terhadap hak sipil dan hak hak dasar lain dalam berdemokrasi kak marion proud congrats jugaa tadi menang nominasi best asian artist indonesian apalah itu ya kakk pokoknya kubangga best new asian artist indonesia congrats marion jola marion jola trending melon bangga marion jola th udah nyanyi di panggung internasional ketemu bias di hadapan mata dengan segala hormat marionjola trending di melon iya lagu indo trendi di melon yang aplikasinya aja pake bahasa korea bangga gak lu gua sih ya bangga sekali tahun lalu agnez mo tahun ini marion jola proud indonesian kaget lagunya lagu indonesia kok lokal banget ternyata marion jola lagi perform marion jola tampil memukau dan sambut trofi penghargaan di mama korea bangga dri indonesia untuk marion jola marionmama mama new asian artist indonesia marion jola pas dijalanin malah error indexerror traceback recent call last kat klust data klust data klust data klust data klust data klust data print kat klust data k data sorted data data sorted data data sorted data data sorted data data sorted data indexerror list index range ada yang bisa kasih solusi gan makasih gan sebelumnya python abangganteng kontribusi poin dipost tahun yang lalu update bulan yang lalu coba di trace gan ini pasti karna kelebihan index keccikun betul di bagian yang error coba di print debug pelan pelan biar terlihat salahnya di bagian mana hilmanski atau respon tidak jelas baca aturan main kode tidak rapi perbaiki judul tulis balasan jawaban belum ada jawaban jadi yang pertama login untuk gabung berdiskusi jadi premium hey sedang ada diskon premium hingga untuk akses semua kelas lihat di sini pertanyaan lainnya bagaimana memperbaiki list index range di python yang saya buat program menerjemahkan kode angka sms menjadi sebuah pesan tutorial python membuat daftar belanja open file errno file directory logika dan algortima untuk pemecahan case python top kontributor ahanafi kontribusi poin dianarifr kontribusi poin nandar kontribusi poin saputroandhi kontribusi poin dodi sitorus kontribusi poin sekolah koding video tutorial web development dan programming dalam bahasa indonesia luaskan ilmu luaskan manfaat belajar kelas panduan perjalanan kenapa belajar koding premium diskusi upacara forum artikel mading nonteknis podcast hadiah untuk programmer informasi faq tentang syarat media kata member masuk daftar iklan dibuat dengan cinta di makassar berlin gelap terang
+Index out of range python - Forum Sekolah Koding
+Belajar
+Kelas
+Panduan
+Perjalanan
+Nongkrong
+Forum
+Artikel
+Mading
+Upacara
+Non-Teknis
+Login
+Index out of range python
+Permisi gan, jadi ane lagi bikin program K-NN buat klasifikasi teks tweet ke trending topic tertentu, kodingan seperti ini:
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Dec
+4 22:37:47 2018
+@author: Jonathan Simanjuntak
+"""
+import matplotlib.pyplot as plt
+import re
+from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
+from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFactory
+import math
+import string
+factory = StemmerFactory()
+stemmer = factory.create_stemmer()
+with open('tweets.txt', 'r') as file:
+data = file.read()
+#split data berdasar newline
+data = data.split("\n")
+for i in data:
+print(i)
+train = [[],[],[],[],[]]
+#membagi data berdasar masing masing
+for kalimat in data:
+list = kalimat.split(',')
+train[int(list[1])].append(list[0])
+print("Hasil Stemming : \n")
+for i in range(5):
+x = 0
+for j in train[i]:
+j=re.sub("\d|-", "", j)
+j = stemmer.stem(j)
+train[i][x] = j
+x=x+1
+for i in range(5):
+for j in train[i]:
+print(j)
+factory2 = StopWordRemoverFactory()
+data = factory2.get_stop_words()
+stopword = factory2.create_stop_word_remover()
+print("HASIL STOPWORD REMOVAL:\n")
+#Stopword Removal
+for i in range(5):
+x = 0
+for j in train[i]:
+j = stopword.remove(j)
+train[i][x] = j
+x=x+1
+for i in range(5):
+for j in train[i]:
+print(j)
+def tfidfnorm(dokumen):
+jumlahdokumen = len(dokumen)
+idf = {}
+for text in dokumen:
+for term in text:
+if(term in idf):
+idf[term] = idf[term]+1
+else:
+idf[term] = 1
+for term in idf:
+idf[term] = math.log10(jumlahdokumen/idf[term])
+for data in range(jumlahdokumen):
+tempakarzigmakuadrat = 0
+for term in dokumen[data]:
+if (term=="kategori"):
+continue
+dokumen[data][term] = dokumen[data][term]*idf[term]
+tempakarzigmakuadrat = tempakarzigmakuadrat+math.pow((dokumen[data][term]),2)
+for term in dokumen[data]:
+if (term=="kategori"):
+continue
+tempakarzigmakuadrat = math.sqrt(tempakarzigmakuadrat)
+dokumen[data][term] = dokumen[data][term]/tempakarzigmakuadrat
+return dokumen
+dokumen = []
+for i in range(5):
+for text in train[i]:
+tempdict = {}
+textsplit = text.split(" ")
+for kata in textsplit:
+if kata in tempdict:
+tempdict[kata] = tempdict[kata]+1
+else:
+tempdict[kata] = 1
+dokumen.append(tempdict)
+for i in range(len(dokumen)):
+for key in dokumen[i]:
+dokumen[i][key] = (1 + math.log10(dokumen[i][key]))
+for i in range(50):
+if(i<10):
+dokumen[i]["kategori"] = "persija juara"
+elif(10<=i and i<20):
+dokumen[i]["kategori"] = "psm"
+elif(20<=i and i<30):
+dokumen[i]["kategori"] = "reuni 212"
+elif(30<=i and i<40):
+dokumen[i]["kategori"] = "ahmad dhani"
+else:
+dokumen[i]["kategori"] = "marion jola"
+train20 = dokumen[0],dokumen[1],dokumen[2],dokumen[3],dokumen[10],dokumen[11],dokumen[12],dokumen[13],dokumen[20],dokumen[21],dokumen[22],dokumen[23],dokumen[30],dokumen[31],dokumen[32],dokumen[33],dokumen[40],dokumen[41],dokumen[42],dokumen[43]
+train30 = dokumen[0],dokumen[1],dokumen[2],dokumen[3],dokumen[4],dokumen[5],dokumen[10],dokumen[11],dokumen[12],dokumen[13],dokumen[14],dokumen[15],dokumen[20],dokumen[21],dokumen[22],dokumen[23],dokumen[24],dokumen[25],dokumen[30],dokumen[31],dokumen[32],dokumen[33],dokumen[34],dokumen[35],dokumen[40],dokumen[41],dokumen[42],dokumen[43],dokumen[44],dokumen[45]
+train44 = dokumen[0],dokumen[1],dokumen[2],dokumen[3],dokumen[4],dokumen[5],dokumen[6],dokumen[7],dokumen[10],dokumen[11],dokumen[12],dokumen[13],dokumen[14],dokumen[15],dokumen[16],dokumen[17],dokumen[20],dokumen[21],dokumen[22],dokumen[23],dokumen[24],dokumen[25],dokumen[26],dokumen[27],dokumen[30],dokumen[31],dokumen[32],dokumen[33],dokumen[34],dokumen[35],
+dokumen[36],dokumen[37],dokumen[40],dokumen[41],dokumen[42],dokumen[43],dokumen[44],dokumen[45],dokumen[46],dokumen[47]
+test = dokumen[8],dokumen[9],dokumen[18],dokumen[19],dokumen[28],dokumen[29],dokumen[38],dokumen[39],dokumen[48],dokumen[49]
+train20 = tfidfnorm(train20)
+train30 = tfidfnorm(train30)
+train44 = tfidfnorm(train44)
+test = tfidfnorm(test)
+def calcdist(test,train):
+cossim = 0
+for term in data:
+if(term == "kategori"):
+continue
+if term in train:
+cossim += test[term]*train[term]
+return (1-cossim)
+def klust(data, k):
+data[0] = sorted(data[0])
+data[1] = sorted(data[1])
+data[2] = sorted(data[2])
+data[3] = sorted(data[3])
+data[4] = sorted(data[4])
+jlpersija = 0
+jlpsm = 0
+jldemo = 0
+jlahmad = 0
+jlmarion = 0
+for i in range(k):
+if(data[0] and data[1] and data[2] and data[3] and data[4]):
+if(data[0][0] <= data[1][0] and data[0][0] <= data[2][0] and data[0][0] <= data[3][0] and data[0][0] <= data[4][0]):
+data[0].pop(0)
+jlpersija = jlpersija+1
+elif(data[1][0] <= data[2][0] and data[1][0] <= data[3][0] and data[1][0] <= data[4][0]):
+data[1].pop(0)
+jlpsm = jlpsm+1
+elif(data[2][0] <= data[3][0] and data[2][0] <= data[4][0]):
+data[2].pop(0)
+jldemo = jldemo +1
+elif(data[3][0] <= data[4][0]):
+data[3].pop(0)
+jlahmad = jlahmad+1
+else:
+data[4].pop(0)
+jlmarion = jlmarion+1
+elif(data[0] and data[1] and data[2] and data[3]):
+if(data[0][0] <= data[1][0] and data[0][0] <= data[2][0] and data[0][0] <= data[3][0]):
+data[0].pop(0)
+jlpersija = jlpersija+1
+elif(data[1][0] <= data[2][0] and data[1][0] <= data[3][0]):
+data[1].pop(0)
+jlpsm = jlpsm+1
+elif(data[2][0] <= data[3][0]):
+data[2].pop(0)
+jldemo = jldemo+1
+else:
+data[3].pop(0)
+jlahmad = jlahmad+1
+elif(data[1] and data[2] and data[3] and data[4]):
+if(data[1][0] <= data[2][0] and data[1][0] <= data[3][0] and data[1][0] <= data[4][0]):
+data[1].pop(0)
+jlpsm = jlpsm+1
+elif(data[2][0] <= data[3][0] and data[2][0] <= data[4][0]):
+data[2].pop(0)
+jldemo = jldemo+1
+elif(data[3][0] <= data[4][0]):
+data[3].pop(0)
+jlahmad = jlahmad+1
+else:
+data[4].pop(0)
+jlmarion = jlmarion+1
+elif(data[0] and data[1] and data[2]):
+if(data[0][0] <= data[1][0] and data[0][0] <= data[2][0]):
+data[0].pop(0)
+jlpersija = jlpersija+1
+elif(data[1][0] <= data[2][0]):
+data[1].pop(0)
+jlpsm = jlpsm+1
+else:
+data[2].pop(0)
+jldemo = jldemo+1
+elif(data[1] and data[2] and data[3]):
+if(data[1][0] <= data[2][0] and data[1][0] <= data[3][0]):
+data[1].pop(0)
+jlpsm = jlpsm+1
+elif(data[2][0] <= data[3][0]):
+data[2].pop(0)
+jldemo = jldemo+1
+else:
+data[3].pop(0)
+jlahmad = jlahmad+1
+elif(data[2] and data[3] and data[4]):
+if(data[2][0] <= data[3][0] and data[2][0] <= data[4][0]):
+data[2].pop(0)
+jldemo = jldemo+1
+elif(data[3][0] <= data[4][0]):
+data[1].pop(0)
+jlahmad = jlahmad+1
+else:
+data[4].pop(0)
+jlmarion = jlmarion+1
+elif(data[0] and data[1]):
+if(data[0][0]<=data[1][0]):
+data[0].pop(0)
+jlpersija = jlpersija+1
+else:
+data[1].pop(0)
+jlpsm = jlpsm+1
+elif(data[1] and data[2]):
+if(data[1][0]<=data[2][0]):
+data[1].pop(0)
+jlpsm = jlpsm+1
+else:
+data[2].pop(0)
+jldemo = jldemo+1
+elif(data[2] and data[3]):
+if(data[2][0]<=data[3][0]):
+data[2].pop(0)
+jldemo = jldemo+1
+else:
+data[3].pop(0)
+jlahmad = jlahmad+1
+elif (data[3] and data[4]):
+if(data[3][0]<=data[4][0]):
+data[3].pop(0)
+jlahmad = jlahmad+1
+else:
+data[4].pop(0)
+jlmarion = jlmarion+1
+elif(data[0]):
+data[0].pop(0)
+jlpersija = jlpersija+1
+elif(data[1]):
+data[1].pop(0)
+jlpsm = jlpsm+1
+elif(data[2]):
+data[2].pop(0)
+jldemo = jldemo+1
+elif(data[3]):
+data[3].pop(0)
+jlahmad = jlahmad+1
+elif(data[4]):
+data[4].pop(0)
+jlmarion = jlmarion+1
+if(jlpersija >= jlpsm and jlpersija >= jldemo and jlpersija >= jlahmad and jlpersija >= jlmarion):
+return "persija"
+elif(jlpsm >= jldemo and jlpsm >= jlahmad and jlpsm >= jlmarion):
+return "psm makassar"
+elif(jldemo >= jlahmad and jldemo >= jlmarion):
+return "reuni 212"
+elif(jlahmad >= jlmarion):
+return "kasus ahmad dhani"
+else :
+return "marion jola"
+distance = []
+for data in test:
+for train in train20:
+distance.append(calcdist(data,train))
+#perbagian 4
+data1 = distance[0:20]
+data1 = [data1[x:x+4] for x in range(0, len(data1), 4)]
+data2 = distance[20:40]
+data2 = [data2[x:x+4] for x in range(0, len(data2), 4)]
+data3 = distance[40:80]
+data3 = [data3[x:x+4] for x in range(0, len(data3), 4)]
+data4 = distance[80:160]
+data4 = [data4[x:x+4] for x in range(0, len(data4), 4)]
+data5 = distance[160:320]
+data5 = [data5[x:x+4] for x in range(0, len(data5), 4)]
+data6 = distance[320:640]
+data6 = [data6[x:x+4] for x in range(0, len(data6), 4)]
+data7 = distance[640:1280]
+data7 = [data6[x:x+4] for x in range(0, len(data7), 4)]
+data8 = distance[1280:2560]
+data8 = [data6[x:x+4] for x in range(0, len(data8), 4)]
+data9 = distance[2560:5120]
+data9 = [data6[x:x+4] for x in range(0, len(data9), 4)]
+data10 = distance[5120:10240]
+data10 = [data6[x:x+4] for x in range(0, len(data10), 4)]
+print (data1)
+for i in(2,3,4,5,6,7,8,9,10):
+kat = [klust(data1,i), klust(data2,i), klust(data3,i), klust(data4,i), klust(data5,i), klust(data6,i),klust(data7,i),klust(data8,i),klust(data9,i),klust(data10,i)]
+print(kat)
+Data sample nya ada 50 dan kira kira 1 trending topic ada 10 artikel (5 trending ada 50 jadinya) isinya seperti ini:
+Selamat buat @Persija_Jkt yang telah Menjuarai Liga 1 Indonesia. Selamat Juga Untuk GUBERNUR JAKARTA Pak @aniesbaswedan yang Pada Kepemimpinan Beliau Di Jakarta Dapat Mengantarkan Persija Juara Liga 1 Indonesia.,0
+Persija Juara Selamat Persija Jakarta #PersijaDay,0
+Yang penting persija juara. Abaikan gubernur dan selebrasi jarinya. Modyar kowe bong,0
+Alhamdulilah semenjak pak anies jadi gubernur. Persija juara 2 kali,0
+Persija JUARA Salam 2 Jari Prabowo Sandi Menggelora. Mantap Persija dan Jakmania #PersijaDay,0
+Bang Anis datang Persija JUARA. Congrats..,0
+We are The Champions !!! We'll keep The Fighting !!! No Time for Loser !!! PERSIJA JUARA !!!,0
+HANYA butuh waktu satu tahun
+setelah Anies jadi Gubernur ia bisa membawa Persija Juara!! Salam dua jari Anies dan Bang Yos dan juga para pemain semoga
+menjadi pertanda kemenangan juga bagi pasangan
+Prabowo -Sandi di April 2019.,0
+nyanyian kami untuk sukacita pasca match penutup musim ini. Persija Juara Lagi.,0
+AKHIRNYA PERSIJA JUARA SELAMA 17 TAHUN LAMANYA JAK MANIA MENUNGGU KOTA JAKARTA PENUH DENGAN LAUTAN ORANGE,0
+Real Champions thanks Psm,1
+THE REAL CHAMPION IN INDONESIA
+@PSM_Makassar @kvu_mksr @Liga1Match #PSMJUARA #PsmsDay #PSMJuaraSejati #PSMJuaraLiga1,1
+congrats you are the real winner brothers #psmday,1
+PSM Makassar you're the real champions,1
+Hahaha the real champions
+@PSM_Makassar!!,1
+2017 : Bali United The Real Champions. 2018 : PSM Makassar The Real Champions. #PersijaJuara,1
+KEEP STRONG @PSM_Makassar,1
+Selamat @PSM_Makassar The Real Champions 2018,1
+Anyway congrats
+@PSM_Makassar for the champs!!!!,1
+PSM for Liga 1 2018.. not the orange,1
+Selamat melakukan Reuni sobat2 Persaudaraan Alumni 212,2
+ALLAHU AKBAR!!! Dari Sungai Barito Kalimantan Berlayar ke Jakarta Ikut Reuni Akbar 212,2
+God Bless Reuni Akbar 212 Tahun 2018!,2
+Reuni akbar 212 SEMUA Jamaah maunya ke no.2
+biar bisa #2019GantiPresiden Bosan tidak ada Perubahan.,2
+11 Mahasiswa Akademi Dakwah Indonesia Metro Lampung berangkat menuju Jakarta (Monas) menggunakan Sepeda demi menghadiri Reuni Akbar 212.,2
+Semangat saudaraku Semoga keringat kalian akan menjadi bukti kecintaan kalian kepada Islam..Allahu Akbar,2
+Melalui Reuni Akbar 212 kita juga tunjukkan kepada dunia inilah Islam yang ada di Indonesia dan Islam yang memberi kesejukan dan Islam yang penuh toleransi dan Islam yang mengajarkan kebaikan kepada semua umat.,2
+Assalamu'alaikum wr wb kepada Peserta Reuni Akbar 212 yg datang dari luar kota jika ingin bermalam kami *DKM Al Ikhlas Kebagusan* siap menampung untuk semua jamaah yang ikut Aksi.,2
+Seruan ditujukan untuk seluruh Habib Hanif kepada antum semua agar bisa hadir reuni akbar 212,2
+Nih buat cebong dan yang gak setuju dengan Reuni Akbar 212.,2
+Charlie Simarmata: Saya Katolik Pancasilais Siap Hadir Reuni 212,2
+Ustadz Abdul Somad-Aa Gym dan Jutaan Jama'ah akan Hadiri Reuni Akbar 212 Sampai ketemu di Monas kawan ingat di MONAS.,2
+Ahmad Dhani Girang Lagu 'Sontoloyo' yang Dinyanyikan Bareng Fadli Zon jadi hit,3
+Ahmad Dhani Dituntut 2 Tahun Ini Harapan Dul Kepada Hakim,3
+Dituntut 2 tahun penjara dalam kasus ujaran kebencian musisi Ahmad Dhani sebut ada motif dendam agar ia mendapat hukuman yang sama dengan Ahok.,3
+Ahmad Dhani diproses hukum krn kata "Idiot" walau tidak jelas siapa subjeknya. Harusnya yang sebut "Anies bangsat" jauh lebih pantas diproses hukum.,3
+Ahmad Dhani dituntut 2 Tahun..Buni Yani 1.5 Tahun.. Pembakar bendera tauhid penjara 2 minggu denda 2 ribu..Mantap kan?,3
+Ahmad Dhani menyebut ada motif dendam dalam tuntutan 2 tahun penjara terhadapnya. Pasalnya lama masa tahanan sama dengan yang diterima Ahok.,3
+Dituntut 2 Tahun Penjara Ahmad Dhani Siapkan Nota Pembelaan,3
+Saya terkadang bingung dgn @DivHumas_Polri kenapa soal kasus Ahok begitu cepat tapi soal kasus Ratna Sarumpaet dan Buni Yani dan Ahmad Dhani dan Bahar terkesan lamban..,3
+Dituntut 2 tahun penjara dalam kasus ujaran kebencian maka Ahmad Dhani sebut ada motif dendam agar ia mendapat hukuman yang sama dengan Ahok.,3
+Kasus Ahmad Dhani dan Habib Bahar Smith belakangan ini melengkapi penindasan terhadap hak sipil dan hak-hak dasar lain dalam berdemokrasi.,3
+KAK MARION!! So proud
+congrats jugaa tadi menang nominasi Best Asian Artist Indonesian apalah itu ya kakk pokoknya kubangga,4
+BEST NEW ASIAN ARTIST INDONESIA Congrats Marion Jola!,4
+Marion Jola trending #1 on Melon Bangga,4
+Marion Jola 19th udah nyanyi di panggung internasional ketemu bias di hadapan mata.,4
+Dengan segala hormat #MarionJola trending #1 di Melon IYA LAGU INDO TRENDI DI MELON yang aplikasinya aja pake bahasa korea! Bangga gak lu? Gua sih ya BANGGA SEKALI,4
+Tahun lalu AGNEZ MO Tahun ini Marion Jola Proud to be Indonesian,4
+kaget lagunya lagu indonesia kok lokal banget ternyata marion jola lagi perform,4
+Marion Jola Tampil Memukau dan Sambut Trofi Penghargaan di 'MAMA 2018' Korea,4
+Bangga dri INDONESIA untuk Marion Jola #MarionMAMA2018,4
+#2018MAMA NEW ASIAN ARTIST : INDONESIA MARION JOLA,4
+pas dijalanin malah error:
+---------------------------------------------------------------------------
+IndexError
+Traceback (most recent call last)
+<ipython-input-153-a690bd58d8c6> in <module>()
+20
+21 for i in(2,3,4,5,6,7,8,9,10):
+---> 22
+kat = [klust(data1,i), klust(data2,i), klust(data3,i), klust(data4,i), klust(data5,i), klust(data6,i)]
+23
+print(kat)
+<ipython-input-152-064c98cd866b> in klust(data, k)
+12
+data[1] = sorted(data[1])
+13
+data[2] = sorted(data[2])
+---> 14
+data[3] = sorted(data[3])
+15
+data[4] = sorted(data[4])
+16
+data[5] = sorted(data[5])
+IndexError: list index out of range
+ada yang bisa kasih solusi gan? makasih gan sebelumnya
+python
+@abangganteng18
+2 Kontribusi
+0 Poin
+Dipost: 2 tahun yang lalu
+Update 11 bulan yang lalu
+0
+coba di trace gan, ini pasti karna kelebihan index -
+@keccikun
+betul di bagian yang error, coba di print, debug pelan-pelan biar terlihat salahnya di bagian mana -
+@hilmanski
+atau respon:
+Tidak Jelas
+Baca aturan main
+Kode tidak rapi
+Perbaiki Judul
+Tulis Balasan
+Jawaban
+Belum ada Jawaban, jadi yang pertama
+Login untuk gabung berdiskusi
+Jadi Premium
+Hey, sedang ada diskon premium hingga 50% untuk akses semua kelas.
+Lihat di sini
+Pertanyaan Lainnya
+saya mengalami kesulitan untuk memahami fungsi dari training wajah dibawah ini
+DWT DCT untuk facial recog
+Bagaimana memperbaiki "List index out of range" di python yang saya buat
+Program menerjemahkan kode angka sms menjadi sebuah pesan.
+Tutorial Python - Membuat daftar belanja
+Top Kontributor
+@ahanafi
+674 Kontribusi
+422 Poin
+@dianarifr
+642 Kontribusi
+316 Poin
+@Nandar
+630 Kontribusi
+199 Poin
+@Saputroandhi
+509 Kontribusi
+162 Poin
+@Dodi Sitorus
+412 Kontribusi
+145 Poin
+© Sekolah Koding 2015 - 2021
+Video tutorial web development dan programming dalam bahasa Indonesia.
+Luaskan ilmu, luaskan manfaat.
+Belajar
+Kelas
+Panduan
+Perjalanan
+Kenapa belajar koding
+Premium
+Diskusi
+Upacara
+Forum
+Artikel
+Mading
+NonTeknis
+Podcast
+Hadiah Untuk Programmer
+Informasi
+FAQ
+Tentang
+Syarat
+Media
+Kata Member
+Masuk
+Daftar
+Iklan
+Dibuat dengan cinta di Makassar & Berlin
+🌚Gelap /
+🌝Terang

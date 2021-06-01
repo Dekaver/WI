@@ -1,0 +1,173 @@
+Tutorial Belajar Java: Melihat Pesan Error Kode Program Java | Duniailkom
+Menu
+HTML
+CSS
+PHP
+MySQL
+JavaScript
+C
+C++
+Java
+Python
+Pascal
+Tutorial Lainnya…
+Laravel
+WordPress
+jQuery
+Web Online / Cpanel
+Blog
+Review Jurusan Kuliah
+X
+HomeTutorial JavaTutorial Belajar Java Part 7: Melihat Pesan Error Kode Program Java
+Tutorial Belajar Java Part 7: Melihat Pesan Error Kode Program Java
+31 Oct 19 |
+Andre |
+Tutorial Java |
+4 Comments |
+Dalam tutorial sebelumnya kita telah berhasil menulis, men-compile dan menjalankan kode program Java. Kali ini saya akan mengajak anda “bermain-main” sejenak dengan kode program tersebut untuk melihat apa yang terjadi jika kode program Java tidak berhasil di-compile.
+Menampilkan Pesan Teks dengan Java
+Sebelumnya kita telah berhasil menampilkan teks “Hello World“, sekarang saya ingin mengubah sedikit isi file ini menjadi “Stt… sedang serius belajar bahasa Java“:
+Berikut kode programnya:
+class HelloBelajar {
+public static void main(String args[]){
+System.out.println("Stt... sedang serius belajar bahasa Java");
+}
+}
+Save sebagai HelloBelajar.java. Perhatikan selain teks di baris 3, nama class di baris 1 juga saya tukar menjadi HelloBelajar.
+Sama seperti sebelumnya, kita harus men-compile kode program ini menggunakan javac.exe:
+javac HelloBelajar.java
+Ada sedikit perubahan di sini. Selain nama file, saya hanya menulis “javac“, tidak lagi “javac.exe“. Ini karena dalam cmd Windows, aplikasi .exe bisa dipanggil tanpa tambahan “.exe“. Demikian juga dengan proses menjalankan Java byte code:
+java HelloBelajar
+Hasilnya, tampil teks “Stt… sedang serius belajar bahasa Java“.
+Sekedar pengingat, perintah javac dan java di sini dipakai untuk memanggil file javac.exe dan file java.exe yang berada di folder C:\Program Files\Java\jdk-12.0.1\bin\. Namun karena kita sudah input ke dalam PATH Windows, maka keduanya bisa dipanggil dari folder mana saja.
+Melihat Pesan Error di Java
+Jika kode program yang di tulis terdapat kesalahan, akan tampil pesan error pada saat proses compile. Mari kita coba.
+Buat file baru AdaError.java dengan kode sebagai berikut:
+class AdaError {
+public static void main(String args[]){
+System.out.println("Ada error sedikit nih...")
+}
+}
+Kembali yang berubah adalah nama class di baris 1 serta isi teks di baris 3. Perhatikan saya sengaja menghapus tanda titik koma di akhir baris 3. Berikut hasil ketika proses compile dengan javac:
+AdaError.java:3: error: ';' expected
+System.out.println("Ada error sedikit nih...")
+^
+1 error
+Inilah tampilan ketika terjadi error. Kuncinya, fokus kepada pesan error yang tampil, yakni error: ‘;’ expected. Di sini javac.exe komplain karena di baris 3 seharusnya ada tanda titik koma ‘;‘.Tanda caret atau topi ” ^ ” juga menunjukkan posisi dari error yang di deteksi.
+Jika proses compile menghasilkan error, tidak akan ada file .class yang dibuat sampai masalah tersebut di atasi.
+Baik, silahkan tambah kembali tanda titik koma di akhir baris 3, kemudian sebagai gantinya hapus satu tanda kutip di akhir teks:
+class AdaError {
+public static void main(String args[]){
+System.out.println("Ada error sedikit nih...);
+}
+}
+Save kembali file AdaError.java dan compile ulang:
+Kali ini pesan errornya adalah unclosed string literal, dimana javac.exe komplain karena ada string yang belum ditutup. Karakter topi ” ^ ” merujuk ke tanda kutip pertama, yakni tanda kutip yang tidak ditemukan pasangan penutup.
+Inilah beberapa pesan error yang akan kita temui selama pembuatan kode program dengan bahasa Java. Error merupakan hal yang sangat bisa dimaklumi. Programmer paling ahli sekalipun masih sering ketemu error. Selama anda bisa memahami error yang dimaksud, itu tidak masalah.
+Jika merasa sudah buntu, silahkan copy paste pesan error tersebut ke Google. Besar kemungkinan sudah ada programmer lain yang menghadapi masalah serupa dan menjelaskan solusinya.
+Penjelasan lebih lanjut tentang aturan penulisan kode Java akan kita bahas dalam tutorial terpisah, kali ini kita hanya fokus melihat tampilan error saja.
+Pesan error merupakan “makanan” sehari-hari bagi programmer, apalagi jika kita sudah masuk ke kode program yang lebih kompleks dan terdiri dari puluhan atau ratusan baris kode program. Yang harus sering dilatih adalah memahami kode error yang ada lalu mencari penyebabnya.
+Dalam tutorial berikutnya, saya akan konfigurasi text editor Notepad++ agar kita bisa men-compile dan menjalankan kode program Java secara langsung, yakni tidak perlu lagi mengetik manual di cmd Windows. Selanjutnya di Cara Menjalankan Java dari Notepad++.
+Tags: Belajar Java, Error Java, Java, Javac
+4 Comments
+Syaripudin
+13 Feb 20
+Trimakasih bang Andre. sangat membantu bagi kami yang baru belajar pemrograman java
+Reply
+azzahra nabila
+24 Apr 20
+makasih banyak ya bangg, bahasanya jelas sekali
+Reply
+Herbi
+04 Oct 20
+Terimakasih ilmunya suhu,
+Reply
+Yulius Sulistiyo
+09 Oct 20
+saya ada error
+"error: Class names, 'HelloBelajar', are only accepted if annotation processing is explicity requested
+Reply
+Add Comment
+Cancel reply
+Notify me of follow-up comments by email. Notify me of new posts by email.
+eBook Programming Duniailkom
+Cara pemesanan eBook & Buku Duniailkom
+List Tutorial DuniailkomTutorial Terbaru Duniailkom
+Tutorial HTML
+Tutorial CSS
+Tutorial PHP
+Tutorial MySQL
+Tutorial JavaScript
+Tutorial Bahasa C
+Tutorial Bahasa
+C++
+Tutorial Java
+Tutorial Python
+Tutorial Pascal
+Tutorial Laravel
+Tutorial WordPress
+Tutorial jQuery
+Membuat Web Online
+Review Jurusan Kuliah
+Blog Duniailkom
+Tutorial Java1. Pengertian Bahasa Java
+2. Pengertian JVM
+3. Pengertian JRE dan JDK
+4. Cara Menginstall Java JDK
+5. Setting Path Java JDK
+6: Menjalankan Kode Program Java
+7. Melihat Pesan Error Java
+8. Menjalankan Java dari Notepad++
+9. Struktur Dasar Kode Java
+10. Aturan Dasar Penulisan Java
+11. Cara Penulisan Variabel Java
+12. Cara Pembuatan Konstanta Java
+13. Menampilkan Teks (Output)
+14. Menginput Data
+15. Jenis-Jenis Tipe Data
+16. Tipe Data Integer Java
+17. Tipe Data Float dan Double Java
+18. Tipe Data Boolean Java
+19. Tipe Data Char Bahasa Java
+20. Tipe Data String Bahasa Java
+21. Tipe Data Array Bahasa Java
+22. Jenis-jenis Operator Java
+23. Operator Aritmatika Java
+24. Operator Increment & Decrement
+25. Operator Perbandingan / Relasional
+26. Operator Logika Java
+27. Operator Bitwise Java
+28. Operator Assignment Java
+29. Percabangan Kondisi IF
+30. Percabangan Kondisi IF ELSE
+31. Percabangan Kondisi IF ELSE IF
+32. Percabangan SWITCH CASE
+33. Perulangan FOR
+34. Perulangan WHILE
+35. Perulangan DO WHILE
+36. Perintah BREAK
+37. Perintah CONTINUE
+38. Pengertian Function (Fungsi)
+39. Parameter dan Argumen
+Berlangganan Artikel Duniailkom
+Dapatkan pemberitahuan untuk setiap artikel dan tutorial terbaru Duniailkom
+Join 3,278 other subscribers
+Email Address
+Subscribe
+Hosting Rekomendasi Duniailkom
+Duniailkom
+#HTML
+#CSS
+#PHP
+#MySQL
+#JavaScript
+#WordPress
+#WebOnline
+#Pascal
+Duniailkom adalah situs belajar programming dan ilmu komputer. Diharapkan duniailkom.com dapat menjadi media belajar dan saling berbagi tentang programming, hardware, maupun teori seputar dunia komputer. Ikuti akun media social duniailkom untuk update terbaru: Facebook Duniailkom, Twitter Duniailkom
+Copyright © 2021 Duniailkom | Hosting rekomendasi Duniailkom
+Terms of Use|
+Privacy Policy|
+Disclaimer|
+About Us|
+Contact Us|

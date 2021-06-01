@@ -1,0 +1,642 @@
+Top Java Software Errors: 50 Common Java Errors and How to Avoid Them – Stackify
+Java Software Errors: How to Avoid 50 Code Issues in Java
+Stackify + Netreo Creates a Dev + Ops Powerhouse. Click here to read more about the acquisition.
+Product
+Features OverviewApplication Performance ManagementCentralized LoggingFull Transaction Tracing
+Menu OverviewApplication Performance ManagementCentralized LoggingFull Transaction Tracing Error TrackingApplication & Server MonitoringReal User MonitoringDeployment Tracking
+Menu Error TrackingApplication & Server MonitoringReal User MonitoringDeployment Tracking
+Try Our Free Code ProfilerWant to write better code? Check out our free transaction tracing tool, Prefix!
+Features OverviewApplication Performance ManagementCentralized LoggingFull Transaction TracingError TrackingApplication & Server MonitoringReal User MonitoringDeployment Tracking
+Menu OverviewApplication Performance ManagementCentralized LoggingFull Transaction TracingError TrackingApplication & Server MonitoringReal User MonitoringDeployment TrackingTry Our Code ProfilerWant to write better code? Check out our free transaction tracing tool, Prefix! PricingSolutions By Role For DevelopersFor DevOps
+Menu For DevelopersFor DevOpsBy Technology Azure MonitoringAWS MonitoringCompatibility
+Menu Azure MonitoringAWS MonitoringCompatibilityBy Language .NETJavaPHPNode.jsRubyPython
+Menu .NETJavaPHPNode.jsRubyPython
+By Role For DevelopersFor DevOps
+Menu For DevelopersFor DevOpsBy Technology Azure MonitoringAWS MonitoringCompatibility
+Menu Azure MonitoringAWS MonitoringCompatibilityBy Language .NETJavaPHPNode.jsRubyPython
+Menu .NETJavaPHPNode.jsRubyPython Learn Resources BlogeBooksCase StudiesWebinarsROI CalculatorNews
+Menu BlogeBooksCase StudiesWebinarsROI CalculatorNewsTechnical DocumentationSupportIdeas Portal
+Menu DocumentationSupportIdeas Portal
+Resources BlogeBooksCase StudiesWebinarsROI CalculatorNews
+Menu BlogeBooksCase StudiesWebinarsROI CalculatorNewsTechnical DocumentationSupportIdeas Portal
+Menu DocumentationSupportIdeas Portal Login
+Start Free Trial
+Product
+Features OverviewApplication Performance ManagementCentralized LoggingFull Transaction Tracing
+Menu OverviewApplication Performance ManagementCentralized LoggingFull Transaction Tracing Error TrackingApplication & Server MonitoringReal User MonitoringDeployment Tracking
+Menu Error TrackingApplication & Server MonitoringReal User MonitoringDeployment Tracking
+Try Our Free Code ProfilerWant to write better code? Check out our free transaction tracing tool, Prefix!
+Features OverviewApplication Performance ManagementCentralized LoggingFull Transaction TracingError TrackingApplication & Server MonitoringReal User MonitoringDeployment Tracking
+Menu OverviewApplication Performance ManagementCentralized LoggingFull Transaction TracingError TrackingApplication & Server MonitoringReal User MonitoringDeployment TrackingTry Our Code ProfilerWant to write better code? Check out our free transaction tracing tool, Prefix! PricingSolutions By Role For DevelopersFor DevOps
+Menu For DevelopersFor DevOpsBy Technology Azure MonitoringAWS MonitoringCompatibility
+Menu Azure MonitoringAWS MonitoringCompatibilityBy Language .NETJavaPHPNode.jsRubyPython
+Menu .NETJavaPHPNode.jsRubyPython
+By Role For DevelopersFor DevOps
+Menu For DevelopersFor DevOpsBy Technology Azure MonitoringAWS MonitoringCompatibility
+Menu Azure MonitoringAWS MonitoringCompatibilityBy Language .NETJavaPHPNode.jsRubyPython
+Menu .NETJavaPHPNode.jsRubyPython Learn Resources BlogeBooksCase StudiesWebinarsROI CalculatorNews
+Menu BlogeBooksCase StudiesWebinarsROI CalculatorNewsTechnical DocumentationSupportIdeas Portal
+Menu DocumentationSupportIdeas Portal
+Resources BlogeBooksCase StudiesWebinarsROI CalculatorNews
+Menu BlogeBooksCase StudiesWebinarsROI CalculatorNewsTechnical DocumentationSupportIdeas Portal
+Menu DocumentationSupportIdeas Portal Login
+Top Java Software Errors: 50 Common Java Errors and How to Avoid Them Stackify May 28, 2021 Developer Tips, Tricks & Resources,
+Insights for Dev Managers
+Imagine, you are developing Java software and suddenly you encounter an error? Where could you have possibly gone wrong?There are many types of errors that you will encounter while developing Java software, but most are avoidable. Some errors are minor lapses when writing codes but that is very much mendable. If you have an error monitoring tool such as Stackify Retrace, you can write codes with ease.In this article you will find:50 of the most common Java software errorsCode examples and tutorials to help you work around common coding problemsRead on to learn about the most common issues and their workarounds.Compiler ErrorsCompiler error messages are created when the Java software code is run through the compiler. It is important to remember that a compiler may throw many error messages for one error. So, fix the first error and recompile. That could solve many problems. 1. “… expected”This error occurs when something is missing from the code. Often this is created by a missing semicolon or closing parenthesis.private static double volume(String solidom, double alturam, double areaBasem, double raiom) {
+double vol;
+if (solidom.equalsIgnoreCase("esfera"){
+vol=(4.0/3)*Math.pi*Math.pow(raiom,3);
+}
+else {
+if (solidom.equalsIgnoreCase("cilindro") {
+vol=Math.pi*Math.pow(raiom,2)*alturam;
+}
+else {
+vol=(1.0/3)*Math.pi*Math.pow(raiom,2)*alturam;
+}
+}
+return vol;
+}
+Often this error message does not pinpoint the exact location of the issue. To find it:Make sure all opening parenthesis have a corresponding closing parenthesis.Look in the line previous to the Java code line indicated. This Java software error doesn’t get noticed by the compiler until further in the code.Sometimes a character such as an opening parenthesis shouldn’t be in the Java code in the first place. So the developer didn’t place a closing parenthesis to balance the parentheses.Check ut an example of how a missed parenthesis can create an error (@StackOverflow).2. “unclosed string literal”The “unclosed string literal” error message is created when the string literal ends without quotation marks and the message will appear on the same line as the error. (@DreamInCode) A literal is a source code of a value. public abstract class NFLPlayersReference {
+private static Runningback[] nflplayersreference;
+private static Quarterback[] players;
+private static WideReceiver[] nflplayers;
+public static void main(String args[]){
+Runningback r = new Runningback("Thomlinsion");
+Quarterback q = new Quarterback("Tom Brady");
+WideReceiver w = new WideReceiver("Steve Smith");
+NFLPlayersReference[] NFLPlayersReference;
+Run();// {
+NFLPlayersReference = new NFLPlayersReference [3];
+nflplayersreference[0] = r;
+players[1] = q;
+nflplayers[2] = w;
+for ( int i = 0; i < nflplayersreference.length; i++ ) {
+System.out.println("My name is " + " nflplayersreference[i].getName());
+nflplayersreference[i].run();
+nflplayersreference[i].run();
+nflplayersreference[i].run();
+System.out.println("NFL offensive threats have great running abilities!");
+}
+}
+private static void Run() {
+System.out.println("Not yet implemented");
+}
+}
+Commonly, this happens when:         The string literal does not end with quote marks. This is easy to correct by closing the string literal with the needed quote mark.         The string literal extends beyond a line. Long string literals can be broken into multiple literals and concatenated with a plus sign (“+”).         Quote marks that are part of the string literal are not escaped with a backslash (“\”).Read a discussion of the unclosed string literal Java software error message. (@Quora)3. “illegal start of an expression”There are numerous reasons why an “illegal start of an expression” error occurs. It ends up being one of the less-helpful error messages. Some developers say it’s caused by bad code.Usually, expressions are created to produce a new value or assign a value to a variable. The compiler expects to find an expression and cannot find it because the syntax does not match expectations. (@StackOverflow) It is in these statements that the error can be found.} // ADD IT HERE
+public void newShape(String shape) {
+switch (shape) {
+case "Line":
+Shape line = new Line(startX, startY, endX, endY);
+shapes.add(line);
+break;
+case "Oval":
+Shape oval = new Oval(startX, startY, endX, endY);
+shapes.add(oval);
+break;
+case "Rectangle":
+Shape rectangle = new Rectangle(startX, startY, endX, endY);
+shapes.add(rectangle);
+break;
+default:
+System.out.println("ERROR. Check logic.");
+}
+}
+} // REMOVE IT FROM HERE
+}
+Browse discussions of how to troubleshoot the “illegal start of an expression” error. (@StackOverflow)4. “cannot find symbol”This is a very common issue because all identifiers in Java need to be declared before they are used. When the code is being compiled, the compiler does not understand what the identifier means.There are many reasons you might receive the “cannot find symbol” message:The spelling of the identifier when declared may not be the same as when it is used in the code.The variable was never declared.The variable is not being used in the same scope it was declared.The class was not imported.Read a thorough discussion of the “cannot find symbol” error and several code examples that create the same issue. (@StackOverflow)5. “public class XXX should be in file”The “public class XXX should be in file” message occurs when the class XXX and the Java program filename do not match. The code will only be compiled when the class and Java file are the same. (@coderanch)package javaapplication3;
+public class Robot {
+int xlocation;
+int ylocation;
+String name;
+static int ccount = 0;
+public Robot(int xxlocation, int yylocation, String nname) {
+xlocation = xxlocation;
+ylocation = yylocation;
+name = nname;
+ccount++;
+}
+}
+public class JavaApplication1 {
+public static void main(String[] args) {
+robot firstRobot = new Robot(34,51,"yossi");
+System.out.println("numebr of robots is now " + Robot.ccount);
+}
+}
+To fix this issue:Name the class and file the same.Make sure the case of both names is consistent.See an example of the “Public class XXX should be in file” error. (@StackOverflow)6. “incompatible types”“Incompatible types” is an error in logic that occurs when an assignment statement tries to pair a variable with an expression of types. It often comes when the code tries to place a text string into an integer — or vice versa. This is not a Java syntax error. (@StackOverflow)test.java:78: error: incompatible types
+return stringBuilder.toString();
+^
+required: int
+found:
+String
+1 error
+There really isn’t an easy fix when the compiler gives an “incompatible types” message:There are functions that can convert types.Developer may need to change what the code is expected to do.Check out an example of how trying to assign a string to an integer created the “incompatible types.”  (@StackOverflow)7. “invalid method declaration; return type required”This Java software error message means the return type of a method was not explicitly stated in the method signature.public class Circle
+{
+private double radius;
+public CircleR(double r)
+{
+radius = r;
+}
+public diameter()
+{
+double d = radius * 2;
+return d;
+}
+}
+There are a few ways to trigger the “invalid method declaration; return type required” error:Forgetting to state the typeIf the method does not return a value then “void” needs to be stated as the type in the method signature.Constructor names do not need to state type. But if there is an error in the constructor name, then the compiler will treat the constructor as a method without a stated type.Follow an example of how constructor naming triggered the “invalid method declaration; return type required” issue. (@StackOverflow)8. “method <X> in class <Y> cannot be applied to given types”This Java software error message is one of the more helpful error messages. It explains how the method signature is calling the wrong parameters.RandomNumbers.java:9: error: method generateNumbers in class RandomNumbers cannot be applied to given types;
+generateNumbers();
+required: int[]
+found:generateNumbers();
+reason: actual and formal argument lists differ in length
+The method called is expecting certain arguments defined in the method’s declaration. Check the method declaration and call carefully to make sure they are compatible.This discussion illustrates how a Java software error message identifies the incompatibility created by arguments in the method declaration and method call. (@StackOverflow)9. “missing return statement”The “missing return statement” message occurs when a method does not have a return statement. Each method that returns a value (a non-void type) must have a statement that literally returns that value so it can be called outside the method.public String[] OpenFile() throws IOException {
+Map<String, Double> map = new HashMap();
+FileReader fr = new FileReader("money.txt");
+BufferedReader br = new BufferedReader(fr);
+try{
+while (br.ready()){
+String str = br.readLine();
+String[] list = str.split(" ");
+System.out.println(list);
+}
+}
+catch (IOException e){
+System.err.println("Error - IOException!");
+}
+}
+There are a couple of reasons why a compiler throws the “missing return statement” message:A return statement was simply omitted by mistake.The method did not return any value but type void was not declared in the method signature.Check out an example of how to fix the “missing return statement” Java software error. (@StackOverflow)10. “possible loss of precision”“Possible loss of precision” occurs when more information is assigned to a variable than it can hold. If this happens, pieces will be thrown out. If this is fine, then the code needs to explicitly declare the variable as a new type.A “possible loss of precision” error commonly occurs when:         Trying to assign a real number to a variable with an integer data type.         Trying to assign a double to a variable with an integer data type.This explanation of Primitive Data Types in Java shows how the data is characterized. (@Oracle)11. “reached end of file while parsing”This error message usually occurs in Java when the program is missing the closing curly brace (“}”). Sometimes it can be quickly fixed by placing it at the end of the code.public class mod_MyMod extends BaseMod
+public String Version()
+{
+return "1.2_02";
+}
+public void AddRecipes(CraftingManager recipes)
+{
+recipes.addRecipe(new ItemStack(Item.diamond), new Object[] {
+"#", Character.valueOf('#'), Block.dirt
+});
+}The above code results in the following error:java:11: reached end of file while parsing }Coding utilities and proper code indenting can make it easier to find these unbalanced braces.This example shows how missing braces can create the “reached end of file while parsing” error message. (@StackOverflow)12. “unreachable statement”“Unreachable statement” occurs when a statement is written in a place that prevents it from being executed. Usually, this is after a break or return statement.for(;;){
+break;
+... // unreachable statement
+}
+int i=1;
+if(i==1)
+...
+else
+... // dead code
+Often simply moving the return statement will fix the error. Read the discussion of how to fix unreachable statement Java software error. (@StackOverflow)13. “variable <X> might not have been initialized”This occurs when a local variable declared within a method has not been initialized. It can occur when a variable without an initial value is part of an if statement.int x;
+if (condition) {
+x = 5;
+}
+System.out.println(x); // x may not have been initializedRead this discussion of how to avoid triggering the “variable <X> might not have been initialized” error. (@reddit)14. “Operator .. cannot be applied to <X>”This issue occurs when operators are used for types, not in their definition.operator < cannot be applied to java.lang.Object,java.lang.ObjectThis often happens when the Java code tries to use a type string in a calculation. To fix it, the string needs to be converted to an integer or float.Read this example of how non-numeric types were causing a Java software error warning that an operator cannot be applied to a type. (@StackOverflow)15. “inconvertible types”The “inconvertible types” error occurs when the Java code tries to perform an illegal conversion.TypeInvocationConversionTest.java:12: inconvertible types
+found   : java.util.ArrayList<java.lang.Class<? extends TypeInvocationConversionTest.Interface1>>
+required: java.util.ArrayList<java.lang.Class<?>>
+lessRestrictiveClassList = (ArrayList<Class<?>>) classList;
+^For example, booleans cannot be converted to an integer.Read this discussion about finding ways to convert inconvertible types in Java software. (@StackOverflow)16. “missing return value”You’ll get the “missing return value” message when the return statement includes an incorrect type. For example, the following code:public class SavingsAcc2
+{
+private double balance;
+private double interest;
+public SavingsAcc2()
+{
+balance = 0.0;
+interest = 6.17;
+}
+public SavingsAcc2(double initBalance, double interested)
+{
+balance = initBalance;
+interest = interested;
+}
+public SavingsAcc2 deposit(double amount)
+{
+balance = balance + amount;
+return;
+}
+public SavingsAcc2 withdraw(double amount)
+{
+balance = balance - amount;
+return;
+}
+public SavingsAcc2 addInterest(double interest)
+{
+balance = balance * (interest / 100) + balance;
+return;
+}
+public double getBalance()
+{
+return balance;
+}
+}
+Returns the following error:
+SavingsAcc2.java:29: missing return value
+return;
+^
+SavingsAcc2.java:35: missing return value
+return;
+^
+SavingsAcc2.java:41: missing return value
+return;
+^
+3 errorsUsually, there is a return statement that doesn’t return anything.Read this discussion about how to avoid the “missing return value” Java software error message. (@coderanch)17. “cannot return a value from method whose result type is void”This Java error occurs when a void method tries to return any value, such as in the following example:public static void move()
+{
+System.out.println("What do you want to do?");
+Scanner scan = new Scanner(System.in);
+int userMove = scan.nextInt();
+return userMove;
+}
+public static void usersMove(String playerName, int gesture)
+{
+int userMove = move();
+if (userMove == -1)
+{
+break;
+}Often this is fixed by changing to method signature to match the type in the return statement. In this case, instances of void can be changed to int:public static int move()
+{
+System.out.println("What do you want to do?");
+Scanner scan = new Scanner(System.in);
+int userMove = scan.nextInt();
+return userMove;
+}Read this discussion about how to fix the “cannot return a value from method whose result type is void” error. (@StackOverflow)18. “non-static variable . . . cannot be referenced from a static context”This error occurs when the compiler tries to access non-static variables from a static method (@javinpaul):public class StaticTest {
+private int count=0;
+public static void main(String args[]) throws IOException {
+count++; //compiler error: non-static variable count cannot be referenced from a static context
+}
+}To fix the “non-static variable . . . cannot be referenced from a static context” error, try these two things:Declare the variable as static in the signature.Check on the code as it can create an instance of a non-static object in the static method.Read this tutorial that explains what is the difference between static and non-static variables. (@sitesbay)19. “non-static method . . . cannot be referenced from a static context”This issue occurs when the Java code tries to call a non-static method in a non-static class. Here is an example:class Sample
+{
+private int age;
+public void setAge(int a)
+{
+age=a;
+}
+public int getAge()
+{
+return age;
+}
+public static void main(String args[])
+{
+System.out.println(“Age is:”+ getAge());
+}
+}Would return this error:Exception in thread “main” java.lang.Error: Unresolved compilation problem:
+Cannot make a static reference to the non–static method getAge() from the type SampleTo call a non-static method from a static method is to declare an instance of the class calling the non-static method.Read this explanation on what is the difference between non-static methods and static methods.20. “(array) <X> not initialized”You’ll get the “(array) <X> not initialized” message when an array has been declared but not initialized. Arrays are fixed in length so each array needs to be initialized with the desired length.The following code is acceptable:AClass[] array = {object1, object2}
+As is:
+AClass[] array = new AClass[2];
+…
+array[0] = object1;
+array[1] = object2;
+But not:
+AClass[] array;
+…
+array = {object1, object2};Read this discussion of how to initialize arrays in Java software. (@StackOverflow)Runtime Exceptions21. “ArrayIndexOutOfBoundsException”This is a runtime error message that occurs when the code attempts to access an array index that is not within the values. The following code would trigger this exception:String[] name = {“tom”, “dick”, “harry”};
+for(int i = 0; i<=name.length; i++) {
+System.out.print(name[i] +‘\n’);
+}
+Here’s another example (@DukeU):
+int[] list = new int[5];
+list[5] = 33;       // illegal index, maximum index is 4Array indexes start at zero and end at one less than the length of the array. Often it is fixed by using “<” instead of “<=” when defining the limits of the array index.Check out this example on how an index triggered the “ArrayIndexOutOfBoundsException” Java software error message. (@StackOverflow)22.  “StringIndexOutOfBoundsException”This is an issue that occurs when the code attempts to access a part of the string that is not within the bounds of the string. Usually, this happens when the code tries to create a substring of a string that is not of the same length as the parameter. Here’s an example (@javacodegeeks):public class StringCharAtExample {
+public static void main(String[] args) {
+String str = “Java Code Geeks!”;
+System.out.println(“Length: “ + str.length());
+//The following statement throws an exception, because
+//the request index is invalid.
+char ch = str.charAt(50);
+}
+}Like array indexes, string indexes start at zero. When indexing a string, the last character is at one less than the length of the string. The “StringIndexOutOfBoundsException” Java software error message usually means the index is trying to access characters that aren’t there.Here’s an example that illustrates how the “StringIndexOutOfBoundsException” can occur and be fixed. (@StackOverflow)23. “NullPointerException”A “NullPointerException” will occur when the program tries to use an object reference that does not have a value assigned to it (@geeksforgeeks).// A Java program to demonstrate that invoking a method
+// on null causes NullPointerException
+import java.io.*;
+class GFG
+{
+public static void main (String[] args)
+{
+// Initializing String variable with null value
+String ptr = null;
+// Checking if ptr.equals null or works fine.
+try
+{
+// This line of code throws NullPointerException
+// because ptr is null
+if (ptr.equals(“gfg”))
+System.out.print(“Same”);
+else
+System.out.print(“Not Same”);
+}
+catch(NullPointerException e)
+{
+System.out.print(“NullPointerException Caught”);
+}
+}
+}The Java program often raises an exception when:A statement references an object with a null value.Trying to access a class that is defined but isn’t assigned a reference.Here’s a discussion of when developers encounter the “NullPointerException” error and how to handle it. (@StackOverflow)24. “NoClassDefFoundError”The “NoClassDefFoundError” will occur when the interpreter cannot find the file containing a class with the main method. Here’s an example from DZone (@DZone):If you compile this program:class A
+{
+// some code
+}
+public class B
+{
+public static void main(String[] args)
+{
+A a = new A();
+}
+}Two .class files are generated: A.class and B.class. Removing the A.class file and running the B.class file, will  get you the “NoClassDefFoundError”:Exception in thread “main” java.lang.NoClassDefFoundError: A
+at MainClass.main(MainClass.java:10)
+Caused by: java.lang.ClassNotFoundException: A
+at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
+at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:331)
+at java.lang.ClassLoader.loadClass(ClassLoader.java:357)This can happen if:The file is not in the right directory.The name of the class is not the same as the name of the file (without the file extension). Also, the names are case sensitive.Read this discussion of why “NoClassDefFoundError” occurs when running Java software. (@StackOverflow)25. “NoSuchMethodFoundError”This error message will occur when the Java software tries to call a method of a class and the method no longer has a definition (@myUND):Error: Could not find or load main class wiki.javaOften the “NoSuchMethodFoundError” Java software error occurs when there is a typo in the declaration.Read this tutorial to learn how to avoid the error message “NoSuchMethodFoundError”. (@javacodegeeks)26. “NoSuchProviderException”“NoSuchProviderException” occurs when a security provider is requested that is not available (@alvinalexander):javax.mail.NoSuchProviderExceptionWhen trying to find why “NoSuchProviderException” occurs, check:        The JRE configuration.        The Java_home is set in the configuration.        The Java environment being used.        The security provider entry.Read this discussion of what causes “NoSuchProviderException” when you run Java software. (@StackOverflow)27. AccessControlException“AccessControlException” indicates that requested access to system resources such as a file system or network is denied, as in this example from JBossDeveloper (@jbossdeveloper):ERROR Could not register mbeans java.security.
+AccessControlException: WFSM000001: Permission check failed (permission “(“javax.management.MBeanPermission” “org.apache.logging.log4j.core.jmx.LoggerContextAdmin#-
+[org.apache.logging.log4j2:type=51634f]” “registerMBean“)” in code source “(vfs:/C:/wildfly-10.0.0.Final/standalone/deployments/mySampleSecurityApp.war/WEB-INF/lib/log4j-core-2.5.
+jar )” of “null”)Read this discussion of a workaround used to get past an “AccessControlException” error. (@github)28. “ArrayStoreException”An “ArrayStoreException” occurs when the rules of casting elements in Java arrays are broken. Be very careful about what values you place inside an array. (@Roedyg) For instance, this example from JavaScan.com illustrates that this program (@java_scan):/* …………… START …………… */
+public class JavaArrayStoreException {
+public static void main(String… args) {
+Object[] val = new Integer[4];
+val[0] = 5.8;
+}
+}
+/* …………… END …………… */Results in the following output:Exception in thread “main” java.lang.ArrayStoreException: java.lang.Double
+at ExceptionHandling.JavaArrayStoreException.main(JavaArrayStoreException.java:7)When an array is initialized, the sorts of objects allowed into the array need to be declared. Then each array element needs to be of the same type of object.Read this discussion of how to solve for the “ArrayStoreException”. (@StackOverflow)29. “bad magic number”This Java software error message means something may be wrong with the class definition files on the network. Here’s an example from The Server Side (@TSS_dotcom):Java(TM) Plug–in: Version 1.3.1_01
+Using JRE version 1.3.1_01 Java HotSpot(TM) Client VM
+User home directory = C:\Documents and Settings\Ankur
+Proxy Configuration: Manual Configuration
+Proxy: 192.168.11.6:80
+java.lang.ClassFormatError: SalesCalculatorAppletBeanInfo (Bad magic number)
+at java.lang.ClassLoader.defineClass0(Native Method)
+at java.lang.ClassLoader.defineClass(Unknown Source)
+at java.security.SecureClassLoader.defineClass(Unknown Source)
+at sun.applet.AppletClassLoader.findClass(Unknown Source)
+at sun.plugin.security.PluginClassLoader.access$201(Unknown Source)
+at sun.plugin.security.PluginClassLoader$1.run(Unknown Source)
+at java.security.AccessController.doPrivileged(Native Method)
+at sun.plugin.security.PluginClassLoader.findClass(Unknown Source)
+at java.lang.ClassLoader.loadClass(Unknown Source)
+at sun.applet.AppletClassLoader.loadClass(Unknown Source)
+at java.lang.ClassLoader.loadClass(Unknown Source)
+at java.beans.Introspector.instantiate(Unknown Source)
+at java.beans.Introspector.findInformant(Unknown Source)
+at java.beans.Introspector.(Unknown Source)
+at java.beans.Introspector.getBeanInfo(Unknown Source)
+at sun.beans.ole.OleBeanInfo.(Unknown Source)
+at sun.beans.ole.StubInformation.getStub(Unknown Source)
+at sun.plugin.ocx.TypeLibManager$1.run(Unknown Source)
+at java.security.AccessController.doPrivileged(Native Method)
+at sun.plugin.ocx.TypeLibManager.getTypeLib(Unknown Source)
+at sun.plugin.ocx.TypeLibManager.getTypeLib(Unknown Source)
+at sun.plugin.ocx.ActiveXAppletViewer.statusNotification(Native Method)
+at sun.plugin.ocx.ActiveXAppletViewer.notifyStatus(Unknown Source)
+at sun.plugin.ocx.ActiveXAppletViewer.showAppletStatus(Unknown Source)
+at sun.applet.AppletPanel.run(Unknown Source)
+at java.lang.Thread.run(Unknown Source)The “bad magic number” error message happens when:The first four bytes of a class file is not the hexadecimal number CAFEBABE.The class file was uploaded as in ASCII mode, not binary mode.The java program is run before it is compiled.Read this discussion of how to find the reason for a “bad magic number”. (@coderanch)30. “broken pipe”This error message refers to the data stream from a file or network socket that has stopped working or is closed from the other end (@ExpertsExchange).Exception in thread “main” java.net.SocketException: Broken pipe
+at java.net.SocketOutputStream.socketWrite0(Native Method)
+at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:92)
+at java.net.SocketOutputStream.write(SocketOutputStream.java:115)
+at java.io.DataOutputStream.writeThe causes of a “broken pipe” error often include:        Running out of disk scratch space.        RAM may be clogged.        The data stream may be corrupt.        The process of reading the pipe might have been closed.Read this discussion of what is the Java error “broken pipe”. (@StackOverflow)31. “could not create Java Virtual Machine”This Java error message usually occurs when the code tries to invoke Java with the wrong arguments (@ghacksnews):Error: Could not create the Java Virtual Machine
+Error: A fatal exception has occurred. Program will exit.It often is caused by a mistake in the declaration in the code or allocating the proper amount of memory to it.Read this discussion of how to fix the Java software error “Could not create Java Virtual Machine”. (@StackOverflow)32. “class file contains wrong class”The “class file contains wrong class” issue occurs when the Java code tries to find the class file in the wrong directory, resulting in an error message similar to the following:MyTest.java:10: cannot access MyStruct
+bad class file: D:\Java\test\MyStruct.java
+file does not contain class MyStruct
+Please remove or make sure it appears in the correct subdirectory of the classpath.
+MyStruct ms = new MyStruct();
+^To fix this error, these tips should help:Make sure the name of the source file and the name of the class match — including the text case.Check if the package statement is correct or missing.Make sure the source file is in the right directory.Read this discussion of how to fix a “class file contains wrong class” error. (@StackOverflow)33. “ClassCastException”The “ClassCastException” message indicates the Java code is trying to cast an object to the wrong class. Here is an example from Java Concept of the Day:package com;
+class A
+{
+int i = 10;
+}
+class B extends A
+{
+int j = 20;
+}
+class C extends B
+{
+int k = 30;
+}
+public class ClassCastExceptionDemo
+{
+public static void main(String[] args)
+{
+A a = new B();   //B type is auto up casted to A type
+B b = (B) a; //A type is explicitly down casted to B type.
+C c = (C) b;    //Here, you will get class cast exception
+System.out.println(c.k);
+}
+}Results in this error:Exception in thread “main” java.lang.ClassCastException: com.B cannot be cast to com.C
+at com.ClassCastExceptionDemo.main(ClassCastExceptionDemo.java:23)The Java code will create a hierarchy of classes and subclasses. To avoid the “ClassCastException” error, make sure the new type belongs to the right class or one of its parent classes. If Generics are used, these errors can be caught when the code is compiled.Read this tutorial on how to fix “ClassCastException” Java software errors. (@java_concept)34. “ClassFormatError”The “ClassFormatError” message indicates a linkage error and occurs when a class file cannot be read or interpreted as a class file.Caused by: java.lang.ClassFormatError: Absent Code attribute in method that is
+not native or abstract in class file javax/persistence/GenerationType
+at java.lang.ClassLoader.defineClass1(Native Method)
+at java.lang.ClassLoader.defineClassCond(Unknown Source)
+at java.lang.ClassLoader.defineClass(Unknown Source)
+at java.security.SecureClassLoader.defineClass(Unknown Source)
+at java.net.URLClassLoader.defineClass(Unknown Source)
+at java.net.URLClassLoader.access$000(Unknown Source)
+at java.net.URLClassLoader$1.run(Unknown Source)
+at java.security.AccessController.doPrivileged(Native Method)
+at java.net.URLClassLoader.findClass(Unknown Source)
+at java.lang.ClassLoader.loadClass(Unknown Source)
+at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)
+at java.lang.ClassLoader.loadClass(Unknown Source)There are several reasons why a “ClassFormatError” can occur:The class file was uploaded as in ASCII mode not binary mode.The web server must send class files as binary, not ASCII.There could be a classpath error that prevents the code from finding the class file.If the class is loaded twice, the second time will throw an exception.You’re using an old version of Java runtime.Read this discussion about what causes the “ClassFormatError” in Java. (@StackOverflow)35. “ClassNotFoundException”“ClassNotFoundException” only occurs at run time — meaning a class that was there during compilation is missing at run time. This is a linkage error.Much like the “NoClassDefFoundError” this issue can occur if:The file is not in the right directory.The name of the class is not the same as the name of the file (without the file extension). Also, the names are case-sensitive.Read this discussion of what causes “ClassNotFoundException” for more cases. (@StackOverflow)36. “ExceptionInInitializerError”This Java issue will occur when something goes wrong with a static initialization (@GitHub). When the Java code later uses the class, the “NoClassDefFoundError” error will occur.java.lang.ExceptionInInitializerError
+at org.eclipse.mat.hprof.HprofIndexBuilder.fill(HprofIndexBuilder.java:54)
+at org.eclipse.mat.parser.internal.SnapshotFactory.parse(SnapshotFactory.java:193)
+at org.eclipse.mat.parser.internal.SnapshotFactory.openSnapshot(SnapshotFactory.java:106)
+at com.squareup.leakcanary.HeapAnalyzer.openSnapshot(HeapAnalyzer.java:134)
+at com.squareup.leakcanary.HeapAnalyzer.checkForLeak(HeapAnalyzer.java:87)
+at com.squareup.leakcanary.internal.HeapAnalyzerService.onHandleIntent(HeapAnalyzerService.java:56)
+at android.app.IntentService$ServiceHandler.handleMessage(IntentService.java:65)
+at android.os.Handler.dispatchMessage(Handler.java:102)
+at android.os.Looper.loop(Looper.java:145)
+at android.os.HandlerThread.run(HandlerThread.java:61)
+Caused by: java.lang.NullPointerException: in == null
+at java.util.Properties.load(Properties.java:246)
+at org.eclipse.mat.util.MessageUtil.(MessageUtil.java:28)
+at org.eclipse.mat.util.MessageUtil.(MessageUtil.java:13)
+… 10 moreThere needs to be more information to fix the error. Using getCause() in the code can return the exception that caused the error to be returned.Read this discussion about how to track down the cause of the “ExceptionInInitializerError”. (@StackOverflow)37. “IllegalBlockSizeException”An “IllegalBlockSizeException” will occur during decryption when the length message is not a multiple of 8 bytes. Here’s an example from ProgramCreek.com (@ProgramCreek):@Override
+protected byte[] engineWrap(Key key) throws IllegalBlockSizeException, InvalidKeyException {
+try {
+byte[] encoded = key.getEncoded();
+return engineDoFinal(encoded, 0, encoded.length);
+} catch (BadPaddingException e) {
+IllegalBlockSizeException newE = new IllegalBlockSizeException();
+newE.initCause(e);
+throw newE;
+}
+}The “IllegalBlockSizeException” could be caused by:Using different encryption and decryption algorithm options.Truncating or garbling the decrypted message during transmission.Read this discussion about how to prevent the “IllegalBlockSizeException” Java software error message. (@StackOverflow)38. “BadPaddingException”A “BadPaddingException” will occur during decryption when padding was used to create a message that can be measured by a multiple of 8 bytes. Here’s an example from Stack Overflow (@StackOverflow):javax.crypto.BadPaddingException: Given final block not properly padded
+at com.sun.crypto.provider.SunJCE_f.b(DashoA13*..)
+at com.sun.crypto.provider.SunJCE_f.b(DashoA13*..)
+at com.sun.crypto.provider.AESCipher.engineDoFinal(DashoA13*..)
+at javax.crypto.Cipher.doFinal(DashoA13*..)Encrypted data is binary so don’t try to store it in a string or the data will not be padded properly during encryption.Read this discussion about how to prevent the “BadPaddingException”. (@StackOverflow)39. “IncompatibleClassChangeError”An “IncompatibleClassChangeError” is a form of LinkageError that can occur when a base class changes after the compilation of a child class. This example is from How to Do in Java (@HowToDoInJava):Exception in thread “main” java.lang.IncompatibleClassChangeError: Implementing classat java.lang.ClassLoader.defineClass1(Native Method)
+at java.lang.ClassLoader.defineClass(Unknown Source)
+at java.security.SecureClassLoader.defineClass(Unknown Source)
+at java.net.URLClassLoader.defineClass(Unknown Source)
+at java.net.URLClassLoader.access$000(Unknown Source)
+at java.net.URLClassLoader$1.run(Unknown Source)
+at java.security.AccessController.doPrivileged(Native Method)
+at java.net.URLClassLoader.findClass(Unknown Source)
+at java.lang.ClassLoader.loadClass(Unknown Source)
+at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)
+at java.lang.ClassLoader.loadClass(Unknown Source)
+at java.lang.ClassLoader.loadClassInternal(Unknown Source)
+at net.sf.cglib.core.DebuggingClassWriter.toByteArray(DebuggingClassWriter.java:73)
+at net.sf.cglib.core.DefaultGeneratorStrategy.generate(DefaultGeneratorStrategy.java:26)
+at net.sf.cglib.core.AbstractClassGenerator.create(AbstractClassGenerator.java:216)
+at net.sf.cglib.core.KeyFactory$Generator.create(KeyFactory.java:144)
+at net.sf.cglib.core.KeyFactory.create(KeyFactory.java:116)
+at net.sf.cglib.core.KeyFactory.create(KeyFactory.java:108)
+at net.sf.cglib.core.KeyFactory.create(KeyFactory.java:104)
+at net.sf.cglib.proxy.Enhancer.(Enhancer.java:69)When the “IncompatibleClassChangeError” occurs, it is possible that:The static on the main method was forgotten.A legal class was used illegally.A class was changed and there are references to it from another class by its old signatures.Try deleting all class files and recompiling everything, or try these steps to resolve the “IncompatibleClassChangeError”. (@javacodegeeks)40. “FileNotFoundException”This Java software error message is thrown when a file with the specified pathname does not exist.@Override public ParcelFileDescriptor openFile(Uri uri,String mode) throws FileNotFoundException {
+if (uri.toString().startsWith(FILE_PROVIDER_PREFIX)) {
+int m=ParcelFileDescriptor.MODE_READ_ONLY;
+if (mode.equalsIgnoreCase(“rw”)) m=ParcelFileDescriptor.MODE_READ_WRITE;
+File f=new File(uri.getPath());
+ParcelFileDescriptor pfd=ParcelFileDescriptor.open(f,m);
+return pfd;
+}
+else {
+throw new FileNotFoundException(“Unsupported uri: “ + uri.toString());
+}
+}
+In addition to files not exhibiting the specified pathname, this could mean the existing file is inaccessible.Read this discussion about why the “FileNotFoundException” could be thrown. (@StackOverflow)41. “EOFException”An “EOFException” is thrown when an end of file or end of the stream has been reached unexpectedly during input. Here’s an example from JavaBeat of an application that throws an EOFException:import java.io.DataInputStream;
+import java.io.EOFException;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+public class ExceptionExample {
+public void testMethod1(){
+File file = new File(“test.txt”);
+DataInputStream dataInputStream =  null;
+try{
+dataInputStream = new DataInputStream(new FileInputStream(file));
+while(true){
+dataInputStream.readInt();
+}
+}catch (EOFException e){
+e.printStackTrace();
+}
+catch (IOException e){
+e.printStackTrace();
+}
+finally{
+try{
+if (dataInputStream != null){
+dataInputStream.close();
+}
+}catch (IOException e){
+e.printStackTrace();
+}
+}
+}
+public static void main(String[] args){
+ExceptionExample instance1 = new ExceptionExample();
+instance1.testMethod1();
+}
+}Running the program above results in the following exception:java.io.EOFException
+at java.io.DataInputStream.readInt(DataInputStream.java:392)
+at logging.simple.ExceptionExample.testMethod1(ExceptionExample.java:16)
+at logging.simple.ExceptionExample.main(ExceptionExample.java:36)When there is no more data while the class “DataInputStream” is trying to read data in the stream, “EOFException” will be thrown. It can also occur in the “ObjectInputStream” and “RandomAccessFile” classes.Read this discussion about when the “EOFException” can occur while running Java software. (@StackOverflow)42. “UnsupportedEncodingException”This Java software error message is thrown when the character encoding is not supported (@Penn).public UnsupportedEncodingException()It is possible that the Java Virtual Machine being used doesn’t support a given character set.Read this discussion of how to handle “UnsupportedEncodingException” while running Java software. (@StackOverflow)43. “SocketException”A “SocketException” message indicates there is an error creating or accessing a socket (@ProgramCreek).public void init(String contextName, ContextFactory factory) {
+super.init(contextName, factory);
+String periodStr = getAttribute(PERIOD_PROPERTY);
+if (periodStr != null) {
+int period = 0;
+try {
+period = Integer.parseInt(periodStr);
+} catch (NumberFormatException nfe) {
+}
+if (period <= 0) {
+throw new MetricsException(“Invalid period: “ + periodStr);
+}
+setPeriod(period);
+}
+metricsServers =
+Util.parse(getAttribute(SERVERS_PROPERTY), DEFAULT_PORT);
+unitsTable = getAttributeTable(UNITS_PROPERTY);
+slopeTable = getAttributeTable(SLOPE_PROPERTY);
+tmaxTable  = getAttributeTable(TMAX_PROPERTY);
+dmaxTable  = getAttributeTable(DMAX_PROPERTY);
+try {
+datagramSocket = new DatagramSocket();
+}
+catch (SocketException se) {
+se.printStackTrace();
+}
+}This exception usually is thrown when the maximum connections are reached due to:No more network ports available to the application.The system doesn’t have enough memory to support new connections.Read this discussion of how to resolve “SocketException” issues while running Java software. (@StackOverflow)44. “SSLException”This Java software error message occurs when there is failure in SSL-related operations. The following example is from Atlassian (@Atlassian):com.sun.jersey.api.client.ClientHandlerException: javax.net.ssl.SSLException: java.lang.RuntimeException: Unexpected error: java.security.InvalidAlgorithmParameterException: the trustAnchors parameter must be non–empty
+at com.sun.jersey.client.apache.ApacheHttpClientHandler.handle(ApacheHttpClientHandler.java:202)
+at com.sun.jersey.api.client.Client.handle(Client.java:365)
+at com.sun.jersey.api.client.WebResource.handle(WebResource.java:556)
+at com.sun.jersey.api.client.WebResource.get(WebResource.java:178)
+at com.atlassian.plugins.client.service.product.ProductServiceClientImpl.getProductVersionsAfterVersion(ProductServiceClientImpl.java:82)
+at com.atlassian.upm.pac.PacClientImpl.getProductUpgrades(PacClientImpl.java:111)
+at com.atlassian.upm.rest.resources.ProductUpgradesResource.get(ProductUpgradesResource.java:39)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at com.atlassian.plugins.rest.common.interceptor.impl.DispatchProviderHelper$ResponseOutInvoker$1.invoke(DispatchProviderHelper.java:206)
+at com.atlassian.plugins.rest.common.interceptor.impl.DispatchProviderHelper$1.intercept(DispatchProviderHelper.java:90)
+at com.atlassian.plugins.rest.common.interceptor.impl.DefaultMethodInvocation.invoke(DefaultMethodInvocation.java:61)
+at com.atlassian.plugins.rest.common.expand.interceptor.ExpandInterceptor.intercept(ExpandInterceptor.java:38)
+at com.atlassian.plugins.rest.common.interceptor.impl.DefaultMethodInvocation.invoke(DefaultMethodInvocation.java:61)
+at com.atlassian.plugins.rest.common.interceptor.impl.DispatchProviderHelper.invokeMethodWithInterceptors(DispatchProviderHelper.java:98)
+at com.atlassian.plugins.rest.common.interceptor.impl.DispatchProviderHelper.access$100(DispatchProviderHelper.java:28)
+at com.atlassian.plugins.rest.common.interceptor.impl.DispatchProviderHelper$ResponseOutInvoker._dispatch(DispatchProviderHelper.java:202)
+…
+Caused by: javax.net.ssl.SSLException: java.lang.RuntimeException: Unexpected error: java.security.InvalidAlgorithmParameterException: the trustAnchors parameter must be non–empty
+…
+Caused by: java.lang.RuntimeException: Unexpected error: java.security.InvalidAlgorithmParameterException: the trustAnchors parameter must be non–empty
+…
+Caused by: java.security.InvalidAlgorithmParameterException: the trustAnchors parameter must be non–emptyThis can happen if:Certificates on the server or client have expired.A server port has been reset to another port.Read this discussion of what can cause the “SSLException” error in Java software. (@StackOverflow)45. “MissingResourceException”A “MissingResourceException” occurs when a resource is missing. If the resource is in the correct classpath, this is usually because a properties file is not configured properly. Here’s an example (@TIBCO):java.util.MissingResourceException: Can‘t find bundle for base name localemsgs_en_US, locale en_US
+java.util.ResourceBundle.throwMissingResourceException
+java.util.ResourceBundle.getBundleImpl
+java.util.ResourceBundle.getBundle
+net.sf.jasperreports.engine.util.JRResourcesUtil.loadResourceBundle
+net.sf.jasperreports.engine.util.JRResourcesUtil.loadResourceBundleRead this discussion of how to fix “MissingResourceException” while running Java software.46. “NoInitialContextException”A “NoInitialContextException” error occurs when the Java application wants to perform a naming operation but can’t create a connection (@TheASF).[java] Caused by: javax.naming.NoInitialContextException: Need to specify class name in environment or system property, or as an applet parameter, or in an application resource file:  java.naming.factory.initial
+[java] at javax.naming.spi.NamingManager.getInitialContext(NamingManager.java:645)
+[java] at javax.naming.InitialContext.getDefaultInitCtx(InitialContext.java:247)
+[java] at javax.naming.InitialContext.getURLOrDefaultInitCtx(InitialContext.java:284)
+[java] at javax.naming.InitialContext.lookup(InitialContext.java:351)
+[java] at org.apache.camel.impl.JndiRegistry.lookup(JndiRegistry.java:51)This can be a complex problem to solve but here are some possible issues that cause the “NoInitialContextException” Java error message:The application may not have the proper credentials to make a connection.The code may not identify the implementation of JNDI needed.The “InitialContext” class may not be configured with the right properties.Read this discussion of what “NoInitialContextException” means when running Java software. (@StackOverflow)47. “NoSuchElementException”A “NoSuchElementException” error happens when an iteration (such as a “for” loop) tries to access the next element when there is none.public class NoSuchElementExceptionDemo{
+public static void main(String args[]) {
+Hashtable sampleMap = new Hashtable();
+Enumeration enumeration = sampleMap.elements();
+enumeration.nextElement();  //java.util.NoSuchElementExcepiton here because enumeration is empty
+}
+}
+Output:
+Exception in thread “main” java.util.NoSuchElementException: Hashtable Enumerator
+at java.util.Hashtable$EmptyEnumerator.nextElement(Hashtable.java:1084)
+at test.ExceptionTest.main(NoSuchElementExceptionDemo.java:23)The “NoSuchElementException” can be thrown by these methods:Enumeration::nextElement()NamingEnumeration::next()StringTokenizer::nextElement()Iterator::next()Read this tutorial on how to fix “NoSuchElementException” in Java software. (@javinpaul)48. “NoSuchFieldError”This Java software error message is thrown when an application tries to access a field in an object but the specified field no longer exists in the object (@sourceforge).public NoSuchFieldError()Usually, this error is caught in the compiler but will be caught during runtime if a class definition has been changed between compiling and running.Read this discussion of how to find what causes the “NoSuchFieldError” when running Java software. @StackOverflow49. “NumberFormatException”This Java software error message occurs when the application tries to convert a string to a numeric type, but that the number is not a valid string of digits (@alvinalexander).package com.devdaily.javasamples;
+public class ConvertStringToNumber {
+public static void main(String[] args) {
+try {
+String s = “FOOBAR”;
+int i = Integer.parseInt(s);
+// this line of code will never be reached
+System.out.println(“int value = “ + i);
+}
+catch (NumberFormatException nfe) {
+nfe.printStackTrace();
+}
+}
+}
+The error “NumberFormatException” is thrown when:Leading or trailing spaces in the number exist.The sign is not ahead of the number.The number has commas.Localisation may not categorize it as a valid number.The number is too big to fit in the numeric type.Read this discussion of how to avoid “NumberFormatException” when running Java software. (@StackOverflow)50. “TimeoutException”This Java software error message occurs when a blocking operation is timed out.private void queueObject(ComplexDataObject obj) throws TimeoutException, InterruptedException {
+if (!queue.offer(obj,10,TimeUnit.SECONDS)) {
+TimeoutException ex=new TimeoutException(“Timed out waiting for parsed elements to be processed. Aborting.”);
+throw ex;
+}
+}Read this discussion about how to handle “TimeoutException” when running Java software. (@StackOverflow)For the ultimate Java developer’s toolkit, don’t forget to download The Comprehensive Java Developer’s Guide.Retrace Error MonitoringThe fastest way to fix errors in your software is to properly implement an error monitoring system, such as Retrace.With Retrace, you can find hidden errors lying silently in your code. Its powerful and efficient code profiling even tracks the errors you aren’t logging and helps you monitor error spikes and fix them quickly before reaching your users. Not only that, you will know when there are new types of errors discovered within your application because the system will notify you through an email or SMS. Also available to help you write error-free code with ease is Stackify by Netreo’s free code profiler, Prefix, which supports .NET, Java, PHP, Node.js, Ruby, and Python applications. For more tips and tricks for coding better Java programs, download our Comprehensive Java Developer’s Guide, which is jam-packed with everything you need to up your Java game – from tools to the best websites and blogs, YouTube channels, Twitter influencers, LinkedIn groups, podcasts, must-attend events, and more.If you’re working with .NET, you should also check out our guide to the 50 most common .NET software errors and how to avoid them. There is no better time than now. Start your 14-day FREE TRIAL and experience the advantage of Retrace and Prefix from Stackify by Netreo. About the Author Latest PostsAbout StackifyTop Java Software Errors: 50 Common Java Errors and How to Avoid Them - May 28, 2021Stackify + Netreo Creates a Dev + Ops Powerhouse - April 20, 2021Netreo Expands APM Capabilities with Strategic Acquisition of Stackify - April 20, 2021The Ultimate Guide to Performance Testing and Software Testing: Testing Types, Performance Testing Steps, Best Practices, and More - April 16, 2021Stackify named in “Best Tech Startups in Kansas” - March 25, 2021
+DeveloperexceptionsJavaretrace
+Search Stackify Search Topics/KeywordsASP.NETProduct Updates.NET CoreApp MonitoringJavaApp Performance TipsAzureError HandlingAWSLogging TipsCloudDevOpsPopular Posts ASP.NET Performance: 9 Types of Tools You Need to Know! How to Troubleshoot IIS Worker Process (w3wp) High CPU Usage How to Monitor IIS Performance: From the Basics to Advanced IIS Performance Monitoring SQL Performance Tuning: 7 Practical Tips for Developers Looking for New Relic Alternatives & Competitors? Learn Why Developers Pick RetraceRecent Posts Top Java Software Errors: 50 Common Java Errors and How to Avoid Them How to Monitor CPU Memory and Disk Usage in Java Tips for Application Troubleshooting How to Monitor Server Performance Node.js Logging Tutorial
+Get In Touch
+Contact UsRequest a DemoStart Free Trial
+Menu Contact UsRequest a DemoStart Free TrialPO Box 2159Mission, KS 66201816-888-5055
+Facebook
+Twitter
+Youtube
+Linkedin
+Products
+RetracePrefixStackify Hidden Menu Item.NET MonitoringJava MonitoringPHP MonitoringNode.js MonitoringRuby MonitoringPython MonitoringRetrace vs New RelicRetrace vs Application Insights
+Menu RetracePrefixStackify Hidden Menu Item.NET MonitoringJava MonitoringPHP MonitoringNode.js MonitoringRuby MonitoringPython MonitoringRetrace vs New RelicRetrace vs Application InsightsSolutions
+Application Performance ManagementCentralized LoggingCode ProfilingError TrackingApplication & Server MonitoringReal User MonitoringStackify Hidden Menu ItemFor DevelopersFor DevOps
+Menu Application Performance ManagementCentralized LoggingCode ProfilingError TrackingApplication & Server MonitoringReal User MonitoringStackify Hidden Menu ItemFor DevelopersFor DevOpsResources
+What is APM?PricingCase StudiesBlogDocumentationFree eBooksFree WebinarsVideosIdeas PortalROI CalculatorSupportNews
+Menu What is APM?PricingCase StudiesBlogDocumentationFree eBooksFree WebinarsVideosIdeas PortalROI CalculatorSupportNewsCompany
+About UsNewsCareersGDPRSecurity InformationTerms & ConditionsPrivacy PolicySitemap
+Menu About UsNewsCareersGDPRSecurity InformationTerms & ConditionsPrivacy PolicySitemapPO Box 2159Mission, KS 66201816-888-5055
+Facebook
+Twitter
+Youtube
+Linkedin
+© 2020 Stackify
+Subscribe to Stackify's Developer Things NewsletterStay up to date with the latest in software development with Stackify’s Developer Things newsletter.
+Email
+Sign Up Today
+Start Your Free Trial NowNo credit card required. 14 days free.

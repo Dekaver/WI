@@ -1,0 +1,46 @@
+ArithmeticException Handling in JavaSee Continuous Code Improvement in Action.
+Join Rollbar's live product demo!×ProductFeaturesPlatformsIntegrationsComplianceSolutionsError MonitoringMicroservicesPricingCustomersSupportResourcesLog InTry NowProductFeaturesPlatformsIntegrationsComplianceSolutionsError MonitoringMicroservicesPricingCustomersSupportBlogLog InTry NowBlogKnowledge BaseGuidesLibraryBlog›TutorialsArithmeticException Handling in JavaApril 21st, 2021 • By Rollbar Editorial TeamTABLE OF CONTENTS
+What Causes ArithmeticException
+ArithmeticException Example
+How to Handle ArithmeticException
+Track, Analyze and Manage Java Errors With Rollbar
+The java.lang.ArithmeticException is an unchecked exception in Java that occurs due to an exceptional arithmetic condition. This generally indicates that a mathematical error has occurred at run-time which can't be dealt with, for example, when an integer is divided by zero.
+What Causes ArithmeticException
+The java.lang.ArithmeticException can occur in the following situations:
+When an integer is divided by zero
+Overflowing of a data type when exact result is requested e.g. Math.addExact(int x, int y)
+Rounding on an operation that yields an inexact result e.g. BigDecimal.ROUND_UNNECESSARY
+ArithmeticException Example
+Here is an example of a java.lang.ArithmeticException thrown due to division by zero:
+public class ArithmeticExceptionExample {
+public static void main(String[] args) {
+int a = 10, b = 0;
+System.out.println("Result: "+ a/b);
+}
+}
+In this example, an integer a is attempted to be divided by another integer b, whose value is zero, leading to a java.lang.ArithmeticException:
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+at ArithmeticExceptionExample.main(ArithmeticExceptionExample.java:4)
+Such operations should be avoided where possible by paying attention to detail and making sure all expressions in code are mathematically correct.
+How to Handle ArithmeticException
+The java.lang.ArithmeticException is an exception in Java, and therefore can be handled using try-catch blocks using the following steps:
+Surround the statements that can throw an ArithmeticException in try-catch blocks
+Catch the ArithmeticException
+Depending on the requirements of the application, take necessary action. For example, log the exception with an appropriate message.
+The code in the earlier example can be updated with the above steps:
+public class ArithmeticExceptionExample {
+public static void main(String[] args) {
+try {
+int a = 10, b = 0;
+System.out.println("Result: " + a/b);
+} catch (ArithmeticException ae) {
+System.out.println("Arithmetic Exception: cannot divide by 0");
+}
+System.out.println("Continuing execution...");
+}
+}
+Surrounding the code in try-catch blocks like the above allows the program to continue execution after the exception is encountered:
+Arithmetic Exception: cannot divide by 0
+Continuing execution...
+Track, Analyze and Manage Java Errors With Rollbar
+Managing errors and exceptions in your code is challenging. It can make deploying production code an unnerving experience. Being able to track, analyze, and manage Java errors in real-time can help you to proceed with more confidence. Rollbar automates error monitoring and triaging, making fixing Java errors easier than ever. Try it today.Get the latest updates delivered to your inbox.Subscribejavaexception monitoringRelated Articles: How to Catch and Fix NullPointerException in JavaMay 20, 2021How to Resolve Java ClassNotFoundException in 3 Easy Steps May 06, 2021How to Fix java.lang.NoSuchMethodError in JavaMay 06, 2021 Related Guides:How to debug Java errorsNov 18, 2020Throwing exceptions in JavaNov 18, 2020Where are Java errors logged?Apr 21, 2021 Product Updates.NETAPIAPMatlassianAWS lambdaAzurebehind the scenesBitbucketbusiness impactcomplianceContinuous DeliveryContinuous Deploymentdebugerror alertserror feederror monitoringGitgithubgroupingintegrationsiOSIssue TrackingjavaJavaScriptJIRAlaravellocal varsmacOSmicroservicesmonitorNode.jsonboardingPagerDutyPHPPythonrubySalesforce ApexSDKsecurityserverlessSlacksource mapssqlstacktraceteamtelemetrytriageuser experienceversionsTutorials.NETAngularAWS lambdabackend developmentbehind the scenesdebugdockererror alertserror handlingerror monitoringexception monitoringframeworksgolangintegrationsIoniciOSjavaJavaScriptlaravelMagentomobilemonitorNode.jsPHPPythonreactreact nativerubySDKserverlesssource mapsspringsqlSymfonytelemetrytriagevuejswordpressxamarinzendTech TopicsAPMbehind the scenesbusiness impactContinuous DeliveryCustomer Supportdebugerror alertserror handlingerror monitoringexception monitoringframeworksintegrationsjavaJavaScriptkafkamicroservicesPHPQArubyserverlessspringTop ErrorstopicswebCompany Storiesbehind the scenesCircleCIcompany growthContinuous DeliveryContinuous Deploymentcustomer storiesCustomer Supporterror monitoringEventsfundingnewspostmortemremote workteamTry Rollbar for FreeJoin 100,000+ developers, improving millions of software experiencesTry for freeRequest a demo Get the latest updates, tutorials and more, delivered to your inbox.SubscribeProductProductPricingCustomersPlatformsIntegrationsComplianceService StatusPlatformsJavaScriptPHPRubyPythoniOSJava.NETAngularReactLaravelNodeRailsDjangoMore...DocumentationDocs OverviewSetting up RollbarNotificationsDeploy TrackingTelemetrySecurity & ComplianceAPICompanyAbout UsEventsCareersMediaContact UsResourcesRollbar Product BlogLearn How Rollbar Complements New RelicUsing Rollbar with AtlassianUsing Rollbar with GitHubPre-production Error MonitoringLow-Risk Continuous DeliverySalesforce Apex Error LoggingPrivacy PolicyTerms of Service© 2012-21 ROLLBAR, INC.

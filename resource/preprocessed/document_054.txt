@@ -1,1 +1,292 @@
-attributeerror nonetype object attribute values odoo odoo login coba secara gratis aplikasi finance akuntansi faktur pengeluaran spreadsheet bi dokumen tanda penjualan crm penjualan kasir langganan penyewaan penghubung amazon websites pembuat situs web eniaga blog forum obrolan langsung elearning inventory mrp inventaris produksi plm pembelian pemeliharaan kualitas sumber daya manusia karyawan perekrutan time penilaian rujukan armada pemasaran social marketing email marketing sms marketing acara marketing automation survei services proyek timesheet servis lapangan pusat bantuan perencanaan janji bertemu productivity diskusi persetujuan iot aplikasi pihak ketiga odoo studio platform odoo cloud komunitas belajar tutorials documentation certifications education program scale business game customer references get software download compare editions releases collaborate github forum acara translations become partner register accounting firm replaced different applications increased revenues overnight marc peeters general manager vending division get services find partner find accountant jadwalkan demo harga help dismiss odoo world easiest one management software includes hundreds business apps crm e commerce accounting inventory pos project management mrp take tour forums topics orang tag lencana go pertanyaan topics orang tag lencana sunting tutup hapus flag attributeerror nonetype object attribute values odoo sunting tutup hapus flag nathan cobb januari berhenti berlangganan langganan thanks subscription onchangeattributeerrorproject task creating addon template functionality project module would like users able select change template project form view onchange function taskset_template_id throwing error try delete existing tasks created previously applied template one template time used seems dependency context issue rating mixin tried adding rating module __manifest__ py file tasks still successfully unlinked unlink tasks without running rating issue code api onchange taskset_template_id def onchange_taskset_template_id self self project_deadline raise validationerror order apply taskset template must first select project deadline project self env project project browse self _origin id tasks self env project task check template tasks delete avoid task duplication find_template_tasks self env project task search project_id project id from_template true find_template_tasks task tasks browse find_template_tasks ids super task task unlink self taskset_template_id raise validationerror already applied taskset template project removing template selection please delete tasks associated current template task_ids self env taskset template line search taskset_template_id self taskset_template_id id ids task self env taskset template line browse task_ids data self _map_template_tasks_default_values task calculate deadline days_from_deadline task day_counter deadline self _calculate_deadline self project_deadline days_from_deadline project data update project_id project id date_deadline deadline date_assign fields datetime partner_id self partner_id id from_template true new_task super task tasks create data tasks new_task project write tasks tasks ids error traceback recent call last file users nathancobb odoo odoo odoo api py line get value self _data field record _ids keyerror handling exception another exception occurred traceback recent call last file users nathancobb odoo odoo odoo fields py line __get__ value env cache get record self file users nathancobb odoo odoo odoo api py line get raise cachemiss record field odoo exceptions cachemiss project project rating_percentage_satisfaction none handling exception another exception occurred traceback recent call last file users nathancobb odoo odoo odoo http py line _handle_exception return super jsonrequest self _handle_exception exception file users nathancobb odoo odoo odoo http py line _handle_exception raise pycompat reraise type exception exception sys exc_info file users nathancobb odoo odoo odoo tools pycompat py line reraise raise value file users nathancobb odoo odoo odoo http py line dispatch result self _call_function self params file users nathancobb odoo odoo odoo http py line _call_function return checked_call self db args kwargs file users nathancobb odoo odoo odoo service model py line wrapper return f dbname args kwargs file users nathancobb odoo odoo odoo http py line checked_call result self endpoint kw file users nathancobb odoo odoo odoo http py line __call__ return self method args kw file users nathancobb odoo odoo odoo http py line response_wrap response f args kw file users nathancobb odoo odoo addons web controllers main py line call_kw return self _call_kw model method args kwargs file users nathancobb odoo odoo addons web controllers main py line _call_kw return call_kw request env model method args kwargs file users nathancobb odoo odoo odoo api py line call_kw result _call_kw_multi method model args kwargs file users nathancobb odoo odoo odoo api py line _call_kw_multi result method recs args kwargs file users nathancobb odoo odoo odoo models py line onchange todo file users nathancobb odoo odoo odoo models py line name done snapshot has_changed name file users nathancobb odoo odoo odoo models py line has_changed return self name record name file users nathancobb odoo odoo odoo models py line __getitem__ return self _fields key __get__ self type self file users nathancobb odoo odoo odoo fields py line __get__ self compute_value recs file users nathancobb odoo odoo odoo fields py line compute_value records _compute_field_value self file users nathancobb odoo odoo odoo models py line _compute_field_value getattr self field compute file users nathancobb odoo odoo addons rating models rating_mixin py line _compute_rating_percentage_satisfaction record rating_percentage_satisfaction repartition great sum repartition values sum repartition values else attributeerror nonetype object attribute values comment share komentar post comment abaikan ibrahim boudmir januari hapus convert answer trying ot get values empty repartition make sure repartition retrieving values nathan cobb januari hapus convert answer right understand repartition referenced first place find function call _compute_rating_percentage_satisfaction place repartition used anywhere project project project task models semua jawaban markaldo agustus best answer attributeerror means error attribute request general write x purported attribute x nonetype means instead instance whatever class object think working actually got none usually means assignment function call failed returned unexpected result mylist mylist sort sort method list sorts list place mylist modified actual return value method none list sorted assigned none mylist next try say mylist append python give error http net informations com python basics none htm komentar share post comment abaikan community tutorials dokumentasi forum daftar email open source download github runbot terjemahan services odoo sh hosting dukungan peningkatan pendidikan find accountant temukan mitra menjadi mitra us perusahaan kami hubungi kami tugas acara blog pelanggan mitra hukum privasi keamanan bahasa indonesia ال ع ر بي ة 简体中文 繁體中文 nederlands english français deutsch bahasa indonesia italiano 日本語 한국어 kr português br русский язык slovenský jazyk español ภาษาไทย türkçe українська tiếng việt odoo suite open source business apps cover company needs crm ecommerce accounting inventory point sale project management etc odoo unique value proposition time easy use fully integrated website made retorno de inversion youtube use live chat ask questions operator answers within minutes watch
+AttributeError: 'NoneType' object has no attribute 'values' (Odoo 13) | Odoo
+Login
+Coba secara gratis
+Aplikasi
+Finance
+Akuntansi
+Faktur
+Pengeluaran
+Spreadsheet (BI)
+Dokumen
+Tanda
+Penjualan
+CRM
+Penjualan
+Kasir
+Langganan
+Penyewaan
+Penghubung Amazon
+Websites
+Pembuat Situs Web
+eNiaga
+Blog
+Forum
+Obrolan Langsung
+eLearning
+Inventory & MRP
+Inventaris
+Produksi
+PLM
+Pembelian
+Pemeliharaan
+Kualitas
+Sumber Daya Manusia
+Karyawan
+Perekrutan
+Time Off
+Penilaian
+Rujukan
+Armada
+Pemasaran
+Social Marketing
+Email Marketing
+SMS Marketing
+Acara
+Marketing Automation
+Survei
+Services
+Proyek
+Timesheet
+Servis Lapangan
+Pusat bantuan
+Perencanaan
+Janji Bertemu
+Productivity
+Diskusi
+Persetujuan
+IoT
+Aplikasi pihak ketiga
+Odoo Studio
+Platform Odoo Cloud
+Komunitas
+Belajar
+Tutorials
+Documentation
+Certifications
+Education Program
+Scale Up! Business Game
+Customer References
+Get the Software
+Download
+Compare Editions
+Releases
+Collaborate
+Github
+Forum
+Acara
+Translations
+Become a Partner
+Register your Accounting Firm
+Get Services
+Find a Partner
+Find an Accountant
+Jadwalkan demo
+Harga
+Help
+Dismiss
+Odoo is the world's easiest all-in-one management software. It includes hundreds of business apps:
+CRM
+e-Commerce
+Accounting
+Inventory
+PoS
+Project management
+MRP
+Take the tour
+All Forums
+Topics
+Orang
+Tag
+Lencana
+About
+Go to:
+Pertanyaan
+All Topics
+Orang
+Tag
+Lencana
+About
+0
+Sunting
+Tutup
+Hapus
+Flag
+AttributeError: 'NoneType' object has no attribute 'values' (Odoo 13)
+Sunting
+Tutup
+Hapus
+Flag
+Nathan Cobb
+20 Januari 2020
+Berhenti Berlangganan
+Langganan
+Thanks for your subscription!
+onchangeattributeerrorproject.task
+I am creating an addon template functionality to the project module. I would like users to be able to select/change the template from the project form view, but in my onchange function for taskset_template_id it is throwing up an error when I try to delete existing tasks that were created from a previously applied template (only one template at a time should be used). It seems to be a dependency or context issue with the rating mixin, but I've tried adding the 'rating' module to the __manifest__.py file and tasks still aren't successfully unlinked. How can I unlink tasks without running into this rating issue?The code:@api.onchange('taskset_template_id')def onchange_taskset_template_id(self):
+if not self.project_deadline:
+raise ValidationError('In order to apply a taskset template you must first select a project deadline.')
+project = self.env['project.project'].browse(self._origin.id)
+tasks = self.env['project.task']
+# Check for template tasks delete to avoid task duplication
+find_template_tasks = self.env['project.task'].search([('project_id', '=', project.id), ('from_template', '=', True)])
+if find_template_tasks:
+for task in tasks.browse(find_template_tasks.ids):
+super(Task, task).unlink()
+if not self.taskset_template_id:
+raise ValidationError(
+'You have already applied a taskset template to this project. Before removing the template selection, please delete all tasks associated with the current template.'
+)
+task_ids = self.env['taskset.template.line'].search([('taskset_template_id', '=', self.taskset_template_id.id)]).ids
+for task in self.env['taskset.template.line'].browse(task_ids):
+data = self._map_template_tasks_default_values(task)
+# Calculate deadline
+days_from_deadline = task.day_counter
+deadline = self._calculate_deadline(self.project_deadline, days_from_deadline, project)
+data.update({'project_id': project.id,
+'date_deadline': deadline,
+'date_assign': fields.Datetime.now(),
+'partner_id': self.partner_id.id,
+'from_template': True})
+new_task = super(Task, tasks).create(data)
+tasks += new_task
+project.write({'tasks': [(tasks.ids)]})The error:Traceback (most recent call last):
+File "/Users/nathancobb/odoo/odoo/odoo/api.py", line 753, in get
+value = self._data[field][record._ids[0]]
+KeyError: <NewId origin=4>
+During handling of the above exception, another exception occurred:
+Traceback (most recent call last):
+File "/Users/nathancobb/odoo/odoo/odoo/fields.py", line 978, in __get__
+value = env.cache.get(record, self)
+File "/Users/nathancobb/odoo/odoo/odoo/api.py", line 759, in get
+raise CacheMiss(record, field)
+odoo.exceptions.CacheMiss: ('project.project(<NewId origin=4>,).rating_percentage_satisfaction', None)
+During handling of the above exception, another exception occurred:
+Traceback (most recent call last):
+File "/Users/nathancobb/odoo/odoo/odoo/http.py", line 619, in _handle_exception
+return super(JsonRequest, self)._handle_exception(exception)
+File "/Users/nathancobb/odoo/odoo/odoo/http.py", line 309, in _handle_exception
+raise pycompat.reraise(type(exception), exception, sys.exc_info()[2])
+File "/Users/nathancobb/odoo/odoo/odoo/tools/pycompat.py", line 14, in reraise
+raise value
+File "/Users/nathancobb/odoo/odoo/odoo/http.py", line 664, in dispatch
+result = self._call_function(**self.params)
+File "/Users/nathancobb/odoo/odoo/odoo/http.py", line 345, in _call_function
+return checked_call(self.db, *args, **kwargs)
+File "/Users/nathancobb/odoo/odoo/odoo/service/model.py", line 93, in wrapper
+return f(dbname, *args, **kwargs)
+File "/Users/nathancobb/odoo/odoo/odoo/http.py", line 338, in checked_call
+result = self.endpoint(*a, **kw)
+File "/Users/nathancobb/odoo/odoo/odoo/http.py", line 909, in __call__
+return self.method(*args, **kw)
+File "/Users/nathancobb/odoo/odoo/odoo/http.py", line 510, in response_wrap
+response = f(*args, **kw)
+File "/Users/nathancobb/odoo/odoo/addons/web/controllers/main.py", line 1319, in call_kw
+return self._call_kw(model, method, args, kwargs)
+File "/Users/nathancobb/odoo/odoo/addons/web/controllers/main.py", line 1311, in _call_kw
+return call_kw(request.env[model], method, args, kwargs)
+File "/Users/nathancobb/odoo/odoo/odoo/api.py", line 395, in call_kw
+result = _call_kw_multi(method, model, args, kwargs)
+File "/Users/nathancobb/odoo/odoo/odoo/api.py", line 382, in _call_kw_multi
+result = method(recs, *args, **kwargs)
+File "/Users/nathancobb/odoo/odoo/odoo/models.py", line 6050, in onchange
+todo = [
+File "/Users/nathancobb/odoo/odoo/odoo/models.py", line 6053, in <listcomp>
+if name not in done and snapshot0.has_changed(name)
+File "/Users/nathancobb/odoo/odoo/odoo/models.py", line 5920, in has_changed
+return self[name] != record[name]
+File "/Users/nathancobb/odoo/odoo/odoo/models.py", line 5579, in __getitem__
+return self._fields[key].__get__(self, type(self))
+File "/Users/nathancobb/odoo/odoo/odoo/fields.py", line 1002, in __get__
+self.compute_value(recs)
+File "/Users/nathancobb/odoo/odoo/odoo/fields.py", line 1087, in compute_value
+records._compute_field_value(self)
+File "/Users/nathancobb/odoo/odoo/odoo/models.py", line 3895, in _compute_field_value
+getattr(self, field.compute)()
+File "/Users/nathancobb/odoo/odoo/addons/rating/models/rating_mixin.py", line 42, in _compute_rating_percentage_satisfaction
+record.rating_percentage_satisfaction = repartition['great'] * 100 / sum(repartition.values()) if sum(repartition.values()) else -1
+AttributeError: 'NoneType' object has no attribute 'values'
+Comment
+Share
+2
+Komentar
+Post Comment
+Abaikan
+Ibrahim Boudmir
+-
+21 Januari 2020
+Hapus
+Convert as a answer
+you're trying ot get values of an empty repartition. make sure you have repartition before retrieving its values.
+Nathan Cobb
+-
+21 Januari 2020
+Hapus
+Convert as a answer
+Right, but I don't understand why repartition is being referenced in the first place. I can't find a function call for _compute_rating_percentage_satisfaction (the only place where repartition is used) anywhere in the project.project or project.task models.
+3
+Semua Jawaban
+0
+markaldo
+21 Agustus 2020
+Best Answer
+AttributeError means that there was an Error that had to do with an Attribute request. In general, when you write x.y, y is the purported attribute of x. NoneType means that instead of an instance of whatever Class or Object you think you're working with, you've actually got None. That usually means that an assignment or function call up failed or returned an unexpected result.mylist = mylist.sort()The sort() method of a list sorts the list in-place, that is, mylist is modified. But the actual return value of the method is None and not the list sorted. So you've just assigned None to mylist. If you next try to do, say, mylist.append(1) Python will give you this error.http://net-informations.com/python/basics/none.htm
+Komentar
+Share
+Post Comment
+Abaikan
+Community
+Tutorials
+Dokumentasi
+Forum
+Daftar Email
+Open Source
+Download
+Github
+Runbot
+Terjemahan
+Services
+Odoo.sh Hosting
+Dukungan
+Peningkatan
+Pendidikan
+Find an Accountant
+Temukan mitra
+Menjadi mitra
+About us
+Perusahaan kami
+Hubungi kami
+Tugas
+Acara
+Blog
+Pelanggan
+Mitra
+Hukum
+Privasi
+Keamanan
+Bahasa Indonesia
+الْعَرَبيّة
+简体中文
+繁體中文
+Nederlands
+English
+Français
+Deutsch
+Bahasa Indonesia
+Italiano
+日本語
+한국어 (KR)
+Português (BR)
+русский язык
+Slovenský jazyk
+Español
+ภาษาไทย
+Türkçe
+українська
+Tiếng Việt
+Odoo is a suite of open source business apps that cover all your company needs: CRM, eCommerce, accounting, inventory, point of sale, project management, etc.
+Odoo's unique value proposition is to be at the same time very easy to use and fully integrated.
+Website made with
+What is Odoo.sh on YouTube
+1. Use the live chat to ask your questions.
+2. The operator answers within a few minutes.
+Watch now

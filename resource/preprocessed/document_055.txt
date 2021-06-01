@@ -1,1 +1,45 @@
-report error name nltk defined corretor ortográfico em python aplicando técnicas de nlp alura cursos online de tecnologia qual curso procura buscar ainda não tem acesso estude com gente matricule se login ainda não tem acesso estude com gente matricule se login fórum report error name nltk defined data science machine learning corretor ortográfico em python referente ao curso corretor ortográfico em python aplicando técnicas de nlp capítulo desenvolvendo e testando corretor e atividade probabilidade das palavras geradas natália nogueira k xp posts da primeira vez que precisei nltk já tive problemas procurei sobre e solução abaixo funcionou first install nltk package typing pip install nltk need import import nltk quer mergulhar em tecnologia e aprendizagem receba newsletter que nosso ceo escreve pessoalmente com insights mercado de trabalho ciência e desenvolvimento de software inscreva confira mais conteúdo com nossos artigos sobre data science conheça nossos cursos de data science comece pela nossa formação de sql com microsoft sql server bi e data warehouse com pentaho bi e data warehouse com sql server e power bi entre outros assista primeiras aulas sobre sobre corretor ortográfico em python aplicando técnicas de nlp matricule se sobre alura dúvidas frequentes sugira um curso sugira uma funcionalidade blog da alura acompanhe nos apps
+Report error : name 'nltk' is not defined | Corretor Ortográfico em Python: Aplicando técnicas de NLP | Alura - Cursos online de tecnologia
+Qual curso procura?
+Buscar
+Ainda não tem acesso? Estude com a gente!
+Matricule-se
+Login
+Ainda não tem acesso? Estude com a gente!
+Matricule-se
+Login
+Fórum
+Report error : name 'nltk' is not defined
+Data Science
+Machine Learning
+Corretor Ortográfico em Python
+Referente ao curso Corretor Ortográfico em Python: Aplicando técnicas de NLP,
+no capítulo Desenvolvendo e testando o corretor
+e atividade Probabilidade das palavras geradas
+18/10/2020
+Natália Nogueira
+(42.2k xp, 8 posts)
+Da primeira vez que precisei do nltk já tive problemas.
+Procurei sobre e a solução abaixo funcionou:
+1.First, install the nltk package by typing...
+pip install nltk
+2.Then you need to import it...
+import nltk
+Quer mergulhar em tecnologia e aprendizagem?
+Receba a newsletter que o nosso CEO escreve pessoalmente, com insights do mercado de trabalho, ciência e desenvolvimento de software
+Me inscreva
+Confira mais conteúdo com nossos artigos sobre Data Science. Conheça nossos cursos de
+Data Science.
+Comece pela nossa formação de
+SQL com Microsoft SQL Server 2017,
+BI e Data Warehouse com Pentaho,
+BI e Data Warehouse com SQL Server e Power BI,
+entre outros!
+Assista as primeiras aulas sobre sobre Corretor Ortográfico em Python: Aplicando técnicas de NLP.
+Matricule-se
+Sobre a Alura
+Dúvidas frequentes
+Sugira um curso
+Sugira uma funcionalidade
+Blog da Alura
+Acompanhe-nos
+Apps

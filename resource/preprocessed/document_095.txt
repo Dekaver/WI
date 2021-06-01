@@ -1,0 +1,280 @@
+[Solved] Exception in thread "main" java.lang.IndexOutOfBoundsException - CodeProject
+14,902,606 members
+Sign in
+Email
+Password
+Forgot your password?
+Sign in with
+Search within:
+Articles
+Quick Answers
+Messages
+Use my saved content filters
+home
+articles
+Browse Topics>
+Latest Articles
+Top Articles
+Posting/Update Guidelines
+Article Help Forum
+Submit an article or tip
+Import GitHub Project
+Import your Blog
+quick answersQ&A
+Ask a Question
+View Unanswered Questions
+View All Questions
+View C# questions
+View C++ questions
+View Visual Basic questions
+View Javascript questions
+View Python questions
+discussionsforums
+All Message Boards...
+Application Lifecycle>
+Running a Business
+Sales / Marketing
+Collaboration / Beta Testing
+Work
+Issues
+Design and Architecture
+Artificial Intelligence
+ASP.NET
+JavaScript
+Internet of Things
+C / C++ / MFC>
+ATL /
+WTL / STL
+Managed C++/CLI
+C#
+Free Tools
+Objective-C and Swift
+Database
+Hardware & Devices>
+System Admin
+Hosting and Servers
+Java
+Linux Programming
+.NET (Core and Framework)
+Android
+iOS
+Mobile
+WPF
+Visual Basic
+Web Development
+Site Bugs / Suggestions
+Spam and Abuse Watch
+featuresstuff
+Competitions
+Conferences
+News
+The Insider Newsletter
+The Daily Build Newsletter
+Newsletter archive
+Surveys
+Product Showcase
+CodeProject Stuff
+communitylounge
+Who's Who
+Most Valuable Professionals
+The Lounge
+Where I Am: Member Photos
+The Insider News
+The Weird & The Wonderful
+help?
+What is 'CodeProject'?
+General FAQ
+Ask a Question
+Bugs and Suggestions
+Article Help Forum
+About Us
+Ask a Question
+All Questions
+All Unanswered
+FAQ
+Exception in thread "main" java.lang.IndexOutOfBoundsException
+Please Sign up or sign in
+to vote.
+0.00/5
+(No votes)
+See more:
+Javaimageimage-recognition, +
+I am trying to get rgb values for specific pixels "interest points"
+JavaCopy Code
+for (int i = 0; i <=locations_original.size();i++)
+{
+System.out.println("x,y: " + locations_original.get(i).x + ", " +
+locations_original.get(i).y);
+Double x=locations_original.get(i).x;
+Double y=locations_original.get(i).y;
+int pixel = image.getRGB(x.intValue(),y.intValue());
+printPixelARGB(pixel);
+}
+JavaCopy Code
+public static void printPixelARGB(int pixel) {
+int alpha = (pixel >> 24) & 0xff;
+int red = (pixel >> 16) & 0xff;
+int green = (pixel >> 8) & 0xff;
+int blue = (pixel) & 0xff;
+System.out.println("argb: " + alpha + ", " + red + ", " + green + ",
+" + blue);
+}
+but there is an error in this line
+JavaCopy Code
+System.out.println("x,y: " + locations_original.get(i).x + ", " +locations_original.get(i).y);
+Quote:as following
+JavaCopy Code
+Exception in thread "main" java.lang.IndexOutOfBoundsException: Index: 8, Size: 8
+at java.util.ArrayList.rangeCheck(Unknown Source)
+at java.util.ArrayList.get(Unknown Source)
+at boofcv.ExampleInterestPoint.main(ExampleInterestPoint.java:555)
+How can I fix this?
+Regards!
+Posted 27-May-14 20:15pm
+Bebo_1
+Add a Solution
+2
+solutions
+Top Rated
+Most Recent
+Please Sign up or sign in
+to vote.
+Solution 2
+Accept Solution
+Reject Solution
+Most likely, the line
+JavaCopy Code
+for (int i = 0; i <= locations_original.size(); i++)
+should be replaced with
+JavaCopy Code
+for (int i = 0; i < locations_original.size(); i++)
+Do I even have to explain why? This is elementary mathematics; and most developers catch this bug from the first glance, at the level of reflexes, because right code is a very common pattern: a range of N elements is indexed from 0 to N−1.
+—SA
+Permalink
+Posted 27-May-14 21:21pm
+Sergey Alexandrovich Kryukov
+Comments
+Bebo_1
+28-May-14 9:14am
+Thanks!
+Sergey Alexandrovich Kryukov
+28-May-14 11:53am
+You are very welcome.
+Good luck, call again.
+—SA
+Please Sign up or sign in
+to vote.
+Solution 1
+Accept Solution
+Reject Solution
+there is a problem in your loop initialization ....
+it should be like ....
+JavaCopy Code
+for (int i = 0; i <locations_original.size();i++){...}
+Permalink
+Posted 27-May-14 21:05pm
+Mohd Akram
+Updated 27-May-14 21:25pm
+v2
+Comments
+Bebo_1
+28-May-14 9:14am
+Thanks!
+Add a Solution
+Add your solution here
+B
+I
+U
+S
+small
+BIG
+code
+Plain TextASMASPASP.NETBASICBATC#C++COBOLCoffeeScriptCSSDartdbaseF#FORTRANHTMLJavaJavascriptKotlinLuaMIDLMSILObjectiveCPascalPERLPHPPowerShellPythonRazorRubyScalaShellSLNSQLSwiftT4TerminalTypeScriptVBVBScriptXMLvar
+<
+>
+&
+link
+[^]
+encode
+untab
+case
+indent
+outdent
+OKPaste as
+Strip HTMLEncode HTMLPaste as-isCode blockQuoted TextBest guess
+To display as
+Treat my content as plain text, not as HTML
+Preview 0
+…
+Existing Members
+Sign in to your account
+...or Join us
+Download, Vote, Comment, Publish.
+Your Email
+Password
+Forgot your password?
+Your Email
+This
+email is in use. Do you need your password?
+Optional Password
+I have read and agree to the Terms of Service and Privacy Policy
+Please subscribe me to the CodeProject newsletters
+Submit your solution!
+When answering a question please:
+Read the question carefully.
+Understand that English isn't everyone's first language so be lenient of bad
+spelling and grammar.
+If a question is poorly phrased then either ask for clarification, ignore it, or
+edit the question and fix the problem. Insults are not welcome.
+Don't tell someone to read the manual. Chances are they have and don't get it.
+Provide an answer or move on to the next question.
+Let's work to help developers, not make them feel stupid.
+This content, along with any associated source code and files, is licensed under The Code Project Open License (CPOL)
+Top Experts
+Last 24hrsThis month
+Dave Kreskowiak
+110
+Patrice T
+100
+OriginalGriff
+98
+Richard MacCutchan
+95
+Wendelius
+40
+OriginalGriff
+6,430
+Richard MacCutchan
+3,763
+Patrice T
+1,672
+Dave Kreskowiak
+1,276
+CPallini
+815
+Related Questions
+Exception in thread "main" java.lang.arrayindexoutofboundsexception: 1
+Error Array "java.lang.IndexOutOfBoundsException: Invalid index 0, size is 0"
+Exception in thread "main" java.util.illegalformatconversionexception: d ! = java.lang.string
+Exception in thread "main"
+How to fix java.lang.indexoutofboundsexception : invalid array range: 1 to 1
+error Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 4
+Exception in thread "main" java.lang.NoClassDefFoundError: SOAPClient4XG
+Exception in thread "main" java.lang.arrayindexoutofboundsexception: 2
+Exception in thread "main" java.lang.NullPointerException
+error>> network on main thread exception
+Advertise
+Privacy
+Cookies
+Terms of Use
+Last Updated 28 May 2014
+Layout: fixed
+|
+fluid
+Copyright © CodeProject, 1999-2021
+All Rights Reserved.
+Web04
+2.8.20210530.1
+CodeProject,
+20 Bay Street, 11th Floor Toronto, Ontario, Canada M5J 2N8
++1 (416) 849-8900

@@ -1,0 +1,671 @@
+enums - Best way to define error codes/strings in Java? - Stack Overflow
+Stack Overflow
+About
+Products
+For Teams
+Stack Overflow
+Public questions & answers
+Stack Overflow for Teams
+Where developers & technologists share private knowledge with coworkers
+Jobs
+Programming & related technical career opportunities
+Talent
+Recruit tech talent & build your employer brand
+Advertising
+Reach developers & technologists worldwide
+About the company
+Loading…
+Log in
+Sign up
+current community
+Stack Overflow
+help
+chat
+Meta Stack Overflow
+your communities
+Sign up or log in to customize your list.
+more stack exchange communities
+company blog
+People who code: we want your input.
+Take the Survey
+Join Stack Overflow to learn, share knowledge, and build your career.
+Sign up with email
+Sign up
+Sign up with Google
+Sign up with GitHub
+Sign up with Facebook
+Home
+Public
+Questions
+Tags
+Users
+Find a Job
+Jobs
+Companies
+Teams
+Stack Overflow for Teams
+– Collaborate and share knowledge with a private group.
+Create a free Team
+What is Teams?
+Teams
+What’s this?
+Create free Team
+Teams
+Q&A for work
+Connect and share knowledge within a single location that is structured and easy to search.
+Learn more
+Best way to define error codes/strings in Java?
+Ask Question
+Asked
+12 years, 4 months ago
+Active
+9 months ago
+Viewed
+122k times
+126
+65
+I am writing a web service in Java, and I am trying to figure out the best way to define error codes and their associated error strings. I need to have a numerical error code and an error string grouped together. Both the error code and error string will be sent to the client accessing the web service. For example, when a SQLException occurs, I might want to do the following:
+// Example: errorCode = 1,
+//
+errorString = "There was a problem accessing the database."
+throw new SomeWebServiceException(errorCode, errorString);
+The client program might be shown the message:
+"Error #1 has occured: There was a
+problem accessing the database."
+My first thought was to used an Enum of the error codes and override the toString methods to return the error strings. Here is what I came up with:
+public enum Errors {
+DATABASE {
+@Override
+public String toString() {
+return "A database error has occured.";
+}
+},
+DUPLICATE_USER {
+@Override
+public String toString() {
+return "This user already exists.";
+}
+},
+// more errors follow
+}
+My question is: Is there a better way to do this? I would prefer an solution in code, rather than reading from an external file. I am using Javadoc for this project, and being able to document the error codes in-line and have them automatically update in the documentation would be helpful.
+java enums
+Share
+Follow
+asked Jan 15 '09 at 13:11
+William BrendelWilliam Brendel
+30k1414 gold badges6969 silver badges7777 bronze badges
+1
+Late comment but worth a mention I thing... 1) Do you really need error codes here in the exception? See blabla999 answer below. 2) You should be careful passing too much error information back to the user. Useful error info should be written to server logs but the client should be told the bare minimum (e.g. "there was a problem logging in"). This is a question of security and preventing spoofers getting a foothold.
+– wmorrison365
+Apr 11 '13 at 8:35
+Add a comment
+|
+13 Answers
+13
+Active
+Oldest
+Votes
+171
+Well there's certainly a better implementation of the enum solution (which is generally quite nice):
+public enum Error {
+DATABASE(0, "A database error has occurred."),
+DUPLICATE_USER(1, "This user already exists.");
+private final int code;
+private final String description;
+private Error(int code, String description) {
+this.code = code;
+this.description = description;
+}
+public String getDescription() {
+return description;
+}
+public int getCode() {
+return code;
+}
+@Override
+public String toString() {
+return code + ": " + description;
+}
+}
+You may want to override toString() to just return the description instead - not sure. Anyway, the main point is that you don't need to override separately for each error code. Also note that I've explicitly specified the code instead of using the ordinal value - this makes it easier to change the order and add/remove errors later.
+Don't forget that this isn't internationalised at all - but unless your web service client sends you a locale description, you can't easily internationalise it yourself anyway. At least they'll have the error code to use for i18n at the client side...
+Share
+Follow
+edited Aug 30 '20 at 9:03
+YCF_L
+49.1k1313 gold badges7575 silver badges115115 bronze badges
+answered Jan 15 '09 at 13:17
+Jon SkeetJon Skeet
+1.3m792792 gold badges87248724 silver badges89298929 bronze badges
+12
+14
+To internationalize, replace the description field with a string code that can be looked up in a resource bundle?
+– Marcus Downing
+Jan 15 '09 at 13:26
+@Marcus: I like that idea. I'm concentrating on getting this thing out the door, but when we look at internationalization, I think I will do what you suggested. Thanks!
+– William Brendel
+Jan 15 '09 at 13:32
+@marcus, if toString() is not overrriden (which it does not need to be), then the string code could just be the enum value toString() which would be DATABASE, or DUPLICATE_USER in this case.
+– rouble
+Nov 3 '11 at 12:49
+@Jon Skeet! I like this solution, how one could produce a solution which is easy to localize (or translate in other languages etc.) Thinking of using it in Android can I use the R.string.IDS_XXXX instead of hard coded strings there?
+– A.B.
+Oct 2 '16 at 7:40
+1
+@A.B.: Well once you've got the enum, you could easily write a class to extract the relevant localized resource from the enum value, via properties files or whatever.
+– Jon Skeet
+Oct 2 '16 at 7:51
+|
+Show 7 more comments
+35
+As far as I am concerned, I prefer to externalize the error messages in a properties files.
+This will be really helpful in case of internationalization of your application (one properties file per language). It is also easier to modify an error message, and it won't need any re-compilation of the Java sources.
+On my projects, generally I have an interface that contains errors codes (String or integer, it doesn't care much), which contains the key in the properties files for this error:
+public interface ErrorCodes {
+String DATABASE_ERROR = "DATABASE_ERROR";
+String DUPLICATE_USER = "DUPLICATE_USER";
+...
+}
+in the properties file:
+DATABASE_ERROR=An error occurred in the database.
+DUPLICATE_USER=The user already exists.
+...
+Another problem with your solution is the maintenability: you have only 2 errors, and already 12 lines of code.
+So imagine your Enumeration file when you will have hundreds of errors to manage!
+Share
+Follow
+edited Mar 23 '17 at 13:05
+abarisone
+3,4291111 gold badges2727 silver badges4949 bronze badges
+answered Jan 15 '09 at 13:20
+Romain LinsolasRomain Linsolas
+73.9k4545 gold badges197197 silver badges265265 bronze badges
+2
+3
+I would up this more than 1 if I could.
+Hardcoding the strings is ugly for maintenance.
+– Robin
+Jan 15 '09 at 15:22
+6
+Storing String constants in interface is a bad Idea. You can use enums or use String constants
+in final
+classes with private constructor, per package or related area. Please John Skeets answer with Enums. Please check. stackoverflow.com/questions/320588/…
+– Anand Varkey Philips
+Aug 27 '17 at 19:21
+Add a comment
+|
+21
+Overloading toString() seems a bit icky -- that seems a bit of a stretch of toString()'s normal use.
+What about:
+public enum Errors {
+DATABASE(1, "A database error has occured."),
+DUPLICATE_USER(5007, "This user already exists.");
+//... add more cases here ...
+private final int id;
+private final String message;
+Errors(int id, String message) {
+this.id = id;
+this.message = message;
+}
+public int getId() { return id; }
+public String getMessage() { return message; }
+}
+seems a lot cleaner to me... and less verbose.
+Share
+Follow
+edited May 17 '12 at 12:08
+ctpenrose
+1,37511 gold badge1616 silver badges2828 bronze badges
+answered Jan 15 '09 at 13:18
+CowanCowan
+35.5k1111 gold badges6464 silver badges6363 bronze badges
+4
+5
+Overloading toString() on any objects (let alone enums) is quite normal.
+– cletus
+Jan 15 '09 at 13:20
++1 Not quite as flexible as Jon Skeet's solution, but it still solves the problem nicely. Thanks!
+– William Brendel
+Jan 15 '09 at 13:22
+2
+I meant that toString() is most commonly and usefully used to give enough information to identify the object -- it often includes the class name, or some way to meaningfully tell the type of object. A toString() which returns just 'A database error has occurred' would be surprising in many contexts.
+– Cowan
+Jan 15 '09 at 13:28
+1
+I agree with Cowan, using toString() in this way seems a bit 'hackish'.
+Just a quick bang for the buck and not a normal usage.
+For the enum, toString() should return the name of the enum constant.
+This would look interesting in a debugger when you want the value of a variable.
+– Robin
+Jan 15 '09 at 15:21
+Add a comment
+|
+19
+At my last job I went a little deeper in the enum version:
+public enum Messages {
+@Error
+@Text("You can''t put a {0} in a {1}")
+XYZ00001_CONTAINMENT_NOT_ALLOWED,
+...
+}
+@Error, @Info, @Warning are retained in the class file and are available at runtime. (We had a couple of other annotations to help describe message delivery as well)
+@Text is a compile-time annotation.
+I wrote an annotation processor for this that did the following:
+Verify that there are no duplicate message numbers (the part before the first underscore)
+Syntax-check the message text
+Generate a messages.properties file that contains the text, keyed by the enum value.
+I wrote a few utility routines that helped log errors, wrap them as exceptions (if desired) and so forth.
+I'm trying to get them to let me open-source it...
+-- Scott
+Share
+Follow
+answered Jan 15 '09 at 18:56
+Scott StanchfieldScott Stanchfield
+28k99 gold badges4545 silver badges6060 bronze badges
+1
+Nice way of handling error messages. Did you already open-sourced it?
+– bobbel
+Aug 12 '15 at 13:50
+Add a comment
+|
+5
+I'd recommend that you take a look at java.util.ResourceBundle.
+You should care about I18N, but it's worth it even if you don't.
+Externalizing the messages is a very good idea.
+I've found that it was useful to be able to give a spreadsheet to business folks that allowed them to put in the exact language they wanted to see.
+We wrote an Ant task to generate the .properties files at compile time.
+It makes I18N trivial.
+If you're also using Spring, so much the better.
+Their MessageSource class is useful for these sorts of things.
+Share
+Follow
+answered Jan 15 '09 at 14:22
+duffymoduffymo
+293k4141 gold badges348348 silver badges541541 bronze badges
+Add a comment
+|
+4
+Just to keep flogging this particular dead horse- we've had good use of numeric error codes when errors are shown to end-customers, since they frequently forget or misread the actual error message but may sometimes retain and report a numeric value that can give you a clue to what actually happened.
+Share
+Follow
+answered Nov 11 '14 at 21:38
+telcoprotelcopro
+12899 bronze badges
+Add a comment
+|
+3
+There are many ways to solve this. My preferred approach is to have interfaces:
+public interface ICode {
+/*your preferred code type here, can be int or string or whatever*/ id();
+}
+public interface IMessage {
+ICode code();
+}
+Now you can define any number of enums which provide messages:
+public enum DatabaseMessage implements IMessage {
+CONNECTION_FAILURE(DatabaseCode.CONNECTION_FAILURE, ...);
+}
+Now you have several options to turn those into Strings. You can compile the strings into your code (using annotations or enum constructor parameters) or you can read them from a config/property file or from a database table or a mixture. The latter is my preferred approach because you will always need some messages that you can turn into text very early (ie. while you connect to the database or read the config).
+I'm using unit tests and reflection frameworks to find all types that implement my interfaces to make sure each code is used somewhere and that the config files contain all expected messages, etc.
+Using frameworks that can parse Java like https://github.com/javaparser/javaparser or the one from Eclipse, you can even check where the enums are used and find unused ones.
+Share
+Follow
+answered Sep 4 '17 at 9:31
+Aaron DigullaAaron Digulla
+298k101101 gold badges558558 silver badges777777 bronze badges
+Add a comment
+|
+2
+I (and the rest of our team in my company) prefer to raise exceptions instead of returning error codes. Error codes have to be checked everywhere, passed around, and tend to make the code unreadable when the amount of code becomes bigger.
+The error class would then define the message.
+PS: and actually also care for internationalization !
+PPS: you could also redefine the raise-method and add logging, filtering etc. if required (at leastin environments, where the Exception classes and friends are extendable/changeable)
+Share
+Follow
+answered Jan 15 '09 at 13:56
+blabla999blabla999
+3,0741919 silver badges2222 bronze badges
+5
+sorry, Robin, but then (at least from the above example), these ought to be two exceptions - "database error" and "duplicate user" are so completely different that two separate error-subclasses should be created, which are individually catchable (one being a system, the other being an admin error)
+– blabla999
+Jan 15 '09 at 16:02
+and what are the error codes used for, if not to differentiate between one or the other exception ? So at least above the handler, he is exactly that: dealing with error-codes which are passed around and if-switched upon.
+– blabla999
+Jan 15 '09 at 16:12
+I think the name of the exception would be far more illustrative and self-describing than an error code.
+Better to put more thought into discovering good exception names, IMO.
+– duffymo
+Jan 15 '09 at 18:34
+@blabla999 ah, my thoughts exactly. Why catch a coarse-grained exception and then test "if errorcode == x, or y, or z". Such a pain and goes against the grain. Then, also, you can't catch different exceptions at different levels in your stack. You'd have to catch at every level and test the error code at each. It makes the client code so much more verbose... +1 +more if I could. That said, I guess we have to answer the OPs question.
+– wmorrison365
+Apr 11 '13 at 8:32
+2
+Keep in mind, this is for a web service. The client can only parse strings. On the server side there would still be exceptions thrown that has a errorCode member, that can be used in the final response to the client.
+– pkrish
+Apr 24 '15 at 17:55
+Add a comment
+|
+1
+A little late but, I was just looking for a pretty solution for myself. If you have different kind of message error you can add simple, custom message factory so that you can specify more details and format that you'd like later.
+public enum Error {
+DATABASE(0, "A database error has occured. "),
+DUPLICATE_USER(1, "User already exists. ");
+....
+private String description = "";
+public Error changeDescription(String description) {
+this.description = description;
+return this;
+}
+....
+}
+Error genericError = Error.DATABASE;
+Error specific = Error.DUPLICATE_USER.changeDescription("(Call Admin)");
+EDIT:
+ok, using enum here is a little dangerous since you alter particular enum permanently.
+I guess better would be to change to class and use static fields, but than you cannot use '==' anymore. So I guess it's a good example what not to do, (or do it only during initialization) :)
+Share
+Follow
+edited Nov 15 '11 at 8:59
+answered Nov 15 '11 at 8:11
+pprzemekpprzemek
+2,32522 gold badges2323 silver badges2424 bronze badges
+1
+1
+Totally agree with your EDIT, it is not a good practice to alter an enum field at runtime. With this design everyone is able to edit the error message. This is pretty dangerous. Enum fields should always be final.
+– b3nyc
+May 15 '17 at 16:49
+Add a comment
+|
+0
+enum for error code/message definition is still a nice solution though it has a i18n concerns. Actually we may have two situations: the code/message is displayed to the end user or to the system integrator. For the later case, I18N is not necessary. I think the web services is most likely the later case.
+Share
+Follow
+answered Apr 29 '14 at 3:06
+JimmyJimmy
+1,51011 gold badge1515 silver badges1616 bronze badges
+Add a comment
+|
+0
+Using interface as message constant is generally a bad idea. It will leak into client program permanently as part of exported API. Who knows, that later client programmers might parse that error messages(public) as part of their program.
+You will be locked forever to support this, as changes in string format will/may break client program.
+Share
+Follow
+answered Mar 2 '16 at 4:22
+Awan BiruAwan Biru
+36322 silver badges99 bronze badges
+Add a comment
+|
+0
+Please follow the below example:
+public enum ErrorCodes {
+NO_File("No file found. "),
+private ErrorCodes(String value) {
+this.errordesc = value;
+}
+private String errordesc = "";
+public String errordesc() {
+return errordesc;
+}
+public void setValue(String errordesc) {
+this.errordesc = errordesc;
+}
+};
+In your code call it like:
+fileResponse.setErrorCode(ErrorCodes.NO_FILE.errordesc());
+Share
+Follow
+answered Apr 8 '16 at 8:39
+ChinmoyChinmoy
+1,0281010 silver badges1212 bronze badges
+Add a comment
+|
+0
+I use PropertyResourceBundle to define the error codes in an enterprise application to manage locale error code resources. This is the best way to handle error codes instead of writing code (may be hold good for few error codes) when the number of error codes are huge and structured.
+Look at java doc for more information on PropertyResourceBundle
+Share
+Follow
+answered Jul 16 '20 at 4:28
+Mujibur RahmanMujibur Rahman
+25311 gold badge44 silver badges1616 bronze badges
+Add a comment
+|
+Your Answer
+Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
+Draft saved
+Draft discarded
+Sign up or log in
+Sign up using Google
+Sign up using Facebook
+Sign up using Email and Password
+Submit
+Post as a guest
+Name
+Email
+Required, but never shown
+Post as a guest
+Name
+Email
+Required, but never shown
+Post Your Answer
+Discard
+By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
+Not the answer you're looking for? Browse other questions tagged java enums
+or ask your own question.
+The Overflow Blog
+Level Up: Linear Regression in Python – Part 2
+Shipping confetti to Stack Overflow’s design system
+Featured on Meta
+The future of Community Promotion, Open Source, and Hot Network Questions Ads
+Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
+Take the 2021 Developer Survey
+Visit chat
+Linked
+118
+Interfaces with static fields in java for sharing 'constants'
+14
+Error codes within exception vs exceptions hierarchy
+3
+define error codes in java with inheritance
+0
+Error codes with variable String descriptions in Java
+Related
+638
+In Java, what is the best way to determine the size of an object?
+703
+What is the best way to filter a Java Collection?
+2097
+What's the simplest way to print a Java array?
+724
+How do I compare strings in Java?
+137
+How do I have an enum bound combobox with custom string formatting for enum values?
+383
+Best way to create enum of strings?
+260
+JAX-RS — How to return JSON and HTTP status code together?
+735
+Removing whitespace from strings in Java
+0
+Error codes with variable String descriptions in Java
+488
+Best practice for REST token-based authentication with JAX-RS and Jersey
+Hot Network Questions
+According to international law, when is first-use nuclear strike justified?
+Is the the word order of "Iura novit curia" used for emphasis?
+Where and how are raw transactions stored on the blockchain?
+identify M.2 SSD from BASH Script
+How do I make a "ragged" table?
+What technical reasons prevented the Win9x Virtual Machine Monitor from running multiple threads simultaneously?
+Stop, in the name of the law
+The famous "Charaiveti" mantra is mentioned in which Vedic verse?
+Why is the ortho product major in the nitration of anisole with nitric acid and acetic anhydride?
+Why is bad behavior more tolerated in academia compared to the rest of the industry?
+Calculating the hexagons in a hexagon of hexagons
+How do they enforce rules on declaring funds?
+What can I do about a parent who is discouraging their child from learning violin, a child who really wants to learn, so that the child will drop out
+Should most brahmins today be considered as shudras?
+Peer review 2.0
+Concatenate column names in one column conditional on using mutate, across and case_when
+What's a lot of money {out of curiosity}?
+Lunar Terrain Model in Apollo Guidance Computer
+How do computers perform operations on numbers that are larger than 64 bits?
+Why does sleep, when run in a shell script, ignore SIGINT?
+Does mass have an effect on Centripetal Acceleration?
+Why isn't it the norm to have research repeated immediately by other academics?
+How can objects be neither vector nor scalar?
+How can I state an axiom without enumeration?
+more hot questions
+Question feed
+Subscribe to RSS
+Question feed
+To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+lang-java
+Stack Overflow
+Questions
+Jobs
+Developer Jobs Directory
+Salary Calculator
+Help
+Mobile
+Products
+Teams
+Talent
+Advertising
+Enterprise
+Company
+About
+Press
+Work Here
+Legal
+Privacy Policy
+Terms of Service
+Contact Us
+Cookie Settings
+Cookie Policy
+Stack Exchange Network
+Technology
+Life / Arts
+Culture / Recreation
+Science
+Other
+Stack Overflow
+Server Fault
+Super User
+Web Applications
+Ask Ubuntu
+Webmasters
+Game Development
+TeX - LaTeX
+Software Engineering
+Unix & Linux
+Ask Different (Apple)
+WordPress Development
+Geographic Information Systems
+Electrical Engineering
+Android Enthusiasts
+Information Security
+Database Administrators
+Drupal Answers
+SharePoint
+User Experience
+Mathematica
+Salesforce
+ExpressionEngine® Answers
+Stack Overflow em Português
+Blender
+Network Engineering
+Cryptography
+Code Review
+Magento
+Software Recommendations
+Signal Processing
+Emacs
+Raspberry Pi
+Stack Overflow на русском
+Code Golf
+Stack Overflow en español
+Ethereum
+Data Science
+Arduino
+Bitcoin
+Software Quality Assurance & Testing
+Sound Design
+Windows Phone
+more (29)
+Photography
+Science Fiction & Fantasy
+Graphic Design
+Movies & TV
+Music: Practice & Theory
+Worldbuilding
+Video Production
+Seasoned Advice (cooking)
+Home Improvement
+Personal Finance & Money
+Academia
+Law
+Physical Fitness
+Gardening & Landscaping
+Parenting
+more (10)
+English Language & Usage
+Skeptics
+Mi Yodeya (Judaism)
+Travel
+Christianity
+English Language Learners
+Japanese Language
+Chinese Language
+French Language
+German Language
+Biblical Hermeneutics
+History
+Spanish Language
+Islam
+Русский язык
+Russian Language
+Arqade (gaming)
+Bicycles
+Role-playing Games
+Anime & Manga
+Puzzling
+Motor Vehicle Maintenance & Repair
+Board & Card Games
+Bricks
+Homebrewing
+Martial Arts
+The Great Outdoors
+Poker
+Chess
+Sports
+more (16)
+MathOverflow
+Mathematics
+Cross Validated (stats)
+Theoretical Computer Science
+Physics
+Chemistry
+Biology
+Computer Science
+Philosophy
+Linguistics
+Psychology & Neuroscience
+Computational Science
+more (10)
+Meta Stack Exchange
+Stack Apps
+API
+Data
+Blog
+Facebook
+Twitter
+LinkedIn
+Instagram
+site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
+rev 2021.5.28.39383
+Stack Overflow works best with JavaScript enabled
+Your privacy
+By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
+Accept all cookies
+Customize settings

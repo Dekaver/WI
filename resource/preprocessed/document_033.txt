@@ -1,1 +1,83 @@
-valueerror empty vocabulary perhaps documents contain stop words cdqa profile viewpoint nodejs vue js ry nodejs founder react rust tensorflow spring boot golang ask questionsvalueerror empty vocabulary perhaps documents contain stop words describe bug traceback recent call last file train py line cdqa_pipeline fit x df file e python cdqa cdqa pipeline cdqa_sklearn py line fit self retriever fit self metadata content file e python cdqa cdqa retriever tfidf_sklearn py line fit self tfidf_matrix self vectorizer fit_transform x file e anaconda envs frageantwort lib site packages sklearn feature_extraction text py line fit_transform x super fit_transform raw_documents file e anaconda envs frageantwort lib site packages sklearn feature_extraction text py line fit_transform self fixed_vocabulary_ file e anaconda envs frageantwort lib site packages sklearn feature_extraction text py line _count_vocab raise valueerror empty vocabulary perhaps documents valueerror empty vocabulary perhaps documents contain stop words reproduce steps reproduce behavior import pandas pd ast import literal_eval cdqa pipeline cdqa_sklearn import qapipeline cdqa utils converters import pdf_converter df pdf_converter directory_path e books cdqa_pipeline qapipeline model bert_qa_vgpu sklearn joblib cdqa_pipeline fit x df cdqa_pipeline predict x expected behavior prediction desktop please complete following information os windows cdqa suite cdqa answer questions erfolgreichcharismatisch code get traceback recent call last file train py line cdqa_pipeline fit x df file e python cdqa cdqa pipeline cdqa_sklearn py line fit self retriever fit self metadata content file e python cdqa cdqa retriever tfidf_sklearn py line fit self tfidf_matrix self vectorizer fit_transform x file e anaconda envs frageantwort lib site packages sklearn feature_extraction text py line fit_transform x super fit_transform raw_documents file e anaconda envs frageantwort lib site packages sklearn feature_extraction text py line fit_transform self fixed_vocabulary_ file e anaconda envs frageantwort lib site packages sklearn feature_extraction text py line _count_vocab raise valueerror empty vocabulary perhaps documents valueerror empty vocabulary perhaps documents contain stop words useful related questions cdqa install error hot google colab fit_retriever bug hot source https uonfu com answerer erfolgreich charismatisch erfolgreichcharismatisch none germany none none repos gists followers following github user rank list
+ValueError: empty vocabulary; perhaps the documents only contain stop words - cdQA
+profile
+viewpoint
+nodejs
+vue.js
+ry ( nodejs Founder )
+React
+Rust
+tensorflow
+Spring Boot
+golang
+Ask
+questionsValueError: empty vocabulary; perhaps the documents only contain stop words
+Describe the bug
+Traceback (most recent call last):
+File "train.py", line 9, in <module>
+cdqa_pipeline.fit(X=df)
+File "E:\Python\cdQA\cdqa\pipeline\cdqa_sklearn.py", line 86, in fit
+self.retriever.fit(self.metadata['content'])
+File "E:\Python\cdQA\cdqa\retriever\tfidf_sklearn.py", line 75, in fit
+self.tfidf_matrix = self.vectorizer.fit_transform(X)
+File "E:\Anaconda\envs\frageantwort\lib\site-packages\sklearn\feature_extraction\text.py", line 1652, in fit_transform
+X = super().fit_transform(raw_documents)
+File "E:\Anaconda\envs\frageantwort\lib\site-packages\sklearn\feature_extraction\text.py", line 1058, in fit_transform
+self.fixed_vocabulary_)
+File "E:\Anaconda\envs\frageantwort\lib\site-packages\sklearn\feature_extraction\text.py", line 989, in _count_vocab
+raise ValueError("empty vocabulary; perhaps the documents only"
+ValueError: empty vocabulary; perhaps the documents only contain stop words
+To Reproduce
+Steps to reproduce the behavior:
+import pandas as pd
+from ast import literal_eval
+from cdqa.pipeline.cdqa_sklearn import QAPipeline
+from cdqa.utils.converters import pdf_converter
+df = pdf_converter(directory_path='E:/books')
+cdqa_pipeline = QAPipeline(model='bert_qa_vGPU-sklearn.joblib')
+cdqa_pipeline.fit(X=df)
+cdqa_pipeline.predict(X='What is?')
+Expected behavior
+Prediction
+Desktop (please complete the following information):
+OS: Windows 10
+cdqa-suite/cdQA
+Answer
+questions
+ErfolgreichCharismatisch
+With your code I get
+Traceback (most recent call last):
+File "train.py", line 8, in <module>
+cdqa_pipeline.fit(X=df)
+File "E:\Python\cdQA\cdqa\pipeline\cdqa_sklearn.py", line 86, in fit
+self.retriever.fit(self.metadata['content'])
+File "E:\Python\cdQA\cdqa\retriever\tfidf_sklearn.py", line 75, in fit
+self.tfidf_matrix = self.vectorizer.fit_transform(X)
+File "E:\Anaconda\envs\frageantwort\lib\site-packages\sklearn\feature_extraction\text.py", line 1652, in fit_transform
+X = super().fit_transform(raw_documents)
+File "E:\Anaconda\envs\frageantwort\lib\site-packages\sklearn\feature_extraction\text.py", line 1058, in fit_transform
+self.fixed_vocabulary_)
+File "E:\Anaconda\envs\frageantwort\lib\site-packages\sklearn\feature_extraction\text.py", line 989, in _count_vocab
+raise ValueError("empty vocabulary; perhaps the documents only"
+ValueError: empty vocabulary; perhaps the documents only contain stop words
+useful!
+Related questions
+cdqa install error
+hot 7
+Google Colab fit_retriever bug
+hot 6
+source：https://uonfu.com/
+answerer
+Erfolgreich charismatisch ErfolgreichCharismatisch
+None
+Germany
+None
+None
+repos
+9
+gists
+0
+followers
+2
+following
+0
+Github User Rank List

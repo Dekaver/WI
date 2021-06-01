@@ -1,1 +1,176 @@
-raise valueerror empty vocabulary perhaps documents valueerror empty vocabulary perhaps documents contain stop words issue javierhonduco emoji prediction github skip content sign github features mobile actions codespaces packages security code review project management integrations github sponsors customer stories team enterprise explore explore github learn contribute topics collections trending learning lab open source guides connect others readme project events community forum github education github stars program marketplace pricing plans compare plans contact sales education repository github jump suggested jump results repository github jump user github jump repository github jump sign sign message javierhonduco emoji prediction notifications star fork code issues pull requests actions projects wiki security insights code issues pull requests actions projects wiki security insights new issue question project sign free github account open issue contact maintainers community pick username email address password sign github clicking sign github agree terms service privacy statement occasionally send account related emails already github sign account jump bottom raise valueerror empty vocabulary perhaps documents valueerror empty vocabulary perhaps documents contain stop words closed hariprasadgns opened issue mar comment closed raise valueerror empty vocabulary perhaps documents valueerror empty vocabulary perhaps documents contain stop words hariprasadgns opened issue mar comment comments copy link hariprasadgns commented mar harigns harigns emoji prediction master classify python sklearn_experiments py total_tweets total_training diff_emojis traceback recent call last file sklearn_experiments py line learn_with sgdclassifier dataset dataset file sklearn_experiments py line learn_with x vectorizer fit_transform data file home harigns anaconda lib python site packages sklearn feature_extraction text py line fit_transform x super tfidfvectorizer self fit_transform raw_documents file home harigns anaconda lib python site packages sklearn feature_extraction text py line fit_transform self fixed_vocabulary_ file home harigns anaconda lib python site packages sklearn feature_extraction text py line _count_vocab raise valueerror empty vocabulary perhaps documents valueerror empty vocabulary perhaps documents contain stop words getting error please help solve text updated successfully errors encountered copy link owner javierhonduco commented apr seems happens one string rather list strings https stackoverflow com questions python tfidfvectorizer throwing empty vocabulary perhaps documents c javierhonduco closed sep sign free join conversation github already account sign comment assignees one assigned labels none yet projects none yet milestone milestone linked pull requests successfully merging pull request may close issue none yet participants github inc terms privacy security status docs contact github pricing api training blog perform action time signed another tab window reload refresh session signed another tab window reload refresh session
+raise ValueError("empty vocabulary; perhaps the documents only" ValueError: empty vocabulary; perhaps the documents only contain stop words · Issue #4 · javierhonduco/emoji-prediction · GitHub
+Skip to content
+Sign up
+Why GitHub?
+Features →
+Mobile →
+Actions →
+Codespaces →
+Packages →
+Security →
+Code review →
+Project management →
+Integrations →
+GitHub Sponsors →
+Customer stories→
+Team
+Enterprise
+Explore
+Explore GitHub →
+Learn and contribute
+Topics →
+Collections →
+Trending →
+Learning Lab →
+Open source guides →
+Connect with others
+The ReadME Project →
+Events →
+Community forum →
+GitHub Education →
+GitHub Stars program →
+Marketplace
+Pricing
+Plans →
+Compare plans →
+Contact Sales →
+Education →
+In this repository
+All GitHub
+↵
+Jump to
+↵
+No suggested jump to results
+In this repository
+All GitHub
+↵
+Jump to
+↵
+In this user
+All GitHub
+↵
+Jump to
+↵
+In this repository
+All GitHub
+↵
+Jump to
+↵
+Sign in
+Sign up
+{{ message }}
+javierhonduco
+/
+emoji-prediction
+Notifications
+Star
+38
+Fork
+3
+Code
+Issues
+0
+Pull requests
+0
+Actions
+Projects
+0
+Wiki
+Security
+Insights
+More
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+New issue
+Have a question about this project? Sign up for a free GitHub account to open an issue and contact its maintainers and the community.
+Pick a username
+Email Address
+Password
+Sign up for GitHub
+By clicking “Sign up for GitHub”, you agree to our terms of service and
+privacy statement. We’ll occasionally send you account related emails.
+Already on GitHub?
+Sign in
+to your account
+Jump to bottom
+raise ValueError("empty vocabulary; perhaps the documents only" ValueError: empty vocabulary; perhaps the documents only contain stop words
+#4
+Closed
+hariprasadgns
+opened this issue
+Mar 28, 2019
+· 1 comment
+Closed
+raise ValueError("empty vocabulary; perhaps the documents only" ValueError: empty vocabulary; perhaps the documents only contain stop words
+#4
+hariprasadgns
+opened this issue
+Mar 28, 2019
+· 1 comment
+Comments
+Copy link
+hariprasadgns
+commented
+Mar 28, 2019
+harigns@harigns:~/emoji-prediction-master/classify$ python3 sklearn_experiments.py 10000
+total_tweets=10000 total_training=8000 diff_emojis=0
+Traceback (most recent call last):
+File "sklearn_experiments.py", line 151, in
+learn_with(SGDClassifier, dataset=dataset)
+File "sklearn_experiments.py", line 97, in learn_with
+X = vectorizer.fit_transform(data)
+File "/home/harigns/anaconda3/lib/python3.7/site-packages/sklearn/feature_extraction/text.py", line 1603, in fit_transform
+X = super(TfidfVectorizer, self).fit_transform(raw_documents)
+File "/home/harigns/anaconda3/lib/python3.7/site-packages/sklearn/feature_extraction/text.py", line 1032, in fit_transform
+self.fixed_vocabulary_)
+File "/home/harigns/anaconda3/lib/python3.7/site-packages/sklearn/feature_extraction/text.py", line 961, in _count_vocab
+raise ValueError("empty vocabulary; perhaps the documents only"
+ValueError: empty vocabulary; perhaps the documents only contain stop words
+I'm getting the above error . So please help me to solve this.
+The text was updated successfully, but these errors were encountered:
+Copy link
+Owner
+javierhonduco
+commented
+Apr 28, 2019
+Seems that this happens when you have only one string rather than a list of strings: https://stackoverflow.com/questions/20928769/python-tfidfvectorizer-throwing-empty-vocabulary-perhaps-the-documents-only-c
+javierhonduco
+closed this
+Sep 7, 2020
+Sign up for free
+to join this conversation on GitHub.
+Already have an account?
+Sign in to comment
+Assignees
+No one assigned
+Labels
+None yet
+Projects
+None yet
+Milestone
+No milestone
+Linked pull requests
+Successfully merging a pull request may close this issue.
+None yet
+2 participants
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+You can’t perform that action at this time.
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
