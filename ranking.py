@@ -1,4 +1,13 @@
-def ranking(q, df):
+from nltk.corpus import stopwords
+
+def ranking(query, df):
+    query = query.lower()
+    query=re.sub("</?.*?>"," <> ",query)
+    query=re.sub("(\\d|\\W)+"," ",query)
+
+    stopwords=stopwords.words('english')
+    query = [word for word in query if not word in stopwords]
+    print(query)
     start_time = time.time()
     print("query:", q)
     print("Berikut artikel dengan nilai cosine similarity tertinggi: ") 
