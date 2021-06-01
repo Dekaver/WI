@@ -6,7 +6,6 @@ import re
 stopwords=stopwords.words('english')
 
 def ranking(query, df):
-    start_time = time.time()
     query = re.sub("</?.*?>"," <> ",query)
     query = re.sub("(\\d|\\W)+"," ",query)
     query = word_tokenize(query)
@@ -21,10 +20,9 @@ def ranking(query, df):
             keywords.append(f'{j} {i}')
         j = i
     keys = []
-    print(keywords)
 
     #hapus unigram "buah" jika terdapat index bigram "buah mangga"
-    for key in keywords:
+    for key in keywords: 
         if key in df.index.tolist():
             keys.append(key)
             words = key.split(' ')
@@ -33,6 +31,7 @@ def ranking(query, df):
                     if word in keys:
                         keys.remove(word)
 
+    start_time = time.time()
 
     rank_doc = df.loc[keys]
     rank_doc.loc['ranking_value',:] = rank_doc.sum(axis=0)
@@ -40,28 +39,11 @@ def ranking(query, df):
     relavan_doc = relavan_doc.loc['ranking_value']
     relavan_doc = relavan_doc.sort_values(ascending=False)
     list_doc = relavan_doc.index.tolist()
+    
     end_time = time.time()
 
     return list_doc, end_time - start_time
 
-    # print("Berikut artikel dengan nilai cosine similarity tertinggi: ") 
-    # q = [q]
-    # q_vec = vectorizer.transform(q).toarray().reshape(df.shape[0],)
-    # sim = {}  
-    # for i in range(len(df.columns)):
-    #     value = np.dot(df.loc[:, i].values, q_vec) / np.linalg.norm(df.loc[:, i]) * np.linalg.norm(q_vec)
-    #     if (value != 0.0):
-    #         sim[i] = value
-    # end_time = time.time()
-
-    # sim_sorted = sorted(sim.items(), key=lambda x: x[1], reverse=True)  
-    # print('result :', len(sim_sorted), '\t time :', end_time - start_time, '\n\n\n')
-    # for k, v in sim_sorted:
-    #     if v != 0.0:
-    #         print("Nilai Similaritas:", v)
-    #         print('index dokumen', k)
-    #         print(dataframe[k][:100:])
-    #         print()
 
 if __name__ == "__main__":
     import scipy.sparse
