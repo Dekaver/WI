@@ -42,6 +42,7 @@
             <div>
                 <a href="{{ url[doc|string] }}">{{ url[doc|string] }}</a>
             </div>
+            <h1>{{doc}}</h1>
             <p>{{dataframe[doc][:100:]}}...</p>
         </li>
     {% endfor %}

@@ -10,6 +10,7 @@
         "8" : "https://www.pitt.edu/~naraehan/python2/faq.html",
         "9" : "https://github.com/nltk/nltk_book/issues/229",
         "10" : "https://www.edureka.co/community/73509/modulenotfounderror-no-module-named-nltk",
+
         "11" : "https://stackoverflow.com/questions/20151843/attributeerror-numpy-ndarray-object-has-no-attribute-toarray",
         "12" : "https://www.discoverbits.in/194/attributeerror-numpy-ndarray-object-has-attribute-toarray",
         "13" : "https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csr_matrix.html",
@@ -23,6 +24,7 @@
         "27" : "http://sfyjdyy.blogspot.com/2018/09/attributeerror-using-scipysparsetoarray.html",
         "28" : "https://kodlogs.com/76823/attributeerror-numpy-ndarray-object-has-no-attribute-index",
         "30" : "https://stackoverflow.com/questions/30973503/attributeerror-numpy-ndarray-object-has-no-attribute-a",
+
         "31" : "https://stackoverflow.com/questions/19234598/typeerror-str-object-cannot-be-interpreted-as-an-integer",
         "32" : "https://careerkarma.com/blog/python-typeerror-str-object-cannot-be-interpreted-as-an-integer/",
         "35" : "https://discuss.codecademy.com/t/why-am-i-receiving-list-object-cannot-be-interpreted-as-an-integer-and-str-object-cannot-be-interpreted-as-an-integer/49127",
@@ -39,6 +41,7 @@
         "47" : "https://forums.fast.ai/t/lr-find-throws-error-typeerror-float-object-cannot-be-interpreted-as-an-integer/42848",
         "48" : "https://www.codegrepper.com/code-examples/python/TypeError%3A+%27float%27+object+cannot+be+interpreted+as+an+integer",
         "49" : "https://www.stechies.com/typeerror-float-object-cannot-interpreted-integer/",
+
         "51" : "https://github.com/pytube/pytube/issues/399",
         "52" : "https://stackoverflow.com/questions/16627227/problem-http-error-403-in-python-3-web-scraping",
         "54" : "https://kotakode.com/pertanyaan/4255/urllib.error.HTTPError%3A-HTTP-Error-403%3A-Forbidden-",
@@ -50,6 +53,7 @@
         "66" : "https://discuss.pytorch.org/t/urllib-error-httperror-http-error-403-forbidden/100290",
         "69" : "https://jdhao.github.io/2020/06/17/download_image_from_url_python/",
         "70" : "https://www.thetopsites.net/article/53331204.shtml",
+
         "71" : "https://stackoverflow.com/questions/16675753/php-fastest-way-to-handle-undefined-array-key",
         "73" : "https://kotakode.com/pertanyaan/8192",
         "74" : "https://stackoverflow.com/questions/65603660/beginner-php-warning-undefined-array-key",
@@ -62,6 +66,7 @@
         "87" : "https://www.gitmemory.com/issue/symfony/symfony/39177/734513878",
         "89" : "https://www.qandeelacademy.com/questions/how-to-fix-warning-undefined-array-key",
         "90" : "https://blog.adamcameron.me/2017/01/php-accessing-undefined-array-element.html",
+        
         "91" : "https://www.yawintutor.com/attributeerror-dict-object-has-no-attribute-append/",
         "92" : "https://www.freelancer.co.id/job-search/str-object-has-no-attribute-append-dictionary-python/",
         "93" : "https://stackoverflow.com/questions/48234473/python-attributeerror-dict-object-has-no-attribute-append",
@@ -77,6 +82,7 @@
         "109" : "https://issue.life/questions/52676526",
         "110" : "https://stackoverflow.com/questions/52676526/dict-object-has-no-attribute-append",
         "111" : "https://stackoverflow.com/questions/48234473/python-attributeerror-dict-object-has-no-attribute-append",
+        
         "112" : "https://stackoverflow.com/questions/34545641/php-artisan-makeauth-command-is-not-defined",
         "113" : "https://stackoverflow.com/questions/57783668/did-they-remove-the-makeauth-command-in-laravel-6-0",
         "115" : "https://kawankoding.com/artikel/menjalankan-php-artisan-make-auth-di-laravel-6",
@@ -86,6 +92,7 @@
         "119" : "https://www.parthpatel.net/error-laravel-6-php-artisan-makeauth-command-not-defined-solved/",
         "120" : "https://merotalim.com/forum/web-developing/post_id=1",
         "121" : "https://kodlogs.com/52834/command-make-auth-is-not-defined",
+
         "122" : "https://careerkarma.com/blog/python-indexerror-list-index-out-of-range/",
         "123" : "https://zcarblog.com/tovlsk3kd/wtuds/java-error-incompatible-types-string-cannot-be-converted-to-double",
         "124" : "https://blog.finxter.com/python-indexerror-list-index-out-of-range/",
@@ -99,6 +106,7 @@
         "132" : "https://careerkarma.com/blog/python-valueerror-invalid-literal-for-int-with-base-10/",
         "133" : "http://net-informations.com/python/err/int.htm",
         "134" : "https://www.geeksforgeeks.org/what-is-the-meaning-of-invalid-literal-for-int-with-base/",
+
         "135" : "https://careerkarma.com/blog/python-typeerror-int-object-is-not-iterable/",
         "136" : "https://stackoverflow.com/questions/19523563/python-typeerror-int-object-is-not-iterable",
         "137" : "https://www.stechies.com/typeerror-int-object-is-not-iterable/",
@@ -113,6 +121,7 @@
         "146" : "https://cloudstack.ninja/tanya-stevens/typeerror-int-object-is-not-iterable-while-training-a-neural-network/",
         "147" : "https://discourse.ladybug.tools/t/how-to-solve-int-object-is-not-iterable-problem/2539",
         "148" : "https://www.datasciencelearner.com/typeerror-int-object-is-not-iterable-fix/",
+
         "149" : "https://stackoverflow.com/questions/7436925/json-decode-expects-parameter-1-to-be-string-array-given/26450154",
         "150" : "https://stackoverflow.com/questions/65965776/laravel-eloquent-error-expects-parameter-1-to-be-string-when-trying-to-use-sum",
         "151" : "https://www.codegrepper.com/code-examples/typescript/htmlspecialchars%28%29+expects+parameter+1+to+be+string%2C+object+given+laravel",
@@ -121,6 +130,7 @@
         "154" : "https://styjun.blogspot.com/2019/09/datetimeconstruct-expects-parameter-1.html",
         "155" : "https://johnnn.tech/q/expects-parameter-1-to-be-string-object-given/",
         "156" : "https://www.daniweb.com/programming/web-development/threads/316928/strpos-expects-parameter-1-to-be-string-array-given-in",
+
         "157" : "https://stackoverflow.com/questions/51252580/how-to-resolve-typeerror-can-only-concatenate-str-not-int-to-str",
         "158" : "https://careerkarma.com/blog/python-typeerror-can-only-concatenate-str-not-int-to-str/",
         "159" : "https://www.tutorialkart.com/python/python-typeerror-can-only-concatenate-str-not-int-to-str/",
