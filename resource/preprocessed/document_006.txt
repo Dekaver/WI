@@ -68,6 +68,7 @@ I get an error message when I try FreqDist() in NLTK -- NameError: name 'nltk' i
 however, I still get the error below.
 nltk
 Share
+Improve this question
 Follow
 asked Jul 15 '14 at 14:26
 MindBrainMindBrain
@@ -93,6 +94,7 @@ Or use namespaces,
 >>> ConditionalFreqDist()
 <ConditionalFreqDist with 0 conditions>
 Share
+Improve this answer
 Follow
 answered Jul 15 '14 at 14:32
 alvasalvas
@@ -109,6 +111,7 @@ import nltk
 if nltk is installed properly then you will be returned with console.
 then you can use your code without any error.
 Share
+Improve this answer
 Follow
 answered Oct 22 '14 at 11:35
 Manjunath NManjunath N
@@ -147,6 +150,7 @@ Using low-code tools to iterate products faster
 Podcast 345: A good software tutorial explains the How. A great one explains…
 Featured on Meta
 Take the 2021 Developer Survey
+Visit chat
 Related
 8
 I get an error message when I try FreqDist() in NLTK — NameError: name 'nltk' is not defined
@@ -165,30 +169,30 @@ NameError: name 'word' is not defined ,python
 10
 Architecture Not Supported Error when installing nltk with pip on Mac
 Hot Network Questions
-Why were the apollo CM RCS thrusters all placed in only one half of the module?
-How well would Max Faget's April 1, 1969 design for the Space Shuttle have actually worked? What would have been the major problems?
-Why would they use human soldiers over undead ones?
-Why did this gallon of milk stay fresh for so long?
-How do trademarks apply to Open Source?
-How come full throttle is meaning full speed instead of the opposite?
-Can a Rogue find an undetectable Trap?
-Does machine learning really need data-efficient algorithms?
-Can always @ (*) introduce randomness in FPGA?
-Photo Competition 2021-06-07: Long Exposure
-What are the benefits of hand built wheels over automated ones?
-Is there objective proof that recent bills (1st half of 2021) that restrict voting are targeting Democratic voters specifically?
-What is the hardest part of transitioning from a PhD to a full-time career in academia?
-What are the DM's responsibilities when dealing with a character's death?
-Did the Kohen Gadol minister barefoot?
-What is "Horse and Pony II", created by the Battlefield devs (Refraction Games)?
+A '50s Yeti movie which has a scene with two men sitting around a fire in a cave
 Is LUKS still an effective option for consumer FDE considering Elcomsoft can break it?
-Has physics ever given a physical significance to a mathematically abstract idea?
+Why is Ken's beer "gay"?
+Understanding the Rune Knight Fighter's 15th level feature
+How to get real-looking rust that will be safe to the touch?
+Can a Rogue find an undetectable Trap?
+Why put a resistor in series with the postive terminal in a non inverting op-amp circuit?
+Why can an easily graphable definite integral, be labyrinthine to evaluate?
+Is buying lecture notes wrong?
 Why do CMOS NOT gate designs differ from BJT NOT gate designs?
-How to remove the new weather info from the taskbar?
+In Bayesian statistics, data is considered nonrandom but can have a probability or be conditioned on. How?
+Why would they use human soldiers over undead ones?
+What are minimal changes to make a truncated pyramid shaped megabuildings a thing?
+What are the DM's responsibilities when dealing with a character's death?
+Can I gain AC efficiency by spraying condensate water on the outdoor coils?
+How was it calculated that Dream cheated on his Minecraft v1.16 glitchless speedrun?
+Former coworker I gave a reference for sabotaged the company on his last day - Should I update the reference contact with this new information?
 What's the easiest way to change from MS-DOS 6.22 to DR-DOS?
-Why are SSH MITM tools able to read and modify data?
-Heating of hydraulic oil with hardtail electric MTB brakes
-Simplest/cheapest way to build a tensegrity model?
+Why am I seeing the sun slightly north instead of slightly south early in the morning in Malta?
+Why were the apollo CM RCS thrusters all placed in only one half of the module?
+Do the murder statistics of 5 cities bring the USA to the 3rd highest country, from 189th?
+Mansfield 40 toilet flush levers keep breaking
+Interview by fellow PhD students, not the professor himself
+What are the safety and warranty implications of steaming bread in a domestic oven?
 more hot questions
 Question feed
 Subscribe to RSS

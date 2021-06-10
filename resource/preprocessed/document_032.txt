@@ -155,7 +155,7 @@ We’re going to build a program that lets a pizza restaurant view the names and
 names = ["Pepperoni", "Margherita", "Ham and Pineapple", "Brie and Chive"]
 prices = [9.00, 8.40, 8.40, 9.50]
 These lists are parallel and appear in order of how popular a pizza is. That means the values at a particular position in the list correspond with each other. For instance, the price of a “Brie and Chive” pizza is $9.50.
-» MORE:  Python TabError: inconsistent use of tabs and spaces in indentation SolutionOur next task is to ask the user how many pizzas they would like to display. We can do this using an input() statement:
+» MORE:  Python Queue and Deque: A Step-By-Step GuideOur next task is to ask the user how many pizzas they would like to display. We can do this using an input() statement:
 to_display = input("Enter the number of pizzas you would like to display: ")
 Now we know the number of pizzas about which the user is seeking information, we can use a for loop to print each pizza and its price to the console:
 for p in range(0, to_display):
@@ -181,7 +181,7 @@ Enter the number of pizzas you would like to display: 2
 Pepperoni costs $9.0.
 Margherita costs $8.4.
 Our code successfully prints out the information that we requested. We can see the names of the two most popular pizzas and the prices of those pizzas.
-» MORE:  Python Flatten List: A How-To GuideConclusion
+» MORE:  Python String Strip: How To Use Python StripConclusion
 The “TypeError: ‘str’ object cannot be interpreted as an integer” error is raised when you pass a string as an argument into a range() statement. To fix this error, make sure all the values you use in a range() statement are integers.
 Now you have the knowledge you need to fix this error like a professional!
 About us: Career Karma is a platform designed to help job seekers find, research, and connect with job training programs to advance their careers. Learn about the CK publication.
@@ -231,9 +231,9 @@ See Matches
 Find the Best Online Course for YouGet Matched
 Related Articles
 Python Tutorials
-Python AttributeError: ‘numpy.ndarray’ object has no attribute ‘append’ Solution
+Python ‘numpy.ndarray’ object is not callable Solution
 Python Tutorials
-Python FileNotFoundError: [Errno 2] No such file or directory Solution
+Python Check If List Is Empty
 Python Tutorials
 Python Index: A Step-By-Step Guide
 Python Tutorials

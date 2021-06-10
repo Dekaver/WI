@@ -79,8 +79,8 @@ attribute-error
 append
 0 votes
 1 answer
-159 views
-159 views
+160 views
+160 views
 Numpy.ndarray' object has no attribute 'count'.
 Problem: Whats the issue that I get this error? Numpy.ndarray' object has no attribute 'count'.
 asked
@@ -191,8 +191,8 @@ python
 python-3
 0 votes
 1 answer
-230 views
-230 views
+231 views
+231 views
 attributeerror: 'nonetype' object has no attribute 'group'
 Using Python Regex to retrieve certain content from a search box on a webpage with selenium.webDriver searchbox = driver.find_element_by_class_name("searchbox") searchbox_result = re.match(r"^.*(?=(\())", searchbox).group() The code works as long as the search box
 ... is error: AttributeError: 'NoneType' object has no attribute 'group' How can I make the script handle the "No results" situation?

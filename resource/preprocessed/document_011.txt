@@ -143,6 +143,7 @@ print("Bayes_error: ",cross_val(error))
 return result
 python numpy machine-learning scikit-learn
 Share
+Improve this question
 Follow
 edited Nov 22 '13 at 20:45
 Learner
@@ -176,6 +177,7 @@ Votes
 2
 TruncatedSVD.transform returns an array, not a sparse matrix. In fact, in the present version of scikit-learn, only the vectorizers return sparse matrices.
 Share
+Improve this answer
 Follow
 answered Nov 23 '13 at 13:07
 Fred FooFred Foo
@@ -229,30 +231,30 @@ ValueError: Input arrays should have the same number of samples as target arrays
 1
 How to Increase accuracy and precision for my logistic regression model?
 Hot Network Questions
-Critical differences between Ubuntu Server and Ubuntu Desktop for 20.04 LTS?
+What are the benefits of hand built wheels over automated ones?
+What are the DM's responsibilities when dealing with a character's death?
 How to remove the new weather info from the taskbar?
-Does machine learning really need data-efficient algorithms?
-Decode USB packets
-What does existential unforgeability mean in a digital signature scheme?
-Is it a coincidence that on the far side of the moon almost no seas are visible?
-Why are high power LEDs categorized by wattage, not voltage & amperage?
-Why aren't resistors being used here?
-How to get real-looking rust that will be safe to the touch?
-Getting “Bye Bye Big Sur” error on installing Big Sur
-Being forced to take annual leave against my wishes, what are my options
-Confused about the numbers on the grippers
+Why would they use human soldiers over undead ones?
+Can a Rogue find an undetectable Trap?
 Can I gain AC efficiency by spraying condensate water on the outdoor coils?
-Showing the bounding box for every coordinate system in QGIS
-Why can an easily graphable definite integral, be labyrinthine to evaluate?
+Did I design my LED circuit correctly?
+Are there good tutorials that explain how to use experimental data to customise the force field in AMDock Vina?
+Former coworker I gave a reference for sabotaged the company on his last day - Should I update the reference contact with this new information?
+What is this token?
+What would a bear species isolated on an island look like?
+Grep and Cut command in linux
+Sharing a research proposal when applying for funds
+"She need not worry" or "she needs to not worry"?
+Is there objective proof that recent bills (1st half of 2021) that restrict voting are targeting Democratic voters specifically?
+Is Huang Yanling (a Wuhan virology researcher) the world's first COVID-19 patient?
+In the sentence "Ich begegnete einem alten Freund in Berlin", why the dative einem instead of the accusative einen?
 What's the easiest way to change from MS-DOS 6.22 to DR-DOS?
-Revisiting the unreasonable effectiveness of mathematics
-Photo Competition 2021-06-07: Long Exposure
-A '50s Yeti movie which has a scene with two men sitting around a fire in a cave
-What is the hardest part of transitioning from a PhD to a full-time career in academia?
-How does black proceed in the below position?
-Has physics ever given a physical significance to a mathematically abstract idea?
-Is there a threadlocker that requires heat to release and can withstand thousands of heat-cool cycles without needing to be reapplied or deteriorating
-Can always @ (*) introduce randomness in FPGA?
+What can US senators do against diversity trainings in the US Army?
+Is LUKS still an effective option for consumer FDE considering Elcomsoft can break it?
+How do airliner pilots practice recovering from a bounced landing?
+Can an American state ban a (minor) political party?
+Is co-authoring with friends a good idea?
+What is "Horse and Pony II", created by the Battlefield devs (Refraction Games)?
 more hot questions
 Question feed
 Subscribe to RSS

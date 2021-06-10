@@ -14,6 +14,8 @@ data_preproccess = {}
 data_preproccess['doc'] = {}
 len(data)
 for i in data['url']:
+    if int(i)<130:
+        continue
     url = data['url'][i]
     try:
         html = urlopen(url).read()

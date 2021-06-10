@@ -95,6 +95,7 @@ Give ending number: 13
 What is the problem?
 python types
 Share
+Improve this question
 Follow
 edited Aug 29 '17 at 8:53
 Mel
@@ -122,6 +123,7 @@ for i in range(x,y):
 print(i)
 input returns you a string (raw_input in Python 2). int tries to parse it into an integer. This code will throw an exception if the string doesn't contain a valid integer string, so you'd probably want to refine it a bit using try/except statements.
 Share
+Improve this answer
 Follow
 edited Oct 29 '17 at 21:20
 answered Oct 7 '13 at 20:57
@@ -133,6 +135,7 @@ Add a comment
 You are getting the error because range() only takes int values as parameters.
 Try using int() to convert your inputs.
 Share
+Improve this answer
 Follow
 answered Jun 10 '19 at 11:20
 Rahul Rahul
@@ -144,6 +147,7 @@ x = int(input("Give starting number: "))
 y = int(input("Give ending number: "))
 P.S. Add function int()
 Share
+Improve this answer
 Follow
 edited Jan 11 '18 at 22:48
 Bramwell Simpson
@@ -160,6 +164,7 @@ for i in range(x, y):
 print(i)
 This outputs:
 Share
+Improve this answer
 Follow
 edited Sep 25 '18 at 6:41
 Dadep
@@ -175,6 +180,7 @@ Try this.
 x=int(input('prompt'))
 y=int(input('prompt'))
 Share
+Improve this answer
 Follow
 answered Oct 7 '13 at 20:58
 PerkinsPerkins
@@ -191,6 +197,7 @@ You have to convert input x and y into int like below.
 x=int(x)
 y=int(y)
 Share
+Improve this answer
 Follow
 answered Dec 19 '15 at 6:38
 SPradhanSPradhan
@@ -204,6 +211,7 @@ X = int(X)
 Y = input("give ending number")
 Y = int(Y)
 Share
+Improve this answer
 Follow
 edited Aug 24 '16 at 11:47
 BartoszKP
@@ -216,6 +224,7 @@ Add a comment
 1
 Or you can also use eval(input('prompt')).
 Share
+Improve this answer
 Follow
 edited Oct 29 '17 at 21:21
 BartoszKP
@@ -273,30 +282,30 @@ TypeError: 'str' object cannot be interpreted as an integer python for loop
 0
 Why I'm getting this error “TypeError: 'list' object cannot be interpreted as an integer”
 Hot Network Questions
-How well would Max Faget's April 1, 1969 design for the Space Shuttle have actually worked? What would have been the major problems?
-Is there a threadlocker that requires heat to release and can withstand thousands of heat-cool cycles without needing to be reapplied or deteriorating
-What does existential unforgeability mean in a digital signature scheme?
-Does machine learning really need data-efficient algorithms?
-How do you say " Coup de grâce " in latin?
-A '50s Yeti movie which has a scene with two men sitting around a fire in a cave
-Why would they use human soldiers over undead ones?
-Why aren't resistors being used here?
-How come full throttle is meaning full speed instead of the opposite?
-Where is Lorentz contraction centered on?
-Why did this gallon of milk stay fresh for so long?
-Can an American state ban a (minor) political party?
-Are there good tutorials that explain how to use experimental data to customise the force field in AMDock Vina?
-Revisiting the unreasonable effectiveness of mathematics
-Why is Ken's beer "gay"?
-Are AP slugs for shotguns possible?
-Why can an easily graphable definite integral, be labyrinthine to evaluate?
-How do trademarks apply to Open Source?
-Did I design my LED circuit correctly?
-What is "Horse and Pony II", created by the Battlefield devs (Refraction Games)?
-What are the safety and warranty implications of steaming bread in a domestic oven?
-Telling a coworker they aren't invited into my house
-If I use the word "enumerated", must the list be numeric or can it be bullet points?
+Are there any greater risks of traveling significantly faster to another planet?
+What are the DM's responsibilities when dealing with a character's death?
+Grep and Cut command in linux
 How to get real-looking rust that will be safe to the touch?
+Showing the bounding box for every coordinate system in QGIS
+What's the easiest way to change from MS-DOS 6.22 to DR-DOS?
+Is it a coincidence that on the far side of the moon almost no seas are visible?
+Is it suspicious that gravitational waves propagate at the speed of light?
+How do you say " Coup de grâce " in latin?
+How was it calculated that Dream cheated on his Minecraft v1.16 glitchless speedrun?
+What does 高高矮矮 mean?
+Are there good tutorials that explain how to use experimental data to customise the force field in AMDock Vina?
+Do the murder statistics of 5 cities bring the USA to the 3rd highest country, from 189th?
+How do airliner pilots practice recovering from a bounced landing?
+Traditionally, is prosciutto never to be cooked?
+Can an American state ban a (minor) political party?
+What is this token?
+How do trademarks apply to Open Source?
+Critical differences between Ubuntu Server and Ubuntu Desktop for 20.04 LTS?
+Is cohomology always related to topology?
+What are the numbers below the notes in Sarasate's "Gypsy Airs"
+In Bayesian statistics, data is considered nonrandom but can have a probability or be conditioned on. How?
+Is Huang Yanling (a Wuhan virology researcher) the world's first COVID-19 patient?
+What is the hardest part of transitioning from a PhD to a full-time career in academia?
 more hot questions
 lang-py
 Stack Overflow

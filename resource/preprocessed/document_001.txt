@@ -68,6 +68,7 @@ My Code
 I've already tried putting 'import nltk' at first but it is still the same, and also I've tried 'from nltk.tokenize import 'PunktSentenceTokenizer'. I don't know why the Python shell can't find the definition of the nltk. How should I address this? I am still learning how to write and code python.
 nltk
 Share
+Improve this question
 Follow
 edited Mar 1 '19 at 6:33
 Terry Jan Reedy
@@ -105,6 +106,7 @@ pip install nltk
 Then you need to import it...
 import nltk
 Share
+Improve this answer
 Follow
 edited Sep 4 '19 at 12:24
 Andrew Brēza
@@ -122,6 +124,7 @@ tagged = ntlk.pos_tag(words)
 to
 tagged = nltk.pos_tag(words)
 Share
+Improve this answer
 Follow
 edited Sep 4 '19 at 12:56
 manish Prasad
@@ -170,30 +173,30 @@ Using British National Corpus in NLTK
 0
 Finding NLTK module in python
 Hot Network Questions
-How does black proceed in the below position?
-are the power connections for BECs of ESCs made in parallel or series with each other?
-What are the benefits of hand built wheels over automated ones?
-What are the DM's responsibilities when dealing with a character's death?
-Why can an easily graphable definite integral, be labyrinthine to evaluate?
-How was it calculated that Dream cheated on his Minecraft v1.16 glitchless speedrun?
-What would a bear species isolated on an island look like?
-How to remove the new weather info from the taskbar?
-Why does Lex turn on the flashlight?
-Why was the neutrino thought to be massless?
+Grep and Cut command in linux
 Getting “Bye Bye Big Sur” error on installing Big Sur
-Why are SSH MITM tools able to read and modify data?
-Being forced to take annual leave against my wishes, what are my options
-Refueling a Mars mission on the way
-Do the murder statistics of 5 cities bring the USA to the 3rd highest country, from 189th?
-Sharing a research proposal when applying for funds
-Heating of hydraulic oil with hardtail electric MTB brakes
-What does 高高矮矮 mean?
-What is the right tool for old, rusty, flat cross head bolts?
-What's the definition of an artifact in regards to a Sphere of Annihilation?
+Why are high power LEDs categorized by wattage, not voltage & amperage?
+Does machine learning really need data-efficient algorithms?
+How to solve these algebraic identities?
+What is this token?
+What would a bear species isolated on an island look like?
+Is it suspicious that gravitational waves propagate at the speed of light?
+Is maximum speed a thing?
+Where is Lorentz contraction centered on?
 How to get real-looking rust that will be safe to the touch?
-Can always @ (*) introduce randomness in FPGA?
-A '50s Yeti movie which has a scene with two men sitting around a fire in a cave
-Is buying lecture notes wrong?
+What does 高高矮矮 mean?
+How do trademarks apply to Open Source?
+Why was the neutrino thought to be massless?
+are the power connections for BECs of ESCs made in parallel or series with each other?
+Why did this gallon of milk stay fresh for so long?
+Why put a resistor in series with the postive terminal in a non inverting op-amp circuit?
+What are the numbers below the notes in Sarasate's "Gypsy Airs"
+Find the mean of two values, take two
+What does existential unforgeability mean in a digital signature scheme?
+Revisiting the unreasonable effectiveness of mathematics
+Interview by fellow PhD students, not the professor himself
+Is there a threadlocker that requires heat to release and can withstand thousands of heat-cool cycles without needing to be reapplied or deteriorating
+Can an American state ban a (minor) political party?
 more hot questions
 Question feed
 Subscribe to RSS

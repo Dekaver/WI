@@ -68,6 +68,7 @@ I get an error message when I try FreqDist() in NLTK -- NameError: name 'nltk' i
 however, I still get the error below.
 nltk
 Share
+Improve this question
 Follow
 asked Jul 15 '14 at 14:26
 MindBrainMindBrain
@@ -93,6 +94,7 @@ Or use namespaces,
 >>> ConditionalFreqDist()
 <ConditionalFreqDist with 0 conditions>
 Share
+Improve this answer
 Follow
 answered Jul 15 '14 at 14:32
 alvasalvas
@@ -109,6 +111,7 @@ import nltk
 if nltk is installed properly then you will be returned with console.
 then you can use your code without any error.
 Share
+Improve this answer
 Follow
 answered Oct 22 '14 at 11:35
 Manjunath NManjunath N
@@ -165,30 +168,30 @@ NameError: name 'word' is not defined ,python
 10
 Architecture Not Supported Error when installing nltk with pip on Mac
 Hot Network Questions
-Can I gain AC efficiency by spraying condensate water on the outdoor coils?
-How do trademarks apply to Open Source?
-Confused about the numbers on the grippers
-Is there a threadlocker that requires heat to release and can withstand thousands of heat-cool cycles without needing to be reapplied or deteriorating
-Are there any greater risks of traveling significantly faster to another planet?
-Why am I seeing the sun slightly north instead of slightly south early in the morning in Malta?
-Is cohomology always related to topology?
-In the sentence "Ich begegnete einem alten Freund in Berlin", why the dative einem instead of the accusative einen?
-Why some CRS are deprecated in QGIS?
-What are minimal changes to make a truncated pyramid shaped megabuildings a thing?
-Showing the bounding box for every coordinate system in QGIS
-How do you say " Coup de grâce " in latin?
-What is this token?
-Why aren't resistors being used here?
-Simplify K combinatory logic expression
-Can always @ (*) introduce randomness in FPGA?
-Has physics ever given a physical significance to a mathematically abstract idea?
-What is the hardest part of transitioning from a PhD to a full-time career in academia?
-Why can an easily graphable definite integral, be labyrinthine to evaluate?
-Why are SSH MITM tools able to read and modify data?
-Heating of hydraulic oil with hardtail electric MTB brakes
+Is it a coincidence that on the far side of the moon almost no seas are visible?
 Is it a good idea to go to Japan without a travel guide?
-Is it suspicious that gravitational waves propagate at the speed of light?
-What does existential unforgeability mean in a digital signature scheme?
+Refueling a Mars mission on the way
+In the sentence "Ich begegnete einem alten Freund in Berlin", why the dative einem instead of the accusative einen?
+Why am I seeing the sun slightly north instead of slightly south early in the morning in Malta?
+How does black proceed in the below position?
+A '50s Yeti movie which has a scene with two men sitting around a fire in a cave
+Rewrite strings without changing their order
+Is buying lecture notes wrong?
+How to indicate a checkbox/toggle is "always on"
+Why are SSH MITM tools able to read and modify data?
+Interview by fellow PhD students, not the professor himself
+What are the benefits of hand built wheels over automated ones?
+Why is there so much reluctance to make the COVID vaccine mandatory for adults?
+Why is Ken's beer "gay"?
+Is there a threadlocker that requires heat to release and can withstand thousands of heat-cool cycles without needing to be reapplied or deteriorating
+Is cohomology always related to topology?
+How to remove the new weather info from the taskbar?
+What would a bear species isolated on an island look like?
+Why would a modern city with a warm climate have a skyway system?
+Grep and Cut command in linux
+Where is Lorentz contraction centered on?
+Sum of set bits from 1 to n
+How to solve these algebraic identities?
 more hot questions
 Question feed
 Subscribe to RSS
