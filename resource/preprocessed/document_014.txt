@@ -36,7 +36,7 @@ by
 Anirudh
 • 2,080 points
 •
-274,515 views
+278,222 views
 answer
 comment
 flag
@@ -241,7 +241,7 @@ answered
 Jul 1, 2020
 by
 Roshni
-• 10,440 points
+• 10,460 points
 comment
 flag
 ask related question
@@ -368,7 +368,7 @@ by
 Niroj
 • 82,760 points
 •
-363 views
+381 views
 python-programming
 python
 0 votes
@@ -382,7 +382,7 @@ by
 Gitika
 • 65,910 points
 •
-1,155 views
+1,170 views
 python
 python-programming
 machine-learning
@@ -400,7 +400,7 @@ by
 MD
 • 95,180 points
 •
-2,262 views
+2,295 views
 0 votes
 1 answer
 How can I solve this Error while trying to run github code at Anaconda3 prompt?
@@ -415,7 +415,7 @@ by
 Gitika
 • 65,910 points
 •
-814 views
+854 views
 0 votes
 2 answers
 how can i randomly select items from a list?
@@ -426,7 +426,7 @@ in Python
 by
 Patrick
 •
-2,646 views
+2,680 views
 python-programming
 python
 python-list
@@ -451,7 +451,7 @@ edited
 Jul 8, 2019
 by Kalgi
 •
-2,112 views
+2,142 views
 python-programming
 python
 python-list
@@ -469,7 +469,7 @@ by
 Waseem
 • 4,540 points
 •
-1,500 views
+1,519 views
 python-list
 python-datatypes
 python
@@ -477,7 +477,7 @@ python-functions
 python-sequence-types
 python-types
 python-programming
-+4 votes
++5 votes
 6 answers
 Lowercase in Python
 You can simply the built-in function in ...READ MORE
@@ -488,7 +488,7 @@ by
 hemant
 • 5,810 points
 •
-1,600 views
+1,616 views
 python-programming
 python
 python-file
@@ -509,7 +509,7 @@ by
 Gitika
 • 65,910 points
 •
-204 views
+205 views
 python
 python-programming
 0 votes
@@ -523,7 +523,7 @@ by
 Gitika
 • 65,910 points
 •
-43,200 views
+43,750 views
 python-programming
 python
 Recent in Pythonerror install mysqlclient on windows Feb 6 Dickey-Fuller test in Python Feb 5 How to declare an array in Python? Jan 5 How to change the “tick frequency” on x or y axis in matplotlib? Jan 5 How to prompt for user input and read command-line arguments? Jan 5
@@ -571,7 +571,7 @@ RPA
 Selenium
 (1,550)
 Software Testing
-(55)
+(56)
 Tableau
 (474)
 Talend

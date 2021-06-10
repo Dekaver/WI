@@ -1,4 +1,4 @@
-Memahami Exception Handling Pada Pemrograman Java – Bahasa Java
+Memahami Exception Handling Pada Pemrograman Java - Bahasa Java
 Skip to content
 Bahasa Java
 Belajar Program Java Dasar Bagi Pemula dan Ulasan Gadget
@@ -23,7 +23,7 @@ Ikhtisar Exception Handling
 Exceptions dilemparkan (thrown) dari suatu method. Pemanggil (caller) dari method tersebut dapat menangkap (catch) dan menangani exception itu.
 Untuk memahami exception handing lihat contoh kode program di bawah ini:
 Pada kode di atas ketika user memasukkan angka 0 pada angka ke dua, maka runtime error akan terjadi karena integer tidak bisa di bagi oleh angka 0. Misalkan contoh output seperti di bawah ini:
-Baca Juga:  5 Perbedaan Error dan Exception Pada Program Java Yang Harus Anda KetahuiMasukkan dua buah integer:
+Baca Juga:  Membuat Class Custom Exception Pada Program JavaMasukkan dua buah integer:
 1
 Exception in thread “main” java.lang.ArithmeticException: / by zero
 at Pembagian.main(Pembagian.java:15)
@@ -48,7 +48,7 @@ java.lang.Exception
 java.lang.RuntimeException
 java.lang.ArithmeticException
 Konstruktor ArithmeticException(String s) dipanggil untuk mengkonstruksi objek exception. Di mana String s adalah pesan yang menjelaskan mengenai exception.
-Baca Juga:  Memahami throw Exception Pada Program JavaKetika sebuah exception dilemparkan, maka alur eksekusi secara normal akan terganggu. Seperti istilah “throw an exception” yang artinya adalah untuk mem-pass-kan exception dari satu tempat ke tempat lainnya.
+Baca Juga:  Memahami Contoh Penggunaan Blok Finally Pada Exception Handling Program JavaKetika sebuah exception dilemparkan, maka alur eksekusi secara normal akan terganggu. Seperti istilah “throw an exception” yang artinya adalah untuk mem-pass-kan exception dari satu tempat ke tempat lainnya.
 Blok try dan catch
 Pernyataan untuk memanggil method terkandung dalam blok try dan catch. Blok try pada line 23 – 28  berisi kode yang dijalankan pada keadaan normal.
 Sementara itu exception akan ditangkap oleh blok catch pada line 30 – 33. Jadi kode yang terdapat pada blok catch bertujuan untuk menangani exception.
@@ -62,7 +62,7 @@ Identifier exception berperan sama seperti parameter dalam sebuah method. Denga
 ArithmeticException di atas, yang ditulis lebih dulu sebelum exception adalah untuk menentukan jenis exception apa yang bisa ditangkap oleh blok catch. Sekali exception ditangkap maka anda bisa mengakses nilai yang dilemparkan dari parameter ini di dalam body dari blok catch.
 Secara ringkas, sebuah template dari blok try-throw-catch akan tampak seperti ini:
 Sebuah exception mungkin dapat dilontarkan secara langsung dengan menggunakan pernyataan throw di dalam blok try. Atau bisa juga dengan menggunakan method yang dapat melemparkan exception.
-Baca Juga:  Contoh Penggunaan Method Untuk Mendapatkan Informasi Pada Exception HandlingPada line 24, method main memanggil hitungPembagian(). Jika method hitungPembagian() berjalan dengan normal maka maka mengembalikan sebuuah nilai pada caller.
+Baca Juga:  Memahami Exceptions Berantai Pada Program JavaPada line 24, method main memanggil hitungPembagian(). Jika method hitungPembagian() berjalan dengan normal maka maka mengembalikan sebuuah nilai pada caller.
 Sebaliknya jika method hitungPembagian() menemukan exception maka ia akan melemparkan kembali exception tersebut pada caller. Selanjutnya blok catch dari caller akan menangani exception tersebut.
 Keuntungan Menggunakan Exception Handling
 Sekarang anda bisa melihat keuntungan menggunakan exception handling. Keuntungannya dalah memungkinkan sebuah method untuk melemparkan exception pada pemanggilnya atau caller dan memungkinkan caller untuk menangani exception tersebut.
@@ -148,4 +148,4 @@ Daftar Isi
 Disclaimer
 Privacy Policy
 Terms Of Service
-Copyright: 2021 | Belajar Bahasa Java
+© 2021 Bahasa Java • Built with GeneratePress

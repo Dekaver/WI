@@ -410,8 +410,8 @@ Program menerjemahkan kode angka sms menjadi sebuah pesan.
 Tutorial Python - Membuat daftar belanja
 Top Kontributor
 @ahanafi
-674 Kontribusi
-422 Poin
+679 Kontribusi
+427 Poin
 @dianarifr
 642 Kontribusi
 316 Poin

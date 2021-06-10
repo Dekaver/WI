@@ -61,7 +61,7 @@ Asked
 Active
 1 year, 5 months ago
 Viewed
-58k times
+59k times
 18
 2
 I am using below line in a loop in my code
@@ -75,10 +75,10 @@ Share
 Follow
 edited Aug 24 '19 at 20:47
 Zoe
-23.7k1616 gold badges9999 silver badges132132 bronze badges
+23.7k1616 gold badges9999 silver badges133133 bronze badges
 asked Jul 4 '15 at 2:57
 Karvy1Karvy1
-71244 gold badges99 silver badges2424 bronze badges
+72244 gold badges99 silver badges2424 bronze badges
 1
 What do you mean by "get the next entry in the loop"?
 – dlask
@@ -123,7 +123,7 @@ Share
 Follow
 answered Jul 4 '15 at 19:47
 Padraic CunninghamPadraic Cunningham
-161k2020 gold badges201201 silver badges286286 bronze badges
+161k2020 gold badges201201 silver badges287287 bronze badges
 1
 Upvoting as this keep the thread-safe property of pop, and is EAFP
 – ofaurax
@@ -159,7 +159,7 @@ Follow
 edited Dec 17 '19 at 0:07
 answered Jul 4 '15 at 3:01
 Utsav TUtsav T
-1,41522 gold badges2121 silver badges3939 bronze badges
+1,42522 gold badges2121 silver badges3939 bronze badges
 2
 3
 if exporterslist: will do the same job
@@ -170,7 +170,7 @@ Jul 4 '15 at 19:45
 Dec 17 '19 at 0:08
 Add a comment
 |
--1
+-2
 You can also .pop() only if the list has items in it by determining if the length of the list is 1 or more:
 if len(exporterslist) > 1:
 importer = exporterslist.pop()
@@ -209,12 +209,11 @@ By clicking “Post Your Answer”, you agree to our terms of service, privacy p
 Not the answer you're looking for? Browse other questions tagged python python-2.7
 or ask your own question.
 The Overflow Blog
-Level Up: Linear Regression in Python – Part 2
-Shipping confetti to Stack Overflow’s design system
+Using low-code tools to iterate products faster
+Podcast 345: A good software tutorial explains the How. A great one explains…
 Featured on Meta
-The future of Community Promotion, Open Source, and Hot Network Questions Ads
-Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
 Take the 2021 Developer Survey
+Visit chat
 Linked
 4
 Pop index out of range
@@ -238,19 +237,19 @@ Pop from empty list error ONLY on lists with even number of elements
 Index error: pop from empty list
 See more linked questions
 Related
-5656
+5679
 How do I merge two dictionaries in a single expression (taking union of dictionaries)?
 3231
 How do I check if a list is empty?
-5316
+5329
 How to execute a program or call a system command from Python
-6178
+6195
 What are metaclasses in Python?
-3629
+3642
 Finding the index of an item in a list
-6671
+6696
 Does Python have a ternary conditional operator?
-4076
+4099
 How to make a flat list out of a list of lists?
 1465
 Proper way to declare custom exceptions in modern Python?
@@ -259,30 +258,30 @@ How do I list all files of a directory?
 3596
 Does Python have a string 'contains' substring method?
 Hot Network Questions
-Vocal range of a crowd
-Colour ramp for maps
-Lunar Terrain Model in Apollo Guidance Computer
-What can I do about a parent who is discouraging their child from learning violin, a child who really wants to learn, so that the child will drop out
-Does the inside of a lid used to cook rice or steam vegetables have anything besides water on it?
-What's the cohomology ring structure of a blow-up?
-Why is bad behavior more tolerated in academia compared to the rest of the industry?
-A bracket amphitheater
-select distinct columns over multiple databases sql server
-What technical reasons prevented the Win9x Virtual Machine Monitor from running multiple threads simultaneously?
-What does research indicate about how one should treat units in elementary school?
-Engine failure: how to detect?
-Why do Macs mount an additional drive every time I install software?
-Why is the ortho product major in the nitration of anisole with nitric acid and acetic anhydride?
-Does mass have an effect on Centripetal Acceleration?
-Where was this scene of 'Highlander: The series' with standing columns shot?
-If cost can be ignored, is a higher-value capacitor for ripple suppression always a good choice?
-How would transportation evolve in a world where everyone can teleport?
-How could publicly accessible information proving that a public figure is corrupt go undetected for at least a year?
-Movie where someone's wife is secretly a monster
-3 verbs in one sentence - how is that?
-How to rotate a circle around y-aixs and calculate the volume of the 3D solid?
-Is it better to resize an image by minus 10% or by minus 50%?
-Selecting elements of sublists or reshaping a list of lists
+Does gravity bend gravity?
+How to indicate a checkbox/toggle is "always on"
+Why some CRS are deprecated in QGIS?
+Heating of hydraulic oil with hardtail electric MTB brakes
+Is 2 hours 50 mins sufficient in Heathrow to connecting flight with different tickets and airlines
+Mandatory tabs-an unusual pattern?
+How to remove the new weather info from the taskbar?
+History of /f/ sound in Russian
+Simplify K combinatory logic expression
+Why are most women in anime housewives instead of being independent?
+Should I notify a med school about their student's cheating history?
+Can black convert a +5.6 game into a draw (assuming both players play optimally)?
+In Bayesian statistics, data is considered nonrandom but can have a probability or be conditioned on. How?
+Evaluation order of an APL n-train
+Is there any country that jumped to developed status during the past 75 years after WW2?
+Are there any rules for digging out of a grave?
+how to add existing user to existing group id (not group name)?
+Refueling a Mars mission on the way
+Why is Ken's beer "gay"?
+Is there a diff() function in Julia DataFrames like pandas?
+Dealing with extremely inexperienced developers who have daily deadlines?
+Emit random objects inside array-ed object
+"Which dreams, indeed, are ambition" in Hamlet Act 2, Scene 2
+Getting “Bye Bye Big Sur” error on installing Big Sur
 more hot questions
 Question feed
 Subscribe to RSS
@@ -431,7 +430,7 @@ Twitter
 LinkedIn
 Instagram
 site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.5.28.39383
+rev 2021.6.9.39464
 Stack Overflow works best with JavaScript enabled
 Your privacy
 By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.

@@ -125,7 +125,6 @@ Doctoral
 Certifications
 Trade Schools
 About
-Get matched to Top BootcampsGet matched
 HomePython TutorialsPython ValueError: invalid literal for int() with base 10 Solution
 Python Tutorials
 Python ValueError: invalid literal for int() with base 10 Solution
@@ -148,7 +147,7 @@ The int() method does not allow you to pass a float represented as a string. If 
 This means you cannot convert a floating-point number in a string to an integer. In addition, you cannot convert letters to an integer (unless you are using letters with a special meaning, like “inf”).
 An Example Scenario
 Here, we build a program that calculates whether a coffee house has enough coffee in stock to serve their customers for a day. Our input field must accept decimal numbers because bags can be half full, a quarter full, and so on.
-» MORE:  Python IndentationError: expected an indented block SolutionWe convert the value a user inserts to an integer because we do not need to be precise down to the level of half-bags and quarter-bags.
+» MORE:  Python Optional Arguments: A How-To GuideWe convert the value a user inserts to an integer because we do not need to be precise down to the level of half-bags and quarter-bags.
 Let’s start by asking the user to insert how many coffee bags are left using an input() statement:
 coffee_bags = input("Enter how many coffee bags are left: ")
 Next, we convert this value to an integer. We then use an “if” statement to check whether the coffee house has enough coffee. If the coffee house has over 10 bags, they have enough for the day. Otherwise, they do not.
@@ -174,7 +173,7 @@ Our code first converts the value of “coffee_bags” to a float. Next, it conv
 Enter how many coffee bags are left: 7.4
 You do not have enough coffee bags.
 Our code works successfully. Now that we have converted “coffee_bags” to a float, our program can convert the value a user inserts into an integer.
-» MORE:  NumPy Array: A Guide for BeginnersConclusion
+» MORE:  Rename Column in Pandas: A Beginner’s GuideConclusion
 The Python ValueError: invalid literal for int() with base 10 error is raised when you try to convert a string value that is not formatted as an integer.
 To solve this problem, you can use the float() method to convert a floating-point number in a string to an integer. Then, you can use int() to convert your number to an integer.
 If this does not work, make sure that the value of a string does not contain any letters. Strings with letters cannot be converted to an integer unless those letters have a special meaning in Python.
@@ -198,20 +197,41 @@ Comments (0)
 Leave a Reply Cancel replyYour email address will not be published. Required fields are marked *Your CommentName *
 Email *
 Website
-Improve Your Python Skills.
-Get the Ultimate Cheat Sheet.
-Our Python Cheat Sheet features dozens of code snippets and descriptions to help you with common Python tasks.
-Your email is required
-You will receive your cheat sheet soon!
+Get offers from top bootcampsTake the stress out of picking a bootcamp
+See matches nowTop Community PostsHow long does it take to become a full stack web developer?Marcus Hayes in Full-stack DevelopmentWhat are the laptop requirements for programming?Danny Fuentes in Beginners$2 million in COVID19 ScholarshipsTimur Meyster in Applying to BootcampsPopular ArticlesBest Online BootcampsBest Tech Jobs 2021What is Coding Used For?How Much Do Coders Make?Best Free BootcampsSee all articlesCareer GuidesWeb DevelopmentSoftware EngineeringData ScienceWeb DesignCyber SecuritySee all guidesFree prep coursesFlatiron School Prep80+ hours
+Easy80+ hours of HTML, CSS & JavaScriptKenzie School Prep80+ hours
+Easy20+ hours of HTML & CSSGeneral Assembly Prep50+ hours
+EasyLearn web development basics in HTML, CSS, JavaScript by building projectssee all prep courses
+Get matches
+from top bootcamps
+Select your interest:
+Interest
+Software Engineering
+Design
+Data Science
+Data Analytics
+Cybersecurity Analytics
+Technology Sales
+Select your preferred pace:
+Begin typing a name to filter
+Full-time
+Part-time
+Self-paced
+Begin typing a name to filter
+Full-time
+Part-time
+Self-paced
+See Matches
+Find the Best Online Course for YouGet Matched
 Related Articles
-Python Tutorials
-Python Index: A Step-By-Step Guide
-Python Tutorials
-Python ValueError: math domain error Solution
 Python Tutorials
 Python FileNotFoundError: [Errno 2] No such file or directory Solution
 Python Tutorials
-How to Use Python extend()
+Python JSONDecodeError Explanation and Solution
+Python Tutorials
+Python Check If List Is Empty
+Python Tutorials
+Python ‘numpy.ndarray’ object is not callable Solution
 Home
 About
 Careers
@@ -280,13 +300,27 @@ Android
 React
 Angular
 See all
+Tell us about you and we will match you with top rated bootcamps with flexible payment options, income sharing (ISAs), or money-back guarantees.
+Select your interest:
+Software Engineering
+Design
+Data Science
+Data Analytics
+Cybersecurity Analytics
+Technology Sales
+First Name
+Last Name
+Email
+Phone Number
+GET MATCHED
+Find the right bootcamp for you
+By continuing you indicate that you have read and agree to
+Career Karma Terms of Service and Privacy Policy
 X
-Boost Your Python Skills
-Get our free Ultimate Python Cheat Sheet with dozens of important commands you'll use in your everyday coding
-Email:
-Your email is required
-Send me the cheat sheet
-You will receive your cheat sheet soon!
+X
+Jump start your tech career
+Learn the most in-demand skills
+Get started now
 Lost Password Back ⟶
 Login
 Register

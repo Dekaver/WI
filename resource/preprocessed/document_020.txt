@@ -64,14 +64,14 @@ elastic
 apm-agent-python
 Notifications
 Star
-317
+319
 Fork
-145
+146
 Code
 Issues
-58
+62
 Pull requests
-13
+15
 Discussions
 Actions
 Wiki

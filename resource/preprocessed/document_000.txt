@@ -125,7 +125,6 @@ Doctoral
 Certifications
 Trade Schools
 About
-Get matched to Top BootcampsGet matched
 HomePython TutorialsPython indexerror: list index out of range Solution
 Python Tutorials
 Python indexerror: list index out of range Solution
@@ -149,7 +148,7 @@ If we try to access an item at the index position 3, an error will be returned. 
 Example Scenarios (and Solutions)
 There are two common scenarios in which the “list index out of range” error is raised:
 When you try to iterate through a list and forget that lists are indexed from zero.When you forget to use range() to iterate over a list.
-» MORE:  Python SyntaxError: unexpected character after line continuation character SolutionLet’s walk through both of these scenarios.
+» MORE:  Python AttributeError: ‘numpy.ndarray’ object has no attribute ‘append’ SolutionLet’s walk through both of these scenarios.
 Lists Are Indexed From Zero
 The following program prints out all the values in a list called “programming_languages” to the Python shell:
 programming_languages = ["Java", "Python", "C++"]
@@ -180,7 +179,7 @@ Java
 Python
 C++
 We’ve successfully solved the error! Our loop is no longer trying to print out programming_languages[3]. It stops when the value of “count” is equal to 3 because 3 is not less than the length of “programming_languages”.
-» MORE:  Python Inheritance: A Step-By-Step GuideForget to Use range()
+» MORE:  Python Write to File: A GuideForget to Use range()
 When you’re iterating over a list of numbers, it’s easy to forget to include a range() statement. If you are accessing items in this list, an error may be raised.
 Consider the following code:
 ages = [9, 10, 9]
@@ -213,7 +212,7 @@ Let’s run our code again:
 10
 9
 All of the values from the “ages” array are printed to the console. The range() statement creates a list of numbers in a particular range. In this case, the range [0, 1, 2] is created. These numbers can then be used to access values in “ages” by their index number.
-» MORE:  Python Pass: A How to GuideAlternatively, we could use a “for…in” loop without using indexing:
+» MORE:  Python args and kwargs: A GuideAlternatively, we could use a “for…in” loop without using indexing:
 ages = [9, 10, 9]
 for age in ages:
 print(age)
@@ -245,18 +244,39 @@ Comments (0)
 Leave a Reply Cancel replyYour email address will not be published. Required fields are marked *Your CommentName *
 Email *
 Website
-Improve Your Python Skills.
-Get the Ultimate Cheat Sheet.
-Our Python Cheat Sheet features dozens of code snippets and descriptions to help you with common Python tasks.
-Your email is required
-You will receive your cheat sheet soon!
+Get offers from top bootcampsTake the stress out of picking a bootcamp
+See matches nowTop Community PostsHow long does it take to become a full stack web developer?Marcus Hayes in Full-stack DevelopmentWhat are the laptop requirements for programming?Danny Fuentes in Beginners$2 million in COVID19 ScholarshipsTimur Meyster in Applying to BootcampsPopular ArticlesBest Online BootcampsBest Tech Jobs 2021What is Coding Used For?How Much Do Coders Make?Best Free BootcampsSee all articlesCareer GuidesWeb DevelopmentSoftware EngineeringData ScienceWeb DesignCyber SecuritySee all guidesFree prep coursesFlatiron School Prep80+ hours
+Easy80+ hours of HTML, CSS & JavaScriptKenzie School Prep80+ hours
+Easy20+ hours of HTML & CSSGeneral Assembly Prep50+ hours
+EasyLearn web development basics in HTML, CSS, JavaScript by building projectssee all prep courses
+Get matches
+from top bootcamps
+Select your interest:
+Interest
+Software Engineering
+Design
+Data Science
+Data Analytics
+Cybersecurity Analytics
+Technology Sales
+Select your preferred pace:
+Begin typing a name to filter
+Full-time
+Part-time
+Self-paced
+Begin typing a name to filter
+Full-time
+Part-time
+Self-paced
+See Matches
+Find the Best Online Course for YouGet Matched
 Related Articles
 Python Tutorials
 Python JSONDecodeError Explanation and Solution
 Python Tutorials
-Python ValueError: math domain error Solution
+Python Index: A Step-By-Step Guide
 Python Tutorials
-Python Average: A Step-by-Step Guide
+How to Use Python extend()
 Python Tutorials
 Python ValueError: list.remove(x): x not in list Solution
 Home
@@ -327,13 +347,27 @@ Android
 React
 Angular
 See all
+Tell us about you and we will match you with top rated bootcamps with flexible payment options, income sharing (ISAs), or money-back guarantees.
+Select your interest:
+Software Engineering
+Design
+Data Science
+Data Analytics
+Cybersecurity Analytics
+Technology Sales
+First Name
+Last Name
+Email
+Phone Number
+GET MATCHED
+Find the right bootcamp for you
+By continuing you indicate that you have read and agree to
+Career Karma Terms of Service and Privacy Policy
 X
-Boost Your Python Skills
-Get our free Ultimate Python Cheat Sheet with dozens of important commands you'll use in your everyday coding
-Email:
-Your email is required
-Send me the cheat sheet
-You will receive your cheat sheet soon!
+X
+Jump start your tech career
+Learn the most in-demand skills
+Get started now
 Lost Password Back ⟶
 Login
 Register

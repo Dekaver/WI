@@ -24,6 +24,19 @@ Procurei sobre e a solução abaixo funcionou:
 pip install nltk
 2.Then you need to import it...
 import nltk
+1
+resposta
+Millena Gená Pereira
+(264.1k xp, 431 posts)
+Alura Scuba Team
+2 dias atrás
+Olá Natália! Como você está?
+Peço desculpas pela demora em dar um retorno.
+Na aula 2 - parte 2 o professor ensina a fazer a importação da biblioteca nltk por meio do nltk.download('punkt').
+Mas da forma como você fez também funciona certinho :)
+De todo modo, para que não ocorra erros ao utilizar essa biblioteca, ao fechar e abrir novamente seu notebook, sempre lembre-se de executar todas as suas células novamente, inclusive a de instalação da biblioteca. Para fazer isso de maneira mais prática, você pode acessar Ambiente de execução > Reiniciar e executar tudo:
+Qualquer dúvida é só nos avisar.
+Bons estudos!
 Quer mergulhar em tecnologia e aprendizagem?
 Receba a newsletter que o nosso CEO escreve pessoalmente, com insights do mercado de trabalho, ciência e desenvolvimento de software
 Me inscreva

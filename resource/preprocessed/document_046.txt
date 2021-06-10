@@ -48,7 +48,7 @@ by
 Shubham
 • 13,480 points
 •
-3,770 views
+3,804 views
 answer
 comment
 flag
@@ -142,7 +142,7 @@ commented
 Sep 30, 2019
 by
 Omkar
-• 69,130 points
+• 69,150 points
 flag
 reply
 Your comment on this answer:
@@ -164,7 +164,7 @@ by
 Abhi
 • 3,720 points
 •
-192 views
+196 views
 data-science
 python
 r
@@ -180,7 +180,7 @@ by
 Maverick
 • 10,840 points
 •
-2,118 views
+2,136 views
 r-programming
 data-science
 data-mining
@@ -196,7 +196,7 @@ by
 kappa3010
 • 2,090 points
 •
-325 views
+329 views
 data-science
 data-science-using-r
 r
@@ -215,7 +215,7 @@ by
 Sahiti
 • 6,380 points
 •
-404 views
+409 views
 data-science
 r
 data-science-using-r
@@ -232,7 +232,7 @@ by
 kappa3010
 • 2,090 points
 •
-346 views
+361 views
 r
 data-science
 tidyverse
@@ -248,7 +248,7 @@ by
 kappa3010
 • 2,090 points
 •
-232 views
+237 views
 r
 joins
 merge
@@ -267,7 +267,7 @@ by
 Mohammad
 • 3,230 points
 •
-1,206 views
+1,222 views
 python-string
 python-datatypes
 python
@@ -287,7 +287,7 @@ in Python
 by
 Patrick
 •
-2,646 views
+2,680 views
 python-programming
 python
 python-list
@@ -312,7 +312,7 @@ edited
 Jul 8, 2019
 by Kalgi
 •
-2,112 views
+2,142 views
 python-programming
 python
 python-list
@@ -330,7 +330,7 @@ by
 Waseem
 • 4,540 points
 •
-1,500 views
+1,519 views
 python-list
 python-datatypes
 python
@@ -383,7 +383,7 @@ RPA
 Selenium
 (1,550)
 Software Testing
-(55)
+(56)
 Tableau
 (474)
 Talend

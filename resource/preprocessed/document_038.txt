@@ -59,7 +59,7 @@ Ask Question
 Asked
 1 year, 6 months ago
 Active
-1 month ago
+2 months ago
 Viewed
 5k times
 0
@@ -81,6 +81,7 @@ NameError: name 'np' is not defined
 What could be the reason for this error? I've imported numpy as np in both notebooks.
 jupyter-notebook python-import nameerror
 Share
+Improve this question
 Follow
 asked Dec 2 '19 at 18:16
 Code NowCode Now
@@ -95,6 +96,7 @@ Votes
 0
 In "save_load" instead of import numpy as np try import numpy, it worked for me.
 Share
+Improve this answer
 Follow
 answered Mar 23 '20 at 19:25
 RogerRoger
@@ -107,6 +109,7 @@ import numpy as np
 or
 from numpy import *
 Share
+Improve this answer
 Follow
 answered Apr 9 at 7:05
 illeasilleas
@@ -136,21 +139,18 @@ By clicking “Post Your Answer”, you agree to our terms of service, privacy p
 Not the answer you're looking for? Browse other questions tagged jupyter-notebook python-import nameerror
 or ask your own question.
 The Overflow Blog
-Level Up: Linear Regression in Python – Part 2
-Shipping confetti to Stack Overflow’s design system
+Using low-code tools to iterate products faster
+Podcast 345: A good software tutorial explains the How. A great one explains…
 Featured on Meta
-The future of Community Promotion, Open Source, and Hot Network Questions Ads
-Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
 Take the 2021 Developer Survey
-Visit chat
 Related
-583
+584
 How to import a module given its name as string?
-772
+773
 How to fix “Attempted relative import in non-package” even with __init__.py
 589
 Using IPython notebooks under version control
-461
+462
 Conda environments not showing up in Jupyter Notebook
 1
 In Jupyter Notebook NameError when I try to import a module
@@ -161,30 +161,30 @@ error NameError: name 'head' is not defined on jupyter notebook
 -1
 Import soundfile as sf but on jupyter notebook sf gives NameError
 Hot Network Questions
-I think I've sh-- myself
-If cost can be ignored, is a higher-value capacitor for ripple suppression always a good choice?
-What's a lot of money {out of curiosity}?
-Did ancient Greek mathematicians consider numbers independently of geometry?
-Is the the word order of "Iura novit curia" used for emphasis?
-Starting play at higher levels and ability point buy
-Why do Macs mount an additional drive every time I install software?
-Why is bad behavior more tolerated in academia compared to the rest of the industry?
-How can objects be neither vector nor scalar?
-Is it better to resize an image by minus 10% or by minus 50%?
-The famous "Charaiveti" mantra is mentioned in which Vedic verse?
-Where can people allergic to dairy food eat when travelling in France?
-Doorbell switch internals
-Selecting elements of sublists or reshaping a list of lists
-Why does decriminalisation/legalisation not reduce the cost of drugs?
-Is the burden of proof a fallacy?
-Colour ramp for maps
-Generate a British numberplate
-How can I make a keyboard shortcut to strikethrough text in the Notes app?
-Factorising blinear forms with Mathematica
-How can I specify the qubits on quantum computers that I want to use?
-Does 'graduate program' mean MSc or Ph.D.?
-Did medieval kingdoms issue health related guidelines?
-Is it significantly faster to hike along a river bank?
+Term for "place of death"
+Why can the block production rate be as low as two per hour?
+What would a bear species isolated on an island look like?
+How to make Mathematica read in CSV as fast as Python's Pandas
+Why some CRS are deprecated in QGIS?
+Is cohomology always related to topology?
+Why am I seeing the sun slightly north instead of slightly south early in the morning in Malta?
+Why did this gallon of milk stay fresh for so long?
+What does 高高矮矮 mean?
+Are there any greater risks of traveling significantly faster to another planet?
+Can a petrified wizard communicate telepathically with their familiar?
+What can US senators do against diversity trainings in the US Army?
+Emit random objects inside array-ed object
+History of /f/ sound in Russian
+How come full throttle is meaning full speed instead of the opposite?
+Can't open snap-store
+How important is learning hardware/architecture for scientific computing?
+Is LUKS still an effective option for consumer FDE considering Elcomsoft can break it?
+Is it a coincidence that on the far side of the moon almost no seas are visible?
+What does "parity pattern" mean?
+Display polygon as a line in legend
+Why are most women in anime housewives instead of being independent?
+Dsus4 In A major
+How realistic is the 1 kg/km² solar sail in "Death's End"?
 more hot questions
 Question feed
 Subscribe to RSS
@@ -333,7 +333,7 @@ Twitter
 LinkedIn
 Instagram
 site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.5.28.39383
+rev 2021.6.9.39464
 Stack Overflow works best with JavaScript enabled
 Your privacy
 By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.

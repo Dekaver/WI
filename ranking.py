@@ -43,21 +43,3 @@ def ranking(query, df):
     end_time = time.time()
 
     return list_doc, end_time - start_time
-
-
-if __name__ == "__main__":
-    import scipy.sparse
-    import json
-    import pandas as pd
-    indexing_data = scipy.sparse.load_npz('resource/index/tfidf_mat.npz')
-    feature_name = json.load(open("resource/index/tfidf_feature_name.json"))
-    feature_name = feature_name['feature']
-
-    df = pd.DataFrame(indexing_data.toarray(), index=feature_name)
-    # print(df.head(10))
-    query = input("masukkan query ('Q' to exit) :").lower()
-    while(query != 'q'):
-        doc , waktu = ranking(query, df)
-        print(waktu)
-        print(doc)
-        query = input("\n\n\n\n\nmasukkan query ('Q' to exit) :").lower()

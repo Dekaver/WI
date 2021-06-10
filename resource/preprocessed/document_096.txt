@@ -2,52 +2,14 @@ FIX: Runtime error Java in just a few easy steps
 Share
 News
 Fix
-Windows 10
-Wi-Fi
-Headphones
-Keyboard
-Microphone
-Mouse
-Laptop & PC
 How To
-Guides
-Office
-Teams
-Slack
-Outlook
-OneDrive
-Dropbox
-Xbox
 Windows 10
-Tips
-Patch Tuesday
-Update issues
-System errors
-Optimization
-Themes
-Free software
 Gaming
-Xbox
-Steam
-Blizzard
-PlayStation
-Roblox
-Microsoft Store
-GOG
-Antivirus for games
 VPN & AV
-For streaming
-Encryption tools
-Virus removal
-Password Managers
-Cybersecurity tips
-Unblock websites
-Best antivirus
 Search
 If you have a PC problem, we probably cover it!
 Search
 If you have a PC problem, we probably cover it!
-WindowsReport.com is an independent online publication founded in the Fall of 2012 that covers Microsoft’s Windows platform along with its many related products and services, all in the aim of contextualizing the wider implications of their development in the world of technology.
 Time-saving software and hardware expertise that helps 200M users yearly. Guiding you with how-to advice, news and tips to upgrade your tech life.
 Contact us
 Follow us:
@@ -280,7 +242,7 @@ Passionate about technology, Windows, and everything that has a power button, he
 Updated: Mar 4, 2021
 Posted: May 2020
 Affiliate Disclosure
-833
+321
 Share
 X
 A Java Runtime error might appear if you have an older version of JRE software installed.
@@ -296,18 +258,29 @@ Restoro has been downloaded by 0 readers this month.
 The Java Development Kit (JDK), the Java Virtual Machine (JVM), and the Java Runtime Environment (JRE) form a trio of Java platform components for developing and running Java apps.
 A runtime environment is a piece of software that is designed to run other software. As the runtime environment for Java, the JRE contains the Java class libraries, the Java class loader, and the JVM.
 So if you don’t have JRE installed or you have an older version of the software you might encounter one of the following messages:
-Error: Could not find Java SE Runtime Environment – you don’t have the Java SE version installed on your systemThis application needs version 1.x or higher of the Java Runtime Environment – you should update your Java version to the latest you can find on the official websiteA Java Runtime Environment(JRE) or Java Development Kit (JDK) must be available to run this app – like the first error, check if you have installed JRE or JDK and if not, install them
+Error: Could not find Java SE Runtime Environment – you don’t have the Java SE version installed on your system
+This application needs version 1.x or higher of the Java Runtime Environment – you should update your Java version to the latest you can find on the official website
+A Java Runtime Environment(JRE) or Java Development Kit (JDK) must be available to run this app – like the first error, check if you have installed JRE or JDK and if not, install them
 In today’s guide, we will explore the most efficient and easy methods to try out in this situation. Read on for more details.
 How can I fix the Runtime error on Java?
 1. Run Windows troubleshooter
-Select Start , click on Settings.In the next menu, choose Update & Security, and then click Troubleshoot.Select the type of troubleshooting you want to run, then select Run the troubleshooter.Allow the troubleshooter to run and then answer any questions on the screen.
+Select Start , click on Settings.
+In the next menu, choose Update & Security, and then click Troubleshoot.
+Select the type of troubleshooting you want to run, then select Run the troubleshooter.
+Allow the troubleshooter to run and then answer any questions on the screen.
 If you see a message that no changes or updates were necessary, you can try the recovery options. This is a built-in troubleshooter tool from Windows 10.
 2. Download Java Runtime Environment (JRE)
-Download JRE from the official website.After visiting the list above, choose if you need a 32bit or a 64bit architecture of JRE.Click on the Agree and download button to start the actual download.
+Download JRE from the official website.
+After visiting the list above, choose if you need a 32bit or a 64bit architecture of JRE.
+Click on the Agree and download button to start the actual download.
 If you don’t know which version of Java is the correct version for your system, you can find out by searching in Cortana search the term System Information.
 You should open the first option that appears after the search, and then check the value under System Type (32-bit or 64-bit).
 3. Install Java Runtime Environment (JRE)
-Right-click on the downloaded JRE setup file.Select Run as administrator and accept the installation prompt.In the next window, you can change the destination folder or leave the default.Once selected just click on the Install button to complete the installation.You will receive the message that the installation was successful. Click on close the complete the install and close the window.
+Right-click on the downloaded JRE setup file.
+Select Run as administrator and accept the installation prompt.
+In the next window, you can change the destination folder or leave the default.
+Once selected just click on the Install button to complete the installation.
+You will receive the message that the installation was successful. Click on close the complete the install and close the window.
 We recommend you to check if there is a new Java update each time you encounter this issue. The software will not update automatically, so, you will have to manually perform this task.
 That is it. You should now have the latest version of Java Runtime Environment on your PC and you should no longer receive the error message.
 Please write us in a comment below if these solutions helped you or if there are any other suggestions that we should include in our aricle.
@@ -356,6 +329,10 @@ Leave a Reply Cancel replyYour email address will not be published. Required fie
 Email *
 submit
 More on this Topic
+June 5, 2021
+FIX: AppModel-Runtime Event ID 69 [Full Guide]
+AppModel-Runtime Event ID 69 error appears usually in Event Log, and in this guide, we’ll show you the best ways to fix it.
+Read More
 March 8, 2021
 FIX: Your browser does not support Java
 Are you getting Your browser does not support Java error? Fix it easily by follow the steps from this short guide.
@@ -367,10 +344,6 @@ Read More
 February 11, 2021
 FIX: Unable to access JarFile error on Windows 10
 If you're trying to access the contents of a JarFile, but receive the Unable to access JAR file error, simply follow the steps in this guide.
-Read More
-February 11, 2021
-Jar files not opening on Windows 10 [FIX]
-Sometimes your Windows PC will not open .JAR files in some crucial moments. Try these solutions in order to open .JAR files whenever you will need to.
 Read More
 Load More
 Copyright ©				Windows Report

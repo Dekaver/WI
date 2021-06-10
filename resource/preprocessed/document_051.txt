@@ -78,10 +78,11 @@ This error message is pretty consistent. I get this message every time I try the
 Thanks for your help!
 nltk
 Share
+Improve this question
 Follow
 edited Mar 31 '13 at 22:43
 alvas
-94.8k9090 gold badges365365 silver badges641641 bronze badges
+95.2k9191 gold badges367367 silver badges643643 bronze badges
 asked Nov 20 '12 at 15:42
 user1839239user1839239
 7911 gold badge11 silver badge55 bronze badges
@@ -102,13 +103,14 @@ or if you just want to use FreqDist you should try this:
 >>> news_text = brown.words(categories='news')
 >>> fdist = FreqDist([w.lower() for w in news_text])
 Share
+Improve this answer
 Follow
 edited Mar 31 '13 at 22:49
 alvas
-94.8k9090 gold badges365365 silver badges641641 bronze badges
+95.2k9191 gold badges367367 silver badges643643 bronze badges
 answered Nov 21 '12 at 13:06
 SpaceghostSpaceghost
-6,06733 gold badges2525 silver badges4141 bronze badges
+6,07733 gold badges2525 silver badges4141 bronze badges
 2
 1
 or if you want to save yourself some typing in the long term, do "from nltk import FreqDist". That will allow you to write "FreqDist" in place of "nltk.FreqDist".
@@ -129,6 +131,7 @@ follow these steps to install nltk:
 import nltk
 if nltk is installed properly then you will be returned with console.
 Share
+Improve this answer
 Follow
 answered Oct 22 '14 at 11:27
 Manjunath NManjunath N
@@ -140,6 +143,7 @@ setuptools are required for older versions of Python. There is no need for the s
 You can easily download the same from https://pypi.python.org/pypi/nltk
 For more information on http://www.nltk.org/install.html
 Share
+Improve this answer
 Follow
 answered Jun 14 '16 at 17:55
 ssssss
@@ -155,13 +159,14 @@ nltk.download('stopwords')
 from nltk.corpus import stopwords
 stopwords.words("english")
 Share
+Improve this answer
 Follow
 edited Aug 17 '19 at 7:32
 marc
 85966 silver badges1818 bronze badges
 answered Aug 17 '19 at 6:38
 Mr S CoderMr S Coder
-37811 silver badge1212 bronze badges
+39811 silver badge1212 bronze badges
 Add a comment
 |
 Your Answer
@@ -187,11 +192,9 @@ By clicking “Post Your Answer”, you agree to our terms of service, privacy p
 Not the answer you're looking for? Browse other questions tagged nltk
 or ask your own question.
 The Overflow Blog
-Level Up: Linear Regression in Python – Part 2
-Shipping confetti to Stack Overflow’s design system
+Using low-code tools to iterate products faster
+Podcast 345: A good software tutorial explains the How. A great one explains…
 Featured on Meta
-The future of Community Promotion, Open Source, and Hot Network Questions Ads
-Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
 Take the 2021 Developer Survey
 Visit chat
 Linked
@@ -213,30 +216,30 @@ Python, NLTK: NameError: name 'load_parser' is not defined
 0
 name 'nltk' is not defined
 Hot Network Questions
-Why is this result no contradiction to length contraction?
-removing multiple lines - d3d vs 3dd
-Do phone chargers communicate with the phone?
-The usage of can't
-How can I use a control variable that is non-normal in linear regression with other variabels that are normal?
-I think I've sh-- myself
-Can I replace an STM32F105-RBT6 with a STM32F103-RET6? (ie. are they pin compatible?)
-Why is the ortho product major in the nitration of anisole with nitric acid and acetic anhydride?
-Why do we have two kidneys but one liver?
-Should most brahmins today be considered as shudras?
-Where and how are raw transactions stored on the blockchain?
-Is there a misprint on this note in the Maple Leaf Rag?
-How could publicly accessible information proving that a public figure is corrupt go undetected for at least a year?
-Is there any realistic explanation for Earth-like climate on a Sun-sized planet?
-Factorising blinear forms with Mathematica
-Should forcing open doors be Strength or Strength (Athletics)
-How would transportation evolve in a world where everyone can teleport?
-Triangle-style sequences
-unknown pieces of a set - stickers on round corner bricks
-How can I state an axiom without enumeration?
-Meaning of せないかんのよ
-Why isn't it the norm to have research repeated immediately by other academics?
-Where was this scene of 'Highlander: The series' with standing columns shot?
-Why is bad behavior more tolerated in academia compared to the rest of the industry?
+Should I notify a med school about their student's cheating history?
+Is it illegal to implement a patented algorithm or method and take advantage from it?
+Dealing with extremely inexperienced developers who have daily deadlines?
+How realistic is the 1 kg/km² solar sail in "Death's End"?
+Simplest/cheapest way to build a tensegrity model?
+Is there a fundamental reason for the exponential dependence of the evolution of the temperature in an electronic deviced that is powered on?
+Is there a canonical source for the Arcane Trickster's magic?
+How important is "MIPS-C2® Brain Protection System" for a bicycle helmet?
+Are there any greater risks of traveling significantly faster to another planet?
+Is there a threadlocker that requires heat to release and can withstand thousands of heat-cool cycles without needing to be reapplied or deteriorating
+What would a bear species isolated on an island look like?
+What is the advantage of gate resistor (R3) in this JFET voltage divider biasing circuit?
+How to make Mathematica read in CSV as fast as Python's Pandas
+Can I gain AC efficiency by spraying condensate water on the outdoor coils?
+Why can't quantum computation replace classical computation?
+Why was the neutrino thought to be massless?
+Why aren't resistors being used here?
+Telling a coworker they aren't invited into my house
+Why some CRS are deprecated in QGIS?
+Is 2 hours 50 mins sufficient in Heathrow to connecting flight with different tickets and airlines
+Why would a modern city with a warm climate have a skyway system?
+Why does Lex turn on the flashlight?
+Is it a coincidence that on the far side of the moon almost no seas are visible?
+Refueling a Mars mission on the way
 more hot questions
 Question feed
 Subscribe to RSS
@@ -384,7 +387,7 @@ Twitter
 LinkedIn
 Instagram
 site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.5.28.39383
+rev 2021.6.9.39464
 Stack Overflow works best with JavaScript enabled
 Your privacy
 By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.

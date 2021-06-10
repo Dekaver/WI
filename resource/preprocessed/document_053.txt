@@ -14,15 +14,15 @@ Build vocabulary lists
 Organize flashcards in different themed decks as you wish.
 Get Free Extension
 Related questions
-MatPlotLib Scatter not working Inside Function
-python plotting with error bar in seaborn scatter plot
-How to control label positions and spacing in Tkinter grid
-Trying to perform an optimized simple moving average crossover strategy on historial data
-How to handle very large integers in python?
-Why does the turtle window stops responding?
-Is there a way to look for pattern in large texts using python?
-Dynamically add text to a chatbox HTML
-Counting all co-occurrences of a large list of nouns and verbs/adjectives within reviews
+My VS code interface for Jupyter notebook is very different from the new version
+pd.read_csv optimization to reduce the running time
+Cannot locate child element Selenium
+Get only the IP Adress in Anaconda Powershell
+How to add UCB module in jupyter notebook?
+TypeError: Tensor is unhashable. Instead, use tensor.ref() as the key. getting error
+How to read a text and label each word of it in Python
+nltk's regexp_tokenize make it as word_tokenize
+Tokenize the words in the columns and create embedding vectors with
 NameError: name 'nltk' is not defined
 2021-01-03 08:00
 midsummer
@@ -59,322 +59,231 @@ answered 2021-01-03 08:05
 Eklavya Chandra
 This happens with me; but when I use Google Colab or change the directory to where the python files are, this resolves the issue. You should make a new folder (remember not to make a subfolder in the existing ones) and move the files into it.
 See also questions close to this topic
-MatPlotLib Scatter not working Inside Function
-I am a beginner in Python. I have been trying my hands on MatPlotLib to compare the stats of soccer players in FIFA 20. Basically the problem I'm facing is:
-def make_graph(value1, value2, namevalue, label1, label2):
-print(value1, value2, namevalue)
-plt.scatter(value1, value2)
-plt.xlabel(label1)
-plt.ylabel(label2)
-for i in range(len(namevalue)):
-plt.text(value1[i] + 0.3, value2[i] + 0.3, namevalue[i], fontdict=dict(color='red', size=10), bbox=dict(facecolor = 'yellow', alpha=0.5))
-plt.xlim(min(value1) - 5, max(value2) + 5)
-plt.ylim(min(value1) - 5, max(value2) + 5)
-plt.show()
-def Test():
-df = xlrd.open_workbook(path)
-data = df.sheet_by_index(0)
-data.cell_value(0,0)
-name = []
-pace = []
-shoot = []
-for i in range(1, 450):
-#print(data.cell_value(i, 3))
-buff = str(data.cell_value(i,2)).strip()
-if buff == "LM" or buff == "RM":
-pacebuffer = int(data.cell_value(i, 4))
-shootbuffer = int(data.cell_value(i, 5))
-if pacebuffer >= 90:
-name.append(data.cell_value(i, 3).strip("\n"))
-pace.append(pacebuffer)
-shoot.append(shootbuffer)
-#print(name)
-make_graph(pace, shoot, name, "Pace", "Shoot")
-The particular code is showing me an empty graph.
-BUT
-When I write the same piece of code inside Test() which I wrote inside make_graph() , it gives me the desired output.
-But in this way I have to rewrite that plotting thing every time I write some other functions and that's really a problem. Any idea how to fix this?
-python plotting with error bar in seaborn scatter plot
-I want scatterplot with another column as error in my data. Below is the code sns.scatterplot(x="time_MJD", y="rate",hue='mode', data=data)
-I want data['error'] column as errorbar. The error bar color and the hue colour should be same.
-How to control label positions and spacing in Tkinter grid
-When I change the grid row to 2 (for foodop), the output is this
-Now I want to make the food price at the same row therefore I change that to row 2 as well but then the output is this
-the food goes back to row 0, why does it do that? I am trying to get something like this:
-Here is the code I use for layout
-(label positioning marked by # <-- comments):
-foodprice=['3','2','1.50']
-drinks = ['Water','Hot water','Medium water']
-drinksprice = ['1','2','3']
-myFrame3 = Frame(root, bg = '')
-myFrame3.pack()
-myFrame3.columnconfigure(0, weight=1)
-myFrame3.columnconfigure(1, weight=2)
-for x in range (len(food)):
-foodop = Label(myFrame3, font=("Impact", "15"), text = food[x])
-foodop.grid(row = 2+x, column = 4) # <--
-for x in range (len(foodprice)):
-fprice = Label(myFrame3, font=("Impact", "15"), text = foodprice[x])
-fprice.grid(row = 2+x, column = 8) # <--
-for x in range (len(drinks)):
-drinksop = Label(myFrame3, font=("Impact", "15"), text = drinks[x])
-drinksop.grid(row = 4+(len(food))+x, column = 4) # <--
-for x in range (len(drinksprice)):
-drinksp = Label(myFrame3, font=("Impact", "15"), text = drinksprice[x])
-drinksp.grid(row = 4+(len(food))+x, column = 8) # <--
-Trying to perform an optimized simple moving average crossover strategy on historial data
-I am trying to optimize a two simple moving average crossover mechanism on historical ethereum daily closing prices over the last 73 days using a brute force approach. I am in search of the best performing parameter combinations of all those backtested. I then want to record the results and rank those strategies afterward. The strategy only consist of going long when the shorter moving average crosses over the long moving average. No short positions will occur if the opposite occurs. Therefore, this is explained in the code below with where roll1>roll2(1, ). Here is the code:
-from itertools import product
-SMA1=5
-SMA2=20
-sma1=range(4, 9)
-sma2=range(5, 10)
-resultz=pd.DataFrame(data=experiment['Close'])
-for SMA1, SMA2 in product(sma1, sma2):
-dataz=pd.DataFrame(experiment['Close'])
-dataz['rets']=np.log(dataz['Close']/dataz['Close'].shift(1))
-roll1=dataz['Close'].rolling(SMA1).mean()
-roll2=dataz['Close'].rolling(SMA2).mean()
-dataz['position']=np.where(roll1>roll2,1, 0)
-dataz['strat']=dataz['position'].shift(1)*dataz['rets']
-perf=np.exp(dataz[['rets','strat']].sum())
-results=resultz.append(pd.DataFrame(
-{'SMA1':SMA1, 'SMA2': SMA2,
-'MARKET': perf['rets'],
-'Strategy':perf['strat'],
-'OUT':perf['strat']-perf['rets']},
-index=[0]), ignore_index=True)
-sma1=range(4, 9) specifies the parameter values for the SMA1. sma2=range(5, 10) specifies the parameter values for SMA2. for SMA1, SMA2 in product(sma1, sma2) combines all values for SMA1 with those for SMA2.index=[0]), ignore_index=True) records the vectorized backtesting results in a DataFrame object.
-When I get the information about the results I get the following:
-results.info()
-<class 'pandas.core.frame.DataFrame'>
-RangeIndex: 74 entries, 0 to 73
-Data columns (total 6 columns):
-#
-Column
-Non-Null Count
-Dtype
----
-------
---------------
------
+My VS code interface for Jupyter notebook is very different from the new version
+I recently started learning python for data analysis and decided to use VS code for its new Jupyter notebook feature. I installed the extension for python and jupyter notebook in VS code but for some reason my interface is very different from the one in the new update.
+I understand this is a small issue but, It's really throwing me off. Can someone please let me know what I am doing wrong here?
+Thank you
+pd.read_csv optimization to reduce the running time
+My input file is 20GB .txt file, So It faces performance issues when I test run the below code.
+pd.read_csv is taking more than 3 hours. Need to optimization in the reading stage.
+Sample input file.
+007064770000|SODIUM|95 MILLIGRAM|0
+007064770000|MULTI|001|0
+007064770000|PET STARCH FREE|NOT APPLICABLE|0
+007064770000|GRAIN TYPE|FLOUR|0
+003980010200|MULTI|001|0
+003980010200|DEAL|NON-DEAL|0
+003980010200|PRODUCT SIZE|1 COUNT|0
+003980010200|BASE SIZE|1 COUNT|0
+757582821517|HW APPLIANCES|001|0
+757582821516|HW APPLIANCES|001|0
+757582821517|PACKAGE GENERAL SHAPE|BOTTLE|0
+757582821517|SYND FORM|CREAM|0
+757582821517|FORM|CREAM|0
+757582821517|TARGET SKIN CONDITION|DRY SKIN|0
+003980010205|HW MEDICINE|NON-DEAL|0
+003980010205|PRODUCT SIZE|1 COUNT|0
+003980010205|BASE SIZE|1 COUNT|0
+007064770054|SODIUM|95 MILLIGRAM|0
+007064770054|HW SPORTS|001|0
+007064770054|PET STARCH FREE|NOT APPLICABLE|0
+007064770054|GRAIN TYPE|FLOUR|0
+003980010312|HW DIAMETER|1 COUNT|0
+003980010312|BASE SIZE|1 COUNT|0
+Output file
+UPC code HW APPLIANCES HW DIAMETER HW MEDICINE HW SPORTS
 0
-Close
-73 non-null
-float64
-1
-SMA1
-1 non-null
-float64
-2
-SMA2
-1 non-null
-float64
-3
-MARKET
-1 non-null
-float64
-4
-Strategy
-1 non-null
-float64
-5
-OUT
-1 non-null
-float64
-dtypes: float64(6)
-memory usage: 3.6 KB
-When I attempt to sort the strategies based on performance I get the following:
-results.sort_values('OUT', ascending=False).head(7)
-Close
-SMA1
-SMA2
-MARKET
-Strategy
-OUT
-73
-NaN
-8.0
-9.0
-1.341168 1.83493
-0.493761
-0
-1834.727905 NaN NaN
+3980010205
 NaN
 NaN
+NON-DEAL
 NaN
 1
-1868.048828 NaN NaN
+3980010312
 NaN
+1 COUNT
 NaN
 NaN
 2
-1799.166260 NaN NaN
+7064770054
 NaN
 NaN
 NaN
+001
 3
-1826.194946 NaN NaN
+757582821516
+001
 NaN
 NaN
 NaN
 4
-1772.102417 NaN NaN
+757582821517
+001
 NaN
 NaN
 NaN
-5
-1924.685425 NaN NaN
-NaN
-NaN
-NaN
-Each strategy should have under SMA1 and SMA2 the parameters and the returns compared to just going long in the market (this is what the column Market is for). I am confused as to why I keep getting NaN values in those columns. I have even tried to insert more data and I still get the same problem. I am trying to figure out why the code is not testing several different simple moving average crossover parameters and giving displaying the information to me in a manner where it ranks the best ones along with their return. Some help would seriously be appreciated.
-How to handle very large integers in python?
-I wrote a code for getting the Fibonacci sequence, using the concept of the Fibonacci matrix, inspired from this Instagram post
-def f(n):
-import numpy as np
-m=np.array([[1,1],[1,0]],dtype=np.int64)
-m1=m
-for i in range(0,n):
-m1=np.matmul(m1,m)
-return m1[0,1]
-but after n=93, it starts to give negative numbers. If I use np.int32 as dtype then after n=47, it starts to give negative and erroneous results.
-I am using python 3.9 and I want my result to be integers(not float) what to do so that I can get correct results for n=1000 or larger?
-Why does the turtle window stops responding?
-I am trying to use the turtle module for a python, but it stops responding in further compilations after the first successful compilation. I have tried this both in Spyder and Jupyter but the result is the same.
-Edit 1: This is the code I used, it is not self-made I learnt it from youtube.
-Edit 2: The kernel keeps dying after I close the turtle window due to it not responding
-import turtle
-wn=turtle.Screen()
-wn.title("Made by ")
-wn.bgcolor("black")
-wn.setup(width=800,height=600)
-wn.tracer(0)
-#Keeps the screen up
-#Paddle A
-paddle_a=turtle.Turtle()
-#object of turtle
-paddle_a.speed(0)
-#speed of animation
-paddle_a.shape("square")
-paddle_a.color("red")
-paddle_a.shapesize(stretch_wid=5, stretch_len=1)
-#default size is 20*20
-paddle_a.penup()
-#not to draw lines
-paddle_a.goto(-350,0)
-#Paddle B
-paddle_b=turtle.Turtle()
-#object of turtle
-paddle_b.speed(0)
-#speed of animation
-paddle_b.shape("square")
-paddle_b.color("blue")
-paddle_b.shapesize(stretch_wid=5, stretch_len=1)
-#default size is 20*20
-paddle_b.penup()
-#not to draw lines
-paddle_b.goto(350,0)
-#Ball
-ball=turtle.Turtle()
-#object of turtle
-ball.speed(0)
-#speed of animation
-ball.shape("circle")
-ball.color("white")
-ball.penup()
-#not to draw lines
-ball.goto(0,0)
-ball.dx=0.09
-#moves by 2 pixels
-ball.dy=0.09
-#Function
-def paddle_a_up():
-y=paddle_a.ycor()
-#mentions the y coordinate
-y=y+20
-paddle_a.sety(y)
-#set y coordinate to new y
-def paddle_a_down():
-y=paddle_a.ycor()
-#mentions the y coordinate
-y=y-20
-paddle_a.sety(y)
-#set y coordinate to new y
-def paddle_b_up():
-y=paddle_b.ycor()
-#mentions the y coordinate
-y=y+20
-paddle_b.sety(y)
-#set y coordinate to new y
-def paddle_b_down():
-y=paddle_b.ycor()
-#mentions the y coordinate
-y=y-20
-paddle_b.sety(y)
-#set y coordinate to new y
-#Keyboard binding
-wn.listen()
-#listen keyboard input
-wn.onkeypress(paddle_a_up,'w')
-wn.onkeypress(paddle_a_down,'s')
-wn.onkeypress(paddle_b_up,"Up")
-wn.onkeypress(paddle_b_down,"Down")
-#Main loop
-running=True
-while running:
-wn.update()
-#updates the screen
-#movement the ball
-ball.setx(ball.xcor()+ball.dx)
-ball.sety(ball.ycor()+ball.dy)
-Is there a way to look for pattern in large texts using python?
-I am currently doing some research work for advertisements of different types. Is there a way (model/library/program) that could help me look if a set template is being used for multiple similar use cases?
-Eg in case of a job posting:
-String 1: We are looking for position1 in XYZ company. Our mission is to advance the state-of-the-art in Language Understanding, Speech Recognition and Synthesis, Multi-modal Scene Understanding, and Conversational AI. In everything we do, we strive to achieve outstanding computational performance by working with the latest hardware and advanced deep learning software tools.
-String 2: We are looking for postion2 in ABC company. Our mission is to advance the state-of-the-art in Language Understanding, Speech Recognition and Synthesis, Multi-modal Scene Understanding, and Conversational AI. In everything we do, we strive to achieve outstanding computational performance by working with the latest hardware and advanced deep learning software tools.
-As visible, most of the text is same, just with slight differences. So are there pre-made libraries that can look for such patterns (whether a line is being repeated, or the text is similar in some cases, or if there are similar bigrams and trigrams in the strings), preferably in python?
-Dynamically add text to a chatbox HTML
-I just recently started programming, I have basic knowledge and I was wondering how could I a take an NLTK very basic chatbot I just did in python to dynamically interact with an HTML chatbox.
-I started using Flask and JS, I can obtain what is typed in the chatbox, but have no clue how to make it go through the chatbot to get it's response and dynamically show it through the HTML chatbox.
-Counting all co-occurrences of a large list of nouns and verbs/adjectives within reviews
-I have a dataframe that contains a large number of reviews, a large list with noun words (1000) and another large list with verbs/adjectives (1000).
-Example dataframe and lists:
+Existing code
 import pandas as pd
-data = {'reviews':['Very professional operation. Room is very clean and comfortable',
-'Daniel is the most amazing host! His place is extremely clean, and he provides everything you could possibly want (comfy bed, guidebooks & maps, mini-fridge, towels, even toiletries). He is extremely friendly and helpful.',
-'The room is very quiet, and well decorated, very clean.',
-'He provides the room with towels, tea, coffee and a wardrobe.',
-'Daniel is a great host. Always recomendable.',
-'My friend and I were very satisfied with our stay in his apartment.']}
-df = pd.DataFrame(data)
-nouns = ['place','Amsterdam','apartment','location','host','stay','city','room','everything','time','house',
-'area','home','’','center','restaurants','centre','Great','tram','très','minutes','walk','space','neighborhood',
-'à','station','bed','experience','hosts','Thank','bien']
-verbs_adj = ['was','is','great','nice','had','clean','were','recommend','stay','are','good','perfect','comfortable',
-'have','easy','be','quiet','helpful','get','beautiful',"'s",'has','est','located','un','amazing','wonderful',]
-I want to create a dictionary of dictionaries to store all the co-occurrences of nouns and verbs/adjectives in each review, e.g.
-'Very professional operation. Room is very clean and comfortable.'
-{'room': {'is': 1, 'clean': 1, 'comfortable': 1}
-Using the following code:
-def count_co_occurences(reviews):
-# Iterate on each review and count
-occurences_per_review = {
-f"review_{i+1}": {
-noun: dict(Counter(review.lower().split(" ")))
-for noun in nouns
-if noun in review.lower()
+import datetime
+df = pd.read_csv('sample.txt', sep='|', names=['upc_cd', 'chr_typ', 'chr_vl', 'chr_vl_typ'], engine='python')
+df = df[df['chr_typ'].str.contains('HW ')]
+df.sort_values('chr_typ')
+df = (
+df.iloc[:, :-1]
+# Remove last Column
+.pivot(index=['upc_cd'], columns=['chr_typ'])
+.droplevel(0, axis=1)
+# Fix Levels and axes names
+.rename_axis('UPC code')
+.rename_axis(None, axis=1)
+.reset_index()
+)
+print(df)
+df.to_csv('output.csv', sep=',', index=None, mode='w', encoding='utf-8')
+Please suggest the modification to the code in order to reduce the running time
+Cannot locate child element Selenium
+Trying to pick out single restaurant elements under the All Restaurants category on this page. https://www.foodpanda.sg/restaurants/new?lat=1.2915902&lng=103.8379066&vertical=restaurants
+All li elements have a different class name. The only working xpath, I have been able to figure out is this one.
+//ul[@class="vendor-list"]//li[3]
+I cannot figure out how to increase this number and get all the restaurants, which is complicated by the fact that there is an infinite scroll as well.
+j = 1
+def get_rest():
+global j
+while True:
+driver.execute_script("window.scrollBy(0,2525)", "")
+time.sleep(5)
+var = f'{[j]}'
+elems = driver.find_elements_by_xpath(f'//ul[@class="vendor-list"]//li{var})
+return elems
+Get only the IP Adress in Anaconda Powershell
+I want to get the Output of my Ip Address only inside the Anaconda Powershell in Windows.
+curl https://ipinfo.io/ip
+Gives me the following:
+StatusCode
+: 200
+StatusDescription : OK
+Content
+: 22.031.123.456
+RawContent
+: HTTP/...
+...
+...
+...
+...
+Content-Type: text/html; charset=utf-8
+Date: ...
+Via:...
+Forms
+: {}
+Headers
+: {[..., *], [...], [...],
+[..., ...}
+Images
+: {}
+InputFields
+: {}
+Links
+: {}
+ParsedHtml
+: ...
+RawContentLength
+: ...
+As you can see, "Content" shows my IP Adress. But I can't get the IP-Address without any other informations.
+Note: "curl api.ipify.org" and "curl ipinfo.io/ip" and others are doing the exact same thing.
+How to add UCB module in jupyter notebook?
+I'm trying to add this ucb module (The UCB module contains functions specific to 61A projects at UC Berkeley.) in jupyter notebook but I've no idea how to go about it. Can somebody please provide me with clear cut instructions on how to do this? The following is the link to the module I want to add:
+https://inst.eecs.berkeley.edu/~cs61a/sp14/proj/ants/ucb.py.html
+Appreciate the help.
+TypeError: Tensor is unhashable. Instead, use tensor.ref() as the key. getting error
+`from keras import models
+modelvgg.layers.pop()
+modelvgg = models.Model(inputs=modelvgg.inputs, outputs=modelvgg.layers[-1].output)
+show the deep learning model
+modelvgg.summary()`
+How to read a text and label each word of it in Python
+data = ("Thousands of demonstrators have marched through London to protest the war in Iraq and demand the withdrawal of British troops from that country. Many people have been killed that day.",
+{"entities": [(48, 54, 'Category 1'), (77, 81, 'Category 1'), (111, 118, 'Category 2'), (150, 173, 'Category 3')]})
+data[1]['entities'][0] = (48, 54, 'Category 1') stands for (start_offset, end_offset, entity).
+I want to read each word of data[0] in a sequential manner and tag each word according to data[1] entities. I am expecting to have as final output,
+{
+'Thousands': 'O',
+'of': 'O',
+'demonstrators': 'O',
+'have': 'O',
+'marched': 'O',
+'through': 'O',
+'London': 'S-1',
+'to': 'O',
+'protest': 'O',
+'the': 'O',
+'war': 'O',
+'in': 'O',
+'Iraq': 'S-1',
+'and': 'O'
+'demand': 'O',
+'the': 'O',
+'withdrawal': 'O',
+'of': 'O',
+'British': 'S-2',
+'troops': 'O',
+'from': 'O',
+'that': 'O',
+'country': 'O',
+'.': 'O',
+'Many': 'O',
+'people': 'S-3',
+'have': 'B-3',
+'been': 'B-3',
+'killed': 'E-3',
+'that': 'O',
+'day': 'O',
+'.': 'O'
 }
-for i, review in enumerate(reviews)
-}
-# Remove verb_adj not found in main list
-opr = deepcopy(occurences_per_review)
-for review, occurences in opr.items():
-for noun, counts in occurences.items():
-for verb_adj in counts.keys():
-if verb_adj not in verbs_adj:
-del occurences_per_review[review][noun][verb_adj]
-return occurences_per_review
-pprint(count_co_occurences(data["reviews"]))
-Works for when the lists and the number of reviews are small, but my notebook crashes when this function is used on large lists/large no. of reviews. How can I modify the code in order to handle this?
+Here, 'O' stands for 'OutOfEntity', 'S' stands for 'Start', 'B' stands for 'Between', and 'E' stands for 'End' and are unique for every given text.
+I tried the following:
+def ner(data):
+entities = {}
+offsets = data[1]['entities']
+for entity in offsets:
+entities[data[0][int(entity[0]):int(entity[1])]] = re.findall('[0-9]+', entity[2])[0]
+tags = []
+for key, value in entities.items():
+entity = key.split()
+if len(entity) > 1:
+bEntity = entity[1:-1]
+tags.append((entity[0], 'S-'+value))
+for item in bEntity:
+tags.append((item, 'B-'+value))
+tags.append((entity[-1], 'E-'+value))
+else:
+tags.append((entity[0], 'S-'+value))
+tokens = nltk.word_tokenize(data[0])
+OTokens = [(token, 'O') for token in tokens if token not in [token[0] for token in tags]]
+for token in OTokens:
+tags.append(token)
+return tags
+But the above function does not work properly in case I have some words that are the same as those in data[1]['entities'] offsets but not part of the offsets will be ignored instead they should be labeled as 'O'.
+nltk's regexp_tokenize make it as word_tokenize
+We have nltk.word_tokenize and nltk.tokenize.regexp.regexp_tokenize for word tokenization. word_tokenize doesn't take arguments and splits by white spaces and special characters, while the regexp_tokenize requires a regex expression to define behaviour. I would like to make it the same behaviour as word_tokenize, so set pattern:
+from nltk import word_tokenize
+from nltk.tokenize.regexp import regexp_tokenize
+pattern = ''
+text = 'Hey this ( is * some (text)'
+tokens1 = word_tokenize(text)
+tokens2 = regexp_tokenize(text ,pattern=pattern, gaps=True)
+I want tokens1 and tokens2 to be exactly the same. What should I set pattern to to mimic the exact same behaviour of word_tokenize?
+Tokenize the words in the columns and create embedding vectors with
+i need your help.
+For a Neural Network i need to change the words into word_index (e.g. "company" --> 34, "review" --> 21 etc.)
+Here is a picture:
+My idea:
+Iterating through all the keys and changing them to the word_index before creating the dataframe. However, I'm a little bit lost. That was my last try:
+"""
+for k, v in w2v_my.items():
+tk.word_index(k)
+--> Raises that object is not callable. Also i know, that changing the keys in the object is not that good.
+"""
+I really appreciate your help.
+EDIT:
+The next step would be to transform the arrays for each word into a a cosine similarity vector e.g. company (key) --> changing to the word_index e.g. 43 --> with an array (value) --> changing to the cosine similarity vector e.g. 0.34333554432.
 Quabr.com is StackOverFlow proxy site | Sitemap

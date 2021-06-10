@@ -44,10 +44,10 @@ What is happening here?
 This is just something extra I wanted to add to keep practicing with overwriting inbuilt methods but I would really like to learn from this.
 1 Answer
 Steven Parker
-207,924 Points
+207,967 Points
 Steven Parker
 Steven Parker
-207,924 Points
+207,967 Points
 September 30, 2019
 3:19pm
 The override of "__len__" is returning a string message, but the system expects it to return a numeric value.
@@ -65,10 +65,10 @@ Yes, this was the issue. I didn't realize that the system was expecting a numeri
 Overriding __str__ with the exact same syntax for the body made it work when using print(hand) and also print(str(hand)) which obviously give the same output.
 Thanks!
 Steven Parker
-207,924 Points
+207,967 Points
 Steven Parker
 Steven Parker
-207,924 Points
+207,967 Points
 September 30, 2019
 6:26pm
 That's right, because "print" implicitly performs string conversion so you get the same output either way.

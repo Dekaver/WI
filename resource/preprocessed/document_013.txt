@@ -59,11 +59,11 @@ Ask Question
 Asked
 11 years, 6 months ago
 Active
-5 days ago
+14 days ago
 Viewed
 2.0m times
-440
-101
+444
+104
 I am creating a program that reads a file and if the first line of the file is not blank, it reads the next four lines.
 Calculations are performed on those lines and then the next line is read.
 If that line is not empty it continues.
@@ -91,10 +91,10 @@ Share
 Follow
 edited Feb 10 '19 at 10:55
 kqw
-17.7k1111 gold badges6161 silver badges9292 bronze badges
+17.7k1111 gold badges6161 silver badges9393 bronze badges
 asked Dec 3 '09 at 17:34
 Sarah CoxSarah Cox
-4,41733 gold badges1414 silver badges33 bronze badges
+4,45733 gold badges1414 silver badges33 bronze badges
 3
 5
 You should consider using with open(file_to_read, 'r') as infile: there.
@@ -116,7 +116,7 @@ Add a comment
 Active
 Oldest
 Votes
-463
+468
 Just for the record:
 >>> int('55063.000000')
 Traceback (most recent call last):
@@ -133,7 +133,7 @@ Roshin Raphel
 2,28533 gold badges1212 silver badges3131 bronze badges
 answered Jan 20 '12 at 21:49
 FdoBadFdoBad
-4,67111 gold badge1111 silver badges22 bronze badges
+4,72111 gold badge1111 silver badges22 bronze badges
 9
 117
 I'll just add, to provide more clarity for future readers, that indeed, int(float('1.0')) works when int('1.0') throws the ValueError.
@@ -148,7 +148,7 @@ add to answer int(float('55063.000000')) as question is get int(). Than it will
 realy top answer
 – Max
 Mar 15 '17 at 8:41
-11
+12
 This answer doesn't appear to have anything to do with the question. The question is asking how one could prevent a ValueError when you call int() on an empty string. "Use float() instead" doesn't solve that problem. You still get a ValueError.
 – Kevin
 May 1 '18 at 18:50
@@ -158,7 +158,7 @@ Why not update your answer as per @Kevin's comment above? This is a highly activ
 Jun 29 '20 at 4:17
 |
 Show 4 more comments
-107
+108
 The following are totally acceptable in python:
 passing a string representation of an integer into int
 passing a string representation of a float into float
@@ -187,7 +187,7 @@ Follow
 edited May 23 '18 at 0:24
 answered Dec 12 '17 at 2:26
 PeterPeter
-1,33711 gold badge88 silver badges99 bronze badges
+1,34711 gold badge88 silver badges99 bronze badges
 3
 9
 This answer doesn't appear to have anything to do with the question. The question is asking how one could prevent a ValueError when you call int() on an empty string. "Use float() instead" doesn't solve that problem. You still get a ValueError.
@@ -229,7 +229,7 @@ Peter Mortensen
 28.3k2121 gold badges9595 silver badges123123 bronze badges
 answered Dec 3 '09 at 17:40
 SilentGhostSilentGhost
-265k5858 gold badges291291 silver badges279279 bronze badges
+266k5959 gold badges291291 silver badges279279 bronze badges
 5
 4
 Your try/except doesn't distinguish between something reasonable expectable (blank/empty line) and something nasty like a non-integer.
@@ -278,7 +278,7 @@ This looks more like a comment.
 When you have sufficient reputation you will be able to comment on any post.
 – Joshua Drake
 Jun 23 '17 at 13:39
-3
+4
 this was exactly what i needed, thank you. I don't get why people on this forum are so obsessed with micromanaging this site
 – John D
 Nov 21 '20 at 9:38
@@ -302,7 +302,7 @@ Share
 Follow
 answered Dec 13 '19 at 11:12
 HarveyHarvey
-6,92333 gold badges5252 silver badges5454 bronze badges
+6,99833 gold badges5252 silver badges5454 bronze badges
 Add a comment
 |
 4
@@ -364,7 +364,7 @@ Share
 Follow
 answered Dec 3 '09 at 17:43
 Eli BenderskyEli Bendersky
-232k7878 gold badges333333 silver badges394394 bronze badges
+233k8080 gold badges334334 silver badges394394 bronze badges
 Add a comment
 |
 1
@@ -400,7 +400,7 @@ Share
 Follow
 answered Dec 3 '09 at 17:49
 ImranImran
-76.1k2323 gold badges9393 silver badges124124 bronze badges
+76.2k2323 gold badges9393 silver badges124124 bronze badges
 Add a comment
 |
 0
@@ -454,7 +454,7 @@ Share
 Follow
 answered May 15 '20 at 20:25
 Shaina RazaShaina Raza
-61155 silver badges77 bronze badges
+62155 silver badges77 bronze badges
 Add a comment
 |
 0
@@ -472,11 +472,9 @@ Highly active question. Earn 10 reputation in order to answer this question. The
 Not the answer you're looking for? Browse other questions tagged python
 or ask your own question.
 The Overflow Blog
-Level Up: Linear Regression in Python – Part 2
-Shipping confetti to Stack Overflow’s design system
+Using low-code tools to iterate products faster
+Podcast 345: A good software tutorial explains the How. A great one explains…
 Featured on Meta
-The future of Community Promotion, Open Source, and Hot Network Questions Ads
-Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
 Take the 2021 Developer Survey
 Linked
 0
@@ -514,30 +512,30 @@ How do you prevent the "ValueError: invalid literal for int() with base 10: '', 
 0
 ValueError: invalid literal for int() with base 10:
 Hot Network Questions
-How can I make a keyboard shortcut to strikethrough text in the Notes app?
-How do they enforce rules on declaring funds?
-How would transportation evolve in a world where everyone can teleport?
-Advice needed – I can't reach my collaborator, but there's a short deadline for revising our journal article submission
-select distinct columns over multiple databases sql server
-Calculating the hexagons in a hexagon of hexagons
-I ran a nail through a wire at home, should I worry?
-Starting play at higher levels and ability point buy
-newpxmath: accents are always bold
-Resigning will cripple my department, but I am resigning because of a near crippled department
-Why is this result no contradiction to length contraction?
-Please Identify this outdoor plant?
-Is it significantly faster to hike along a river bank?
-identify M.2 SSD from BASH Script
-Should most brahmins today be considered as shudras?
-According to international law, when is first-use nuclear strike justified?
-Is there a precise definition of "Supermoon"?
-Why is bad behavior more tolerated in academia compared to the rest of the industry?
-How can I use a control variable that is non-normal in linear regression with other variabels that are normal?
-Why can't the piano play middle eastern music?
-Does the inside of a lid used to cook rice or steam vegetables have anything besides water on it?
-Stop, in the name of the law
-How can I state an axiom without enumeration?
-Factorising blinear forms with Mathematica
+What can US senators do against diversity trainings in the US Army?
+How to make Mathematica read in CSV as fast as Python's Pandas
+Is Huang Yanling (a Wuhan virology researcher) the world's first COVID-19 patient?
+Why am I seeing the sun slightly north instead of slightly south early in the morning in Malta?
+What would a bear species isolated on an island look like?
+Alien Instrument produces "visual music", which a Human can temporarily experience
+How do I create an insert-only user for a Postgres table with an index?
+Simplify K combinatory logic expression
+How to remove the new weather info from the taskbar?
+How was it calculated that Dream cheated on his Minecraft v1.16 glitchless speedrun?
+Is there a diff() function in Julia DataFrames like pandas?
+Why can the block production rate be as low as two per hour?
+Is there a threadlocker that requires heat to release and can withstand thousands of heat-cool cycles without needing to be reapplied or deteriorating
+Is it a coincidence that on the far side of the moon almost no seas are visible?
+What is the right tool for old, rusty, flat cross head bolts?
+Are there any rules for digging out of a grave?
+Refueling a Mars mission on the way
+Why did old IBM-PC-compatible computers only have 16 colors available?
+"Which dreams, indeed, are ambition" in Hamlet Act 2, Scene 2
+Why would they use human soldiers over undead ones?
+Is it a good idea to go to Japan without a travel guide?
+Why does Lex turn on the flashlight?
+Interviewer was two hours late
+In Bayesian statistics, data is considered nonrandom but can have a probability or be conditioned on. How?
 more hot questions
 Question feed
 Subscribe to RSS
@@ -686,7 +684,7 @@ Twitter
 LinkedIn
 Instagram
 site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.5.28.39383
+rev 2021.6.9.39464
 Stack Overflow works best with JavaScript enabled
 Your privacy
 By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.

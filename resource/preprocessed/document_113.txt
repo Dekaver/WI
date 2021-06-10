@@ -57,11 +57,11 @@ Learn more
 Exception in thread “main” java.lang.RuntimeException: Uncompilable source code
 Ask Question
 Asked
-8 years, 4 months ago
+8 years, 5 months ago
 Active
 3 years, 2 months ago
 Viewed
-20k times
+21k times
 1
 How can I call a non static method in main class.I am getting the folowing error in my sample console application
 Exception in thread "main" java.lang.RuntimeException: Uncompilable source code - non-static method doSomthing() cannot be referenced from a static context
@@ -83,6 +83,7 @@ System.out.print("From Main doSomthing");
 }
 java
 Share
+Improve this question
 Follow
 asked Jan 5 '13 at 16:28
 user1869132user1869132
@@ -112,6 +113,7 @@ myMain.doSomthing();
 System.out.print("From Main");
 }
 Share
+Improve this answer
 Follow
 edited Mar 25 '18 at 10:19
 answered Jan 5 '13 at 16:31
@@ -130,10 +132,11 @@ Add a comment
 You could create an instance first from your static main method:
 new Main().doSomthing();
 Share
+Improve this answer
 Follow
 answered Jan 5 '13 at 16:31
 ReimeusReimeus
-153k1212 gold badges195195 silver badges261261 bronze badges
+153k1212 gold badges196196 silver badges261261 bronze badges
 0
 Add a comment
 |
@@ -154,6 +157,7 @@ System.out.print("From Main doSomthing");
 }
 }
 Share
+Improve this answer
 Follow
 answered Jan 5 '13 at 16:34
 ZombieSpyZombieSpy
@@ -164,6 +168,7 @@ Add a comment
 2
 You can't call a non static method in main class, unless you instantiate one [Main class].
 Share
+Improve this answer
 Follow
 edited Jan 5 '13 at 16:41
 answered Jan 5 '13 at 16:33
@@ -201,11 +206,9 @@ By clicking “Post Your Answer”, you agree to our terms of service, privacy p
 Not the answer you're looking for? Browse other questions tagged java
 or ask your own question.
 The Overflow Blog
-Level Up: Linear Regression in Python – Part 2
-Shipping confetti to Stack Overflow’s design system
+Using low-code tools to iterate products faster
+Podcast 345: A good software tutorial explains the How. A great one explains…
 Featured on Meta
-The future of Community Promotion, Open Source, and Hot Network Questions Ads
-Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
 Take the 2021 Developer Survey
 Linked
 0
@@ -218,30 +221,30 @@ Uncompilable source code Error?
 0
 Exception in thread “main” java.lang.RuntimeException issues with public static void
 Hot Network Questions
-Doorbell switch internals
-I have a postdoc interview tomorrow and I think I have overstated my abilities in my CV. How do I address it during the interview?
-How do they enforce rules on declaring funds?
-Why is this result no contradiction to length contraction?
-Advice needed – I can't reach my collaborator, but there's a short deadline for revising our journal article submission
-Is it significantly faster to hike along a river bank?
-Why do we have two kidneys but one liver?
-How can I state an axiom without enumeration?
-Does 'graduate program' mean MSc or Ph.D.?
-unknown pieces of a set - stickers on round corner bricks
-What's a lot of money {out of curiosity}?
-3 verbs in one sentence - how is that?
-Resigning will cripple my department, but I am resigning because of a near crippled department
-How to rotate a circle around y-aixs and calculate the volume of the 3D solid?
-If cost can be ignored, is a higher-value capacitor for ripple suppression always a good choice?
-How can objects be neither vector nor scalar?
-How to stop games from reading your RAM?
-Generate a British numberplate
-What technical reasons prevented the Win9x Virtual Machine Monitor from running multiple threads simultaneously?
-What is the difference between “they” and “it” for people, especially for those people who choose to be identified as non-binary?
-Peer review 2.0
-Please Identify this outdoor plant?
-Why didn't Japan call for the ICJ to settle the dispute over the Senkaku/Diaoyu Islands?
-How can I make a keyboard shortcut to strikethrough text in the Notes app?
+Are there any rules for digging out of a grave?
+"Which dreams, indeed, are ambition" in Hamlet Act 2, Scene 2
+Why are most COB LEDs physically yellow?
+Are there any greater risks of traveling significantly faster to another planet?
+In the sentence "Ich begegnete einem alten Freund in Berlin", why the dative einem instead of the accusative einen?
+Getting “Bye Bye Big Sur” error on installing Big Sur
+Why is Ken's beer "gay"?
+IQ test question assistance
+How was it calculated that Dream cheated on his Minecraft v1.16 glitchless speedrun?
+Evaluation order of an APL n-train
+Is it illegal to implement a patented algorithm or method and take advantage from it?
+What are the main reasons for using full justification when ragged right is more readable?
+Did I design my LED circuit correctly?
+How important is "MIPS-C2® Brain Protection System" for a bicycle helmet?
+What is the point of hedging in this scenario?
+Is Huang Yanling (a Wuhan virology researcher) the world's first COVID-19 patient?
+Is maximum speed a thing?
+Why does Lex turn on the flashlight?
+How to get real-looking rust that will be safe to the touch?
+Has physics ever given a physical significance to a mathematically abstract idea?
+output entries that have highest score
+History of /f/ sound in Russian
+Is buying lecture notes wrong?
+How to make Mathematica read in CSV as fast as Python's Pandas
 more hot questions
 Question feed
 Subscribe to RSS
@@ -390,7 +393,7 @@ Twitter
 LinkedIn
 Instagram
 site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.5.28.39383
+rev 2021.6.9.39464
 Stack Overflow works best with JavaScript enabled
 Your privacy
 By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.

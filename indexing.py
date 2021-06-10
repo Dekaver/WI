@@ -8,6 +8,7 @@ import json
 import re
 
 dataframe = []
+url = json.load(open('resource/dataset.json'))['url']
 stopwords=stopwords.words('english')
 
 def indexing(folder_dataset, json_dataset):
@@ -63,12 +64,16 @@ def save_to_json(Data, json_filename):
     with open(json_filename, mode='w') as json_config:
         json.dump(Data, json_config)
 
-if __name__ == "__main__":
-    df, term = indexing("resource/preprocessed/","data_preprocessed.json")
-    print(df.head(10))
-    # print(df.index.tolist())
-    from scipy import sparse
-    # save sparse matrix unigram, bigram and trigram to .npz file
-    sparse.save_npz("tfidf_mat.npz", sparse.csr_matrix(df))
-    save_to_json( get_dict_feature_name(term),"tfidf_feature_name.json")
 
+df, term = indexing("resource/preprocessed/","data_preprocessed.json")
+
+from scipy import sparse
+# save sparse matrix unigram, bigram and trigram to .npz file
+sparse.save_npz("resource/index/tfidf_mat.npz", sparse.csr_matrix(df))
+save_to_json( get_dict_feature_name(term),"resource/index/tfidf_feature_name.json")
+
+indexing_data = sparse.load_npz('resource/index/tfidf_mat.npz')
+feature_name = json.load(open("resource/index/tfidf_feature_name.json"))
+feature_name = feature_name['feature']
+
+df = pd.DataFrame(indexing_data.toarray(), index=feature_name)

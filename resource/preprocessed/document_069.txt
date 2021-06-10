@@ -55,7 +55,7 @@ subscribe to rss feed
 Stats
 Asked:
 2017-12-13 18:55:40 -0500
-Seen: 657 times
+Seen: 660 times
 Last updated: Dec 13 '17
 Related questions
 OpenCV compile Eigenface.cpp in Linux with using CodeBlocks
@@ -74,5 +74,5 @@ about | faq | help
 Powered by Askbot version 0.10.2
 Please note: OpenCV answers requires javascript to work properly, please enable javascript in your browser, here is how
 (
-2021-05-31 12:39:41 -0500
+2021-06-09 17:08:14 -0500
 )editnone×

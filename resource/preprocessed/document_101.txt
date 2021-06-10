@@ -57,11 +57,11 @@ Learn more
 How to fix java error?
 Ask Question
 Asked
-6 years, 6 months ago
+6 years, 7 months ago
 Active
-4 years, 4 months ago
+4 years, 5 months ago
 Viewed
-193 times
+197 times
 1
 So I have to create a program where I use polymorphism and inheritance to create arrows that point left and arrow and I did that. however, when I created my main class and try to invoke the methods, say for example "LeftArrow.drawHere" to draw the arrow i get errors saying I cannot make a static reference to the non static field "drawHere() from the class LeftArrow". I was wondering then if I can't do that how can I design my main method so it draws the arrows?
 here is my code, note that there are several classes but I will post all of them here.
@@ -335,10 +335,11 @@ public void drawHere(); // draws shape after moving left equal to offset
 }
 java inheritance polymorphism mainclass
 Share
+Improve this question
 Follow
 edited Jan 3 '17 at 13:06
 fabian
-67.6k1212 gold badges7474 silver badges102102 bronze badges
+68k1212 gold badges7474 silver badges102102 bronze badges
 asked Nov 11 '14 at 16:39
 Rocketsm46Rocketsm46
 2122 silver badges77 bronze badges
@@ -360,6 +361,7 @@ LeftArrow lArrow = new LeftArrow();
 lArrow.drawHere();
 it should work.
 Share
+Improve this answer
 Follow
 answered Nov 11 '14 at 16:43
 DaaaahWhooshDaaaahWhoosh
@@ -372,6 +374,7 @@ The method drawHere is declared as non-static. Instead of LeftArrow.drawHere() y
 LeftArrow left = new LefArrow(a, b, c);
 left.drawHere();
 Share
+Improve this answer
 Follow
 answered Nov 11 '14 at 16:44
 Simon ZambrovskiSimon Zambrovski
@@ -384,6 +387,7 @@ main is static. It needs to create instances of LeftArrow before it can use them
 LeftArrow myArrow = new LeftArrow();
 myArrow.drawHere();
 Share
+Improve this answer
 Follow
 answered Nov 11 '14 at 16:43
 user1879313user1879313
@@ -414,59 +418,56 @@ By clicking “Post Your Answer”, you agree to our terms of service, privacy p
 Not the answer you're looking for? Browse other questions tagged java inheritance polymorphism mainclass
 or ask your own question.
 The Overflow Blog
-Level Up: Linear Regression in Python – Part 2
-Shipping confetti to Stack Overflow’s design system
+Using low-code tools to iterate products faster
+Podcast 345: A good software tutorial explains the How. A great one explains…
 Featured on Meta
-The future of Community Promotion, Open Source, and Hot Network Questions Ads
-Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
 Take the 2021 Developer Survey
-Visit chat
 Related
-3964
+3969
 What are the differences between a HashMap and a Hashtable in Java?
-7059
+7074
 Is Java “pass-by-reference” or “pass-by-value”?
-3555
+3561
 How do I efficiently iterate over each entry in a Java Map?
-4190
+4195
 Avoiding NullPointerException in Java
-4332
+4337
 How do I read / convert an InputStream into a String in Java?
-3294
+3298
 When to use LinkedList over ArrayList in Java?
-3731
+3735
 How do I generate random integers within a specific range in Java?
-3214
+3221
 How do I convert a String to an int in Java?
-2523
+2526
 How to fix 'android.os.NetworkOnMainThreadException'?
-3428
+3435
 How can I create a memory leak in Java?
 Hot Network Questions
-newpxmath: accents are always bold
-Is there any realistic explanation for Earth-like climate on a Sun-sized planet?
-Efficient ragged path for text
-Should most brahmins today be considered as shudras?
-Is the the word order of "Iura novit curia" used for emphasis?
-Is there a precise definition of "Supermoon"?
-Print the last answerer's first submission
-Do phone chargers communicate with the phone?
-Where and how are raw transactions stored on the blockchain?
-How to rotate a circle around y-aixs and calculate the volume of the 3D solid?
-Sanctuary spell and Using magic Items that cause damage?
-Why do we have two kidneys but one liver?
-A bracket amphitheater
-What is the difference between “they” and “it” for people, especially for those people who choose to be identified as non-binary?
-Why does sleep, when run in a shell script, ignore SIGINT?
-Should forcing open doors be Strength or Strength (Athletics)
-How can I use a control variable that is non-normal in linear regression with other variabels that are normal?
-Triangle-style sequences
-A huge forest native almost solely to elves who are widely regarded with hatred. What's to stop an army from simply burning the entire forest?
-If cost can be ignored, is a higher-value capacitor for ripple suppression always a good choice?
-Is it significantly faster to hike along a river bank?
-How can objects be neither vector nor scalar?
-Why is this result no contradiction to length contraction?
-Peer review 2.0
+output entries that have highest score
+Evaluation order of an APL n-train
+Why would a modern city with a warm climate have a skyway system?
+Should I notify a med school about their student's cheating history?
+Does machine learning really need data-efficient algorithms?
+History of /f/ sound in Russian
+What are the main reasons for using full justification when ragged right is more readable?
+Has physics ever given a physical significance to a mathematically abstract idea?
+Heating of hydraulic oil with hardtail electric MTB brakes
+"Which dreams, indeed, are ambition" in Hamlet Act 2, Scene 2
+Why did this gallon of milk stay fresh for so long?
+How to indicate a checkbox/toggle is "always on"
+Interviewer was two hours late
+Why are most women in anime housewives instead of being independent?
+Is there a threadlocker that requires heat to release and can withstand thousands of heat-cool cycles without needing to be reapplied or deteriorating
+Alien Instrument produces "visual music", which a Human can temporarily experience
+I'm Lazy: Close my Superparens
+IQ test question assistance
+Term for "place of death"
+Why can't quantum computation replace classical computation?
+Why can the block production rate be as low as two per hour?
+How important is "MIPS-C2® Brain Protection System" for a bicycle helmet?
+Can I gain AC efficiency by spraying condensate water on the outdoor coils?
+Is there a diff() function in Julia DataFrames like pandas?
 more hot questions
 Question feed
 Subscribe to RSS
@@ -615,7 +616,7 @@ Twitter
 LinkedIn
 Instagram
 site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.5.28.39383
+rev 2021.6.9.39464
 Stack Overflow works best with JavaScript enabled
 Your privacy
 By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.

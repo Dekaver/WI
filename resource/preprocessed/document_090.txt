@@ -62,17 +62,18 @@ Active
 9 months ago
 Viewed
 11k times
-50
+51
 4
 Why are there Errors AND Exceptions in Dart and not either Errors OR Exceptions?
 Is the reason a historical one oder what?
 I can throw an Error, I can throw an Exception. None of them is checked by the Analyzer like in Java (Exception vs. RuntimeException)
 dart
 Share
+Improve this question
 Follow
 asked Jun 26 '13 at 9:10
 Mike MittererMike Mitterer
-5,30922 gold badges3535 silver badges5151 bronze badges
+5,33922 gold badges3535 silver badges5151 bronze badges
 Add a comment
 |
 3 Answers
@@ -80,7 +81,7 @@ Add a comment
 Active
 Oldest
 Votes
-69
+71
 From this post, quoting Bob Nystrom:
 Error and its subclasses are for programmatic errors. If one of those
 occurs, your code is bad and you should fix your code.
@@ -95,10 +96,11 @@ If you get an error, then you need to check how you're using the API that's thro
 If you're writing an API, then you should use the same pattern.
 Errors are messages to downstream developers about how they are using your API.
 Share
+Improve this answer
 Follow
 answered Jun 26 '13 at 9:38
 Chris BuckettChris Buckett
-11k22 gold badges3434 silver badges4545 bronze badges
+11.1k22 gold badges3434 silver badges4545 bronze badges
 1
 2
 Thx Chris for the clarification! I think thats missing in the documentation. There is already an issue for this: code.google.com/p/dart/issues/detail?id=9377
@@ -123,11 +125,12 @@ In practice you can catch Errors, but you should not. There is a linter rule to 
 The fact that Dart allows it can still be useful, e.g. when testing assertions or other errors.
 See this answer for a complete example scenario.
 Share
+Improve this answer
 Follow
 edited Oct 15 '19 at 11:43
 answered Oct 13 '19 at 8:49
 creativecreatorormaybenotcreativecreatorormaybenot
-62.2k3030 gold badges174174 silver badges278278 bronze badges
+63.1k3232 gold badges175175 silver badges278278 bronze badges
 2
 It would be nice nice if you had provided a simple example for both Exception and Error.
 – user6274128
@@ -148,11 +151,12 @@ Errors occur when there is a problem that was not expected. Things like null poi
 For the most part you, as an app developer, will always use exceptions.
 Errors tend to be reserved for unexpected and fatal problems.
 Share
+Improve this answer
 Follow
 edited Aug 24 '20 at 11:11
 answered May 20 '20 at 1:47
 iDecodeiDecode
-4,23522 gold badges1717 silver badges4343 bronze badges
+4,32122 gold badges1717 silver badges4646 bronze badges
 Add a comment
 |
 Your Answer
@@ -178,12 +182,11 @@ By clicking “Post Your Answer”, you agree to our terms of service, privacy p
 Not the answer you're looking for? Browse other questions tagged dart
 or ask your own question.
 The Overflow Blog
-Level Up: Linear Regression in Python – Part 2
-Shipping confetti to Stack Overflow’s design system
+Using low-code tools to iterate products faster
+Podcast 345: A good software tutorial explains the How. A great one explains…
 Featured on Meta
-The future of Community Promotion, Open Source, and Hot Network Questions Ads
-Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
 Take the 2021 Developer Survey
+Visit chat
 Linked
 15
 What's the recommended way in Dart: asserts or throw Errors
@@ -196,9 +199,9 @@ Proper way to throw Errors in Dart
 Related
 5
 Unhandled Exception in Dart
-58
+59
 Dart catch clause
-218
+221
 Dart SDK is not configured
 4
 Dart: No Message specification for Exception?
@@ -211,30 +214,30 @@ What is the correct way to catch both Error and Exception following `effective d
 0
 Why dart analyzer fails to recognize a type error?
 Hot Network Questions
-select distinct columns over multiple databases sql server
-Efficient ragged path for text
-The usage of can't
-What does this line: `T=C/2=INT(C/2)` do? Why is it valid syntax?
-Is the burden of proof a fallacy?
-Is there any realistic explanation for Earth-like climate on a Sun-sized planet?
-"a man/woman of difficult situations", does this sound idiomatic?
-Are there any papers about this observation of the distribution of the zeros of the zeta function?
-newpxmath: accents are always bold
-What is the difference between “they” and “it” for people, especially for those people who choose to be identified as non-binary?
-Why does decriminalisation/legalisation not reduce the cost of drugs?
-How to mark directories in the output of the `find` command?
-unknown pieces of a set - stickers on round corner bricks
-Why is this result no contradiction to length contraction?
-Is it better to resize an image by minus 10% or by minus 50%?
-Triangle-style sequences
-Lunar Terrain Model in Apollo Guidance Computer
-3 verbs in one sentence - how is that?
-According to international law, when is first-use nuclear strike justified?
-How could publicly accessible information proving that a public figure is corrupt go undetected for at least a year?
-Vocal range of a crowd
-What can I do about a parent who is discouraging their child from learning violin, a child who really wants to learn, so that the child will drop out
-Why do Igors (but not Igorinas) lisp when they speak?
-Is there a precise definition of "Supermoon"?
+Is there a canonical source for the Arcane Trickster's magic?
+Why would a modern city with a warm climate have a skyway system?
+Which constructive heuristics exist for the TSP?
+What did I just photograph? (rainbow way out of place)
+Can a petrified wizard communicate telepathically with their familiar?
+A recently published paper seriously impairs the novelty of my dissertation. Which should be the purpose of the next meeting with my supervisor?
+Is there a fundamental reason for the exponential dependence of the evolution of the temperature in an electronic deviced that is powered on?
+Dealing with extremely inexperienced developers who have daily deadlines?
+What is the advantage of gate resistor (R3) in this JFET voltage divider biasing circuit?
+Show exit code of last command in Bash prompt if it returned error
+How to indicate a checkbox/toggle is "always on"
+Can black convert a +5.6 game into a draw (assuming both players play optimally)?
+Interview by fellow PhD students, not the professor himself
+Why are most COB LEDs physically yellow?
+Why does Lex turn on the flashlight?
+Are AP slugs for shotguns possible?
+Why am I seeing the sun slightly north instead of slightly south early in the morning in Malta?
+Refueling a Mars mission on the way
+Is it illegal to implement a patented algorithm or method and take advantage from it?
+How was it calculated that Dream cheated on his Minecraft v1.16 glitchless speedrun?
+What is the DC of Draconic Presence?
+Is maximum speed a thing?
+Should I notify a med school about their student's cheating history?
+Term for "place of death"
 more hot questions
 Question feed
 Subscribe to RSS
@@ -383,7 +386,7 @@ Twitter
 LinkedIn
 Instagram
 site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.5.28.39383
+rev 2021.6.9.39464
 Stack Overflow works best with JavaScript enabled
 Your privacy
 By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.

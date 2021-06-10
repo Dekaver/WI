@@ -34,7 +34,7 @@ by
 Erick
 • 120 points
 •
-12,371 views
+12,915 views
 answer
 comment
 flag
@@ -59,7 +59,7 @@ answered
 Sep 24, 2020
 by
 Roshni
-• 10,440 points
+• 10,460 points
 comment
 flag
 ask related question
@@ -82,7 +82,7 @@ by
 Gitika
 • 65,910 points
 •
-402 views
+427 views
 python
 python-list
 python-datatypes
@@ -106,7 +106,7 @@ by
 charlie_brown
 • 7,780 points
 •
-633 views
+648 views
 –1 vote
 2 answers
 How to filter out any digit that contains odd number in a range of number in Python?
@@ -119,7 +119,7 @@ in Python
 by
 Nomizo_Coders
 •
-469 views
+473 views
 python
 python-programming
 factors
@@ -137,7 +137,7 @@ in Python
 by
 Junaid
 •
-331 views
+340 views
 python
 python-programming
 0 votes
@@ -150,7 +150,7 @@ in Python
 by
 Patrick
 •
-2,646 views
+2,680 views
 python-programming
 python
 python-list
@@ -175,7 +175,7 @@ edited
 Jul 8, 2019
 by Kalgi
 •
-2,112 views
+2,142 views
 python-programming
 python
 python-list
@@ -193,7 +193,7 @@ by
 Waseem
 • 4,540 points
 •
-1,500 views
+1,519 views
 python-list
 python-datatypes
 python
@@ -201,7 +201,7 @@ python-functions
 python-sequence-types
 python-types
 python-programming
-+4 votes
++5 votes
 6 answers
 Lowercase in Python
 You can simply the built-in function in ...READ MORE
@@ -212,7 +212,7 @@ by
 hemant
 • 5,810 points
 •
-1,600 views
+1,616 views
 python-programming
 python
 python-file
@@ -234,7 +234,7 @@ by
 pakainfo
 • 200 points
 •
-274,515 views
+278,221 views
 python
 python-programming
 0 votes
@@ -248,9 +248,9 @@ Dec 15, 2020
 in Python
 by
 Roshni
-• 10,440 points
+• 10,460 points
 •
-50,486 views
+51,049 views
 python-programming
 python
 Recent in Pythonerror install mysqlclient on windows Feb 6 Dickey-Fuller test in Python Feb 5 How to declare an array in Python? Jan 5 How to change the “tick frequency” on x or y axis in matplotlib? Jan 5 How to prompt for user input and read command-line arguments? Jan 5
@@ -298,7 +298,7 @@ RPA
 Selenium
 (1,550)
 Software Testing
-(55)
+(56)
 Tableau
 (474)
 Talend

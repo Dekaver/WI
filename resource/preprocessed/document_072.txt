@@ -77,7 +77,7 @@ Anggaran terendah dulu
 Anggaran termahal dulu
 Penawaran/entri terendah
 Penawaran/entri tertinggi
-206,725
+207,642
 str object has no attribute append dictionary python pekerjaan ditemukan, seharga USD
 First
 1
@@ -815,7 +815,7 @@ $555
 Rata-rata
 3 penawaran
 Tawar sekarang
-Memperlihatkan 1 - 50 dari 206,725 entri
+Memperlihatkan 1 - 50 dari 207,642 entri
 Hasil per halaman
 20
 50

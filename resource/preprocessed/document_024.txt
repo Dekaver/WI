@@ -64,7 +64,7 @@ Free accounts can only access sites on our whitelist, and that site isn't on it.
 I also believe that the National Stock Exchange of India block incoming connections from cloud service providers like PythonAnywhere, so even in a paid account you would not be able to connect.
 giles
 |
-10173
+10223
 posts
 |
 PythonAnywhere staff
@@ -91,7 +91,7 @@ permalink
 The problem is that it's blocked from the other end -- even if we whitelisted it, you would not be able to access it from our servers.
 giles
 |
-10173
+10223
 posts
 |
 PythonAnywhere staff
@@ -114,7 +114,7 @@ What are you trying to do by accessing the form?
 Perhaps they provide a proper API for filling in forms instead of using a web-scraping solution.
 giles
 |
-10173
+10223
 posts
 |
 PythonAnywhere staff
@@ -136,7 +136,7 @@ permalink
 It might also be worth looking at the response you're getting in more detail -- even if the status code is 403, it might have some details as to why they're refusing the request in the page content.
 giles
 |
-10173
+10223
 posts
 |
 PythonAnywhere staff
@@ -156,7 +156,7 @@ permalink
 Replied to you here
 conrad
 |
-4185
+4186
 posts
 |
 PythonAnywhere staff
@@ -177,7 +177,7 @@ permalink
 We can only add sites if they have an official public API -- if that site has one, please post a link to the API docs.
 giles
 |
-10173
+10223
 posts
 |
 PythonAnywhere staff
@@ -200,7 +200,7 @@ permalink
 We need an endpoint name and official api docs.
 fjl
 |
-2072
+2105
 posts
 |
 PythonAnywhere staff
@@ -221,7 +221,7 @@ permalink
 we allow the install of the nsetools package, but that doesn't mean that the package will work. also I believe that india nse blocks access from computers outside of india- so you wouldn't be able to use our services (which is outside of india)
 conrad
 |
-4185
+4186
 posts
 |
 PythonAnywhere staff
@@ -244,7 +244,7 @@ permalink
 Currently as a free user you are being blocked by PythonAnywhere. You can try upgrading, but I believe you may then be blocked by NSE.
 conrad
 |
-4185
+4186
 posts
 |
 PythonAnywhere staff
@@ -264,7 +264,7 @@ permalink
 Send us a link to the API documentation and we'll consider it for the whitelist.
 glenn
 |
-6951
+6986
 posts
 |
 PythonAnywhere staff

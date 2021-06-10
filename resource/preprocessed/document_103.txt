@@ -71,10 +71,11 @@ A method can throw an Exception class instance, can't it? But this is an express
 My second question is about thread "main". What is thread "main"? Does "main" mean the static main method?
 java exception main arithmeticexception
 Share
+Improve this question
 Follow
 edited May 30 '12 at 14:00
 wattostudios
-8,4461313 gold badges4040 silver badges5454 bronze badges
+8,4561313 gold badges4040 silver badges5454 bronze badges
 asked May 30 '12 at 13:51
 Akira
 NoguchiAkira
@@ -92,11 +93,12 @@ Votes
 java.lang.ArithmeticException is a type of Exception that aims to better describe what the problem actually is. There's no point just creating an Exception, as it really could be caused by anything. By generating an ArithmeticException, the user can immediately know that the problem is something to do with a calculation. An Exception can be thrown by any piece of code, including in calculations such as your example.
 Exception in thread "main" means that the exception is thrown by the main() method, which also happens to be the primary Thread that is running your code.
 Share
+Improve this answer
 Follow
 edited May 30 '12 at 14:02
 answered May 30 '12 at 13:57
 wattostudioswattostudios
-8,4461313 gold badges4040 silver badges5454 bronze badges
+8,4561313 gold badges4040 silver badges5454 bronze badges
 Add a comment
 |
 2
@@ -110,6 +112,7 @@ throw new ArithmeticException();
 Second question is about thread "main". What is thread "main" ?
 When a Java program starts up, one thread begins running immediately. This is usually called the main thread of your program, because it is the one that is executed when your program begins.
 Share
+Improve this answer
 Follow
 answered May 30 '12 at 13:58
 Kazekage GaaraKazekage Gaara
@@ -121,10 +124,11 @@ Its Arithmetic exception case: means something in logic which not exist in Mathe
 Check the condition of the "for loop" or any other logical functions.
 An example is when somewhere you write something like: (n % i == 0) and give initialization i = 0, now every one knows that number can not be divided by Zero. So, you may need to change the initialization to i = 1.
 Share
+Improve this answer
 Follow
 edited Feb 13 '20 at 20:26
 Bernardo Duarte
-3,11244 gold badges1515 silver badges2929 bronze badges
+3,16244 gold badges1515 silver badges2929 bronze badges
 answered Feb 13 '20 at 19:06
 vedant davevedant dave
 4577 bronze badges
@@ -134,56 +138,54 @@ Highly active question. Earn 10 reputation in order to answer this question. The
 Not the answer you're looking for? Browse other questions tagged java exception main arithmeticexception
 or ask your own question.
 The Overflow Blog
-Level Up: Linear Regression in Python – Part 2
-Shipping confetti to Stack Overflow’s design system
+Using low-code tools to iterate products faster
+Podcast 345: A good software tutorial explains the How. A great one explains…
 Featured on Meta
-The future of Community Promotion, Open Source, and Hot Network Questions Ads
-Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
 Take the 2021 Developer Survey
 Related
-2100
+2102
 How do you assert that a certain exception is thrown in JUnit 4 tests?
 522
 What are the effects of exceptions on performance in Java?
-2213
+2217
 “implements Runnable” vs “extends Thread” in Java
-481
+483
 The case against checked exceptions
-300
+302
 Throwing exceptions from constructors
-2551
+2562
 Manually raising (throwing) an exception in Python
-233
+234
 Catch a thread's exception in the caller thread in Python
-1124
+1125
 Can't execute jar- file: “no main manifest attribute”
-1563
+1566
 What does “Could not find or load main class” mean?
 Hot Network Questions
-Why would birds fall from the sky due to a lack of moisture?
-What is the difference between “they” and “it” for people, especially for those people who choose to be identified as non-binary?
-Is the burden of proof a fallacy?
-Did medieval kingdoms issue health related guidelines?
-Where can people allergic to dairy food eat when travelling in France?
-Why is g3 a bad move here?
-Factorising blinear forms with Mathematica
-removing multiple lines - d3d vs 3dd
-How can I use a control variable that is non-normal in linear regression with other variabels that are normal?
-Vocal range of a crowd
-What technical reasons prevented the Win9x Virtual Machine Monitor from running multiple threads simultaneously?
-The usage of can't
-Generate a British numberplate
-I think I've sh-- myself
-Is it significantly faster to hike along a river bank?
-Strange vertical spacing after colored equation
-The famous "Charaiveti" mantra is mentioned in which Vedic verse?
-Why can't the piano play middle eastern music?
-What's the cohomology ring structure of a blow-up?
-A planet with toxic air
-Resigning will cripple my department, but I am resigning because of a near crippled department
-Did ancient Greek mathematicians consider numbers independently of geometry?
-unknown pieces of a set - stickers on round corner bricks
-Concatenate column names in one column conditional on using mutate, across and case_when
+Should I notify a med school about their student's cheating history?
+I'm Lazy: Close my Superparens
+Why does Lex turn on the flashlight?
+Error creating scratch orgs with "Communities" enabled
+Extracting work from people who are on PIPs but who we also cannot fire?
+Former coworker I gave a reference for sabotaged the company on his last day - Should I update the reference contact with this new information?
+Are AP slugs for shotguns possible?
+Emit random objects inside array-ed object
+What are the main reasons for using full justification when ragged right is more readable?
+Linux backup script written in bash for tar
+Is buying lecture notes wrong?
+Is there any country that jumped to developed status during the past 75 years after WW2?
+Why did this gallon of milk stay fresh for so long?
+How well would Max Faget's April 1, 1969 design for the Space Shuttle have actually worked? What would have been the major problems?
+Can an American state ban a (minor) political party?
+What does "parity pattern" mean?
+How was it calculated that Dream cheated on his Minecraft v1.16 glitchless speedrun?
+Why are most COB LEDs physically yellow?
+Is Huang Yanling (a Wuhan virology researcher) the world's first COVID-19 patient?
+Why can the block production rate be as low as two per hour?
+Heating of hydraulic oil with hardtail electric MTB brakes
+What is the advantage of gate resistor (R3) in this JFET voltage divider biasing circuit?
+Dsus4 In A major
+Mandatory tabs-an unusual pattern?
 more hot questions
 Question feed
 Subscribe to RSS
@@ -332,7 +334,7 @@ Twitter
 LinkedIn
 Instagram
 site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.5.28.39383
+rev 2021.6.9.39464
 Stack Overflow works best with JavaScript enabled
 Your privacy
 By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.

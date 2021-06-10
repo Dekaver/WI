@@ -1,5 +1,5 @@
 python: AttributeError: 'list' object has no attribute 'Append'
-Visit Jeremy's Blog.
+Download your favorite Linux distribution at LQ ISO.
 Blogs
 Recent Entries
 Best Entries
@@ -174,7 +174,7 @@ LinuxQuestions.org
 > Forums
 > Non-*NIX Forums
 > Programming
-All times are GMT -5. The time now is 12:38 PM.
+All times are GMT -5. The time now is 05:07 PM.
 Contact Us -
 Advertising Info -
 Rules - Privacy -

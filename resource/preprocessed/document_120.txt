@@ -14,6 +14,7 @@ Search Coderanch
 Advance search
 Google search
 Register / Login
+Win a copy of Spring Quick Reference Guide: A Pocket Handbook for Spring Framework, Spring Boot, and More this week in the Spring forum!
 Post Reply
 Bookmark Topic
 Watch Topic
@@ -43,23 +44,22 @@ all forums
 this forum made possible by our volunteer staff, including ...
 Marshals:
 Campbell Ritchie
-Paul Clapham
 Ron McLeod
-paul wheaton
-Devaka Cooray
-Sheriffs:
+Paul Clapham
 Jeanne Boyarsky
-Tim Cooke
 Liutauras Vilda
+Sheriffs:
+Rob Spoor
+Bear Bibeault
+Tim Cooke
 Saloon Keepers:
 Tim Moores
-Tim Holloway
 Stephan van Hulst
+Tim Holloway
 Carey Brown
 Piet Souris
 Bartenders:
-salvin francis
-Mikalai Zaikin
+Frits Walraven
 Himai Minh
 Forum:
 Beginning Java
@@ -181,7 +181,7 @@ return answer;
 }
 Paul Clapham
 Marshal
-Posts: 26558
+Posts: 26583
 81
 I like...
 posted 5 years ago
@@ -202,8 +202,8 @@ Send
 thanks, that worked. What a strange message.
 Campbell Ritchie
 Marshal
-Posts: 72762
-317
+Posts: 72872
+330
 posted 5 years ago
 Number of slices to send:
 Optional 'thank-you' note:
@@ -219,6 +219,7 @@ Number of slices to send:
 Optional 'thank-you' note:
 Send
 I dont use IDES on a regular basis. Thanks for the link!
+Don't get me started about those stupid light bulbs.
 reply
 reply
 Bookmark Topic
@@ -232,7 +233,7 @@ Need something similar for setTitle but for a button? When b1 is clicked I need 
 Understanding the concept of passing objects through class constructors
 JPanel communication
 More...
-current ranch time (not your local time) is May 31, 2021 11:41:48
+current ranch time (not your local time) is Jun 09, 2021 16:09:56
 all times are in ranch time: GMT-6 in summer, GMT-7 in winter
 contact us | advertise |
 | Powered by JForum | copyright © 1998-2021 paul wheaton, missoula, MT

@@ -57,11 +57,11 @@ Learn more
 AttributeError: 'Sequential' object has no attribute 'send' in Keras
 Ask Question
 Asked
-5 days ago
+14 days ago
 Active
-4 days ago
+13 days ago
 Viewed
-15 times
+18 times
 -1
 hook = sy.TorchHook(torch)
 node1 = sy.VirtualWorker(hook, id="node1")
@@ -76,16 +76,14 @@ metrics=['accuracy'])
 I tried like that code. But I had an AttributeError like that image. I don't know what is the error means. Why Sequential object has ho attribute 'send'? What should I do to solve this problem?
 python tensorflow keras pytorch pysyft
 Share
+Improve this question
 Follow
 edited May 27 at 2:26
 Black Raven
-1,34155 silver badges2121 bronze badges
+1,91866 silver badges2222 bronze badges
 asked May 26 at 6:56
 Subin MoonSubin Moon
 1
-New contributor
-Subin Moon is a new contributor to this site. Take care in asking for clarification, commenting, and answering.
-Check out our Code of Conduct.
 1
 Your code and the one in your screenshot do not match, why are you using this send function on
 Keras Sequential model?
@@ -99,7 +97,6 @@ Oldest
 Votes
 Know someone who can answer? Share a link to this question via email, Twitter, or Facebook.
 Your Answer
-Subin Moon is a new contributor. Be nice, and check out our Code of Conduct.
 Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
 Draft saved
 Draft discarded
@@ -122,14 +119,12 @@ By clicking “Post Your Answer”, you agree to our terms of service, privacy p
 Browse other questions tagged python tensorflow keras pytorch pysyft
 or ask your own question.
 The Overflow Blog
-Level Up: Linear Regression in Python – Part 2
-Shipping confetti to Stack Overflow’s design system
+Using low-code tools to iterate products faster
+Podcast 345: A good software tutorial explains the How. A great one explains…
 Featured on Meta
-The future of Community Promotion, Open Source, and Hot Network Questions Ads
-Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
 Take the 2021 Developer Survey
 Related
-1914
+1922
 How to know if an object has an attribute in Python
 22
 Keras AttributeError: 'list' object has no attribute 'ndim'
@@ -142,30 +137,30 @@ Approximating a smooth multidimensional function using Keras to an error of 1e-4
 1
 pred = model.predict_classes([prepare(file_path)]) AttributeError: 'Functional' object has no attribute 'predict_classes'
 Hot Network Questions
-"a man/woman of difficult situations", does this sound idiomatic?
-Did ancient Greek mathematicians consider numbers independently of geometry?
-How would transportation evolve in a world where everyone can teleport?
-Did medieval kingdoms issue health related guidelines?
-Why would birds fall from the sky due to a lack of moisture?
-How could publicly accessible information proving that a public figure is corrupt go undetected for at least a year?
-I have a postdoc interview tomorrow and I think I have overstated my abilities in my CV. How do I address it during the interview?
-Are vertices in a clockwise order?
-Print the last answerer's first submission
-Lunar Terrain Model in Apollo Guidance Computer
-Movie where someone's wife is secretly a monster
-Why is this result no contradiction to length contraction?
-Why is g3 a bad move here?
-Why can't the piano play middle eastern music?
-I ran a nail through a wire at home, should I worry?
-select distinct columns over multiple databases sql server
-Is the the word order of "Iura novit curia" used for emphasis?
-Why does sleep, when run in a shell script, ignore SIGINT?
-3 verbs in one sentence - how is that?
-How to rotate a circle around y-aixs and calculate the volume of the 3D solid?
-Advice needed – I can't reach my collaborator, but there's a short deadline for revising our journal article submission
-Stop, in the name of the law
-How do computers perform operations on numbers that are larger than 64 bits?
-Can a rest be taken in a moving cart?
+Why some CRS are deprecated in QGIS?
+How well would Max Faget's April 1, 1969 design for the Space Shuttle have actually worked? What would have been the major problems?
+3-dimensional h-cobordisms
+Display polygon as a line in legend
+Is it a good idea to go to Japan without a travel guide?
+Can black convert a +5.6 game into a draw (assuming both players play optimally)?
+Should I notify a med school about their student's cheating history?
+Why are SSH MITM tools able to read and modify data?
+Is it illegal to implement a patented algorithm or method and take advantage from it?
+Is buying lecture notes wrong?
+How important is learning hardware/architecture for scientific computing?
+What does 高高矮矮 mean?
+Why did old IBM-PC-compatible computers only have 16 colors available?
+Are AP slugs for shotguns possible?
+Why was the neutrino thought to be massless?
+Interviewer was two hours late
+What is the hardest part of transitioning from a PhD to a full-time career in academia?
+Simplify K combinatory logic expression
+What would a bear species isolated on an island look like?
+What are minimal changes to make a truncated pyramid shaped megabuildings a thing?
+Deriving the energy-momentum tensor of a point particle
+What is the right tool for old, rusty, flat cross head bolts?
+Are there any greater risks of traveling significantly faster to another planet?
+Dsus4 In A major
 more hot questions
 Question feed
 Subscribe to RSS
@@ -314,7 +309,7 @@ Twitter
 LinkedIn
 Instagram
 site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.5.28.39383
+rev 2021.6.9.39464
 Stack Overflow works best with JavaScript enabled
 Your privacy
 By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.

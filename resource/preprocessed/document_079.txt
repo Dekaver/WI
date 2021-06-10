@@ -30,10 +30,23 @@ answered
 Jan 8, 2018
 by
 pkumar81
-(29.7k points)
+(30.1k points)
 np.load() converts CSR matrix to an object, so you cannot use toarray() to see the matrix. You need to first use tolist() and then toarray() to see the data.See the value of X with and without tolist().>>> Xarray(<3x3 sparse matrix of type '<class 'numpy.int64'>'        with 6 stored elements in Compressed Sparse Row format>, dtype=object)Here dtype is object, so toarray() will give error.>>> X=np.load('rr.npy').tolist()>>> X<3x3 sparse matrix of type '<class 'numpy.int64'>'        with 6 stored elements in Compressed Sparse Row format> Using tolist(), you can convert object to a list and then use toarray() to see the data.>>> X.toarray()array([[1, 0, 2],       [0, 0, 3],       [4, 5, 6]])
 Please log in or register to add a comment.
 Related questions
++1 vote
+1 answer
+AttributeError: 'tuple' object has no attribute 'sort'
+asked
+5 days ago
+in Programming Languages
+by
+pythonuser
+(17.1k points)
+python
+attributeerror
+sort
+tuple
 +2 votes
 1 answer
 AttributeError: 'dict' object has no attribute 'most_common' in Python
@@ -42,7 +55,7 @@ Jan 10, 2020
 in Programming Languages
 by
 pythonuser
-(17.0k points)
+(17.1k points)
 python
 dictionary
 attributeerror
@@ -54,7 +67,7 @@ Dec 4, 2019
 in Programming Languages
 by
 pythonuser
-(17.0k points)
+(17.1k points)
 python
 attributeerror
 argparse
@@ -66,7 +79,7 @@ Oct 12, 2019
 in Programming Languages
 by
 pythonuser
-(17.0k points)
+(17.1k points)
 python
 callable
 numpy
@@ -78,24 +91,11 @@ Feb 1
 in Programming Languages
 by
 pythonuser
-(17.0k points)
+(17.1k points)
 python
 numpy
 array
 typeerror
-+2 votes
-1 answer
-Python:
-TypeError: 'numpy.float64' object cannot be interpreted as an integer
-asked
-Apr 26, 2018
-in Programming Languages
-by
-pythonuser
-(17.0k points)
-python
-numpy
-typerror
 Categories
 All categories
 General
@@ -103,11 +103,11 @@ General
 CMS Tips
 (12)
 Operating Systems
-(80)
+(81)
 Web & Google
 (59)
 Programming Languages
-(396)
+(404)
 Databases
 (60)
 Most popular tags
@@ -119,8 +119,8 @@ linux
 ubuntu
 php
 pandas
-file
 string
+file
 dataframe
 postgresql
 dictionary

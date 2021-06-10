@@ -1,7 +1,9 @@
-import urllib
+import urllib.request
 import http.client as http
 from bs4 import BeautifulSoup
 # from nltk.corpus import stopwords
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
  
 import json
 
@@ -30,7 +32,7 @@ for i in data['url']:
     number = 1000 + int(i)
     data_preproccess['doc'][i] = f'document_{str(number)[1::]}.txt'
     
-    with open(f'resource/preprocessed/document_{str(number)[1::]}.txt', 'w') as f:
+    with open(f'resource/preprocessed/document_{str(number)[1::]}.txt', 'w', encoding='utf-8') as f:
         f.write(text)
     print(f'write success document_{str(number)[1::]}.txt')
 with open('resource/preprocessed/data_preprocessed.json', 'w') as f:

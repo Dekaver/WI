@@ -59,9 +59,9 @@ Ask Question
 Asked
 10 years, 7 months ago
 Active
-2 days ago
+11 days ago
 Viewed
-261k times
+262k times
 23
 9
 >>> myList[1]
@@ -90,6 +90,7 @@ I need to have a list of lists; so 'from form' should be a list. I did this (ple
 >>>
 python
 Share
+Improve this question
 Follow
 edited Oct 23 '10 at 20:16
 Zeynel
@@ -126,20 +127,22 @@ File "<stdin>", line 1, in <module>
 AttributeError: 'str' object has no attribute 'append'
 >>>
 Share
+Improve this answer
 Follow
 answered Oct 23 '10 at 20:00
 pyfuncpyfunc
-60.3k1414 gold badges138138 silver badges132132 bronze badges
+60.4k1414 gold badges138138 silver badges132132 bronze badges
 Add a comment
 |
 7
 If you want to append a value to myList, use myList.append(s).
 Strings are immutable -- you can't append to them.
 Share
+Improve this answer
 Follow
 answered Oct 23 '10 at 20:00
 bstpierrebstpierre
-26.9k1414 gold badges6363 silver badges100100 bronze badges
+27k1414 gold badges6363 silver badges100100 bronze badges
 Add a comment
 |
 2
@@ -152,6 +155,7 @@ dict with 1 as index, a list, a tuple, most other sequences, etc. But that's irr
 but I cannot append to item 1 in the list myList
 Of course not, because it's a string and you can't append to string. String are immutable. You can concatenate (as in, "there's a new object that consists of these two") strings. But you cannot append (as in, "this specific object now has this at the end") to them.
 Share
+Improve this answer
 Follow
 answered Oct 23 '10 at 20:09
 user395760user395760
@@ -172,6 +176,7 @@ temp.append('-') # slot for second piece of data
 blist.append(temp)
 # will be alist with 2 additional fields for extra stuff assocated with each item in alist
 Share
+Improve this answer
 Follow
 answered Mar 14 '15 at 15:53
 Dr. BobDr. Bob
@@ -188,6 +193,7 @@ temp.append('t')
 print(temp)
 Output: [['i', 'k'], 't']
 Share
+Improve this answer
 Follow
 answered May 3 '19 at 19:45
 ReshmaReshma
@@ -200,8 +206,9 @@ a = "prin"
 a.append("T") #doesn't wok
 a += "t" #works
 Share
+Improve this answer
 Follow
-answered 2 days ago
+answered May 29 at 5:07
 Jesvin Vijesh SJesvin Vijesh S
 43944 silver badges2222 bronze badges
 Add a comment
@@ -229,12 +236,11 @@ By clicking “Post Your Answer”, you agree to our terms of service, privacy p
 Not the answer you're looking for? Browse other questions tagged python
 or ask your own question.
 The Overflow Blog
-Level Up: Linear Regression in Python – Part 2
-Shipping confetti to Stack Overflow’s design system
+Using low-code tools to iterate products faster
+Podcast 345: A good software tutorial explains the How. A great one explains…
 Featured on Meta
-The future of Community Promotion, Open Source, and Hot Network Questions Ads
-Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
 Take the 2021 Developer Survey
+Visit chat
 Linked
 0
 AttributeError: str has no attribute append ( web scraping , links )
@@ -245,45 +251,45 @@ AttributeError: 'str' object has no attribute 'sign'
 Related
 3114
 What is the difference between Python's list methods append and extend?
-1914
+1922
 How to know if an object has an attribute in Python
-1913
+1919
 Determine the type of an object?
-1754
+1758
 How do you append to a file?
 2
 Python - AttributeError: 'str' object has no attribute 'append'
 1
 AttributeError: 'module' object has no attribute 'Fieldstorage'
-18
+19
 TensorFlow: AttributeError: 'Tensor' object has no attribute 'shape'
 2
 AttributeError: 'str' object has no attribute 'seek' using textfsm module (regex)
 Hot Network Questions
-How could publicly accessible information proving that a public figure is corrupt go undetected for at least a year?
-How to mark directories in the output of the `find` command?
-Does 'graduate program' mean MSc or Ph.D.?
-Why does decriminalisation/legalisation not reduce the cost of drugs?
-Is there any realistic explanation for Earth-like climate on a Sun-sized planet?
-How do computers perform operations on numbers that are larger than 64 bits?
-Sanctuary spell and Using magic Items that cause damage?
-I think I've sh-- myself
-How can I state an axiom without enumeration?
-Movie where someone's wife is secretly a monster
-Print the last answerer's first submission
-Engine failure: how to detect?
-How to stop games from reading your RAM?
-Is it better to resize an image by minus 10% or by minus 50%?
-Is there a precise definition of "Supermoon"?
-Where can people allergic to dairy food eat when travelling in France?
-identify M.2 SSD from BASH Script
-Why do Macs mount an additional drive every time I install software?
-Factorising blinear forms with Mathematica
-3 verbs in one sentence - how is that?
-How would transportation evolve in a world where everyone can teleport?
-Is the burden of proof a fallacy?
-What can I do about a parent who is discouraging their child from learning violin, a child who really wants to learn, so that the child will drop out
-Do phone chargers communicate with the phone?
+output entries that have highest score
+Can a petrified wizard communicate telepathically with their familiar?
+Why are SSH MITM tools able to read and modify data?
+Dsus4 In A major
+What is the advantage of gate resistor (R3) in this JFET voltage divider biasing circuit?
+Getting “Bye Bye Big Sur” error on installing Big Sur
+Is there a canonical source for the Arcane Trickster's magic?
+What are these sixteenth notes with left-right arrows beneath them supposed to mean
+Is Huang Yanling (a Wuhan virology researcher) the world's first COVID-19 patient?
+Are AP slugs for shotguns possible?
+Mandatory tabs-an unusual pattern?
+Why was the neutrino thought to be massless?
+Can I gain AC efficiency by spraying condensate water on the outdoor coils?
+Telling a coworker they aren't invited into my house
+"Which dreams, indeed, are ambition" in Hamlet Act 2, Scene 2
+History of /f/ sound in Russian
+How to indicate a checkbox/toggle is "always on"
+What does 高高矮矮 mean?
+Show exit code of last command in Bash prompt if it returned error
+IQ test question assistance
+Is buying lecture notes wrong?
+How realistic is the 1 kg/km² solar sail in "Death's End"?
+What is the point of hedging in this scenario?
+Emit random objects inside array-ed object
 more hot questions
 Question feed
 Subscribe to RSS
@@ -432,7 +438,7 @@ Twitter
 LinkedIn
 Instagram
 site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.5.28.39383
+rev 2021.6.9.39464
 Stack Overflow works best with JavaScript enabled
 Your privacy
 By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.

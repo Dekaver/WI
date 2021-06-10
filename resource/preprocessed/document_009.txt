@@ -64,14 +64,14 @@ hfawaz
 InceptionTime
 Notifications
 Star
-336
+339
 Fork
-82
+81
 Code
 Issues
 4
 Pull requests
-14
+15
 Actions
 Projects
 0

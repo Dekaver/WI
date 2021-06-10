@@ -143,6 +143,7 @@ print("Bayes_error: ",cross_val(error))
 return result
 python numpy machine-learning scikit-learn
 Share
+Improve this question
 Follow
 edited Nov 22 '13 at 20:45
 Learner
@@ -176,10 +177,11 @@ Votes
 2
 TruncatedSVD.transform returns an array, not a sparse matrix. In fact, in the present version of scikit-learn, only the vectorizers return sparse matrices.
 Share
+Improve this answer
 Follow
 answered Nov 23 '13 at 13:07
 Fred FooFred Foo
-329k6868 gold badges690690 silver badges800800 bronze badges
+329k6969 gold badges690690 silver badges802802 bronze badges
 1
 @Learner: it's in the docstring for that method.
 – Fred Foo
@@ -209,18 +211,16 @@ By clicking “Post Your Answer”, you agree to our terms of service, privacy p
 Not the answer you're looking for? Browse other questions tagged python numpy machine-learning scikit-learn
 or ask your own question.
 The Overflow Blog
-Level Up: Linear Regression in Python – Part 2
-Shipping confetti to Stack Overflow’s design system
+Using low-code tools to iterate products faster
+Podcast 345: A good software tutorial explains the How. A great one explains…
 Featured on Meta
-The future of Community Promotion, Open Source, and Hot Network Questions Ads
-Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
 Take the 2021 Developer Survey
 Related
-1914
+1922
 How to know if an object has an attribute in Python
-1913
+1919
 Determine the type of an object?
-500
+502
 Error: “ 'dict' object has no attribute 'iteritems' ”
 2
 How to split sparse matrix into train and test sets?
@@ -231,30 +231,30 @@ ValueError: Input arrays should have the same number of samples as target arrays
 1
 How to Increase accuracy and precision for my logistic regression model?
 Hot Network Questions
-Concatenate column names in one column conditional on using mutate, across and case_when
-Resigning will cripple my department, but I am resigning because of a near crippled department
-What's a lot of money {out of curiosity}?
-Did medieval kingdoms issue health related guidelines?
-Is there a misprint on this note in the Maple Leaf Rag?
-Engine failure: how to detect?
-Why is bad behavior more tolerated in academia compared to the rest of the industry?
-Where can people allergic to dairy food eat when travelling in France?
-What is the difference between “they” and “it” for people, especially for those people who choose to be identified as non-binary?
-unknown pieces of a set - stickers on round corner bricks
-How can I use a control variable that is non-normal in linear regression with other variabels that are normal?
-Calculating the hexagons in a hexagon of hexagons
-Meaning of せないかんのよ
-Triangle-style sequences
-Efficient ragged path for text
-Should forcing open doors be Strength or Strength (Athletics)
-What technical reasons prevented the Win9x Virtual Machine Monitor from running multiple threads simultaneously?
-Can a rest be taken in a moving cart?
-The famous "Charaiveti" mantra is mentioned in which Vedic verse?
-identify M.2 SSD from BASH Script
-Should most brahmins today be considered as shudras?
-Strange vertical spacing after colored equation
-Why do we have two kidneys but one liver?
-What does research indicate about how one should treat units in elementary school?
+Emit random objects inside array-ed object
+Deriving the energy-momentum tensor of a point particle
+How important is "MIPS-C2® Brain Protection System" for a bicycle helmet?
+Is it a coincidence that on the far side of the moon almost no seas are visible?
+Is there any country that jumped to developed status during the past 75 years after WW2?
+Are there any greater risks of traveling significantly faster to another planet?
+Why would a modern city with a warm climate have a skyway system?
+Is there a threadlocker that requires heat to release and can withstand thousands of heat-cool cycles without needing to be reapplied or deteriorating
+How to get real-looking rust that will be safe to the touch?
+How to remove the new weather info from the taskbar?
+how to add existing user to existing group id (not group name)?
+Term for "place of death"
+Why am I seeing the sun slightly north instead of slightly south early in the morning in Malta?
+Alien Instrument produces "visual music", which a Human can temporarily experience
+Should I notify a med school about their student's cheating history?
+"Which dreams, indeed, are ambition" in Hamlet Act 2, Scene 2
+Refueling a Mars mission on the way
+What does "parity pattern" mean?
+A recently published paper seriously impairs the novelty of my dissertation. Which should be the purpose of the next meeting with my supervisor?
+Why can the block production rate be as low as two per hour?
+Why did this gallon of milk stay fresh for so long?
+Is there a fundamental reason for the exponential dependence of the evolution of the temperature in an electronic deviced that is powered on?
+What does 高高矮矮 mean?
+Error creating scratch orgs with "Communities" enabled
 more hot questions
 Question feed
 Subscribe to RSS
@@ -403,7 +403,7 @@ Twitter
 LinkedIn
 Instagram
 site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.5.28.39383
+rev 2021.6.9.39464
 Stack Overflow works best with JavaScript enabled
 Your privacy
 By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.

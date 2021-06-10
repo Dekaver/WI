@@ -68,6 +68,7 @@ My Code
 I've already tried putting 'import nltk' at first but it is still the same, and also I've tried 'from nltk.tokenize import 'PunktSentenceTokenizer'. I don't know why the Python shell can't find the definition of the nltk. How should I address this? I am still learning how to write and code python.
 nltk
 Share
+Improve this question
 Follow
 edited Mar 1 '19 at 6:33
 Terry Jan Reedy
@@ -105,10 +106,11 @@ pip install nltk
 Then you need to import it...
 import nltk
 Share
+Improve this answer
 Follow
 edited Sep 4 '19 at 12:24
 Andrew Brēza
-5,77922 gold badges3030 silver badges3939 bronze badges
+5,78922 gold badges3030 silver badges3939 bronze badges
 answered Mar 27 '19 at 18:01
 Anasta SiaAnasta Sia
 1111 bronze badge
@@ -122,13 +124,14 @@ tagged = ntlk.pos_tag(words)
 to
 tagged = nltk.pos_tag(words)
 Share
+Improve this answer
 Follow
 edited Sep 4 '19 at 12:56
 manish Prasad
 43033 silver badges1515 bronze badges
 answered Mar 27 '19 at 18:32
 Josef KorbelJosef Korbel
-96411 gold badge66 silver badges2323 bronze badges
+98411 gold badge66 silver badges2424 bronze badges
 Add a comment
 |
 Your Answer
@@ -154,13 +157,10 @@ By clicking “Post Your Answer”, you agree to our terms of service, privacy p
 Not the answer you're looking for? Browse other questions tagged nltk
 or ask your own question.
 The Overflow Blog
-Level Up: Linear Regression in Python – Part 2
-Shipping confetti to Stack Overflow’s design system
+Using low-code tools to iterate products faster
+Podcast 345: A good software tutorial explains the How. A great one explains…
 Featured on Meta
-The future of Community Promotion, Open Source, and Hot Network Questions Ads
-Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
 Take the 2021 Developer Survey
-Visit chat
 Related
 84
 Creating a new corpus with NLTK
@@ -173,30 +173,30 @@ Using British National Corpus in NLTK
 0
 Finding NLTK module in python
 Hot Network Questions
-Why would birds fall from the sky due to a lack of moisture?
-Stop, in the name of the law
-Trying to identify an old sci-fi novel: a group of space travellers visiting a planet previously long-inhabited but regressed?
-Can a rest be taken in a moving cart?
-Factorising blinear forms with Mathematica
-How can I offset 6" ducting by just a few inches?
-I ran a nail through a wire at home, should I worry?
-The usage of can't
-Why is g3 a bad move here?
-What does this line: `T=C/2=INT(C/2)` do? Why is it valid syntax?
-How can I state an axiom without enumeration?
-Why does sleep, when run in a shell script, ignore SIGINT?
-Does an IFR flight-plan includes the approach as well?
-How could publicly accessible information proving that a public figure is corrupt go undetected for at least a year?
-Is it better to resize an image by minus 10% or by minus 50%?
-How do I make a "ragged" table?
-Why is bad behavior more tolerated in academia compared to the rest of the industry?
-Why is this result no contradiction to length contraction?
-Please Identify this outdoor plant?
-Colour ramp for maps
-How do computers perform operations on numbers that are larger than 64 bits?
-How to stop games from reading your RAM?
-Are there any papers about this observation of the distribution of the zeros of the zeta function?
-Why do Igors (but not Igorinas) lisp when they speak?
+Are there any greater risks of traveling significantly faster to another planet?
+Why does Lex turn on the flashlight?
+Why did old IBM-PC-compatible computers only have 16 colors available?
+How important is learning hardware/architecture for scientific computing?
+Should I notify a med school about their student's cheating history?
+How to make Mathematica read in CSV as fast as Python's Pandas
+Which one would be better for 3.3V outputs among ULN2001 and ULN2003?
+What are the main reasons for using full justification when ragged right is more readable?
+Is it a good idea to go to Japan without a travel guide?
+Has physics ever given a physical significance to a mathematically abstract idea?
+Dealing with extremely inexperienced developers who have daily deadlines?
+Former coworker I gave a reference for sabotaged the company on his last day - Should I update the reference contact with this new information?
+What are minimal changes to make a truncated pyramid shaped megabuildings a thing?
+What is the DC of Draconic Presence?
+Is there any country that jumped to developed status during the past 75 years after WW2?
+Telling a coworker they aren't invited into my house
+IQ test question assistance
+How to indicate a checkbox/toggle is "always on"
+Alien Instrument produces "visual music", which a Human can temporarily experience
+Simplest/cheapest way to build a tensegrity model?
+Why am I seeing the sun slightly north instead of slightly south early in the morning in Malta?
+Why can't quantum computation replace classical computation?
+Is cohomology always related to topology?
+Term for "place of death"
 more hot questions
 Question feed
 Subscribe to RSS
@@ -344,7 +344,7 @@ Twitter
 LinkedIn
 Instagram
 site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.5.28.39383
+rev 2021.6.9.39464
 Stack Overflow works best with JavaScript enabled
 Your privacy
 By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.

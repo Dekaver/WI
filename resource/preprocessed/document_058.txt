@@ -57,9 +57,9 @@ Learn more
 python list append gives a error: AttributeError: 'function' object has no attribute 'append'
 Ask Question
 Asked
-7 years, 11 months ago
+8 years ago
 Active
-5 months ago
+6 months ago
 Viewed
 12k times
 4
@@ -67,13 +67,14 @@ I have list = [] and I am adding an element to it using self.list.append('test')
 The other list that I have defined append just fine, any ideas?
 python list python-2.7
 Share
+Improve this question
 Follow
 edited Dec 3 '20 at 8:29
 funie200
-2,68344 gold badges1616 silver badges2727 bronze badges
+2,72344 gold badges1616 silver badges2727 bronze badges
 asked Jun 4 '13 at 16:04
 peztherezpeztherez
-2,87144 gold badges1818 silver badges1919 bronze badges
+2,89144 gold badges1818 silver badges1919 bronze badges
 3
 it seems that you have a function called list in your code..
 – Saullo G. P. Castro
@@ -94,11 +95,12 @@ Votes
 7
 It seems you have a function in your code that is shadowing Python's built-in function named list.
 Share
+Improve this answer
 Follow
 edited Dec 3 '20 at 9:34
 answered Jun 4 '13 at 16:13
 Saullo G. P. CastroSaullo G. P. Castro
-49.1k2222 gold badges160160 silver badges223223 bronze badges
+49.3k2222 gold badges160160 silver badges223223 bronze badges
 1
 5
 I'd like to point out that everyone using python has a function called list in their code... it's the python builtin list.
@@ -130,54 +132,52 @@ By clicking “Post Your Answer”, you agree to our terms of service, privacy p
 Not the answer you're looking for? Browse other questions tagged python list python-2.7
 or ask your own question.
 The Overflow Blog
-Level Up: Linear Regression in Python – Part 2
-Shipping confetti to Stack Overflow’s design system
+Using low-code tools to iterate products faster
+Podcast 345: A good software tutorial explains the How. A great one explains…
 Featured on Meta
-The future of Community Promotion, Open Source, and Hot Network Questions Ads
-Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
 Take the 2021 Developer Survey
 Related
-1990
+1993
 Calling a function of a module by using its name (a string)
 3114
 What is the difference between Python's list methods append and extend?
-943
+946
 How to sort a list of objects based on an attribute of the objects?
-1914
+1922
 How to know if an object has an attribute in Python
-2861
+2868
 “Least Astonishment” and the Mutable Default Argument
 1465
 Proper way to declare custom exceptions in modern Python?
-2947
+2952
 How do I concatenate two lists in Python?
-1754
+1758
 How do you append to a file?
 Hot Network Questions
-Is it significantly faster to hike along a river bank?
-How can I use a control variable that is non-normal in linear regression with other variabels that are normal?
-Lunar Terrain Model in Apollo Guidance Computer
-Resigning will cripple my department, but I am resigning because of a near crippled department
-newpxmath: accents are always bold
-If cost can be ignored, is a higher-value capacitor for ripple suppression always a good choice?
-Why is the ortho product major in the nitration of anisole with nitric acid and acetic anhydride?
-I think I've sh-- myself
-Did ancient Greek mathematicians consider numbers independently of geometry?
-Efficient ragged path for text
-select distinct columns over multiple databases sql server
-Peer review 2.0
-How would transportation evolve in a world where everyone can teleport?
-Strange vertical spacing after colored equation
-The usage of can't
-Is the the word order of "Iura novit curia" used for emphasis?
-How can I state an axiom without enumeration?
-3 verbs in one sentence - how is that?
-The famous "Charaiveti" mantra is mentioned in which Vedic verse?
-unknown pieces of a set - stickers on round corner bricks
-How to rotate a circle around y-aixs and calculate the volume of the 3D solid?
-Does 'graduate program' mean MSc or Ph.D.?
-Do phone chargers communicate with the phone?
-A planet with toxic air
+Dealing with extremely inexperienced developers who have daily deadlines?
+How come full throttle is meaning full speed instead of the opposite?
+Getting “Bye Bye Big Sur” error on installing Big Sur
+Why can't quantum computation replace classical computation?
+Can't open snap-store
+Display polygon as a line in legend
+Why did old IBM-PC-compatible computers only have 16 colors available?
+IQ test question assistance
+How to make Mathematica read in CSV as fast as Python's Pandas
+A recently published paper seriously impairs the novelty of my dissertation. Which should be the purpose of the next meeting with my supervisor?
+Which one would be better for 3.3V outputs among ULN2001 and ULN2003?
+Can I gain AC efficiency by spraying condensate water on the outdoor coils?
+Extracting work from people who are on PIPs but who we also cannot fire?
+What does "parity pattern" mean?
+Is there a canonical source for the Arcane Trickster's magic?
+Why is Ken's beer "gay"?
+Telling a coworker they aren't invited into my house
+Is it illegal to implement a patented algorithm or method and take advantage from it?
+Can black convert a +5.6 game into a draw (assuming both players play optimally)?
+Can a petrified wizard communicate telepathically with their familiar?
+What is the DC of Draconic Presence?
+Emit random objects inside array-ed object
+Interviewer was two hours late
+Is LUKS still an effective option for consumer FDE considering Elcomsoft can break it?
 more hot questions
 Question feed
 Subscribe to RSS
@@ -326,7 +326,7 @@ Twitter
 LinkedIn
 Instagram
 site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.5.28.39383
+rev 2021.6.9.39464
 Stack Overflow works best with JavaScript enabled
 Your privacy
 By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.

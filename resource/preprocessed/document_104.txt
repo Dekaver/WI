@@ -57,11 +57,11 @@ Learn more
 Troubeling with displaying <div> for larger screens
 Ask Question
 Asked
-today
+9 days ago
 Active
-today
+9 days ago
 Viewed
-39 times
+45 times
 0
 Im designing the cart of my woocommerce shop and stucked now for hours on trying to fit the sidebar on the right side.
 I've edited the cart.php of woocommerce like this:
@@ -525,11 +525,12 @@ Why does it display on the bottom?
 Can someone help me with this and give me explanation please?
 php html css wordpress woocommerce
 Share
+Improve this question
 Follow
-edited 5 hours ago
+edited May 31 at 12:07
 tacoshy
-3,08422 gold badges77 silver badges2121 bronze badges
-asked 5 hours ago
+3,13322 gold badges77 silver badges2222 bronze badges
+asked May 31 at 12:04
 m41130m41130
 311 bronze badge
 Add a comment
@@ -560,14 +561,15 @@ margin: 0;
 }
 }
 Share
+Improve this answer
 Follow
-answered 5 hours ago
+answered May 31 at 12:08
 Chan-Han-DanChan-Han-Dan
 4711 silver badge99 bronze badges
 1
 Thank you for your answer but it doesn't work either.
 – m41130
-5 hours ago
+May 31 at 12:40
 Add a comment
 |
 Your Answer
@@ -593,58 +595,56 @@ By clicking “Post Your Answer”, you agree to our terms of service, privacy p
 Not the answer you're looking for? Browse other questions tagged php html css wordpress woocommerce
 or ask your own question.
 The Overflow Blog
-Level Up: Linear Regression in Python – Part 2
-Shipping confetti to Stack Overflow’s design system
+Using low-code tools to iterate products faster
+Podcast 345: A good software tutorial explains the How. A great one explains…
 Featured on Meta
-The future of Community Promotion, Open Source, and Hot Network Questions Ads
-Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
 Take the 2021 Developer Survey
 Related
-2225
+2230
 Make a div fill the height of the remaining screen space
-4218
+4221
 Which “href” value should I use for JavaScript links, “#” or “javascript:void(0)”?
-2984
+2990
 How can I change an element's class with JavaScript?
-2252
+2258
 How can I make a div not larger than its contents?
-1181
+1184
 Maintain the aspect ratio of a div with CSS
-2327
+2332
 How to make a div 100% height of the browser window
-4127
+4131
 Change a HTML5 input's placeholder color with CSS
-1331
+1335
 How do I vertically align text in a div?
-1747
+1750
 How do I auto-resize an image to fit a 'div' container?
-1761
+1763
 Click through div to underlying elements
 Hot Network Questions
-Did medieval kingdoms issue health related guidelines?
-The usage of can't
-A planet with toxic air
-"a man/woman of difficult situations", does this sound idiomatic?
-A huge forest native almost solely to elves who are widely regarded with hatred. What's to stop an army from simply burning the entire forest?
-Advice needed – I can't reach my collaborator, but there's a short deadline for revising our journal article submission
-According to international law, when is first-use nuclear strike justified?
-Where can people allergic to dairy food eat when travelling in France?
-I have a postdoc interview tomorrow and I think I have overstated my abilities in my CV. How do I address it during the interview?
-Are vertices in a clockwise order?
-How do they enforce rules on declaring funds?
-Why did SMARTDRV have to be started with /x when DOS started?
-Should forcing open doors be Strength or Strength (Athletics)
-Why didn't Japan call for the ICJ to settle the dispute over the Senkaku/Diaoyu Islands?
-How do computers perform operations on numbers that are larger than 64 bits?
-What is the difference between “they” and “it” for people, especially for those people who choose to be identified as non-binary?
-I ran a nail through a wire at home, should I worry?
-Concatenate column names in one column conditional on using mutate, across and case_when
-Factorising blinear forms with Mathematica
-Are there any papers about this observation of the distribution of the zeros of the zeta function?
-Why do we have two kidneys but one liver?
-How can I offset 6" ducting by just a few inches?
-How can I make a keyboard shortcut to strikethrough text in the Notes app?
-The famous "Charaiveti" mantra is mentioned in which Vedic verse?
+Should I notify a med school about their student's cheating history?
+Why was the neutrino thought to be massless?
+Does machine learning really need data-efficient algorithms?
+I'm Lazy: Close my Superparens
+What is the DC of Draconic Presence?
+Microcontroller bit information for the Core and different peripherals
+Are AP slugs for shotguns possible?
+Mandatory tabs-an unusual pattern?
+Are there any rules for digging out of a grave?
+Is there a threadlocker that requires heat to release and can withstand thousands of heat-cool cycles without needing to be reapplied or deteriorating
+Why are SSH MITM tools able to read and modify data?
+Is buying lecture notes wrong?
+What does "parity pattern" mean?
+Refueling a Mars mission on the way
+Why is Ken's beer "gay"?
+How to make Mathematica read in CSV as fast as Python's Pandas
+Former coworker I gave a reference for sabotaged the company on his last day - Should I update the reference contact with this new information?
+Why am I seeing the sun slightly north instead of slightly south early in the morning in Malta?
+Error creating scratch orgs with "Communities" enabled
+How to get real-looking rust that will be safe to the touch?
+How do I create an insert-only user for a Postgres table with an index?
+Is there a diff() function in Julia DataFrames like pandas?
+Linux backup script written in bash for tar
+Can black convert a +5.6 game into a draw (assuming both players play optimally)?
 more hot questions
 Question feed
 Subscribe to RSS
@@ -793,7 +793,7 @@ Twitter
 LinkedIn
 Instagram
 site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.5.28.39383
+rev 2021.6.9.39464
 Stack Overflow works best with JavaScript enabled
 Your privacy
 By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.

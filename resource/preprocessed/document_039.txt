@@ -40,16 +40,16 @@ Thanks😊
 https://code.sololearn.com/ck0cWX8maHaM/?ref=app
 Iryna Shevchenko
 Hot Today
-Help me to solve this
-Level 21 - not ready for users?
+Hello guys I want to be Data Science development I know it’s not a programming language but you need to know python.
+How Python is used in back-end ?
+Can anyone tell me the errors please?
+Wanna print index I.where is problem?
+Is it necessary to learn HTML to make a website
+I want to make a calculator that calculates its tip value from the total Bill, but I do not know where the mistake In my code
+Which is easy as beginer javascript and bython?
+How can I write a python loop to count every other index?
+Square
 Help
-write c++ program that calculates the averge of two numbers using functions
-why this line is not executed?
-I don't know how to copy link
-Can you solve it
-please help me... question is in the description
-Help me with this question please.
-Can anyone tell me how to print this series (in separate lines ) : I IC ICS ICSE
 @SoloLearn
 SoloLearn
 SoloLearn Inc.

@@ -57,12 +57,12 @@ Learn more
 Raw_Input() Is Not Defined [duplicate]
 Ask Question
 Asked
-5 years, 3 months ago
+5 years, 4 months ago
 Active
 3 years, 7 months ago
 Viewed
-183k times
-49
+185k times
+50
 6
 This question already has answers here:
 How do I use raw_input in Python 3
@@ -82,7 +82,7 @@ Olivier Pons
 14k2424 gold badges9898 silver badges190190 bronze badges
 asked Feb 3 '16 at 4:26
 Makailah MorrisMakailah Morris
-50111 gold badge44 silver badges33 bronze badges
+51111 gold badge44 silver badges33 bronze badges
 3
 5
 Python 3.5 doesn't have raw_input. It has input()
@@ -103,27 +103,25 @@ Add a comment
 Active
 Oldest
 Votes
-97
+98
 For Python 3.x, use input(). For Python 2.x, use raw_input(). Don't forget you can add a prompt string in your input() call to create one less print statement. input("GUESS THAT NUMBER!").
 Share
 Follow
 answered Feb 3 '16 at 4:28
 heinstheinst
-7,46855 gold badges3434 silver badges7373 bronze badges
+7,48855 gold badges3434 silver badges7373 bronze badges
 0
 Add a comment
 |
 Not the answer you're looking for? Browse other questions tagged python undefined raw-input
 or ask your own question.
 The Overflow Blog
-Level Up: Linear Regression in Python – Part 2
-Shipping confetti to Stack Overflow’s design system
+Using low-code tools to iterate products faster
+Podcast 345: A good software tutorial explains the How. A great one explains…
 Featured on Meta
-The future of Community Promotion, Open Source, and Hot Network Questions Ads
-Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
 Take the 2021 Developer Survey
 Linked
-608
+610
 How do I use raw_input in Python 3
 -2
 How i over come with name error in python
@@ -136,7 +134,7 @@ If-Else statement not asking for input in Python
 Related
 965
 How to check a not-defined variable in JavaScript
-2018
+2021
 JavaScript check if variable exists (is defined/initialized)
 2
 pydev interactive console and raw_input
@@ -147,30 +145,30 @@ Problems Installing Tensor Flow Windows 10
 40
 “Could not interpret optimizer identifier” error in Keras
 Hot Network Questions
-What can I do about a parent who is discouraging their child from learning violin, a child who really wants to learn, so that the child will drop out
-Where was this scene of 'Highlander: The series' with standing columns shot?
-Why is g3 a bad move here?
-3 verbs in one sentence - how is that?
-What does research indicate about how one should treat units in elementary school?
-Is it significantly faster to hike along a river bank?
-How to rotate a circle around y-aixs and calculate the volume of the 3D solid?
-Does 'graduate program' mean MSc or Ph.D.?
-Colour ramp for maps
-How can I specify the qubits on quantum computers that I want to use?
-newpxmath: accents are always bold
-Peer review 2.0
-What's the cohomology ring structure of a blow-up?
-Are vertices in a clockwise order?
-How do I make a "ragged" table?
-What's a lot of money {out of curiosity}?
-Does the inside of a lid used to cook rice or steam vegetables have anything besides water on it?
-Do phone chargers communicate with the phone?
-Can a rest be taken in a moving cart?
-Why do we have two kidneys but one liver?
-Advice needed – I can't reach my collaborator, but there's a short deadline for revising our journal article submission
-Is it better to resize an image by minus 10% or by minus 50%?
-I ran a nail through a wire at home, should I worry?
-Is there any realistic explanation for Earth-like climate on a Sun-sized planet?
+Are AP slugs for shotguns possible?
+What is the hardest part of transitioning from a PhD to a full-time career in academia?
+Is there any country that jumped to developed status during the past 75 years after WW2?
+What does "parity pattern" mean?
+A recently published paper seriously impairs the novelty of my dissertation. Which should be the purpose of the next meeting with my supervisor?
+Display polygon as a line in legend
+Why are most women in anime housewives instead of being independent?
+Why was the neutrino thought to be massless?
+Why would they use human soldiers over undead ones?
+3-dimensional h-cobordisms
+Has physics ever given a physical significance to a mathematically abstract idea?
+History of /f/ sound in Russian
+Is there a diff() function in Julia DataFrames like pandas?
+Should I notify a med school about their student's cheating history?
+Why some CRS are deprecated in QGIS?
+How to make Mathematica read in CSV as fast as Python's Pandas
+Telling a coworker they aren't invited into my house
+What did I just photograph? (rainbow way out of place)
+How important is "MIPS-C2® Brain Protection System" for a bicycle helmet?
+Why are most COB LEDs physically yellow?
+What would a bear species isolated on an island look like?
+Simplify K combinatory logic expression
+Can I gain AC efficiency by spraying condensate water on the outdoor coils?
+What should be the income to list on a credit card application?
 more hot questions
 lang-py
 Stack Overflow
@@ -315,7 +313,7 @@ Twitter
 LinkedIn
 Instagram
 site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.5.28.39383
+rev 2021.6.9.39464
 Stack Overflow works best with JavaScript enabled
 Your privacy
 By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.

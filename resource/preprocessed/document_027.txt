@@ -57,9 +57,9 @@ Learn more
 Python TfidfVectorizer throwing : empty vocabulary; perhaps the documents only contain stop words"
 Ask Question
 Asked
-7 years, 4 months ago
+7 years, 5 months ago
 Active
-6 months ago
+7 months ago
 Viewed
 36k times
 16
@@ -120,13 +120,14 @@ Is there something else that I am doing wrong? the corpus I am feeding it is jus
 Thanks!
 python pandas scikit-learn tf-idf
 Share
+Improve this question
 Follow
 edited May 23 '17 at 10:30
 Community♦
 111 silver badge
 asked Jan 5 '14 at 1:00
 Max SongMax Song
-1,32722 gold badges1414 silver badges2424 bronze badges
+1,32722 gold badges1515 silver badges2424 bronze badges
 1
 I had the same problem and downgraded from v0.19 to 0.18
 – Nacho
@@ -148,6 +149,7 @@ Out[53]:
 <6x28 sparse matrix of type '<type 'numpy.float64'>'
 with 31 stored elements in Compressed Sparse Row format>
 Share
+Improve this answer
 Follow
 answered Jan 5 '14 at 13:06
 herrfzherrfz
@@ -169,10 +171,11 @@ Add a comment
 In version 0.12, we set the minimum document frequency to 2, which means that only words that appear at least twice will be considered. For your example to work, you need to set min_df=1. Since 0.13, this is the default setting.
 So I guess you are using 0.12, right?
 Share
+Improve this answer
 Follow
 answered Jan 6 '14 at 9:20
 Andreas MuellerAndreas Mueller
-23.4k77 gold badges5454 silver badges6565 bronze badges
+23.5k77 gold badges5454 silver badges6565 bronze badges
 Add a comment
 |
 0
@@ -185,6 +188,7 @@ Out[23]:
 <1x2 sparse matrix of type '<type 'numpy.float64'>'
 with 2 stored elements in Compressed Sparse Row format>
 Share
+Improve this answer
 Follow
 answered Apr 28 '16 at 23:38
 iparjonoiparjono
@@ -227,10 +231,11 @@ doc_freq_term_matrix = cv.transform(filtered)
 except ValueError:
 continue
 Share
+Improve this answer
 Follow
 answered Nov 1 '19 at 17:31
 Victoria StuartVictoria Stuart
-3,14622 gold badges2828 silver badges2626 bronze badges
+3,15422 gold badges2828 silver badges2626 bronze badges
 1
 Hey @Victoria,
 it seems to me that in this case you just avoid performing the operation that you wanted (vectorizing). What is your understanding here?
@@ -245,10 +250,11 @@ But I converted to:
 ['d'+str(nums) for nums in set] #where d is some letter which mention, we work with strings
 This helped.
 Share
+Improve this answer
 Follow
 answered Nov 3 '20 at 11:25
 Alex IvanovAlex Ivanov
-46111 silver badge1010 bronze badges
+47111 silver badge1010 bronze badges
 Add a comment
 |
 Your Answer
@@ -274,11 +280,9 @@ By clicking “Post Your Answer”, you agree to our terms of service, privacy p
 Not the answer you're looking for? Browse other questions tagged python pandas scikit-learn tf-idf
 or ask your own question.
 The Overflow Blog
-Level Up: Linear Regression in Python – Part 2
-Shipping confetti to Stack Overflow’s design system
+Using low-code tools to iterate products faster
+Podcast 345: A good software tutorial explains the How. A great one explains…
 Featured on Meta
-The future of Community Promotion, Open Source, and Hot Network Questions Ads
-Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
 Take the 2021 Developer Survey
 Linked
 4
@@ -292,7 +296,7 @@ Tfidf empty vocabulary; perhaps the documents only contain stop words
 0
 how to transform data using tfidf python
 Related
-259
+260
 Label encoding across multiple columns in scikit-learn
 1
 Why is TfidfVectorizer in scikit-learn showing this behavior?
@@ -305,30 +309,30 @@ How can I use a list of lists, or a list of sets, for the TfidfVectorizer?
 0
 ValueError: “Empty vocabulary; perhaps the documents only contain stop words”
 Hot Network Questions
-How can I state an axiom without enumeration?
-Why is g3 a bad move here?
-What does research indicate about how one should treat units in elementary school?
-Why didn't Japan call for the ICJ to settle the dispute over the Senkaku/Diaoyu Islands?
-The famous "Charaiveti" mantra is mentioned in which Vedic verse?
-If cost can be ignored, is a higher-value capacitor for ripple suppression always a good choice?
-Are there any papers about this observation of the distribution of the zeros of the zeta function?
-How would transportation evolve in a world where everyone can teleport?
-Stop, in the name of the law
-Why do Macs mount an additional drive every time I install software?
-Triangle-style sequences
-I ran a nail through a wire at home, should I worry?
-What technical reasons prevented the Win9x Virtual Machine Monitor from running multiple threads simultaneously?
-Why did SMARTDRV have to be started with /x when DOS started?
-Efficient ragged path for text
-Is there a precise definition of "Supermoon"?
-Why can't the piano play middle eastern music?
-Engine failure: how to detect?
-Do phone chargers communicate with the phone?
-Should most brahmins today be considered as shudras?
-According to international law, when is first-use nuclear strike justified?
-Sanctuary spell and Using magic Items that cause damage?
-Peer review 2.0
-How do I make a "ragged" table?
+How important is learning hardware/architecture for scientific computing?
+How realistic is the 1 kg/km² solar sail in "Death's End"?
+Emit random objects inside array-ed object
+Evaluation order of an APL n-train
+Can I gain AC efficiency by spraying condensate water on the outdoor coils?
+Show exit code of last command in Bash prompt if it returned error
+Is there a diff() function in Julia DataFrames like pandas?
+Extracting work from people who are on PIPs but who we also cannot fire?
+What did I just photograph? (rainbow way out of place)
+Why are most women in anime housewives instead of being independent?
+Interviewer was two hours late
+Are AP slugs for shotguns possible?
+Why are most COB LEDs physically yellow?
+Interview by fellow PhD students, not the professor himself
+Refueling a Mars mission on the way
+Linux backup script written in bash for tar
+Does Islam have heraditary slavery?
+How to get real-looking rust that will be safe to the touch?
+What is the hardest part of transitioning from a PhD to a full-time career in academia?
+Is there a threadlocker that requires heat to release and can withstand thousands of heat-cool cycles without needing to be reapplied or deteriorating
+Former coworker I gave a reference for sabotaged the company on his last day - Should I update the reference contact with this new information?
+Deriving the energy-momentum tensor of a point particle
+Why are SSH MITM tools able to read and modify data?
+"Which dreams, indeed, are ambition" in Hamlet Act 2, Scene 2
 more hot questions
 Question feed
 Subscribe to RSS
@@ -477,7 +481,7 @@ Twitter
 LinkedIn
 Instagram
 site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.5.28.39383
+rev 2021.6.9.39464
 Stack Overflow works best with JavaScript enabled
 Your privacy
 By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.

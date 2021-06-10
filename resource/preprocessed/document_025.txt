@@ -59,11 +59,11 @@ Ask Question
 Asked
 10 years, 8 months ago
 Active
-8 days ago
+4 days ago
 Viewed
-914k times
-997
-227
+920k times
+1001
+228
 How to make a Python class serializable?
 A simple class:
 class FileItem:
@@ -77,15 +77,16 @@ TypeError: Object of type 'FileItem' is not JSON serializable
 Without the error
 python json serialization
 Share
+Improve this question
 Follow
 edited Nov 12 '19 at 5:12
 FraggaMuffin
-3,01622 gold badges1717 silver badges2424 bronze badges
+3,03622 gold badges1717 silver badges2424 bronze badges
 asked Sep 22 '10 at 11:52
 SergeySergey
-15.3k1313 gold badges3333 silver badges5757 bronze badges
+15.3k1313 gold badges3333 silver badges5858 bronze badges
 5
-93
+95
 It's unfortunate that the answers all seem to answer the question "How do I serialize a class?" rather than the action question "How do I make a class serializable?" These answers assume that you're doing the serialization yourself, rather than passing the object along to some other module that serializes it.
 – Kyle Delaney
 Oct 17 '19 at 23:59
@@ -139,15 +140,16 @@ return FileItem(json_object['fname'])
 <__main__.FileItem object at 0x9337fac>
 >>>
 Share
+Improve this answer
 Follow
 edited Jun 13 '20 at 22:00
 mkrieger1
 10.8k44 gold badges3939 silver badges4747 bronze badges
 answered Sep 22 '10 at 12:02
 Manoj GovindanManoj Govindan
-64.4k2121 gold badges123123 silver badges132132 bronze badges
+64.6k2121 gold badges123123 silver badges132132 bronze badges
 8
-50
+51
 Using __dict__ will not work in all cases.
 If the attributes have not been set after the object was instantiated, __dict__ may not be fully populated.
 In the example above, you're OK, but if you have class attributes that you also want to encode, those will not be listed in __dict__ unless they have been modified in the class' __init__ call or by some other way after the object was instantiated.
@@ -171,7 +173,7 @@ __dict__ also won't work recursively, e.g., if an attribute of your object is an
 Apr 10 '18 at 19:12
 |
 Show 3 more comments
-721
+724
 +50
 Here is a simple solution for a simple feature:
 .toJSON() Method
@@ -197,6 +199,7 @@ will output:
 "name": "Onur"
 }
 Share
+Improve this answer
 Follow
 edited May 7 at 0:31
 answered Mar 21 '13 at 2:26
@@ -226,12 +229,13 @@ This does not work with datetime.datetime instances. It throws the following err
 Jun 17 '15 at 12:43
 |
 Show 7 more comments
-198
+199
 For more complex classes you could consider the tool jsonpickle:
 jsonpickle is a Python library for serialization and deserialization of complex Python objects to and from JSON.
 The standard Python libraries for encoding Python into JSON, such as the stdlib’s json, simplejson, and demjson, can only handle Python primitives that have a direct JSON equivalent (e.g. dicts, lists, strings, ints, etc.). jsonpickle builds on top of these libraries and allows more complex data structures to be serialized to JSON. jsonpickle is highly configurable and extendable–allowing the user to choose the JSON backend and add additional backends.
 (link to jsonpickle on PyPi)
 Share
+Improve this answer
 Follow
 edited Apr 16 at 12:39
 mrnom
@@ -261,7 +265,7 @@ A question specifically for django: does use of jsonpickle for serializing sessi
 Jun 23 '17 at 14:24
 |
 Show 2 more comments
-131
+132
 Most of the answers involve changing the call to json.dumps(), which is not always possible or desirable (it may happen inside a framework component for example).
 If you want to be able to call
 json.dumps(obj) as is, then a simple solution is inheriting from dict:
@@ -273,10 +277,11 @@ json.dumps(f)
 #No need to change anything here
 This works if your class is just basic data representation, for trickier things you can always set keys explicitly.
 Share
+Improve this answer
 Follow
 answered Jul 3 '15 at 13:22
 andyhasitandyhasit
-11k55 gold badges3939 silver badges4444 bronze badges
+11.1k55 gold badges4040 silver badges4444 bronze badges
 6
 6
 This can really be a nice solution :) I believe for my case it is. Benefits: you communicate the "shape" of the object by making it a class with init, it is inherently serializable and it looks interpretable as repr.
@@ -311,13 +316,14 @@ except:
 return obj.__dict__
 print json.dumps(some_big_object, default=dumper, indent=2)
 Share
+Improve this answer
 Follow
 edited May 23 '17 at 12:34
 Community♦
 111 silver badge
 answered Jan 27 '15 at 16:04
 Jason SJason S
-172k155155 gold badges551551 silver badges900900 bronze badges
+172k155155 gold badges553553 silver badges901901 bronze badges
 6
 I found this to be the best balance between using the existing json.dumps and introducing custom handling. Thanks!
 – Daniel Buckmaster
@@ -340,7 +346,7 @@ This really should be catching an AttributeError explicitly
 Feb 4 at 16:08
 |
 Show 1 more comment
-45
+46
 Just add to_json method to your class like this:
 def to_json(self):
 return self.message # or how you want it to be serialized
@@ -355,10 +361,11 @@ JSONEncoder.default() automatically checks for a special "to_json()"
 method and uses it to encode the object if found.
 Just like Onur said, but this time you don't have to update every json.dumps() in your project.
 Share
+Improve this answer
 Follow
 edited Apr 27 '18 at 2:13
 Samuel Liew♦
-68.4k105105 gold badges140140 silver badges225225 bronze badges
+68.4k105105 gold badges143143 silver badges225225 bronze badges
 answered Aug 4 '16 at 10:27
 Fancy JohnFancy John
 35.4k22 gold badges2222 silver badges2424 bronze badges
@@ -396,6 +403,7 @@ Testing:
 >>> str(f) # string coercion
 '{"fname": "/foo/bar"}'
 Share
+Improve this answer
 Follow
 edited Dec 2 '17 at 17:59
 answered Jun 16 '12 at 10:30
@@ -415,36 +423,6 @@ Oct 20 '16 at 13:02
 That doesn't make the object serializeable for the json class. It only provides a method to get a json string returned (trivial). Thus json.dumps(f) will fail. That's not what's been asked.
 – omni
 Sep 21 '20 at 14:38
-Add a comment
-|
-28
-If you're using Python3.5+, you could use jsons. It will convert your object (and all its attributes recursively) to a dict.
-import jsons
-a_dict = jsons.dump(your_object)
-Or if you wanted a string:
-a_str = jsons.dumps(your_object)
-Or if your class implemented jsons.JsonSerializable:
-a_dict = your_object.json
-Share
-Follow
-answered Dec 19 '18 at 9:34
-R HR H
-1,06911 gold badge1111 silver badges1111 bronze badges
-4
-4
-If you are able to use Python 3.7+, I found that the cleanest solution to convert python classes to dicts and JSON strings (and viceversa) is to mix the jsons library with dataclasses. So far, so good for me!
-– Ruluk
-Feb 26 '19 at 16:02
-15
-This is an external library, not built into the standard Python install.
-– Noumenon
-Jul 10 '19 at 2:44
-only for class that has slots attribute
-– yehudahs
-Dec 3 '19 at 20:41
-You can, but you don't need to use slots. Only when dumping according to the signature of a specific class you'll need slots. In the upcoming version 1.1.0 that is also no longer the case.
-– R H
-Dec 4 '19 at 13:30
 Add a comment
 |
 28
@@ -507,13 +485,14 @@ Result:
 "i": "I"
 }
 Share
+Improve this answer
 Follow
 edited May 6 at 9:33
 np_6
 50666 silver badges1717 bronze badges
 answered Feb 18 '16 at 14:10
 tobiguetobigue
-3,27733 gold badges2222 silver badges2626 bronze badges
+3,26733 gold badges2222 silver badges2727 bronze badges
 1
 1
 Although this is a bit old..I'm facing some circular imports error. So instead of return obj in the last line I did this return super(ObjectEncoder, self).default(obj). Reference HERE
@@ -521,16 +500,51 @@ Although this is a bit old..I'm facing some circular imports error. So instead o
 Apr 11 '17 at 13:44
 Add a comment
 |
-24
+28
+If you're using Python3.5+, you could use jsons. (PyPi: https://pypi.org/project/jsons/) It will convert your object (and all its attributes recursively) to a dict.
+import jsons
+a_dict = jsons.dump(your_object)
+Or if you wanted a string:
+a_str = jsons.dumps(your_object)
+Or if your class implemented jsons.JsonSerializable:
+a_dict = your_object.json
+Share
+Improve this answer
+Follow
+edited Jun 5 at 9:27
+SpaceCityCowboy88
+322 bronze badges
+answered Dec 19 '18 at 9:34
+R HR H
+1,07911 gold badge1111 silver badges1212 bronze badges
+4
+4
+If you are able to use Python 3.7+, I found that the cleanest solution to convert python classes to dicts and JSON strings (and viceversa) is to mix the jsons library with dataclasses. So far, so good for me!
+– Ruluk
+Feb 26 '19 at 16:02
+15
+This is an external library, not built into the standard Python install.
+– Noumenon
+Jul 10 '19 at 2:44
+only for class that has slots attribute
+– yehudahs
+Dec 3 '19 at 20:41
+You can, but you don't need to use slots. Only when dumping according to the signature of a specific class you'll need slots. In the upcoming version 1.1.0 that is also no longer the case.
+– R H
+Dec 4 '19 at 13:30
+Add a comment
+|
+26
 As mentioned in many other answers you can pass a function to json.dumps to convert objects that are not one of the types supported by default to a supported type. Surprisingly none of them mentions the simplest case, which is to use the built-in function vars to convert objects into a dict containing all their attributes:
 json.dumps(obj, default=vars)
 Note that this covers only basic cases, if you need more specific serialization for certain types (e.g. exluding certain attributes or objects that don't have a __dict__ attribute) you need to use a custom function or a JSONEncoder as desribed in the other answers.
 Share
+Improve this answer
 Follow
 edited Feb 25 at 10:57
 answered Oct 21 '20 at 18:40
 user1587520user1587520
-1,5091414 silver badges1717 bronze badges
+1,5291515 silver badges1717 bronze badges
 4
 it is unclear what you mean by default=vars, does that mean that vars is the default serializer? If not: This does not really solve the case where you can not influence how json.dumps is called. If you simply pass an object to a library and that library calls json.dumps on that object, it doesn't really help that you have implemented vars if that library does not use dumps this way. In that sense it is equivalent to a custom JSONEncoder.
 – Felix B.
@@ -562,10 +576,11 @@ def default(o):
 return o._asdict()
 print(json.dumps(User('alice', 'alice@mail.com'), default=default))
 Share
+Improve this answer
 Follow
 edited May 23 at 7:00
 jtlz2
-4,92366 gold badges4343 silver badges8484 bronze badges
+4,94366 gold badges4343 silver badges8484 bronze badges
 answered Jun 17 '15 at 3:17
 tryer3000tryer3000
 76999 silver badges1414 bronze badges
@@ -586,13 +601,14 @@ print
 json.dumps(json.loads(jsonpickle.encode(object)), indent=2)
 Note: that still they can't print the object methods.
 Share
+Improve this answer
 Follow
 edited Jul 24 '19 at 11:40
 Martlark
-12.2k1212 gold badges7373 silver badges8989 bronze badges
+12.3k1212 gold badges7474 silver badges8989 bronze badges
 answered Apr 4 '16 at 13:41
 ribamarribamar
-1,2351414 silver badges2020 bronze badges
+1,2551414 silver badges2020 bronze badges
 Add a comment
 |
 5
@@ -606,6 +622,7 @@ usage:
 Serializer.serialize(my_object)
 working in python2.7 and python3.
 Share
+Improve this answer
 Follow
 answered Oct 9 '16 at 14:14
 Lost KoderLost Koder
@@ -660,6 +677,7 @@ return d
 folder = os.path.abspath('.')
 json.dump(File(folder), sys.stdout, default=_default)
 Share
+Improve this answer
 Follow
 answered Jul 10 '13 at 17:59
 Dan BroughDan Brough
@@ -682,10 +700,11 @@ json_foo = json.dumps(Foo(), default=default)
 assert '{"bar": "baz"}' == json_foo
 print(json_foo)
 Share
+Improve this answer
 Follow
 answered Jul 17 '15 at 6:20
 rectangletanglerectangletangle
-43k8686 gold badges186186 silver badges264264 bronze badges
+43.1k8686 gold badges187187 silver badges265265 bronze badges
 1
 From doc: The parameter default(obj) is a function that should return a serializable version
 of obj or raise TypeError.
@@ -737,11 +756,12 @@ for_json: 6,937 on 2018-06-27
 Deserialization (JSON -> Python):
 from_json: 226,101 on 2018-06-27
 Share
+Improve this answer
 Follow
 edited Jul 9 '18 at 11:24
 answered Jun 27 '18 at 5:24
 Martin ThomaMartin Thoma
-91.9k114114 gold badges489489 silver badges768768 bronze badges
+92.2k114114 gold badges490490 silver badges768768 bronze badges
 Add a comment
 |
 4
@@ -762,10 +782,11 @@ class FileItem(JsonSerializable):
 and
 log.debug(json.dumps(<my object>, default=JsonSerializable.dumper, indent=2))
 Share
+Improve this answer
 Follow
 answered Jan 18 '19 at 8:10
 jmhostaletjmhostalet
-3,57133 gold badges3333 silver badges3939 bronze badges
+3,58133 gold badges3333 silver badges3939 bronze badges
 Add a comment
 |
 3
@@ -809,6 +830,7 @@ which serializes only part of the attributes parameters, as an example.
 And as a free bonus, you get (de)serialization of numpy arrays, date & times, ordered maps, as well as the ability to include comments in json.
 Disclaimer: I created json_tricks, because I had the same problem as you.
 Share
+Improve this answer
 Follow
 answered Nov 10 '16 at 12:53
 MarkMark
@@ -909,11 +931,12 @@ recursively return my dict elements
 return self.reprDict(self.__dict__)
 You'll find these approaches now integrated in the https://github.com/WolfgangFahl/pyLoDStorage project which is available at https://pypi.org/project/pylodstorage/
 Share
+Improve this answer
 Follow
 edited Oct 8 '20 at 9:56
 answered Sep 3 '20 at 7:16
 Wolfgang FahlWolfgang Fahl
-12.1k99 gold badges7575 silver badges150150 bronze badges
+12.2k99 gold badges7575 silver badges150150 bronze badges
 Add a comment
 |
 2
@@ -928,6 +951,7 @@ self.value = value
 >>> dumper(data)
 '{"__type__": "DataModel", "id": 5, "value": "foo"}'
 Share
+Improve this answer
 Follow
 answered Oct 7 '14 at 5:32
 matthewlentmatthewlent
@@ -959,11 +983,12 @@ b = DObject()
 b.name = a
 print(json.dumps(b, cls=DObject))
 Share
+Improve this answer
 Follow
 edited Jun 21 '20 at 6:48
 answered Jun 19 '20 at 15:15
 Sheikh Abdul WahidSheikh Abdul Wahid
-1,96211 gold badge1919 silver badges2323 bronze badges
+1,97011 gold badge1919 silver badges2323 bronze badges
 Add a comment
 |
 2
@@ -1004,11 +1029,12 @@ Classes that have __dict__ and members will mostly work (if the __dict__ and mem
 Classes that are lists and have members will look like a tuple of the list and a dictionary
 Python3 (that isinstance() call may be the only thing that needs changing)
 Share
+Improve this answer
 Follow
 edited Jul 19 '20 at 11:51
 answered May 2 '20 at 11:29
 mheymanmheyman
-3,7033232 silver badges3333 bronze badges
+3,7133232 silver badges3333 bronze badges
 Add a comment
 |
 1
@@ -1048,10 +1074,11 @@ It's applicable to other ORMs (Django, etc) in general
 Also, if you understood how json.dumps works, this solution also works with Python (sans ORM) in general too
 Any questions, please post in the comments section. Thanks!
 Share
+Improve this answer
 Follow
 answered Jul 30 '18 at 15:04
 sivabudhsivabudh
-29.3k5656 gold badges156156 silver badges219219 bronze badges
+29.4k5656 gold badges156156 silver badges219219 bronze badges
 Add a comment
 |
 1
@@ -1065,6 +1092,7 @@ if isinstance(o, bytes):
 return o.decode("utf-8")
 return o
 Share
+Improve this answer
 Follow
 answered Feb 27 '20 at 8:06
 Adi DeganiAdi Degani
@@ -1084,6 +1112,7 @@ return obj
 else:
 return obj.__repr__()
 Share
+Improve this answer
 Follow
 edited Nov 12 '20 at 13:34
 answered Mar 30 '20 at 20:12
@@ -1112,10 +1141,11 @@ return doc
 # For the rest of stuff
 return doc
 Share
+Improve this answer
 Follow
 answered May 21 '15 at 5:06
 DewsworldDewsworld
-11.2k1818 gold badges5757 silver badges9999 bronze badges
+11.3k1919 gold badges5757 silver badges9999 bronze badges
 Add a comment
 |
 0
@@ -1133,10 +1163,11 @@ o.__dict__[k] = str(v)
 return o
 return json.dumps(check(obj).__dict__, indent=2)
 Share
+Improve this answer
 Follow
 answered Nov 11 '17 at 5:35
 Will CharltonWill Charlton
-65277 silver badges99 bronze badges
+67277 silver badges99 bronze badges
 Add a comment
 |
 0
@@ -1162,6 +1193,7 @@ wrapperdescriptor, xrange, slice, notimplemented, ellipsis, quit
 dill cannot yet pickle these standard types:
 frame, generator, traceback
 Share
+Improve this answer
 Follow
 answered Dec 18 '18 at 16:48
 thedavidmothedavidmo
@@ -1172,6 +1204,7 @@ Add a comment
 I see no mention here of serial versioning or backcompat, so I will post my solution which I've been using for a bit. I probably have a lot more to learn from, specifically Java and Javascript are probably more mature than me here but here goes
 https://gist.github.com/andy-d/b7878d0044a4242c0498ed6d67fd50fe
 Share
+Improve this answer
 Follow
 answered Aug 27 '19 at 21:39
 Fletch F FletchFletch F Fletch
@@ -1199,6 +1232,7 @@ class Foo(object):
 x = attr.ib()
 _obj_name = attr.ib(init=False, default='Foo')
 Share
+Improve this answer
 Follow
 answered Oct 15 '19 at 17:12
 machinekodermachinekoder
@@ -1212,11 +1246,9 @@ Highly active question. Earn 10 reputation in order to answer this question. The
 Not the answer you're looking for? Browse other questions tagged python json serialization
 or ask your own question.
 The Overflow Blog
-Level Up: Linear Regression in Python – Part 2
-Shipping confetti to Stack Overflow’s design system
+Using low-code tools to iterate products faster
+Podcast 345: A good software tutorial explains the How. A great one explains…
 Featured on Meta
-The future of Community Promotion, Open Source, and Hot Network Questions Ads
-Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
 Take the 2021 Developer Survey
 Visit chat
 Linked
@@ -1242,51 +1274,51 @@ Use my class object as JSON in python
 How to serialize an object that contains a list of other objects
 See more linked questions
 Related
-5656
+5679
 How do I merge two dictionaries in a single expression (taking union of dictionaries)?
-6149
+6168
 How do I check whether a file exists without exceptions?
-8288
+8307
 Can comments be used in JSON?
-3276
+3283
 How can I pretty-print JSON in a shell script?
-10721
+10729
 What is the correct JSON content type?
-2901
+2905
 How to make function decorators and chain them together?
-4076
+4099
 How to make a flat list out of a list of lists?
-4244
+4250
 Why does Google prepend while(1); to their JSON responses?
-2766
+2771
 pretty-print JSON using JavaScript
-3233
+3242
 How do I POST JSON data with cURL?
 Hot Network Questions
-Where can people allergic to dairy food eat when travelling in France?
-Why is bad behavior more tolerated in academia compared to the rest of the industry?
-What can I do about a parent who is discouraging their child from learning violin, a child who really wants to learn, so that the child will drop out
-How to use Zwift workouts with stationary bike
-identify M.2 SSD from BASH Script
-Is it significantly faster to hike along a river bank?
-How to rotate a circle around y-aixs and calculate the volume of the 3D solid?
-Efficient ragged path for text
-Factorising blinear forms with Mathematica
-How can objects be neither vector nor scalar?
-How can I state an axiom without enumeration?
-select distinct columns over multiple databases sql server
-Lunar Terrain Model in Apollo Guidance Computer
-Why is the ortho product major in the nitration of anisole with nitric acid and acetic anhydride?
-I ran a nail through a wire at home, should I worry?
-What technical reasons prevented the Win9x Virtual Machine Monitor from running multiple threads simultaneously?
-Stop, in the name of the law
-Why do we have two kidneys but one liver?
-How do I make a "ragged" table?
-The famous "Charaiveti" mantra is mentioned in which Vedic verse?
-Does mass have an effect on Centripetal Acceleration?
-Vocal range of a crowd
-Please Identify this outdoor plant?
-Does 'graduate program' mean MSc or Ph.D.?
+How to indicate a checkbox/toggle is "always on"
+Is there a fundamental reason for the exponential dependence of the evolution of the temperature in an electronic deviced that is powered on?
+What is the advantage of gate resistor (R3) in this JFET voltage divider biasing circuit?
+Why can't quantum computation replace classical computation?
+What are these sixteenth notes with left-right arrows beneath them supposed to mean
+What does 高高矮矮 mean?
+"Which dreams, indeed, are ambition" in Hamlet Act 2, Scene 2
+Microcontroller bit information for the Core and different peripherals
+How was it calculated that Dream cheated on his Minecraft v1.16 glitchless speedrun?
+Interview by fellow PhD students, not the professor himself
+Is there a diff() function in Julia DataFrames like pandas?
+how to add existing user to existing group id (not group name)?
+Is it a coincidence that on the far side of the moon almost no seas are visible?
+Display polygon as a line in legend
+Why is the bond angle of trifluoromethane higher than that of difluoromethane?
+How to get real-looking rust that will be safe to the touch?
+Is it illegal to implement a patented algorithm or method and take advantage from it?
+Is cohomology always related to topology?
+output entries that have highest score
+Former coworker I gave a reference for sabotaged the company on his last day - Should I update the reference contact with this new information?
+What is the DC of Draconic Presence?
+Should I notify a med school about their student's cheating history?
+Is LUKS still an effective option for consumer FDE considering Elcomsoft can break it?
+Telling a coworker they aren't invited into my house
 more hot questions
 Question feed
 Subscribe to RSS
@@ -1435,7 +1467,7 @@ Twitter
 LinkedIn
 Instagram
 site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.5.28.39383
+rev 2021.6.9.39464
 Stack Overflow works best with JavaScript enabled
 Your privacy
 By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.

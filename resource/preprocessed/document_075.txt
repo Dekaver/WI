@@ -125,7 +125,6 @@ Doctoral
 Certifications
 Trade Schools
 About
-Get matched to Top BootcampsGet matched
 HomePython TutorialsPython AttributeError: ‘str’ object has no attribute ‘append’ Solution
 Python Tutorials
 Python AttributeError: ‘str’ object has no attribute ‘append’ Solution
@@ -153,7 +152,7 @@ if n.startswith("S"):
 s_names.append(n)
 print("The students whose names begin with 'S' are: " + s_names)
 Our for loop iterates over each name in the “names” list. In each iteration, our code checks if a name starts with the letter “S”. We do this using the startswith() method.
-» MORE:  Python TypeError: ‘method’ object is not subscriptable SolutionIf a students’ name starts with “S”, we add it to the end of “s_names” using the append() method. Once all of the names have been iterated over, our program prints out a message informing us of the students whose names begin with “S”.
+» MORE:  Python: Pad ZerosIf a students’ name starts with “S”, we add it to the end of “s_names” using the append() method. Once all of the names have been iterated over, our program prints out a message informing us of the students whose names begin with “S”.
 Run our code and see what happens:
 Traceback (most recent call last):
 File "main.py", line 6, in <module>
@@ -172,7 +171,7 @@ The students whose names begin with 'S' are: Sam Sally
 Our code successfully identifies the names that begin with S. These names appear at the end of the string printed to the console. Each name is followed by a space which we specified when we used the concatenation operator in our for loop.
 Conclusion
 You encounter the “AttributeError: ‘str’ object has no attribute ‘append’” error if you try to use the append() method to add an item to the end of a string.
-» MORE:  Python List Files in a Directory: Step-By-Step GuideWhile the append() method lets you add items to the end of a list, it cannot be used to add items onto a string. To solve this error, use the concatenation operator (+) to add items to the end of a string.
+» MORE:  Python 'str' object does not support item assignment solutionWhile the append() method lets you add items to the end of a list, it cannot be used to add items onto a string. To solve this error, use the concatenation operator (+) to add items to the end of a string.
 Now you’re ready to solve this common Python error like an expert!
 About us: Career Karma is a platform designed to help job seekers find, research, and connect with job training programs to advance their careers. Learn about the CK publication.
 What's Next?
@@ -193,20 +192,41 @@ Comments (0)
 Leave a Reply Cancel replyYour email address will not be published. Required fields are marked *Your CommentName *
 Email *
 Website
-Improve Your Python Skills.
-Get the Ultimate Cheat Sheet.
-Our Python Cheat Sheet features dozens of code snippets and descriptions to help you with common Python tasks.
-Your email is required
-You will receive your cheat sheet soon!
+Get offers from top bootcampsTake the stress out of picking a bootcamp
+See matches nowTop Community PostsHow long does it take to become a full stack web developer?Marcus Hayes in Full-stack DevelopmentWhat are the laptop requirements for programming?Danny Fuentes in Beginners$2 million in COVID19 ScholarshipsTimur Meyster in Applying to BootcampsPopular ArticlesBest Online BootcampsBest Tech Jobs 2021What is Coding Used For?How Much Do Coders Make?Best Free BootcampsSee all articlesCareer GuidesWeb DevelopmentSoftware EngineeringData ScienceWeb DesignCyber SecuritySee all guidesFree prep coursesFlatiron School Prep80+ hours
+Easy80+ hours of HTML, CSS & JavaScriptKenzie School Prep80+ hours
+Easy20+ hours of HTML & CSSGeneral Assembly Prep50+ hours
+EasyLearn web development basics in HTML, CSS, JavaScript by building projectssee all prep courses
+Get matches
+from top bootcamps
+Select your interest:
+Interest
+Software Engineering
+Design
+Data Science
+Data Analytics
+Cybersecurity Analytics
+Technology Sales
+Select your preferred pace:
+Begin typing a name to filter
+Full-time
+Part-time
+Self-paced
+Begin typing a name to filter
+Full-time
+Part-time
+Self-paced
+See Matches
+Find the Best Online Course for YouGet Matched
 Related Articles
 Python Tutorials
-Python Average: A Step-by-Step Guide
-Python Tutorials
-How to Use Python extend()
+Python ‘numpy.ndarray’ object is not callable Solution
 Python Tutorials
 Python JSONDecodeError Explanation and Solution
 Python Tutorials
-Python ValueError: list.remove(x): x not in list Solution
+Python Average: A Step-by-Step Guide
+Python Tutorials
+Python FileNotFoundError: [Errno 2] No such file or directory Solution
 Home
 About
 Careers
@@ -275,13 +295,27 @@ Android
 React
 Angular
 See all
+Tell us about you and we will match you with top rated bootcamps with flexible payment options, income sharing (ISAs), or money-back guarantees.
+Select your interest:
+Software Engineering
+Design
+Data Science
+Data Analytics
+Cybersecurity Analytics
+Technology Sales
+First Name
+Last Name
+Email
+Phone Number
+GET MATCHED
+Find the right bootcamp for you
+By continuing you indicate that you have read and agree to
+Career Karma Terms of Service and Privacy Policy
 X
-Boost Your Python Skills
-Get our free Ultimate Python Cheat Sheet with dozens of important commands you'll use in your everyday coding
-Email:
-Your email is required
-Send me the cheat sheet
-You will receive your cheat sheet soon!
+X
+Jump start your tech career
+Learn the most in-demand skills
+Get started now
 Lost Password Back ⟶
 Login
 Register

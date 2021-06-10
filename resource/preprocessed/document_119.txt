@@ -14,6 +14,8 @@ Search Coderanch
 Advance search
 Google search
 Register / Login
+This week's book giveaway is in the Spring forum.We're giving away four copies of Spring Quick Reference Guide: A Pocket Handbook for Spring Framework, Spring Boot, and More and have Adam L Davis on-line!See this thread for details.
+Win a copy of Spring Quick Reference Guide: A Pocket Handbook for Spring Framework, Spring Boot, and More this week in the Spring forum!
 Post Reply
 Bookmark Topic
 Watch Topic
@@ -43,23 +45,22 @@ all forums
 this forum made possible by our volunteer staff, including ...
 Marshals:
 Campbell Ritchie
-Paul Clapham
 Ron McLeod
-paul wheaton
-Devaka Cooray
-Sheriffs:
+Paul Clapham
 Jeanne Boyarsky
-Tim Cooke
 Liutauras Vilda
+Sheriffs:
+Rob Spoor
+Bear Bibeault
+Tim Cooke
 Saloon Keepers:
 Tim Moores
-Tim Holloway
 Stephan van Hulst
+Tim Holloway
 Carey Brown
 Piet Souris
 Bartenders:
-salvin francis
-Mikalai Zaikin
+Frits Walraven
 Himai Minh
 Forum:
 Beginning Java
@@ -195,8 +196,8 @@ The message "Uncompilable source code" suggests to me that not all your class fi
 Jesper's Blog - Pluralsight Author Page
 Campbell Ritchie
 Marshal
-Posts: 72762
-317
+Posts: 72872
+330
 posted 7 years ago
 Number of slices to send:
 Optional 'thank-you' note:
@@ -300,8 +301,8 @@ break;
 }
 Campbell Ritchie
 Marshal
-Posts: 72762
-317
+Posts: 72872
+330
 posted 7 years ago
 Number of slices to send:
 Optional 'thank-you' note:
@@ -340,8 +341,8 @@ System.out.println("This move at (" + (row + 1) + "," + (col + 1)
 }
 Campbell Ritchie
 Marshal
-Posts: 72762
-317
+Posts: 72872
+330
 posted 7 years ago
 Number of slices to send:
 Optional 'thank-you' note:
@@ -711,8 +712,8 @@ return piece;
 }
 Campbell Ritchie
 Marshal
-Posts: 72762
-317
+Posts: 72872
+330
 posted 7 years ago
 Number of slices to send:
 Optional 'thank-you' note:
@@ -963,8 +964,8 @@ return flag;
 }
 Campbell Ritchie
 Marshal
-Posts: 72762
-317
+Posts: 72872
+330
 posted 7 years ago
 Number of slices to send:
 Optional 'thank-you' note:
@@ -1174,8 +1175,8 @@ Send
 Thanks for the crash course I plan to take your advice and have started again one the Java Tic Tac Toe. I have it all planned out this time around. This way I can stay to one path like using a array to check for a winner and a try catch black to catch exeptions to my set method.
 Campbell Ritchie
 Marshal
-Posts: 72762
-317
+Posts: 72872
+330
 posted 7 years ago
 Number of slices to send:
 Optional 'thank-you' note:
@@ -1195,9 +1196,6 @@ Optional 'thank-you' note:
 Send
 Hey I made some logic for my game I try both ways and the if statement seams right. I think I need to prompt the game to stop when I have a winner. I do not know how to do this yet but I can share what I have done already. I was going to remake the program and ran into trouble.
 I am working on making some logic to check for winners and to see if it is a tie. I was able to research this and found that two ways are most popular the 0-9 method and the [1] [1] to [3] [3] I like the second because I have been using that method all along. I was planning a lot of brute force coding in the form of if statements. What do you think am I on the right track? Thanks again
-You showed up just in time for the waffles! And this tiny ad:
-Building a Better World in your Backyard by Paul Wheaton and Shawn Klassen-Koop
-https://coderanch.com/wiki/718759/books/Building-World-Backyard-Paul-Wheaton
 reply
 reply
 Bookmark Topic
@@ -1211,7 +1209,7 @@ Could someone explain what is wrong with my set methods?
 anyone know how I could fix the errors in my code?
 How to modify this program to use & display 1s and 0s instead of true and false?
 More...
-current ranch time (not your local time) is May 31, 2021 11:41:44
+current ranch time (not your local time) is Jun 09, 2021 16:09:53
 all times are in ranch time: GMT-6 in summer, GMT-7 in winter
 contact us | advertise |
 | Powered by JForum | copyright © 1998-2021 paul wheaton, missoula, MT

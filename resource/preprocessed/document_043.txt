@@ -110,6 +110,7 @@ df.to_csv(save)
 Key_Stats()
 python python-2.7 pandas machine-learning
 Share
+Improve this question
 Follow
 asked Jul 30 '15 at 11:01
 Nick DuddyNick Duddy
@@ -135,13 +136,14 @@ edit:
 error is due to missing )
 save = gather.replace(' ','').replace(')','').replace('(','').replace('/',''+('.csv'))
 Share
+Improve this answer
 Follow
 edited Jul 30 '15 at 12:25
 BioGeek
 19.2k2121 gold badges7575 silver badges123123 bronze badges
 answered Jul 30 '15 at 11:03
 The6thSenseThe6thSense
-7,07366 gold badges2828 silver badges6262 bronze badges
+7,10366 gold badges2828 silver badges6262 bronze badges
 3
 Hi, Thanks! I'm really new to python (and coding outsite of HTML) so appreciate the example.
 I made the "pd.DataFrame"
@@ -165,10 +167,11 @@ Add a comment
 You imported pandas as pd. Either refer to it as such throughout, or remove the as pd from the import.
 (Plus, never ever ever do except Exception... pass. You'll swallow all sorts of errors and never know what they were. If you aren't going to handle them, don't catch them at all.)
 Share
+Improve this answer
 Follow
 answered Jul 30 '15 at 11:02
 Daniel RosemanDaniel Roseman
-542k5555 gold badges754754 silver badges786786 bronze badges
+543k5555 gold badges755755 silver badges789789 bronze badges
 Add a comment
 |
 Your Answer
@@ -194,11 +197,9 @@ By clicking “Post Your Answer”, you agree to our terms of service, privacy p
 Not the answer you're looking for? Browse other questions tagged python python-2.7 pandas machine-learning
 or ask your own question.
 The Overflow Blog
-Level Up: Linear Regression in Python – Part 2
-Shipping confetti to Stack Overflow’s design system
+Using low-code tools to iterate products faster
+Podcast 345: A good software tutorial explains the How. A great one explains…
 Featured on Meta
-The future of Community Promotion, Open Source, and Hot Network Questions Ads
-Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
 Take the 2021 Developer Survey
 Linked
 -2
@@ -218,35 +219,35 @@ NameError: global name 'xrange' is not defined in Python 3
 Pandas index column title or name
 155
 NameError: global name 'unicode' is not defined - in Python 3
-587
+589
 How to filter Pandas dataframe using 'in' and 'not in' like in SQL
-243
+244
 input() error - NameError: name '…' is not defined
 Hot Network Questions
-Starting play at higher levels and ability point buy
-Stop, in the name of the law
-Are there any papers about this observation of the distribution of the zeros of the zeta function?
-How to stop games from reading your RAM?
-I think I've sh-- myself
-Why does sleep, when run in a shell script, ignore SIGINT?
-Is there a precise definition of "Supermoon"?
-Trying to identify an old sci-fi novel: a group of space travellers visiting a planet previously long-inhabited but regressed?
-Where can people allergic to dairy food eat when travelling in France?
-Why do Macs mount an additional drive every time I install software?
-Does mass have an effect on Centripetal Acceleration?
-Why is g3 a bad move here?
-How to use Zwift workouts with stationary bike
-Generate a British numberplate
-unknown pieces of a set - stickers on round corner bricks
-Is the burden of proof a fallacy?
-Resigning will cripple my department, but I am resigning because of a near crippled department
-Why is bad behavior more tolerated in academia compared to the rest of the industry?
-Should forcing open doors be Strength or Strength (Athletics)
-What's the cohomology ring structure of a blow-up?
-Vocal range of a crowd
-Why would birds fall from the sky due to a lack of moisture?
-How do I make a "ragged" table?
-I ran a nail through a wire at home, should I worry?
+Are there any greater risks of traveling significantly faster to another planet?
+Linux backup script written in bash for tar
+Is there a threadlocker that requires heat to release and can withstand thousands of heat-cool cycles without needing to be reapplied or deteriorating
+Is buying lecture notes wrong?
+Why some CRS are deprecated in QGIS?
+Why is the bond angle of trifluoromethane higher than that of difluoromethane?
+Why aren't resistors being used here?
+What did I just photograph? (rainbow way out of place)
+How was it calculated that Dream cheated on his Minecraft v1.16 glitchless speedrun?
+How realistic is the 1 kg/km² solar sail in "Death's End"?
+What is the DC of Draconic Presence?
+Deriving the energy-momentum tensor of a point particle
+What are minimal changes to make a truncated pyramid shaped megabuildings a thing?
+Should I notify a med school about their student's cheating history?
+Why are most women in anime housewives instead of being independent?
+A manga about a girl and a boy who must hold hands, or die
+What does "parity pattern" mean?
+Has physics ever given a physical significance to a mathematically abstract idea?
+Does Islam have heraditary slavery?
+Alien Instrument produces "visual music", which a Human can temporarily experience
+How to make Mathematica read in CSV as fast as Python's Pandas
+Simplify K combinatory logic expression
+Why are SSH MITM tools able to read and modify data?
+output entries that have highest score
 more hot questions
 Question feed
 Subscribe to RSS
@@ -395,7 +396,7 @@ Twitter
 LinkedIn
 Instagram
 site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.5.28.39383
+rev 2021.6.9.39464
 Stack Overflow works best with JavaScript enabled
 Your privacy
 By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.

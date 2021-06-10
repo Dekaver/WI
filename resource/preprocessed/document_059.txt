@@ -125,7 +125,6 @@ Doctoral
 Certifications
 Trade Schools
 About
-Get matched to Top BootcampsGet matched
 HomePython TutorialsPython typeerror: ‘int’ object is not iterable Solution
 Python Tutorials
 Python typeerror: ‘int’ object is not iterable Solution
@@ -156,7 +155,7 @@ values = [1, 2, 3, 3]
 check_for_threes = count_occurrence(values, 3)
 print(check_for_threes)
 This code snippet uses one function. The count_occurance function counts how many times a number appears in the “values” list. This function iterates over all the values in “values” and keeps a running total of all those equal to a particular number. This number is specified as a parameter called “to_find”.
-» MORE:  Python SyntaxError: non-default argument follows default argument SolutionIn our main program, we define a list called “values” with four values. We call our count_occurrence function to count how many threes are in our list of values. We then print out the response to the console.
+» MORE:  Python Median() - A Python Statistics TutorialIn our main program, we define a list called “values” with four values. We call our count_occurrence function to count how many threes are in our list of values. We then print out the response to the console.
 Let’s run our code:
 Traceback (most recent call last):
 File "main.py", line 9, in <module>
@@ -176,7 +175,7 @@ This statement will create an iterable object with a list of values in the range
 Let’s try to run our code again with the range() statement. Our code returns:
 2
 Our code has successfully found all the instances of 3 in the list. Our code has counted them all up and then printed the total number of times 3 appears in the list to the console.
-» MORE:  Python TypeError: ‘str’ object cannot be interpreted as an integer Solution
+» MORE:  Python typeerror: ‘tuple’ object does not support item assignment Solution
 Conclusion
 TypeErrors are a common type of error in Python. They occur when you try to apply a function on a value of the wrong type. An “‘int’ object is not iterable” error is raised when you try to iterate over an integer value.
 To solve this error, make sure that you are iterating over an iterable rather than a number.
@@ -200,16 +199,37 @@ Comments (0)
 Leave a Reply Cancel replyYour email address will not be published. Required fields are marked *Your CommentName *
 Email *
 Website
-Improve Your Python Skills.
-Get the Ultimate Cheat Sheet.
-Our Python Cheat Sheet features dozens of code snippets and descriptions to help you with common Python tasks.
-Your email is required
-You will receive your cheat sheet soon!
+Get offers from top bootcampsTake the stress out of picking a bootcamp
+See matches nowTop Community PostsHow long does it take to become a full stack web developer?Marcus Hayes in Full-stack DevelopmentWhat are the laptop requirements for programming?Danny Fuentes in Beginners$2 million in COVID19 ScholarshipsTimur Meyster in Applying to BootcampsPopular ArticlesBest Online BootcampsBest Tech Jobs 2021What is Coding Used For?How Much Do Coders Make?Best Free BootcampsSee all articlesCareer GuidesWeb DevelopmentSoftware EngineeringData ScienceWeb DesignCyber SecuritySee all guidesFree prep coursesFlatiron School Prep80+ hours
+Easy80+ hours of HTML, CSS & JavaScriptKenzie School Prep80+ hours
+Easy20+ hours of HTML & CSSGeneral Assembly Prep50+ hours
+EasyLearn web development basics in HTML, CSS, JavaScript by building projectssee all prep courses
+Get matches
+from top bootcamps
+Select your interest:
+Interest
+Software Engineering
+Design
+Data Science
+Data Analytics
+Cybersecurity Analytics
+Technology Sales
+Select your preferred pace:
+Begin typing a name to filter
+Full-time
+Part-time
+Self-paced
+Begin typing a name to filter
+Full-time
+Part-time
+Self-paced
+See Matches
+Find the Best Online Course for YouGet Matched
 Related Articles
 Python Tutorials
-Python ‘numpy.ndarray’ object is not callable Solution
+How to Use Python extend()
 Python Tutorials
-Python AttributeError: ‘numpy.ndarray’ object has no attribute ‘append’ Solution
+Python Index: A Step-By-Step Guide
 Python Tutorials
 Python FileNotFoundError: [Errno 2] No such file or directory Solution
 Python Tutorials
@@ -282,13 +302,27 @@ Android
 React
 Angular
 See all
+Tell us about you and we will match you with top rated bootcamps with flexible payment options, income sharing (ISAs), or money-back guarantees.
+Select your interest:
+Software Engineering
+Design
+Data Science
+Data Analytics
+Cybersecurity Analytics
+Technology Sales
+First Name
+Last Name
+Email
+Phone Number
+GET MATCHED
+Find the right bootcamp for you
+By continuing you indicate that you have read and agree to
+Career Karma Terms of Service and Privacy Policy
 X
-Boost Your Python Skills
-Get our free Ultimate Python Cheat Sheet with dozens of important commands you'll use in your everyday coding
-Email:
-Your email is required
-Send me the cheat sheet
-You will receive your cheat sheet soon!
+X
+Jump start your tech career
+Learn the most in-demand skills
+Get started now
 Lost Password Back ⟶
 Login
 Register

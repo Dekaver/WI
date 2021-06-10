@@ -64,9 +64,9 @@ mkdirlove
 FBTOOL
 Notifications
 Star
-4
+7
 Fork
-5
+7
 Code
 Issues
 23

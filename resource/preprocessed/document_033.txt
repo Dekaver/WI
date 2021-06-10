@@ -2,13 +2,10 @@ ValueError: empty vocabulary; perhaps the documents only contain stop words - cd
 profile
 viewpoint
 nodejs
-vue.js
-ry ( nodejs Founder )
+Spring Boot
 React
 Rust
 tensorflow
-Spring Boot
-golang
 Ask
 questionsValueError: empty vocabulary; perhaps the documents only contain stop words
 Describe the bug

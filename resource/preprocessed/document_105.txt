@@ -19,26 +19,25 @@ Register
 add
 Q&A
 Questions
-Unanswered
 Tags
 Users
 Ask a Question
 Articles
 Post An Article
 Recent Posts
-How to break or end a for loop in java
-Display data from SQL database into HTML table using PHP
-Static methods can be accessed directly in non-static methods
-Pair Class in Java
-how to find a specific character in a string java
-Tips for Faster Java Debugging
-How to take string input from user in java using bufferedreader
-How to find square root in java
-How to get the first day of month in Sql server
-Print an array in c++
+What is a flag in c++
+What is static in C++
+How to use /n in C++
+what is the difference between char and varchar?
+Python ASCII to int
+What are the supported wildcard characters for selectors in uipath studio?
+C# convert float to int
+Moving Perl Mojolicious routes to their own module
+Write a java program to count the letters, spaces, numbers and other characters of an input string.
+Uploading files to AWS S3 Bucket using Spring Boot
 exception in thread "main" java.lang.arithmeticexception: / by zero
 0 votes
-687 views
+721 views
 Problem :I got bellow message from my codeException in thread "main" java.lang.ArithmeticException: / by zero
 java
 exception
@@ -125,21 +124,21 @@ Cancel
 Related questions
 0 votes
 1 answer
-11 views
-11 views
+17 views
+17 views
 Exception in thread "main" java.lang.numberformatexception: empty string
 Problem: Exception in thread "main" java.lang.numberformatexception: empty string.
 asked
 May 6
 Ryan evans
-1.5k points
+1.6k points
 java
 exception
 null
 1 vote
 1 answer
-12 views
-12 views
+14 views
+14 views
 Exception in thread "main" java.lang.numberformatexception:
 Problem: Any solution to this error. Exception in thread "main" java.lang.numberformatexception:
 asked
@@ -151,8 +150,8 @@ smartcard
 exception
 0 votes
 1 answer
-26 views
-26 views
+29 views
+29 views
 exception in thread "main" java.lang.stringindexoutofboundsexception: string index out of range: 11
 Problem: I have written code for exception. It's building a file but not letting it run, it just throws exception This is code : public static void main(String args[]) { String name = "Umer Hassan"; String name1 = "Hassan Umer"; char[] name2 = new ...
 at Anagram.main(Anagram.java:24)exception in thread "main" java.lang.stringindexoutofboundsexception: string index out of range: 11, Why is that???
@@ -176,8 +175,8 @@ java
 exception
 0 votes
 1 answer
-805 views
-805 views
+825 views
+825 views
 no main methods javafx applications applets or midlets found in file
 Problem : In my code have main method in it. The program compiles on jgrasp with no errors but it keeps giving me a message as bellow: "no main methods, applets, or Midlets found in file jgrasp"
 asked
@@ -187,6 +186,20 @@ peterlaw
 java
 file
 exception
+main
+0 votes
+1 answer
+4 views
+4 views
+Exception in thread "main"
+Problem: Does anyone have an answer: Exception in thread "main"?
+asked
+1 day ago
+Jennifer Watkins
+880 points
+java
+error-handling
+logic
 main
 1 vote
 1 answer
@@ -241,18 +254,6 @@ jwilliam
 java
 swing
 oop
-exception
-0 votes
-1 answer
-19 views
-19 views
-error: could not find or load main class caused by: java.lang.classnotfoundexception:
-Problem: Any ideas on what I need to fix the error: could not find or load main class main caused by: java.lang.classnotfoundexception: main?
-asked
-Mar 27
-ashik
-14.6k points
-java
 exception
 Send feedback
 About Us

@@ -6,7 +6,8 @@ from flask import Flask
 from flask import render_template
 from flask import request
 from markupsafe import escape
-import main
+import indexing
+from ranking import ranking
 
 app = Flask(__name__)
 
@@ -17,17 +18,14 @@ def index():
 
 @app.route("/search",methods=['GET'])
 def search():
-    #ranking
-    from ranking import ranking
     query = request.args.get('q')  
-    docs , waktu = ranking(query, main.df)
-    
+    docs , waktu = ranking(query, indexing.df)
     return render_template('search.html', 
         docs=docs, 
-        dataframe=main.dataframe, 
+        dataframe=indexing.dataframe, 
         waktu=waktu, 
         query=query,
-        url=main.url,)
+        url=indexing.url,)
 
 if __name__ == "__main__":
     app.run()

@@ -76,6 +76,7 @@ Elsewhere in my code:
 savedInstanceState.putBoolean("mybool", true);
 java android
 Share
+Improve this question
 Follow
 edited Jul 20 '17 at 15:54
 Jonathan Doe
@@ -113,10 +114,11 @@ if (!savedInstanceState.containsKey("mybool")) {
 // your code here
 }
 Share
+Improve this answer
 Follow
 answered Jul 20 '17 at 16:37
 Andrew SunAndrew Sun
-3,72166 gold badges3232 silver badges4444 bronze badges
+3,73166 gold badges3232 silver badges4444 bronze badges
 7
 java.lang.NullPointerException: Attempt to invoke virtual method 'boolean android.os.Bundle.containsKey(java.lang.String)' on a null object reference
 – Jonathan Doe
@@ -141,16 +143,18 @@ The docs say that getBoolean(String key) returns a boolean, i.e. a primitive typ
 Furthermore, the docs say if the key isn't present, this method simply returns false.
 If you want to check if mybool exists or not, use containsKey(String key) instead. (Again, refer to the docs)
 Share
+Improve this answer
 Follow
 edited Jul 21 '17 at 9:21
 answered Jul 20 '17 at 16:53
 QBruteQBrute
-3,47066 gold badges3030 silver badges3636 bronze badges
+3,46866 gold badges3030 silver badges3636 bronze badges
 Add a comment
 |
 1
 Try to use Boolean instead of boolean i.e. use the Class instead if the primitive type. I do not recommend this though. Boolean should be either true or false.
 Share
+Improve this answer
 Follow
 answered Jul 20 '17 at 15:54
 ArpitArpit
@@ -174,6 +178,7 @@ Add a comment
 This issue you are having is your understanding of how primitives work. Primitive types, including boolean, cannot be null. Even if you do not assign a value to them when you define the variable, there is a value assigned to them.
 In the case of the primitive type boolean, the value is assigned as false when initialized if you do not assign a boolean value to the variable. See here for more information on how primitives are treated and what their default values are.
 Share
+Improve this answer
 Follow
 answered Jul 20 '17 at 16:29
 Rabbit GuyRabbit Guy
@@ -203,25 +208,23 @@ By clicking “Post Your Answer”, you agree to our terms of service, privacy p
 Not the answer you're looking for? Browse other questions tagged java android
 or ask your own question.
 The Overflow Blog
-Level Up: Linear Regression in Python – Part 2
-Shipping confetti to Stack Overflow’s design system
+Using low-code tools to iterate products faster
+Podcast 345: A good software tutorial explains the How. A great one explains…
 Featured on Meta
-The future of Community Promotion, Open Source, and Hot Network Questions Ads
-Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
 Take the 2021 Developer Survey
 Linked
 22
 Cannot set boolean to null
 Related
-3964
+3969
 What are the differences between a HashMap and a Hashtable in Java?
-3353
+3363
 What is the difference between public, protected, package-private and private in Java?
-3158
+3162
 What is a serialVersionUID and why should I use it?
-1335
+1336
 Strange OutOfMemory issue while loading an image to a Bitmap object
-6040
+6046
 What is the difference between “px”, “dip”, “dp” and “sp”?
 1940
 “Debug certificate expired” error in Eclipse Android plugins
@@ -234,30 +237,30 @@ YouTube Player crashes (java.lang.NullPointerException, null object reference)
 0
 how to count number of trimester using weeks
 Hot Network Questions
-Where was this scene of 'Highlander: The series' with standing columns shot?
-Calculating the hexagons in a hexagon of hexagons
-Are there any papers about this observation of the distribution of the zeros of the zeta function?
-According to international law, when is first-use nuclear strike justified?
-I have a postdoc interview tomorrow and I think I have overstated my abilities in my CV. How do I address it during the interview?
-Why isn't it the norm to have research repeated immediately by other academics?
-Should forcing open doors be Strength or Strength (Athletics)
-How can I specify the qubits on quantum computers that I want to use?
-A bracket amphitheater
-Can I replace an STM32F105-RBT6 with a STM32F103-RET6? (ie. are they pin compatible?)
-How can objects be neither vector nor scalar?
-How do I make a "ragged" table?
-Does 'graduate program' mean MSc or Ph.D.?
-Did medieval kingdoms issue health related guidelines?
-Why does sleep, when run in a shell script, ignore SIGINT?
-Stop, in the name of the law
-Sanctuary spell and Using magic Items that cause damage?
-How can I use a control variable that is non-normal in linear regression with other variabels that are normal?
-Lunar Terrain Model in Apollo Guidance Computer
-Did ancient Greek mathematicians consider numbers independently of geometry?
-What does this line: `T=C/2=INT(C/2)` do? Why is it valid syntax?
-Is the the word order of "Iura novit curia" used for emphasis?
-Why do we have two kidneys but one liver?
-What is the difference between “they” and “it” for people, especially for those people who choose to be identified as non-binary?
+Is there a diff() function in Julia DataFrames like pandas?
+Are AP slugs for shotguns possible?
+How do I create an insert-only user for a Postgres table with an index?
+What should be the income to list on a credit card application?
+Is there a fundamental reason for the exponential dependence of the evolution of the temperature in an electronic deviced that is powered on?
+Why are SSH MITM tools able to read and modify data?
+Simplify K combinatory logic expression
+"Which dreams, indeed, are ambition" in Hamlet Act 2, Scene 2
+Alien Instrument produces "visual music", which a Human can temporarily experience
+Dealing with extremely inexperienced developers who have daily deadlines?
+How to get real-looking rust that will be safe to the touch?
+A manga about a girl and a boy who must hold hands, or die
+Why is the bond angle of trifluoromethane higher than that of difluoromethane?
+History of /f/ sound in Russian
+Why does Lex turn on the flashlight?
+Can an American state ban a (minor) political party?
+Is there a threadlocker that requires heat to release and can withstand thousands of heat-cool cycles without needing to be reapplied or deteriorating
+Why would they use human soldiers over undead ones?
+In the sentence "Ich begegnete einem alten Freund in Berlin", why the dative einem instead of the accusative einen?
+What can US senators do against diversity trainings in the US Army?
+Refueling a Mars mission on the way
+What is the DC of Draconic Presence?
+What did I just photograph? (rainbow way out of place)
+Does gravity bend gravity?
 more hot questions
 Question feed
 Subscribe to RSS
@@ -406,7 +409,7 @@ Twitter
 LinkedIn
 Instagram
 site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.5.28.39383
+rev 2021.6.9.39464
 Stack Overflow works best with JavaScript enabled
 Your privacy
 By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.

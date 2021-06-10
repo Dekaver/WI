@@ -125,7 +125,6 @@ Doctoral
 Certifications
 Trade Schools
 About
-Get matched to Top BootcampsGet matched
 HomePython TutorialsPython TypeError: ‘str’ object cannot be interpreted as an integer Solution
 Python Tutorials
 Python TypeError: ‘str’ object cannot be interpreted as an integer Solution
@@ -156,7 +155,7 @@ We’re going to build a program that lets a pizza restaurant view the names and
 names = ["Pepperoni", "Margherita", "Ham and Pineapple", "Brie and Chive"]
 prices = [9.00, 8.40, 8.40, 9.50]
 These lists are parallel and appear in order of how popular a pizza is. That means the values at a particular position in the list correspond with each other. For instance, the price of a “Brie and Chive” pizza is $9.50.
-» MORE:  Python pip: command not found SolutionOur next task is to ask the user how many pizzas they would like to display. We can do this using an input() statement:
+» MORE:  Python TabError: inconsistent use of tabs and spaces in indentation SolutionOur next task is to ask the user how many pizzas they would like to display. We can do this using an input() statement:
 to_display = input("Enter the number of pizzas you would like to display: ")
 Now we know the number of pizzas about which the user is seeking information, we can use a for loop to print each pizza and its price to the console:
 for p in range(0, to_display):
@@ -182,7 +181,7 @@ Enter the number of pizzas you would like to display: 2
 Pepperoni costs $9.0.
 Margherita costs $8.4.
 Our code successfully prints out the information that we requested. We can see the names of the two most popular pizzas and the prices of those pizzas.
-» MORE:  Python TypeError: ‘float’ object not iterable SolutionConclusion
+» MORE:  Python Flatten List: A How-To GuideConclusion
 The “TypeError: ‘str’ object cannot be interpreted as an integer” error is raised when you pass a string as an argument into a range() statement. To fix this error, make sure all the values you use in a range() statement are integers.
 Now you have the knowledge you need to fix this error like a professional!
 About us: Career Karma is a platform designed to help job seekers find, research, and connect with job training programs to advance their careers. Learn about the CK publication.
@@ -204,20 +203,41 @@ Comments (0)
 Leave a Reply Cancel replyYour email address will not be published. Required fields are marked *Your CommentName *
 Email *
 Website
-Improve Your Python Skills.
-Get the Ultimate Cheat Sheet.
-Our Python Cheat Sheet features dozens of code snippets and descriptions to help you with common Python tasks.
-Your email is required
-You will receive your cheat sheet soon!
+Get offers from top bootcampsTake the stress out of picking a bootcamp
+See matches nowTop Community PostsHow long does it take to become a full stack web developer?Marcus Hayes in Full-stack DevelopmentWhat are the laptop requirements for programming?Danny Fuentes in Beginners$2 million in COVID19 ScholarshipsTimur Meyster in Applying to BootcampsPopular ArticlesBest Online BootcampsBest Tech Jobs 2021What is Coding Used For?How Much Do Coders Make?Best Free BootcampsSee all articlesCareer GuidesWeb DevelopmentSoftware EngineeringData ScienceWeb DesignCyber SecuritySee all guidesFree prep coursesFlatiron School Prep80+ hours
+Easy80+ hours of HTML, CSS & JavaScriptKenzie School Prep80+ hours
+Easy20+ hours of HTML & CSSGeneral Assembly Prep50+ hours
+EasyLearn web development basics in HTML, CSS, JavaScript by building projectssee all prep courses
+Get matches
+from top bootcamps
+Select your interest:
+Interest
+Software Engineering
+Design
+Data Science
+Data Analytics
+Cybersecurity Analytics
+Technology Sales
+Select your preferred pace:
+Begin typing a name to filter
+Full-time
+Part-time
+Self-paced
+Begin typing a name to filter
+Full-time
+Part-time
+Self-paced
+See Matches
+Find the Best Online Course for YouGet Matched
 Related Articles
+Python Tutorials
+Python AttributeError: ‘numpy.ndarray’ object has no attribute ‘append’ Solution
+Python Tutorials
+Python FileNotFoundError: [Errno 2] No such file or directory Solution
 Python Tutorials
 Python Index: A Step-By-Step Guide
 Python Tutorials
-Python ‘numpy.ndarray’ object is not callable Solution
-Python Tutorials
-Python Check If List Is Empty
-Python Tutorials
-Python FileNotFoundError: [Errno 2] No such file or directory Solution
+Python ValueError: math domain error Solution
 Home
 About
 Careers
@@ -286,13 +306,27 @@ Android
 React
 Angular
 See all
+Tell us about you and we will match you with top rated bootcamps with flexible payment options, income sharing (ISAs), or money-back guarantees.
+Select your interest:
+Software Engineering
+Design
+Data Science
+Data Analytics
+Cybersecurity Analytics
+Technology Sales
+First Name
+Last Name
+Email
+Phone Number
+GET MATCHED
+Find the right bootcamp for you
+By continuing you indicate that you have read and agree to
+Career Karma Terms of Service and Privacy Policy
 X
-Boost Your Python Skills
-Get our free Ultimate Python Cheat Sheet with dozens of important commands you'll use in your everyday coding
-Email:
-Your email is required
-Send me the cheat sheet
-You will receive your cheat sheet soon!
+X
+Jump start your tech career
+Learn the most in-demand skills
+Get started now
 Lost Password Back ⟶
 Login
 Register

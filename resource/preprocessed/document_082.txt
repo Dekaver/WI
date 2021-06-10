@@ -91,6 +91,7 @@ return "This user already exists.";
 My question is: Is there a better way to do this? I would prefer an solution in code, rather than reading from an external file. I am using Javadoc for this project, and being able to document the error codes in-line and have them automatically update in the documentation would be helpful.
 java enums
 Share
+Improve this question
 Follow
 asked Jan 15 '09 at 13:11
 William BrendelWilliam Brendel
@@ -106,7 +107,7 @@ Add a comment
 Active
 Oldest
 Votes
-171
+172
 Well there's certainly a better implementation of the enum solution (which is generally quite nice):
 public enum Error {
 DATABASE(0, "A database error has occurred."),
@@ -131,13 +132,14 @@ return code + ": " + description;
 You may want to override toString() to just return the description instead - not sure. Anyway, the main point is that you don't need to override separately for each error code. Also note that I've explicitly specified the code instead of using the ordinal value - this makes it easier to change the order and add/remove errors later.
 Don't forget that this isn't internationalised at all - but unless your web service client sends you a locale description, you can't easily internationalise it yourself anyway. At least they'll have the error code to use for i18n at the client side...
 Share
+Improve this answer
 Follow
 edited Aug 30 '20 at 9:03
 YCF_L
 49.1k1313 gold badges7575 silver badges115115 bronze badges
 answered Jan 15 '09 at 13:17
 Jon SkeetJon Skeet
-1.3m792792 gold badges87248724 silver badges89298929 bronze badges
+1.3m796796 gold badges87278727 silver badges89358935 bronze badges
 12
 14
 To internationalize, replace the description field with a string code that can be looked up in a resource bundle?
@@ -174,13 +176,14 @@ DUPLICATE_USER=The user already exists.
 Another problem with your solution is the maintenability: you have only 2 errors, and already 12 lines of code.
 So imagine your Enumeration file when you will have hundreds of errors to manage!
 Share
+Improve this answer
 Follow
 edited Mar 23 '17 at 13:05
 abarisone
-3,4291111 gold badges2727 silver badges4949 bronze badges
+3,4391111 gold badges2727 silver badges4949 bronze badges
 answered Jan 15 '09 at 13:20
 Romain LinsolasRomain Linsolas
-73.9k4545 gold badges197197 silver badges265265 bronze badges
+74k4545 gold badges197197 silver badges265265 bronze badges
 2
 3
 I would up this more than 1 if I could.
@@ -213,10 +216,11 @@ public String getMessage() { return message; }
 }
 seems a lot cleaner to me... and less verbose.
 Share
+Improve this answer
 Follow
 edited May 17 '12 at 12:08
 ctpenrose
-1,37511 gold badge1616 silver badges2828 bronze badges
+1,38511 gold badge1616 silver badges2828 bronze badges
 answered Jan 15 '09 at 13:18
 CowanCowan
 35.5k1111 gold badges6464 silver badges6363 bronze badges
@@ -259,10 +263,11 @@ I wrote a few utility routines that helped log errors, wrap them as exceptions (
 I'm trying to get them to let me open-source it...
 -- Scott
 Share
+Improve this answer
 Follow
 answered Jan 15 '09 at 18:56
 Scott StanchfieldScott Stanchfield
-28k99 gold badges4545 silver badges6060 bronze badges
+28.1k99 gold badges4545 silver badges6060 bronze badges
 1
 Nice way of handling error messages. Did you already open-sourced it?
 – bobbel
@@ -279,6 +284,7 @@ It makes I18N trivial.
 If you're also using Spring, so much the better.
 Their MessageSource class is useful for these sorts of things.
 Share
+Improve this answer
 Follow
 answered Jan 15 '09 at 14:22
 duffymoduffymo
@@ -288,6 +294,7 @@ Add a comment
 4
 Just to keep flogging this particular dead horse- we've had good use of numeric error codes when errors are shown to end-customers, since they frequently forget or misread the actual error message but may sometimes retain and report a numeric value that can give you a clue to what actually happened.
 Share
+Improve this answer
 Follow
 answered Nov 11 '14 at 21:38
 telcoprotelcopro
@@ -310,10 +317,11 @@ Now you have several options to turn those into Strings. You can compile the str
 I'm using unit tests and reflection frameworks to find all types that implement my interfaces to make sure each code is used somewhere and that the config files contain all expected messages, etc.
 Using frameworks that can parse Java like https://github.com/javaparser/javaparser or the one from Eclipse, you can even check where the enums are used and find unused ones.
 Share
+Improve this answer
 Follow
 answered Sep 4 '17 at 9:31
 Aaron DigullaAaron Digulla
-298k101101 gold badges558558 silver badges777777 bronze badges
+298k101101 gold badges559559 silver badges777777 bronze badges
 Add a comment
 |
 2
@@ -322,6 +330,7 @@ The error class would then define the message.
 PS: and actually also care for internationalization !
 PPS: you could also redefine the raise-method and add logging, filtering etc. if required (at leastin environments, where the Exception classes and friends are extendable/changeable)
 Share
+Improve this answer
 Follow
 answered Jan 15 '09 at 13:56
 blabla999blabla999
@@ -365,6 +374,7 @@ EDIT:
 ok, using enum here is a little dangerous since you alter particular enum permanently.
 I guess better would be to change to class and use static fields, but than you cannot use '==' anymore. So I guess it's a good example what not to do, (or do it only during initialization) :)
 Share
+Improve this answer
 Follow
 edited Nov 15 '11 at 8:59
 answered Nov 15 '11 at 8:11
@@ -380,6 +390,7 @@ Add a comment
 0
 enum for error code/message definition is still a nice solution though it has a i18n concerns. Actually we may have two situations: the code/message is displayed to the end user or to the system integrator. For the later case, I18N is not necessary. I think the web services is most likely the later case.
 Share
+Improve this answer
 Follow
 answered Apr 29 '14 at 3:06
 JimmyJimmy
@@ -390,6 +401,7 @@ Add a comment
 Using interface as message constant is generally a bad idea. It will leak into client program permanently as part of exported API. Who knows, that later client programmers might parse that error messages(public) as part of their program.
 You will be locked forever to support this, as changes in string format will/may break client program.
 Share
+Improve this answer
 Follow
 answered Mar 2 '16 at 4:22
 Awan BiruAwan Biru
@@ -414,6 +426,7 @@ this.errordesc = errordesc;
 In your code call it like:
 fileResponse.setErrorCode(ErrorCodes.NO_FILE.errordesc());
 Share
+Improve this answer
 Follow
 answered Apr 8 '16 at 8:39
 ChinmoyChinmoy
@@ -424,6 +437,7 @@ Add a comment
 I use PropertyResourceBundle to define the error codes in an enterprise application to manage locale error code resources. This is the best way to handle error codes instead of writing code (may be hold good for few error codes) when the number of error codes are huge and structured.
 Look at java doc for more information on PropertyResourceBundle
 Share
+Improve this answer
 Follow
 answered Jul 16 '20 at 4:28
 Mujibur RahmanMujibur Rahman
@@ -453,13 +467,10 @@ By clicking “Post Your Answer”, you agree to our terms of service, privacy p
 Not the answer you're looking for? Browse other questions tagged java enums
 or ask your own question.
 The Overflow Blog
-Level Up: Linear Regression in Python – Part 2
-Shipping confetti to Stack Overflow’s design system
+Using low-code tools to iterate products faster
+Podcast 345: A good software tutorial explains the How. A great one explains…
 Featured on Meta
-The future of Community Promotion, Open Source, and Hot Network Questions Ads
-Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
 Take the 2021 Developer Survey
-Visit chat
 Linked
 118
 Interfaces with static fields in java for sharing 'constants'
@@ -472,9 +483,9 @@ Error codes with variable String descriptions in Java
 Related
 638
 In Java, what is the best way to determine the size of an object?
-703
+706
 What is the best way to filter a Java Collection?
-2097
+2106
 What's the simplest way to print a Java array?
 724
 How do I compare strings in Java?
@@ -491,30 +502,30 @@ Error codes with variable String descriptions in Java
 488
 Best practice for REST token-based authentication with JAX-RS and Jersey
 Hot Network Questions
-According to international law, when is first-use nuclear strike justified?
-Is the the word order of "Iura novit curia" used for emphasis?
-Where and how are raw transactions stored on the blockchain?
-identify M.2 SSD from BASH Script
-How do I make a "ragged" table?
-What technical reasons prevented the Win9x Virtual Machine Monitor from running multiple threads simultaneously?
-Stop, in the name of the law
-The famous "Charaiveti" mantra is mentioned in which Vedic verse?
-Why is the ortho product major in the nitration of anisole with nitric acid and acetic anhydride?
-Why is bad behavior more tolerated in academia compared to the rest of the industry?
-Calculating the hexagons in a hexagon of hexagons
-How do they enforce rules on declaring funds?
-What can I do about a parent who is discouraging their child from learning violin, a child who really wants to learn, so that the child will drop out
-Should most brahmins today be considered as shudras?
-Peer review 2.0
-Concatenate column names in one column conditional on using mutate, across and case_when
-What's a lot of money {out of curiosity}?
-Lunar Terrain Model in Apollo Guidance Computer
-How do computers perform operations on numbers that are larger than 64 bits?
-Why does sleep, when run in a shell script, ignore SIGINT?
-Does mass have an effect on Centripetal Acceleration?
-Why isn't it the norm to have research repeated immediately by other academics?
-How can objects be neither vector nor scalar?
-How can I state an axiom without enumeration?
+Why are most COB LEDs physically yellow?
+Why does Lex turn on the flashlight?
+History of /f/ sound in Russian
+What is the advantage of gate resistor (R3) in this JFET voltage divider biasing circuit?
+Microcontroller bit information for the Core and different peripherals
+Telling a coworker they aren't invited into my house
+Is there any country that jumped to developed status during the past 75 years after WW2?
+Does machine learning really need data-efficient algorithms?
+Error creating scratch orgs with "Communities" enabled
+What is the right tool for old, rusty, flat cross head bolts?
+Show exit code of last command in Bash prompt if it returned error
+What does 高高矮矮 mean?
+How to indicate a checkbox/toggle is "always on"
+What is the DC of Draconic Presence?
+I'm Lazy: Close my Superparens
+Simplest/cheapest way to build a tensegrity model?
+Why would they use human soldiers over undead ones?
+What are the main reasons for using full justification when ragged right is more readable?
+Refueling a Mars mission on the way
+How important is "MIPS-C2® Brain Protection System" for a bicycle helmet?
+Why did old IBM-PC-compatible computers only have 16 colors available?
+Is it illegal to implement a patented algorithm or method and take advantage from it?
+Has physics ever given a physical significance to a mathematically abstract idea?
+Dealing with extremely inexperienced developers who have daily deadlines?
 more hot questions
 Question feed
 Subscribe to RSS
@@ -663,7 +674,7 @@ Twitter
 LinkedIn
 Instagram
 site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.5.28.39383
+rev 2021.6.9.39464
 Stack Overflow works best with JavaScript enabled
 Your privacy
 By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.

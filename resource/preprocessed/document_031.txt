@@ -75,6 +75,7 @@ It's throwing this error: Exception Value: object has no attribute 'append
 What am I doing wrong? Thanks for your help in advance.
 python django parsing
 Share
+Improve this question
 Follow
 asked Mar 1 '13 at 21:06
 ModelesqModelesq
@@ -95,6 +96,7 @@ tags = profile.tags.all()
 context['tag_rss'] = [feedparser.parse(tag.tag_rss) for tag in tags]
 # if you don't need to re-use rss_result, this should work okay
 Share
+Improve this answer
 Follow
 edited Apr 2 '13 at 1:11
 answered Mar 1 '13 at 21:09
@@ -114,6 +116,7 @@ Exception Value: object has no attribute 'append'
 There seems to be a problem here when trying to call the attribute, append, so if you look back in your code you can see the only place you're trying to append something, is when you have rss.append(rss_result). In this case you can easily see that it's trying to call append on rss, and by looking at your code you can see that rss is the container for the feedparser output, and you don't want to append anything to that, you want that object to be appended to something else.
 In this case you want to take your list, rss_result, and append the rss variable to the end of this empty list. hence: rss_result.append(rss)
 Share
+Improve this answer
 Follow
 answered Mar 1 '13 at 21:10
 GordonsBeardGordonsBeard
@@ -124,6 +127,7 @@ Add a comment
 your mixed up this line: rss.append(rss_result)
 should be rss_result.append(rss)
 Share
+Improve this answer
 Follow
 answered Mar 1 '13 at 21:10
 BenjaminBenjamin
@@ -153,58 +157,56 @@ By clicking “Post Your Answer”, you agree to our terms of service, privacy p
 Not the answer you're looking for? Browse other questions tagged python django parsing
 or ask your own question.
 The Overflow Blog
-Level Up: Linear Regression in Python – Part 2
-Shipping confetti to Stack Overflow’s design system
+Using low-code tools to iterate products faster
+Podcast 345: A good software tutorial explains the How. A great one explains…
 Featured on Meta
-The future of Community Promotion, Open Source, and Hot Network Questions Ads
-Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
 Take the 2021 Developer Survey
 Related
-5316
+5329
 How to execute a program or call a system command from Python
-6178
+6195
 What are metaclasses in Python?
 3114
 What is the difference between Python's list methods append and extend?
-6671
+6696
 Does Python have a ternary conditional operator?
-3261
+3270
 How to get the current time in Python
-1914
+1922
 How to know if an object has an attribute in Python
-2947
+2952
 How do I concatenate two lists in Python?
-2551
+2562
 Manually raising (throwing) an exception in Python
-1490
+1492
 Why can't Python parse this JSON data?
 3596
 Does Python have a string 'contains' substring method?
 Hot Network Questions
-The usage of can't
-Efficient ragged path for text
-What technical reasons prevented the Win9x Virtual Machine Monitor from running multiple threads simultaneously?
-Can a rest be taken in a moving cart?
-A bracket amphitheater
-Is the the word order of "Iura novit curia" used for emphasis?
-identify M.2 SSD from BASH Script
-How can I state an axiom without enumeration?
-The famous "Charaiveti" mantra is mentioned in which Vedic verse?
-Factorising blinear forms with Mathematica
-Advice needed – I can't reach my collaborator, but there's a short deadline for revising our journal article submission
-How do I make a "ragged" table?
-Why do we have two kidneys but one liver?
-Engine failure: how to detect?
-select distinct columns over multiple databases sql server
-Generate a British numberplate
-According to international law, when is first-use nuclear strike justified?
-Why isn't it the norm to have research repeated immediately by other academics?
-Why didn't Japan call for the ICJ to settle the dispute over the Senkaku/Diaoyu Islands?
-What's a lot of money {out of curiosity}?
-Stop, in the name of the law
-How can I specify the qubits on quantum computers that I want to use?
-How can objects be neither vector nor scalar?
-Why is g3 a bad move here?
+Why does Lex turn on the flashlight?
+how to add existing user to existing group id (not group name)?
+Which one would be better for 3.3V outputs among ULN2001 and ULN2003?
+What is the right tool for old, rusty, flat cross head bolts?
+Is it a good idea to go to Japan without a travel guide?
+Does machine learning really need data-efficient algorithms?
+Evaluation order of an APL n-train
+Why are most COB LEDs physically yellow?
+Are there any greater risks of traveling significantly faster to another planet?
+What does 高高矮矮 mean?
+Why is Ken's beer "gay"?
+What are minimal changes to make a truncated pyramid shaped megabuildings a thing?
+Why did this gallon of milk stay fresh for so long?
+Why some CRS are deprecated in QGIS?
+Why are SSH MITM tools able to read and modify data?
+IQ test question assistance
+Is maximum speed a thing?
+What is the hardest part of transitioning from a PhD to a full-time career in academia?
+Alien Instrument produces "visual music", which a Human can temporarily experience
+Why am I seeing the sun slightly north instead of slightly south early in the morning in Malta?
+Is there a threadlocker that requires heat to release and can withstand thousands of heat-cool cycles without needing to be reapplied or deteriorating
+Is there any country that jumped to developed status during the past 75 years after WW2?
+Are there any rules for digging out of a grave?
+What would a bear species isolated on an island look like?
 more hot questions
 Question feed
 Subscribe to RSS
@@ -353,7 +355,7 @@ Twitter
 LinkedIn
 Instagram
 site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.5.28.39383
+rev 2021.6.9.39464
 Stack Overflow works best with JavaScript enabled
 Your privacy
 By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.

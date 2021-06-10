@@ -62,7 +62,7 @@ Asked
 Active
 1 year, 1 month ago
 Viewed
-68k times
+69k times
 4
 1
 $\begingroup$
@@ -95,7 +95,7 @@ Improve this question
 Follow
 edited Jun 21 '19 at 12:04
 Djib2011
-6,82355 gold badges2020 silver badges3333 bronze badges
+6,83355 gold badges2020 silver badges3333 bronze badges
 asked Jun 21 '19 at 11:48
 BaluBalu
 4111 gold badge11 silver badge22 bronze badges
@@ -121,7 +121,7 @@ Improve this answer
 Follow
 answered Jun 21 '19 at 12:14
 Djib2011Djib2011
-6,82355 gold badges2020 silver badges3333 bronze badges
+6,83355 gold badges2020 silver badges3333 bronze badges
 $\endgroup$
 Add a comment
 |
@@ -149,11 +149,8 @@ Highly active question. Earn 10 reputation in order to answer this question. The
 Not the answer you're looking for? Browse other questions tagged scikit-learn pandas numpy
 or ask your own question.
 The Overflow Blog
-Level Up: Linear Regression in Python – Part 2
-Shipping confetti to Stack Overflow’s design system
-Featured on Meta
-The future of Community Promotion, Open Source, and Hot Network Questions Ads
-Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
+Using low-code tools to iterate products faster
+Podcast 345: A good software tutorial explains the How. A great one explains…
 Related
 1
 Python - AttributeError: type object 'DataFrame' has no attribute 'read_csv'
@@ -164,30 +161,30 @@ AttributeError: 'numpy.ndarray' object has no attribute 'nan_to_num'
 0
 sklearn package with AttributeError: 'MissingValues' object has no attribute 'to_list'
 Hot Network Questions
-Why is the ortho product major in the nitration of anisole with nitric acid and acetic anhydride?
-Why isn't it the norm to have research repeated immediately by other academics?
-Is the the word order of "Iura novit curia" used for emphasis?
-Why is bad behavior more tolerated in academia compared to the rest of the industry?
-What's a lot of money {out of curiosity}?
-What technical reasons prevented the Win9x Virtual Machine Monitor from running multiple threads simultaneously?
-Is the burden of proof a fallacy?
-How can I state an axiom without enumeration?
-Calculating the hexagons in a hexagon of hexagons
-How do they enforce rules on declaring funds?
-Please Identify this outdoor plant?
-Why do Igors (but not Igorinas) lisp when they speak?
-A planet with toxic air
-Why did SMARTDRV have to be started with /x when DOS started?
-Does 'graduate program' mean MSc or Ph.D.?
-What does research indicate about how one should treat units in elementary school?
-Starting play at higher levels and ability point buy
-How to rotate a circle around y-aixs and calculate the volume of the 3D solid?
-Did ancient Greek mathematicians consider numbers independently of geometry?
-How can objects be neither vector nor scalar?
-How to mark directories in the output of the `find` command?
-Selecting elements of sublists or reshaping a list of lists
-Movie where someone's wife is secretly a monster
-Print the last answerer's first submission
+Extracting work from people who are on PIPs but who we also cannot fire?
+What is the advantage of gate resistor (R3) in this JFET voltage divider biasing circuit?
+Interview by fellow PhD students, not the professor himself
+Why would they use human soldiers over undead ones?
+What are minimal changes to make a truncated pyramid shaped megabuildings a thing?
+How to indicate a checkbox/toggle is "always on"
+Heating of hydraulic oil with hardtail electric MTB brakes
+Why am I seeing the sun slightly north instead of slightly south early in the morning in Malta?
+Why are most COB LEDs physically yellow?
+How was it calculated that Dream cheated on his Minecraft v1.16 glitchless speedrun?
+How to remove the new weather info from the taskbar?
+A recently published paper seriously impairs the novelty of my dissertation. Which should be the purpose of the next meeting with my supervisor?
+Is buying lecture notes wrong?
+Can an American state ban a (minor) political party?
+Is cohomology always related to topology?
+Why can't quantum computation replace classical computation?
+Is there a fundamental reason for the exponential dependence of the evolution of the temperature in an electronic deviced that is powered on?
+Is LUKS still an effective option for consumer FDE considering Elcomsoft can break it?
+How come full throttle is meaning full speed instead of the opposite?
+Has physics ever given a physical significance to a mathematically abstract idea?
+What is the right tool for old, rusty, flat cross head bolts?
+Can a petrified wizard communicate telepathically with their familiar?
+Why would a modern city with a warm climate have a skyway system?
+How well would Max Faget's April 1, 1969 design for the Space Shuttle have actually worked? What would have been the major problems?
 more hot questions
 Question feed
 Subscribe to RSS
@@ -334,7 +331,7 @@ Twitter
 LinkedIn
 Instagram
 site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.5.28.39383
+rev 2021.6.9.39464
 Data Science Stack Exchange works best with JavaScript enabled
 Your privacy
 By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.

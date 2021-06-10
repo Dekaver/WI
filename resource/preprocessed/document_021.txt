@@ -61,7 +61,7 @@ Asked
 Active
 2 years, 3 months ago
 Viewed
-16k times
+17k times
 5
 1
 So i'm trying to code a simple website form. But it has this htmlspecialchars error.
@@ -158,10 +158,11 @@ but it didnt work.
 please help.
 php laravel web laravel-blade htmlspecialchars
 Share
+Improve this question
 Follow
 asked Feb 12 '19 at 8:02
 calvinericocalvinerico
-8311 gold badge11 silver badge66 bronze badges
+8311 gold badge22 silver badges66 bronze badges
 9
 seen this? stackoverflow.com/questions/40045920/…
 – Brainmaniac
@@ -197,10 +198,11 @@ the inline embedding of attachments. So, it is best to avoid passing a
 message variable in your view payload.
 Check the note in this link: http://laravel.com/docs/5.0/mail#basic-usage
 Share
+Improve this answer
 Follow
 answered Feb 12 '19 at 10:35
 Md Riadul IslamMd Riadul Islam
-86666 silver badges2121 bronze badges
+87666 silver badges2121 bronze badges
 3
 Welcome @calvinerico . As you are new, just to let you know that if any answer works for you then you can accept it and accepting a perfect answer will add value to your profile. See details from here: stackoverflow.com/help/someone-answers
 – Md Riadul Islam
@@ -241,10 +243,11 @@ return redirect()->back()->with('flash_message', 'thanks');
 }
 }
 Share
+Improve this answer
 Follow
 answered Feb 12 '19 at 8:14
 AddWeb Solution Pvt LtdAddWeb Solution Pvt Ltd
-18.9k33 gold badges2121 silver badges5050 bronze badges
+19k33 gold badges2121 silver badges5050 bronze badges
 4
 1
 Please explain what exactly you've changed and why that makes a difference
@@ -285,11 +288,9 @@ By clicking “Post Your Answer”, you agree to our terms of service, privacy p
 Not the answer you're looking for? Browse other questions tagged php laravel web laravel-blade htmlspecialchars
 or ask your own question.
 The Overflow Blog
-Level Up: Linear Regression in Python – Part 2
-Shipping confetti to Stack Overflow’s design system
+Using low-code tools to iterate products faster
+Podcast 345: A good software tutorial explains the How. A great one explains…
 Featured on Meta
-The future of Community Promotion, Open Source, and Hot Network Questions Ads
-Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
 Take the 2021 Developer Survey
 Linked
 11
@@ -297,7 +298,7 @@ Laravel 5.3 - htmlspecialchars() expects parameter 1 to be string
 0
 Getting error while sending email usign laravel
 Related
-978
+980
 mysql_fetch_array()/mysql_fetch_assoc()/mysql_fetch_row()/mysql_num_rows etc… expects parameter 1 to be resource
 25
 Laravel - htmlspecialchars() expects parameter 1 to be string, object given
@@ -314,30 +315,30 @@ Laravel + SendGrid htmlspecialchars() expects parameter 1 to be string, object g
 1
 edit profile dont worked :/ laravel 7
 Hot Network Questions
-How would transportation evolve in a world where everyone can teleport?
-Did medieval kingdoms issue health related guidelines?
-Why do we have two kidneys but one liver?
-Movie where someone's wife is secretly a monster
-Why is g3 a bad move here?
-I ran a nail through a wire at home, should I worry?
-Why can't the piano play middle eastern music?
-The famous "Charaiveti" mantra is mentioned in which Vedic verse?
-Vocal range of a crowd
-Print the last answerer's first submission
-Why did SMARTDRV have to be started with /x when DOS started?
-Is there a misprint on this note in the Maple Leaf Rag?
-Why do Igors (but not Igorinas) lisp when they speak?
-Where and how are raw transactions stored on the blockchain?
-How can I offset 6" ducting by just a few inches?
-Why isn't it the norm to have research repeated immediately by other academics?
-A bracket amphitheater
-Should forcing open doors be Strength or Strength (Athletics)
-How to rotate a circle around y-aixs and calculate the volume of the 3D solid?
-What technical reasons prevented the Win9x Virtual Machine Monitor from running multiple threads simultaneously?
-Does 'graduate program' mean MSc or Ph.D.?
-How can objects be neither vector nor scalar?
-The usage of can't
-Starting play at higher levels and ability point buy
+Is buying lecture notes wrong?
+What did I just photograph? (rainbow way out of place)
+Why is Ken's beer "gay"?
+A recently published paper seriously impairs the novelty of my dissertation. Which should be the purpose of the next meeting with my supervisor?
+Are there any rules for digging out of a grave?
+How well would Max Faget's April 1, 1969 design for the Space Shuttle have actually worked? What would have been the major problems?
+Is it a coincidence that on the far side of the moon almost no seas are visible?
+Deriving the energy-momentum tensor of a point particle
+What are these sixteenth notes with left-right arrows beneath them supposed to mean
+What is the hardest part of transitioning from a PhD to a full-time career in academia?
+How to indicate a checkbox/toggle is "always on"
+Which one would be better for 3.3V outputs among ULN2001 and ULN2003?
+A manga about a girl and a boy who must hold hands, or die
+What does 高高矮矮 mean?
+Why some CRS are deprecated in QGIS?
+Is there a threadlocker that requires heat to release and can withstand thousands of heat-cool cycles without needing to be reapplied or deteriorating
+Emit random objects inside array-ed object
+How to remove the new weather info from the taskbar?
+Is Huang Yanling (a Wuhan virology researcher) the world's first COVID-19 patient?
+Why did old IBM-PC-compatible computers only have 16 colors available?
+How come full throttle is meaning full speed instead of the opposite?
+Why was the neutrino thought to be massless?
+Why can the block production rate be as low as two per hour?
+What is the advantage of gate resistor (R3) in this JFET voltage divider biasing circuit?
 more hot questions
 Question feed
 Subscribe to RSS
@@ -486,7 +487,7 @@ Twitter
 LinkedIn
 Instagram
 site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.5.28.39383
+rev 2021.6.9.39464
 Stack Overflow works best with JavaScript enabled
 Your privacy
 By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.

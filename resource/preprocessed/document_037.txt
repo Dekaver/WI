@@ -59,9 +59,9 @@ Ask Question
 Asked
 2 years, 7 months ago
 Active
-1 year, 3 months ago
+1 year, 4 months ago
 Viewed
-55k times
+56k times
 -4
 Closed. This question is not reproducible or was caused by typos. It is not currently accepting answers.
 Want to improve this question? Update the question so it's on-topic for Stack Overflow.
@@ -78,10 +78,11 @@ NameError: name 'np' is not defined
 why am i getting this error? pls help i already installed the numpy package
 python numpy
 Share
+Improve this question
 Follow
 edited Oct 22 '18 at 3:40
 U11-Forward
-41.7k99 gold badges5050 silver badges7373 bronze badges
+41.7k99 gold badges5151 silver badges7373 bronze badges
 asked Oct 22 '18 at 3:14
 PiistasyoPiistasyo
 6111 gold badge11 silver badge33 bronze badges
@@ -117,11 +118,12 @@ x = random.randint(low=10, high=30, size=6)
 ...
 Because, from numpy import *, Import every function in numpy, so np is not a function of numpy, so have to Import numpy like import numpy as np, Or, Remove np part of np.random.randint(low=10, high=30, size=6), and make it like this: random.randint(low=10, high=30, size=6), it's all since random is a function of numpy, basically that's all, to explain
 Share
+Improve this answer
 Follow
 edited Feb 3 '20 at 0:27
 answered Oct 22 '18 at 3:19
 U11-ForwardU11-Forward
-41.7k99 gold badges5050 silver badges7373 bronze badges
+41.7k99 gold badges5151 silver badges7373 bronze badges
 1
 1
 It is working!!!
@@ -138,64 +140,66 @@ import numpy as np
 This imports just the package numpy, and renames it to np so that you can dereference it by using the dot operator on np. This allows you to call np.random(), since random is a member of numpy, which is aliased to np.
 With what you're currently doing, you could do either numpy.random() or just random (since it was part of the * that you imported from numpy).
 Share
+Improve this answer
 Follow
 answered Oct 22 '18 at 3:20
 Green Cloak GuyGreen Cloak Guy
-18.9k33 gold badges2121 silver badges3838 bronze badges
+19k33 gold badges2121 silver badges3939 bronze badges
 0
 Add a comment
 |
 Not the answer you're looking for? Browse other questions tagged python numpy
 or ask your own question.
 The Overflow Blog
-Level Up: Linear Regression in Python – Part 2
-Shipping confetti to Stack Overflow’s design system
+Using low-code tools to iterate products faster
+Podcast 345: A good software tutorial explains the How. A great one explains…
 Featured on Meta
-The future of Community Promotion, Open Source, and Hot Network Questions Ads
-Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
 Take the 2021 Developer Survey
-Visit chat
 Linked
 0
 “NameError: name 'np' is not defined” when trying to run a Keras segmentation model called PspNet
 Related
-1990
+1993
 Calling a function of a module by using its name (a string)
-1656
-Getting the class name of an instance?
-1
-NameError: name 'f2py' is not defined
+155
+ImportError: numpy.core.multiarray failed to import
 5
 “ImportError: No module named serial” - after installing pyserial
 1
 Getting NameError: name 'countVectorizer' is not defined in Pycharm
+0
+from bs4 import Beautifulsoup ImportError: cannot import name 'Beautifulsoup'
+0
+Unable to import Chatterbot even after installing the chatterbot package through pip as well as on Pycharm through Python interpreter
 3
 How to fix “NameError: name 'checker_start' is not defined”
+0
+NameError: name 'encrypted_message_key' is not defined
 Hot Network Questions
-How can I offset 6" ducting by just a few inches?
-How can I make a keyboard shortcut to strikethrough text in the Notes app?
-How do I make a "ragged" table?
-Why is this result no contradiction to length contraction?
-Is the burden of proof a fallacy?
-A planet with toxic air
-Do phone chargers communicate with the phone?
-What is the difference between “they” and “it” for people, especially for those people who choose to be identified as non-binary?
-A huge forest native almost solely to elves who are widely regarded with hatred. What's to stop an army from simply burning the entire forest?
-Why do we have two kidneys but one liver?
-Engine failure: how to detect?
-"a man/woman of difficult situations", does this sound idiomatic?
-Why does sleep, when run in a shell script, ignore SIGINT?
-Why do Macs mount an additional drive every time I install software?
-Why isn't it the norm to have research repeated immediately by other academics?
-Resigning will cripple my department, but I am resigning because of a near crippled department
-Does the inside of a lid used to cook rice or steam vegetables have anything besides water on it?
-Efficient ragged path for text
-Peer review 2.0
-Advice needed – I can't reach my collaborator, but there's a short deadline for revising our journal article submission
-3 verbs in one sentence - how is that?
-I ran a nail through a wire at home, should I worry?
-How would transportation evolve in a world where everyone can teleport?
-Where can people allergic to dairy food eat when travelling in France?
+A recently published paper seriously impairs the novelty of my dissertation. Which should be the purpose of the next meeting with my supervisor?
+What would a bear species isolated on an island look like?
+Getting “Bye Bye Big Sur” error on installing Big Sur
+What can US senators do against diversity trainings in the US Army?
+What does "parity pattern" mean?
+3-dimensional h-cobordisms
+Is 2 hours 50 mins sufficient in Heathrow to connecting flight with different tickets and airlines
+Linux backup script written in bash for tar
+how to add existing user to existing group id (not group name)?
+In Bayesian statistics, data is considered nonrandom but can have a probability or be conditioned on. How?
+Is there a canonical source for the Arcane Trickster's magic?
+What should be the income to list on a credit card application?
+Is buying lecture notes wrong?
+Show exit code of last command in Bash prompt if it returned error
+How to indicate a checkbox/toggle is "always on"
+What are these sixteenth notes with left-right arrows beneath them supposed to mean
+Interviewer was two hours late
+Simplify K combinatory logic expression
+Can black convert a +5.6 game into a draw (assuming both players play optimally)?
+Is there a fundamental reason for the exponential dependence of the evolution of the temperature in an electronic deviced that is powered on?
+Why did this gallon of milk stay fresh for so long?
+Why did old IBM-PC-compatible computers only have 16 colors available?
+Has physics ever given a physical significance to a mathematically abstract idea?
+Is it a coincidence that on the far side of the moon almost no seas are visible?
 more hot questions
 lang-py
 Stack Overflow
@@ -340,7 +344,7 @@ Twitter
 LinkedIn
 Instagram
 site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.5.28.39383
+rev 2021.6.9.39464
 Stack Overflow works best with JavaScript enabled
 Your privacy
 By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.

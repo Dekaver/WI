@@ -1,5 +1,5 @@
 [Solved] Exception in thread "main" java.lang.IndexOutOfBoundsException - CodeProject
-14,902,606 members
+14,916,378 members
 Sign in
 Email
 Password
@@ -232,26 +232,26 @@ Let's work to help developers, not make them feel stupid.
 This content, along with any associated source code and files, is licensed under The Code Project Open License (CPOL)
 Top Experts
 Last 24hrsThis month
-Dave Kreskowiak
-110
-Patrice T
+OriginalGriff
+341
+Richard Deeming
+135
+Richard MacCutchan
 100
-OriginalGriff
-98
-Richard MacCutchan
-95
-Wendelius
-40
-OriginalGriff
-6,430
-Richard MacCutchan
-3,763
-Patrice T
-1,672
-Dave Kreskowiak
-1,276
 CPallini
-815
+85
+Greg Utas
+35
+OriginalGriff
+2,102
+Richard MacCutchan
+890
+Richard Deeming
+800
+CPallini
+635
+Patrice T
+459
 Related Questions
 Exception in thread "main" java.lang.arrayindexoutofboundsexception: 1
 Error Array "java.lang.IndexOutOfBoundsException: Invalid index 0, size is 0"
@@ -273,7 +273,7 @@ Layout: fixed
 fluid
 Copyright © CodeProject, 1999-2021
 All Rights Reserved.
-Web04
+Web01
 2.8.20210530.1
 CodeProject,
 20 Bay Street, 11th Floor Toronto, Ontario, Canada M5J 2N8

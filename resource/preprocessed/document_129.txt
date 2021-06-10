@@ -59,7 +59,7 @@ Ask Question
 Asked
 5 years, 3 months ago
 Active
-2 years, 6 months ago
+2 years, 7 months ago
 Viewed
 25k times
 0
@@ -124,10 +124,11 @@ setPolygon(xInt, yInt);
 }
 java
 Share
+Improve this question
 Follow
 edited Feb 26 '16 at 22:20
 Nayuki
-16.7k55 gold badges4747 silver badges7575 bronze badges
+16.7k55 gold badges4848 silver badges7575 bronze badges
 asked Feb 26 '16 at 22:07
 MouseGordonMouseGordon
 2111 gold badge11 silver badge33 bronze badges
@@ -151,11 +152,12 @@ package AsteroidField;
 You should or use one package or add import AsteroidField.Asteroid; in
 AsteroidField, I think.
 Share
+Improve this answer
 Follow
 edited Feb 26 '16 at 22:17
 answered Feb 26 '16 at 22:12
 Slava VedeninSlava Vedenin
-49.9k1313 gold badges3636 silver badges5757 bronze badges
+50.1k1313 gold badges3636 silver badges5757 bronze badges
 4
 So would I need need to add a constructor to the Asteroid code?
 – MouseGordon
@@ -175,6 +177,7 @@ Add a comment
 Recheck the package declarations in all your classes!
 This behaviour has been observed in NetBeans, when the package declaration in one of the classes of the package refers to a non-existent or wrong package. NetBeans normally detects and highlights this error but has been known to fail and misleadingly report the package as free of errors when this is not the case.
 Share
+Improve this answer
 Follow
 edited Dec 8 '17 at 15:58
 answered Dec 8 '17 at 15:53
@@ -205,11 +208,9 @@ By clicking “Post Your Answer”, you agree to our terms of service, privacy p
 Not the answer you're looking for? Browse other questions tagged java
 or ask your own question.
 The Overflow Blog
-Level Up: Linear Regression in Python – Part 2
-Shipping confetti to Stack Overflow’s design system
+Using low-code tools to iterate products faster
+Podcast 345: A good software tutorial explains the How. A great one explains…
 Featured on Meta
-The future of Community Promotion, Open Source, and Hot Network Questions Ads
-Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
 Take the 2021 Developer Survey
 Linked
 1
@@ -217,13 +218,13 @@ Java says “Uncompilable source code - Erroneous tree type: culminatinggF.Fligh
 0
 Not sure why my JavaFX GUI won't load?
 Related
-653
+656
 IntelliJ inspection gives “Cannot resolve symbol” but still compiles code
 0
 Uncompilable Source Code: Erroneous Sym Error
 4
 Java- RuntimeException- Uncompilable source code - Erroneous tree type
-447
+449
 What does a “Cannot find symbol” or “Cannot resolve symbol” error mean?
 0
 RuntimeException: Uncompilable source code - cannot find symbol
@@ -234,30 +235,30 @@ Uncompilable source code - Erroneous sym type:
 0
 Uncompilable source code - cannot find symbol error
 Hot Network Questions
-Resigning will cripple my department, but I am resigning because of a near crippled department
-Calculating the hexagons in a hexagon of hexagons
-How can I offset 6" ducting by just a few inches?
-Why isn't it the norm to have research repeated immediately by other academics?
-Selecting elements of sublists or reshaping a list of lists
-Sanctuary spell and Using magic Items that cause damage?
-Why is bad behavior more tolerated in academia compared to the rest of the industry?
-How can I make a keyboard shortcut to strikethrough text in the Notes app?
-Colour ramp for maps
-Where and how are raw transactions stored on the blockchain?
-The famous "Charaiveti" mantra is mentioned in which Vedic verse?
-unknown pieces of a set - stickers on round corner bricks
-Why is the ortho product major in the nitration of anisole with nitric acid and acetic anhydride?
-Efficient ragged path for text
-Do phone chargers communicate with the phone?
-How do computers perform operations on numbers that are larger than 64 bits?
-Is the the word order of "Iura novit curia" used for emphasis?
-Does mass have an effect on Centripetal Acceleration?
-What does research indicate about how one should treat units in elementary school?
-Triangle-style sequences
-I have a postdoc interview tomorrow and I think I have overstated my abilities in my CV. How do I address it during the interview?
-Please Identify this outdoor plant?
-Is there a misprint on this note in the Maple Leaf Rag?
-Engine failure: how to detect?
+Former coworker I gave a reference for sabotaged the company on his last day - Should I update the reference contact with this new information?
+Are there any greater risks of traveling significantly faster to another planet?
+Mandatory tabs-an unusual pattern?
+Emit random objects inside array-ed object
+Why would they use human soldiers over undead ones?
+Can't open snap-store
+Is it illegal to implement a patented algorithm or method and take advantage from it?
+Is there a canonical source for the Arcane Trickster's magic?
+Is Huang Yanling (a Wuhan virology researcher) the world's first COVID-19 patient?
+How realistic is the 1 kg/km² solar sail in "Death's End"?
+Is there a fundamental reason for the exponential dependence of the evolution of the temperature in an electronic deviced that is powered on?
+Can an American state ban a (minor) political party?
+Dealing with extremely inexperienced developers who have daily deadlines?
+Why did this gallon of milk stay fresh for so long?
+A recently published paper seriously impairs the novelty of my dissertation. Which should be the purpose of the next meeting with my supervisor?
+Refueling a Mars mission on the way
+What is the advantage of gate resistor (R3) in this JFET voltage divider biasing circuit?
+Microcontroller bit information for the Core and different peripherals
+Term for "place of death"
+How come full throttle is meaning full speed instead of the opposite?
+Linux backup script written in bash for tar
+I'm Lazy: Close my Superparens
+Why was the neutrino thought to be massless?
+Why would a modern city with a warm climate have a skyway system?
 more hot questions
 Question feed
 Subscribe to RSS
@@ -406,7 +407,7 @@ Twitter
 LinkedIn
 Instagram
 site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.5.28.39383
+rev 2021.6.9.39464
 Stack Overflow works best with JavaScript enabled
 Your privacy
 By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.

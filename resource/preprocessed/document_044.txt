@@ -78,10 +78,11 @@ Can you help me understand how to reference the column name in the dt=parseDevic
 Thanks
 python pandas
 Share
+Improve this question
 Follow
 edited May 30 '19 at 5:48
 Hatshepsut
-4,06044 gold badges2828 silver badges6161 bronze badges
+4,06044 gold badges2929 silver badges6161 bronze badges
 asked Feb 16 '15 at 3:47
 JazzmineJazzmine
 1,60566 gold badges3131 silver badges4949 bronze badges
@@ -115,10 +116,11 @@ Import pandas package to read data
 import pandas as pd
 df = pd.read_csv('user_agent_strings', index_col=None, na_values=['NA'],sep=',')
 Share
+Improve this answer
 Follow
 edited Jun 6 '18 at 7:26
 Zoe
-23.7k1616 gold badges9999 silver badges132132 bronze badges
+23.7k1616 gold badges9999 silver badges133133 bronze badges
 answered Jun 6 '18 at 6:59
 Sunitha GSunitha G
 13511 silver badge66 bronze badges
@@ -138,6 +140,7 @@ parsed_types = df.user_agent_string.apply(parseDeviceType)
 To access columns by number instead of name (which I don't recommend), you can use iloc. This allows you to access all the rows (:) and the first colum (0) from the dataframe object:
 user_agent_string = df.iloc[:, 0]
 Share
+Improve this answer
 Follow
 edited Dec 30 '18 at 7:48
 answered Dec 30 '18 at 7:40
@@ -152,6 +155,7 @@ pd = pd.read_csv('anythinf.csv')
 When you save your file and open later this time you will get same error so you need to restart your project and compile your code from the start ...if you use jupyter notebook..
 you can easily erase all the errors
 Share
+Improve this answer
 Follow
 answered Dec 2 '20 at 16:29
 ROHITROHIT
@@ -163,6 +167,7 @@ Try to remove .txt from your file name might help.
 Like the following:
 df = pd.read_csv('user_agent_strings', index_col=None, na_values=['NA'],sep=',')
 Share
+Improve this answer
 Follow
 edited Jul 10 '15 at 22:14
 answered Jul 10 '15 at 22:05
@@ -198,58 +203,56 @@ By clicking “Post Your Answer”, you agree to our terms of service, privacy p
 Not the answer you're looking for? Browse other questions tagged python pandas
 or ask your own question.
 The Overflow Blog
-Level Up: Linear Regression in Python – Part 2
-Shipping confetti to Stack Overflow’s design system
+Using low-code tools to iterate products faster
+Podcast 345: A good software tutorial explains the How. A great one explains…
 Featured on Meta
-The future of Community Promotion, Open Source, and Hot Network Questions Ads
-Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
 Take the 2021 Developer Survey
 Related
-5316
+5329
 How to execute a program or call a system command from Python
-6178
+6195
 What are metaclasses in Python?
-6671
+6696
 Does Python have a ternary conditional operator?
-3261
+3270
 How to get the current time in Python
-2947
+2952
 How do I concatenate two lists in Python?
 3596
 Does Python have a string 'contains' substring method?
-2218
+2226
 Renaming columns in Pandas
-1136
+1140
 Adding new column to existing DataFrame in Python pandas
-1648
-Delete column from pandas DataFrame
-2759
+1652
+Delete a column from a Pandas DataFrame
+2776
 How to iterate over rows in a DataFrame in Pandas
 Hot Network Questions
-Is it significantly faster to hike along a river bank?
-What does this line: `T=C/2=INT(C/2)` do? Why is it valid syntax?
-How to rotate a circle around y-aixs and calculate the volume of the 3D solid?
-Print the last answerer's first submission
-Lunar Terrain Model in Apollo Guidance Computer
-Doorbell switch internals
-How to use Zwift workouts with stationary bike
-Did ancient Greek mathematicians consider numbers independently of geometry?
-Why does decriminalisation/legalisation not reduce the cost of drugs?
-identify M.2 SSD from BASH Script
-Why is bad behavior more tolerated in academia compared to the rest of the industry?
-Why do Igors (but not Igorinas) lisp when they speak?
-newpxmath: accents are always bold
-What's a lot of money {out of curiosity}?
-Do phone chargers communicate with the phone?
-Are vertices in a clockwise order?
-Is the burden of proof a fallacy?
-Selecting elements of sublists or reshaping a list of lists
-Is there a misprint on this note in the Maple Leaf Rag?
-Efficient ragged path for text
-Generate a British numberplate
-How would transportation evolve in a world where everyone can teleport?
-Is the the word order of "Iura novit curia" used for emphasis?
-Resigning will cripple my department, but I am resigning because of a near crippled department
+Can black convert a +5.6 game into a draw (assuming both players play optimally)?
+Can a petrified wizard communicate telepathically with their familiar?
+Does gravity bend gravity?
+Is there a diff() function in Julia DataFrames like pandas?
+Is maximum speed a thing?
+What is the DC of Draconic Presence?
+Why can the block production rate be as low as two per hour?
+Alien Instrument produces "visual music", which a Human can temporarily experience
+Should I notify a med school about their student's cheating history?
+Is Huang Yanling (a Wuhan virology researcher) the world's first COVID-19 patient?
+What should be the income to list on a credit card application?
+What are the main reasons for using full justification when ragged right is more readable?
+What does "parity pattern" mean?
+Why am I seeing the sun slightly north instead of slightly south early in the morning in Malta?
+Does Islam have heraditary slavery?
+Is it illegal to implement a patented algorithm or method and take advantage from it?
+Simplify K combinatory logic expression
+Is 2 hours 50 mins sufficient in Heathrow to connecting flight with different tickets and airlines
+Why is Ken's beer "gay"?
+How come full throttle is meaning full speed instead of the opposite?
+Does machine learning really need data-efficient algorithms?
+Why are most COB LEDs physically yellow?
+How realistic is the 1 kg/km² solar sail in "Death's End"?
+Are there any greater risks of traveling significantly faster to another planet?
 more hot questions
 Question feed
 Subscribe to RSS
@@ -398,7 +401,7 @@ Twitter
 LinkedIn
 Instagram
 site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.5.28.39383
+rev 2021.6.9.39464
 Stack Overflow works best with JavaScript enabled
 Your privacy
 By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.

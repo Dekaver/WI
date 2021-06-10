@@ -57,9 +57,9 @@ Learn more
 “Exception in thread ”main“ java.lang.IndexOutOfBoundsException: Index: 0, Size: 0” with ArrayList?
 Ask Question
 Asked
-6 years, 7 months ago
+6 years, 8 months ago
 Active
-1 year, 2 months ago
+1 year, 3 months ago
 Viewed
 69k times
 3
@@ -86,6 +86,7 @@ return list;
 How can I fix this?
 java arraylist
 Share
+Improve this question
 Follow
 asked Oct 9 '14 at 7:20
 Jake UrbanJake Urban
@@ -107,11 +108,12 @@ ArrayList<ArrayList<Integer>> list doesnt contain any element in (0)th postion
 and the compiler throws out of bounds exception on iterating when it doesn't find any element in the specified postion.
 when you try executing list.get(0).set(placeHolder.get(k), (int) (Math.random() * (99999) + 1)); statement , your list doesnt contain any element inside it. you need to iterate the inner list to set the values for the list.
 Share
+Improve this answer
 Follow
 edited Oct 9 '14 at 7:47
 answered Oct 9 '14 at 7:24
 SanthoshSanthosh
-8,04522 gold badges2626 silver badges5454 bronze badges
+8,05322 gold badges2727 silver badges5555 bronze badges
 2
 1
 where OP is iterating empty list? Iterating empty list doesn't throw this Exception.
@@ -125,6 +127,7 @@ Add a comment
 4
 Do not use list.set(index, element) on a nonexistent element, since it replaces the old (nonexistent) element with a new one and returns the old one. Instead, use list.add(index, element) and it will work.
 Share
+Improve this answer
 Follow
 edited Dec 23 '16 at 10:49
 answered Oct 4 '16 at 10:22
@@ -138,6 +141,7 @@ list.get(0).set(placeHolder.get(k), (int) (Math.random() * (99999) + 1));
 The java.util.ArrayList.get(int index) method returns the element at the specified position in this list.
 You are setting just to first element in the list arrray
 Share
+Improve this answer
 Follow
 answered Oct 9 '14 at 7:25
 VlaVla
@@ -155,6 +159,7 @@ solution ;
 first solution : use i< istead of i<=
 second solution : use i = 1 for initialization instead of i = 0;
 Share
+Improve this answer
 Follow
 answered Mar 9 '20 at 1:01
 vedant davevedant dave
@@ -184,13 +189,10 @@ By clicking “Post Your Answer”, you agree to our terms of service, privacy p
 Not the answer you're looking for? Browse other questions tagged java arraylist
 or ask your own question.
 The Overflow Blog
-Level Up: Linear Regression in Python – Part 2
-Shipping confetti to Stack Overflow’s design system
+Using low-code tools to iterate products faster
+Podcast 345: A good software tutorial explains the How. A great one explains…
 Featured on Meta
-The future of Community Promotion, Open Source, and Hot Network Questions Ads
-Planned maintenance scheduled for Friday, June 4, 2021 at 12:00am UTC…
 Take the 2021 Developer Survey
-Visit chat
 Linked
 1
 Code is throwing an IndexOutOfBoundsException?
@@ -212,30 +214,30 @@ Exception in thread “main” java.lang.IndexOutOfBoundsException: Index: 10, S
 0
 Index out of bounds exception but the size and index are the same
 Hot Network Questions
-Why do we have two kidneys but one liver?
-Starting play at higher levels and ability point buy
-What is the difference between “they” and “it” for people, especially for those people who choose to be identified as non-binary?
-A huge forest native almost solely to elves who are widely regarded with hatred. What's to stop an army from simply burning the entire forest?
-According to international law, when is first-use nuclear strike justified?
-Trying to identify an old sci-fi novel: a group of space travellers visiting a planet previously long-inhabited but regressed?
-Why would birds fall from the sky due to a lack of moisture?
-If cost can be ignored, is a higher-value capacitor for ripple suppression always a good choice?
-removing multiple lines - d3d vs 3dd
-unknown pieces of a set - stickers on round corner bricks
-Why is bad behavior more tolerated in academia compared to the rest of the industry?
-I think I've sh-- myself
-What does research indicate about how one should treat units in elementary school?
-select distinct columns over multiple databases sql server
-"a man/woman of difficult situations", does this sound idiomatic?
-What can I do about a parent who is discouraging their child from learning violin, a child who really wants to learn, so that the child will drop out
-How do computers perform operations on numbers that are larger than 64 bits?
-Is it significantly faster to hike along a river bank?
-Did ancient Greek mathematicians consider numbers independently of geometry?
-How can I specify the qubits on quantum computers that I want to use?
-Why do Macs mount an additional drive every time I install software?
-Does the inside of a lid used to cook rice or steam vegetables have anything besides water on it?
-Why do Igors (but not Igorinas) lisp when they speak?
-Generate a British numberplate
+Is it a coincidence that on the far side of the moon almost no seas are visible?
+What can US senators do against diversity trainings in the US Army?
+Term for "place of death"
+Is there a diff() function in Julia DataFrames like pandas?
+How to indicate a checkbox/toggle is "always on"
+What are these sixteenth notes with left-right arrows beneath them supposed to mean
+Why does Lex turn on the flashlight?
+How was it calculated that Dream cheated on his Minecraft v1.16 glitchless speedrun?
+Has physics ever given a physical significance to a mathematically abstract idea?
+Simplest/cheapest way to build a tensegrity model?
+History of /f/ sound in Russian
+Can a petrified wizard communicate telepathically with their familiar?
+What does "parity pattern" mean?
+Can an American state ban a (minor) political party?
+Can't open snap-store
+What should be the income to list on a credit card application?
+Does gravity bend gravity?
+Extracting work from people who are on PIPs but who we also cannot fire?
+Is it illegal to implement a patented algorithm or method and take advantage from it?
+Show exit code of last command in Bash prompt if it returned error
+Evaluation order of an APL n-train
+How to get real-looking rust that will be safe to the touch?
+Deriving the energy-momentum tensor of a point particle
+Is there a canonical source for the Arcane Trickster's magic?
 more hot questions
 Question feed
 Subscribe to RSS
@@ -384,7 +386,7 @@ Twitter
 LinkedIn
 Instagram
 site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.5.28.39383
+rev 2021.6.9.39464
 Stack Overflow works best with JavaScript enabled
 Your privacy
 By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
