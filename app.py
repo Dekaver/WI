@@ -22,7 +22,7 @@ def search():
     docs , waktu = ranking(query, main.df)
     return render_template('search.html', 
         docs=docs, 
-        dataframe=main.dataframe, 
+        dataframe=main.df, 
         waktu=waktu, 
         query=query,
         url=main.url,)
