@@ -1,67 +1,49 @@
-Help: Index out of range · YourBasic Go
-About
-Home
-Algorithms
-Go
-Index out of range
-yourbasic.org/golang
-Why does this program crash?
-a := []int{1, 2, 3}
-for i := 1; i <= len(a); i++ {
-fmt.Println(a[i])
-}
-panic: runtime error: index out of range
-goroutine 1 [running]:
-main.main()
-../main.go:3 +0xe0
-Answer
-In the last iteration, i equals len(a) which is outside the bounds of a.
-Arrays, slices and strings are indexed starting from zero so the values of a are found at a[0], a[1], a[2], …, a[len(a)-1].
-Loop from 0 to len(a)-1 instead.
-for i := 0; i < len(a); i++ {
-fmt.Println(a[i])
-}
-Or, better yet, use a range loop.
-for _, n := range a {
-fmt.Println(n)
-}
-« Prev
-Index
-Next »
-Share this page:
-Go Gotchas
-Assignment to entry in nil map
-Invalid memory address or nil pointer dereference
-Multiple-value in single-value context
-Array won’t change
-Shadowed variables
-Unexpected newline
-Immutable strings
-How does characters add up?
-What happened to ABBA?
-Where is my copy?
-Why doesn’t append work every time? [scary bug]
-Constant overflows int
-Unexpected ++, expecting expression
-Get your priorities right
-Go and Pythagoras
-No end in sight
-Numbers that start with zero
-Whatever remains
-Time is not a number
-» Index out of range
-Unexpected values in range loop
-Can’t change entries in range loop
-Iteration variable doesn’t see change in range loop
-Iteration variables and closures
-No JSON in sight
-Is "three" a digit?
-Nil is not nil
-Follow on Twitter
-Algorithms to Go
-Related
-4 basic range loop (for-each) patterns
-A range loop is used to iterate over the values in a slice, array or channel, the keys and values in a map, or the characters in a string.
-yourbasic.org
-See all 178 Go articles
-This work is licensed under a CC BY 3.0 license.
+Installing NLTK — NLTK 3.6.2 documentation
+NLTK 3.6.2 documentation
+previous |
+next |
+modules |
+index
+Installing NLTK¶
+NLTK requires Python versions 3.5, 3.6, 3.7, 3.8, or 3.9
+For Windows users, it is strongly recommended that you go through this guide to install Python 3 successfully https://docs.python-guide.org/starting/install3/win/#install3-windows
+Setting up a Python Environment (Mac/Unix/Windows)¶
+Please go through this guide to learn how to manage your virtual environment managers before you install NLTK,
+https://docs.python-guide.org/dev/virtualenvs/
+Alternatively, you can use the Anaconda distribution installer that comes “batteries included” https://www.anaconda.com/distribution/
+Mac/Unix¶
+Install NLTK: run pip install --user -U nltk
+Install Numpy (optional): run pip install --user -U numpy
+Test installation: run python then type import nltk
+For older versions of Python it might be necessary to install setuptools (see http://pypi.python.org/pypi/setuptools) and to install pip (sudo easy_install pip).
+Windows¶
+These instructions assume that you do not already have Python installed on your machine.
+32-bit binary installation¶
+Install Python 3.8: http://www.python.org/downloads/ (avoid the 64-bit versions)
+Install Numpy (optional): https://www.scipy.org/scipylib/download.html
+Install NLTK: http://pypi.python.org/pypi/nltk
+Test installation: Start>Python38, then type import nltk
+Installing Third-Party Software¶
+Please see: https://github.com/nltk/nltk/wiki/Installing-Third-Party-Software
+Installing NLTK Data¶
+After installing the NLTK package, please do install the necessary datasets/models for specific functions to work.
+If you’re unsure of which datasets/models you’ll need, you can install the “popular” subset of NLTK data, on the command line type python -m nltk.downloader popular, or in the Python interpreter import nltk; nltk.download(‘popular’)
+For details, see http://www.nltk.org/data.html
+Table of Contents
+NLTK News
+Installing NLTK
+Installing NLTK Data
+Contribute to NLTK
+FAQ
+Wiki
+API
+HOWTO
+Search
+previous |
+next |
+modules |
+index
+Show Source
+© Copyright 2021, NLTK Project.
+Last updated on Apr 20, 2021.
+Created using Sphinx 3.5.2.

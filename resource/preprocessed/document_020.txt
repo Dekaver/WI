@@ -1,255 +1,237 @@
-IndexError: pop from empty list · Issue #227 · elastic/apm-agent-python · GitHub
-Skip to content
-Sign up
-Why GitHub?
-Features →
-Mobile →
-Actions →
-Codespaces →
-Packages →
-Security →
-Code review →
-Project management →
-Integrations →
-GitHub Sponsors →
-Customer stories→
-Team
-Enterprise
-Explore
-Explore GitHub →
-Learn and contribute
-Topics →
-Collections →
-Trending →
-Learning Lab →
-Open source guides →
-Connect with others
-The ReadME Project →
-Events →
-Community forum →
-GitHub Education →
-GitHub Stars program →
-Marketplace
-Pricing
-Plans →
-Compare plans →
-Contact Sales →
-Education →
-In this repository
-All GitHub
-↵
-Jump to
-↵
-No suggested jump to results
-In this repository
-All GitHub
-↵
-Jump to
-↵
-In this organization
-All GitHub
-↵
-Jump to
-↵
-In this repository
-All GitHub
-↵
-Jump to
-↵
-Sign in
-Sign up
-{{ message }}
-elastic
-/
-apm-agent-python
-Notifications
-Star
-319
-Fork
-146
-Code
-Issues
-62
-Pull requests
-15
-Discussions
-Actions
-Wiki
-Security
-Insights
-More
-Code
-Issues
-Pull requests
-Discussions
-Actions
-Wiki
-Security
-Insights
-New issue
-Have a question about this project? Sign up for a free GitHub account to open an issue and contact its maintainers and the community.
-Pick a username
-Email Address
-Password
-Sign up for GitHub
-By clicking “Sign up for GitHub”, you agree to our terms of service and
-privacy statement. We’ll occasionally send you account related emails.
-Already on GitHub?
-Sign in
-to your account
-Jump to bottom
-IndexError: pop from empty list
-#227
-Closed
-gusibi
-opened this issue
-Jun 11, 2018
-· 5 comments
-Closed
-IndexError: pop from empty list
-#227
-gusibi
-opened this issue
-Jun 11, 2018
-· 5 comments
-Comments
-Copy link
-Contributor
-gusibi
-commented
-Jun 11, 2018
-•
-edited by alvarolobato
-elasticapm/traces.py
-def end_span(self, skip_frames):
-span = self.span_stack.pop()
-span_stack may be empty
-IndexError: pop from empty list
-The text was updated successfully, but these errors were encountered:
-gusibi
-added a commit
-to gusibi/apm-agent-python
-that referenced
-this issue
-Jun 11, 2018
-elastic#227 fix index error
-16e582d
-Copy link
-Contributor
-beniwohli
-commented
-Jun 11, 2018
-Thanks @gusibi! Usually, when this happens, it is caused by another bug. Do you have the full stack trace of this error?
-Copy link
-Contributor
-Author
-gusibi
-commented
-Jun 11, 2018
-Copy link
-Contributor
-Author
-gusibi
-commented
-Jun 11, 2018
-•
-edited
-redis server is pika
-https://github.com/Qihoo360/pika
-beniwohli
-added a commit
-to beniwohli/apm-agent-python
-that referenced
-this issue
-Jun 11, 2018
-log error when trying to end a span that hasn't started
-…
-Verified
-This commit was signed with the committer’s verified signature.
-beniwohli
-Benjamin Wohlwend
-GPG key ID: A017B5130EAA4DFB
-Learn about vigilant mode.
-a91cfbc
-Usually, this shouldn't happen and is an indication of a bug. But we
-should still ensure that we don't crash and instead log a message.
-fixes elastic#227
-beniwohli
-mentioned this issue
-Jun 11, 2018
-log error when trying to end a span that hasn't started
-#229
-Closed
-beniwohli
-added a commit
-to beniwohli/apm-agent-python
-that referenced
-this issue
-Jun 11, 2018
-log error when trying to end a span that hasn't started
-…
-Verified
-This commit was signed with the committer’s verified signature.
-beniwohli
-Benjamin Wohlwend
-GPG key ID: A017B5130EAA4DFB
-Learn about vigilant mode.
-e051e94
-Usually, this shouldn't happen and is an indication of a bug. But we
-should still ensure that we don't crash and instead log a message.
-fixes elastic#227
-Co-authored-by: goodspeed <cacique1103@gmail.com>
-Copy link
-Contributor
-beniwohli
-commented
-Jun 11, 2018
-Thanks for the update. It's hard to say what exactly can cause this. The only place where we call begin_span is in capture_span.__enter__, and the only place where we call end_span is in capture_span.__exit__. According to the context manager protocol, if we __enter__, we will also always __exit__.
-So the only explanation that I have is that the transaction object in __enter__ is different than the one in __exit__.
-@gusibi do you per chance use an asynchronous framework (asyncio, twisted, ...)? We currently don't support asynchronous execution (see #16), and I could imagine that it could cause an error like this.
-Copy link
-Contributor
-Author
-gusibi
-commented
-Jun 12, 2018
-@beniwohli Thanks
-I use the flask, not used asynchronous framework.
-This error all in the process of using redis.
-And not every time this error occurs.
-beniwohli
-closed this
-in
-bb56977
-Jun 12, 2018
-Sign up for free
-to join this conversation on GitHub.
-Already have an account?
-Sign in to comment
-Assignees
-No one assigned
-Labels
-None yet
-Projects
-None yet
-Milestone
-No milestone
-Linked pull requests
-Successfully merging a pull request may close this issue.
-log error when trying to end a span that hasn't started
-2 participants
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
+scipy.sparse.csr_matrix — SciPy v1.6.3 Reference Guide
+SciPy.org
 Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-You can’t perform that action at this time.
-You signed in with another tab or window. Reload to refresh your session.
-You signed out in another tab or window. Reload to refresh your session.
+SciPy v1.6.3 Reference Guide
+Sparse matrices (scipy.sparse)
+index
+modules
+next
+previous
+scipy.sparse.csr_matrix¶
+class scipy.sparse.csr_matrix(arg1, shape=None, dtype=None, copy=False)[source]¶
+Compressed Sparse Row matrix
+This can be instantiated in several ways:
+csr_matrix(D)with a dense matrix or rank-2 ndarray D
+csr_matrix(S)with another sparse matrix S (equivalent to S.tocsr())
+csr_matrix((M, N), [dtype])to construct an empty matrix with shape (M, N)
+dtype is optional, defaulting to dtype=’d’.
+csr_matrix((data, (row_ind, col_ind)), [shape=(M, N)])where data, row_ind and col_ind satisfy the
+relationship a[row_ind[k], col_ind[k]] = data[k].
+csr_matrix((data, indices, indptr), [shape=(M, N)])is the standard CSR representation where the column indices for
+row i are stored in indices[indptr[i]:indptr[i+1]] and their
+corresponding values are stored in data[indptr[i]:indptr[i+1]].
+If the shape parameter is not supplied, the matrix dimensions
+are inferred from the index arrays.
+Notes
+Sparse matrices can be used in arithmetic operations: they support
+addition, subtraction, multiplication, division, and matrix power.
+Advantages of the CSR format
+efficient arithmetic operations CSR + CSR, CSR * CSR, etc.
+efficient row slicing
+fast matrix vector products
+Disadvantages of the CSR format
+slow column slicing operations (consider CSC)
+changes to the sparsity structure are expensive (consider LIL or DOK)
+Examples
+>>> import numpy as np
+>>> from scipy.sparse import csr_matrix
+>>> csr_matrix((3, 4), dtype=np.int8).toarray()
+array([[0, 0, 0, 0],
+[0, 0, 0, 0],
+[0, 0, 0, 0]], dtype=int8)
+>>> row = np.array([0, 0, 1, 2, 2, 2])
+>>> col = np.array([0, 2, 2, 0, 1, 2])
+>>> data = np.array([1, 2, 3, 4, 5, 6])
+>>> csr_matrix((data, (row, col)), shape=(3, 3)).toarray()
+array([[1, 0, 2],
+[0, 0, 3],
+[4, 5, 6]])
+>>> indptr = np.array([0, 2, 3, 6])
+>>> indices = np.array([0, 2, 2, 0, 1, 2])
+>>> data = np.array([1, 2, 3, 4, 5, 6])
+>>> csr_matrix((data, indices, indptr), shape=(3, 3)).toarray()
+array([[1, 0, 2],
+[0, 0, 3],
+[4, 5, 6]])
+Duplicate entries are summed together:
+>>> row = np.array([0, 1, 2, 0])
+>>> col = np.array([0, 1, 1, 0])
+>>> data = np.array([1, 2, 4, 8])
+>>> csr_matrix((data, (row, col)), shape=(3, 3)).toarray()
+array([[9, 0, 0],
+[0, 2, 0],
+[0, 4, 0]])
+As an example of how to construct a CSR matrix incrementally,
+the following snippet builds a term-document matrix from texts:
+>>> docs = [["hello", "world", "hello"], ["goodbye", "cruel", "world"]]
+>>> indptr = [0]
+>>> indices = []
+>>> data = []
+>>> vocabulary = {}
+>>> for d in docs:
+...
+for term in d:
+...
+index = vocabulary.setdefault(term, len(vocabulary))
+...
+indices.append(index)
+...
+data.append(1)
+...
+indptr.append(len(indices))
+...
+>>> csr_matrix((data, indices, indptr), dtype=int).toarray()
+array([[2, 1, 0, 0],
+[0, 1, 1, 1]])
+Attributes
+dtypedtypeData type of the matrix
+shape2-tupleGet shape of a matrix.
+ndimintNumber of dimensions (this is always 2)
+nnzNumber of stored values, including explicit zeros.
+dataCSR format data array of the matrix
+indicesCSR format index array of the matrix
+indptrCSR format index pointer array of the matrix
+has_sorted_indicesDetermine whether the matrix has sorted indices
+Methods
+__len__(self)
+__mul__(self, other)
+interpret other and call one of the following
+arcsin(self)
+Element-wise arcsin.
+arcsinh(self)
+Element-wise arcsinh.
+arctan(self)
+Element-wise arctan.
+arctanh(self)
+Element-wise arctanh.
+argmax(self[, axis, out])
+Return indices of maximum elements along an axis.
+argmin(self[, axis, out])
+Return indices of minimum elements along an axis.
+asformat(self, format[, copy])
+Return this matrix in the passed format.
+asfptype(self)
+Upcast matrix to a floating point format (if necessary)
+astype(self, dtype[, casting, copy])
+Cast the matrix elements to a specified type.
+ceil(self)
+Element-wise ceil.
+check_format(self[, full_check])
+check whether the matrix format is valid
+conj(self[, copy])
+Element-wise complex conjugation.
+conjugate(self[, copy])
+Element-wise complex conjugation.
+copy(self)
+Returns a copy of this matrix.
+count_nonzero(self)
+Number of non-zero entries, equivalent to
+deg2rad(self)
+Element-wise deg2rad.
+diagonal(self[, k])
+Returns the kth diagonal of the matrix.
+dot(self, other)
+Ordinary dot product
+eliminate_zeros(self)
+Remove zero entries from the matrix
+expm1(self)
+Element-wise expm1.
+floor(self)
+Element-wise floor.
+getH(self)
+Return the Hermitian transpose of this matrix.
+get_shape(self)
+Get shape of a matrix.
+getcol(self, i)
+Returns a copy of column i of the matrix, as a (m x 1) CSR matrix (column vector).
+getformat(self)
+Format of a matrix representation as a string.
+getmaxprint(self)
+Maximum number of elements to display when printed.
+getnnz(self[, axis])
+Number of stored values, including explicit zeros.
+getrow(self, i)
+Returns a copy of row i of the matrix, as a (1 x n) CSR matrix (row vector).
+log1p(self)
+Element-wise log1p.
+max(self[, axis, out])
+Return the maximum of the matrix or maximum along an axis.
+maximum(self, other)
+Element-wise maximum between this and another matrix.
+mean(self[, axis, dtype, out])
+Compute the arithmetic mean along the specified axis.
+min(self[, axis, out])
+Return the minimum of the matrix or maximum along an axis.
+minimum(self, other)
+Element-wise minimum between this and another matrix.
+multiply(self, other)
+Point-wise multiplication by another matrix, vector, or scalar.
+nonzero(self)
+nonzero indices
+power(self, n[, dtype])
+This function performs element-wise power.
+prune(self)
+Remove empty space after all non-zero elements.
+rad2deg(self)
+Element-wise rad2deg.
+reshape(self, shape[, order, copy])
+Gives a new shape to a sparse matrix without changing its data.
+resize(self, *shape)
+Resize the matrix in-place to dimensions given by shape
+rint(self)
+Element-wise rint.
+set_shape(self, shape)
+See reshape.
+setdiag(self, values[, k])
+Set diagonal or off-diagonal elements of the array.
+sign(self)
+Element-wise sign.
+sin(self)
+Element-wise sin.
+sinh(self)
+Element-wise sinh.
+sort_indices(self)
+Sort the indices of this matrix in place
+sorted_indices(self)
+Return a copy of this matrix with sorted indices
+sqrt(self)
+Element-wise sqrt.
+sum(self[, axis, dtype, out])
+Sum the matrix elements over a given axis.
+sum_duplicates(self)
+Eliminate duplicate matrix entries by adding them together
+tan(self)
+Element-wise tan.
+tanh(self)
+Element-wise tanh.
+toarray(self[, order, out])
+Return a dense ndarray representation of this matrix.
+tobsr(self[, blocksize, copy])
+Convert this matrix to Block Sparse Row format.
+tocoo(self[, copy])
+Convert this matrix to COOrdinate format.
+tocsc(self[, copy])
+Convert this matrix to Compressed Sparse Column format.
+tocsr(self[, copy])
+Convert this matrix to Compressed Sparse Row format.
+todense(self[, order, out])
+Return a dense matrix representation of this matrix.
+todia(self[, copy])
+Convert this matrix to sparse DIAgonal format.
+todok(self[, copy])
+Convert this matrix to Dictionary Of Keys format.
+tolil(self[, copy])
+Convert this matrix to List of Lists format.
+transpose(self[, axes, copy])
+Reverses the dimensions of the sparse matrix.
+trunc(self)
+Element-wise trunc.
+__getitem__
+Previous topic
+scipy.sparse.csc_matrix.trunc
+Next topic
+scipy.sparse.csr_matrix.__len__
+Quick search
+© Copyright 2008-2021, The SciPy community.
+Last updated on Apr 26, 2021.
+Created using Sphinx 3.1.2.

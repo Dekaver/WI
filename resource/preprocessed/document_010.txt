@@ -1,113 +1,453 @@
-Don't understand why there I get "TypeError: 'str' object cannot be interpreted as an integer" in my code | Treehouse Community
+ModuleNotFoundError
+No module named
+nltk
+| Edureka Community
+73509/modulenotfounderror-no-module-named-nltk
+Toggle navigation
+Back
+Ask a question
+Blogs
+Browse Categories
+Browse Categories
+Apache KafkaApache SparkBig Data HadoopBlockchainCareer CounsellingCloud ComputingCyber Security & Ethical HackingData AnalyticsDatabaseDevOps & AgileEvents & Trending TopicsIoT (Internet of Things)JavaLinux AdministrationMachine LearningMicroStrategyPMPPower BIPythonRPASeleniumSoftware TestingTableauTalendWeb DevelopmentAsk us Anything!Others
+Log In
+Sign Up
 Home
-Free Trial
-Sign In
-Techdegree
-Tracks
-Library
 Community
-Support
-Watch Video
+Categories
 Python
-Object-Oriented Python
-Dice Roller
-Giving a Hand
-PRO
-Jonathan Dell'Ova
-Pro Student
-6,283 Points
-Posted September 30, 2019
-2:46pm by Jonathan Dell'Ova
-Jonathan Dell'Ova
-Pro Student
-6,283 Points
-Don't understand why there I get "TypeError: 'str' object cannot be interpreted as an integer" in my code
-from Yatzy import dice
-class Hand(list):
-def __init__(self, size=0, die_class=None, *args, **kwargs):
-if not die_class:
-raise ValueError("You must provide a die class!")
-super().__init__()
-for _ in range(size):
-self.append(die_class())
-def __len__(self):
-str_num = str(super().__len__())
-return "There are {} die in this hand".format(str_num)
-hand = Hand(size=5, die_class=dice.D6)
-print(hand)
-print(len(hand))
-When I try to run this code it gives me this error:
-TypeError: 'str' object cannot be interpreted as an integer
-I've tried analyzing the problem with is instance() for example but I've not come to any conclusions where the problem lies.
-I know that print() can take a string as an argument. I also know that if I check the instance of super()__len__() I get back True when I check for an int. If I then do str(super()__len__()) and check what type of instance it is, I get back True for a string and False for an int. When I then return it to be used in print() I get this weird error.
-What is happening here?
-This is just something extra I wanted to add to keep practicing with overwriting inbuilt methods but I would really like to learn from this.
-1 Answer
-Steven Parker
-207,967 Points
-Steven Parker
-Steven Parker
-207,967 Points
-September 30, 2019
-3:19pm
-The override of "__len__" is returning a string message, but the system expects it to return a numeric value.
-Did you perhaps intend to override "__str__" instead using this code?
-Jonathan Dell'Ova
-Pro Student
-6,283 Points
-Jonathan Dell'Ova
-Jonathan Dell'Ova
-Pro Student
-6,283 Points
-September 30, 2019
-4:00pm
-Yes, this was the issue. I didn't realize that the system was expecting a numeric value that had to be filled.
-Overriding __str__ with the exact same syntax for the body made it work when using print(hand) and also print(str(hand)) which obviously give the same output.
-Thanks!
-Steven Parker
-207,967 Points
-Steven Parker
-Steven Parker
-207,967 Points
-September 30, 2019
-6:26pm
-That's right, because "print" implicitly performs string conversion so you get the same output either way.
-Posting to the forum is only allowed for members with active accounts.
-Please sign in or sign up to post.
-Treehouse Logo
-Our mission is to bring affordable technology education to people everywhere in order to help them achieve their dreams and change the world.
-Company
-Careers
-Contact
-Library
-Tracks
-Community
-Stories
-Perks
-Affiliate Program
-Treehouse for Libraries
-Topics
-HTML
-CSS
-Design
-JavaScript
-Ruby
-View all 24 Topics
-Tracks
-Front End Web Development
-Full Stack JavaScript
-Beginning Python
-UX: Interaction Design
-Digital Literacy
-View all 48 Tracks
-Twitter
-YouTube
-Facebook
-LinkedIn
-Instagram
-About Treehouse
+ModuleNotFoundError
+No module named
+nltk
+ModuleNotFoundError
+No module named
+nltk
+0 votes
+Hi Guys,
+I am trying to import nltk module in my Jupyter Notebook. But it is showing me the below error.
+import ntlk
+ModuleNotFoundError
+Traceback (most recent call last)
+<ipython-input-14-1d2184025e54> in <module>
+----> 1 import nltk
+ModuleNotFoundError: No module named 'nltk'
+How can I solve this error?
+python
+python-programming
+python-pip
+nltk
+Jun 26, 2020
+in Python
+by
+akhtar
+• 38,170 points
+•
+5,497 views
+answer
+comment
+flag
+Your comment on this question:
+Your name to display (optional):
+Email me at this address if a comment is added after mine:Email me if a comment is added after mine
+Privacy: Your email address will only be used for sending these notifications.
+Add comment
+Cancel
+1 answer to this question.
+Your answer
+Your name to display (optional):
+Email me at this address if my answer is selected or commented on:Email me if my answer is selected or commented on
+Privacy: Your email address will only be used for sending these notifications.
+Add answer
+Cancel
+0 votes
+Hi@akhtar,
+It seems this module is not present in your system. You need to install nltk module in your system. You can use the below-given command.
+$ conda install -c anaconda nltk
+I hope this will help you.
+answered
+Jun 26, 2020
+by
+MD
+• 95,180 points
+comment
+flag
+ask related question
+Your comment on this answer:
+Your name to display (optional):
+Email me at this address if a comment is added after mine:Email me if a comment is added after mine
+Privacy: Your email address will only be used for sending these notifications.
+Add comment
+Cancel
+Related Questions In Python
++1 vote
+3 answers
+ModuleNotFoundError: No module named 'speech_recognition' Not able to install speech_recognition in python:
+Hey. You have to use SpeechRecognition as module ...READ MORE
+answered
+Nov 28, 2018
+in Python
+by
+Omkar
+• 69,150 points
+•
+17,427 views
+python
+python-programming
+python-pip
+python-speech-recognition
++2 votes
+3 answers
+ModuleNotFoundError: No module named 'Crypto'
+The module you’ve installed is different.
+To install ...READ MORE
+answered
+Aug 20, 2019
+in Python
+by
+Raman
+•
+33,170 views
+python-programming
+python
+pycrypto
+0 votes
+2 answers
+ModuleNotFoundError: No module named 'pythoncom'
+in pyttsx3
+even i faced the same problem ...just ...READ MORE
+answered
+Jun 2, 2020
+in Python
+by
+anonymous
+•
+6,637 views
+python
+python-programming
+python-pip
+developer
+0 votes
+1 answer
+ModuleNotFoundError: No module named 'Foundation'
+Hi@akhtar,
+By default Foundation module comes with Anaconda ...READ MORE
+answered
+Apr 24, 2020
+in Python
+by
+MD
+• 95,180 points
+•
+845 views
+python
+python-programming
+python-pip
+0 votes
+2 answers
+how can i randomly select items from a list?
+You can also use the random library's ...READ MORE
+answered
+Apr 9, 2020
+in Python
+by
+Patrick
+•
+2,681 views
+python-programming
+python
+python-list
+python-datatypes
+python-functions
+python-sequence-types
+python-types
++1 vote
+2 answers
+how can i count the items in a list?
+Syntax :
+list. count(value)
+Code:
+colors = ['red', 'green', ...READ MORE
+answered
+Jul 6, 2019
+in Python
+by
+Neha
+• 330 points
+edited
+Jul 8, 2019
+by Kalgi
+•
+2,146 views
+python-programming
+python
+python-list
+python-datatypes
+python-functions
+python-sequence-types
+python-types
+0 votes
+0 answers
+how do i use the enumerate function inside a list?
+can you give an example using a ...READ MORE
+May 7, 2019
+in Python
+by
+Waseem
+• 4,540 points
+•
+1,520 views
+python-list
+python-datatypes
+python
+python-functions
+python-sequence-types
+python-types
+python-programming
++5 votes
+6 answers
+Lowercase in Python
+You can simply the built-in function in ...READ MORE
+answered
+Apr 11, 2018
+in Python
+by
+hemant
+• 5,810 points
+•
+1,619 views
+python-programming
+python
+python-file
+python-string
+python-datatypes
+python-test-processing
+python-services
+python-lowercase
++1 vote
+3 answers
+ModuleNotFoundError: No module named 'cv2'
+Hi@akhtar,
+This error may occur if you didn't install ...READ MORE
+answered
+Apr 9, 2020
+in Python
+by
+MD
+• 95,180 points
+•
+74,263 views
+python
+python-programming
+python-pip
++2 votes
+2 answers
+ModuleNotFoundError: No module named 'pyttsx3
+Hi@akhtar,
+To avoid this error you have to ...READ MORE
+answered
+Apr 24, 2020
+in Python
+by
+MD
+• 95,180 points
+•
+8,441 views
+python
+python-programming
+python-pip
+Recent in Pythonerror install mysqlclient on windows Feb 6 Dickey-Fuller test in Python Feb 5 How to declare an array in Python? Jan 5 How to change the “tick frequency” on x or y axis in matplotlib? Jan 5 How to prompt for user input and read command-line arguments? Jan 5
+All categories
+Apache Kafka
+(84)
+Apache Spark
+(598)
+Big Data Hadoop
+(1,860)
+Blockchain
+(1,513)
+Career Counselling
+(1,058)
+Cloud Computing
+(3,097)
+Cyber Security & Ethical Hacking
+(90)
+Data Analytics
+(1,196)
+Database
+(270)
+DevOps & Agile
+(3,096)
+Events & Trending Topics
+(27)
+IoT (Internet of Things)
+(361)
+Java
+(968)
+Linux Administration
+(234)
+Machine Learning
+(173)
+MicroStrategy
+(5)
+PMP
+(367)
+Power BI
+(460)
+Python
+(2,950)
+RPA
+(649)
+Selenium
+(1,550)
+Software Testing
+(56)
+Tableau
+(474)
+Talend
+(73)
+Web Development
+(1,457)
+Ask us Anything!
+(62)
+Others
+(303)
+×
+Join the world's most active Tech Community!
+Welcome back to the World's most active Tech Community!
+Sign up with Gmail
+Sign up with Facebook
+OR
+Please provide a valid input
+SIGN UP
+Already have an Edureka Account? Login
+Please enter a valid emailid
+Forgot Password?
+LOGIN
+Don’t have edureka account? Sign Up
+resend ?
+reset password
+Don’t have edureka account? Sign Up
+reset password
+Don’t have edureka account? Sign Up
+Send Code
+Don’t have edureka account? Sign Up
+Subscribe to our Newsletter, and get personalized recommendations.
+Sign up with Google
+Signup with Facebook
+Already have an account? Sign in.
+×
+TRENDING CERTIFICATION COURSES
+DevOps Certification Training
+AWS Architect Certification Training
+Big Data Hadoop Certification Training
+Tableau Training & Certification
+Python Certification Training for Data Science
+Selenium Certification Training
+PMP® Certification Exam Training
+Robotic Process Automation Training using UiPath
+Apache Spark and Scala Certification Training
+Microsoft Power BI Training
+Online Java Course and Training
+Python Certification Course
+TRENDING MASTERS COURSES
+Data Scientist Masters Program
+DevOps Engineer Masters Program
+Cloud Architect Masters Program
+Big Data Architect Masters Program
+Machine Learning Engineer Masters Program
+Full Stack Web Developer Masters Program
+Business Intelligence Masters Program
+Data Analyst Masters Program
+Test Automation Engineer Masters Program
+Post-Graduate Program in Artificial Intelligence & Machine Learning
+Post-Graduate Program in Big Data Engineering
+COMPANY
+About us
+News & Media
+Reviews
+Contact us
 Blog
-Shop
-Privacy Policy
+Community
+Sitemap
+Blog Sitemap
+Community Sitemap
+WORK WITH US
+Careers
+Become an Instructor
+Become an Affiliate
+Become a Partner
+Hire from Edureka
+DOWNLOAD APP
+CATEGORIES
+CATEGORIES
+Cloud Computing
+DevOps
+Big Data
+Data Science
+BI and Visualization
+Programming & Frameworks
+Software Testing
+Project Management and Methodologies
+Robotic Process Automation
+Frontend Development
+Data Warehousing and ETL
+Artificial Intelligence
+Blockchain
+Databases
+Cyber Security
+Mobile Development
+Operating Systems
+Architecture & Design Patterns
+Digital Marketing
+TRENDING BLOG ARTICLES
+TRENDING BLOG ARTICLES
+Selenium tutorial
+Selenium interview questions
+Java tutorial
+What is HTML
+Java interview questions
+PHP tutorial
+JavaScript interview questions
+Spring tutorial
+PHP interview questions
+Inheritance in Java
+Polymorphism in Java
+Spring interview questions
+Pointers in C
+Linux commands
+Android tutorial
+JavaScript tutorial
+jQuery tutorial
+SQL interview questions
+MySQL tutorial
+Machine learning tutorial
+Python tutorial
+What is machine learning
+Ethical hacking tutorial
+SQL injection
+AWS certification career opportunities
+AWS tutorial
+What Is cloud computing
+What is blockchain
+Hadoop tutorial
+What is artificial intelligence
+Node Tutorial
+Collections in Java
+Exception handling in java
+Python Programming Language
+Python interview questions
+Multithreading in Java
+ReactJS Tutorial
+Data Science vs Big Data vs Data Analytics
+Software Testing Interview Questions
+R Tutorial
+Java Programs
+JavaScript Reserved Words and Keywords
+Implement thread.yield() in Java: Examples
+Implement Optical Character Recognition in Python
+All you Need to Know About Implements In Java
+© 2021 Brain4ce Education Solutions Pvt. Ltd. All rights Reserved.
 Terms & Conditions
-© 2021 Treehouse Island, Inc.
+Legal & Privacy
+"PMP®","PMI®", "PMI-ACP®" and "PMBOK®" are registered marks of the Project Management Institute, Inc.
+MongoDB®, Mongo and the leaf logo are the registered trademarks of MongoDB, Inc.

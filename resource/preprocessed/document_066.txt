@@ -1,1 +1,82 @@
-Kotakode.com | Komunitas Developer IndonesiaYou need to enable JavaScript to run this app.
+urllib.error.HTTPError: HTTP Error 403: Forbidden - PyTorch Forums
+urllib.error.HTTPError: HTTP Error 403: Forbidden
+Sangwon_Jake
+(Sangwon Jake)
+October 22, 2020,
+2:57pm
+#1
+def load_pretrained_weights(model, model_name, load_fc=True):
+""" Loads pretrained weights, and downloads if loading for the first time. """
+state_dict = model_zoo.load_url(url_map[model_name])
+train.py:302: UserWarning: You have chosen to seed training. This will turn on the CUDNN deterministic setting, which can slow down your training considerably! You may see unexpected behavior when restarting from checkpoints.
+warnings.warn('You have chosen to seed training. ’
+Downloading: “http://storage.googleapis.com/public-models/efficientnet/efficientnet-b0-355c32eb.pth” to /home/jake/.cache/torch/hub/checkpoints/efficientnet-b0-355c32eb.pth
+Traceback (most recent call last):
+File “train.py”, line 333, in
+main()
+File “train.py”, line 329, in main
+main_worker(args.gpu, ngpus_per_node, args)
+File “train.py”, line 232, in main_worker
+D_class=EFFICIENTDET[args.network][‘D_class’]
+File “/home/jake/Gits/EfficientDet.Pytorch/models/efficientdet.py”, line 33, in init
+self.backbone = EfficientNet.from_pretrained(MODEL_MAP[network])
+File “/home/jake/Gits/EfficientDet.Pytorch/models/efficientnet.py”, line 243, in from_pretrained
+model, model_name, load_fc=(num_classes == 1000))
+File “/home/jake/Gits/EfficientDet.Pytorch/models/utils.py”, line 319, in load_pretrained_weights
+state_dict = model_zoo.load_url(url_map[model_name])
+File “/home/jake/venv/lib/python3.6/site-packages/torch/hub.py”, line 483, in load_state_dict_from_url
+download_url_to_file(url, cached_file, hash_prefix, progress=progress)
+File “/home/jake/venv/lib/python3.6/site-packages/torch/hub.py”, line 381, in download_url_to_file
+u = urlopen(req)
+File “/usr/lib/python3.6/urllib/request.py”, line 223, in urlopen
+return opener.open(url, data, timeout)
+File “/usr/lib/python3.6/urllib/request.py”, line 532, in open
+response = meth(req, response)
+File “/usr/lib/python3.6/urllib/request.py”, line 642, in http_response
+‘http’, request, response, code, msg, hdrs)
+File “/usr/lib/python3.6/urllib/request.py”, line 570, in error
+return self._call_chain(*args)
+File “/usr/lib/python3.6/urllib/request.py”, line 504, in _call_chain
+result = func(*args)
+File “/usr/lib/python3.6/urllib/request.py”, line 650, in http_error_default
+raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 403: Forbidden
+ptrblck
+October 22, 2020,
+6:47pm
+#2
+Could you post an executable code snippet to reproduce this issue and the repository you are using for the model implementation?
+Sangwon_Jake
+(Sangwon Jake)
+October 23, 2020,
+2:27am
+#4
+I think it problem when load the url.
+url_map = {
+'efficientnet-b0': 'http://storage.googleapis.com/public-models/efficientnet/efficientnet-b0-355c32eb.pth',
+'efficientnet-b1': 'http://storage.googleapis.com/public-models/efficientnet/efficientnet-b1-f1951068.pth',
+'efficientnet-b2': 'http://storage.googleapis.com/public-models/efficientnet/efficientnet-b2-8bb594d6.pth',
+'efficientnet-b3': 'http://storage.googleapis.com/public-models/efficientnet/efficientnet-b3-5fb5a3c3.pth',
+'efficientnet-b4': 'http://storage.googleapis.com/public-models/efficientnet/efficientnet-b4-6ed6700e.pth',
+'efficientnet-b5': 'http://storage.googleapis.com/public-models/efficientnet/efficientnet-b5-b6417697.pth',
+'efficientnet-b6': 'http://storage.googleapis.com/public-models/efficientnet/efficientnet-b6-c76e70fd.pth',
+'efficientnet-b7': 'http://storage.googleapis.com/public-models/efficientnet/efficientnet-b7-dcc49843.pth',
+}
+def load_pretrained_weights(model, model_name, load_fc=True):
+""" Loads pretrained weights, and downloads if loading for the first time. """
+state_dict = model_zoo.load_url(url_map[model_name])
+if load_fc:
+model.load_state_dict(state_dict)
+else:
+state_dict.pop('_fc.weight')
+state_dict.pop('_fc.bias')
+res = model.load_state_dict(state_dict, strict=False)
+assert set(res.missing_keys) == set(
+['_fc.weight', '_fc.bias']), 'issue loading pretrained weights'
+print('Loaded pretrained weights for {}'.format(model_name))
+Home
+Categories
+FAQ/Guidelines
+Terms of Service
+Privacy Policy
+Powered by Discourse, best viewed with JavaScript enabled

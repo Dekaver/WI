@@ -1,332 +1,243 @@
-Python typeerror: ‘int’ object is not iterable Solution | Career Karma
-Home
-Top Projects
-All Star Projects
-Web Development
-Mobile Development
-Design
-Data Science
-Bootcamps
-Best Coding Bootcamps
-Best Online Bootcamps
-Best Web Design
-Bootcamps
-Best Data Science Bootcamps
-Best Data Analytics Bootcamps
-Best Cyber Security Bootcamps
-Best ISA Bootcamps 2020
-Programs
-Web Development
-Mobile Development
-Software Engineer
-Data Science
-Cybersecurity
-Product Management
-Digital Marketing
-UX/UI Designer
-Database Administration
-Social Media Management
-InfoSec Analyst
-Quality Assurance Engineer
-SEO Manager
-Computer Systems Analyst
-WordPress developer
-Blog
-Bootcamps
-Coding
-Career Resources
-Tech Fields
-News & Commentary
-About
-Company
-Jobs
-Values
-Publication
-Press
-Home
-Top Projects
-All Star Projects
-Web Development
-Mobile Development
-Design
-Data Science
-Bootcamps
-Best Coding Bootcamps
-Best Online Bootcamps
-Best Web Design
-Bootcamps
-Best Data Science Bootcamps
-Best Data Analytics Bootcamps
-Best Cyber Security Bootcamps
-Best ISA Bootcamps 2020
-Programs
-Web Development
-Mobile Development
-Software Engineer
-Data Science
-Cybersecurity
-Product Management
-Digital Marketing
-UX/UI Designer
-Database Administration
-Social Media Management
-InfoSec Analyst
-Quality Assurance Engineer
-SEO Manager
-Computer Systems Analyst
-WordPress developer
-Blog
-Bootcamps
-Coding
-Career Resources
-Tech Fields
-News & Commentary
-About
-Company
-Jobs
-Values
-Publication
-Press
-Sign in
-Front Page
-Bootcamps
-Popular Bootcamps
-Bootcamp Prep
-Bootcamp Financing
-University Bootcamps
-Bootcamp Grads
-Coding
-Coding Tools
-HTML
-CSS
-Java
-JavaScript
-Python
-C++
-Ruby
-SQL
-Git
-Career Resources
-Career Advice
-Tech Interviews
-Tech Salaries
-Tech Cities
-Research
-Tech Fields
-Web Development
-Software Engineering
-Web Design
-Data Science
-Higher Ed
-Associate
-Bachelor’s
-Master’s
-Doctoral
-Certifications
-Trade Schools
-About
-HomePython TutorialsPython typeerror: ‘int’ object is not iterable Solution
-Python Tutorials
-Python typeerror: ‘int’ object is not iterable Solution
-James Gallagher
-Jul 30, 2020
-0
-0 views
-Facebook
-Twitter
-LinkedIn
-Encountering an error is not a problem; it’s a learning opportunity. While developing in Python, you may have seen an error “‘int’ object is not iterable”.
-What does this mean? How do I solve it? Those are the questions we’re going to answer in this article. We will discuss what the “‘int’ object is not iterable” error is, why it is raised, and how you can solve it.
-The Problem: typeerror: ‘int’ object is not iterable
-“typeerror: ‘int’ object is not iterable”
-There are two parts to this error message: TypeError and the error message.
-A TypeError is raised when a function is applied to an object of the wrong data type. For instance, if you try to apply a mathematical function to a string, or call a value like a function which is not a function, a TypeError is raised.
-The error message tells us that you have tried to iterate over an object that is not iterable. Iterable objects are items whose values you can access using a “for loop”.
-A Practice Scenario
-One of the most common scenarios in which this error is raised is when you try to use a for loop with a number. This mistake is made because it’s easy to forget to use the range() function when you are using a for loop.
-Consider the following code snippet:
-def count_occurrence(values, to_find):
-number_of_occurrences = 0
-for v in len(values):
-if values[v] == to_find:
-number_of_occurrences += 1
-return number_of_occurrences
-values = [1, 2, 3, 3]
-check_for_threes = count_occurrence(values, 3)
-print(check_for_threes)
-This code snippet uses one function. The count_occurance function counts how many times a number appears in the “values” list. This function iterates over all the values in “values” and keeps a running total of all those equal to a particular number. This number is specified as a parameter called “to_find”.
-» MORE:  Python Median() - A Python Statistics TutorialIn our main program, we define a list called “values” with four values. We call our count_occurrence function to count how many threes are in our list of values. We then print out the response to the console.
-Let’s run our code:
-Traceback (most recent call last):
-File "main.py", line 9, in <module>
-check_for_threes = count_occurrence(values, 3)
-File "main.py", line 3, in count_occurrence
-for v in len(values):
-TypeError: 'int' object is not iterable
-Oh no! An error has been raised. Now that we’ve replicated this error, we can solve it.
-The Solution
-Our error tells us that we’ve tried to iterate over an object that is not iterable. If we look at the error message in detail, we can see it points us to the line where the problem occurs:
-for v in len(values):
-The problem with this line is that we are trying to iterate over a number.
-len(values) is equal to 4. That’s how many values are in the list “values”. If we try to iterate over a number, nothing happens. This is because for loops only work with iterable objects.
-To solve this problem, we need to make sure our for loop iterates over an iterable object. We can add a range() statement to our code to do this:
-for v in range(len(values)):
-This statement will create an iterable object with a list of values in the range of 0 and the number of items in the “values” list.
-Let’s try to run our code again with the range() statement. Our code returns:
-2
-Our code has successfully found all the instances of 3 in the list. Our code has counted them all up and then printed the total number of times 3 appears in the list to the console.
-» MORE:  Python typeerror: ‘tuple’ object does not support item assignment Solution
-Conclusion
-TypeErrors are a common type of error in Python. They occur when you try to apply a function on a value of the wrong type. An “‘int’ object is not iterable” error is raised when you try to iterate over an integer value.
-To solve this error, make sure that you are iterating over an iterable rather than a number.
-Now you’re ready to solve this error like a Pythonista!
-About us: Career Karma is a platform designed to help job seekers find, research, and connect with job training programs to advance their careers. Learn about the CK publication.
-What's Next?
-Want to take action?
-Get matched with top bootcamps
-Want to dive deeper?
-Ask a question to our community
-Want to explore tech careers?
-Take our careers quiz
-James Gallagher
-James Gallagher is a self-taught programmer and the technical content manager at Career Karma. He has experience in range of programming languages and extensive expertise in Python, HTML, CSS, and JavaScript. James has written hundreds of programming tutorials, and he frequently contributes to publications like Codecademy, Treehouse, Repl.it, Afrotech, and others. He also serves as a researcher at Career Karma, publishing comprehensive reports on the bootcamp market and income share agreements.
-Read more by James Gallagher
-Share This
-Previous ArticlePython typeerror: list indices must be integers or slices, not str Solution
-Next ArticlePython typeerror: a bytes-like object is required, not ‘str’ Solution
-Jul 30, 2020
-Comments (0)
-Leave a Reply Cancel replyYour email address will not be published. Required fields are marked *Your CommentName *
-Email *
-Website
-Get offers from top bootcampsTake the stress out of picking a bootcamp
-See matches nowTop Community PostsHow long does it take to become a full stack web developer?Marcus Hayes in Full-stack DevelopmentWhat are the laptop requirements for programming?Danny Fuentes in Beginners$2 million in COVID19 ScholarshipsTimur Meyster in Applying to BootcampsPopular ArticlesBest Online BootcampsBest Tech Jobs 2021What is Coding Used For?How Much Do Coders Make?Best Free BootcampsSee all articlesCareer GuidesWeb DevelopmentSoftware EngineeringData ScienceWeb DesignCyber SecuritySee all guidesFree prep coursesFlatiron School Prep80+ hours
-Easy80+ hours of HTML, CSS & JavaScriptKenzie School Prep80+ hours
-Easy20+ hours of HTML & CSSGeneral Assembly Prep50+ hours
-EasyLearn web development basics in HTML, CSS, JavaScript by building projectssee all prep courses
-Get matches
-from top bootcamps
-Select your interest:
-Interest
-Software Engineering
-Design
-Data Science
-Data Analytics
-Cybersecurity Analytics
-Technology Sales
-Select your preferred pace:
-Begin typing a name to filter
-Full-time
-Part-time
-Self-paced
-Begin typing a name to filter
-Full-time
-Part-time
-Self-paced
-See Matches
-Find the Best Online Course for YouGet Matched
-Related Articles
-Python Tutorials
-How to Use Python extend()
-Python Tutorials
-Python Index: A Step-By-Step Guide
-Python Tutorials
-Python FileNotFoundError: [Errno 2] No such file or directory Solution
-Python Tutorials
-Python ValueError: math domain error Solution
-Home
-About
-Careers
-Mission
-Blog
-Press
-Terms & conditions
-© 2021 Career Karma
-Rankings
-Best Coding Bootcamps
-Best Online Bootcamps
-Best Web Design Bootcamps
-Best Data Science Bootcamps
-Best Data Analytics Bootcamps
-Best Cyber Security Bootcamps
-Best ISA Bootcamps 2020
-See all
-Comparisons
-Flatiron School vs Fullstack Academy
-Hack Reactor vs App Academy
-Fullstack Academy vs Hack Reactor
-Thinkful vs General Assembly
-Flatiron School vs Thinkful
-General Assembly vs Flatiron School
-App Academy vs Lambda School
-General Assembly vs Hack Reactor
-Springboard vs Thinkful
-See all
-Locations
-San Francisco Bootcamps
-New York Bootcamps
-Los Angeles Bootcamps
-Chicago Bootcamps
-Seattle Bootcamps
-Atlanta Bootcamps
-Austin Bootcamps
-See all
-Schools
-Kenzie Academy
-Flatiron School
-Thinkful
-General Assembly
-Springboard
-Galvanize
-Hack Reactor
-App Academy
-Bloc
-See all
-Careers
-Software Engineering
-UX/UI Design
-Data Science
-Web Development
-Mobile Development
-Cybersecurity
-Product Management
-See all
-Subjects
-JavaScript
-Python
-Ruby
-Java
-Swift
-Android
-.Net
-React
-Angular
-See all
-Tell us about you and we will match you with top rated bootcamps with flexible payment options, income sharing (ISAs), or money-back guarantees.
-Select your interest:
-Software Engineering
-Design
-Data Science
-Data Analytics
-Cybersecurity Analytics
-Technology Sales
-First Name
-Last Name
-Email
-Phone Number
-GET MATCHED
-Find the right bootcamp for you
-By continuing you indicate that you have read and agree to
-Career Karma Terms of Service and Privacy Policy
-X
-X
-Jump start your tech career
-Learn the most in-demand skills
-Get started now
-Lost Password Back ⟶
+How To Solve python urllib.error.httperror: http error 403: forbidden - Kodlogs
+menu
 Login
 Register
-Get new password
-Lost Password?
-Login
-Registration is disabled.
+search
+Log Inaccount_circle
+Log In
+Email or Username
+Password
+Remember
+Log In
+Register
+I forgot my password
+Register
+Username
+Email
+Password
+Register
+add
+Tags
+Users
+Articles
+Post An Article
+How To Solve python urllib.error.httperror: http error 403: forbidden
+0 votes
+1.4k views
+On trying to scrap a website for practice, but I kept on getting the HTTP Error 403 (does it think the user is a bot)?Here is the code:#import requests
+import urllib.request
+from bs4 import BeautifulSoup
+#from urllib import urlopen
+import re
+webpage = urllib.request.urlopen('http://www.cmegroup.com/trading/products/#sortField=oi&sortAsc=false&venues=3&page=1&cleared=1&group=1').read
+findrows = re.compile('<tr class="- banding(?:On|Off)>(.*?)</tr>')
+findlink = re.compile('<a href =">(.*)</a>')
+row_array = re.findall(findrows, webpage)
+links = re.finall(findlink, webpate)
+print(len(row_array))
+iterator = [] with error : File "C:\Python33\lib\urllib\request.py", line 160, in urlopen
+return opener.open(url, data, timeout)
+File "C:\Python33\lib\urllib\request.py", line 479, in open
+response = meth(req, response)
+File "C:\Python33\lib\urllib\request.py", line 591, in http_response
+'http', request, response, code, msg, hdrs)
+File "C:\Python33\lib\urllib\request.py", line 517, in error
+return self._call_chain(*args)
+File "C:\Python33\lib\urllib\request.py", line 451, in _call_chain
+result = func(*args)
+File "C:\Python33\lib\urllib\request.py", line 599, in http_error_default
+raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 403: Forbidden
+urllib
+http-status-code-403
+python
+python-3
+asked
+Oct 24, 2020
+psandprop
+2.4k points
+answer
+Please log in or register to answer this question.
+1 Answer
+0 votes
+This is probably because of mod_security or some similar server security feature which blocks known spider/bot user agents (urllib uses something like python urllib/3.3.0, it's easily detected). Try setting a known browser user agent with:from urllib.request import Request, urlopen
+req = Request('site link)', headers={'User-Agent': 'Mozilla/5.0'})
+webpage = urlopen(req).read()
+This works for me.By the way, in your code you are missing the () after .read in the urlopen line, but I think that it's a typo.TIP: since this is exercise, choose a different, non restrictive site. Maybe they are blocking urllib for some reason… Definitely it's blocking because of the use of urllib based on the user agent. This same thing is happened with OfferUp. You can create a new class called AppURLopener which overrides the user-agent with Mozilla.import urllib.request
+class AppURLopener(urllib.request.FancyURLopener):
+version = "Mozilla/5.0"
+opener = AppURLopener()
+response = opener.open('site link*')Source - https://docs.python.org/3.0/library/urllib.request.html#urllib.request._urlopener"This is probably because of mod_security or some similar server security feature which blocks known user agents (urllib uses something like python urllib/3.3.0, it's easily detected)" - as already mentioned by Stefano Sanfilippofrom urllib.request import Request, urlopen
+url="site link"
+req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+web_byte = urlopen(req).read()
+webpage = web_byte.decode('utf-8')The web_byte is a byte object returned by the server and the content type present in webpage is mostly utf-8. Therefore you need to decode web_byte using decode method.This solves complete problem while I was having trying to scrap from a website.Based on the previous answer,from urllib.request import Request, urlopen
+#specify url
+url = 'site link'
+req = Request(url, headers={'User-Agent': 'XYZ/3.0'})
+response = urlopen(req, timeout=20).read()This worked  by extending the timeout
+answered
+Oct 29, 2020
+hubconcepts
+4.1k points
+ask related question
+comment
+Your comment on this answer:
+Your name to display (optional):
+Email me at this address if a comment is added after mine:Email me if a comment is added after mine
+Privacy: Your email address will only be used for sending these notifications.
+Anti-spam verification:
+What is the color of the sky?
+To avoid this verification in future, please log in or register.
+Add comment
+Cancel
+Related questions
+0 votes
+1 answer
+35 views
+35 views
+Urllib.error.httperror: http error 403: forbidden
+Problem: Why is this fix urllib.error.httperror: http error 403: forbidden?
+asked
+Apr 13
+jamuna1
+30.2k points
+urllib
+http-status-code-403
+0 votes
+1 answer
+62 views
+62 views
+urllib.error.httperror: http error 404: not found
+Problem: I wrote a script to find spelling mistakes in SO questions' titles. I used it for about a month.This was working fine UPDATE This is the url causing the problem.Even though this url exists. I tried changing the range to some lower values. It works fine now. Why this happened with above url?
+asked
+Feb 21
+Mashhoodch
+13k points
+python
+urllib
+http-status-code-403
+python-3
+0 votes
+1 answer
+13 views
+13 views
+Urllib.error.httperror: http error 500: internal server error
+Problem: How can I solve this? > Urllib.error.httperror: http error 500: internal server error
+asked
+May 7
+Junia Phoebe
+82.2k points
+urllib
+python
+sockets
+http
+0 votes
+1 answer
+155 views
+155 views
+module 'urllib' has no attribute 'request'
+1 I have tried import urllib.request or import urllib The path for my urllib is /Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/urllib/__init__.py I am wondering where is urlopen, or is my python module pointing to the wrong file?
+asked
+Oct 25, 2020
+psandprop
+2.4k points
+urllib
+attributeerror
+python
+python-3
+1 vote
+1 answer
+34 views
+34 views
+Verifying HTTPS certificates with urllib.request
+I am trying to open an https URL using the urlopen method in Python 3's urllib.request module. It seems to work fine, but the documentation warns that "[i]f neither cafile nor capath is specified, an HTTPS request will not do any verification of the server&rsquo;s
+...
+get this list from? Is there any simple and cross-platform way to use the same list of certificates that my OS or browser uses?
+asked
+Sep 13, 2020
+Marivoke
+530 points
+python
+ssl
+python-3
+https
+urllib
+0 votes
+1 answer
+6 views
+6 views
+How to get around a 403 forbidden error
+Problem: I'm looking for a solution : How to get around a 403 forbidden error?
+asked
+5 days ago
+Rada Gracelynn
+42.6k points
+http-status-code-403
+1 vote
+1 answer
+110 views
+110 views
+403 Forbidden: the server understood the request, but is refusing to fulfill it.
+Problem : I keep on facing the below 403 error while performing the AJAX call to the API. &ldquo;403 forbidden: the server understood the request, but is refusing to fulfill it.&rdquo; Above error occurs usually in Microsoft Edge, but does not come up in IE,
+... browsers and also the response/request headers match to one another - So is it the case that the POST request is sending the incorrect?
+asked
+Jan 2, 2020
+alecxe
+7.5k points
+javascript
+ajax
+http-status-code-403
+0 votes
+1 answer
+77 views
+77 views
+attributeerror: module 'urllib' has no attribute 'request'
+Problem: I have tried import urllib.request or import urllib The path for my urllib is /Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/urllib/__init__.py I am wondering where is urlopen, or is my python module pointing to the wrong file?
+asked
+Feb 18
+Mashhoodch
+13k points
+python-3
+attributeerror
+urllib
+url
+module
+0 votes
+1 answer
+123 views
+123 views
+module 'urllib' has no attribute 'urlencode'
+Problem: When I try to follow the Python Wiki's example related to URL encoding: >>> import urllib >>> params = urllib.urlencode({'spam': 1, 'eggs': 2, 'bacon': 0}) >>> f = urllib.urlopen("http://www.musi-cal.com/cgi-bin/query", params) >>> print ...
+(most recent call last): File "<stdin>", line 1, in <module> AttributeError: 'module' object has no attribute 'urlencode' What am I missing?
+asked
+Jan 21
+Mashhoodch
+13k points
+python-3
+url
+urllib
+attributeerror
+0 votes
+1 answer
+462 views
+462 views
+Attributeerror: module 'urllib' has no attribute 'urlretrieve'.
+Problem: I have only basic knowledge in python and urllib. Currently I am trying to write the program which should download the mp3's from the website and after that join them together but on every occasion I try to download the mp3 files I face below error: Traceback ( ... usc.edu/~chiso/oldspice/m-b1-hello.mp3") Looking for the python and urlllib expert who can help me in fixing my above error.
+asked
+Jul 22, 2020
+Raphael Pacheco
+4.9k points
+python-3
+x
+urllib
+attributeerror
+Send feedback
+About Us
+Privacy Policy
+Guest Blog
+XML Sitemap
+Facebook
+Twitter
+Pinterest
+Dark theme

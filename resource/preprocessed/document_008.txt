@@ -1,336 +1,258 @@
-TypeError: ‘str’ object cannot be interpreted as an integer | Career Karma
-Home
-Top Projects
-All Star Projects
-Web Development
-Mobile Development
-Design
-Data Science
-Bootcamps
-Best Coding Bootcamps
-Best Online Bootcamps
-Best Web Design
-Bootcamps
-Best Data Science Bootcamps
-Best Data Analytics Bootcamps
-Best Cyber Security Bootcamps
-Best ISA Bootcamps 2020
-Programs
-Web Development
-Mobile Development
-Software Engineer
-Data Science
-Cybersecurity
-Product Management
-Digital Marketing
-UX/UI Designer
-Database Administration
-Social Media Management
-InfoSec Analyst
-Quality Assurance Engineer
-SEO Manager
-Computer Systems Analyst
-WordPress developer
-Blog
-Bootcamps
-Coding
-Career Resources
-Tech Fields
-News & Commentary
-About
-Company
-Jobs
-Values
-Publication
-Press
-Home
-Top Projects
-All Star Projects
-Web Development
-Mobile Development
-Design
-Data Science
-Bootcamps
-Best Coding Bootcamps
-Best Online Bootcamps
-Best Web Design
-Bootcamps
-Best Data Science Bootcamps
-Best Data Analytics Bootcamps
-Best Cyber Security Bootcamps
-Best ISA Bootcamps 2020
-Programs
-Web Development
-Mobile Development
-Software Engineer
-Data Science
-Cybersecurity
-Product Management
-Digital Marketing
-UX/UI Designer
-Database Administration
-Social Media Management
-InfoSec Analyst
-Quality Assurance Engineer
-SEO Manager
-Computer Systems Analyst
-WordPress developer
-Blog
-Bootcamps
-Coding
-Career Resources
-Tech Fields
-News & Commentary
-About
-Company
-Jobs
-Values
-Publication
-Press
-Sign in
-Front Page
-Bootcamps
-Popular Bootcamps
-Bootcamp Prep
-Bootcamp Financing
-University Bootcamps
-Bootcamp Grads
-Coding
-Coding Tools
-HTML
-CSS
-Java
-JavaScript
+Python & NLTK Frequently Asked Questions
+Go to: Na-Rae Han's home page
+FAQ
+Python & NLTK Frequently Asked Questions
 Python
-C++
-Ruby
-SQL
-Git
-Career Resources
-Career Advice
-Tech Interviews
-Tech Salaries
-Tech Cities
-Research
-Tech Fields
-Web Development
-Software Engineering
-Web Design
-Data Science
-Higher Ed
-Associate
-Bachelor’s
-Master’s
-Doctoral
-Certifications
-Trade Schools
-About
-HomePython TutorialsPython TypeError: ‘str’ object cannot be interpreted as an integer Solution
-Python Tutorials
-Python TypeError: ‘str’ object cannot be interpreted as an integer Solution
-James Gallagher
-Sep 10, 2020
-0
-0 views
-Facebook
-Twitter
-LinkedIn
-The range() method only accepts integer values as a parameter. If you try to use the range() method with a string value, you’ll encounter the “TypeError: ‘str’ object cannot be interpreted as an integer” error.
-This guide discusses why you may encounter this error and what it means. We’ll walk through an example scenario to help you understand this problem and fix it in your program.
-TypeError: ‘str’ object cannot be interpreted as an integer
-The range() method creates a list of values in a particular range. It is commonly used with a for loop to run a certain number of iterations.
-The method only accepts integer values as arguments. This is because the values that range() creates are integers. Consider the following program:
-create_range = range(5, 10)
-for n in create_range:
-print(n)
-Our program prints out five integers to the console:
-5
-6
-7
-8
-9
-If range() accepted strings, it would be more difficult for the function to determine what range of numbers should be created. That’s why you always need to specify integers as arguments. In the above example, 5 and 10 were our arguments.
-An Example Scenario
-We’re going to build a program that lets a pizza restaurant view the names and prices of the most popular pizzas on their menu. To start, define two lists that store the information with which our program will work:
-names = ["Pepperoni", "Margherita", "Ham and Pineapple", "Brie and Chive"]
-prices = [9.00, 8.40, 8.40, 9.50]
-These lists are parallel and appear in order of how popular a pizza is. That means the values at a particular position in the list correspond with each other. For instance, the price of a “Brie and Chive” pizza is $9.50.
-» MORE:  Python TabError: inconsistent use of tabs and spaces in indentation SolutionOur next task is to ask the user how many pizzas they would like to display. We can do this using an input() statement:
-to_display = input("Enter the number of pizzas you would like to display: ")
-Now we know the number of pizzas about which the user is seeking information, we can use a for loop to print each pizza and its price to the console:
-for p in range(0, to_display):
-print("{} costs ${}.".format(names[p], prices[p]))
-Our program prints out a message containing the name of each pizza and the price of that pizza. Our loop stops when it has iterated through the number of pizzas a user has requested to display to the console.
-Let’s run our program and see if it works:
-Enter the number of pizzas you would like to display: 2
-Traceback (most recent call last):
-File "main.py", line 6, in <module>
-for p in range(0, to_display):
-TypeError: 'str' object cannot be interpreted as an integer
-Our program returns an error on the line of code where we define our for loop.
-The Solution
-We have created a for loop that runs a particular set of times depending on the value the user inserted into the console.
-The problem with our code is that input() returns a string, not an integer. This means our range() statement is trying to create a range of values using a string, which is not allowed. This is what our code evaluated in our program:
-for p in range(0, "2"):
-print("{} costs ${}.".format(names[p], prices[p]))
-To fix this error, we must convert “to_display” to an integer. We can do this using the int() method:
-for p in range(0, int(to_display)):
-print("{} costs ${}.".format(names[p], prices[p]))
-“to_display” is now an integer. This means we can use the value to create a range of numbers. Let’s run our code:
-Enter the number of pizzas you would like to display: 2
-Pepperoni costs $9.0.
-Margherita costs $8.4.
-Our code successfully prints out the information that we requested. We can see the names of the two most popular pizzas and the prices of those pizzas.
-» MORE:  Python Flatten List: A How-To GuideConclusion
-The “TypeError: ‘str’ object cannot be interpreted as an integer” error is raised when you pass a string as an argument into a range() statement. To fix this error, make sure all the values you use in a range() statement are integers.
-Now you have the knowledge you need to fix this error like a professional!
-About us: Career Karma is a platform designed to help job seekers find, research, and connect with job training programs to advance their careers. Learn about the CK publication.
-What's Next?
-Want to take action?
-Get matched with top bootcamps
-Want to dive deeper?
-Ask a question to our community
-Want to explore tech careers?
-Take our careers quiz
-James Gallagher
-James Gallagher is a self-taught programmer and the technical content manager at Career Karma. He has experience in range of programming languages and extensive expertise in Python, HTML, CSS, and JavaScript. James has written hundreds of programming tutorials, and he frequently contributes to publications like Codecademy, Treehouse, Repl.it, Afrotech, and others. He also serves as a researcher at Career Karma, publishing comprehensive reports on the bootcamp market and income share agreements.
-Read more by James Gallagher
-Share This
-Previous ArticlePython TypeError: object of type ‘int’ has no len() Solution
-Next ArticlePython TypeError: slice indices must be integers or None or have an __index__ method Solution
-Sep 10, 2020
-Comments (0)
-Leave a Reply Cancel replyYour email address will not be published. Required fields are marked *Your CommentName *
-Email *
-Website
-Get offers from top bootcampsTake the stress out of picking a bootcamp
-See matches nowTop Community PostsHow long does it take to become a full stack web developer?Marcus Hayes in Full-stack DevelopmentWhat are the laptop requirements for programming?Danny Fuentes in Beginners$2 million in COVID19 ScholarshipsTimur Meyster in Applying to BootcampsPopular ArticlesBest Online BootcampsBest Tech Jobs 2021What is Coding Used For?How Much Do Coders Make?Best Free BootcampsSee all articlesCareer GuidesWeb DevelopmentSoftware EngineeringData ScienceWeb DesignCyber SecuritySee all guidesFree prep coursesFlatiron School Prep80+ hours
-Easy80+ hours of HTML, CSS & JavaScriptKenzie School Prep80+ hours
-Easy20+ hours of HTML & CSSGeneral Assembly Prep50+ hours
-EasyLearn web development basics in HTML, CSS, JavaScript by building projectssee all prep courses
-Get matches
-from top bootcamps
-Select your interest:
-Interest
-Software Engineering
-Design
-Data Science
-Data Analytics
-Cybersecurity Analytics
-Technology Sales
-Select your preferred pace:
-Begin typing a name to filter
-Full-time
-Part-time
-Self-paced
-Begin typing a name to filter
-Full-time
-Part-time
-Self-paced
-See Matches
-Find the Best Online Course for YouGet Matched
-Related Articles
-Python Tutorials
-Python AttributeError: ‘numpy.ndarray’ object has no attribute ‘append’ Solution
-Python Tutorials
-Python FileNotFoundError: [Errno 2] No such file or directory Solution
-Python Tutorials
-Python Index: A Step-By-Step Guide
-Python Tutorials
-Python ValueError: math domain error Solution
-Home
-About
-Careers
-Mission
-Blog
-Press
-Terms & conditions
-© 2021 Career Karma
-Rankings
-Best Coding Bootcamps
-Best Online Bootcamps
-Best Web Design Bootcamps
-Best Data Science Bootcamps
-Best Data Analytics Bootcamps
-Best Cyber Security Bootcamps
-Best ISA Bootcamps 2020
-See all
-Comparisons
-Flatiron School vs Fullstack Academy
-Hack Reactor vs App Academy
-Fullstack Academy vs Hack Reactor
-Thinkful vs General Assembly
-Flatiron School vs Thinkful
-General Assembly vs Flatiron School
-App Academy vs Lambda School
-General Assembly vs Hack Reactor
-Springboard vs Thinkful
-See all
-Locations
-San Francisco Bootcamps
-New York Bootcamps
-Los Angeles Bootcamps
-Chicago Bootcamps
-Seattle Bootcamps
-Atlanta Bootcamps
-Austin Bootcamps
-See all
-Schools
-Kenzie Academy
-Flatiron School
-Thinkful
-General Assembly
-Springboard
-Galvanize
-Hack Reactor
-App Academy
-Bloc
-See all
-Careers
-Software Engineering
-UX/UI Design
-Data Science
-Web Development
-Mobile Development
-Cybersecurity
-Product Management
-See all
-Subjects
-JavaScript
-Python
-Ruby
-Java
-Swift
-Android
-.Net
-React
-Angular
-See all
-Tell us about you and we will match you with top rated bootcamps with flexible payment options, income sharing (ISAs), or money-back guarantees.
-Select your interest:
-Software Engineering
-Design
-Data Science
-Data Analytics
-Cybersecurity Analytics
-Technology Sales
-First Name
-Last Name
-Email
-Phone Number
-GET MATCHED
-Find the right bootcamp for you
-By continuing you indicate that you have read and agree to
-Career Karma Terms of Service and Privacy Policy
-X
-X
-Jump start your tech career
-Learn the most in-demand skills
-Get started now
-Lost Password Back ⟶
-Login
-Register
-Get new password
-Lost Password?
-Login
-Registration is disabled.
+What is Portable Python? How do I use it?
+A portable application is a software title that you can start using after downloading without going through an installation process. This means you can use the software on a computer where you don't have an administrator's right (such as Pitt's computer lab machines). Also, you can take it with you by storing on a USB flash disk and use it on any machine.
+Portable Python is compatible with any PC. You can download it here: http://portablepython.com/wiki/Download/.
+Accessing command history: How do I quickly bring up a previously entered command?
+IDLE's default key bindings for command history are Ctrl-p (Atl-p in Windows) for a previously entered command and Ctrl-n (Alt-p in Windows) for the next command in the command history. You might find that these keys are not exactly handy -- see the next FAQ for how to assign different keyboard shortcuts.
+I dislike using "Ctrl-p/n" (or "Alt-p/n") keys for command history. Can I use ⇧ UpArrow and ⇩ DownArrow instead like in most other shell environments?
+Frankly, Ctrl-p/n and Alt-n/p are a pain to use. But you can customize keyboard shortcuts in IDLE -- follow the steps below to assign UpArrow and DownArrow to "previous command" and "next command" instead:
+Open up IDLE, from the menu go Options --> Configure IDLE. Click Keys tab.
+Scroll down and click on the line starting with "history-next". Click button "Get New Keys for Selection".
+Scroll down to find "Down Arrow" and click on it. The new key is now set to "<Key-Down>". Press OK. [screenshot]
+You are prompted to name your custom key scheme. Give any name.
+Now repeat above process for "history-previous". But this time select "Up Arrow". [screenshot]
+How do I save my IDLE session into a file?
+From the menu, choose File -> Save As, and then give the file name. Make sure to use the .txt extension and not .py: a saved IDLE session should be a text file and not a Python script file.
+Where is my Python installed?
+Windows standard installation: The default location is C:\Python27.
+OS-X: /Library/Frameworks/Python.framework/Versions/2.7
+Portable Python: It's the Portable Python 2.7.5.1 directory, where ever you put it. If it's on your USB thumb drive, it is likely D:\Portable Python 2.7.5.1 or E:\Portable Python 2.7.5.1.
+(Mac) IDLE prints a warning message about the Tcl/Tk version. How can I fix this?
+If you are getting a warning message like this, then your Python IDLE is using an outdated version of Tcl/Tk. You are probably finding that your Python IDLE crashes often. To fix this, install ActiveTcl. For OS X 10.6 and higher, you should install ActiveTcl version 8.5.15.0. (Do NOT install version 8.6.X.X!) See this page for details.
+(Win) IDLE "starts in" C:\Python27 by default and saves all my scripts there. How do I change this behavior?
+It's terribly inconvenient having Python automatically save all your Python scripts in C:\Python27. Luckily, you can get Python IDLE to start in your directory of choice. First, create a shortcut to the Python IDLE program on your desktop. Right click and select "Properties". This window pops up. In it, you will see that the default "Start in" directory is set to "C:\Python27\". Change this to your script directory, say "C:\Users\narae\Documents\scripts\", and hit OK. After that, double-clicking the shortcut icon and your Python will start in the directory you designated, and that will also be the default directory where Python saves and looks for script files.
+(Win) My file names show up without the extensions (.txt, .py, .pdf, etc.). How do I make them visible?
+Unless you changed the default setting, your system will display file names without the proper extention, e.g., you see "pyscript" instead of "pyscript.py". This leads to a lot of confusion while programming. Follow "option one" shown on this page to make file extensions visible.
+I am trying out these commands that I found on a Python tutorial site, but I keep getting an error. What is wrong?
+It is likely that your Python tutorial site is based on a newer version of Python: Python 3. Many changes were introduced in Python 3.X.X, most notable of which is the print command. While Python 3 is gaining in adoption, a lot of modules and applications have not yet fully migrated to this platform, including NLTK, which is the reason why we are using Python 2.7 in this class.
+How do I refer to a file in Python?
+OS-X/Linux file paths look like this: /Users/narae/Desktop/foo.txt.
+They start from the root "/", and slashes are used to separate directories.
+Windows file paths look like this: C:\Users\narae\Desktop\foo.txt.
+They start with the disk label "C:", and backslashes are used to separate directories. In Python, Windows files can be referred to in multiple ways:
+Python simply lets you use OS-X/Linux style slashes "/" even in Windows. Therefore, you can refer to the file as 'C:/Users/narae/Desktop/foo.txt'.
+If using backslash, because it is a special character in Python, you must remember to escape every instance: 'C:\\Users\\narae\\Desktop\\foo.txt'
+Alternatively, you can prefix the entire file name string with the rawstring marker "r": r'C:\Users\narae\Desktop\foo.txt'. That way, everything in the string is interpreted as a literal character, and you don't have to escape every backslash.
+I have this file sitting in my Desktop/My Documents ... area. How do I find its full file path and name?
+Windows:
+First, make sure your file extensions (.txt, .py, etc.) are visible in your Windows OS. If they are not, unhide them by following this FAQ.
+Right-click on the file icon to show the "Properties" tab
+In this example, the file name is "out.txt", and the location "C:\Users\narae\Documents\scripts"
+The full Python file path is therefore 'C:/Users/narae/Documents/scripts/out.txt'.
+Mac:
+Right click on the file and select "Get Info". Alternatively, "Command + i" summons up the Get Info panel.
+In this example, the file name is "mary-short.txt" and the location "/Users/student/Desktop"
+The full Python file path is therefore '/Users/student/Desktop/mary-short.txt'.
+I am having trouble reading/writing/loading a particular file. What's wrong?
+If you are getting a "No such file or directory" error (example here), that is because the file name your specified is incorrect/insufficient and as a result Python failed to locate your file. The most straightforward solution is to refer to the file by its full path and file name. See the two FAQs above for how to do that.
+OK, so using the full file path and name always works. But I've seen files being referred to by the file name only. How is it done?
+The concept of Current Working Directory (CWD) is crucial here. Basically, referring to a file without specifying its path ('myfile.txt') works only when the file is in your CWD. To complicate the matter, your Python has different initial CWD settings depending on whether you are working with a Python script or in a shell environment.
+In a Python script:
+When you execute your script, your CWD is set to the directory where your script is. Therefore, you can refer to a file in a script by its name only provided that the file and the script are in the same directory.
+In Python shell:
+In your shell, the initial CWD setting varies by system. You have two options:
+Change your CWD to the file's directory, or
+Copy or move your file to your CWD. (Not recommended, since your shell's CWD may change.)
+See this screen shot and and the next FAQ for how to work with your CWD setting in Python shell. A final note: if you are working in IDLE, bear in mind that executing a script changes your IDLE shell's CWD to your script's directory.
+How do I work with CWD (current working directory) in Python shell?
+Python module os provides utilities for that. Below illustrates how to find your CWD (.getcwd()) and change it into a different directory (.chdir()). Below is an example for the windows OS:
+>>> import os
+>>> os.getcwd()
+'D:\\Lab'
+>>> os.chdir(r'scripts\gutenberg') # relative path: scripts dir is under Lab
+>>> os.getcwd()
+'D:\\Lab\\scripts\\gutenberg'
+>>> os.chdir(r'D:\Corpora\corpus_samples') # absolute path
+>>> os.getcwd()
+'D:\\Corpora\\corpus_samples'
+On a Mac, your file path should look like '/Users/narae/Desktop/'.
+(Win) My text file shows up with no line break. What gives?
+First, you must understand that the end-of-line (EOL, also called "line break") is encoded differently depending on the OS:
+Unix, Linux, Mac OS X: \n (called "line feed")
+Old Mac OS up to 9: \r ("carriage return")
+Windows: \r\n
+Because of this discrepancy, if you open a unix-style text file in Windows with Notepad, you will see the text in one line. But you can use other text viewers such as Wordpad, Notepad++, and even Chrome and Firefox browsers, and they will display the unix-style line breaks just fine.
+Python, on any OS, represents the end-of-line as \n, but it has what's called universal newline support. Details:
+Regardless of your OS, within Python all newline types are converted to \n.
+When you write out to a file, Python will replace \n with the OS-appropriate newline marker.
+If for some reason your Python does not convert the newline marker to \n, you can use the 'rU' switch instead of 'r' when opening a file for reading.
+For more information, read https://docs.python.org/2/library/functions.html#open.
+NLTK
+How do I install NLTK 3.0 (Mac/Linux)?
+Follow the five steps on the "Installing NLTK" page.
+How do I install NLTK 3.0 (Portable Python on Windows)?
+Due to our portable setup, we have to install NLTK from the source rather than through the usual windows binary intallation process. This involves executing certain python scripts.
+Open up a windows command prompt (cmd): click the Start button and enter cmd.
+We first move into our python script directory. Type up below, followed by ENTER. Substitute the directory with your Portable Python directory location. Pay attention to the spaces and the quotation markers (").
+cd /D "C:\Portable Python 2.7.3.1\App\Scripts"
+Next we install pip. Type up below, followed by ENTER:
+easy_install pip
+Finally, install NLTK and PyYAML through pip, by executing:
+pip install pyyaml nltk
+Numpy and Matplotlib (python modules) are already included in Portable Python 2.7.3.1 and later.
+How do I install NLTK 3.0 (Windows)?
+Fans of MS: unfortunately, things are a bit complicated. First, you need to check if your Python is 32-bit or 64-bit. In order to do that, open up your Python IDLE, and check the message on top. If the first line says "Python 2.7.8 ... 32 bit (Intel) ...", then you have a 32-bit Python. If it says "... 64 bit ...", then you have the 64-bit version.
+If your Python is a 32-bit version, you are good. All you have to do is download and install NLTK.
+If your Python is a 64-bit version, you have two options.
+Option 1: Uninstall your Python and install the 32-bit version instead.
+If you have been saving your own scripts in the "C:\Python27" directory, move them out.
+Uninstall Python and delete the "C:\Python27" directory.
+Download and install the 32-bit version of Python. It is the top choice labeled "Windows x86 MSI Installer (2.7.8). Avoid the one labeled X86-64.
+Finally, download and install NLTK. (Installer will complain about being unable to create some key bindings, but you can ignore it.)
+Option 2. Keep your 64-bit Python, but installing NLTK will have to be done from the source. To do that, we install two module installer scripts: easy_install and pip.
+Go to this page. Download ez_setup.py, which is linked within the text on the top. Save it in C:\Python27 or where ever your Python 27 directory is.
+Open up a windows command prompt (cmd): click the Start button and enter cmd.
+We first move into the directory where we saved the script. Type up below, followed by ENTER. Substitute the directory with your Python 27 directory location. Pay attention to the spaces and the quotation markers (").
+cd "C:\Python27"
+Execute the ez_setup.py script: type ez_setup.py and then press enter. This installs easy_install.
+Next, we move into the easy_install script directory. Type cd Scripts and press ENTER.
+Now we install pip. Type up below, followed by ENTER:
+easy_install pip
+Finally, install NLTK and PyYAML through pip, by executing:
+pip install pyyaml nltk
+While installing NLTK 3.0, I am getting "No Python installation found in the registry" error message.
+Does your error message look like this? And your Python IDLE has this message on top? Then, you have a 64-bit version of Python, and that's the issue. See the Windows installation FAQ above for a workaround.
+How do I download corpora and other data for NLTK?
+You do that using the nltk.download() utility. Follow the steps in this NLTK book section. You should download "Everything used in the NLTK book". As for the "Download Directory", the default location will be some place deeply buried in your directory hierarchy, so I recommend choosing a more accessible directory, such as "C:\nltk_data" or "C:\Users\narae\Documents\nltk_data". Bear in mind that once you download the data, moving the directory will likely cause NLTK to lose track of it.
+Where do I begin with NLTK?
+First of all, import the NLTK module: this should be the very first thing you do at every session. And then confirm that NLTK can locate data by looking up the Brown Corpus.
+>>> import nltk
+>>> nltk.corpus.brown.words()
+['The', 'Fulton', 'County', 'Grand', 'Jury', 'said', ...]
+>>>
+If the system returns an error message, either you haven't downloaded the Brown Corpus yet or NLTK cannot locate it (see the previous and next FAQs).
+Apparently, we also need to install the matplotlib package to use certain NLTK functionalities. How do I do that?
+Download and install matplotlib. Mac users can do it from the command-line: sudo pip install matplotlib. Windows users: download the appropriate version from here and then install. If your Python is 32-bit, the file should be named "matplotlib-1.4.0.win32-py2.7.exe". If 64-bit, it should have "-amd64-" in the file name.
+After it is installed, try importing the package by typing "import matplotlib" in your Python shell. If an error message is displayed, which is likely on Windows, you may have to manually download and install these additional packages: numpy, six, dateutil, pyparsing, and pytz. They can be installed using pip:
+pip install six
+pip install python-dateutil
+pip install pyparsing
+pip install pytz
+pip install -U numpy
+(See "How do I install NLTK (Windows)?" FAQ above for how to install and use pip.) In Windows, pip installation may fail with NumPy. If that happens, see this FAQ for how to install from an .exe installer file.
+I am trying to use the .dispersion_plot() function of NLTK as shown in the book, but it's giving me an error message. How can I fix it?
+First off, you have to download and install matplotlib, which the function is based on. But that's not all -- the package has many dependencies, which means you may have to additionally install: numpy, six, dateutil, pyparsing, and pytz. See the FAQ above for instructions.
+(Windows) I am getting "No module named numpy" error when importing NLTK. How do I fix this?
+You have to download and install numpy. Go to this page, and download the correct installer ("exe") version of numpy. There are three files starting with "numpy-1.9.0-win-32...". Hover over the links and choose the one with "python2.7" in the name. Once downloaded, double-click the .exe file to install. (NOTE: Do not download the .zip file. It contains a source file archive, which you have to compile.)
+Where is NLTK installed?
+You can look up your NLTK's installation path by issuing the following command (note double underscores "__"):
+>>> import nltk
+>>> nltk.__path__
+['C:\\Python27\\lib\\site-packages\\nltk']
+The following are the OS-default installation paths.
+Windows standard installation: C:\Python27\Lib\site-packages\nltk
+OS-X: /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/nltk
+Portable Python installation: Portable Python 2.7.3.1\App\Lib\site-packages\nltk
+Where is my NLTK data located on my computer?
+It depends on where you set the destination folder when you download the data using nltk.download(). On Windows 7, the default destination is either C:\Users\narae\nltk_data or C:\Users\narae\AppData\Roaming\nltk_data, but you can specify a different directory before downloading. If you are using Portable Python, choose a directory on your USB thumb drive as the download location.
+Internally, NLTK keeps a list of places where it looks for its data: nltk.data.path.
+>>> nltk.data.path
+['C:\\nltk_data', 'D:\\nltk_data', 'E:\\nltk_data', 'D:\\Lab\\nltk_data',
+'D:\\Lab\\Portable Python 2.7.3.1\\App\\nltk_data', 'D:\\Lab\\Portable Python
+2.7.3.1\\App\\lib\\nltk_data', 'C:\\Users\\narae\\AppData\\Roaming\\nltk_data']
+If your NLTK data directory is not listed in the result, NLTK won't be able to find your data. You have two options: (1) move your NLTK data directory to one of the locations already in the data path, or (2) edit NLTK's data.py file to add your data's location to NLTK's data directory path (see this FAQ).
+The system gives me an error when I try to access Brown/Gutenberg/Inaugural/... corpus. How to fix?
+If you have already downloaded NLTK data, then NLTK is having trouble locating your nltk_data directory. See this FAQ above and then change NLTK's data path, as shown in this FAQ. If you are working with Portable Python, the error might be related to your thumb drive's drive letter.
+How do I add my NLTK data's location to NLTK's data directory path? (NLTK 3)
+You will need to edit NLTK's data.py file. Procedure:
+First, find the data.py file and make a backup copy. It is found under your NLTK directory.
+Open the file in a text editor. IDLE editor also works.
+Then find the lines below (NOTE: example is for Windows OS). Use Ctrl+F to search.
+if sys.platform.startswith('win'):
+# Common locations on Windows:
+path += [
+str(r'C:\nltk_data'), str(r'D:\nltk_data'), str(r'E:\nltk_data'),
+Now edit the second line to append your NLTK data's directory. In this example, it is the highlighted portion. Don't forget to add the comma ',' at the end:
+str(r'C:\nltk_data'), str(r'D:\nltk_data'), str(r'E:\nltk_data'),
+str(r'F:\Lab\nltk_data'),
+Verify your setting change is successful. First, check the nltk.data.path variable (see this FAQ) and make sure your new directory shows up in the list.
+Now, try loading up Brown Corpus again. Open up IDLE and type:
+>>> import nltk
+>>> nltk.corpus.brown.words()
+['The', 'Fulton', 'County', 'Grand', 'Jury', 'said', ...]
+>>>
+How do I add my NLTK data's location to NLTK's data directory path? (NLTK 2.0.4)
+You will need to edit NLTK's data.py file. Procedure:
+First, find the data.py file and make a backup copy. It is found under your NLTK directory.
+Open the file in a text editor. IDLE editor also works.
+Then find the lines below (NOTE: example is for Windows OS). Use Ctrl+F to search.
+if sys.platform.startswith('win'): path += [
+r'C:\nltk_data', r'D:\nltk_data', r'E:\nltk_data',
+Now edit the second line to append your NLTK data's directory. In this example, it is the highlighted portion. Don't forget to add the comma ',' at the end:
+r'C:\nltk_data', r'D:\nltk_data', r'E:\nltk_data', r'F:\Lab\nltk_data',
+Verify your setting change is successful. First, check the nltk.data.path variable (see this FAQ) and make sure your new directory shows up in the list.
+Now, try loading up Brown Corpus again. Open up IDLE and type:
+>>> import nltk
+>>> nltk.corpus.brown.words()
+['The', 'Fulton', 'County', 'Grand', 'Jury', 'said', ...]
+>>>
+How do I update an NLTK module?
+The process is as simple as replacing the original .py module file with a new one, restarting Python and importing NLTK. You might have to, however, get around some file permisison issues.
+If you are a PC user, the above process is straightforward. You might need an administrator privilege, unless you are working with Portable Python.
+If you are a Mac user, an attempt to update files in the normal Finder view will run into a permission problem. To get around this, follow the instructions below.
+Login from an administrator account.
+Open your Terminal. It is under the "Utilities" directory in Finder.
+Move into the directory where the Python module is located using the cd ('change directory') command:
+cd /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/nltk/classify
+(NOTE: the entire thing is a single command and not two!)
+Now, mv ('move') is the command to use for renaming the original Python file, but you will need to do so as a "super user". The sudo command ('super user do') lets you execute a command as a super user. Try:
+sudo mv naivebayes.py naivebayes.py.ORIGINAL
+It will prompt for a password. Supply the administrator password.
+Next, copy or move the new Python module file (say, naivebayes.py) into the module directory. You can now do this in a normal Finder window: open Finder, navigate to the directory, and then drag-and-drop the file. System will prompt for an admin password.
+Relaunch your Python, and import NLTK. Your module will be rebuilt upon importing NLTK.
+How do I install the previous version of NLTK: v. 2.0.4 (Windows)?
+So, we've found that running NLTK 3.0 on Python 2.7 isn't exactly smooth: some functions do not work, and the textbook examples sometimes produce different results. You can install NLTK 2.0.4 by following the steps below.
+Uninstall NLTK 3: Open the directory C:/Python27/Lib/site-packages, and delete the two NLTK directories: nltk, and the one named nltk-3.0...egg-info.
+Install PyYAML: Download the appropriate .exe file from here and install it. Make sure to select the one marked "(for Python 2.7)".
+Install NLTK 2.0.4: Download the .exe file from here and install it. You might get error messages, which you can ignore.
+Verify installation: Open up Python and type in the following. (Note that there are *two* underscores in "__".) If the two commands work, you have successfully installed NLTK 2.0.4.
+>>> import nltk
+>>> nltk.__version__
+'2.0.4'
+If you get "No module named numpy" error, which is likely in Windows, you have to download and install numpy. See this FAQ.
+Set up NLTK Data: Try loading the corpus data, as shown below.
+>>> import nltk
+>>> nltk.courpus.brown.words()
+['The', 'Fulton', 'County', 'Grand', 'Jury', 'said', ...]
+>>>
+If it fails, you have two options: (1) Instead of re-downloading your data, update your NLTK's setting so it can find the data you already downloaded. See this FAQ. (2) Alternatively, you can re-doanload the whole thing.
+How do I install the previous version of NLTK: v. 2.0.4 (Mac/Linux)?
+So, we've found that running NLTK 3.0 on Python 2.7 isn't exactly smooth: some functions do not work, and the textbook examples sometimes produce different results. You can install NLTK 2.0.4 by following these steps in your terminal.
+Uninstall your current version of NLTK: Open up a terminal windows and type sudo pip uninstall nltk. Supply the administrative password, and then type "y" when prompted if you want to uninstall.
+Install NLTK 2.0.4: Type in the following. Note the double equal sign "==".
+sudo pip install -Iv nltk==2.0.4
+Verify installation: Open up Python and type in the following. Note that there are *two* underscores in "__". If the two commands work, you have successfully installed NLTK 2.0.4.
+>>> import nltk
+>>> nltk.__version__
+'2.0.4'
+Set up NLTK Data: Try loading the corpus data, as shown below.
+>>> import nltk
+>>> nltk.courpus.brown.words()
+['The', 'Fulton', 'County', 'Grand', 'Jury', 'said', ...]
+>>>
+If it fails, you have two options: (1) Instead of re-downloading your data, update your NLTK's setting so it can find the data you already downloaded. See this FAQ. (2) Alternatively, you can re-doanload the whole thing.
+I have NLTK 2.0.2. Is that a problem?
+Late October, I had everyone downgrade from NLTK 3.0 to NLTK 2.0.2. Turns out NLTK 2.0.2 is still buggy: notably, Text.generate() wouldn't work. I have updated the re-installation instructions to NLTK 2.0.4. If you are feeling adventurous, you might want to update your NLTK to v. 2.0.4. If you are a Windows user, here's an easy way to do it.
+Download the nltk-2.0.4.zip file from this page. Make sure to get the *.zip* version.
+Rename your C:\Python27\Lib\site-packages\nltk directory to something else: nltk-2.0.2 maybe.
+Inside the downloaded zip file, you will see a folder named nltk. Copy the entire folder over to where your original nltk directory was.
+Open up Python and import nltk. Try nltk.__version__. If you see 2.0.4, you are golden.
+Make sure your nltk can still find the nltk data.
+The whole thing did not work? Well then, remove your new nltk directory and reinstate your old nltk directory by renaming it back. No harm done!
+If you are a Mac user, follow the steps in FAQ above.
+General Computing Tips
+How do I take a screen shot?
+Windows:
+Method 1: Alt-PrtScn (copies the active screen onto clipboard) and then Ctrl+V (pastes onto, say, a Word Document).
+Method 2: In Windows 7, you can use "Snipping Tool" under "Accessories" folder. It gives an option to capture a particular portion of a window and also to save image as a file.
+Method 3: Use an excellent free application called Greenshot. It lets you annotate your image.
+Mac OS-X:
+Method 1: To capture a portion of the desktop, press Command-Shift-4. A cross-hair cursor will appear and you can click and drag to select the area you wish to capture. When you release the mouse button, the screen shot will be automatically saved as a PNG file on your desktop. (The file is saved as PDF in Mac OS 10.3 and earlier.) [source]
+Method 2: To capture a specific application window, press Command-Shift-4, then press the Spacebar. The cursor will change to a camera, and you can move it around the screen. As you move the cursor over an application window, the window will be highlighted. The entire window does not need to be visible for you to capture it. When you have the cursor over a window you want to capture, just click the mouse button and the screen shot will be saved as a PNG file on your desktop. (The file is saved as PDF in Mac OS 10.3 and earlier.) [source]
+Method 3: Add Control to the two shortcuts above to place the screen shot on the clipboard instead of saving it to the desktop. [source]
+What text editing programs should I use?
+For Windows, Notepad++ and JEdit are highly recommended. For Mac, try TextWrangler or JEdit.

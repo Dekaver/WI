@@ -1,4 +1,4 @@
-Exception in thread "main" java.lang.RuntimeException: Uncompilable source code - Stack Overflow
+composer php - Did they remove the make:auth command in Laravel 6.0? - Stack Overflow
 Stack Overflow
 About
 Products
@@ -54,203 +54,158 @@ Teams
 Q&A for work
 Connect and share knowledge within a single location that is structured and easy to search.
 Learn more
-Exception in thread “main” java.lang.RuntimeException: Uncompilable source code
+Did they remove the make:auth command in Laravel 6.0? [duplicate]
 Ask Question
 Asked
-8 years, 5 months ago
+1 year, 9 months ago
 Active
-3 years, 2 months ago
+1 year, 9 months ago
 Viewed
-21k times
+6k times
 1
-How can I call a non static method in main class.I am getting the folowing error in my sample console application
-Exception in thread "main" java.lang.RuntimeException: Uncompilable source code - non-static method doSomthing() cannot be referenced from a static context
-at sample.Main.main(Main.java:20)
-and the code is,
-public class Main
-{
-/**
-* @param args the command line arguments
-*/
-public static void main(String[] args) {
-doSomthing();
-System.out.print("From Main");
-}
-protected void doSomthing()
-{
-System.out.print("From Main doSomthing");
-}
-}
-java
+This question already has answers here:
+Artisan command “make:auth” is not defined in Laravel 6
+(9 answers)
+Closed 1 year ago.
+I wanted to create a new project so I can fiddle with the authentication a bit, see what I could do. However, when I tried to run the make:auth command, I got an error.
+I decided to look in the composer.json file to see if I maybe had an outdated Composer version, but I saw the updated laravel/framework.
+I can't find anything about the make:auth command being removed on so I thought I'd come here and ask about it.
+Command "make:auth" is not defined.
+Did you mean one of these?
+make:channel
+make:command
+make:controller
+make:event
+make:exception
+make:factory
+make:job
+make:listener
+make:mail
+make:middleware
+make:migration
+make:model
+make:notification
+make:observer
+make:policy
+make:provider
+make:request
+make:resource
+make:rule
+make:seeder
+make:test
+laravel composer-php laravel-6
 Share
-Improve this question
 Follow
-asked Jan 5 '13 at 16:28
-user1869132user1869132
-6511 gold badge11 silver badge99 bronze badges
-1
-1
-Why would you want to call a non static method from a static one?
-– MrSmith42
-Jan 5 '13 at 16:32
+edited Sep 5 '19 at 2:34
+Karl Hill
+7,04033 gold badges4040 silver badges6464 bronze badges
+asked Sep 4 '19 at 7:42
+bartske2002bartske2002
+3711 silver badge66 bronze badges
+2
+Reading the documentation is the greatest help :)
+– nakov
+Sep 4 '19 at 7:45
+You can install the laravel/ui package via composer: composer require laravel/ui
+The ui:auth Command php artisan ui:auth
+– Pervez
+Nov 1 '19 at 9:59
 Add a comment
 |
-4 Answers
-4
+2 Answers
+2
 Active
 Oldest
 Votes
-5
-problem is you have used non static method in static method which is not allowed in java , change doSomthing() as static method
-protected static void doSomthing()
-{
-System.out.print("From Main doSomthing");
-}
-Or Create an object of Main class and call it
-public static void main(String[] args) {
-Main myMain = new Main();
-myMain.doSomthing();
-System.out.print("From Main");
-}
+8
+First Install the laravel/ui Composer package with the following command:
+composer require laravel/ui
+and then run the following command in a new
+Laravel application:
+php artisan ui vue --auth
+Laravel 6 has moved the Auth Scaffolding into a seperate package.
+Source : https://laravel.com/docs/6.0/authentication
 Share
-Improve this answer
 Follow
-edited Mar 25 '18 at 10:19
-answered Jan 5 '13 at 16:31
-someonesomeone
-6,41777 gold badges3333 silver badges5656 bronze badges
-2
-thanks.so in a console application all methods should be in static. Is it?
-– user1869132
-Jan 5 '13 at 16:39
-you can create a object of that class and call your methods not always it should be static.
-– someone
-Jan 5 '13 at 16:45
+edited Sep 6 '19 at 11:17
+answered Sep 4 '19 at 7:50
+ShamsheerShamsheer
+56622 silver badges77 bronze badges
+1
+php artisan ui:auth
+– Pervez
+Nov 1 '19 at 10:00
 Add a comment
 |
 2
-You could create an instance first from your static main method:
-new Main().doSomthing();
+Yes in Laravel 6 auth command has been removed and authentication scaffolding has been moved as separate package named laravel/ui
+Here you can read about Laravel 6 and laravel/ui and also here you can read about laravel/ui in laravel documentation
+Thanks
 Share
-Improve this answer
 Follow
-answered Jan 5 '13 at 16:31
-ReimeusReimeus
-153k1212 gold badges196196 silver badges261261 bronze badges
-0
+edited Sep 4 '19 at 8:19
+answered Sep 4 '19 at 7:48
+Salman ZafarSalman Zafar
+3,08944 gold badges1616 silver badges3636 bronze badges
 Add a comment
 |
-2
-public class Main
-{
-/**
-* @param args the command line arguments
-*/
-public static void main(String[] args) {
-Main main = new Main();
-main.doSomthing();
-System.out.print("From Main");
-}
-protected void doSomthing()
-{
-System.out.print("From Main doSomthing");
-}
-}
-Share
-Improve this answer
-Follow
-answered Jan 5 '13 at 16:34
-ZombieSpyZombieSpy
-1,3031010 silver badges2222 bronze badges
-0
-Add a comment
-|
-2
-You can't call a non static method in main class, unless you instantiate one [Main class].
-Share
-Improve this answer
-Follow
-edited Jan 5 '13 at 16:41
-answered Jan 5 '13 at 16:33
-Helio SantosHelio Santos
-6,03433 gold badges2323 silver badges3030 bronze badges
-2
-or you can change method as static
-– someone
-Jan 5 '13 at 16:38
-author asked "call a non static method"
-– Helio Santos
-Jan 5 '13 at 16:40
-Add a comment
-|
-Your Answer
-Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
-Draft saved
-Draft discarded
-Sign up or log in
-Sign up using Google
-Sign up using Facebook
-Sign up using Email and Password
-Submit
-Post as a guest
-Name
-Email
-Required, but never shown
-Post as a guest
-Name
-Email
-Required, but never shown
-Post Your Answer
-Discard
-By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
-Not the answer you're looking for? Browse other questions tagged java
+Not the answer you're looking for? Browse other questions tagged laravel composer-php laravel-6
 or ask your own question.
 The Overflow Blog
 Using low-code tools to iterate products faster
 Podcast 345: A good software tutorial explains the How. A great one explains…
 Featured on Meta
 Take the 2021 Developer Survey
+Visit chat
 Linked
-0
-I use Netbeans 8.2 and mysql query browser 1.1.20.build is successful, an error says incompatible source code
+24
+Artisan command “make:auth” is not defined in Laravel 6
 Related
+1
+Composer update “could not completely remove doctrine/dbal”, Laravel 4 broken
+496
+How to remove a package from Laravel using composer?
+1
+Where exactly does laravel require the illuminate folder?
+6
+how to prevent over writing file while 'composer update' command
+3
+Command “make:seeder” is not defined in laravel 5.0
+1
+error while trying to run artisan command with Artisan Facade
+4
+Can't require laravel/passport with composer
 0
-Java Exception in thread “main” java.lang.RuntimeException: Uncompilable source code - Erroneous tree type:
-0
-Uncompilable source code Error?
-0
-Exception in thread “main” java.lang.RuntimeException issues with public static void
+How do I connect and use bootstrap 4 in Laravel 6?
+2
+Installing Laravel with Composer create-project - how to use the newest version?
 Hot Network Questions
-Are there any rules for digging out of a grave?
-"Which dreams, indeed, are ambition" in Hamlet Act 2, Scene 2
-Why are most COB LEDs physically yellow?
-Are there any greater risks of traveling significantly faster to another planet?
 In the sentence "Ich begegnete einem alten Freund in Berlin", why the dative einem instead of the accusative einen?
-Getting “Bye Bye Big Sur” error on installing Big Sur
-Why is Ken's beer "gay"?
-IQ test question assistance
-How was it calculated that Dream cheated on his Minecraft v1.16 glitchless speedrun?
-Evaluation order of an APL n-train
-Is it illegal to implement a patented algorithm or method and take advantage from it?
-What are the main reasons for using full justification when ragged right is more readable?
-Did I design my LED circuit correctly?
-How important is "MIPS-C2® Brain Protection System" for a bicycle helmet?
-What is the point of hedging in this scenario?
-Is Huang Yanling (a Wuhan virology researcher) the world's first COVID-19 patient?
-Is maximum speed a thing?
-Why does Lex turn on the flashlight?
+What is the right tool for old, rusty, flat cross head bolts?
+are the power connections for BECs of ESCs made in parallel or series with each other?
+Can an American state ban a (minor) political party?
+Mansfield 40 toilet flush levers keep breaking
+Why are high power LEDs categorized by wattage, not voltage & amperage?
+Traditionally, is prosciutto never to be cooked?
+Telling a coworker they aren't invited into my house
+Why are SSH MITM tools able to read and modify data?
+In Bayesian statistics, data is considered nonrandom but can have a probability or be conditioned on. How?
+Why was the neutrino thought to be massless?
+Being forced to take annual leave against my wishes, what are my options
+Dsus4 In A major
 How to get real-looking rust that will be safe to the touch?
-Has physics ever given a physical significance to a mathematically abstract idea?
-output entries that have highest score
-History of /f/ sound in Russian
-Is buying lecture notes wrong?
-How to make Mathematica read in CSV as fast as Python's Pandas
+How does black proceed in the below position?
+Simplify K combinatory logic expression
+Understanding the Rune Knight Fighter's 15th level feature
+A '50s Yeti movie which has a scene with two men sitting around a fire in a cave
+What's the definition of an artifact in regards to a Sphere of Annihilation?
+Where is Lorentz contraction centered on?
+Can always @ (*) introduce randomness in FPGA?
+Did any countries other than the Asian Tigers jump to developed status during the past 75 years after WW2?
+Do the murder statistics of 5 cities bring the USA to the 3rd highest country, from 189th?
+Revisiting the unreasonable effectiveness of mathematics
 more hot questions
-Question feed
-Subscribe to RSS
-Question feed
-To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
-lang-java
+lang-php
 Stack Overflow
 Questions
 Jobs
@@ -393,7 +348,7 @@ Twitter
 LinkedIn
 Instagram
 site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.6.9.39464
+rev 2021.6.10.39470
 Stack Overflow works best with JavaScript enabled
 Your privacy
 By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.

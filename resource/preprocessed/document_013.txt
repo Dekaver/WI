@@ -1,692 +1,237 @@
-python - ValueError: invalid literal for int() with base 10: '' - Stack Overflow
-Stack Overflow
-About
-Products
-For Teams
-Stack Overflow
-Public questions & answers
-Stack Overflow for Teams
-Where developers & technologists share private knowledge with coworkers
-Jobs
-Programming & related technical career opportunities
-Talent
-Recruit tech talent & build your employer brand
-Advertising
-Reach developers & technologists worldwide
-About the company
-Loading…
-Log in
-Sign up
-current community
-Stack Overflow
-help
-chat
-Meta Stack Overflow
-your communities
-Sign up or log in to customize your list.
-more stack exchange communities
-company blog
-People who code: we want your input.
-Take the Survey
-Join Stack Overflow to learn, share knowledge, and build your career.
-Sign up with email
-Sign up
-Sign up with Google
-Sign up with GitHub
-Sign up with Facebook
-Home
-Public
-Questions
-Tags
-Users
-Find a Job
-Jobs
-Companies
-Teams
-Stack Overflow for Teams
-– Collaborate and share knowledge with a private group.
-Create a free Team
-What is Teams?
-Teams
-What’s this?
-Create free Team
-Teams
-Q&A for work
-Connect and share knowledge within a single location that is structured and easy to search.
-Learn more
-ValueError: invalid literal for int() with base 10: ''
-Ask Question
-Asked
-11 years, 6 months ago
-Active
-14 days ago
-Viewed
-2.0m times
-444
-104
-I am creating a program that reads a file and if the first line of the file is not blank, it reads the next four lines.
-Calculations are performed on those lines and then the next line is read.
-If that line is not empty it continues.
-However, I am getting this error:
-ValueError: invalid literal for int() with base 10: ''.
-It is reading the first line but can't convert it to an integer.
-What can I do to fix this problem?
-The code:
-file_to_read = raw_input("Enter file name of tests (empty string to end program):")
-try:
-infile = open(file_to_read, 'r')
-while file_to_read != " ":
-file_to_write = raw_input("Enter output file name (.csv will be appended to it):")
-file_to_write = file_to_write + ".csv"
-outfile = open(file_to_write, "w")
-readings = (infile.readline())
-print readings
-while readings != 0:
-global count
-readings = int(readings)
-minimum = (infile.readline())
-maximum = (infile.readline())
-python
-Share
-Follow
-edited Feb 10 '19 at 10:55
-kqw
-17.7k1111 gold badges6161 silver badges9393 bronze badges
-asked Dec 3 '09 at 17:34
-Sarah CoxSarah Cox
-4,45733 gold badges1414 silver badges33 bronze badges
-3
-5
-You should consider using with open(file_to_read, 'r') as infile: there.
-– Omnifarious
-Sep 14 '17 at 11:48
-1
-For anyone currently looking here. The error may be that one of the lines isn't in integer form. Eg: "yes" isn't in the correct form but "3" is. For this question the first line may not have any "1"s, "2"s, "3"s... to convert to an int.
-– Crupeng
-Jul 24 '20 at 17:58
-i got this error when input string had space between digits. this error basically means your input string is not valid for string to integer conversion. for conversion, your string should only and only contain
-following characters:
-+-.0123456789
-– M9J_cfALt
-Aug 5 '20 at 12:41
-Add a comment
-|
-18 Answers
-18
-Active
-Oldest
-Votes
-468
-Just for the record:
->>> int('55063.000000')
-Traceback (most recent call last):
-File "<stdin>", line 1, in <module>
-ValueError: invalid literal for int() with base 10: '55063.000000'
-Got me here...
->>> int(float('55063.000000'))
-55063
-Has to be used!
-Share
-Follow
-edited May 26 at 10:14
-Roshin Raphel
-2,28533 gold badges1212 silver badges3131 bronze badges
-answered Jan 20 '12 at 21:49
-FdoBadFdoBad
-4,72111 gold badge1111 silver badges22 bronze badges
-9
-117
-I'll just add, to provide more clarity for future readers, that indeed, int(float('1.0')) works when int('1.0') throws the ValueError.
-– katyhuff
-Apr 26 '13 at 16:53
-6
-This should be the accepted top answer to this question. I almost closed the page and didn't see it. Thanks!
-– iTurki
-Jun 21 '16 at 21:44
-2
-add to answer int(float('55063.000000')) as question is get int(). Than it will
-realy top answer
-– Max
-Mar 15 '17 at 8:41
-12
-This answer doesn't appear to have anything to do with the question. The question is asking how one could prevent a ValueError when you call int() on an empty string. "Use float() instead" doesn't solve that problem. You still get a ValueError.
-– Kevin
-May 1 '18 at 18:50
-1
-Why not update your answer as per @Kevin's comment above? This is a highly active question and should not be confusing to someone who directly search for the specific error in question title.
-– Austin
-Jun 29 '20 at 4:17
-|
-Show 4 more comments
-108
-The following are totally acceptable in python:
-passing a string representation of an integer into int
-passing a string representation of a float into float
-passing a string representation of an integer into float
-passing a float into int
-passing an integer into float
-But you get a ValueError if you pass a string representation of a float into int, or a string representation of anything but an integer (including empty string). If you do want to pass a string representation of a float to an int, as @katyhuff points out above, you can convert to a float first, then to an integer:
->>> int('5')
-5
->>> float('5.0')
-5.0
->>> float('5')
-5.0
->>> int(5.0)
-5
->>> float(5)
-5.0
->>> int('5.0')
-Traceback (most recent call last):
-File "<stdin>", line 1, in <module>
-ValueError: invalid literal for int() with base 10: '5.0'
->>> int(float('5.0'))
-5
-Share
-Follow
-edited May 23 '18 at 0:24
-answered Dec 12 '17 at 2:26
-PeterPeter
-1,34711 gold badge88 silver badges99 bronze badges
-3
-9
-This answer doesn't appear to have anything to do with the question. The question is asking how one could prevent a ValueError when you call int() on an empty string. "Use float() instead" doesn't solve that problem. You still get a ValueError.
-– Kevin
-May 1 '18 at 18:53
-5
-@Kevin Even though this does not directly answer the OP's question. It does however help people that have this problem and don't mind the int(float(x)). As this is the first question to pop up when searching for this error.
-– Kerwin Sneijders
-Sep 16 '19 at 17:23
-Wow that's incredibly silly. Why not make int() accept a string? That's exactly what I was expecting it to do and not typecast it into float first.....
-– BUFU
-Sep 22 '20 at 11:57
-Add a comment
-|
-62
-Pythonic way of iterating over a file and converting to int:
-for line in open(fname):
-if line.strip():
-# line contains eol character(s)
-n = int(line)
-# assuming single integer on each line
-What you're trying to do is slightly more complicated, but still not straight-forward:
-h = open(fname)
-for line in h:
-if line.strip():
-[int(next(h).strip()) for _ in range(4)]
-# list of integers
-This way it processes 5 lines at the time. Use h.next() instead of next(h) prior to Python 2.6.
-The reason you had ValueError is because int cannot convert an empty string to the integer. In this case you'd need to either check the content of the string before conversion, or except an error:
-try:
-int('')
-except ValueError:
-pass
-# or whatever
-Share
-Follow
-edited Dec 9 '09 at 10:21
-Peter Mortensen
-28.3k2121 gold badges9595 silver badges123123 bronze badges
-answered Dec 3 '09 at 17:40
-SilentGhostSilentGhost
-266k5959 gold badges291291 silver badges279279 bronze badges
-5
-4
-Your try/except doesn't distinguish between something reasonable expectable (blank/empty line) and something nasty like a non-integer.
-– John Machin
-Dec 3 '09 at 19:47
-and why would you want to distinguish those things?
-– SilentGhost
-Dec 4 '09 at 1:34
-3
-because one is reasonably expectable and ignorable but the other is indicative of an error
-– John Machin
-Dec 4 '09 at 21:07
-3
-and why is a blank line reasonably expectable and non-integer is not?
-– SilentGhost
-Dec 5 '09 at 2:18
-1
-this is good if you are sure that your list is actually a list of stringified integers. If you are not sure you can do n = int(line) if line.is_integer() else int(float(line))
-– Mike Furlender
-Jul 25 '18 at 15:30
-Add a comment
-|
-25
-I found a work around. Python will convert the number to a float. Simply calling float first then converting that to an int will work:
-output = int(float(input))
-Share
-Follow
-answered Apr 23 '19 at 3:21
-Brad123Brad123
-62477 silver badges99 bronze badges
-Add a comment
-|
-15
-The reason is that you are getting an empty string or a string as an argument into int. Check if it is empty or it contains alpha characters. If it contains characters, then simply ignore that part.
-Share
-Follow
-edited Apr 8 '20 at 7:11
-Toluwalemi
-17922 silver badges1414 bronze badges
-answered Jun 23 '17 at 13:19
-rajender kumarrajender kumar
-40433 silver badges1111 bronze badges
-2
-2
-This looks more like a comment.
-When you have sufficient reputation you will be able to comment on any post.
-– Joshua Drake
-Jun 23 '17 at 13:39
-4
-this was exactly what i needed, thank you. I don't get why people on this forum are so obsessed with micromanaging this site
-– John D
-Nov 21 '20 at 9:38
-Add a comment
-|
-11
-The reason you are getting this error is that you are trying to convert a space character to an integer, which is totally impossible and restricted.And that's why you are getting this error.
-Check your code and correct it, it will work fine
-Share
-Follow
-answered Mar 27 '18 at 6:59
-JoishJoish
-1,1041414 silver badges2020 bronze badges
-Add a comment
-|
-9
-So if you have
-floatInString = '5.0'
-You can convert it to int with floatInInt = int(float(floatInString))
-Share
-Follow
-answered Dec 13 '19 at 11:12
-HarveyHarvey
-6,99833 gold badges5252 silver badges5454 bronze badges
-Add a comment
-|
-4
-You've got a problem with this line:
-while file_to_read != " ":
-This does not find an empty string.
-It finds a string consisting of one space.
-Presumably this is not what you are looking for.
-Listen to everyone else's advice.
-This is not very idiomatic python code, and would be much clearer if you iterate over the file directly, but I think this problem is worth noting as well.
-Share
-Follow
-answered Dec 3 '09 at 17:56
-jcdyerjcdyer
-17.3k55 gold badges3939 silver badges4848 bronze badges
-Add a comment
-|
-3
-Please test this function (split()) on a simple file. I was facing the same issue and found that it was because split() was not written properly (exception handling).
-Share
-Follow
-edited Jun 5 '14 at 15:00
-elixenide
-42.4k1414 gold badges7070 silver badges9393 bronze badges
-answered Jun 5 '14 at 11:46
-user3446207user3446207
-Add a comment
-|
-2
-I recently came across a case where none of these answers worked. I encountered CSV data where there were null bytes mixed in with the data, and those null bytes did not get stripped. So, my numeric string, after stripping, consisted of bytes like this:
-\x00\x31\x00\x0d\x00
-To counter this, I did:
-countStr = fields[3].replace('\x00', '').strip()
-count = int(countStr)
-...where fields is a list of csv values resulting from splitting the line.
-Share
-Follow
-answered Jan 10 '20 at 17:42
-T. ReedT. Reed
-14977 bronze badges
-2
-You sir are a genius ! Thanks
-– alioua walid
-Jul 17 '20 at 23:50
-You are my hero! Thanks!
-– Nikki
-Feb 15 at 19:20
-Add a comment
-|
-1
-readings = (infile.readline())
-print readings
-while readings != 0:
-global count
-readings = int(readings)
-There's a problem with that code. readings is a new line read from the file - it's a string. Therefore you should not compare it to 0. Further, you can't just convert it to an integer unless you're sure it's indeed one. For example, empty lines will produce errors here (as you've surely found out).
-And why do you need the global count? That's most certainly bad design in Python.
-Share
-Follow
-answered Dec 3 '09 at 17:43
-Eli BenderskyEli Bendersky
-233k8080 gold badges334334 silver badges394394 bronze badges
-Add a comment
-|
-1
-This could also happen when you have to map space separated integers to a list but you enter the integers line by line using the .input().
-Like for example I was solving this problem on HackerRank Bon-Appetit, and the got the following error while compiling
-So instead of giving input to the program line by line try to map the space separated integers into a list using the map() method.
-Share
-Follow
-answered Nov 28 '17 at 6:32
-Amit KumarAmit Kumar
-46822 gold badges66 silver badges1515 bronze badges
-0
-Add a comment
-|
-0
-I am creating a program that reads a
-file and if the first line of the file
-is not blank, it reads the next four
-lines. Calculations are performed on
-those lines and then the next line is
-read.
-Something like this should work:
-for line in infile:
-next_lines = []
-if line.strip():
-for i in xrange(4):
-try:
-next_lines.append(infile.next())
-except StopIteration:
-break
-# Do your calculation with "4 lines" here
-Share
-Follow
-answered Dec 3 '09 at 17:49
-ImranImran
-76.2k2323 gold badges9393 silver badges124124 bronze badges
-Add a comment
-|
-0
-I was getting similar errors, turns out that the dataset had blank values which python could not convert to integer.
-Share
-Follow
-answered Mar 12 '13 at 19:38
-user2162611user2162611
-1311010 bronze badges
-2
-4
-Could you elaborate a bit more with some examples on how the OP could solve it?
-– fmendez
-Mar 12 '13 at 20:00
-blank value means empty which can be converted to string float. If you try to convert to float also it will show error
-– saravanan saminathan
-Dec 13 '19 at 7:18
-Add a comment
-|
-0
-I got into the same issue when trying to use readlines() inside for loop for same file object... My suspicion is firing readling() inside readline() for same file object caused this error.
-Best solution can be use seek(0) to reset file pointer or
-Handle condition with setting some flag then create new object for same file by checking set condition....
-Share
-Follow
-answered Dec 5 '18 at 8:43
-Abhishek JainAbhishek Jain
-2,3151717 silver badges1919 bronze badges
-Add a comment
-|
-0
-This seems like readings is sometimes an empty string and obviously an error crops up.
-You can add an extra check to your while loop before the int(readings) command like:
-while readings != 0 | readings != '':
-global count
-readings = int(readings)
-Share
-Follow
-answered Feb 12 '20 at 5:07
-Kanishk MairKanishk Mair
-30544 silver badges77 bronze badges
-Add a comment
-|
-0
-I had hard time figuring out the actual reason, it happens when we dont read properly from file.
-you need to open file and read with readlines() method as below:
-with open('/content/drive/pre-processed-users1.1.tsv') as f:
-file=f.readlines()
-It corrects the formatted output
-Share
-Follow
-answered May 15 '20 at 20:25
-Shaina RazaShaina Raza
-62155 silver badges77 bronze badges
-Add a comment
-|
-0
-your answer is throwing errors because of this line
-readings = int(readings)
-Here you are trying to convert a string into int type which is not base-10. you can convert a string into int only if it is base-10 otherwise it will throw ValueError, stating invalid literal for int() with base 10.
-Share
-Follow
-answered May 28 '20 at 21:10
-shubhamshubham
-3633 bronze badges
-Add a comment
-|
-Highly active question. Earn 10 reputation in order to answer this question. The reputation requirement helps protect this question from spam and non-answer activity.
-Not the answer you're looking for? Browse other questions tagged python
-or ask your own question.
-The Overflow Blog
-Using low-code tools to iterate products faster
-Podcast 345: A good software tutorial explains the How. A great one explains…
-Featured on Meta
-Take the 2021 Developer Survey
-Linked
-0
-string to int conversion of list in python
-0
-adding items to a set in python
-0
-invalid literal error when converting hex to int python
-0
-I got this “ValueError: invalid literal for int() with base 10” in my Django project
-0
-how to convert float and string into integer value in python3
-1
-I keep getting the following error when I try to take in user input - ValueError: invalid literal for int() with base 10: ''
-0
-When I use str(int) it shows this “ValueError: invalid literal for int() with base 10”
--1
-Trying to fix an error form a book excersise
--3
-When the input is letter instead of number, Python says (ValueError: invalid literal for int() with base 10: '')
--3
-Can't convert string to integer under while loop in python
-See more linked questions
-Related
-79
-ValueError: invalid literal for int () with base 10
-1
-invalid literal for int() with base 10: \xef\xbb\xbf10
-21
-python ValueError: invalid literal for float()
-0
-Python 3: ValueError: invalid literal for int() with base 10: 'd'
-0
-How do you prevent the "ValueError: invalid literal for int() with base 10: '', with defined functions?
-0
-ValueError: invalid literal for int() with base 10:
-Hot Network Questions
-What can US senators do against diversity trainings in the US Army?
-How to make Mathematica read in CSV as fast as Python's Pandas
-Is Huang Yanling (a Wuhan virology researcher) the world's first COVID-19 patient?
-Why am I seeing the sun slightly north instead of slightly south early in the morning in Malta?
-What would a bear species isolated on an island look like?
-Alien Instrument produces "visual music", which a Human can temporarily experience
-How do I create an insert-only user for a Postgres table with an index?
-Simplify K combinatory logic expression
-How to remove the new weather info from the taskbar?
-How was it calculated that Dream cheated on his Minecraft v1.16 glitchless speedrun?
-Is there a diff() function in Julia DataFrames like pandas?
-Why can the block production rate be as low as two per hour?
-Is there a threadlocker that requires heat to release and can withstand thousands of heat-cool cycles without needing to be reapplied or deteriorating
-Is it a coincidence that on the far side of the moon almost no seas are visible?
-What is the right tool for old, rusty, flat cross head bolts?
-Are there any rules for digging out of a grave?
-Refueling a Mars mission on the way
-Why did old IBM-PC-compatible computers only have 16 colors available?
-"Which dreams, indeed, are ambition" in Hamlet Act 2, Scene 2
-Why would they use human soldiers over undead ones?
-Is it a good idea to go to Japan without a travel guide?
-Why does Lex turn on the flashlight?
-Interviewer was two hours late
-In Bayesian statistics, data is considered nonrandom but can have a probability or be conditioned on. How?
-more hot questions
-Question feed
-Subscribe to RSS
-Question feed
-To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
-lang-py
-Stack Overflow
-Questions
-Jobs
-Developer Jobs Directory
-Salary Calculator
-Help
-Mobile
-Products
-Teams
-Talent
-Advertising
-Enterprise
-Company
-About
-Press
-Work Here
-Legal
-Privacy Policy
-Terms of Service
-Contact Us
-Cookie Settings
-Cookie Policy
-Stack Exchange Network
-Technology
-Life / Arts
-Culture / Recreation
-Science
-Other
-Stack Overflow
-Server Fault
-Super User
-Web Applications
-Ask Ubuntu
-Webmasters
-Game Development
-TeX - LaTeX
-Software Engineering
-Unix & Linux
-Ask Different (Apple)
-WordPress Development
-Geographic Information Systems
-Electrical Engineering
-Android Enthusiasts
-Information Security
-Database Administrators
-Drupal Answers
-SharePoint
-User Experience
-Mathematica
-Salesforce
-ExpressionEngine® Answers
-Stack Overflow em Português
-Blender
-Network Engineering
-Cryptography
-Code Review
-Magento
-Software Recommendations
-Signal Processing
-Emacs
-Raspberry Pi
-Stack Overflow на русском
-Code Golf
-Stack Overflow en español
-Ethereum
-Data Science
-Arduino
-Bitcoin
-Software Quality Assurance & Testing
-Sound Design
-Windows Phone
-more (29)
-Photography
-Science Fiction & Fantasy
-Graphic Design
-Movies & TV
-Music: Practice & Theory
-Worldbuilding
-Video Production
-Seasoned Advice (cooking)
-Home Improvement
-Personal Finance & Money
-Academia
-Law
-Physical Fitness
-Gardening & Landscaping
-Parenting
-more (10)
-English Language & Usage
-Skeptics
-Mi Yodeya (Judaism)
-Travel
-Christianity
-English Language Learners
-Japanese Language
-Chinese Language
-French Language
-German Language
-Biblical Hermeneutics
-History
-Spanish Language
-Islam
-Русский язык
-Russian Language
-Arqade (gaming)
-Bicycles
-Role-playing Games
-Anime & Manga
-Puzzling
-Motor Vehicle Maintenance & Repair
-Board & Card Games
-Bricks
-Homebrewing
-Martial Arts
-The Great Outdoors
-Poker
-Chess
-Sports
-more (16)
-MathOverflow
-Mathematics
-Cross Validated (stats)
-Theoretical Computer Science
-Physics
-Chemistry
-Biology
-Computer Science
-Philosophy
-Linguistics
-Psychology & Neuroscience
-Computational Science
-more (10)
-Meta Stack Exchange
-Stack Apps
-API
-Data
-Blog
-Facebook
-Twitter
-LinkedIn
-Instagram
-site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.6.9.39464
-Stack Overflow works best with JavaScript enabled
-Your privacy
-By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
-Accept all cookies
-Customize settings
+scipy.sparse.csr_matrix — SciPy v1.6.3 Reference Guide
+SciPy.org
+Docs
+SciPy v1.6.3 Reference Guide
+Sparse matrices (scipy.sparse)
+index
+modules
+next
+previous
+scipy.sparse.csr_matrix¶
+class scipy.sparse.csr_matrix(arg1, shape=None, dtype=None, copy=False)[source]¶
+Compressed Sparse Row matrix
+This can be instantiated in several ways:
+csr_matrix(D)with a dense matrix or rank-2 ndarray D
+csr_matrix(S)with another sparse matrix S (equivalent to S.tocsr())
+csr_matrix((M, N), [dtype])to construct an empty matrix with shape (M, N)
+dtype is optional, defaulting to dtype=’d’.
+csr_matrix((data, (row_ind, col_ind)), [shape=(M, N)])where data, row_ind and col_ind satisfy the
+relationship a[row_ind[k], col_ind[k]] = data[k].
+csr_matrix((data, indices, indptr), [shape=(M, N)])is the standard CSR representation where the column indices for
+row i are stored in indices[indptr[i]:indptr[i+1]] and their
+corresponding values are stored in data[indptr[i]:indptr[i+1]].
+If the shape parameter is not supplied, the matrix dimensions
+are inferred from the index arrays.
+Notes
+Sparse matrices can be used in arithmetic operations: they support
+addition, subtraction, multiplication, division, and matrix power.
+Advantages of the CSR format
+efficient arithmetic operations CSR + CSR, CSR * CSR, etc.
+efficient row slicing
+fast matrix vector products
+Disadvantages of the CSR format
+slow column slicing operations (consider CSC)
+changes to the sparsity structure are expensive (consider LIL or DOK)
+Examples
+>>> import numpy as np
+>>> from scipy.sparse import csr_matrix
+>>> csr_matrix((3, 4), dtype=np.int8).toarray()
+array([[0, 0, 0, 0],
+[0, 0, 0, 0],
+[0, 0, 0, 0]], dtype=int8)
+>>> row = np.array([0, 0, 1, 2, 2, 2])
+>>> col = np.array([0, 2, 2, 0, 1, 2])
+>>> data = np.array([1, 2, 3, 4, 5, 6])
+>>> csr_matrix((data, (row, col)), shape=(3, 3)).toarray()
+array([[1, 0, 2],
+[0, 0, 3],
+[4, 5, 6]])
+>>> indptr = np.array([0, 2, 3, 6])
+>>> indices = np.array([0, 2, 2, 0, 1, 2])
+>>> data = np.array([1, 2, 3, 4, 5, 6])
+>>> csr_matrix((data, indices, indptr), shape=(3, 3)).toarray()
+array([[1, 0, 2],
+[0, 0, 3],
+[4, 5, 6]])
+Duplicate entries are summed together:
+>>> row = np.array([0, 1, 2, 0])
+>>> col = np.array([0, 1, 1, 0])
+>>> data = np.array([1, 2, 4, 8])
+>>> csr_matrix((data, (row, col)), shape=(3, 3)).toarray()
+array([[9, 0, 0],
+[0, 2, 0],
+[0, 4, 0]])
+As an example of how to construct a CSR matrix incrementally,
+the following snippet builds a term-document matrix from texts:
+>>> docs = [["hello", "world", "hello"], ["goodbye", "cruel", "world"]]
+>>> indptr = [0]
+>>> indices = []
+>>> data = []
+>>> vocabulary = {}
+>>> for d in docs:
+...
+for term in d:
+...
+index = vocabulary.setdefault(term, len(vocabulary))
+...
+indices.append(index)
+...
+data.append(1)
+...
+indptr.append(len(indices))
+...
+>>> csr_matrix((data, indices, indptr), dtype=int).toarray()
+array([[2, 1, 0, 0],
+[0, 1, 1, 1]])
+Attributes
+dtypedtypeData type of the matrix
+shape2-tupleGet shape of a matrix.
+ndimintNumber of dimensions (this is always 2)
+nnzNumber of stored values, including explicit zeros.
+dataCSR format data array of the matrix
+indicesCSR format index array of the matrix
+indptrCSR format index pointer array of the matrix
+has_sorted_indicesDetermine whether the matrix has sorted indices
+Methods
+__len__(self)
+__mul__(self, other)
+interpret other and call one of the following
+arcsin(self)
+Element-wise arcsin.
+arcsinh(self)
+Element-wise arcsinh.
+arctan(self)
+Element-wise arctan.
+arctanh(self)
+Element-wise arctanh.
+argmax(self[, axis, out])
+Return indices of maximum elements along an axis.
+argmin(self[, axis, out])
+Return indices of minimum elements along an axis.
+asformat(self, format[, copy])
+Return this matrix in the passed format.
+asfptype(self)
+Upcast matrix to a floating point format (if necessary)
+astype(self, dtype[, casting, copy])
+Cast the matrix elements to a specified type.
+ceil(self)
+Element-wise ceil.
+check_format(self[, full_check])
+check whether the matrix format is valid
+conj(self[, copy])
+Element-wise complex conjugation.
+conjugate(self[, copy])
+Element-wise complex conjugation.
+copy(self)
+Returns a copy of this matrix.
+count_nonzero(self)
+Number of non-zero entries, equivalent to
+deg2rad(self)
+Element-wise deg2rad.
+diagonal(self[, k])
+Returns the kth diagonal of the matrix.
+dot(self, other)
+Ordinary dot product
+eliminate_zeros(self)
+Remove zero entries from the matrix
+expm1(self)
+Element-wise expm1.
+floor(self)
+Element-wise floor.
+getH(self)
+Return the Hermitian transpose of this matrix.
+get_shape(self)
+Get shape of a matrix.
+getcol(self, i)
+Returns a copy of column i of the matrix, as a (m x 1) CSR matrix (column vector).
+getformat(self)
+Format of a matrix representation as a string.
+getmaxprint(self)
+Maximum number of elements to display when printed.
+getnnz(self[, axis])
+Number of stored values, including explicit zeros.
+getrow(self, i)
+Returns a copy of row i of the matrix, as a (1 x n) CSR matrix (row vector).
+log1p(self)
+Element-wise log1p.
+max(self[, axis, out])
+Return the maximum of the matrix or maximum along an axis.
+maximum(self, other)
+Element-wise maximum between this and another matrix.
+mean(self[, axis, dtype, out])
+Compute the arithmetic mean along the specified axis.
+min(self[, axis, out])
+Return the minimum of the matrix or maximum along an axis.
+minimum(self, other)
+Element-wise minimum between this and another matrix.
+multiply(self, other)
+Point-wise multiplication by another matrix, vector, or scalar.
+nonzero(self)
+nonzero indices
+power(self, n[, dtype])
+This function performs element-wise power.
+prune(self)
+Remove empty space after all non-zero elements.
+rad2deg(self)
+Element-wise rad2deg.
+reshape(self, shape[, order, copy])
+Gives a new shape to a sparse matrix without changing its data.
+resize(self, *shape)
+Resize the matrix in-place to dimensions given by shape
+rint(self)
+Element-wise rint.
+set_shape(self, shape)
+See reshape.
+setdiag(self, values[, k])
+Set diagonal or off-diagonal elements of the array.
+sign(self)
+Element-wise sign.
+sin(self)
+Element-wise sin.
+sinh(self)
+Element-wise sinh.
+sort_indices(self)
+Sort the indices of this matrix in place
+sorted_indices(self)
+Return a copy of this matrix with sorted indices
+sqrt(self)
+Element-wise sqrt.
+sum(self[, axis, dtype, out])
+Sum the matrix elements over a given axis.
+sum_duplicates(self)
+Eliminate duplicate matrix entries by adding them together
+tan(self)
+Element-wise tan.
+tanh(self)
+Element-wise tanh.
+toarray(self[, order, out])
+Return a dense ndarray representation of this matrix.
+tobsr(self[, blocksize, copy])
+Convert this matrix to Block Sparse Row format.
+tocoo(self[, copy])
+Convert this matrix to COOrdinate format.
+tocsc(self[, copy])
+Convert this matrix to Compressed Sparse Column format.
+tocsr(self[, copy])
+Convert this matrix to Compressed Sparse Row format.
+todense(self[, order, out])
+Return a dense matrix representation of this matrix.
+todia(self[, copy])
+Convert this matrix to sparse DIAgonal format.
+todok(self[, copy])
+Convert this matrix to Dictionary Of Keys format.
+tolil(self[, copy])
+Convert this matrix to List of Lists format.
+transpose(self[, axes, copy])
+Reverses the dimensions of the sparse matrix.
+trunc(self)
+Element-wise trunc.
+__getitem__
+Previous topic
+scipy.sparse.csc_matrix.trunc
+Next topic
+scipy.sparse.csr_matrix.__len__
+Quick search
+© Copyright 2008-2021, The SciPy community.
+Last updated on Apr 26, 2021.
+Created using Sphinx 3.1.2.

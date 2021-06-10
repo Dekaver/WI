@@ -1,266 +1,210 @@
-exception in thread "main" java.lang.arithmeticexception: / by zero - Kodlogs
-menu
-Login
-Register
-search
-Log Inaccount_circle
-Log In
-Email or Username
-Password
-Remember
-Log In
-Register
-I forgot my password
-Register
-Username
-Email
-Password
-Register
-add
-Q&A
-Questions
-Tags
-Users
-Ask a Question
-Articles
-Post An Article
-Recent Posts
-What is a flag in c++
-What is static in C++
-How to use /n in C++
-what is the difference between char and varchar?
-Python ASCII to int
-What are the supported wildcard characters for selectors in uipath studio?
-C# convert float to int
-Moving Perl Mojolicious routes to their own module
-Write a java program to count the letters, spaces, numbers and other characters of an input string.
-Uploading files to AWS S3 Bucket using Spring Boot
-exception in thread "main" java.lang.arithmeticexception: / by zero
-0 votes
-721 views
-Problem :I got bellow message from my codeException in thread "main" java.lang.ArithmeticException: / by zero
-java
-exception
-main
-arithmeticexception
-asked
-Nov 1, 2019
-peterlaw
-6.9k points
-answer
-Please log in or register to answer this question.
-2 Answers
-0 votes
-Solution :Usually one would come across “java.lang.ArithmeticException: / by zero” when tried to divide two numbers and the number in the denominator is zero.Handling the ArithmeticException using try-catch block.1. Firstly Surround the statements that could throw ArithmeticException with try-catch block.2. Catch ArithmeticException3. When any exception occurs, the execution falls onto the catch block from the point of occurrence of exception. 4. It executes the statement in catch block and continues with the statement present after the try-catch block. 5. So care has to be taken while handling the exceptions.
-answered
-Nov 1, 2019
-AbhijitJ
-38.6k points
-edited
-Nov 2, 2019
-by AbhijitJ
-ask related question
-comment
-Your comment on this answer:
-Your name to display (optional):
-Email me at this address if a comment is added after mine:Email me if a comment is added after mine
-Privacy: Your email address will only be used for sending these notifications.
-Anti-spam verification:
-What is the color of the sky?
-To avoid this verification in future, please log in or register.
-Add comment
-Cancel
-0 votes
-Solution:The java.lang.ArithmeticException is an unchecked exception in Java. Generally, one would meet up java.lang.ArithmeticException: / by zero which happens at the time an try is made to divide two numbers and the number in the denominator is zero. ArithmeticException objects may be created by the JVM.Examplepublic class ArithmeticExceptionTest {
-public static void main(String[] args) {
-int a = 0, b = 10;
-int c = b/a;
-System.out.println("Value of c is : "+ c);
-}
-}ArithmeticExeption is happened since denominator value is zero.java.lang.ArithmeticException: Exception thrown by java at the time of division./ by zero: is the detail message provided to ArithmeticException class while making the ArithmeticException object.Let us handle the ArithmeticException employing try and catch blocks.Enclose the statements that can throw ArithmeticException with try and catch blocks.Also, we can Catch the ArithmeticExceptionTake requires action for our program, as the execution doesn’t abort.Example:public class ArithmeticExceptionTest {
-public static void main(String[] args) {
-int a = 0, b = 10 ;
-int c = 0;
-try {
-c = b/a;
-} catch (ArithmeticException e) {
-e.printStackTrace();
-System.out.println("We are just printing the stack trace.\n"+ "ArithmeticException is handled. But take care of the variable \"c\"");
-}
-System.out.println("Value of c :"+ c);
-}
-}At the time of an exception happens, the execution falls to the catch block from the point of instance of an exception. It executes the statement in the catch block and maintain with the statement present after the try and catch blocks.java.lang.ArithmeticException is a type of Exception that tagget to better describe what the problem really is. There's no point onluy making an Exception, as it truly could be happened by anything. By originating an ArithmeticException, the user can instantly know that the issue is something to do with a estimation. An Exception can be funded by any piece of code, adding in estiminations such as your example.Exception in thread "main" refers that the exception is thrown by the main() method, which also occurs to be the primary Thread that is running your code.List of all invalid operations that entrusted an ArithmeticException() in JavaDividing by an integer ZeroNon-terminating decimal numbers employing BigDecimalDividing by an integer Zero:Java funded an Arithmetic exception at the time a calculation try is done to divide by zero, where the zero is an integer. Take the conforming piece of code as an example:package co.java.exception;
-public class ArithmaticExceptionEx
-{
-void divide(int a,int b)
-{
-int q=a/b;
-System.out.println("Sucessfully Divided");
-System.out.println("The Value After Divide Is :-" +q);
-}
-public static void main(String[] args)
-{
-ArithmaticExceptionEx obj=new ArithmaticExceptionEx();
-obj.divide(10, 0);
-}
-}
-answered
-May 31, 2020
-Tushar Shuvro
-31.1k points
-edited
-Jun 12, 2020
-by Tushar Shuvro
-ask related question
-comment
-Your comment on this answer:
-Your name to display (optional):
-Email me at this address if a comment is added after mine:Email me if a comment is added after mine
-Privacy: Your email address will only be used for sending these notifications.
-Anti-spam verification:
-To avoid this verification in future, please log in or register.
-Add comment
-Cancel
+Smartsheet Data Tracker: AttributeError: 'dict' object has no attribute 'append'
+Quabr
+answers we find
+Explore tags
+Advanced Dictionary for Chrome
+1
+Translate worlds/phrases
+Translation unknown words or phrases by selection text in a small pop-up bubble.
+2
+Add flashcards
+Create cards in one click with the translated words.
+3
+Build vocabulary lists
+Organize flashcards in different themed decks as you wish.
+Get Free Extension
 Related questions
-0 votes
-1 answer
-17 views
-17 views
-Exception in thread "main" java.lang.numberformatexception: empty string
-Problem: Exception in thread "main" java.lang.numberformatexception: empty string.
-asked
-May 6
-Ryan evans
-1.6k points
-java
-exception
-null
-1 vote
-1 answer
-14 views
-14 views
-Exception in thread "main" java.lang.numberformatexception:
-Problem: Any solution to this error. Exception in thread "main" java.lang.numberformatexception:
-asked
-Apr 26
-PkGuy
-25.9k points
-java
-smartcard
-exception
-0 votes
-1 answer
-29 views
-29 views
-exception in thread "main" java.lang.stringindexoutofboundsexception: string index out of range: 11
-Problem: I have written code for exception. It's building a file but not letting it run, it just throws exception This is code : public static void main(String args[]) { String name = "Umer Hassan"; String name1 = "Hassan Umer"; char[] name2 = new ...
-at Anagram.main(Anagram.java:24)exception in thread "main" java.lang.stringindexoutofboundsexception: string index out of range: 11, Why is that???
-asked
-Apr 26
-nabin
-4.6k points
-exception
-java
-0 votes
-1 answer
-8 views
-8 views
-Exception in thread "main" java.lang.classnotfoundexception: com.mysql.jdbc.driver
-Problem: Any ideas on how to fix this > Exception in thread "main" java.lang.classnotfoundexception: com.mysql.jdbc.driver
-asked
-Apr 26
-ummeshani
-10.8k points
-java
-exception
-0 votes
-1 answer
-825 views
-825 views
-no main methods javafx applications applets or midlets found in file
-Problem : In my code have main method in it. The program compiles on jgrasp with no errors but it keeps giving me a message as bellow: "no main methods, applets, or Midlets found in file jgrasp"
-asked
-Nov 1, 2019
-peterlaw
-6.9k points
-java
-file
-exception
-main
-0 votes
-1 answer
-4 views
-4 views
-Exception in thread "main"
-Problem: Does anyone have an answer: Exception in thread "main"?
-asked
-1 day ago
-Jennifer Watkins
-880 points
-java
-error-handling
-logic
-main
-1 vote
-1 answer
-14 views
-14 views
-Exception in thread "main" java.util.inputmismatchexception.
-Problem: Any help will be appreciated to solve this error: Exception in thread "main" java.util.inputmismatchexception.
-asked
-Apr 26
-PkGuy
-25.9k points
-java
-junit
-exception
-jakarta-mail
-smartcard
-1 vote
-1 answer
-9 views
-9 views
-Exception in thread "main" java.util.nosuchelementexception.
-Problem: How to get rid of this error? Exception in thread "main" java.util.nosuchelementexception.
-asked
-Apr 25
-PkGuy
-25.9k points
-java
-junit
-exception
-0 votes
-1 answer
-15 views
-15 views
-Exception in thread "main" java.util.concurrentmodificationexception
-Problem: Hello! I do not have a lot of knowledge about Java and I keep trying random stuff that I find on the web. I saw following program somewhere: import java.util.HashMap; import java.util.Map; public class Main { public static void main(String[] ... .util.HashMap$KeyIterator.next(HashMap.java:1469) at Main.main(Main.java:13) Please explain why this exception is being thrown by this program.
-asked
-Mar 31
-Code Learner
-10.4k points
-java
-exception
-0 votes
-1 answer
-1.3k views
-1.3k views
-Exception in thread "awt-eventqueue-0" java.lang.unsupportedoperationexception: not supported yet.
-Problem : I want to input some of the details about student to my program. But when I press a save button its giving me the below listed exception error: "Exception in thread "AWT-EventQueue-0" java.lang.UnsupportedOperationException: Not supported yet."
-asked
-Jan 31, 2020
-jwilliam
-3.9k points
-java
-swing
-oop
-exception
-Send feedback
-About Us
-Privacy Policy
-Guest Blog
-XML Sitemap
-Facebook
-Twitter
-Pinterest
-Dark theme
+My VS code interface for Jupyter notebook is very different from the new version
+pd.read_csv optimization to reduce the running time
+Cannot locate child element Selenium
+Access Smartsheet by column Name instead of Column Id
+Get hyperlink to sheet based on SheetID
+Call Web Service when contents change
+Smartsheet Data Tracker: AttributeError: 'dict' object has no attribute 'append'
+2014-04-11 15:19
+David
+imported from Stackoverflow
+python
+smartsheet-api
+I am new to Python and I'm working with Smartsheet Data Tracker to update a sheet from a CSV file.
+I have problems about the array list management in Python; I don't know about this error, I was reading about this error on StackOverflow but I don't understand it:
+The error:
+"File "C:\Users\David\DataTraker\connectors\CSVCon.py", line 61, in __init__
+self.csvData.append(readerRow)
+AttributeError: 'dict' object has no attribute 'append'"
+And my code:
+def __init__(self, sourceConfig):
+self.csvData = []
+self.csvData = {"sourceId": "siniestros",
+"connectorClassName": "CSVCon",
+"fileName": "siniestros.csv",
+"isStrict": False}
+for readerRow in sourceReader:
+self.csvData.append(readerRow)
+2 answers
+answered 2014-04-11 15:23
+Alex Thornton
+What is going wrong is that you create a list to which you would like to append later. However you overwrite that afterwards with a dictionary, to which you cannot append. This is why you get an AttributeError.
+To fix this, I would rename your dictionary (self.csvData={stuff}) that you created after your list to something else such as self.meta, perhaps. Alternatively, you could rename your list.
+It doesn't matter which, you just need to remove the naming conflict so both variables can co-exist in the namespace.
+answered 2014-04-17 23:38
+stmcallister
+Actually, this was more an issue of poorly commented code in the Data Tracker project that caused the confusion in the CSVCon.py file. The CSV Configuration settings that are in those comments are an example of what should be in the settings/sources.json file.
+The Configure Source section in the project documentation provides some more detail on setting up your source in the sources.json file.
+There is also a section with an explanation of the CSV source specifically.
+The confusing commenting has been updated to be more clear.
+See also questions close to this topic
+My VS code interface for Jupyter notebook is very different from the new version
+I recently started learning python for data analysis and decided to use VS code for its new Jupyter notebook feature. I installed the extension for python and jupyter notebook in VS code but for some reason my interface is very different from the one in the new update.
+I understand this is a small issue but, It's really throwing me off. Can someone please let me know what I am doing wrong here?
+Thank you
+pd.read_csv optimization to reduce the running time
+My input file is 20GB .txt file, So It faces performance issues when I test run the below code.
+pd.read_csv is taking more than 3 hours. Need to optimization in the reading stage.
+Sample input file.
+007064770000|SODIUM|95 MILLIGRAM|0
+007064770000|MULTI|001|0
+007064770000|PET STARCH FREE|NOT APPLICABLE|0
+007064770000|GRAIN TYPE|FLOUR|0
+003980010200|MULTI|001|0
+003980010200|DEAL|NON-DEAL|0
+003980010200|PRODUCT SIZE|1 COUNT|0
+003980010200|BASE SIZE|1 COUNT|0
+757582821517|HW APPLIANCES|001|0
+757582821516|HW APPLIANCES|001|0
+757582821517|PACKAGE GENERAL SHAPE|BOTTLE|0
+757582821517|SYND FORM|CREAM|0
+757582821517|FORM|CREAM|0
+757582821517|TARGET SKIN CONDITION|DRY SKIN|0
+003980010205|HW MEDICINE|NON-DEAL|0
+003980010205|PRODUCT SIZE|1 COUNT|0
+003980010205|BASE SIZE|1 COUNT|0
+007064770054|SODIUM|95 MILLIGRAM|0
+007064770054|HW SPORTS|001|0
+007064770054|PET STARCH FREE|NOT APPLICABLE|0
+007064770054|GRAIN TYPE|FLOUR|0
+003980010312|HW DIAMETER|1 COUNT|0
+003980010312|BASE SIZE|1 COUNT|0
+Output file
+UPC code HW APPLIANCES HW DIAMETER HW MEDICINE HW SPORTS
+0
+3980010205
+NaN
+NaN
+NON-DEAL
+NaN
+1
+3980010312
+NaN
+1 COUNT
+NaN
+NaN
+2
+7064770054
+NaN
+NaN
+NaN
+001
+3
+757582821516
+001
+NaN
+NaN
+NaN
+4
+757582821517
+001
+NaN
+NaN
+NaN
+Existing code
+import pandas as pd
+import datetime
+df = pd.read_csv('sample.txt', sep='|', names=['upc_cd', 'chr_typ', 'chr_vl', 'chr_vl_typ'], engine='python')
+df = df[df['chr_typ'].str.contains('HW ')]
+df.sort_values('chr_typ')
+df = (
+df.iloc[:, :-1]
+# Remove last Column
+.pivot(index=['upc_cd'], columns=['chr_typ'])
+.droplevel(0, axis=1)
+# Fix Levels and axes names
+.rename_axis('UPC code')
+.rename_axis(None, axis=1)
+.reset_index()
+)
+print(df)
+df.to_csv('output.csv', sep=',', index=None, mode='w', encoding='utf-8')
+Please suggest the modification to the code in order to reduce the running time
+Cannot locate child element Selenium
+Trying to pick out single restaurant elements under the All Restaurants category on this page. https://www.foodpanda.sg/restaurants/new?lat=1.2915902&lng=103.8379066&vertical=restaurants
+All li elements have a different class name. The only working xpath, I have been able to figure out is this one.
+//ul[@class="vendor-list"]//li[3]
+I cannot figure out how to increase this number and get all the restaurants, which is complicated by the fact that there is an infinite scroll as well.
+j = 1
+def get_rest():
+global j
+while True:
+driver.execute_script("window.scrollBy(0,2525)", "")
+time.sleep(5)
+var = f'{[j]}'
+elems = driver.find_elements_by_xpath(f'//ul[@class="vendor-list"]//li{var})
+return elems
+Access Smartsheet by column Name instead of Column Id
+I am a newbie working with Smartsheet, I am trying to access the values of columns and store them in a list, and I am able to access the values by the index. In my use case, people can delete random columns from the smartsheet and that can cause my index numbering affected while reading the data. For Example - My smartsheet looks like below:
+Vin | Owner | Use | Location
+123
+abc
+test
+CA
+456
+xyz
+prod
+TX
+The code I used so far to access the data is:
+import smartsheet
+from simple_smartsheet import Smartsheet
+from simple_smartsheet.models import Sheet, Column, Row, Cell, ColumnType
+from pprint import pprint
+import pandas as pd
+import re
+import sasl
+import json
+from fastparquet import write
+# from influxdb import InfluxDBClient
+import thrift_sasl
+import prestodb
+import s3fs
+import boto3
+from pyhive import hive
+smartsheet = smartsheet.Smartsheet('adjgdjcdjchbdclkcn')
+# Get current user
+#user_profile = smartsheet.Users.get_current_user()
+# Get all columns.
+MySheet = smartsheet.Sheets.get_sheet(1234567891234567)
+Vin = []
+Owner = []
+Use = []
+Location = []
+def Data():
+for RowIndex in range(0, len(MySheet.rows)):
+Vin.append(MySheet.rows[RowIndex].cells[2].display_value)
+Use.append(MySheet.rows[RowIndex].cells[3].display_value)
+Owner.append(MySheet.rows[RowIndex].cells[4].display_value)
+Location.append(MySheet.rows[RowIndex].cells[5].display_value)
+print(Vin)
+print(Use)
+Print(Owner)
+Print(Location)
+Result I want is (Using the column name instead of Index):
+Vin = [123, 456]
+Owner = [abc, xyz]
+Use = [test, prod]
+Location = [CA, TX]
+Now Instead of accessing the values by index, how can I append the values in a list using column name instead? Any help or lead is much appreciated. Thank You in advance!
+Get hyperlink to sheet based on SheetID
+I am importing a Smartsheet Report through Python, using an API. One of the columns in this report contains a hyperlink that works in Smartsheet, however when importing the report with Python I only receive the words of this column, and not the link behind them. Is it possible to get the URLs of the sheets that these hyperlinks are referring to in any other way? I was thinking maybe based on SheetID (which I can find using the title of the indepentent sheets), but all other suggestions are very welcome!
+Call Web Service when contents change
+We'd like to allow our users to make changes to our ERP (only very limited conditions) from within the smartsheet.
+Is there a way to add a web service call based on changes to a cell?
+Quabr.com is StackOverFlow proxy site | Sitemap

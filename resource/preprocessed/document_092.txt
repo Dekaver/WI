@@ -1,469 +1,929 @@
-Futures and error handling | Dart
-Overview
-Docs
-Community
-Try Dart
-Get Dart
-Dart 2.13 is here, with type aliases and improved FFI support for structs.
-Learn more
-Overview
-Community
-Try Dart
-Get Dart
-Docs
-Samples & tutorials
-Language samples
-Codelabs
-List of Dart codelabs
-Language cheatsheet
-Iterable collections
-Asynchronous programming
-Null safety
-Tutorials
-Language
-Effective Dart
-Overview
-Style
-Documentation
-Usage
-Design
-Extension methods
-Numbers
-Null safety
-Overview: Sound null safety
-Migrating to null safety
-Understanding null safety
-Unsound null safety
-FAQ
-Evolution
-Specification
-Tour
-Type system
-Core libraries
-Overview
-Tour
-Articles
-Intro to dart:io
-Creating streams
-Packages
-How to use packages
-Commonly used packages
-Creating packages
-Publishing packages
-Writing package pages
-Package reference
-Dependencies
-Glossary
-Package layout conventions
-Pub environment variables
-Pubspec file
-Troubleshooting pub
-Verified publishers
-Versioning
-Development
-Futures, async, await
-Streams
-JSON
-Interoperability
-C interop
-JavaScript interop
+Pekerjaan Str object has no attribute append dictionary python, Pekerjaan | Freelancer
+Bagaimana Cara Kerjanya
+Telusuri Pekerjaan
+Jelajahi
+Flask
+Browse Top Flask Developers
+Hire a Flask Developer
+Browse Flask Jobs
+Post Flask Project
+Learn more about Flask
+PHP
+Browse Top Pengembang PHP
+Hire Pengembang PHP
+Browse PHP Jobs
+Post PHP Project
+Learn more about PHP
+Python
+Browse Top Pengembang Python
+Hire Pengembang Python
+Browse Python Jobs
+Post Python Project
+Learn more about Python
+Perancangan Perangkat Lunak
+Browse Top Pengembang Arsitektur Perangkat Lunak
+Hire Pengembang Arsitektur Perangkat Lunak
+Browse Perancangan Perangkat Lunak Jobs
+Post Perancangan Perangkat Lunak Project
+Web Scraping
+Browse Top Spesialis Web Scraping
+Hire Spesialis Web Scraping
+Browse Web Scraping Jobs
+Post Web Scraping Project
+Learn more about Web Scraping
+Str object has no attribute append dictionary pythonPekerjaan
+Saya mau Merekrut
+Saya mau Kerja
+Freelancer
+Pencarian Pekerjaan
+str object has no attribute append dictionary python
+1
+Cari Kata Kunci
+Dimana ?
+Cari
+Filter
+Pencarian saya terakhir
+Filter menurut:
+Anggaran
+Proyek Harga Tetap
+hingga
+Proyek Per jam
+hingga
+Durasi
+Semua Durasi
+Kurang dari 1 minggu
+1 minggu sampai 4 minggu
+1 bulan sampai 3 bulan
+3 bulan sampai 6 bulan
+lebih dari 6 bulan / berkelanjutan
+Tidak ditentukan
+Kontes
+hingga
+Jenis
+Pekerjaan Lokal
+Pekerjaan Sorotan
+Pekerjaan Perekrut
+Pekerjaan Penuh Waktu
+Keahlian
+masukkan keahlian
+Bahasa
+masukkan bahasa
+Pernyataan Pekerjaan
+Semua pekerjaan terbuka
+Semua pekerjaan terbuka dan tertutup
+Terapkan Filter
+Terbaru dulu
+Anggaran terendah dulu
+Anggaran termahal dulu
+Penawaran/entri terendah
+Penawaran/entri tertinggi
+207,707
+str object has no attribute append dictionary python pekerjaan ditemukan, seharga USD
+First
+1
+2
+3
+4
+Next
+Last
+Need service for API to wa and change IP Address to change domain.com with flask phyton app with cpanel
+Berakhir left
+- create API access to WA (WhatsApp),Line, Wechat, Instagram, Facebook
+- Change IP website to change name to [login untuk melihat URL] with flask python app with cpanel
+API
+FIX API
+PHP
+Python
+Web API
+$815
+(Avg Bid)
+$815
+Rata-rata
+5 penawaran
+Tawar sekarang
+Algoritma Kriptografi Chacha20-Poly1305 dengan bahasa pemrograman PHP/Python -- 2
+Berakhir left
+Implementasi algoritma Chacha20-Poly1305 pada simulasi pengiriman pesan publisher-subscriber MQTT. Dibutuhkan segera ahli yang ahli di bidang Cryptography, MQTT dan bahasa Pemrograman PHP atau Python, diselesaikan dengan cepat paling lama seminggu. Hanya butuh memprogram ulang algoritma Chacha20-Poly1305 agar dapat memanggil fungsi enkripsi dan dekripsi
+chacha20-poly1305 pada pengiriman pesan MQT...
+Kriptografi
+MQTT
+PHP
+Python
+$35
+(Avg Bid)
+$35
+Rata-rata
+1 penawaran
+Tawar sekarang
+Saya tidak terlalu memahami python tetapi saya ada tugas mengenai python subject wordpress
+Berakhir left
+Tugasnya tentang coding , task nya ada di berkas yang di upload tentang wordpress.
+Article Writing
+Python
+Penulisan Laporan
+Security Systems
+$23
+(Avg Bid)
+$23
+Rata-rata
+2 penawaran
+Tawar sekarang
+HELP DESK - ticket para condominio
+Berakhir left
+Um help desk para condomínio para os moradores mandarem as reclamações e o sindico resolver. Python e Django
+Django
+Git
+HTML
+Python
+Perancangan Perangkat Lunak
+$150
+(Avg Bid)
+$150
+Rata-rata
+2 penawaran
+Tawar sekarang
+pet grooming mobile apps + backend
+Berakhir left
+Kami mau membuat aplikasi untuk booking online grooming pet.
+untuk aplikasi menggunakan React Native dan diperlukan backend dengan Python atau java script.
+Mobile apps terbagi menjadi 2 apps
+1. apps customer(untuk melakukan order)
+2. apps Groomer( untuk menerima detail order)
+key feature mobile apps
+1. live tracking
+2. in ecosystem Messenger
+3. Geo Tagging
+JavaScript
+Mobile App Development
+PHP
+Python
+React Native
+$17 / hr
+(Avg Bid)
+$17 / hr
+Rata-rata
+15 penawaran
+Tawar sekarang
+Buatkan saya GUI python menggunakan tkinter untuk prediksi harga
+Berakhir left
+Buatkan saya GUI python menggunakan tkinter untuk prediksi harga, model nya sudah saya buatkan menggunakan metode LSTM
+Pemrosesan Data
+Excel
+Java
+Python
+Perancangan Perangkat Lunak
+$76
+(Avg Bid)
+$76
+Rata-rata
+3 penawaran
+Tawar sekarang
+Project for I Nyoman P.
+Berakhir left
+Halo pak, saya tertarik untuk coba mendiskusikan project saya (python) dengan bapak, apa ada WA/tele yg bisa dihubungi?
+Terima kasih!
+Penulisan Akademik
+Pemrosesan Data
+Excel
+Microsoft Office
+Python
+$20
+(Avg Bid)
+$20
+Rata-rata
+1 penawaran
+Tawar sekarang
+Modifikasi sederhana bot telegram (python)
+Berakhir left
+Saya ada bot telegram autoforward channel A ke channel B
+Butuh tambahan simple fitur:
+Saat akan post pada channel B:
+Autoreply post sebelumnya yg memiliki hashtag (#) sama, misal post skrg terdapat "#jakarta" di message nya, maka otomatis post akan me-reply post sebelumnya yg memiliki "#jakarta" pada message nya..
+Itu saja kok
+Mohon maaf karena range harga untuk sy yg masih ...
+Python
+$15
+(Avg Bid)
+$15
+Rata-rata
+2 penawaran
+Tawar sekarang
+OCR SMART SIM menggunakan NodeJs atau Python
+Berakhir left
+Ruang Lingkup Project :
+1. Saya hanya membutuhkan script nodejs atau python cukup dari sumber scan dan foto Smart SIM
+2. Outputan text dan gambar foto orang
+3. Kirimkan Scriptnya langsung saya test coba dengan 5 File SIM yg berbeda
+jika berjalan langsung saya bayar
+Penulisan Naskah
+Django
+JavaScript
+Node.js
+Python
+$110
+(Avg Bid)
+$110
+Rata-rata
+2 penawaran
+Tawar sekarang
+Project for Acep S.
+Berakhir left
+Hallo kak saya punya object 3d ar nah saar pengimporan itu tidak muncul apakah bisa dibantu pake metode markerless ? Budget menyesuaikan
+Desain 3D
+Pemodelan 3D
+Arsitektur Bangunan
+Desain Rumah
+Desain Interior
+$210
+(Avg Bid)
+$210
+Rata-rata
+1 penawaran
+Tawar sekarang
+saya mencari marketing freelance untuk mencari database no telp, email alamat dan lainya untuk produk property
+Berakhir left
+kami bagian pemasaran mencari marketing freelance untuk pemasaran apartement dengan penjualan system LOT ([login untuk melihat URL])
+Entri Data
+Pemasaran melalui Internet
+Pemasaran
+Penjualan
+Optimasi Mesin Pencari
+$446
+(Avg Bid)
+$446
+Rata-rata
+15 penawaran
+Tawar sekarang
+renovasi rumah at claster sanur G20 no 5,
+citra maja2.
+Berakhir left
+renovasi rumah tinggal pribadi saya,
+Pemodelan 3D
+Rendering 3D
+Arsitektur Bangunan
+Desain Interior
+$967
+(Avg Bid)
+$967
+Rata-rata
+28 penawaran
+Tawar sekarang
+Logo and model car detection and classification
+Berakhir left
+Saya mempunyai sebuah proyek tentang computer vision.
+Saya ingin mendeteksi dan mengklasifikasikan logo dan model mobil, misalkan honda jazz, toyota yaris, dll. Bahasa yang digunakan yaitu python. Metode yang digunakan yaitu machine learning, bukan deep learning.
+Metode untuk ektraksi fitur object yaitu ORB (Oriented Fast and Rotation BRIEF.
+Bagi yang bisa dan berminat, bisa menjelaskan alur dari ...
+Kecerdasan Buatan (Artificial Intelligence)
+Computer Vision
+Pemrosesan Data
+Machine Learning (ML)
+Python
+$197
+(Avg Bid)
+$197
+Rata-rata
+6 penawaran
+Tawar sekarang
+saya butuh object detection programming menggunakan deep learning
+Berakhir left
+object detection dan calculation untuk object yang berada di laut dari gambar citra satelite
+Kecerdasan Buatan (Artificial Intelligence)
+Deep Learning
+Machine Learning (ML)
+$2054
+(Avg Bid)
+$2054
+Rata-rata
+4 penawaran
+Tawar sekarang
+Saya ingin bantuan dalam menyelesaikan projek menggunakan framework deeplearning caffe
+Berakhir left
+Halo salam sejahtera. Saya sedang mengerjakan suatu projek Object Identification menggunakan framework deeplearning CAFFE. Saya terkendala dalam meng-compile framework / install ke pc saya.
+Saya membutuhkan bantuan orang yang pernah / berpengalaman menggunakan framework caffe agar dapat membantu saya dalam troubleshooting instalasi/kompilasi.
+Kecerdasan Buatan (Artificial Intelligence)
+Pemrograman C++
+Deep Learning
+Python
+$10 - $30
+$10 - $30
+0 penawaran
+Tawar sekarang
+Project for Ridho K.
+Berakhir left
+Mas, bisa customisasi script python untuk fungsi tools geprocessing dan membuat web analisis dengan consume WPS ?
+Ari: 081927592541
+Kartografi & Peta
+Geospatial
+Penelitian
+Unggah Video
+Pencarian Web
+$100
+(Avg Bid)
+$100
+Rata-rata
+1 penawaran
+Tawar sekarang
+Project for Muhammad F.
+Berakhir left
+Mas, bisa customisasi script python untuk fungsi tools geprocessing dan membuat web analisis dengan consume WPS ?
+Ari: 081927592541
+Pemodelan 3D
+Rendering 3D
+Kartografi & Peta
+Penulisan Konten
+Penulisan Naskah
+$100
+(Avg Bid)
+$100
+Rata-rata
+1 penawaran
+Tawar sekarang
+Pengerjaan soal Python tentang Graph - Butuh cepat
+Berakhir left
+Pengerjaan soal basic Python tentang Graph,
+Jika tertarik silahkan apply dan langsung cantumkan kontak WA nya saja,
+akan langsung saya hubungi karena sedang butuh cepat.
+Algoritma
+Python
+$22
+(Avg Bid)
+$22
+Rata-rata
+4 penawaran
+Tawar sekarang
+Convert data no telpon customer di excel menjadi Contact google
+Berakhir left
+Saya punya database nomor HP Customer di File Excel dan mau di convert semua ke kontak HP supaya tidak saya salin satu persatu
+Entri Data
+Pemrosesan Data
+Excel
+Microsoft Access
+Pencarian Web
+$19
+(Avg Bid)
+$19
+Rata-rata
+15 penawaran
+Tawar sekarang
+buat json file via python
+Berakhir left
+membuat file json dari aplikasi python yang sudah ada, aplikasi sudah berjalan, dengan salah satu fungsi menampilkan raw data pada QLabel. nah yang dibutuh kan sekarang adalah meng generate value yang sama dr QLabel tersebut menjadi file .json
+Pemrosesan Data
+Excel
+Java
+Python
+Perancangan Perangkat Lunak
+$37
+(Avg Bid)
+$37
+Rata-rata
+4 penawaran
+Tawar sekarang
+Buatkan saya aplikasi Text Mining GUI Python
+Berakhir left
+saya ingin membuat aplikasi text berbasis python dengan tampilan GUI yang bertujuan untuk mengetahui sentimen negatif, postif maupun netral dari para netizen di media sosial, portal berita dan situs internet lainnya
+Article Writing
+Penulisan Naskah
+Python
+Perancangan Perangkat Lunak
+Web Scraping
+$500
+(Avg Bid)
+$500
+Rata-rata
+2 penawaran
+Tawar sekarang
+Pembuatan Visualisasi Fast Fourier Transform dengan Anaconda Python
+Berakhir left
+Proyek yang dilakukan adalah menampilkan visualisasi dengan metode Fast Fourier Transform dengan bahasa pemograman Phyton. Detail nya sebagai berikut:
+1. Data set menggunakan engine google (Polygon), menggunakan fitur NDVI
+2. Tidak menggunakan data yang terkena awan
+3. menggunakan metode Fast Fourier Transform (Sumbu X NDVI dan Y tanggal)
+4. Visualisasi
+Pemrosesan Data
+Excel
 Google APIs
-Mobile apps
-Command-line & server apps
-Overview
-Get started
-Write command-line apps
-Write HTTP servers
-Libraries and packages
-Google Cloud
-Web apps
-Overview
-Get started
-Fetch data dynamically
-Low-level web programming
-Connect Dart & HTML
-Add elements to the DOM
-Remove DOM elements
-Deployment
-Libraries and packages
-Tools & techniques
-Overview
-Editors & debuggers
-IntelliJ & Android Studio
-VS Code
-Dart DevTools
-DartPad
-Command-line tools
-Dart SDK
-Overview
-dart
-dart analyze
-dart compile
-dart fix
-dart format
-dart pub
-dart run
-dartaotruntime
-dartdoc
-Experiment flags
-Other command-line tools
-build_runner
-webdev
-Managing source code
-Formatting code
-What not to commit
-Static analysis
-Customizing static analysis
-Fixing common type problems
-Testing & optimization
-Testing
-Debugging web apps
-Resources
-Overview
-Books
-DartPad in tutorials: Best practices
-Code of conduct
-FAQ
-History
-Migrating to Dart 2
-Migrating web apps to Dart 2
-Obsolete pub features
-Videos
-Related sites
-API reference
-Blog
-DartPad (online editor)
-Flutter
-Package site
-Contents
-The Future API and callbacks
-Examples of using then() with catchError()
-catchError() as a comprehensive error handler
-Error handling within then()
-Errors in the middle of a long chain
-Handling specific errors
-Async try-catch-finally using whenComplete()
-Completing the Future returned by whenComplete()
-Errors originating within whenComplete()
-Potential problem: failing to register error handlers early
-Potential problem: accidentally mixing synchronous and asynchronous errors
-Solution: Using Future.sync() to wrap your code
-More information
-Futures and error handling
-Contents
-The Future API and callbacks
-Examples of using then() with catchError()
-catchError() as a comprehensive error handler
-Error handling within then()
-Errors in the middle of a long chain
-Handling specific errors
-Async try-catch-finally using whenComplete()
-Completing the Future returned by whenComplete()
-Errors originating within whenComplete()
-Potential problem: failing to register error handlers early
-Potential problem: accidentally mixing synchronous and asynchronous errors
-Solution: Using Future.sync() to wrap your code
-More information
-In Dart SDK version 1.9,
-the Dart language added
-asynchrony support,
-making asynchronous Dart code much easier to read and write.
-However, some code — especially older code — might still use
-Future methods
-such as then(), catchError(), and whenComplete().
-This page can help you avoid some common pitfalls
-when using those Future methods.
-You don’t need this page if your code uses
-the language’s asynchrony support — async, await,
-and error handling using try-catch.
-For more information, see the
-asynchronous programming codelab.
-The Future API and callbacks
-Functions that use the Future API register callbacks that handle
-the value (or the error) that completes a Future. For example:
-myFunc().then(processValue)
-.catchError(handleError);
-The registered callbacks fire based on the following rules: then()’s
-callback fires if it is invoked on a Future that completes with a value;
-catchError()’s callback fires if it is invoked on a Future that completes
-with an error.
-In the example above, if myFunc()’s Future completes with a value,
-then()’s callback fires. If no new error is produced within then(),
-catchError()’s callback does not fire. On the other hand, if myFunc()
-completes with an error, then()’s callback does not fire, and
-catchError()’s callback does.
-Examples of using then() with catchError()
-Chained then() and catchError() invocations are a common pattern when
-dealing with Futures, and can be thought of as the rough equivalent of
-try-catch blocks.
-The next few sections give examples of this pattern.
-catchError() as a comprehensive error handler
-The following example deals with throwing an exception from within then()’s
-callback and demonstrates catchError()’s versatility as an error handler:
-myFunc()
-.then((value) {
-doSomethingWith(value);
-...
-throw("some arbitrary error");
-})
-.catchError(handleError);
-If myFunc()’s Future completes with a value, then()’s callback fires. If
-code within then()’s callback throws (as it does in the example above),
-then()’s Future completes with an error. That error is handled by
-catchError().
-If myFunc()’s Future completes with an error, then()’s Future completes
-with that error. The error is also handled by catchError().
-Regardless of whether the error originated within myFunc() or within
-then(), catchError() successfully handles it.
-Error handling within then()
-For more granular error handling, you can register a second (onError)
-callback within then() to handle Futures completed with errors. Here is
-then()’s signature:
-abstract Future then(onValue(T value), {onError(AsyncError asyncError)})
-Register the optional onError callback only if you want to differentiate
-between an error forwarded to then(), and an error generated within
-then():
-funcThatThrows()
-.then(successCallback, onError: (e) {
-handleError(e);
-// Original error.
-anotherFuncThatThrows(); // Oops, new error.
-})
-.catchError(handleError);
-// Error from within then() handled.
-In the example above, funcThatThrows()’s Future’s error is handled with the
-onError callback; anotherFuncThatThrows() causes then()’s Future to
-complete with an error; this error is handled by catchError().
-In general, implementing two different error handling strategies is not
-recommended: register a second callback only if there is a compelling reason
-to catch the error within then().
-Errors in the middle of a long chain
-It is common to have a succession of then() calls, and catch errors
-generated from any part of the chain using catchError():
-Future<String> one()
-=> Future.value("from one");
-Future<String> two()
-=> Future.error("error from two");
-Future<String> three() => Future.value("from three");
-Future<String> four()
-=> Future.value("from four");
-void main() {
-one()
-// Future completes with "from one".
-.then((_) => two())
-// Future completes with two()'s error.
-.then((_) => three())
-// Future completes with two()'s error.
-.then((_) => four())
-// Future completes with two()'s error.
-.then((value) => processValue(value)) // Future completes with two()'s error.
-.catchError((e) {
-print("Got error: ${e.error}");
-// Finally, callback fires.
-return 42;
-// Future completes with 42.
-})
-.then((value) {
-print("The value is $value");
-});
-}
-// Output of this program:
-//
-Got error: error from two
-//
-The value is 42
-In the code above, one()’s Future completes with a value, but two()’s
-Future completes with an error. When then() is invoked on a Future that
-completes with an error, then()’s callback does not fire. Instead,
-then()’s Future completes with the error of its receiver. In our example,
-this means that after two() is called, the Future returned by every
-subsequent then()completes with two()’s error. That error is finally
-handled within catchError().
-Handling specific errors
-What if we want to catch a specific error? Or catch more than one error?
-catchError() takes an optional named argument, test, that
-allows us to query the kind of error thrown.
-abstract Future catchError(onError(AsyncError asyncError), {bool test(Object error)})
-Consider handleAuthResponse(params), a function that authenticates a user
-based on the params provided, and redirects the user to an appropriate URL.
-Given the complex workflow, handleAuthResponse() could generate various
-errors and exceptions, and you should handle them differently. Here’s
-how you can use test to do that:
-void main() {
-handleAuthResponse({'username': 'johncage', 'age': 92})
-.then((_) => ...)
-.catchError(handleFormatException,
-test: (e) => e is FormatException)
-.catchError(handleAuthorizationException,
-test: (e) => e is AuthorizationException);
-}
-Async try-catch-finally using whenComplete()
-If then().catchError() mirrors a try-catch, whenComplete() is the
-equivalent of ‘finally’. The callback registered within whenComplete() is
-called when whenComplete()’s receiver completes, whether it does so with a
-value or with an error:
-var server = connectToServer();
-server.post(myUrl, fields: {"name": "john", "profession": "juggler"})
-.then(handleResponse)
-.catchError(handleError)
-.whenComplete(server.close);
-We want to call server.close regardless of whether server.post() produces
-a valid response, or an error. We ensure this happens by placing it inside
-whenComplete().
-Completing the Future returned by whenComplete()
-If no error is emitted from within whenComplete(), its Future completes
-the same way as the Future that whenComplete() is invoked on. This is
-easiest to understand through examples.
-In the code below, then()’s Future completes with an error, so
-whenComplete()’s Future also completes with that error.
-void main() {
-funcThatThrows()
-.then((_) => print("won't reach here"))
-// Future completes with an error.
-.whenComplete(() => print('reaches here')) // Future completes with the same error.
-.then((_) => print("won't reach here"))
-// Future completes with the same error.
-.catchError(handleError);
-// Error is handled here.
-}
-In the code below, then()’s Future completes with an error, which is now
-handled by catchError().
-Because catchError()’s Future completes with
-someObject, whenComplete()’s Future completes with that same object.
-void main() {
-funcThatThrows()
-.then((_) => ...)
-// Future completes with an error.
-.catchError((e) {
-handleError(e);
-printErrorMessage();
-return someObject;
-})
-// Future completes with someObject.
-.whenComplete(() => print("Done!")); // Future completes with someObject.
-}
-Errors originating within whenComplete()
-If whenComplete()’s callback throws an error, then whenComplete()’s Future
-completes with that error:
-void main() {
-funcThatThrows()
-.catchError(handleError)
-// Future completes with a value.
-.whenComplete(() => throw "new error") // Future completes with an error.
-.catchError(handleError);
-// Error is handled.
-}
-Potential problem: failing to register error handlers early
-It is crucial that error handlers are installed before a Future completes:
-this avoids scenarios where a Future completes with an error, the error
-handler is not yet attached, and the error accidentally propagates. Consider
-this code:
-void main() {
-Future future = funcThatThrows();
-// BAD. Too late to handle funcThatThrows() exception.
-Future.delayed(const Duration(milliseconds: 500), () {
-future.then(...)
-.catchError(...);
-});
-}
-In the code above, catchError() is not registered until half a second after
-funcThatThrows() is called, and the error goes unhandled.
-The problem goes away if funcThatThrows() is called within the
-Future.delayed() callback:
-void main() {
-Future.delayed(const Duration(milliseconds: 500), () {
-funcThatThrows().then(processValue)
-.catchError(handleError)); // We get here.
-});
-}
-Potential problem: accidentally mixing synchronous and asynchronous errors
-Functions that return Futures should almost always emit their errors in the
-future. Since we do not want the caller of such functions to have to
-implement multiple error-handling scenarios, we want to prevent any synchronous
-errors from leaking out. Consider this code:
-Future<int> parseAndRead(data) {
-var filename = obtainFileName(data);
-// Could throw.
-File file = File(filename);
-return file.readAsString().then((contents) {
-return parseFileData(contents);
-// Could throw.
-});
-}
-Two functions in that code could potentially throw synchronously:
-obtainFileName() and parseFileData(). Because parseFileData() executes
-inside a then() callback, its error does not leak out of the function.
-Instead, then()’s Future completes with parseFileData()’s error, the error
-eventually completes parseAndRead()’s Future, and the error can be
-successfully handled by catchError().
-But obtainFileName() is not called within a then() callback; if it
-throws, a synchronous error propagates:
-void main() {
-parseAndRead(data).catchError((e) {
-print("inside catchError");
-print(e.error);
-});
-}
-// Program Output:
-//
-Unhandled exception:
-//
-<error from obtainFileName>
-//
-...
-Because using catchError() does not capture the error, a client of
-parseAndRead() would implement a separate error-handling strategy for this
-error.
-Solution: Using Future.sync() to wrap your code
-A common pattern for ensuring that no synchronous error is accidentally
-thrown from a function is to wrap the function body inside a new Future.sync()
-callback:
-Future<int> parseAndRead(data) {
-return Future.sync(() {
-var filename = obtainFileName(data);
-// Could throw.
-File file = File(filename);
-return file.readAsString().then((contents) {
-return parseFileData(contents);
-// Could throw.
-});
-});
-}
-If the callback returns a non-Future value, Future.sync()’s Future completes
-with that value. If the callback throws (as it does in the example
-above), the Future completes with an error. If the callback itself returns a
-Future, the value or the error of that Future completes Future.sync()’s
-Future.
-With code wrapped within Future.sync(), catchError() can handle all errors:
-void main() {
-parseAndRead(data).catchError((e) {
-print("inside catchError");
-print(e.error);
-});
-}
-// Program Output:
-//
-inside catchError
-//
-<error from obtainFileName>
-Future.sync() makes your code resilient against uncaught exceptions. If your
-function has a lot of code packed into it, chances are that you could be doing
-something dangerous without realizing it:
-Future fragileFunc() {
-return Future.sync(() {
-var x = someFunc();
-// Unexpectedly throws in some rare cases.
-var y = 10 / x;
-// x should not equal 0.
-...
-});
-}
-Future.sync() not only allows you to handle errors you know might occur, but
-also prevents errors from accidentally leaking out of your function.
-More information
-See the Future API reference
-for more information on Futures.
-Terms
-Security
-Privacy
-Site CC BY 4.0
+Python
+Perancangan Perangkat Lunak
+$10 - $30
+$10 - $30
+0 penawaran
+Tawar sekarang
+Exercicios no RapidMiner Studio
+Berakhir left
+Preciso de alguém para realizar exercícios nesse software
+Pemrosesan Data
+Excel
+$145
+(Avg Bid)
+$145
+Rata-rata
+2 penawaran
+Tawar sekarang
+Project Re-Make Animasi Huruf Hijaiyah
+Berakhir left
+Assalamu'alaikum wr.wb.
+Kami adalah Yayasan Harapan Indonesia Madani (YAHIMA), kami fokus pada aktivitas pendidikan agama Islam terutama pengembangan Metode Belajar Membaca Al-Qur'an.
+Saat ini kami memiliki project pendidikan membaca Al-Qur'an melalui media digital.
+Oleh karena itu, kami perlu bantuan rekan-rekan untuk membuatkan ulang Animasi Huruf Hijaiyah yang berjumlah 28 ...
+Animasi 3D
+Desain 3D
+Pemodelan 3D
+After Effects
+Animasi
+$267
+(Avg Bid)
+$267
+Rata-rata
+4 penawaran
+Tawar sekarang
+Membuat Deep Learning Image Recognition Menggunakan Python
+Berakhir left
+Job List :
+1. Hasil Deteksi Plat Nomer Kendaraan Bisa Menampilkan Informasi yg sesuai dengan Database di server
+2. Menggunakan Metode YOLO (You Only Look Once) Dan Faster R-CNN
+3, Aplikasi yang diminta di jadikan file apk
+Pemrosesan Data
+Deep Learning
+Image Processing
+Machine Learning (ML)
+Python
+$145
+(Avg Bid)
+$145
+Rata-rata
+2 penawaran
+Tawar sekarang
+iplementasi face detection dan regenesion pemrograman python dengan metode herr-cascade
+Berakhir left
+saya ingin membuat deteksi wajah dan menegenal pemilik wajah?
+Python
+$332
+(Avg Bid)
+$332
+Rata-rata
+4 penawaran
+Tawar sekarang
+Project for Aditya I. -- 3
+Berakhir left
+proses data menggunakan python
+HTML
+Laravel
+MySQL
+PHP
+Web Scraping
+$100
+(Avg Bid)
+$100
+Rata-rata
+1 penawaran
+Tawar sekarang
+Project for Philipe G. -- 2
+Berakhir left
+Ok pak sesuai dengan diskusi tadi. Mohon bantuannya untuk proses data menggunakan python dan juga results terkait dengan proses datanya. Terima kasih pak.
+Teknologi Ramah Lingkungan
+Ilmu Data
+Energi
+Teknik Mesin
+Python
+$50
+(Avg Bid)
+$50
+Rata-rata
+1 penawaran
+Tawar sekarang
+Pengajaran teknik Scraping HTML DOM
+Berakhir left
+Butuh cepat, fast respon dan siap ditelpon, profesional, baik, konsisten dan sabar.
+aplikasi udh selesai tinggal menunggu pengajar.
+1. Basis Python
+2. Menggunakan Flask framework
+Django
+Flask
+HTML
+Python
+Web Scraping
+$13
+(Avg Bid)
+$13
+Rata-rata
+2 penawaran
+Tawar sekarang
+Buatkan saya code face recognition absensi wajah dengan flask python
+Berakhir left
+Buatkan halaman web untuk absensi wajah dalam flask python. Jadi wajah terdeteksi namanya siapa lalu terekam ke sistem dan ditampilkan di web tersebut dalam bentuk tabel seperti cara kerja scanner barang. Untuk wajah terdeteksi dengan keterangan masuk.
+Tampilan Tabel berisi nama, kelas dan tanggal, jam masuk. Halaman absensi harus bisa menyimpan history data absensi. Untuk code face recognition s...
+Pemrosesan Data
+Flask
+HTML
+Python
+Perancangan Perangkat Lunak
+$36
+(Avg Bid)
+$36
+Rata-rata
+3 penawaran
+Tawar sekarang
+Data processing menggunakan python
+Berakhir left
+Data processing menggunakan python. Sudah ada formulanya.
+Python
+$24
+(Avg Bid)
+$24
+Rata-rata
+8 penawaran
+Tawar sekarang
+Saya perlu membuat coding python
+Berakhir left
+Hanya pembuatan basic python code untuk tugas
+Python
+$25
+(Avg Bid)
+$25
+Rata-rata
+10 penawaran
+Tawar sekarang
+Pengolahan data menggunakan pyhton
+Berakhir left
+data diolah menggunakan python. formula atau algortima sudah ada jadi tinggal diolah ke dalam python
+Python
+$16
+(Avg Bid)
+$16
+Rata-rata
+2 penawaran
+Tawar sekarang
+Need laravel and python expert to fix https://stackoverflow.com/questions/62089523/how-to-execute-python-file-from-laravel?stw=2
+Berakhir left
+I have some problem with execute python file form laravel [login untuk melihat URL]
+Laravel
+Python
+Perancangan Perangkat Lunak
+$10 - $30
+$10 - $30
+0 penawaran
+Tawar sekarang
+Project for Diyah Utami Kusumaning P. -- 20/05/31 02:27:03
+Berakhir left
+Halo Ka Diyah, saya galuh. Saya sedang mengerjakan skripsi pembuatan website prediksi kelulusan snmptn dengan laravel framework dan python menggunakan algoritma KNN. Tapi ada kendala, saya tidak bisa execute file python dari laravel. Untuk tampilan dan database semua sudah saya buat. Untuk rate bisa kita bicarakan lagi. Apakah ka diyah bersedia bekerja sama di project saya ini? Mohon konfirmasinya...
+Entri Data
+Pemrosesan Data
+PHP
+Python
+Desain Situs Web
+$50
+(Avg Bid)
+$50
+Rata-rata
+1 penawaran
+Tawar sekarang
+APP para seguir perfil segmentado no Instagram
+Berakhir left
+APP para seguir perfil de seguidores relacionados no Instagram
+Android
+iPad
+iPhone
+Mobile App Development
+Objective C
+$163
+(Avg Bid)
+$163
+Rata-rata
+4 penawaran
+Tawar sekarang
+buatkan saya plugin otomasi anticipation pada autodesk maya 3d
+Berakhir left
+kami membutuhkan scripting untuk pembuatan plugin autodesk maya , yaitu plugin otomasi anticipation, seperti membuat bounce ball hanya dengan plugin saja, yang menggunakan bahasa pemograman python
+Pemodelan 3D
+After Effects
+Animasi
+Python
+Pengisi Suara
+$151
+(Avg Bid)
+$151
+Rata-rata
+3 penawaran
+Tawar sekarang
+Penelitian deteksi website phishing menggunakan artificial neural network
+Berakhir left
+Deteksi website phishing menggunakan algoritma neural network dan software python
+algoritma yang digunakan :
+1. ANN,
+2. ANN dioptimisasi menggunakan PSO,
+3. Ann dicombine dengan Fuzzy (Anfis/Neuro Fuzzy).
+untuk algoritma pertama sudah selesai dan sudah ada akurasinya. disini yang harus dikerjakan hanya poin 2 dan 3.
+Big Data Sales
+Java
+Machine Learning (ML)
+Python
+Perancangan Perangkat Lunak
+$170
+(Avg Bid)
+$170
+Rata-rata
+3 penawaran
+Tawar sekarang
+Membuat aplikasi web dan mobile
+Berakhir left
+Pekerjaan ini berkaitan membangun database dan aplikasi yang akan digunakan oleh banyak pihak secara online. Lebih diutamakan yang memiliki pengalaman seperti berikut
+- Front/Back End
+- Laravel/Code Igniter
+- Python
+HTML
+MySQL
+PHP
+Python
+Desain Situs Web
+$566
+(Avg Bid)
+$566
+Rata-rata
+6 penawaran
+Tawar sekarang
+Saya Ingin Membuat Situs Livescore
+Berakhir left
+saya ingin membuat website livescore yang update. saya menjadi tampilan versi mobile.
+Saya Ingin Membuat Situs / Website Livescore yang bisa update sendiri tanpa menggunakan Iframe atau ambil object dr website lain, harus brand aku sendiri dan tidak boleh iframe, di sertai dengan apk versi mobile nya
+Desain Grafis
+HTML
+PHP
+Desain Situs Web
+$605
+(Avg Bid)
+$605
+Rata-rata
+8 penawaran
+Tawar sekarang
+Membutuhkan Freelance Programmer pyton
+Berakhir left
+- Pengalaman python minimal 1 tahun
+- Familiar & paham dengan anaconda & problem solving
+- Scrap data dari marketplace berdasarkan keyword atau link
+- Pernah membuat aplikasi sederhana scrap data ke database
+- Integrasi data scrap ke database mysql
+- Pernah menggunakan cronjob untuk scheduller di server
+- Bertanggung jawab & mampu berkomunikasi dengan baik
+- Progress report harian
+- Re...
+MySQL
+PHP
+Python
+Web Scraping
+$167
+(Avg Bid)
+$167
+Rata-rata
+10 penawaran
+Tawar sekarang
+Membuat sistem ABSA (Aspect Based Sentiment Analysis) dengan Python. Cakupan Data Mining.
+Berakhir left
+Sistem mencakup mengenai NLP (Natural Language Processing), yaitu membuat sistem Analisis Sentimen Berbasis Aspek, menggunakan Python. Bersedia untuk bekerjasama hingga pekerjaan selesai. Proyek sederhana ini untuk membantu saya menyelesaikan tugas akhir Tesis.
+Cakupan proyek mengenai data mining.
+Pemrosesan Data
+Python
+$200
+(Avg Bid)
+$200
+Rata-rata
+1 penawaran
+Tawar sekarang
+Project for Can Y. -- 19/06/25 17:42:22
+Berakhir left
+pythondeveloper Dicari Pengembang pemrosesan Python Image berdasarkan Kontrak .... Untuk pemrosesan gambar lantai produksi dari jeruji besi berlubang. Lingkup meliputi identifikasi objek, identifikasi pola, identifikasi lubang dan pengukuran dari tepi dan antara lubang yang berbeda
+Silakan bagikan pengalaman Anda dalam proyek serupa dan Keterampilan ditetapkan di [login untuk melihat URL]@[login ...
+Bash Scripting
+Docker
+Linux
+PHP
+Python
+$10 - $10
+$10 - $10
+0 penawaran
+Tawar sekarang
+Butuh CoFounder CTO - Share Revenue, Cost, dsb Project FinTech
+Berakhir left
+Tidak digaji bulanan karena cofounder tetapi sharing saham atau revenue bulanan, sharing cost, dll
+Lebih diminati apabila ada di Jakarta/Indonesia
+- Usia maksimal usia 35 tahun
+- Mengerti cara membuat aplikasi Android maupun iOS
+- Memiliki pengalaman diposisi yang sama minimal 3 tahun
+- Memiliki jiwa enterprenure - tidak digaji bulanan, pembagian revenue
+- Memiliki pengetahuan dan teknikal skill ...
+Android
+Mobile App Development
+MySQL
+PHP
+React Native
+$32
+(Avg Bid)
+$32
+Rata-rata
+2 penawaran
+Tawar sekarang
+dissolve oxygen sensor
+Berakhir left
+saya ada buat water quality project monitoring using iot, tapi menggunakan pycom
+sebagai micro-controller. dan sensor yang digunakan isalah analog ph sensor, ec sensor, dissolve oxygen sensor,temperature sensor water level sensor and turbidity sensor. Saya ada masalah dengan dissolve oxygen sensor sebab available resources dalam arduino tapi saya perlukannya dalam python language.
+Arduino
+Elektronika
+LabVIEW
+Microcontroller
+Python
+$105
+(Avg Bid)
+$105
+Rata-rata
+5 penawaran
+Tawar sekarang
+Need Cofounder for Mobile Apps - Indonesia - UNPAID - SHARE REVENUE ONLY
+Berakhir left
+Tidak digaji bulanan karena cofounder tetapi sharing saham atau revenue bulanan
+Lebih diminati apabila ada di Jakarta/Indonesia
+- Usia maksimal usia 35 tahun
+- Mengerti cara membuat aplikasi Android maupun iOS
+- Memiliki pengalaman diposisi yang sama minimal 3 tahun
+- Memiliki jiwa enterprenure - tidak digaji bulanan, pembagian revenue
+- Memiliki pengetahuan dan teknikal skill yang baik dengan PH...
+Android
+Mobile App Development
+MySQL
+PHP
+React Native
+$30
+(Avg Bid)
+$30
+Rata-rata
+1 penawaran
+Tawar sekarang
+Saya membutuhkan Android Developer
+Berakhir left
+- Usia maksimal usia 37 tahun
+- Pendidikan minimal Diploma 3 atau Sarjana lebih di utamakan dari Tehnik Informatika / Manajemen Informatika / Sistem Informatika (bidang studi yang relevan)
+- Memiliki pengalaman di posisi yang sama minimal 3 tahun
+- Memiliki jiwa kepemimpinan
+Memiliki pengetahuan dan teknikal skill yang baik dengan PHP/JAVA/Python,SQL/MySQL, Native (harus bisa), XHTML/CSS
+Jujur, te...
+Android
+Mobile App Development
+MySQL
+PHP
+XML
+$1506
+(Avg Bid)
+$1506
+Rata-rata
+8 penawaran
+Tawar sekarang
+butuh jasa ilustrasi (gambar tangan) outline saja (no color) simple
+Berakhir left
+Butuh 3-4 frame untuk jasa gambar tangan (ilustrasi) simple untuk anak2, outline stroke pen line aja karena nanti mau diwarna2 sendiri sesuai keinginan
+Ilustrasi
+$23
+(Avg Bid)
+$23
+Rata-rata
+10 penawaran
+Tawar sekarang
+arcgis python 1 code gis mapping
+Berakhir left
+Coding python gis via remote team viewer
+Utk fungsi maxvalue
+Saya butuh max value dari 2 table no 01/02 lalu di gantikan max value table tersebut sesuai pemenang 01 / 02 trima kasi hanya 1 fungsi code
+Kartografi & Peta
+Pemrosesan Data
+Geospatial
+Python
+Perancangan Perangkat Lunak
+$28
+(Avg Bid)
+$28
+Rata-rata
+4 penawaran
+Tawar sekarang
+agente de marketing digital independiente (no agencias)
+Berakhir left
+buscamos agentes que nos represente en cada país para nuestra empresa
+Pemasaran Facebook
+Pemasaran melalui Internet
+Pemasaran Jarak Jauh
+$555
+(Avg Bid)
+$555
+Rata-rata
+3 penawaran
+Tawar sekarang
+Memperlihatkan 1 - 50 dari 207,707 entri
+Hasil per halaman
+20
+50
+75
+100
+First
+1
+2
+3
+4
+Next
+Last
+Pekerjaan lain terkait dengan str object has no attribute append dictionary python
+request object has no attribute get
+,
+'< kite connect >' object has no attribute '< request access token >'
+,
+googletrans attributeerror: 'nonetype' object has no attribute 'group'
+,
+tensor object has no attribute exp
+,
+object has no attribute
+,
+tensor object has no attribute numpy
+,
+tensor object has no attribute get_weights
+,
+sequential object has no attribute '_ feed_output_names
+,
+attributeerror model object has no attribute outbound_nodes
+,
+tensor object has no attribute sparse_read
+,
+attributeerror parallelmodel object has no attribute '_ is_graph_network
+,
+attributeerror: 'module' object has no attribute 'trackercsrt_create'
+,
+attributeerror: 'randomproxy' object has no attribute 'proxies'
+,
+'numpy.ndarray' object has no attribute 'unique'
+,
+'datetime.date' object has no attribute 'tzinfo' django
+,
+error! unexpected exception, this is probably a bug: 'playbookcli' object has no attribute 'options'
+,
+attributeerror values object has no attribute process dependency links
+,
+attributeerror tensorflow python framework ops eagertensor object has no attribute astype
+,
+operation object has no attribute dtype
+,
+numpy dtype object has no attribute is_floating
+,
+refvariable object has no attribute ref
+,
+str' object has no attribute 'append' dictionary python
+,
+attributeerror: 'list' object has no attribute 'append
+,
+dict' object has no attribute 'append
+,
+tuple' object has no attribute 'append
+,
+python argparse str' object has no attribute 'append
+,
+'nonetype' object has no attribute 'append'
+,
+'numpy.ndarray' object has no attribute 'append'
+,
+argparse attributeerror: 'str' object has no attribute 'append
+,
+str' object has no attribute '_default_manager
+Perlu merekrut seorang freelancer untuk sebuah pekerjaan?
+Gratis mendaftar, ketikkan apa yang Anda perlukan & dapatkan penawaran gratis dalam hitungan detik
+Masukkan deskripsi proyek Anda di sini
+Buat Proyek
+Bahasa Indonesia - Indonesia
+Bantuan & Dukungan
+Freelancer
+Kategori
+Proyek
+Kontes
+Freelancer
+Perusahaan
+Program Freelancer Pilihan
+Manajemen Proyek
+Pekerjaan Lokal
+Photo Anywhere
+Pameran (Etalase)
+API untuk Pengembang
+Tentang
+Tentang kami
+Bagaimana cara Kerjanya
+Keamanan
+Investor
+Peta situs
+Kutipan
+Berita
+Ketentuan
+Kebijakan Privasi
+Syarat dan Ketentuan
+Kebijakan Hak Cipta
+Kode Etik
+Tarif dan Biaya
+Aplikasi
+---
+Pengguna Terdaftar
+---
+Jumlah Pekerjaan Terpasang
+Freelancer ® is a registered Trademark of Freelancer Technology Pty Limited (ACN 141 959 042)
+Copyright © 2021 Freelancer Technology Pty Limited (ACN 141 959 042)

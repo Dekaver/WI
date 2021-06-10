@@ -1,4 +1,4 @@
-import urllib.request
+from urllib.request import urlopen
 import http.client as http
 from bs4 import BeautifulSoup
 # from nltk.corpus import stopwords
@@ -12,11 +12,11 @@ f = open('resource/dataset.json',)
 data = json.load(f)
 data_preproccess = {}
 data_preproccess['doc'] = {}
+len(data)
 for i in data['url']:
-
     url = data['url'][i]
     try:
-        html = urllib.request.urlopen(url).read()
+        html = urlopen(url).read()
     except (http.IncompleteRead) as e:
         html = e.partial
     soup = BeautifulSoup(html, features="html5lib")

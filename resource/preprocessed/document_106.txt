@@ -1,125 +1,436 @@
-How to handle the ArithmeticException (unchecked) in Java?
-×
-Home
-Jobs
-Tools
-Coding Ground
-Current Affairs
-UPSC Notes
-Online Tutors
-Whiteboard
-Net Meeting
-Tutorix
-Login
-Packages
-Categories
-Java
-JSP
-iOS
-HTML
-Android
-Python
-C Programming
-C++ Programming
-C#
-PHP
-CSS
-Javascript
-jQuery
-SAP
-SAP HANA
-Data Structure
-RDBMS
-MySQL
-Mathematics
-8085 Microprocessor
-Operating System
-Digital Electronics
-Analysis of Algorithms
-Mobile Development
-Front End
-Web Development
-Selenium
-MongoDB
-Computer Network
-General Topics
-Library
-Videos
-Q/A
-eBooks
-Login
-Library
-Videos
-eBooks
-Related Questions & Answers
-How to handle the StringIndexOutOfBoundsException (unchecked) in Java?
-How to handle the NumberFormatException (unchecked) in Java?
-How to handle the ArrayStoreException (unchecked) in Java?
-How to handle the Runtime Exception in Java?
-How to create a custom unchecked exception in Java?
-How to handle StringIndexOutOfBoundsException in Java?
-How to handle MalformedURLException in java?
-How to handle EOFException in java?
-How to handle the exception using UncaughtExceptionHandler in Java?
-What are unchecked exceptions in Java?
-Checked vs Unchecked exceptions in Java
-How to handle Assertion Error in Java?
-Checked Vs unchecked exceptions in Java programming.
-How to handle proxy in Selenium in Java?
-How to handle conflicts in the workplace?
-Selected Reading
-UPSC IAS Exams Notes
-Developer's Best Practices
-Questions and Answers
-Effective Resume Writing
-HR Interview Questions
-Computer Glossary
-Who is Who
-How to handle the ArithmeticException (unchecked) in Java?
-JavaObject Oriented ProgrammingProgramming
-The java.lang.ArithmeticException is an unchecked exception in Java. Usually, one would come across java.lang.ArithmeticException: / by zero which occurs when an attempt is made to divide two numbers and the number in the denominator is zero. ArithmeticException objects may be constructed by the JVM.Example1Live Demopublic class ArithmeticExceptionTest {
-public static void main(String[] args) {
-int a = 0, b = 10;
-int c = b/a;
-System.out.println("Value of c is : "+ c);
+AttributeError: 'dict' object has no attribute 'append' in json
+Quabr
+answers we find
+Explore tags
+Advanced Dictionary for Chrome
+1
+Translate worlds/phrases
+Translation unknown words or phrases by selection text in a small pop-up bubble.
+2
+Add flashcards
+Create cards in one click with the translated words.
+3
+Build vocabulary lists
+Organize flashcards in different themed decks as you wish.
+Get Free Extension
+Related questions
+My VS code interface for Jupyter notebook is very different from the new version
+pd.read_csv optimization to reduce the running time
+Cannot locate child element Selenium
+JsonNode Null JsonArray Parser
+I want to add a value to a JSON file using notepad and load the saved value into notepad
+Loop Object and Array when Array is inside of an Object
+Converting .py to .html file
+Placing logo with links inline
+Attribute Error: 'list' object has no attribute 'send_Keys' - Selenium
+How to solve the error 'AttributeError: 'ir.http' object has no attribute 'webclient_rendering_context' - - -'?
+Why am I getting discord.py AttributeError: 'str' object has no attribute 'trigger_typing'
+AttributeError: 'dict' object has no attribute 'append' in json
+2020-07-20 08:23
+jone
+imported from Stackoverflow
+python
+json
+jupyter-notebook
+attributeerror
+Append does not work on dictionary object. My code is as follow:
+with open (file) as f:
+for line in f:
+review = json.loads(line)
+review.append((review['reviewText'],review['overall']))#append is not working
+review[5]
+1 answer
+answered 2020-07-20 08:33
+Mohammad Hossein Shojaeinia
+The dictionary object has no append method. You can add key,value to a dictionary such as follow:
+review["you_key"] = your_value
+See also questions close to this topic
+My VS code interface for Jupyter notebook is very different from the new version
+I recently started learning python for data analysis and decided to use VS code for its new Jupyter notebook feature. I installed the extension for python and jupyter notebook in VS code but for some reason my interface is very different from the one in the new update.
+I understand this is a small issue but, It's really throwing me off. Can someone please let me know what I am doing wrong here?
+Thank you
+pd.read_csv optimization to reduce the running time
+My input file is 20GB .txt file, So It faces performance issues when I test run the below code.
+pd.read_csv is taking more than 3 hours. Need to optimization in the reading stage.
+Sample input file.
+007064770000|SODIUM|95 MILLIGRAM|0
+007064770000|MULTI|001|0
+007064770000|PET STARCH FREE|NOT APPLICABLE|0
+007064770000|GRAIN TYPE|FLOUR|0
+003980010200|MULTI|001|0
+003980010200|DEAL|NON-DEAL|0
+003980010200|PRODUCT SIZE|1 COUNT|0
+003980010200|BASE SIZE|1 COUNT|0
+757582821517|HW APPLIANCES|001|0
+757582821516|HW APPLIANCES|001|0
+757582821517|PACKAGE GENERAL SHAPE|BOTTLE|0
+757582821517|SYND FORM|CREAM|0
+757582821517|FORM|CREAM|0
+757582821517|TARGET SKIN CONDITION|DRY SKIN|0
+003980010205|HW MEDICINE|NON-DEAL|0
+003980010205|PRODUCT SIZE|1 COUNT|0
+003980010205|BASE SIZE|1 COUNT|0
+007064770054|SODIUM|95 MILLIGRAM|0
+007064770054|HW SPORTS|001|0
+007064770054|PET STARCH FREE|NOT APPLICABLE|0
+007064770054|GRAIN TYPE|FLOUR|0
+003980010312|HW DIAMETER|1 COUNT|0
+003980010312|BASE SIZE|1 COUNT|0
+Output file
+UPC code HW APPLIANCES HW DIAMETER HW MEDICINE HW SPORTS
+0
+3980010205
+NaN
+NaN
+NON-DEAL
+NaN
+1
+3980010312
+NaN
+1 COUNT
+NaN
+NaN
+2
+7064770054
+NaN
+NaN
+NaN
+001
+3
+757582821516
+001
+NaN
+NaN
+NaN
+4
+757582821517
+001
+NaN
+NaN
+NaN
+Existing code
+import pandas as pd
+import datetime
+df = pd.read_csv('sample.txt', sep='|', names=['upc_cd', 'chr_typ', 'chr_vl', 'chr_vl_typ'], engine='python')
+df = df[df['chr_typ'].str.contains('HW ')]
+df.sort_values('chr_typ')
+df = (
+df.iloc[:, :-1]
+# Remove last Column
+.pivot(index=['upc_cd'], columns=['chr_typ'])
+.droplevel(0, axis=1)
+# Fix Levels and axes names
+.rename_axis('UPC code')
+.rename_axis(None, axis=1)
+.reset_index()
+)
+print(df)
+df.to_csv('output.csv', sep=',', index=None, mode='w', encoding='utf-8')
+Please suggest the modification to the code in order to reduce the running time
+Cannot locate child element Selenium
+Trying to pick out single restaurant elements under the All Restaurants category on this page. https://www.foodpanda.sg/restaurants/new?lat=1.2915902&lng=103.8379066&vertical=restaurants
+All li elements have a different class name. The only working xpath, I have been able to figure out is this one.
+//ul[@class="vendor-list"]//li[3]
+I cannot figure out how to increase this number and get all the restaurants, which is complicated by the fact that there is an infinite scroll as well.
+j = 1
+def get_rest():
+global j
+while True:
+driver.execute_script("window.scrollBy(0,2525)", "")
+time.sleep(5)
+var = f'{[j]}'
+elems = driver.find_elements_by_xpath(f'//ul[@class="vendor-list"]//li{var})
+return elems
+JsonNode Null JsonArray Parser
+I am having a JsonNode response ( unirest ) which I want to parse using JSON Parser.
+Now, let's say the structure is somewhat like this :
+{
+"expand" : "names",
+"customfield_1" : null,
+"customfield_2" : [ { "email":"123@gmail.com"},{...}]
 }
-}In the above example,  ArithmeticExeption is occurred due to denominator value is zero.java.lang.ArithmeticException: Exception thrown by java during division./ by zero: is the detail message given to ArithmeticException class while creating the ArithmeticException object.OutputException in thread "main" java.lang.ArithmeticException: / by zero
-at ArithmeticExceptionTest.main(ArithmeticExceptionTest.java:5)How to handle ArithmeticExceptionLet us handle the ArithmeticException using try and catch blocks.Surround the statements that can throw ArithmeticException with try and catch blocks.We can Catch the ArithmeticExceptionTake necessary action for our program, as the execution doesn’t abort.Example2Live Demopublic class ArithmeticExceptionTest {
-public static void main(String[] args) {
-int a = 0, b = 10 ;
-int c = 0;
-try {
-c = b/a;
-} catch (ArithmeticException e) {
-e.printStackTrace();
-System.out.println("We are just printing the stack trace.\n"+ "ArithmeticException is handled. But take care of the variable \"c\"");
+So, the problem is that customfield_1 is a JsonArray and sometimes it can be null.
+So, as soon as I use
+JSONArray myArr = myObj.getJSONArray("customfield_1")
+I get the following error:
+org.json.JSONException: JSONObject["customfield_1"] is not a JSONArray.
+I tried to change to JsonObject and JsonString but they also didn't help. How to avoid it ?
+I want to add a value to a JSON file using notepad and load the saved value into notepad
+I put a textpad that is not in JSON, and the edits made with the notepad are saved in the textpad, so the next time I open the same notepad, I want to be able to load the note saved in the textpad in the JSON.
+I want to add a value to a JSON file using notepad and load the saved value into notepad. And I want to open multiple JSON files using i.
+I want to open multiple JSON files using for i in a: with open('i.json', 'r+') as f:.
+import json
+import os
+def search(dirname):
+a = os.listdir(dirname)
+for i in a:
+with open('i.json', 'r+') as f:
+data = json.load(f)
+data['textpad'] = []
+f.seek(0)
+json.dump(data, f, indent=4)
+f.truncate()
+print(json.dumps(data, indent='\t'))
+search("C:/Users\eoeo7\Desktop\매")
+JSON is this part.
+{
+"version": "4.5.7",
+"flags": {},
+"shapes": [],
+"imagePath": "4.jpg",
+"imageData": null,
+"imageHeight": 662,
+"imageWidth": 1080
 }
-System.out.println("Value of c :"+ c);
+Loop Object and Array when Array is inside of an Object
+I am using a query to receive a JSON response. I would like to loop each object (VGF, SSR, BCV, etc..) and output them to premade divs, then the arrays within those objects will loop and create divs within that matching object container.
+This is a shortened down version of what I have, and it works mostly. (hopefully, I haven't screwed it up here).
+The problem is I have to repeat the searchresult function by copying and pasting the entire function for each object (VGF, SSR, BCV, etc). I would really like to learn how to loop this and not have the same code pasted more than a dozen times.
+If I have messed up or left something out of this question, please let me know and I will take care of it.
+Here is my ajax request and javascript. I know my problem lies within this loop. I have tried to do a loop inside of a loop, etc. But, when I do that I get no results at all. I am baffled and ready to learn.
+$(function getData() {
+$("#searchbtn").click(function () {
+$.ajax({
+url: "action.php",
+type: "POST",
+data: {},
+dataType: "json",
+success: function (response) {
+console.log(response);
+searchresult(response);
 }
-}When an exception occurs, the execution falls to the catch block from the point of occurrence of an exception. It executes the statement in the catch block and continues with the statement present after the try and catch blocks.OutputWe are just printing the stack trace.
-ArithmeticException is handled. But take care of the variable "c"
-Value of c is : 0
-java.lang.ArithmeticException: / by zero
-at ArithmeticExceptionTest.main(ArithmeticExceptionTest.java:6)
-Raja
-Published on 25-Jun-2019 15:15:13
-Previous Page
-Print Page
-Next Page
-Advertisements
-Print
-Add Notes
-Bookmark this page
-Report Error
-Suggestions
-Save
-Close
-Dashboard
-Logout
-About us
-Terms of use
-Cookies Policy
-FAQ's
-Helping
-Contact
-© Copyright 2021. All Rights Reserved.
+});
+});
+});
+let searchresult = function(response) {
+let container = document.getElementById('VGFresults');
+let output = "";
+for (let j = 0; j < response.length; j++) {
+if (response[j].rcode == "VGF") {
+output +=
+`<div id="person${response[j].code}">
+<p>${response[j].firstname} ${response[j].lastname}</p>
+</div>`
+}
+$(container).html(output);
+}
+};
+Here is my response (Same layout as I am currently receiving but shortened the objects in the arrays).
+response =
+{"VGF":
+[{"code":"TU","rcode":"VGF","firstname":"Tom","lastname":"Riddle"},
+{"code":"AZ","rcode":"VGF","firstname":"Harry","lastname":"Potter"},
+{"code":"FR","rcode":"VGF","firstname":"Hermoine","lastname":"Granger"}],
+"SSR":
+[{"code":"HG","rcode":"SSR","firstname":"Walt","lastname":"Disney"},
+{"code":"TR","rcode":"SSR","firstname":"H.R.","lastname":"Pickins"},
+{"code":"ED","rcode":"SSR","firstname":"Tom","lastname":"Ford"}],
+"BCV":
+[{"code":"YH","rcode":"BCV","firstname":"Tom","lastname":"Clancy"},
+{"code":"RS","rcode":"BCV","firstname":"Robin","lastname":"Williams"},
+{"code":"AB","rcode":"BCV","firstname":"Brett","lastname":"Favre"}]}
+Here is the HTML that the searchresult function is working with. Currently, it works fine.
+To clarify, I would like each object to insert its arrays within the corresponding div. Example:
+SSR arrays will go into <div id="SSRresults">
+BCV arrays will go into <div id="BCVresults">
+From there, each array will create a div within that *results div for each array.
+<div id="VGFresults">
+<div id="VGFheader">This is the VGF Header</div>
+<div id="VGFresults">The Javascript Creates Divs for each array here.</div>
+</div>
+<div id="SSRresults">
+<div id="SSRheader">This is the SSR Header</div>
+<div id="SSRresults">The Javascript Creates Divs for each array here.</div>
+</div>
+<div id="BCVresults">
+<div id="BCVheader">This is the BCV Header</div>
+<div id="BCVresults">The Javascript Creates Divs for each array here.</div>
+</div>
+Thanks, any help is much appreciated.
+Converting .py to .html file
+From jupyter notebook, I downloaded a file as .py and my goal here to to set up task scheduler for daily scraping. The goal of this file (scrape.py) is to scrape the data from a website and save as html (output_scraped.html).
+The code looks like this:
+from bs4 import BeautifulSoup
+import requests
+# assign destination
+url = a url
+# Grab content of that url
+req = requests.get(url)
+soup = BeautifulSoup(req.text, 'html.parser')
+titles = []
+levels = soup.find_all('article', {'class' : '1234'})
+for level in levels:
+divs = level.find_all('a', {'class' : '5678'})
+for div in divs:
+titles.append(div.text)
+hirer = []
+for level in levels:
+hirer_divs = level.find_all('span', {'class' : '9873'})
+for hirer_div in hirer_divs:
+hirer.append(hirer_div.text)
+mylist = []
+ids_final = soup.find_all(attrs={"data-id": '5tw287'})
+for ifn in ids_final:
+mylist.append(ifn["data-id"])
+# # Putting it all together
+for one, two, three in zip(titles, hirer, mylist):
+final = print(one, two, three)
+# In[16]:
+# converting to html file
+from nbconvert import HTMLExporter
+import codecs
+import nbformat
+notebook_name = 'scrape.py'
+output_file_name = 'output_scraped.html'
+exporter = HTMLExporter()
+output_notebook = nbformat.read(notebook_name, as_version=4)
+output, resources = exporter.from_notebook_node(output_notebook)
+codecs.open(output_file_name, 'w', encoding='utf-8').write(output)
+The above seems to be working without any issue on jupyter notebook, however, when running on .py file, it produces output until the # Putting it all together part and then gives me this rather intimidating error:
+Traceback (most recent call last):
+File "C:\Python38\lib\site-packages\nbformat\reader.py", line 14, in parse_json
+nb_dict = json.loads(s, **kwargs)
+File "C:\Python38\lib\json\__init__.py", line 357, in loads
+return _default_decoder.decode(s)
+File "C:\Python38\lib\json\decoder.py", line 337, in decode
+obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+File "C:\Python38\lib\json\decoder.py", line 355, in raw_decode
+raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+The above exception was the direct cause of the following exception:
+Traceback (most recent call last):
+File "C:\Python38\a-SEEK_scrape.py", line 166, in <module>
+output_notebook = nbformat.read(notebook_name, as_version=4)
+File "C:\Python38\lib\site-packages\nbformat\__init__.py", line 141, in read
+return reads(f.read(), as_version, **kwargs)
+File "C:\Python38\lib\site-packages\nbformat\__init__.py", line 73, in reads
+nb = reader.reads(s, **kwargs)
+File "C:\Python38\lib\site-packages\nbformat\reader.py", line 58, in reads
+nb_dict = parse_json(s, **kwargs)
+File "C:\Python38\lib\site-packages\nbformat\reader.py", line 17, in parse_json
+raise NotJSONError(("Notebook does not appear to be JSON: %r" % s)[:77] + "...") from e
+nbformat.reader.NotJSONError: Notebook does not appear to be JSON: '#!/usr/bin/env python\n# coding: utf-8\...
+>>>
+Is it because it's not a JSON file? Why would that matter? If I find a way to convert this to JSON, would it achieve what I initially want to do? Any help/ pointer will be much appreciated. Thanks!
+Placing logo with links inline
+I am trying to place two logos with links inline in HTML in a jupyter notebook but couldn't get it working proprly.
+<a href="https://colab.research.google.com/github/sample_repo/sample_notebook.ipynb">
+<img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/, width=150, height=150/></a>
+<a href="https://mybinder.org/v2/gh/https%3A%2F%2Fgithub%2Fsample_repo/main?filepath=sample_notebook.ipynb">
+<img src="https://mybinder.org/badge_logo.svg" alt="Open In mybinder"/, width=150, height=150/></a>
+What I have tried so far?
+I tried to put the logo in a div and then tried to align it to left using css
+I tried to place the logo with link in a list
+None of them worked! The logos right now looks like this
+What I am trying to achieve?
+I want the logo to be inline separated by space placed from left to right
+Attribute Error: 'list' object has no attribute 'send_Keys' - Selenium
+Im trying to open up the link in my code , locate where it asks me to enter my email address and then enter in my email address and finally press enter. However I am getting an attribute error: 'list' object has no attribute 'send_Keys' and have no idea why.
+Here is my code:
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+import time
+PATH = "/Users/Monkeys/Downloads/chromedriver"
+driver = webdriver.Chrome(PATH)
+driver.get("https://www.mytutor.co.uk/tutors/login/")
+search = driver.find_elements_by_name("form:email:input")
+search.send_keys("noname@noname.com")
+search.send_Keys(Keys.RETURN)
+driver.quit()
+I have tried to find the element in other ways still getting the same error. I thought I had issues locating the element in the HTML code but that wasn't the issue. I simply have no idea what the attribute error in this context means. I would appreciate if I could get some assistance please.
+How to solve the error 'AttributeError: 'ir.http' object has no attribute 'webclient_rendering_context' - - -'?
+I got this error when i try to run odoo via terminal after configuring odoo and python in eclipse and created database. Here is the full error reference.
+davemax@tomdave:~/odoo/workspace/odoo_13/odoo_13$ python3 odoo.py -c odoo.conf -d odoo_13A
+2021-06-07 07:44:06,211 7714 INFO ? odoo: Odoo version 13.0
+2021-06-07 07:44:06,211 7714 INFO ? odoo: Using configuration file at /home/davemax/odoo/workspace/odoo_13/odoo_13/odoo.conf
+2021-06-07 07:44:06,212 7714 INFO ? odoo: addons paths: ['/home/davemax/odoo/workspace/odoo_13/odoo_13/odoo/addons', '/home/davemax/.local/share/Odoo/addons/13.0', '/home/davemax/odoo/workspace/odoo_13/custom_addons', '/home/davemax/odoo/workspace/odoo_13/odoo_13/addons', '/home/davemax/odoo/workspace/odoo_13/odoo_13']
+2021-06-07 07:44:06,212 7714 INFO ? odoo: database: odoo@localhost:default
+2021-06-07 07:44:06,518 7714 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf
+2021-06-07 07:44:06,682 7714 INFO ? odoo.service.server: HTTP service (werkzeug) running on tomdave:7711
+2021-06-07 07:44:06,719 7714 INFO odoo_13A odoo.modules.loading: loading 1 modules...
+2021-06-07 07:44:06,742 7714 INFO odoo_13A odoo.modules.loading: 1 modules loaded in 0.02s, 0 queries
+2021-06-07 07:44:06,948 7714 INFO odoo_13A odoo.modules.loading: Modules loaded.
+2021-06-07 07:44:14,552 7714 INFO ? odoo.http: HTTP Configuring static files
+2021-06-07 07:44:14,559 7714 INFO odoo_13A odoo.addons.base.models.ir_http: Generating routing map for key None
+2021-06-07 07:44:14,632 7714 INFO odoo_13A werkzeug: 127.0.0.1 - - [07/Jun/2021 07:44:14] "GET /web?db=odoo_13A HTTP/1.1" 500 - 2 0.002 0.073
+2021-06-07 07:44:14,653 7714 ERROR odoo_13A werkzeug: Error on request:
+Traceback (most recent call last):
+File "/home/davemax/.local/lib/python3.8/site-packages/werkzeug/serving.py", line 270, in run_wsgi
+execute(self.server.app)
+File "/home/davemax/.local/lib/python3.8/site-packages/werkzeug/serving.py", line 258, in execute
+application_iter = app(environ, start_response)
+File "/home/davemax/odoo/workspace/odoo_13/odoo_13/odoo/service/server.py", line 439, in app
+return self.app(e, s)
+File "/home/davemax/odoo/workspace/odoo_13/odoo_13/odoo/service/wsgi_server.py", line 142, in application
+return application_unproxied(environ, start_response)
+File "/home/davemax/odoo/workspace/odoo_13/odoo_13/odoo/service/wsgi_server.py", line 117, in application_unproxied
+result = odoo.http.root(environ, start_response)
+File "/home/davemax/odoo/workspace/odoo_13/odoo_13/odoo/http.py", line 1287, in call
+return self.dispatch(environ, start_response)
+File "/home/davemax/odoo/workspace/odoo_13/odoo_13/odoo/http.py", line 1257, in call
+return self.app(environ, start_wrapped)
+File "/home/davemax/.local/lib/python3.8/site-packages/werkzeug/wsgi.py", line 766, in call
+return self.app(environ, start_response)
+File "/home/davemax/odoo/workspace/odoo_13/odoo_13/odoo/http.py", line 1457, in dispatch
+result = ir_http._dispatch()
+File "/home/davemax/odoo/workspace/odoo_13/odoo_13/odoo/addons/base/models/ir_http.py", line 238, in _dispatch
+return cls._handle_exception(e)
+File "/home/davemax/odoo/workspace/odoo_13/odoo_13/odoo/addons/base/models/ir_http.py", line 206, in _handle_exception
+return request._handle_exception(exception)
+File "/home/davemax/odoo/workspace/odoo_13/odoo_13/odoo/http.py", line 750, in _handle_exception
+return super(HttpRequest, self)._handle_exception(exception)
+File "/home/davemax/odoo/workspace/odoo_13/odoo_13/odoo/http.py", line 310, in _handle_exception
+raise pycompat.reraise(type(exception), exception, sys.exc_info()[2])
+File "/home/davemax/odoo/workspace/odoo_13/odoo_13/odoo/tools/pycompat.py", line 14, in reraise
+raise value
+File "/home/davemax/odoo/workspace/odoo_13/odoo_13/odoo/addons/base/models/ir_http.py", line 234, in _dispatch
+result = request.dispatch()
+File "/home/davemax/odoo/workspace/odoo_13/odoo_13/odoo/http.py", line 809, in dispatch
+r = self._call_function(**self.params)
+File "/home/davemax/odoo/workspace/odoo_13/odoo_13/odoo/http.py", line 350, in _call_function
+return checked_call(self.db, *args, **kwargs)
+File "/home/davemax/odoo/workspace/odoo_13/odoo_13/odoo/service/model.py", line 94, in wrapper
+return f(dbname, *args, **kwargs)
+File "/home/davemax/odoo/workspace/odoo_13/odoo_13/odoo/http.py", line 339, in checked_call
+result = self.endpoint(*a, **kw)
+File "/home/davemax/odoo/workspace/odoo_13/odoo_13/odoo/http.py", line 915, in call
+return self.method(*args, **kw)
+File "/home/davemax/odoo/workspace/odoo_13/odoo_13/odoo/http.py", line 515, in response_wrap
+response = f(*args, **kw)
+File "/home/davemax/odoo/workspace/odoo_13/odoo_13/addons/web/controllers/main.py", line 844, in web_client
+context = request.env['ir.http'].webclient_rendering_context()
+AttributeError: 'ir.http' object has no attribute 'webclient_rendering_context' - - -
+please help me
+Why am I getting discord.py AttributeError: 'str' object has no attribute 'trigger_typing'
+I can't figure out why the hell I am getting this error. Everything in the code looks good to me. Maybe it is due to the converters not working but my other commands are working properly.
+async def ship(self, ctx: commands.Context, user1: discord.Member = None, user2: discord.Member = None):
+if user1 is None or user2 is None:
+await ctx.send(embed=discord.Embed(
+description=f"please mention two persons or provide two image urls! try: `{self.GetPrefix(ctx)}ship @person1 @person2` or `{self.GetPrefix(ctx)}ship [img url1] [img url2]`",
+color=self.randomcolor()))
+else:
+await ctx.trigger_typing()
+r1 = requests.get(user1.avatar_url)
+with open("images/ship_avatar1.png", "wb") as f1:
+f1.write(r1.content)
+r2 = requests.get(user2.avatar_url)
+with open("images/ship_avatar2.png", "wb") as f2:
+f2.write(r2.content)
+await self.ship("images/ship_avatar1.png", "images/ship_avatar2.png", "images/ship.png")
+embed = discord.Embed()
+embed.set_image(url="attachment://ship.png")
+file = discord.File("images/ship.png", "ship.png")
+await ctx.send(embed=embed, file=file)
+The error I am getting is:
+Ignoring exception in on_command_error
+Traceback (most recent call last):
+File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/ext/commands/core.py", line 85, in wrapped
+ret = await coro(*args, **kwargs)
+File "/home/runner/Mob/cogs/fun.py", line 397, in ship
+await self.ship("images/ship_avatar1.png", "images/ship_avatar2.png", "images/ship.png")
+File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/ext/commands/core.py", line 372, in __call__
+return await self.callback(self.cog, *args, **kwargs)
+File "/home/runner/Mob/cogs/fun.py", line 387, in ship
+await ctx.trigger_typing()
+AttributeError: 'str' object has no attribute 'trigger_typing'
+Quabr.com is StackOverFlow proxy site | Sitemap

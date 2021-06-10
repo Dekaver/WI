@@ -1,41 +1,344 @@
-Python IndexError: List Index Out of Range (How to Fix This Stupid Bug) | Finxter
-Skip to content
-Main Menu
-Python + BusinessMenu ToggleWebinar FreelancerCourse Python FreelancerBooksMenu ToggleAll Finxter BooksTop Book Recommendations[Bundle] The Intelligent CoderCoffee Break SeriesPython One-LinersCoursesMenu Toggle10+ Python, ML, Algorithm, Data Science CoursesThe World’s #1 Python Freelancer CourseResourcesMenu ToggleTutorialsPuzzlesCheat SheetsPEP8 CheckerFinxter Computer Science AcademyPython One-Liners Book ResourcesFinxter Computer Science Email AcademyAboutMenu ToggleAboutTestimonialsSupport Free Education AcademyPython IndexError: List Index Out of Range (How to Fix This Stupid Bug)Python / By
-Chris
-If you’re like me, you try things first in your code and fix the bugs as they come. One frequent bug in Python is the IndexError: list index out of range. So, what does this error message mean?The error “list index out of range” arises if you access invalid indices in your Python list. For example, if you try to access the list element with index 100 but your lists consist only of three elements, Python will throw an IndexError telling you that the list index is out of range.Do you want to develop the skills of a well-rounded Python professional—while getting paid in the process? Become a Python freelancer and order your book Leaving the Rat Race with Python on Amazon (Kindle/Print)!Let’s have a look at an example where this error arises:lst = ['Alice', 'Bob', 'Carl']
-print(lst[3])The element with index 3 doesn’t exist in the list with three elements. Why is that? The following graphic shows that the maximal index in your list is 2. The call lst[2] would retrieve the third list element 'Carl'. Did you try to access the third element with index 3? It’s a common mistake: The index of the third element is 2 because the index of the first list element is 0.lst[0] –> Alicelst[1] –> Boblst[2] –> Carllst[3] –> ??? Error ???Try It Yourself: Before I tell you what to do about it, try to fix the code yourself in our interactive Python shell: Exercise: Fix the code in the interactive code shell to get rid of the error message.How to Fix the IndexError in a For Loop? [General Strategy]So, how can you fix the code? Python tells you in which line and on which list the error occurs.To pin down the exact problem, check the value of the index just before the error occurs. To achieve this, you can print the index that causes the error before you use it on the list. This way, you’ll have your wrong index in the shell right before the error message.Here’s an example of wrong code that will cause the error to appear:# WRONG CODE
-lst = ['Alice', 'Bob', 'Ann', 'Carl']
-for i in range(len(lst)+1):
-lst[i]
-# Traceback (most recent call last):
-#
-File "C:\Users\xcent\Desktop\code.py", line 5, in <module>
-#
-lst[i]
-# IndexError: list index out of range
-The error message tells you that the error appears in line 5. So, let’s insert a print statement before that line:lst = ['Alice', 'Bob', 'Ann', 'Carl']
-for i in range(len(lst)+1):
-print(i)
-lst[i]The result of this code snippet is still an error. But there’s more:0
-1
+I get an error message when I try FreqDist() in NLTK — NameError: name 'nltk' is not defined - Stack Overflow
+Stack Overflow
+About
+Products
+For Teams
+Stack Overflow
+Public questions & answers
+Stack Overflow for Teams
+Where developers & technologists share private knowledge with coworkers
+Jobs
+Programming & related technical career opportunities
+Talent
+Recruit tech talent & build your employer brand
+Advertising
+Reach developers & technologists worldwide
+About the company
+Loading…
+Log in
+Sign up
+current community
+Stack Overflow
+help
+chat
+Meta Stack Overflow
+your communities
+Sign up or log in to customize your list.
+more stack exchange communities
+company blog
+People who code: we want your input.
+Take the Survey
+Join Stack Overflow to learn, share knowledge, and build your career.
+Sign up with email
+Sign up
+Sign up with Google
+Sign up with GitHub
+Sign up with Facebook
+Home
+Public
+Questions
+Tags
+Users
+Find a Job
+Jobs
+Companies
+Teams
+Stack Overflow for Teams
+– Collaborate and share knowledge with a private group.
+Create a free Team
+What is Teams?
+Teams
+What’s this?
+Create free Team
+Teams
+Q&A for work
+Connect and share knowledge within a single location that is structured and easy to search.
+Learn more
+I get an error message when I try FreqDist() in NLTK — NameError: name 'nltk' is not defined
+Ask Question
+Asked
+6 years, 11 months ago
+Active
+6 years, 7 months ago
+Viewed
+4k times
 2
-3
-4
-Traceback (most recent call last):
-File "C:\Users\xcent\Desktop\code.py", line 6, in <module>
-lst[i]
-IndexError: list index out of rangeYou can now see all indices used to retrieve an element. The final one is the index i=4 which points to the fifth element in the list (remember: Python starts indexing at index 0!). But the list has only four elements, so you need to reduce the number of indices you’re iterating over. The correct code is, therefore:# CORRECT CODE
-lst = ['Alice', 'Bob', 'Ann', 'Carl']
-for i in range(len(lst)):
-lst[i]Note that this is a minimal example and it doesn’t make a lot of sense. But the general debugging strategy remains even for advanced code projects:Figure out the faulty index just before the error is thrown.Eliminate the source of the faulty index.IndexError When Modifying a List as You Iterate Over ItThe IndexError also frequently occurs if you iterate over a list but you remove elements as you iterate over the list:l=[1,2,3,0,0,1]
-for i in range(0, len(l)):
-if l[i]==0:
-l.pop(i)This code snippet is from a StackOverflow question. The source is simply that the list.pop() method removes the element with value 0. All subsequent elements now have a smaller index. But you iterate over all indices up to len(l)-1 = 6-1 = 5 and the index 5 does not exist in the list after removing elements in a previous iteration.You can simply fix this with a short list comprehension statement that accomplishes the same thing:l = [x for x in l if x]Only non-zero elements are included in the list.String IndexError: List Index Out of RangeThe error can occur when accessing strings as well:s = 'Python'
-print(s[6])To fix the error for strings, make sure that the index falls between the range 0 ... len(s)-1 (included):s = 'Python'
-print(s[5])
-# nTuple IndexError: List Index Out of RangeIn fact, the IndexError can occur for all ordered collections where you can use indexing to retrieve certain elements. Thus, it also occurs when accessing tuple indices that do not exist:s = ('Alice', 'Bob')
-print(s[2])Again, start counting with index 0 to get rid of this:s = ('Alice', 'Bob')
-print(s[1])
-# BobNote: The index of the last element in any sequence is len(sequence)-1. Where to Go From Here?Enough theory, let’s get some practice!To become successful in coding, you need to get out there and solve real problems for real people. That’s how you can become a six-figure earner easily. And that’s how you polish the skills you really need in practice. After all, what’s the use of learning theory that nobody ever needs?Practice projects is how you sharpen your saw in coding!Do you want to become a code master by focusing on practical code projects that actually earn you money and solve problems for people?Then become a Python freelance developer! It’s the best way of approaching the task of improving your Python skills—even if you are a complete beginner.Join my free webinar “How to Build Your High-Income Skill Python” and watch how I grew my coding business online and how you can, too—from the comfort of your own home.Join the free webinar now! ChrisWhile working as a researcher in distributed systems, Dr. Christian Mayer found his love for teaching computer science students.To help students reach higher levels of Python success, he founded the programming education website Finxter.com. He’s author of the popular programming book Python One-Liners (NoStarch 2020), coauthor of the Coffee Break Python series of self-published books, computer science enthusiast, freelancer, and owner of one of the top 10 largest Python blogs worldwide.His passions are writing, reading, and coding. But his greatest passion is to serve aspiring coders through Finxter and help them to boost their skills. You can join his free email academy here.Post navigation← Previous PostNext Post →MenuAboutImpressumPrivacyTermsEarnings DisclaimerPuzzlesAcademyBooks & Courses
-Copyright © 2021 Finxter
+I have referred to the link
+I get an error message when I try FreqDist() in NLTK -- NameError: name 'nltk' is not defined
+however, I still get the error below.
+nltk
+Share
+Follow
+asked Jul 15 '14 at 14:26
+MindBrainMindBrain
+6,12088 gold badges4545 silver badges6969 bronze badges
+1
+This is weird because it didn't bark when you imported brown from nltk.corpus...
+– erip
+Jan 6 '16 at 19:59
+Add a comment
+|
+2 Answers
+2
+Active
+Oldest
+Votes
+2
+You need to import nltk first to use nltk.ConditionalFreqDist
+>>> import nltk
+>>> nltk.ConditionalFreqDist()
+<ConditionalFreqDist with 0 conditions>
+Or use namespaces,
+>>> from nltk import ConditionalFreqDist
+>>> ConditionalFreqDist()
+<ConditionalFreqDist with 0 conditions>
+Share
+Follow
+answered Jul 15 '14 at 14:32
+alvasalvas
+95.2k9191 gold badges367367 silver badges644644 bronze badges
+Add a comment
+|
+0
+which means you haven't installed nltk. follow these steps to install nltk:
+1:go to this link https://pypi.python.org/pypi/setuptools at the end of page you find setuptools-7.0.zip (md5) download it, then unzip it. you can find easy_install.py python script.
+2:use the command sudo easy_install pip. By this time pip will be installed ready to use, (make sure you are in the directory where you can find easy_install script file).
+3:use this command sudo pip install -U nltk. successful execution ensure that nltk is now installed.
+4:open the IDLE then you type the following:
+import nltk
+if nltk is installed properly then you will be returned with console.
+then you can use your code without any error.
+Share
+Follow
+answered Oct 22 '14 at 11:35
+Manjunath NManjunath N
+1,1951010 silver badges2020 bronze badges
+1
+1
+So what does your answer include that the other answer didn't? Nothing as far as I can see. You should only provide an answer if yours include a new solution to the problem. Not repeating what others have already said. I suggest you delete this answer but please don't be discouraged. Read How To Answer and try again.
+– kkuilla
+Oct 22 '14 at 12:01
+Add a comment
+|
+Your Answer
+Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
+Draft saved
+Draft discarded
+Sign up or log in
+Sign up using Google
+Sign up using Facebook
+Sign up using Email and Password
+Submit
+Post as a guest
+Name
+Email
+Required, but never shown
+Post as a guest
+Name
+Email
+Required, but never shown
+Post Your Answer
+Discard
+By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
+Not the answer you're looking for? Browse other questions tagged nltk
+or ask your own question.
+The Overflow Blog
+Using low-code tools to iterate products faster
+Podcast 345: A good software tutorial explains the How. A great one explains…
+Featured on Meta
+Take the 2021 Developer Survey
+Related
+8
+I get an error message when I try FreqDist() in NLTK — NameError: name 'nltk' is not defined
+1
+Sorting FreqDist in NLTK with get vs get()
+1
+backoff_tagger not defined error
+63
+Corpora/stopwords not found when import nltk library
+1
+Python, NLTK: NameError: name 'load_parser' is not defined
+0
+Type error in nltk freqdist using pandas dataframe
+0
+NameError: name 'word' is not defined ,python
+10
+Architecture Not Supported Error when installing nltk with pip on Mac
+Hot Network Questions
+Can I gain AC efficiency by spraying condensate water on the outdoor coils?
+How do trademarks apply to Open Source?
+Confused about the numbers on the grippers
+Is there a threadlocker that requires heat to release and can withstand thousands of heat-cool cycles without needing to be reapplied or deteriorating
+Are there any greater risks of traveling significantly faster to another planet?
+Why am I seeing the sun slightly north instead of slightly south early in the morning in Malta?
+Is cohomology always related to topology?
+In the sentence "Ich begegnete einem alten Freund in Berlin", why the dative einem instead of the accusative einen?
+Why some CRS are deprecated in QGIS?
+What are minimal changes to make a truncated pyramid shaped megabuildings a thing?
+Showing the bounding box for every coordinate system in QGIS
+How do you say " Coup de grâce " in latin?
+What is this token?
+Why aren't resistors being used here?
+Simplify K combinatory logic expression
+Can always @ (*) introduce randomness in FPGA?
+Has physics ever given a physical significance to a mathematically abstract idea?
+What is the hardest part of transitioning from a PhD to a full-time career in academia?
+Why can an easily graphable definite integral, be labyrinthine to evaluate?
+Why are SSH MITM tools able to read and modify data?
+Heating of hydraulic oil with hardtail electric MTB brakes
+Is it a good idea to go to Japan without a travel guide?
+Is it suspicious that gravitational waves propagate at the speed of light?
+What does existential unforgeability mean in a digital signature scheme?
+more hot questions
+Question feed
+Subscribe to RSS
+Question feed
+To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+Stack Overflow
+Questions
+Jobs
+Developer Jobs Directory
+Salary Calculator
+Help
+Mobile
+Products
+Teams
+Talent
+Advertising
+Enterprise
+Company
+About
+Press
+Work Here
+Legal
+Privacy Policy
+Terms of Service
+Contact Us
+Cookie Settings
+Cookie Policy
+Stack Exchange Network
+Technology
+Life / Arts
+Culture / Recreation
+Science
+Other
+Stack Overflow
+Server Fault
+Super User
+Web Applications
+Ask Ubuntu
+Webmasters
+Game Development
+TeX - LaTeX
+Software Engineering
+Unix & Linux
+Ask Different (Apple)
+WordPress Development
+Geographic Information Systems
+Electrical Engineering
+Android Enthusiasts
+Information Security
+Database Administrators
+Drupal Answers
+SharePoint
+User Experience
+Mathematica
+Salesforce
+ExpressionEngine® Answers
+Stack Overflow em Português
+Blender
+Network Engineering
+Cryptography
+Code Review
+Magento
+Software Recommendations
+Signal Processing
+Emacs
+Raspberry Pi
+Stack Overflow на русском
+Code Golf
+Stack Overflow en español
+Ethereum
+Data Science
+Arduino
+Bitcoin
+Software Quality Assurance & Testing
+Sound Design
+Windows Phone
+more (29)
+Photography
+Science Fiction & Fantasy
+Graphic Design
+Movies & TV
+Music: Practice & Theory
+Worldbuilding
+Video Production
+Seasoned Advice (cooking)
+Home Improvement
+Personal Finance & Money
+Academia
+Law
+Physical Fitness
+Gardening & Landscaping
+Parenting
+more (10)
+English Language & Usage
+Skeptics
+Mi Yodeya (Judaism)
+Travel
+Christianity
+English Language Learners
+Japanese Language
+Chinese Language
+French Language
+German Language
+Biblical Hermeneutics
+History
+Spanish Language
+Islam
+Русский язык
+Russian Language
+Arqade (gaming)
+Bicycles
+Role-playing Games
+Anime & Manga
+Puzzling
+Motor Vehicle Maintenance & Repair
+Board & Card Games
+Bricks
+Homebrewing
+Martial Arts
+The Great Outdoors
+Poker
+Chess
+Sports
+more (16)
+MathOverflow
+Mathematics
+Cross Validated (stats)
+Theoretical Computer Science
+Physics
+Chemistry
+Biology
+Computer Science
+Philosophy
+Linguistics
+Psychology & Neuroscience
+Computational Science
+more (10)
+Meta Stack Exchange
+Stack Apps
+API
+Data
+Blog
+Facebook
+Twitter
+LinkedIn
+Instagram
+site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
+rev 2021.6.10.39470
+Stack Overflow works best with JavaScript enabled
+Your privacy
+By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
+Accept all cookies
+Customize settings

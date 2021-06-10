@@ -1,78 +1,57 @@
-Int object not iterable? (Python) (URGENT, NEEDED BY TONIGHT) - OpenCV Q&A Forum
-First time here? Check out the FAQ!
-Hi there! Please sign in help
-faq tags users badges
-This forum is disabled, please visit https://forum.opencv.org
-ALL UNANSWERED
-Ask Your Question
--3
-Int object not iterable? (Python) (URGENT, NEEDED BY TONIGHT)
-edit
-3.1.0opencv
-EigenFace
-eigenfaces
-asked
-2017-12-13 18:55:40 -0500
-nastyheatnor
-1
-This is really urgent and I need this tomorrow, I cant seem to find a solution anywhere, I have a script that runs a facial recognition script, but for some reason its telling me this exact error:
-File "box.py",line 98, in <module>
-label,confidence = model.predict(crop)
-TypeError: 'int' object is not iterable My code thats actually important to the problem: import cv2 -Creates model to be the facerecognizer
-model = cv2.face.createEigenFaceRecognizer() -Defines the model as a training image taken previously
-model.load(config.TRAINING_FILE) -Initializes the camera as camera
-camera = config.get_camera() -Takes a picture using the camera
-image = camera.read() -Converts to grayscale
-image = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY) -Results if it found a face
-result = face.detect_single(image) -Tells you to keep taking a picture until you have a face recognized if result is None:
-print 'Could not see face! Retake picture!'
-continue -gets dimensions of the face
-x,y,w,h = result -resizes the face
-crop = face.resize(face.crop(image, x, y, w, h)) #Tests face against the previously taken model
-label, confidence = model.predict(crop) <--- This is where the error is -Im not 100% as to what this does, I got this part on the internet
-result = cv2.face.MinDistancePredictCollector()
-model.predict(crop)
-label = result.getLabel()
-confidence = result.getDist() Sorry about the weird formatting, the
-thing was being dumb and I couldnt fix it, anyways Thats basically it (Theres obviously some more code set up inside and between but it isnt important or relevant to the issue, at least I dont think, I need this urgently so please somebody respond quick, Im using Python 2.7 with opencv 3.1.0 on a raspbian raspberry pi 3 if you need that information
-edit retag
-flag offensive
-close merge delete
-CommentsSorry, we are not doing some code fixing service here! Please read this http://answers.opencv.org/faq/Balaji R (
-2017-12-13 21:27:12 -0500
-)editthere was a (short lived) bug in 3.1, where you only could use label = model.predict(crop)either update to latest 3.3, or use the MinDistancePredictCollectorberak (
-2017-12-14 01:46:33 -0500
-)editadd a comment
-Links
-Official site
-GitHub
-Wiki
-Documentation
-Question Tools
-Follow
-1 follower
-subscribe to rss feed
-Stats
-Asked:
-2017-12-13 18:55:40 -0500
-Seen: 660 times
-Last updated: Dec 13 '17
-Related questions
-OpenCV compile Eigenface.cpp in Linux with using CodeBlocks
-Application cannot distinguish between people [closed]
-FaceRecognizer - using multiple models
-Online Learning and Confidence with cv::FaceRecognizer
-RGB2Gray::operator() causing segmentation fault when using Python
-Making FaceRecognizer more accurate [closed]
-Eigenfaces face recognizer gives error: unresolved external symbols
-facerec_demo model->predict exception thrown
-how to get the projections of the training data.
-face recognition and face detection using Eigenface
-Copyright OpenCV foundation, 2012-2018. Content on this site is licensed under a Creative Commons Attribution Share Alike 3.0 license.
-about | faq | help
-| privacy policy | terms of service
-Powered by Askbot version 0.10.2
-Please note: OpenCV answers requires javascript to work properly, please enable javascript in your browser, here is how
-(
-2021-06-09 17:08:14 -0500
-)editnone×
+Download Image from URL using Python - jdhao's blogjdhao's blogHomeArchivesTagsCategoriesAboutjdhao's blogHomeArchivesTagsCategoriesAboutDownload Image from URL using Python2020-06-17Python322 words
+2 mins read
+times readContentsUsing urllib packageUsing requests packageDownloading large files with streamingresponse.iter_contentresponse.rawReferencesRecently, I want to download some images using Python. This is what I’ve
+learned after survey.Using urllib packageThe native and naive way is to use
+urllib.request module to download an image.import urllib.request
+url = "https://cdn.pixabay.com/photo/2020/05/12/17/04/wind-turbine-5163993_960_720.jpg"
+r = urllib.request.urlopen(url)
+with open("wind_turbine.jpg", "wb") as f:
+f.write(r.read())
+However, the above code may error out with following message:urllib.error.HTTPError: HTTP Error 403: ForbiddenIn this case, we need to add a HTTP header to the request:import urllib.request
+# The following way works. Ref: https://stackoverflow.com/a/45358832/6064933
+req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+with open("wind_turbine.jpg", "wb") as f:
+with urllib.request.urlopen(req) as r:
+f.write(r.read())
+Using requests packageA better way is to use requests
+package. Here is a simple example to download an image using requests:import requests
+url = "https://cdn.pixabay.com/photo/2020/05/12/17/04/wind-turbine-5163993_960_720.jpg"
+r = requests.get(url)
+with open("wind-turbine.jpg", "wb") as f:
+f.write(r.content)
+Downloading large files with streamingresponse.iter_contentIn the above code, all content of the image will be read into memory at once.
+If the image is large, it may consume too much memory.Alternatively, we can set stream parameter to True to stream request. In
+this case, only the response header is downloaded. We can retrieve the image in
+a whole using response.content1 or chunk by chunk by using
+response.iter_content method:# Using requests to download large files.
+with requests.get(url, stream=True) as r:
+with open("wind-turbine.jpg", "wb") as f:
+for chunk in r.iter_content(chunk_size=1024):
+if chunk:
+f.write(chunk)
+response.rawWhen stream is True, we can also use response.raw to stream the download.
+response.raw is a file-like object. With the help of shutil.copyfileobj(),
+we can save the image like this:# using r.raw
+with requests.get(url, stream=True) as r:
+with open("wind-turbine.jpg", "wb") as f:
+r.raw.decode_content = True
+shutil.copyfileobj(r.raw, f)
+# or f.write(r.raw.read())
+ReferencesPython 3 urllib HTTP 403 error.Why to use iter_content and chunk_size in python requests?How to download image using requests?Download large file in python with requests.https://requests.readthedocs.io/en/latest/user/advanced/#body-content-workflowYou may want to avoid this for large files! ↩︎Author
+jdhaoLastMod
+2020-06-18License
+CC BY-NC-ND 4.0
+Reward
+wechat
+alipayrequestsDuplicate Logging Messages in Python
+Prev
+Tmux: Open Terminal Failed in Kitty Terminal
+Next
+Please enable JavaScript to view the comments powered by Disqus.Powered by Hugo
+|
+Theme -
+Evensite pv:
+|
+site uv: ©
+2017 -
+2021jdhao

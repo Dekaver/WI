@@ -1,451 +1,344 @@
-how to solve this IndexError
-list index out of range in python and streamlit
-| Edureka Community
-86345/how-solve-this-indexerror-list-index-range-python-streamlit
-Toggle navigation
-Back
-Ask a question
-Blogs
-Browse Categories
-Browse Categories
-Apache KafkaApache SparkBig Data HadoopBlockchainCareer CounsellingCloud ComputingCyber Security & Ethical HackingData AnalyticsDatabaseDevOps & AgileEvents & Trending TopicsIoT (Internet of Things)JavaLinux AdministrationMachine LearningMicroStrategyPMPPower BIPythonRPASeleniumSoftware TestingTableauTalendWeb DevelopmentAsk us Anything!Others
-Log In
-Sign Up
-Home
-Community
-Categories
-Python
-how to solve this IndexError
-list index out of...
-how to solve this IndexError
-list index out of range in python and streamlit
-0 votes
-In this recommend system, if I define the variable item_id as 4 (for example) it will work perfectly. But if I use this:
-item_id = int(st.number_input('Digite a id do livro:'))
-... it will not work and will give me IndexError: list index out of range
-even I use input instead of st.number_input it will work in the terminal.
-python
-python-programming
-index
-error
-Sep 24, 2020
-in Python
-by
-Erick
-• 120 points
-•
-12,915 views
-answer
-comment
-flag
-Your comment on this question:
-Your name to display (optional):
-Email me at this address if a comment is added after mine:Email me if a comment is added after mine
-Privacy: Your email address will only be used for sending these notifications.
-Add comment
-Cancel
-1 answer to this question.
-Your answer
-Your name to display (optional):
-Email me at this address if my answer is selected or commented on:Email me if my answer is selected or commented on
-Privacy: Your email address will only be used for sending these notifications.
-Add answer
-Cancel
-0 votes
-Hi,  @Erick,
-To solve the “index error: list index out of range” error, you should make sure that you’re not trying to access a non-existent item in a list.
-If you are using a loop to access an item, make sure that the loop accounts for the fact that lists are indexed from zero. If that does not solve the problem, check to make sure that you are using range() to access each item by its index value.
-answered
-Sep 24, 2020
-by
-Roshni
-• 10,460 points
-comment
-flag
-ask related question
-Your comment on this answer:
-Your name to display (optional):
-Email me at this address if a comment is added after mine:Email me if a comment is added after mine
-Privacy: Your email address will only be used for sending these notifications.
-Add comment
-Cancel
-Related Questions In Python
-0 votes
-1 answer
-Error: IndexError: list index out of range and python
-IndexError
-The IndexError is raised when you attempt to retrieve ...READ MORE
-answered
-Dec 16, 2020
-in Python
-by
-Gitika
-• 65,910 points
-•
-427 views
-python
-python-list
-python-datatypes
-python-functions
-python-sequence-types
-python-types
-index
-iindexoutofboundsexception
-python-exception
-python-file-handling
-0 votes
-1 answer
-How can I find out the index of an element from row and column in Python?
-You probably want to use np.ravel_multi_index:
-[code]
-import numpy ...READ MORE
-answered
-Apr 16, 2018
-in Python
-by
-charlie_brown
-• 7,780 points
-•
-648 views
-–1 vote
-2 answers
-How to filter out any digit that contains odd number in a range of number in Python?
-n = list(range(10))
-b = list(filter(lambda i:i%2!=0,n))
-print(b) READ MORE
-answered
-Sep 30, 2019
-in Python
-by
-Nomizo_Coders
-•
-473 views
-python
-python-programming
-factors
-python-range
-python-functions
-python-sequence-types
-python-types
-0 votes
-1 answer
-Is there a way to list out in-built variables and functions of Python?
-The in-built variables and functions are defined ...READ MORE
-answered
-May 14, 2019
-in Python
-by
-Junaid
-•
-340 views
-python
-python-programming
-0 votes
-2 answers
-how can i randomly select items from a list?
-You can also use the random library's ...READ MORE
-answered
-Apr 9, 2020
-in Python
-by
-Patrick
-•
-2,680 views
-python-programming
-python
-python-list
-python-datatypes
-python-functions
-python-sequence-types
-python-types
-+1 vote
-2 answers
-how can i count the items in a list?
-Syntax :
-list. count(value)
-Code:
-colors = ['red', 'green', ...READ MORE
-answered
-Jul 6, 2019
-in Python
-by
-Neha
-• 330 points
-edited
-Jul 8, 2019
-by Kalgi
-•
-2,142 views
-python-programming
-python
-python-list
-python-datatypes
-python-functions
-python-sequence-types
-python-types
-0 votes
-0 answers
-how do i use the enumerate function inside a list?
-can you give an example using a ...READ MORE
-May 7, 2019
-in Python
-by
-Waseem
-• 4,540 points
-•
-1,519 views
-python-list
-python-datatypes
-python
-python-functions
-python-sequence-types
-python-types
-python-programming
-+5 votes
-6 answers
-Lowercase in Python
-You can simply the built-in function in ...READ MORE
-answered
-Apr 11, 2018
-in Python
-by
-hemant
-• 5,810 points
-•
-1,616 views
-python-programming
-python
-python-file
-python-string
-python-datatypes
-python-test-processing
-python-services
-python-lowercase
-+1 vote
-10 answers
-How to fix this? ValueError: invalid literal for int() with base 10 error in Python
-Just for the record:
->>> int('55063.000000')
-Traceback (most recent ...READ MORE
-answered
-Aug 17, 2020
-in Python
-by
-pakainfo
-• 200 points
-•
-278,221 views
-python
-python-programming
-0 votes
-4 answers
-How to print objects of class using print function in Python?
->>> class Test:
-...
-...READ MORE
-answered
-Dec 15, 2020
-in Python
-by
-Roshni
-• 10,460 points
-•
-51,049 views
-python-programming
-python
-Recent in Pythonerror install mysqlclient on windows Feb 6 Dickey-Fuller test in Python Feb 5 How to declare an array in Python? Jan 5 How to change the “tick frequency” on x or y axis in matplotlib? Jan 5 How to prompt for user input and read command-line arguments? Jan 5
-All categories
-Apache Kafka
-(84)
-Apache Spark
-(598)
-Big Data Hadoop
-(1,860)
-Blockchain
-(1,513)
-Career Counselling
-(1,058)
-Cloud Computing
-(3,097)
-Cyber Security & Ethical Hacking
-(90)
-Data Analytics
-(1,196)
-Database
-(270)
-DevOps & Agile
-(3,096)
-Events & Trending Topics
-(27)
-IoT (Internet of Things)
-(361)
-Java
-(968)
-Linux Administration
-(234)
-Machine Learning
-(173)
-MicroStrategy
-(5)
-PMP
-(367)
-Power BI
-(460)
-Python
-(2,950)
-RPA
-(649)
-Selenium
-(1,550)
-Software Testing
-(56)
-Tableau
-(474)
-Talend
-(73)
-Web Development
-(1,457)
-Ask us Anything!
-(62)
-Others
-(303)
-×
-Join the world's most active Tech Community!
-Welcome back to the World's most active Tech Community!
-Sign up with Gmail
-Sign up with Facebook
-OR
-Please provide a valid input
-SIGN UP
-Already have an Edureka Account? Login
-Please enter a valid emailid
-Forgot Password?
-LOGIN
-Don’t have edureka account? Sign Up
-resend ?
-reset password
-Don’t have edureka account? Sign Up
-reset password
-Don’t have edureka account? Sign Up
-Send Code
-Don’t have edureka account? Sign Up
-Subscribe to our Newsletter, and get personalized recommendations.
+I get an error message when I try FreqDist() in NLTK — NameError: name 'nltk' is not defined - Stack Overflow
+Stack Overflow
+About
+Products
+For Teams
+Stack Overflow
+Public questions & answers
+Stack Overflow for Teams
+Where developers & technologists share private knowledge with coworkers
+Jobs
+Programming & related technical career opportunities
+Talent
+Recruit tech talent & build your employer brand
+Advertising
+Reach developers & technologists worldwide
+About the company
+Loading…
+Log in
+Sign up
+current community
+Stack Overflow
+help
+chat
+Meta Stack Overflow
+your communities
+Sign up or log in to customize your list.
+more stack exchange communities
+company blog
+People who code: we want your input.
+Take the Survey
+Join Stack Overflow to learn, share knowledge, and build your career.
+Sign up with email
+Sign up
 Sign up with Google
-Signup with Facebook
-Already have an account? Sign in.
-×
-TRENDING CERTIFICATION COURSES
-DevOps Certification Training
-AWS Architect Certification Training
-Big Data Hadoop Certification Training
-Tableau Training & Certification
-Python Certification Training for Data Science
-Selenium Certification Training
-PMP® Certification Exam Training
-Robotic Process Automation Training using UiPath
-Apache Spark and Scala Certification Training
-Microsoft Power BI Training
-Online Java Course and Training
-Python Certification Course
-TRENDING MASTERS COURSES
-Data Scientist Masters Program
-DevOps Engineer Masters Program
-Cloud Architect Masters Program
-Big Data Architect Masters Program
-Machine Learning Engineer Masters Program
-Full Stack Web Developer Masters Program
-Business Intelligence Masters Program
-Data Analyst Masters Program
-Test Automation Engineer Masters Program
-Post-Graduate Program in Artificial Intelligence & Machine Learning
-Post-Graduate Program in Big Data Engineering
-COMPANY
-About us
-News & Media
-Reviews
-Contact us
-Blog
-Community
-Sitemap
-Blog Sitemap
-Community Sitemap
-WORK WITH US
-Careers
-Become an Instructor
-Become an Affiliate
-Become a Partner
-Hire from Edureka
-DOWNLOAD APP
-CATEGORIES
-CATEGORIES
-Cloud Computing
-DevOps
-Big Data
+Sign up with GitHub
+Sign up with Facebook
+Home
+Public
+Questions
+Tags
+Users
+Find a Job
+Jobs
+Companies
+Teams
+Stack Overflow for Teams
+– Collaborate and share knowledge with a private group.
+Create a free Team
+What is Teams?
+Teams
+What’s this?
+Create free Team
+Teams
+Q&A for work
+Connect and share knowledge within a single location that is structured and easy to search.
+Learn more
+I get an error message when I try FreqDist() in NLTK — NameError: name 'nltk' is not defined
+Ask Question
+Asked
+6 years, 11 months ago
+Active
+6 years, 7 months ago
+Viewed
+4k times
+2
+I have referred to the link
+I get an error message when I try FreqDist() in NLTK -- NameError: name 'nltk' is not defined
+however, I still get the error below.
+nltk
+Share
+Follow
+asked Jul 15 '14 at 14:26
+MindBrainMindBrain
+6,12088 gold badges4545 silver badges6969 bronze badges
+1
+This is weird because it didn't bark when you imported brown from nltk.corpus...
+– erip
+Jan 6 '16 at 19:59
+Add a comment
+|
+2 Answers
+2
+Active
+Oldest
+Votes
+2
+You need to import nltk first to use nltk.ConditionalFreqDist
+>>> import nltk
+>>> nltk.ConditionalFreqDist()
+<ConditionalFreqDist with 0 conditions>
+Or use namespaces,
+>>> from nltk import ConditionalFreqDist
+>>> ConditionalFreqDist()
+<ConditionalFreqDist with 0 conditions>
+Share
+Follow
+answered Jul 15 '14 at 14:32
+alvasalvas
+95.2k9191 gold badges367367 silver badges644644 bronze badges
+Add a comment
+|
+0
+which means you haven't installed nltk. follow these steps to install nltk:
+1:go to this link https://pypi.python.org/pypi/setuptools at the end of page you find setuptools-7.0.zip (md5) download it, then unzip it. you can find easy_install.py python script.
+2:use the command sudo easy_install pip. By this time pip will be installed ready to use, (make sure you are in the directory where you can find easy_install script file).
+3:use this command sudo pip install -U nltk. successful execution ensure that nltk is now installed.
+4:open the IDLE then you type the following:
+import nltk
+if nltk is installed properly then you will be returned with console.
+then you can use your code without any error.
+Share
+Follow
+answered Oct 22 '14 at 11:35
+Manjunath NManjunath N
+1,1951010 silver badges2020 bronze badges
+1
+1
+So what does your answer include that the other answer didn't? Nothing as far as I can see. You should only provide an answer if yours include a new solution to the problem. Not repeating what others have already said. I suggest you delete this answer but please don't be discouraged. Read How To Answer and try again.
+– kkuilla
+Oct 22 '14 at 12:01
+Add a comment
+|
+Your Answer
+Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
+Draft saved
+Draft discarded
+Sign up or log in
+Sign up using Google
+Sign up using Facebook
+Sign up using Email and Password
+Submit
+Post as a guest
+Name
+Email
+Required, but never shown
+Post as a guest
+Name
+Email
+Required, but never shown
+Post Your Answer
+Discard
+By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
+Not the answer you're looking for? Browse other questions tagged nltk
+or ask your own question.
+The Overflow Blog
+Using low-code tools to iterate products faster
+Podcast 345: A good software tutorial explains the How. A great one explains…
+Featured on Meta
+Take the 2021 Developer Survey
+Related
+8
+I get an error message when I try FreqDist() in NLTK — NameError: name 'nltk' is not defined
+1
+Sorting FreqDist in NLTK with get vs get()
+1
+backoff_tagger not defined error
+63
+Corpora/stopwords not found when import nltk library
+1
+Python, NLTK: NameError: name 'load_parser' is not defined
+0
+Type error in nltk freqdist using pandas dataframe
+0
+NameError: name 'word' is not defined ,python
+10
+Architecture Not Supported Error when installing nltk with pip on Mac
+Hot Network Questions
+Why were the apollo CM RCS thrusters all placed in only one half of the module?
+How well would Max Faget's April 1, 1969 design for the Space Shuttle have actually worked? What would have been the major problems?
+Why would they use human soldiers over undead ones?
+Why did this gallon of milk stay fresh for so long?
+How do trademarks apply to Open Source?
+How come full throttle is meaning full speed instead of the opposite?
+Can a Rogue find an undetectable Trap?
+Does machine learning really need data-efficient algorithms?
+Can always @ (*) introduce randomness in FPGA?
+Photo Competition 2021-06-07: Long Exposure
+What are the benefits of hand built wheels over automated ones?
+Is there objective proof that recent bills (1st half of 2021) that restrict voting are targeting Democratic voters specifically?
+What is the hardest part of transitioning from a PhD to a full-time career in academia?
+What are the DM's responsibilities when dealing with a character's death?
+Did the Kohen Gadol minister barefoot?
+What is "Horse and Pony II", created by the Battlefield devs (Refraction Games)?
+Is LUKS still an effective option for consumer FDE considering Elcomsoft can break it?
+Has physics ever given a physical significance to a mathematically abstract idea?
+Why do CMOS NOT gate designs differ from BJT NOT gate designs?
+How to remove the new weather info from the taskbar?
+What's the easiest way to change from MS-DOS 6.22 to DR-DOS?
+Why are SSH MITM tools able to read and modify data?
+Heating of hydraulic oil with hardtail electric MTB brakes
+Simplest/cheapest way to build a tensegrity model?
+more hot questions
+Question feed
+Subscribe to RSS
+Question feed
+To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+Stack Overflow
+Questions
+Jobs
+Developer Jobs Directory
+Salary Calculator
+Help
+Mobile
+Products
+Teams
+Talent
+Advertising
+Enterprise
+Company
+About
+Press
+Work Here
+Legal
+Privacy Policy
+Terms of Service
+Contact Us
+Cookie Settings
+Cookie Policy
+Stack Exchange Network
+Technology
+Life / Arts
+Culture / Recreation
+Science
+Other
+Stack Overflow
+Server Fault
+Super User
+Web Applications
+Ask Ubuntu
+Webmasters
+Game Development
+TeX - LaTeX
+Software Engineering
+Unix & Linux
+Ask Different (Apple)
+WordPress Development
+Geographic Information Systems
+Electrical Engineering
+Android Enthusiasts
+Information Security
+Database Administrators
+Drupal Answers
+SharePoint
+User Experience
+Mathematica
+Salesforce
+ExpressionEngine® Answers
+Stack Overflow em Português
+Blender
+Network Engineering
+Cryptography
+Code Review
+Magento
+Software Recommendations
+Signal Processing
+Emacs
+Raspberry Pi
+Stack Overflow на русском
+Code Golf
+Stack Overflow en español
+Ethereum
 Data Science
-BI and Visualization
-Programming & Frameworks
-Software Testing
-Project Management and Methodologies
-Robotic Process Automation
-Frontend Development
-Data Warehousing and ETL
-Artificial Intelligence
-Blockchain
-Databases
-Cyber Security
-Mobile Development
-Operating Systems
-Architecture & Design Patterns
-Digital Marketing
-TRENDING BLOG ARTICLES
-TRENDING BLOG ARTICLES
-Selenium tutorial
-Selenium interview questions
-Java tutorial
-What is HTML
-Java interview questions
-PHP tutorial
-JavaScript interview questions
-Spring tutorial
-PHP interview questions
-Inheritance in Java
-Polymorphism in Java
-Spring interview questions
-Pointers in C
-Linux commands
-Android tutorial
-JavaScript tutorial
-jQuery tutorial
-SQL interview questions
-MySQL tutorial
-Machine learning tutorial
-Python tutorial
-What is machine learning
-Ethical hacking tutorial
-SQL injection
-AWS certification career opportunities
-AWS tutorial
-What Is cloud computing
-What is blockchain
-Hadoop tutorial
-What is artificial intelligence
-Node Tutorial
-Collections in Java
-Exception handling in java
-Python Programming Language
-Python interview questions
-Multithreading in Java
-ReactJS Tutorial
-Data Science vs Big Data vs Data Analytics
-Software Testing Interview Questions
-R Tutorial
-Java Programs
-JavaScript Reserved Words and Keywords
-Implement thread.yield() in Java: Examples
-Implement Optical Character Recognition in Python
-All you Need to Know About Implements In Java
-© 2021 Brain4ce Education Solutions Pvt. Ltd. All rights Reserved.
-Terms & Conditions
-Legal & Privacy
-"PMP®","PMI®", "PMI-ACP®" and "PMBOK®" are registered marks of the Project Management Institute, Inc.
-MongoDB®, Mongo and the leaf logo are the registered trademarks of MongoDB, Inc.
+Arduino
+Bitcoin
+Software Quality Assurance & Testing
+Sound Design
+Windows Phone
+more (29)
+Photography
+Science Fiction & Fantasy
+Graphic Design
+Movies & TV
+Music: Practice & Theory
+Worldbuilding
+Video Production
+Seasoned Advice (cooking)
+Home Improvement
+Personal Finance & Money
+Academia
+Law
+Physical Fitness
+Gardening & Landscaping
+Parenting
+more (10)
+English Language & Usage
+Skeptics
+Mi Yodeya (Judaism)
+Travel
+Christianity
+English Language Learners
+Japanese Language
+Chinese Language
+French Language
+German Language
+Biblical Hermeneutics
+History
+Spanish Language
+Islam
+Русский язык
+Russian Language
+Arqade (gaming)
+Bicycles
+Role-playing Games
+Anime & Manga
+Puzzling
+Motor Vehicle Maintenance & Repair
+Board & Card Games
+Bricks
+Homebrewing
+Martial Arts
+The Great Outdoors
+Poker
+Chess
+Sports
+more (16)
+MathOverflow
+Mathematics
+Cross Validated (stats)
+Theoretical Computer Science
+Physics
+Chemistry
+Biology
+Computer Science
+Philosophy
+Linguistics
+Psychology & Neuroscience
+Computational Science
+more (10)
+Meta Stack Exchange
+Stack Apps
+API
+Data
+Blog
+Facebook
+Twitter
+LinkedIn
+Instagram
+site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
+rev 2021.6.10.39470
+Stack Overflow works best with JavaScript enabled
+Your privacy
+By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
+Accept all cookies
+Customize settings

@@ -1,4 +1,4 @@
-java - Uncompilable source code - Erroneous tree type error and cannot find symbol error - Stack Overflow
+python - ValueError: invalid literal for int() with base 10: '' - Stack Overflow
 Stack Overflow
 About
 Products
@@ -54,158 +54,422 @@ Teams
 Q&A for work
 Connect and share knowledge within a single location that is structured and easy to search.
 Learn more
-Uncompilable source code - Erroneous tree type error and cannot find symbol error
+ValueError: invalid literal for int() with base 10: ''
 Ask Question
 Asked
-5 years, 3 months ago
+11 years, 6 months ago
 Active
-2 years, 7 months ago
+15 days ago
 Viewed
-25k times
-0
-I was getting "Uncompilable source code - Erroneous tree type" error and "cannot
-find symbol" error I turned off compile on save and now get cannot find symbol. The area that seems to be breaking it is where I initialize Asteroid() in AsteroidFields generate method, so I feel like my initialization is incorrect but I haven't been able to figure out how.
-package asteroidfield;
-import java.util.TreeSet;
-import blobzx.BlobGUI;
-import blobzx.SandBox;
-import blobzx.SandBoxMode;
-public class AsteroidField implements BlobGUI {
-SandBox ast;
-public static void main (String [] Args){
-new AsteroidField();
-}
-public AsteroidField (){
-ast = new SandBox();
-ast.setSandBoxMode(SandBoxMode.FLOW);
-ast.setFrameRate(15);
-ast.init(this);
-}
-@Override
-public void generate() {
-// This is the line that is breaking the code.
-Asteroid asteroid = new Asteroid();
-}
-}
-package AsteroidField;
-import blobzx.BlobUtils;
-import blobzx.PolyBlob;
-import java.awt.Point;
-import java.util.Random;
-public class Asteroid extends PolyBlob{
-// private static Random random = new Random();
-public Asteroid(int velX, int velY, double rot) {
-super(-100, -100, rot);
-setDelta(velX, velY);
-Random sides = new Random();
-Random dist = new Random();
-int si = sides.nextInt(9 - 5 + 1) + 5;
-int di =
-dist.nextInt(15 - 5 + 1) + 5;
-double region = (2 * Math.PI) / si;
-double []angle = new double [si];
-int [] xInt = new int[si];
-int [] yInt = new int[si];
-double [] x = new double [si];
-double [] y = new double [si];
-System.out.print("m");
-for(int i = 0; i < si; i++){
-angle[i] = (i*region)+(Math.random()*region);
-Point cord = BlobUtils.rotatePoint(di, angle[i]);
-x[i] = cord.getX();
-y[i] = cord.getY();
-}
-for (int i = 0; i > x.length; i ++){
-xInt[i] = (int) x[i];
-yInt[i] = (int) y[i];
-}
-setPolygon(xInt, yInt);
-}
-}
-java
+2.0m times
+444
+104
+I am creating a program that reads a file and if the first line of the file is not blank, it reads the next four lines.
+Calculations are performed on those lines and then the next line is read.
+If that line is not empty it continues.
+However, I am getting this error:
+ValueError: invalid literal for int() with base 10: ''.
+It is reading the first line but can't convert it to an integer.
+What can I do to fix this problem?
+The code:
+file_to_read = raw_input("Enter file name of tests (empty string to end program):")
+try:
+infile = open(file_to_read, 'r')
+while file_to_read != " ":
+file_to_write = raw_input("Enter output file name (.csv will be appended to it):")
+file_to_write = file_to_write + ".csv"
+outfile = open(file_to_write, "w")
+readings = (infile.readline())
+print readings
+while readings != 0:
+global count
+readings = int(readings)
+minimum = (infile.readline())
+maximum = (infile.readline())
+python
 Share
-Improve this question
 Follow
-edited Feb 26 '16 at 22:20
-Nayuki
-16.7k55 gold badges4848 silver badges7575 bronze badges
-asked Feb 26 '16 at 22:07
-MouseGordonMouseGordon
-2111 gold badge11 silver badge33 bronze badges
+edited Feb 10 '19 at 10:55
+kqw
+17.7k1111 gold badges6161 silver badges9393 bronze badges
+asked Dec 3 '09 at 17:34
+Sarah CoxSarah Cox
+4,45733 gold badges1414 silver badges33 bronze badges
+3
+5
+You should consider using with open(file_to_read, 'r') as infile: there.
+– Omnifarious
+Sep 14 '17 at 11:48
+1
+For anyone currently looking here. The error may be that one of the lines isn't in integer form. Eg: "yes" isn't in the correct form but "3" is. For this question the first line may not have any "1"s, "2"s, "3"s... to convert to an int.
+– Crupeng
+Jul 24 '20 at 17:58
+i got this error when input string had space between digits. this error basically means your input string is not valid for string to integer conversion. for conversion, your string should only and only contain
+following characters:
++-.0123456789
+– M9J_cfALt
+Aug 5 '20 at 12:41
 Add a comment
 |
-2 Answers
-2
+18 Answers
+18
 Active
 Oldest
 Votes
+468
+Just for the record:
+>>> int('55063.000000')
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+ValueError: invalid literal for int() with base 10: '55063.000000'
+Got me here...
+>>> int(float('55063.000000'))
+55063
+Has to be used!
+Share
+Follow
+edited May 26 at 10:14
+Roshin Raphel
+2,28533 gold badges1212 silver badges3131 bronze badges
+answered Jan 20 '12 at 21:49
+FdoBadFdoBad
+4,72111 gold badge1111 silver badges22 bronze badges
+9
+117
+I'll just add, to provide more clarity for future readers, that indeed, int(float('1.0')) works when int('1.0') throws the ValueError.
+– katyhuff
+Apr 26 '13 at 16:53
+6
+This should be the accepted top answer to this question. I almost closed the page and didn't see it. Thanks!
+– iTurki
+Jun 21 '16 at 21:44
 2
-I see two problems:
-1) May be because, you write:
-Asteroid asteroid = new Asteroid();
-but Asteroid class hasn't got a default construstor (at least, I not see it in your code)
-public Asteroid(int velX, int velY, double rot) {
-2) Or may be because you use not same package and not use import in AsteroidField
-package asteroidfield;
-...
-package AsteroidField;
-You should or use one package or add import AsteroidField.Asteroid; in
-AsteroidField, I think.
+add to answer int(float('55063.000000')) as question is get int(). Than it will
+realy top answer
+– Max
+Mar 15 '17 at 8:41
+12
+This answer doesn't appear to have anything to do with the question. The question is asking how one could prevent a ValueError when you call int() on an empty string. "Use float() instead" doesn't solve that problem. You still get a ValueError.
+– Kevin
+May 1 '18 at 18:50
+1
+Why not update your answer as per @Kevin's comment above? This is a highly active question and should not be confusing to someone who directly search for the specific error in question title.
+– Austin
+Jun 29 '20 at 4:17
+|
+Show 4 more comments
+108
+The following are totally acceptable in python:
+passing a string representation of an integer into int
+passing a string representation of a float into float
+passing a string representation of an integer into float
+passing a float into int
+passing an integer into float
+But you get a ValueError if you pass a string representation of a float into int, or a string representation of anything but an integer (including empty string). If you do want to pass a string representation of a float to an int, as @katyhuff points out above, you can convert to a float first, then to an integer:
+>>> int('5')
+5
+>>> float('5.0')
+5.0
+>>> float('5')
+5.0
+>>> int(5.0)
+5
+>>> float(5)
+5.0
+>>> int('5.0')
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+ValueError: invalid literal for int() with base 10: '5.0'
+>>> int(float('5.0'))
+5
 Share
-Improve this answer
 Follow
-edited Feb 26 '16 at 22:17
-answered Feb 26 '16 at 22:12
-Slava VedeninSlava Vedenin
-50.1k1313 gold badges3636 silver badges5757 bronze badges
+edited May 23 '18 at 0:24
+answered Dec 12 '17 at 2:26
+PeterPeter
+1,34711 gold badge88 silver badges99 bronze badges
+3
+9
+This answer doesn't appear to have anything to do with the question. The question is asking how one could prevent a ValueError when you call int() on an empty string. "Use float() instead" doesn't solve that problem. You still get a ValueError.
+– Kevin
+May 1 '18 at 18:53
+5
+@Kevin Even though this does not directly answer the OP's question. It does however help people that have this problem and don't mind the int(float(x)). As this is the first question to pop up when searching for this error.
+– Kerwin Sneijders
+Sep 16 '19 at 17:23
+Wow that's incredibly silly. Why not make int() accept a string? That's exactly what I was expecting it to do and not typecast it into float first.....
+– BUFU
+Sep 22 '20 at 11:57
+Add a comment
+|
+62
+Pythonic way of iterating over a file and converting to int:
+for line in open(fname):
+if line.strip():
+# line contains eol character(s)
+n = int(line)
+# assuming single integer on each line
+What you're trying to do is slightly more complicated, but still not straight-forward:
+h = open(fname)
+for line in h:
+if line.strip():
+[int(next(h).strip()) for _ in range(4)]
+# list of integers
+This way it processes 5 lines at the time. Use h.next() instead of next(h) prior to Python 2.6.
+The reason you had ValueError is because int cannot convert an empty string to the integer. In this case you'd need to either check the content of the string before conversion, or except an error:
+try:
+int('')
+except ValueError:
+pass
+# or whatever
+Share
+Follow
+edited Dec 9 '09 at 10:21
+Peter Mortensen
+28.3k2121 gold badges9595 silver badges123123 bronze badges
+answered Dec 3 '09 at 17:40
+SilentGhostSilentGhost
+266k5959 gold badges291291 silver badges279279 bronze badges
+5
 4
-So would I need need to add a constructor to the Asteroid code?
-– MouseGordon
-Feb 26 '16 at 22:16
-Yes, you need or add public Asteroid() construstor or use Asteroid asteroid = new Asteroid(velX, velY, rot); in AsteroidField
-– Slava Vedenin
-Feb 26 '16 at 22:19
-It was the packaging issue i cant believe I didnt see that that. Thank You!
-– MouseGordon
-Feb 26 '16 at 22:21
-If this answer solve your problem, can you accept it?
-– Slava Vedenin
-Feb 26 '16 at 22:23
+Your try/except doesn't distinguish between something reasonable expectable (blank/empty line) and something nasty like a non-integer.
+– John Machin
+Dec 3 '09 at 19:47
+and why would you want to distinguish those things?
+– SilentGhost
+Dec 4 '09 at 1:34
+3
+because one is reasonably expectable and ignorable but the other is indicative of an error
+– John Machin
+Dec 4 '09 at 21:07
+3
+and why is a blank line reasonably expectable and non-integer is not?
+– SilentGhost
+Dec 5 '09 at 2:18
+1
+this is good if you are sure that your list is actually a list of stringified integers. If you are not sure you can do n = int(line) if line.is_integer() else int(float(line))
+– Mike Furlender
+Jul 25 '18 at 15:30
+Add a comment
+|
+25
+I found a work around. Python will convert the number to a float. Simply calling float first then converting that to an int will work:
+output = int(float(input))
+Share
+Follow
+answered Apr 23 '19 at 3:21
+Brad123Brad123
+62477 silver badges99 bronze badges
+Add a comment
+|
+15
+The reason is that you are getting an empty string or a string as an argument into int. Check if it is empty or it contains alpha characters. If it contains characters, then simply ignore that part.
+Share
+Follow
+edited Apr 8 '20 at 7:11
+Toluwalemi
+17922 silver badges1414 bronze badges
+answered Jun 23 '17 at 13:19
+rajender kumarrajender kumar
+40433 silver badges1111 bronze badges
+2
+2
+This looks more like a comment.
+When you have sufficient reputation you will be able to comment on any post.
+– Joshua Drake
+Jun 23 '17 at 13:39
+4
+this was exactly what i needed, thank you. I don't get why people on this forum are so obsessed with micromanaging this site
+– John D
+Nov 21 '20 at 9:38
+Add a comment
+|
+11
+The reason you are getting this error is that you are trying to convert a space character to an integer, which is totally impossible and restricted.And that's why you are getting this error.
+Check your code and correct it, it will work fine
+Share
+Follow
+answered Mar 27 '18 at 6:59
+JoishJoish
+1,1041414 silver badges2020 bronze badges
+Add a comment
+|
+9
+So if you have
+floatInString = '5.0'
+You can convert it to int with floatInInt = int(float(floatInString))
+Share
+Follow
+answered Dec 13 '19 at 11:12
+HarveyHarvey
+7,00633 gold badges5252 silver badges5454 bronze badges
 Add a comment
 |
 4
-Recheck the package declarations in all your classes!
-This behaviour has been observed in NetBeans, when the package declaration in one of the classes of the package refers to a non-existent or wrong package. NetBeans normally detects and highlights this error but has been known to fail and misleadingly report the package as free of errors when this is not the case.
+You've got a problem with this line:
+while file_to_read != " ":
+This does not find an empty string.
+It finds a string consisting of one space.
+Presumably this is not what you are looking for.
+Listen to everyone else's advice.
+This is not very idiomatic python code, and would be much clearer if you iterate over the file directly, but I think this problem is worth noting as well.
 Share
-Improve this answer
 Follow
-edited Dec 8 '17 at 15:58
-answered Dec 8 '17 at 15:53
-IqbalHamidIqbalHamid
-1,57011 gold badge1212 silver badges1515 bronze badges
+answered Dec 3 '09 at 17:56
+jcdyerjcdyer
+17.3k55 gold badges3939 silver badges4848 bronze badges
 Add a comment
 |
-Your Answer
-Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
-Draft saved
-Draft discarded
-Sign up or log in
-Sign up using Google
-Sign up using Facebook
-Sign up using Email and Password
-Submit
-Post as a guest
-Name
-Email
-Required, but never shown
-Post as a guest
-Name
-Email
-Required, but never shown
-Post Your Answer
-Discard
-By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
-Not the answer you're looking for? Browse other questions tagged java
+3
+Please test this function (split()) on a simple file. I was facing the same issue and found that it was because split() was not written properly (exception handling).
+Share
+Follow
+edited Jun 5 '14 at 15:00
+elixenide
+42.4k1414 gold badges7070 silver badges9393 bronze badges
+answered Jun 5 '14 at 11:46
+user3446207user3446207
+Add a comment
+|
+2
+I recently came across a case where none of these answers worked. I encountered CSV data where there were null bytes mixed in with the data, and those null bytes did not get stripped. So, my numeric string, after stripping, consisted of bytes like this:
+\x00\x31\x00\x0d\x00
+To counter this, I did:
+countStr = fields[3].replace('\x00', '').strip()
+count = int(countStr)
+...where fields is a list of csv values resulting from splitting the line.
+Share
+Follow
+answered Jan 10 '20 at 17:42
+T. ReedT. Reed
+14977 bronze badges
+2
+You sir are a genius ! Thanks
+– alioua walid
+Jul 17 '20 at 23:50
+You are my hero! Thanks!
+– Nikki
+Feb 15 at 19:20
+Add a comment
+|
+1
+readings = (infile.readline())
+print readings
+while readings != 0:
+global count
+readings = int(readings)
+There's a problem with that code. readings is a new line read from the file - it's a string. Therefore you should not compare it to 0. Further, you can't just convert it to an integer unless you're sure it's indeed one. For example, empty lines will produce errors here (as you've surely found out).
+And why do you need the global count? That's most certainly bad design in Python.
+Share
+Follow
+answered Dec 3 '09 at 17:43
+Eli BenderskyEli Bendersky
+233k8080 gold badges334334 silver badges394394 bronze badges
+Add a comment
+|
+1
+This could also happen when you have to map space separated integers to a list but you enter the integers line by line using the .input().
+Like for example I was solving this problem on HackerRank Bon-Appetit, and the got the following error while compiling
+So instead of giving input to the program line by line try to map the space separated integers into a list using the map() method.
+Share
+Follow
+answered Nov 28 '17 at 6:32
+Amit KumarAmit Kumar
+46822 gold badges66 silver badges1515 bronze badges
+0
+Add a comment
+|
+0
+I am creating a program that reads a
+file and if the first line of the file
+is not blank, it reads the next four
+lines. Calculations are performed on
+those lines and then the next line is
+read.
+Something like this should work:
+for line in infile:
+next_lines = []
+if line.strip():
+for i in xrange(4):
+try:
+next_lines.append(infile.next())
+except StopIteration:
+break
+# Do your calculation with "4 lines" here
+Share
+Follow
+answered Dec 3 '09 at 17:49
+ImranImran
+76.2k2323 gold badges9393 silver badges124124 bronze badges
+Add a comment
+|
+0
+I was getting similar errors, turns out that the dataset had blank values which python could not convert to integer.
+Share
+Follow
+answered Mar 12 '13 at 19:38
+user2162611user2162611
+1311010 bronze badges
+2
+4
+Could you elaborate a bit more with some examples on how the OP could solve it?
+– fmendez
+Mar 12 '13 at 20:00
+blank value means empty which can be converted to string float. If you try to convert to float also it will show error
+– saravanan saminathan
+Dec 13 '19 at 7:18
+Add a comment
+|
+0
+I got into the same issue when trying to use readlines() inside for loop for same file object... My suspicion is firing readling() inside readline() for same file object caused this error.
+Best solution can be use seek(0) to reset file pointer or
+Handle condition with setting some flag then create new object for same file by checking set condition....
+Share
+Follow
+answered Dec 5 '18 at 8:43
+Abhishek JainAbhishek Jain
+2,3151717 silver badges1919 bronze badges
+Add a comment
+|
+0
+This seems like readings is sometimes an empty string and obviously an error crops up.
+You can add an extra check to your while loop before the int(readings) command like:
+while readings != 0 | readings != '':
+global count
+readings = int(readings)
+Share
+Follow
+answered Feb 12 '20 at 5:07
+Kanishk MairKanishk Mair
+30544 silver badges77 bronze badges
+Add a comment
+|
+0
+I had hard time figuring out the actual reason, it happens when we dont read properly from file.
+you need to open file and read with readlines() method as below:
+with open('/content/drive/pre-processed-users1.1.tsv') as f:
+file=f.readlines()
+It corrects the formatted output
+Share
+Follow
+answered May 15 '20 at 20:25
+Shaina RazaShaina Raza
+62155 silver badges77 bronze badges
+Add a comment
+|
+0
+your answer is throwing errors because of this line
+readings = int(readings)
+Here you are trying to convert a string into int type which is not base-10. you can convert a string into int only if it is base-10 otherwise it will throw ValueError, stating invalid literal for int() with base 10.
+Share
+Follow
+answered May 28 '20 at 21:10
+shubhamshubham
+3633 bronze badges
+Add a comment
+|
+Highly active question. Earn 10 reputation in order to answer this question. The reputation requirement helps protect this question from spam and non-answer activity.
+Not the answer you're looking for? Browse other questions tagged python
 or ask your own question.
 The Overflow Blog
 Using low-code tools to iterate products faster
@@ -213,58 +477,71 @@ Podcast 345: A good software tutorial explains the How. A great one explains…
 Featured on Meta
 Take the 2021 Developer Survey
 Linked
+0
+string to int conversion of list in python
+0
+adding items to a set in python
+0
+invalid literal error when converting hex to int python
+0
+I got this “ValueError: invalid literal for int() with base 10” in my Django project
+0
+how to convert float and string into integer value in python3
 1
-Java says “Uncompilable source code - Erroneous tree type: culminatinggF.Flight” issue
+I keep getting the following error when I try to take in user input - ValueError: invalid literal for int() with base 10: ''
 0
-Not sure why my JavaFX GUI won't load?
+When I use str(int) it shows this “ValueError: invalid literal for int() with base 10”
+-1
+Trying to fix an error form a book excersise
+-3
+When the input is letter instead of number, Python says (ValueError: invalid literal for int() with base 10: '')
+-3
+Can't convert string to integer under while loop in python
+See more linked questions
 Related
-656
-IntelliJ inspection gives “Cannot resolve symbol” but still compiles code
+79
+ValueError: invalid literal for int () with base 10
+1
+invalid literal for int() with base 10: \xef\xbb\xbf10
+21
+python ValueError: invalid literal for float()
 0
-Uncompilable Source Code: Erroneous Sym Error
-4
-Java- RuntimeException- Uncompilable source code - Erroneous tree type
-449
-What does a “Cannot find symbol” or “Cannot resolve symbol” error mean?
+Python 3: ValueError: invalid literal for int() with base 10: 'd'
 0
-RuntimeException: Uncompilable source code - cannot find symbol
+How do you prevent the "ValueError: invalid literal for int() with base 10: '', with defined functions?
 0
-Error when invoking method - java.lang.RuntimeException: Uncompilable source code - Erroneous tree type: <any>
-13
-Uncompilable source code - Erroneous sym type:
-0
-Uncompilable source code - cannot find symbol error
+ValueError: invalid literal for int() with base 10:
 Hot Network Questions
-Former coworker I gave a reference for sabotaged the company on his last day - Should I update the reference contact with this new information?
-Are there any greater risks of traveling significantly faster to another planet?
-Mandatory tabs-an unusual pattern?
-Emit random objects inside array-ed object
-Why would they use human soldiers over undead ones?
-Can't open snap-store
-Is it illegal to implement a patented algorithm or method and take advantage from it?
-Is there a canonical source for the Arcane Trickster's magic?
-Is Huang Yanling (a Wuhan virology researcher) the world's first COVID-19 patient?
-How realistic is the 1 kg/km² solar sail in "Death's End"?
-Is there a fundamental reason for the exponential dependence of the evolution of the temperature in an electronic deviced that is powered on?
-Can an American state ban a (minor) political party?
-Dealing with extremely inexperienced developers who have daily deadlines?
-Why did this gallon of milk stay fresh for so long?
-A recently published paper seriously impairs the novelty of my dissertation. Which should be the purpose of the next meeting with my supervisor?
-Refueling a Mars mission on the way
-What is the advantage of gate resistor (R3) in this JFET voltage divider biasing circuit?
-Microcontroller bit information for the Core and different peripherals
-Term for "place of death"
-How come full throttle is meaning full speed instead of the opposite?
-Linux backup script written in bash for tar
+Is maximum speed a thing?
+LaTex error : "Missing } inserted"
 I'm Lazy: Close my Superparens
+Is Huang Yanling (a Wuhan virology researcher) the world's first COVID-19 patient?
+Getting “Bye Bye Big Sur” error on installing Big Sur
+Interview by fellow PhD students, not the professor himself
+Can an American state ban a (minor) political party?
+Why are high power LEDs categorized by wattage, not voltage & amperage?
+Simplest/cheapest way to build a tensegrity model?
+Why aren't resistors being used here?
+Does machine learning really need data-efficient algorithms?
+Decode USB packets
+Is it suspicious that gravitational waves propagate at the speed of light?
+How to get real-looking rust that will be safe to the touch?
+Can a Rogue find an undetectable Trap?
+Why doesn't the sun produce an emission spectrum?
+What would a bear species isolated on an island look like?
+Refueling a Mars mission on the way
+Former coworker I gave a reference for sabotaged the company on his last day - Should I update the reference contact with this new information?
 Why was the neutrino thought to be massless?
-Why would a modern city with a warm climate have a skyway system?
+Mansfield 40 toilet flush levers keep breaking
+In the sentence "Ich begegnete einem alten Freund in Berlin", why the dative einem instead of the accusative einen?
+Is there objective proof that recent bills (1st half of 2021) that restrict voting are targeting Democratic voters specifically?
+Traditionally, is prosciutto never to be cooked?
 more hot questions
 Question feed
 Subscribe to RSS
 Question feed
 To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
-lang-java
+lang-py
 Stack Overflow
 Questions
 Jobs
@@ -407,7 +684,7 @@ Twitter
 LinkedIn
 Instagram
 site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.6.9.39464
+rev 2021.6.10.39470
 Stack Overflow works best with JavaScript enabled
 Your privacy
 By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.

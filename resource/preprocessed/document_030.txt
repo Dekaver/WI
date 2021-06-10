@@ -1,204 +1,358 @@
-ValueError: empty vocabulary; perhaps the documents only contain stop words in TfidfVectorizer · Issue #365 · cdqa-suite/cdQA · GitHub
-Skip to content
-Sign up
-Why GitHub?
-Features →
-Mobile →
-Actions →
-Codespaces →
-Packages →
-Security →
-Code review →
-Project management →
-Integrations →
-GitHub Sponsors →
-Customer stories→
-Team
-Enterprise
-Explore
-Explore GitHub →
-Learn and contribute
-Topics →
-Collections →
-Trending →
-Learning Lab →
-Open source guides →
-Connect with others
-The ReadME Project →
-Events →
-Community forum →
-GitHub Education →
-GitHub Stars program →
-Marketplace
-Pricing
-Plans →
-Compare plans →
-Contact Sales →
-Education →
-In this repository
-All GitHub
-↵
-Jump to
-↵
-No suggested jump to results
-In this repository
-All GitHub
-↵
-Jump to
-↵
-In this organization
-All GitHub
-↵
-Jump to
-↵
-In this repository
-All GitHub
-↵
-Jump to
-↵
-Sign in
-Sign up
-{{ message }}
-cdqa-suite
-/
-cdQA
-Notifications
-Star
-528
-Fork
-165
-Code
-Issues
-53
-Pull requests
-2
-Actions
-Projects
-1
-Wiki
-Security
-Insights
-More
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-New issue
-Have a question about this project? Sign up for a free GitHub account to open an issue and contact its maintainers and the community.
-Pick a username
-Email Address
-Password
-Sign up for GitHub
-By clicking “Sign up for GitHub”, you agree to our terms of service and
-privacy statement. We’ll occasionally send you account related emails.
-Already on GitHub?
-Sign in
-to your account
-Jump to bottom
-ValueError: empty vocabulary; perhaps the documents only contain stop words in TfidfVectorizer
-#365
-Open
-DSKaarthick
-opened this issue
-May 11, 2020
-· 0 comments
-Open
-ValueError: empty vocabulary; perhaps the documents only contain stop words in TfidfVectorizer
-#365
-DSKaarthick
-opened this issue
-May 11, 2020
-· 0 comments
-Comments
-Copy link
-DSKaarthick
-commented
-May 11, 2020
-when i am executing the below code ,i am getting
-ValueError: empty vocabulary; perhaps the documents only contain stop words in TfidfVectorizer error:
-vectorizer = TfidfVectorizer(decode_error='ignore',strip_accents='unicode',stop_words='english',min_df=1,analyzer='word')
-tfidf= vectorizer.fit_transform([str(convid['Query_Text'][i]).lower(),str(convid['Query_Text'][i+1]).lower()])
-Python Code:
-"""
-import pandas as pd
-import nltk
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
-import gensim
-from gensim.models import FastText
-from sklearn.feature_extraction.text import TfidfVectorizer
-from difflib import SequenceMatcher
-#Loading Query Text for Corpus Building
-qt=pd.read_csv('C:/Demo/Query_Text.csv')
-qt.shape
-#Loading QueryText for comparing
-convid =pd.read_csv('C:/Demo/ConvId_May06.csv')
-convid.shape
-sentences = qt
-convid = convid.sort_values(['User_PUID','EventInfo_Time'], ascending=[True,True])
-convid = convid.reset_index()
-convid['FastTextResult'] =float()
-convid['Tfidf'] = float()
-convid['TfidfWc'] = float()
-model_ted = FastText(qt,
-window=1, min_count=1, sg=0)
-for i in range(len(convid['Query_Text'])):
-print('i',i)
-if(i == len(convid)-1):
-break
-print("The FastText Output")
-ft=model_ted.wv.similarity(str(convid['Query_Text'][i]).lower(),str(convid['Query_Text'][i+1]).lower())
-ft=round(ft,4)
-print(ft)
-#convid.loc[convid['FastTextResult'][i+1]]=ft
-convid['FastTextResult'][i+1]=ft
-print("vector output ")
-vectorizer = TfidfVectorizer(decode_error='ignore',strip_accents='unicode',stop_words='english',min_df=1,analyzer='word')
-tfidf= vectorizer.fit_transform([str(convid['Query_Text'][i]).lower(),str(convid['Query_Text'][i+1]).lower()])
-product=(tfidf *tfidf.T).A
-pro = product[0,1]
-pro = round(pro,4)
-print(pro)
-convid['Tfidf'][i+1]=pro
-print("widlchar")
-wildchar_value = SequenceMatcher(str(convid['Query_Text'][i]).lower(),str(convid['Query_Text'][i+1]).lower()).ratio()
-wildchar_value = round(wildchar_value,4)
-convid['TfidfWc'][i+1]=wildchar_value
-print(wildchar_value)
-convid.to_csv('C:/Demo/ConvIdOutput_May061.csv')
-The text was updated successfully, but these errors were encountered:
-Sign up for free
-to join this conversation on GitHub.
-Already have an account?
-Sign in to comment
-Assignees
-No one assigned
-Labels
-None yet
-Projects
-None yet
-Milestone
-No milestone
-Linked pull requests
-Successfully merging a pull request may close this issue.
-None yet
-1 participant
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
+python - AttributeError: 'numpy.ndarray' object has no attribute 'A' - Stack Overflow
+Stack Overflow
 About
-You can’t perform that action at this time.
-You signed in with another tab or window. Reload to refresh your session.
-You signed out in another tab or window. Reload to refresh your session.
+Products
+For Teams
+Stack Overflow
+Public questions & answers
+Stack Overflow for Teams
+Where developers & technologists share private knowledge with coworkers
+Jobs
+Programming & related technical career opportunities
+Talent
+Recruit tech talent & build your employer brand
+Advertising
+Reach developers & technologists worldwide
+About the company
+Loading…
+Log in
+Sign up
+current community
+Stack Overflow
+help
+chat
+Meta Stack Overflow
+your communities
+Sign up or log in to customize your list.
+more stack exchange communities
+company blog
+People who code: we want your input.
+Take the Survey
+Join Stack Overflow to learn, share knowledge, and build your career.
+Sign up with email
+Sign up
+Sign up with Google
+Sign up with GitHub
+Sign up with Facebook
+Home
+Public
+Questions
+Tags
+Users
+Find a Job
+Jobs
+Companies
+Teams
+Stack Overflow for Teams
+– Collaborate and share knowledge with a private group.
+Create a free Team
+What is Teams?
+Teams
+What’s this?
+Create free Team
+Teams
+Q&A for work
+Connect and share knowledge within a single location that is structured and easy to search.
+Learn more
+AttributeError: 'numpy.ndarray' object has no attribute 'A'
+Ask Question
+Asked
+5 years, 11 months ago
+Active
+5 years, 11 months ago
+Viewed
+13k times
+0
+I am trying to perform tfidf on a matrix. I would like to use gensim, but models.TfidfModel() only works on a corpus and therefore returns a list of lists of varying lengths (I want a matrix).
+The options are to somehow fill in the missing values of the list of lists, or just convert the corpus to a matrix
+numpy_matrix = gensim.matutils.corpus2dense(corpus, num_terms=number_of_corpus_features)
+Choosing the latter, I then try to convert this count matrix to a tf-idf weighted matrix:
+def TFIDF(m):
+#import numpy
+WordsPerDoc = numpy.sum(m, axis=0)
+DocsPerWord = numpy.sum(numpy.asarray(m > 0, 'i'), axis=1)
+rows, cols = m.shape
+for i in range(rows):
+for j in range(cols):
+amatrix[i,j] = (amatrix[i,j] / WordsPerDoc[j]) * log(float(cols) /
+DocsPerWord[i])
+But, I get the error AttributeError: 'numpy.ndarray' object has no attribute 'A'
+I copied the function above from another script. It was:
+def TFIDF(self):
+WordsPerDoc = sum(self.A, axis=0)
+DocsPerWord = sum(asarray(self.A > 0, 'i'), axis=1)
+rows, cols = self.A.shape
+for i in range(rows):
+for j in range(cols):
+self.A[i,j] = (self.A[i,j] / WordsPerDoc[j]) * log(float(cols) / DocsPerWord[i])
+Which I believe is where it's getting the A from. However, I re-imported the function.
+Why is this happening?
+python numpy matrix gensim
+Share
+Follow
+edited Jun 22 '15 at 6:46
+Behzad
+3,11144 gold badges3232 silver badges6060 bronze badges
+asked Jun 22 '15 at 6:41
+user0user0
+2,24777 gold badges2121 silver badges5959 bronze badges
+2
+Show the complete traceback (i.e. the entire error message).
+That should show which line is triggering the error.
+– Warren Weckesser
+Jun 22 '15 at 10:20
+.A is a np matrix adttribute, turning it into an array.
+Try omitting it.
+– hpaulj
+Jun 22 '15 at 11:27
+Add a comment
+|
+1 Answer
+1
+Active
+Oldest
+Votes
+0
+self.A is either an np.matrix or sparse matrix.
+For both A means, return a copy that is a np.ndarray.
+In other words, it converts the 2d matrix to a regular numpy array.
+If self is already an array, it would produce your error.
+It looks like you have corrected that with your own version of TFIDF - except that uses 2 variables, m and amatrix instead of self.A.
+I think you need to look more at the error message and stack, to identify where that .A is.
+Also make sure you understand where the code expects a matrix, especially a sparse one.
+And whether your own code differs in that regard.
+I recall from other SO questions that one of the learning packages had switched to using sparse matrices, and that required adding .todense() to some of their code (which expected dense ones).
+Share
+Follow
+answered Jun 22 '15 at 16:47
+hpauljhpaulj
+177k1313 gold badges172172 silver badges282282 bronze badges
+Add a comment
+|
+Your Answer
+Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
+Draft saved
+Draft discarded
+Sign up or log in
+Sign up using Google
+Sign up using Facebook
+Sign up using Email and Password
+Submit
+Post as a guest
+Name
+Email
+Required, but never shown
+Post as a guest
+Name
+Email
+Required, but never shown
+Post Your Answer
+Discard
+By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
+Not the answer you're looking for? Browse other questions tagged python numpy matrix gensim
+or ask your own question.
+The Overflow Blog
+Using low-code tools to iterate products faster
+Podcast 345: A good software tutorial explains the How. A great one explains…
+Featured on Meta
+Take the 2021 Developer Survey
+Related
+1922
+How to know if an object has an attribute in Python
+220
+AttributeError: 'module' object has no attribute
+1453
+What is the meaning of single and double underscore before an object name?
+1088
+How to parse XML and count instances of a particular node attribute?
+1919
+Determine the type of an object?
+1307
+Referring to the null object in Python
+1429
+Why do Python classes inherit object?
+345
+Why do I get AttributeError: 'NoneType' object has no attribute 'something'?
+502
+Error: “ 'dict' object has no attribute 'iteritems' ”
+4
+How to perform kmean clustering from Gensim TFIDF values
+Hot Network Questions
+Being forced to take annual leave against my wishes, what are my options
+Dealing with extremely inexperienced developers who have daily deadlines?
+Is maximum speed a thing?
+What is "Horse and Pony II", created by the Battlefield devs (Refraction Games)?
+How well would Max Faget's April 1, 1969 design for the Space Shuttle have actually worked? What would have been the major problems?
+Refueling a Mars mission on the way
+How do airliner pilots practice recovering from a bounced landing?
+Can always @ (*) introduce randomness in FPGA?
+Is buying lecture notes wrong?
+Why are high power LEDs categorized by wattage, not voltage & amperage?
+Where is Lorentz contraction centered on?
+At what altitude do pilots usually switch to departure?
+Why would a modern city with a warm climate have a skyway system?
+In the sentence "Ich begegnete einem alten Freund in Berlin", why the dative einem instead of the accusative einen?
+Is it a coincidence that on the far side of the moon almost no seas are visible?
+Why would they use human soldiers over undead ones?
+Are there good tutorials that explain how to use experimental data to customise the force field in AMDock Vina?
+Why were the apollo CM RCS thrusters all placed in only one half of the module?
+Is there objective proof that recent bills (1st half of 2021) that restrict voting are targeting Democratic voters specifically?
+Simplest/cheapest way to build a tensegrity model?
+Why aren't resistors being used here?
+Has physics ever given a physical significance to a mathematically abstract idea?
+A '50s Yeti movie which has a scene with two men sitting around a fire in a cave
+Can an American state ban a (minor) political party?
+more hot questions
+Question feed
+Subscribe to RSS
+Question feed
+To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+lang-py
+Stack Overflow
+Questions
+Jobs
+Developer Jobs Directory
+Salary Calculator
+Help
+Mobile
+Products
+Teams
+Talent
+Advertising
+Enterprise
+Company
+About
+Press
+Work Here
+Legal
+Privacy Policy
+Terms of Service
+Contact Us
+Cookie Settings
+Cookie Policy
+Stack Exchange Network
+Technology
+Life / Arts
+Culture / Recreation
+Science
+Other
+Stack Overflow
+Server Fault
+Super User
+Web Applications
+Ask Ubuntu
+Webmasters
+Game Development
+TeX - LaTeX
+Software Engineering
+Unix & Linux
+Ask Different (Apple)
+WordPress Development
+Geographic Information Systems
+Electrical Engineering
+Android Enthusiasts
+Information Security
+Database Administrators
+Drupal Answers
+SharePoint
+User Experience
+Mathematica
+Salesforce
+ExpressionEngine® Answers
+Stack Overflow em Português
+Blender
+Network Engineering
+Cryptography
+Code Review
+Magento
+Software Recommendations
+Signal Processing
+Emacs
+Raspberry Pi
+Stack Overflow на русском
+Code Golf
+Stack Overflow en español
+Ethereum
+Data Science
+Arduino
+Bitcoin
+Software Quality Assurance & Testing
+Sound Design
+Windows Phone
+more (29)
+Photography
+Science Fiction & Fantasy
+Graphic Design
+Movies & TV
+Music: Practice & Theory
+Worldbuilding
+Video Production
+Seasoned Advice (cooking)
+Home Improvement
+Personal Finance & Money
+Academia
+Law
+Physical Fitness
+Gardening & Landscaping
+Parenting
+more (10)
+English Language & Usage
+Skeptics
+Mi Yodeya (Judaism)
+Travel
+Christianity
+English Language Learners
+Japanese Language
+Chinese Language
+French Language
+German Language
+Biblical Hermeneutics
+History
+Spanish Language
+Islam
+Русский язык
+Russian Language
+Arqade (gaming)
+Bicycles
+Role-playing Games
+Anime & Manga
+Puzzling
+Motor Vehicle Maintenance & Repair
+Board & Card Games
+Bricks
+Homebrewing
+Martial Arts
+The Great Outdoors
+Poker
+Chess
+Sports
+more (16)
+MathOverflow
+Mathematics
+Cross Validated (stats)
+Theoretical Computer Science
+Physics
+Chemistry
+Biology
+Computer Science
+Philosophy
+Linguistics
+Psychology & Neuroscience
+Computational Science
+more (10)
+Meta Stack Exchange
+Stack Apps
+API
+Data
+Blog
+Facebook
+Twitter
+LinkedIn
+Instagram
+site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
+rev 2021.6.10.39470
+Stack Overflow works best with JavaScript enabled
+Your privacy
+By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
+Accept all cookies
+Customize settings

@@ -1,394 +1,520 @@
-Error vs. Exception in Dart - Stack Overflow
-Stack Overflow
-About
-Products
-For Teams
-Stack Overflow
-Public questions & answers
-Stack Overflow for Teams
-Where developers & technologists share private knowledge with coworkers
-Jobs
-Programming & related technical career opportunities
-Talent
-Recruit tech talent & build your employer brand
-Advertising
-Reach developers & technologists worldwide
-About the company
-Loading…
-Log in
-Sign up
-current community
-Stack Overflow
-help
-chat
-Meta Stack Overflow
-your communities
-Sign up or log in to customize your list.
-more stack exchange communities
-company blog
-People who code: we want your input.
-Take the Survey
-Join Stack Overflow to learn, share knowledge, and build your career.
-Sign up with email
-Sign up
-Sign up with Google
-Sign up with GitHub
-Sign up with Facebook
+Adam Cameron's Dev Blog: PHP: accessing an undefined array element yields a notice. Or does it? WTF, PHP?
+Adam Cameron's Dev Blog
+"the tone... it sounds very heated and abrasive" - Ben Nadel
+Monday, 30 January 2017
+PHP: accessing an undefined array element yields a notice. Or does it? WTF, PHP?
+G'day:
+So we encountered this today:
+<?php
+$array = [1, 2, 3];
+var_dump($array['id']); // this yields a warning
+var_dump($array[0]['id']); // none of these do
+var_dump($array[0][0]['id']);
+var_dump($array[0]['id'][0]);
+As indicated, this yields results:
+C:\temp>php shite.php
+PHP Notice:  Undefined index: id in C:\temp\shite.php on line 4
+PHP Stack trace:
+PHP   1. {main}() C:\temp\shite.php:0
+Notice: Undefined index: id in C:\temp\shite.php on line 4
+Call Stack:
+0.0002     353472   1. {main}() C:\temp\shite.php:0
+C:\temp\shite.php:4:
+NULL
+C:\temp\shite.php:5:
+NULL
+C:\temp\shite.php:6:
+NULL
+C:\temp\shite.php:7:
+NULL
+C:\temp>
+I think this behaviour is bloody daft. Accessing something that doesn't exist should be more than a notice, and it shouldn't then go ahead and return "null" anyhow. And giving a notice and returning null is possibly the worst way of combining possible actions here. What am I supposed to do with that? Other than bury my head in my hands a weep.
+Now this is partially documented on the Arrays page of the docs:
+Note:
+Attempting to access an array key which has not been defined is
+the same as accessing any other undefined variable:
+an E_NOTICE-level error message will be
+issued, and the result will be NULL.
+Note:
+Array dereferencing a scalar value which is not a string
+silently yields NULL, i.e. without issuing an error message.
+That's shit, but... well: it's not that surprising (I mean... it's PHP, right?). But how come
+$array['id']
+incurs the warning, but this doesn't:
+$array[0]['id']
+This just seems to make fairly unhelpful behaviour just that much less helpful.
+I'm sure there's a reason for this. Not a good one, I hasten to add, but no doubt there's a reason.
+Anyone know what it is?
+Update:
+Thanks to Dave (comment below) for pointing out there's a bug been raised for this: 68110.
+Righto.
+--
+Adam
+Posted by
+Adam Cameron
+at
+12:04
+Email ThisBlogThis!Share to TwitterShare to FacebookShare to Pinterest
+Labels:
+PHP
+Newer Post
+Older Post
 Home
-Public
-Questions
-Tags
-Users
-Find a Job
-Jobs
-Companies
-Teams
-Stack Overflow for Teams
-– Collaborate and share knowledge with a private group.
-Create a free Team
-What is Teams?
-Teams
-What’s this?
-Create free Team
-Teams
-Q&A for work
-Connect and share knowledge within a single location that is structured and easy to search.
-Learn more
-Error vs. Exception in Dart
-Ask Question
-Asked
-7 years, 11 months ago
-Active
-9 months ago
-Viewed
-11k times
-51
-4
-Why are there Errors AND Exceptions in Dart and not either Errors OR Exceptions?
-Is the reason a historical one oder what?
-I can throw an Error, I can throw an Exception. None of them is checked by the Analyzer like in Java (Exception vs. RuntimeException)
-dart
-Share
-Improve this question
-Follow
-asked Jun 26 '13 at 9:10
-Mike MittererMike Mitterer
-5,33922 gold badges3535 silver badges5151 bronze badges
-Add a comment
-|
-3 Answers
-3
-Active
-Oldest
-Votes
-71
-From this post, quoting Bob Nystrom:
-Error and its subclasses are for programmatic errors. If one of those
-occurs, your code is bad and you should fix your code.
-Non-Error exception classes are for runtime errors. Sometimes you can
-prevent them from being thrown, but often you cannot.
-Except in a few special circumstances, idiomatic Dart should throw
-Errors, but never catch them. They exists specifically to not be
-caught so that they take down the app and alert the programmer to the
-location of the bug.
-In other words, you should expect (and check for) exceptions (it is intended that you should handle them).
-If you get an error, then you need to check how you're using the API that's throwing the error - you're probably using it wrong.
-If you're writing an API, then you should use the same pattern.
-Errors are messages to downstream developers about how they are using your API.
-Share
-Improve this answer
-Follow
-answered Jun 26 '13 at 9:38
-Chris BuckettChris Buckett
-11.1k22 gold badges3434 silver badges4545 bronze badges
-1
-2
-Thx Chris for the clarification! I think thats missing in the documentation. There is already an issue for this: code.google.com/p/dart/issues/detail?id=9377
-– Mike Mitterer
-Jun 26 '13 at 10:52
-Add a comment
-|
-14
-Exception
-An Exception in Dart should be thrown for regular, expected program flow and is intended to be caught:
-An Exception is intended to convey information to the user about a failure, so that the error can be addressed programmatically. It is intended to be caught, and it should contain useful data fields.
-Example: TimeoutException
-A TimeoutException will be thrown "when a scheduled timeout happens while waiting for an async result", which is expected program flow.
-If we have a download task for example and that download task is not finished after our specified timeout time of thirty seconds (which can happen), we want to communicate that to our user, hence, we need to catch the Exception.
-Error
-An Error in Dart should be thrown for unexpected program flow and should not be caught but addressed by the programmer:
-An Error object represents a program failure that the programmer should have avoided.
-Example: AssertionError
-An AssertionError is thrown "when an assert statement fails", i.e. it should never happen because we assert that it should not.
-If we see such an error, it means that we should change our code and we should definitely not catch the error.
-In practice you can catch Errors, but you should not. There is a linter rule to help enforce that.
-The fact that Dart allows it can still be useful, e.g. when testing assertions or other errors.
-See this answer for a complete example scenario.
-Share
-Improve this answer
-Follow
-edited Oct 15 '19 at 11:43
-answered Oct 13 '19 at 8:49
-creativecreatorormaybenotcreativecreatorormaybenot
-63.1k3232 gold badges175175 silver badges278278 bronze badges
-2
-It would be nice nice if you had provided a simple example for both Exception and Error.
-– user6274128
-Oct 15 '19 at 11:30
-Now it is adding more value to your post (+1)
-– user6274128
-Oct 15 '19 at 14:34
-Add a comment
-|
-1
-Exceptions are considered conditions that you can plan ahead for and catch.
-Errors are conditions that you don't expect or plan for.
-For more detailed ans
-Thanks to Chris and from here
-Exceptions should be used when there is a problem that is expected.
-A common one is any type of I/O operation (like network traffic), where the socket closes early, and trying to write data to that socket fails.
-Errors occur when there is a problem that was not expected. Things like null pointers (you expected this variable to not be null), running our of memory, etc... When you try to use the API in a wrong way or stuffs like that.
-For the most part you, as an app developer, will always use exceptions.
-Errors tend to be reserved for unexpected and fatal problems.
-Share
-Improve this answer
-Follow
-edited Aug 24 '20 at 11:11
-answered May 20 '20 at 1:47
-iDecodeiDecode
-4,32122 gold badges1717 silver badges4646 bronze badges
-Add a comment
-|
-Your Answer
-Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
-Draft saved
-Draft discarded
-Sign up or log in
-Sign up using Google
-Sign up using Facebook
-Sign up using Email and Password
-Submit
-Post as a guest
-Name
-Email
-Required, but never shown
-Post as a guest
-Name
-Email
-Required, but never shown
-Post Your Answer
-Discard
-By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
-Not the answer you're looking for? Browse other questions tagged dart
-or ask your own question.
-The Overflow Blog
-Using low-code tools to iterate products faster
-Podcast 345: A good software tutorial explains the How. A great one explains…
-Featured on Meta
-Take the 2021 Developer Survey
-Visit chat
-Linked
-15
-What's the recommended way in Dart: asserts or throw Errors
-2
-How do I test an assertion?
-2
-Throwing Exceptions in Dart for Invalid Parameters (e.g. Sign In)?
-0
-Proper way to throw Errors in Dart
-Related
-5
-Unhandled Exception in Dart
-59
-Dart catch clause
-221
-Dart SDK is not configured
-4
-Dart: No Message specification for Exception?
-0
-Why does Dart allow arbitrary types to be thrown as exceptions?
-1
-In Dart, how to verify a void method that does not throw exception in unit tests?
-1
-What is the correct way to catch both Error and Exception following `effective dart`?
-0
-Why dart analyzer fails to recognize a type error?
-Hot Network Questions
-Is there a canonical source for the Arcane Trickster's magic?
-Why would a modern city with a warm climate have a skyway system?
-Which constructive heuristics exist for the TSP?
-What did I just photograph? (rainbow way out of place)
-Can a petrified wizard communicate telepathically with their familiar?
-A recently published paper seriously impairs the novelty of my dissertation. Which should be the purpose of the next meeting with my supervisor?
-Is there a fundamental reason for the exponential dependence of the evolution of the temperature in an electronic deviced that is powered on?
-Dealing with extremely inexperienced developers who have daily deadlines?
-What is the advantage of gate resistor (R3) in this JFET voltage divider biasing circuit?
-Show exit code of last command in Bash prompt if it returned error
-How to indicate a checkbox/toggle is "always on"
-Can black convert a +5.6 game into a draw (assuming both players play optimally)?
-Interview by fellow PhD students, not the professor himself
-Why are most COB LEDs physically yellow?
-Why does Lex turn on the flashlight?
-Are AP slugs for shotguns possible?
-Why am I seeing the sun slightly north instead of slightly south early in the morning in Malta?
-Refueling a Mars mission on the way
-Is it illegal to implement a patented algorithm or method and take advantage from it?
-How was it calculated that Dream cheated on his Minecraft v1.16 glitchless speedrun?
-What is the DC of Draconic Presence?
-Is maximum speed a thing?
-Should I notify a med school about their student's cheating history?
-Term for "place of death"
-more hot questions
-Question feed
-Subscribe to RSS
-Question feed
-To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
-lang-dart
-Stack Overflow
-Questions
-Jobs
-Developer Jobs Directory
-Salary Calculator
-Help
-Mobile
-Products
-Teams
-Talent
-Advertising
-Enterprise
-Company
+Search This Blog
 About
-Press
-Work Here
-Legal
-Privacy Policy
-Terms of Service
-Contact Us
-Cookie Settings
-Cookie Policy
-Stack Exchange Network
-Technology
-Life / Arts
-Culture / Recreation
-Science
-Other
-Stack Overflow
-Server Fault
-Super User
-Web Applications
-Ask Ubuntu
-Webmasters
-Game Development
-TeX - LaTeX
-Software Engineering
-Unix & Linux
-Ask Different (Apple)
-WordPress Development
-Geographic Information Systems
-Electrical Engineering
-Android Enthusiasts
-Information Security
-Database Administrators
-Drupal Answers
-SharePoint
-User Experience
-Mathematica
-Salesforce
-ExpressionEngine® Answers
-Stack Overflow em Português
-Blender
-Network Engineering
-Cryptography
-Code Review
-Magento
-Software Recommendations
-Signal Processing
-Emacs
-Raspberry Pi
-Stack Overflow на русском
-Code Golf
-Stack Overflow en español
-Ethereum
-Data Science
-Arduino
-Bitcoin
-Software Quality Assurance & Testing
-Sound Design
-Windows Phone
-more (29)
-Photography
-Science Fiction & Fantasy
-Graphic Design
-Movies & TV
-Music: Practice & Theory
-Worldbuilding
-Video Production
-Seasoned Advice (cooking)
-Home Improvement
-Personal Finance & Money
-Academia
-Law
-Physical Fitness
-Gardening & Landscaping
-Parenting
-more (10)
-English Language & Usage
-Skeptics
-Mi Yodeya (Judaism)
-Travel
-Christianity
-English Language Learners
-Japanese Language
-Chinese Language
-French Language
-German Language
-Biblical Hermeneutics
-History
-Spanish Language
-Islam
-Русский язык
-Russian Language
-Arqade (gaming)
-Bicycles
-Role-playing Games
-Anime & Manga
-Puzzling
-Motor Vehicle Maintenance & Repair
-Board & Card Games
-Bricks
-Homebrewing
-Martial Arts
-The Great Outdoors
-Poker
-Chess
-Sports
-more (16)
-MathOverflow
-Mathematics
-Cross Validated (stats)
-Theoretical Computer Science
-Physics
-Chemistry
-Biology
-Computer Science
-Philosophy
-Linguistics
-Psychology & Neuroscience
-Computational Science
-more (10)
-Meta Stack Exchange
-Stack Apps
-API
-Data
+I've been a web developer since 2001: 13yrs as a CFML developer; 6yrs as a PHP dev; and now back in the CFML community but focusing on code quality, design and testing. The code I write and discuss here is pretty much just looking at random conundrums I encounter in my day job.I tend to be a bit "forthright" in my opinions, I am indelicate, and I tend to swear too much. This will come out occasionally here: I make no apology for it.Everything said here is my own opinion. Feel free to disagree with me :-)
+Feeds / Links
+This blog's communication policy
+Default feed
+Last ten articles (full)
+Last ten articles (summary)
+Subscribe To
+Posts
+Atom
+Posts
+Comments
+Atom
+Comments
+Followers
+Follow by Email
+Blog Archive
+►
+2021
+(57)
+►
+June
+(3)
+►
+May
+(12)
+►
+April
+(15)
+►
+March
+(8)
+►
+February
+(9)
+►
+January
+(10)
+►
+2020
+(8)
+►
+December
+(3)
+►
+October
+(3)
+►
+April
+(2)
+►
+2019
+(2)
+►
+December
+(1)
+►
+November
+(1)
+►
+2018
+(3)
+►
+July
+(1)
+►
+May
+(2)
+▼
+2017
+(30)
+►
+November
+(3)
+►
+August
+(1)
+►
+July
+(3)
+►
+May
+(1)
+►
+April
+(3)
+►
+March
+(4)
+►
+February
+(2)
+▼
+January
+(13)
+PHP: accessing an undefined array element yields a...
+Survey results: most useful response first
+I'm a dick: part 4: why I'm a dick
+I'm a dick: part 3 Email sent to Bristol Trading S...
+I'm a dick: part 2 T&Cs located! partial correctio...
+I'm a dick: part 1 Survey results: we've been stit...
+Incredibly: a reader asks me for help with PHP & N...
+PHP: 2000 words on elseif (and PHPMD)
+Testing: Too much detail, Cameron?
+Survey: CFML usage and migration strategies
+PHP: looking into usage of the ::class constant
+PHP: looking at the Chain of Responsibility pattern
+20162017
+►
+2016
+(98)
+►
+December
+(6)
+►
+November
+(12)
+►
+September
+(6)
+►
+August
+(6)
+►
+July
+(4)
+►
+May
+(5)
+►
+April
+(6)
+►
+March
+(10)
+►
+February
+(19)
+►
+January
+(24)
+►
+2015
+(259)
+►
+December
+(7)
+►
+November
+(19)
+►
+October
+(19)
+►
+September
+(21)
+►
+August
+(18)
+►
+July
+(23)
+►
+June
+(32)
+►
+May
+(19)
+►
+April
+(37)
+►
+March
+(9)
+►
+February
+(24)
+►
+January
+(31)
+►
+2014
+(372)
+►
+December
+(22)
+►
+November
+(23)
+►
+October
+(31)
+►
+September
+(39)
+►
+August
+(19)
+►
+July
+(36)
+►
+June
+(23)
+►
+May
+(28)
+►
+April
+(36)
+►
+March
+(42)
+►
+February
+(37)
+►
+January
+(36)
+►
+2013
+(384)
+►
+December
+(38)
+►
+November
+(28)
+►
+October
+(46)
+►
+September
+(42)
+►
+August
+(30)
+►
+July
+(51)
+►
+June
+(20)
+►
+May
+(35)
+►
+April
+(39)
+►
+March
+(25)
+►
+February
+(10)
+►
+January
+(20)
+►
+2012
+(143)
+►
+December
+(23)
+►
+November
+(24)
+►
+October
+(30)
+►
+September
+(26)
+►
+August
+(19)
+►
+July
+(21)
+People
+Sean Corfield
+(50)
+Adam Tuttle
+(30)
+Ray Camden
+(29)
+Brad Wood
+(25)
+Rakshith Naresh
+(24)
+Rupesh Kumar
+(20)
+Micha Offner-Streit
+(19)
+Russ Michaels
+(17)
+Brian Sadler
+(16)
+Alex Skinner
+(15)
+Andrew Myers
+(14)
+Ryan Guill
+(14)
+Gavin Pickin
+(13)
+Mark Drew
+(13)
+Dave Ferguson
+(11)
+Duncan Cumming
+(11)
+Gert Franz
+(10)
+Scott Stroz
+(10)
+Luis Majano
+(9)
+Simon Baynes
+(9)
+Anit Kumar Panda
+(8)
+Dominic Watson
+(8)
+Henry Ho
+(8)
+Kai Koenig
+(8)
+Andrew Scott
+(7)
+Ben Nadel
+(7)
+Matt Bourke
+(7)
+Mike Hnat
+(7)
+Aaron Neff
+(6)
+Acker Apple
+(6)
+Bruce Kirkpatrick
+(6)
+Chris Kobrzak
+(6)
+Adam Presley
+(5)
+Andrew Dixon
+(5)
+David Epler
+(5)
+Frank Jennings
+(5)
+Jason Dean
+(5)
+John Whish
+(5)
+Mark Mandel
+(5)
+Rob Glover
+(5)
+Ron Stewart
+(5)
+Labels
+CFML
+(328)
+ColdFusion
+(256)
+Adobe
+(152)
+Railo
+(149)
+Bugs
+(129)
+PHP
+(124)
+Code Examples
+(101)
+Community Members
+(101)
+Lucee
+(78)
 Blog
-Facebook
-Twitter
-LinkedIn
-Instagram
-site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.6.9.39464
-Stack Overflow works best with JavaScript enabled
-Your privacy
-By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
-Accept all cookies
-Customize settings
+(70)
+Rhetoric
+(54)
+Unit Testing
+(43)
+TDD
+(40)
+Courting Controversy
+(32)
+StackOverflow
+(32)
+Code Puzzle
+(27)
+Closure
+(25)
+Javascript
+(24)
+Conference
+(23)
+Theory
+(22)
+CFClient
+(21)
+CFlib
+(21)
+CFCamp
+(19)
+Documentation
+(18)
+PHP 7
+(18)
+Regular expressions
+(18)
+Application.cfc
+(16)
+Ruby
+(16)
+Arrays
+(15)
+TestBox
+(15)
+Java
+(14)
+PHPUnit
+(13)
+JSON
+(12)
+Interfaces
+(11)
+CFHour
+(10)
+GuzzleHttp
+(10)
+REST
+(10)
+Custom Tags
+(9)
+CFUI
+(6)
+Mockbox
+(6)
+Python
+(6)
+Silex
+(6)
+Generators
+(5)
+Lunacy
+(5)
+Railo 5
+(5)
+Wolpertinger
+(2)
+Disqus for Adam Cameron's Dev Blog
+© Adam Cameron 2012-2021. Powered by Blogger.

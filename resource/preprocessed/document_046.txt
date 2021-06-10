@@ -1,536 +1,180 @@
+Learn using Python Bytes/bytearray Functions
+Search for:
+Hit enter after type your search item
+A-Z Tech
+PHP, Bootstrap, jQuery, CSS, Python, Java and others
+Programming
 Python
-Cannot Import Data using Pandas | Edureka Community
-32589/python-cannot-import-data-using-pandas
-Toggle navigation
-Back
-Ask a question
-Blogs
-Browse Categories
-Browse Categories
-Apache KafkaApache SparkBig Data HadoopBlockchainCareer CounsellingCloud ComputingCyber Security & Ethical HackingData AnalyticsDatabaseDevOps & AgileEvents & Trending TopicsIoT (Internet of Things)JavaLinux AdministrationMachine LearningMicroStrategyPMPPower BIPythonRPASeleniumSoftware TestingTableauTalendWeb DevelopmentAsk us Anything!Others
-Log In
-Sign Up
-Home
-Community
-Categories
-Data Analytics
-Python
-Cannot Import Data using Pandas
-Python
-Cannot Import Data using Pandas
-0 votes
-So, I tried to work through the following machine learning tutorial:
-http://machinelearningmastery.com/machine-learning-in-python-step-by-step/
-This is my (mac) development environment:
-Python 2.7.10
-scipy: 0.13.0b1
-numpy: 1.8.0rc1
-matplotlib: 1.3.1
-pandas: 0.20.2
-sklearn: 0.18.1
-When I try to run a script, to load the data from a URL containing the CSV data, I get the following error:
-Traceback (most recent call last):
-File "load_data.py", line 4, in <module>
-dataset = pandas.read_csv(url, names=names)
-NameError: name 'pandas' is not defined
-Here's the script:
-# Load dataset
-url = "https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
-names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']
-dataset = pandas.read_csv(url, names=names)
-python
-python-2-7
-pandas
-machine-learning
-Dec 7, 2018
-in Data Analytics
-by
-Shubham
-• 13,480 points
-•
-3,804 views
-answer
-comment
-flag
-I have the  similar error. And how did you fix it? Thank you very much!
-commented
-May 5, 2019
-by
-anonymous
-flag
-reply
-Hi. I had forgotten to import pandas library. I imported the library before my code and it worked fine:
-import pandas
-commented
-May 6, 2019
-by
-Shubham
-flag
-reply
-Your comment on this question:
-Your name to display (optional):
-Email me at this address if a comment is added after mine:Email me if a comment is added after mine
-Privacy: Your email address will only be used for sending these notifications.
-Add comment
-Cancel
-1 answer to this question.
-Your answer
-Your name to display (optional):
-Email me at this address if my answer is selected or commented on:Email me if my answer is selected or commented on
-Privacy: Your email address will only be used for sending these notifications.
-Add answer
-Cancel
-0 votes
-So< if your error says:
-dataset = pandas.read_csv(url, names=names)
-NameError: name 'pandas' is not defined
-It probably means you're trying to use pandas.read_csv() without importing Pandas first.When you want to use an external library, you have to import it. if it's not installed on your machine, you may have to install it first too. assuming pandas is installed on your machine, this code will work:
-import pandas
-url = "https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
-names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']
-dataset = pandas.read_csv(url, names=names)
-output:
-dataset.head(3)
-sepal-length
-sepal-width
-petal-length
-petal-width
-class
-0
-5.1
-3.5
-1.4
-0.2
-Iris-setosa
-1
-4.9
-3.0
-1.4
-0.2
-Iris-setosa
-2
-4.7
-3.2
-1.3
-0.2
-Iris-setosa
-answered
-Dec 7, 2018
-by
-Upasana
-• 8,620 points
-comment
-flag
-ask related question
-ModuleNotFoundError
-Traceback (most recent call last)
-<ipython-input-2-da7c156ccdfe> in <module>
-----> 1 import pandas
-2 url = "https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
-3 names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']
-4 dataset = pandas.read_csv(url, names=names)
-ModuleNotFoundError: No module named 'pandas'
-commented
-Sep 27, 2019
-by
-Dmitrii Voitovich
-flag
-reply
-You are trying to import the pandas module but it is not installed on your system. To install pandas run the below command in the terminal:
-pip install pandas
-commented
-Sep 30, 2019
-by
-Omkar
-• 69,150 points
-flag
-reply
-Your comment on this answer:
-Your name to display (optional):
-Email me at this address if a comment is added after mine:Email me if a comment is added after mine
-Privacy: Your email address will only be used for sending these notifications.
-Add comment
-Cancel
-Related Questions In Data Analytics
-0 votes
-1 answer
-Which package is used to do data import in R and Python
-and How do you import SAS data?
-We can do data import using multiple ...READ MORE
-answered
-Aug 24, 2018
-in Data Analytics
-by
-Abhi
-• 3,720 points
-•
-196 views
-data-science
-python
-r
-+1 vote
-1 answer
-Error saying "vector size cannot be NA" when using R with data mining
-You can use the removesparseterm function.
-Removes sparse ...READ MORE
-answered
-Nov 15, 2018
-in Data Analytics
-by
-Maverick
-• 10,840 points
-•
-2,136 views
-r-programming
-data-science
-data-mining
-data-analytics
-0 votes
-1 answer
-How to achieve pivot like data using tidyverse library in R?
-You need not spread twice, if you ...READ MORE
-answered
-Apr 4, 2018
-in Data Analytics
-by
-kappa3010
-• 2,090 points
-•
-329 views
-data-science
-data-science-using-r
-r
-dataframe
-tidyverse
-0 votes
-1 answer
-Join list of data.frames using map() call
-You can use Reduce
-set.seed(24)
-r1 <- map(c(5, 10, 15), ...READ MORE
-answered
-Apr 5, 2018
-in Data Analytics
-by
-Sahiti
-• 6,380 points
-•
-409 views
-data-science
-r
-data-science-using-r
-0 votes
-1 answer
-How to join a list of data frames using map()
-You can use reduce
-set.seed(24)
-r1 <- map(c(5, 10, ...READ MORE
-answered
-Apr 11, 2018
-in Data Analytics
-by
-kappa3010
-• 2,090 points
-•
-361 views
-r
-data-science
-tidyverse
-dataframe
-0 votes
-1 answer
-How to merge data frames using joins?
-You can use the merge function with ...READ MORE
-answered
-Apr 12, 2018
-in Data Analytics
-by
-kappa3010
-• 2,090 points
-•
-237 views
-r
-joins
-merge
-git
-devops-tools
-devops
-dataframe
-0 votes
-1 answer
-how do i change string to a list?
-suppose you have a string with a ...READ MORE
-answered
-May 20, 2019
-in Python
-by
-Mohammad
-• 3,230 points
-•
-1,222 views
-python-string
-python-datatypes
-python
-python-test-processing
-python-services
-python-list
-python-functions
-python-sequence-types
-python-types
-0 votes
-2 answers
-how can i randomly select items from a list?
-You can also use the random library's ...READ MORE
-answered
-Apr 9, 2020
-in Python
-by
-Patrick
-•
-2,680 views
-python-programming
-python
-python-list
-python-datatypes
-python-functions
-python-sequence-types
-python-types
-+1 vote
-2 answers
-how can i count the items in a list?
-Syntax :
-list. count(value)
-Code:
-colors = ['red', 'green', ...READ MORE
-answered
-Jul 6, 2019
-in Python
-by
-Neha
-• 330 points
-edited
-Jul 8, 2019
-by Kalgi
-•
-2,142 views
-python-programming
-python
-python-list
-python-datatypes
-python-functions
-python-sequence-types
-python-types
-0 votes
-0 answers
-how do i use the enumerate function inside a list?
-can you give an example using a ...READ MORE
-May 7, 2019
-in Python
-by
-Waseem
-• 4,540 points
-•
-1,519 views
-python-list
-python-datatypes
-python
-python-functions
-python-sequence-types
-python-types
-python-programming
-Recent in Data AnalyticsHow to combine a list of data frames into one data frame? Dec 17, 2020 how can i access my profile and assignment for pubg analysis data science webinar? Dec 13, 2020 How to code for the sum of imported data set in rstudio Dec 9, 2020 2) Which of the following are applicable to Bigdata technologies(Select all applicable) Dec 2, 2020 7) What does "Dual platform architecture" mean? Dec 2, 2020
-All categories
-Apache Kafka
-(84)
-Apache Spark
-(598)
-Big Data Hadoop
-(1,860)
-Blockchain
-(1,513)
-Career Counselling
-(1,058)
-Cloud Computing
-(3,097)
-Cyber Security & Ethical Hacking
-(90)
-Data Analytics
-(1,196)
-Database
-(270)
-DevOps & Agile
-(3,096)
-Events & Trending Topics
-(27)
-IoT (Internet of Things)
-(361)
 Java
-(968)
-Linux Administration
-(234)
-Machine Learning
-(173)
-MicroStrategy
-(5)
-PMP
-(367)
-Power BI
-(460)
-Python
-(2,950)
-RPA
-(649)
-Selenium
-(1,550)
-Software Testing
-(56)
-Tableau
-(474)
-Talend
-(73)
-Web Development
-(1,457)
-Ask us Anything!
-(62)
-Others
-(303)
-×
-Join the world's most active Tech Community!
-Welcome back to the World's most active Tech Community!
-Sign up with Gmail
-Sign up with Facebook
-OR
-Please provide a valid input
-SIGN UP
-Already have an Edureka Account? Login
-Please enter a valid emailid
-Forgot Password?
-LOGIN
-Don’t have edureka account? Sign Up
-resend ?
-reset password
-Don’t have edureka account? Sign Up
-reset password
-Don’t have edureka account? Sign Up
-Send Code
-Don’t have edureka account? Sign Up
-Subscribe to our Newsletter, and get personalized recommendations.
-Sign up with Google
-Signup with Facebook
-Already have an account? Sign in.
-×
-TRENDING CERTIFICATION COURSES
-DevOps Certification Training
-AWS Architect Certification Training
-Big Data Hadoop Certification Training
-Tableau Training & Certification
-Python Certification Training for Data Science
-Selenium Certification Training
-PMP® Certification Exam Training
-Robotic Process Automation Training using UiPath
-Apache Spark and Scala Certification Training
-Microsoft Power BI Training
-Online Java Course and Training
-Python Certification Course
-TRENDING MASTERS COURSES
-Data Scientist Masters Program
-DevOps Engineer Masters Program
-Cloud Architect Masters Program
-Big Data Architect Masters Program
-Machine Learning Engineer Masters Program
-Full Stack Web Developer Masters Program
-Business Intelligence Masters Program
-Data Analyst Masters Program
-Test Automation Engineer Masters Program
-Post-Graduate Program in Artificial Intelligence & Machine Learning
-Post-Graduate Program in Big Data Engineering
-COMPANY
-About us
-News & Media
-Reviews
-Contact us
-Blog
-Community
-Sitemap
-Blog Sitemap
-Community Sitemap
-WORK WITH US
-Careers
-Become an Instructor
-Become an Affiliate
-Become a Partner
-Hire from Edureka
-DOWNLOAD APP
-CATEGORIES
-CATEGORIES
-Cloud Computing
-DevOps
-Big Data
-Data Science
-BI and Visualization
-Programming & Frameworks
-Software Testing
-Project Management and Methodologies
-Robotic Process Automation
-Frontend Development
-Data Warehousing and ETL
-Artificial Intelligence
-Blockchain
-Databases
-Cyber Security
-Mobile Development
-Operating Systems
-Architecture & Design Patterns
-Digital Marketing
-TRENDING BLOG ARTICLES
-TRENDING BLOG ARTICLES
-Selenium tutorial
-Selenium interview questions
-Java tutorial
-What is HTML
-Java interview questions
-PHP tutorial
-JavaScript interview questions
-Spring tutorial
-PHP interview questions
-Inheritance in Java
-Polymorphism in Java
-Spring interview questions
-Pointers in C
-Linux commands
-Android tutorial
-JavaScript tutorial
-jQuery tutorial
-SQL interview questions
-MySQL tutorial
-Machine learning tutorial
-Python tutorial
-What is machine learning
-Ethical hacking tutorial
-SQL injection
-AWS certification career opportunities
-AWS tutorial
-What Is cloud computing
-What is blockchain
-Hadoop tutorial
-What is artificial intelligence
-Node Tutorial
-Collections in Java
-Exception handling in java
-Python Programming Language
-Python interview questions
-Multithreading in Java
-ReactJS Tutorial
-Data Science vs Big Data vs Data Analytics
-Software Testing Interview Questions
-R Tutorial
-Java Programs
-JavaScript Reserved Words and Keywords
-Implement thread.yield() in Java: Examples
-Implement Optical Character Recognition in Python
-All you Need to Know About Implements In Java
-© 2021 Brain4ce Education Solutions Pvt. Ltd. All rights Reserved.
-Terms & Conditions
-Legal & Privacy
-"PMP®","PMI®", "PMI-ACP®" and "PMBOK®" are registered marks of the Project Management Institute, Inc.
-MongoDB®, Mongo and the leaf logo are the registered trademarks of MongoDB, Inc.
+C#
+Kotlin
+Web
+HTML
+CSS
+Bootstrap 3
+Bootstrap 4
+Materialize
+jQuery
+jQuery UI
+AngularJS
+Web Elements
+Tables
+Forms
+Buttons
+Menus
+Animations
+Text
+Effects
+Sliders
+Dropdown
+Modals
+Tabs
+Date & Time
+Scripting
+PHP
+JavaScript
+Bash
+Database
+SQL
+MySQL
+More
+MS Excel
+Github
+What Why How
+The Bytes Function in Python
+The bytes and bytearray are the core built-in types in Python to manipulate binary data.
+The bytes function returns bytes object which is an immutable sequence of single bytes.
+The Headlines
+hide
+1.
+How to use bytes function
+2.
+An example of using an integer in byte function
+3.
+The example of using a string in bytes function
+4.
+The example of bytes with a list
+5.
+What if the list contained a string item?
+6.
+An example of Python bytearray example
+7.
+Using a string in bytearray example
+How to use bytes function
+The general syntax for using the bytes function is:
+class bytes([source[, encoding[, errors]]])
+Where the source can be an integer, string, Object, or iterable.
+All the parameters in bytes function are optional. So, if the source is not provided, the bytes function creates an array of zero size.
+If a string is used as a source then make sure you provide the encoding argument as well.
+The third parameter error is used when the source is provided as a string and it fails.
+An example of using an integer in byte function
+The example below uses just the first argument in the bytes function i.e. integer as the source. I provided value 9 and see the output:
+1234567
+#Bytes Demo   obj_byte = bytes(2) print (obj_byte)
+The result:
+b’\x00\x00′
+The example of using a string in bytes function
+In this examples, I used a string and also given the encoding parameter value i.e. “utf-8”. See the code and output:
+1234567
+#Bytes Demo with string   obj_byte = bytes("Hello Python", "utf-8") print (obj_byte)
+The output:
+b’Hello Python’
+Note: The TypeError occurs if you do not provide encoding type there. That is:
+TypeError: string argument without an encoding
+The example of bytes with a list
+In the example below, we have a list of numeric elements. Remember, the definition of bytes function states that you may use an iterator as the source?
+The code below uses a list and displays the returned bytes object:
+123456789
+#Bytes Demo with list   lst_num = [1, 15, 25] obj_byte_lst = bytes(lst_num) print (obj_byte_lst)
+The result:
+b’\x01\x0f\x19′
+What if the list contained a string item?
+I just added a string item in the above list and see the output:
+123456789
+#Bytes Demo with list (a string item)   lst_mix = [1, 15, 25, "A string"] obj_byte_lst = bytes(lst_mix) print (obj_byte_lst)
+The result:
+TypeError: ‘str’ object cannot be interpreted as an integer
+An example of Python bytearray example
+As mentioned earlier, the bytes function returns a byte object which is immutable. If you want a mutable object then use the bytearray() function.
+The bytearray() function returns a bytearray object that is mutable. The bytearray object is an array of the given bytes.
+The syntax for using this function is:
+class bytearray([source[, encoding[, errors]]])
+The example below shows using an integer as the source in the bytearray function:
+1234567
+#Bytearray Demo   int_x = bytearray(5) print (int_x)
+The result:
+bytearray(b’\x00\x00\x00\x00\x00′)
+Using a string in bytearray example
+The example below shows using a string in bytearray function.
+1234567
+#Bytearray Demowith string   obj_bytearray = bytearray("Python is cool", "utf-8") print (obj_bytearray)
+The result:
+bytearray(b’Python is cool’)
+Related Tutorials:
+Python int() function
+What is Python ascii function?
+What is any() function in Python?
+Python all() function
+What is float function in Python?
+What is Python floor function?
+Python max function
+Python Reduce Function
+What is Python Zip function?
+What is isinstance function in Python?
+Post navigation
+Prev TutorialWhat is Enumerate in Python?
+Next TutorialPython int() function
+Python if, else and elif
+Python for loop
+Python While loop
+Python List
+Python Dictionary
+Python Tuple
+Python Set
+Python Exception Handling
+Python string to int and float
+Python open / read /write
+Related Tutorials
+Python int() functionWhat is Python ascii function?What is any() function in Python?Python all() functionWhat is float function in Python?What is Python floor function?Python max functionPython Reduce FunctionWhat is Python Zip function?What is isinstance function in Python?
+This div height required for enabling the sticky sidebar
+Go by TagsAccordion
+AJAX
+Animations
+Autocomplete
+Buttons
+Carousel
+Charts
+Checkbox
+Date & Time
+Dropdown
+Effects
+Forms
+Hover
+Layout
+Lightbox
+Loader
+Maps
+Menus
+Mobile
+Modals
+Parallax
+Popover
+Progress bar
+Responsive
+Rotator
+Scroll
+Shopping Cart
+Sliders
+slideshow
+Table
+Tabs
+Text
+Tooltips
+Transitions
+Validation
+Zoom
+AboutCookies & Privacy Policy
+About & Terms
+Contact
+jQuery-AZ 2020. All Rights Reserved.
+↑

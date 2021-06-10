@@ -1,1 +1,195 @@
-Kotakode.com | Komunitas Developer IndonesiaYou need to enable JavaScript to run this app.
+How do I import nltk in python? - Python
+468,450 Members | 2,897 Online
+Sign in
+Join Now
+New Post
+Home Posts Topics Members FAQ
+home > topics > python > questions
+>
+how do i import nltk in python?
+Post your question to a community of 468,450 developers.
+It's quick & easy.
+How do I import nltk in python?
+RSJinx
+2
+Hi. I'm totally new to Python and only have a little experience with C++. So, to begin with, I don't really know what I'm doing. I installed nltk three times - each time it said the installation was successful. But trying to import nltk only results in an error message. I tried what I found on these pages: http://groups.google.com/group/nltk-users/browse_thread/thread/509dac376bf06300?fwc=1 and http://www.nltk.org/download. This is what happened:
+Expand|Select|Wrap|Line Numbers
+Python 2.6.4 (r264:75821M, Oct 27 2009, 19:48:32)
+[GCC 4.0.1 (Apple Inc. build 5493)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import nltk
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+ImportError: No module named nltk
+>>> cd /tmp/nltk-installer
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+NameError: name 'cd' is not defined
+>>> sudo python setup.py install
+File "<stdin>", line 1
+sudo python setup.py install
+^
+SyntaxError: invalid syntax
+>>> sudo easy_install -U py
+File "<stdin>", line 1
+sudo easy_install -U py
+^
+SyntaxError: invalid syntax
+>>>
+Any ideas? I'm sure it's something really simple. ^_^
+Thanks!
+Aug 27 '10
+#1
+Follow Post Reply
+2
+19546
+bvdet
+2,851
+Expert Mod 2GB
+If you have more than one version of Python installed, you may have installed nltk to a different version of Python than the version currently active.
+Aug 29 '10
+#2
+reply
+RSJinx
+2
+Thank you! I figured it out. Like I said, totally new to this, and I didn't realize that I needed to just be in the terminal, not python, to make those troubleshooting commands work. It all works now. : )
+Aug 29 '10
+#3
+reply
+Message
+Cancel Changes
+Post your reply
+Sign in to post your reply or Sign up for a free account.
+Post Reply
+Similar topics
+Python
+_sre Import Error Python 2.3.3 Final Win98SE
+reply
+views
+Thread by DogWalker |
+last post:
+by
+Python
+[(J)Python] embedding python
+reply
+views
+Thread by vincent Salaun |
+last post:
+by
+Python
+error problems for import some copora with nltk
+1 post
+views
+Thread by ekyungchung |
+last post:
+by
+Python
+cannot import libxml2 python module on windoze using activePerl orPython IDLE
+1 post
+views
+Thread by Andrew Marlow |
+last post:
+by
+Python
+problem with import in python 2.2.3
+3 posts
+views
+Thread by Anthony Irwin |
+last post:
+by
+Python
+List of modules available for import inside Python?
+16 posts
+views
+Thread by ssecorp |
+last post:
+by
+Python
+Using NLTK in Java
+5 posts
+views
+Thread by hussainsaiger |
+last post:
+by
+Python
+do export statement in Python script
+3 posts
+views
+Thread by Simon Strobl |
+last post:
+by
+Python
+Cannot import a Python module
+reply
+views
+Thread by Anna Butt |
+last post:
+by
+Java
+How to implement ArrayList data structure in Java
+reply
+views
+Thread by ravipankaj |
+last post:
+by
+Software Development
+Doubly Linked List In java || Implement DLL Data Structure
+reply
+views
+Thread by ravipankaj |
+last post:
+by
+Microsoft Access / VBA
+Feast Your Eyes On Three MS Access Infographics
+7 posts
+views
+Thread by isladogs |
+last post:
+by
+C / C++
+Could anyone explain me which are not permitted?
+1 post
+views
+Thread by hanj |
+last post:
+by
+Microsoft SQL Server
+How to find those records have no parent and child in same table?
+2 posts
+views
+Thread by Zeeshan Ahmad |
+last post:
+by
+Python
+Why am I getting a key error when I print my dictionary?
+1 post
+views
+Thread by adamb123 |
+last post:
+by
+Microsoft Access / VBA
+re: Can get a Left Join to Work in one summary table but not another in Access
+2 posts
+views
+Thread by hwsilver |
+last post:
+by
+General
+How to transform the game of tic-tac-toe from the notepad into an image?
+1 post
+views
+Thread by AlexK987 |
+last post:
+by
+Python
+Password Protection to Email attachment
+reply
+views
+Thread by Shanarun |
+last post:
+by
+BYTES.COM © 2021 About Us Advertise Terms Of Use Privacy Policy Manage Cookies Contact Us
+Sitemap
+Follow us! Get the Latest Bytes Updates
+By using this site, you agree to our Privacy Policy and Terms of Use.
+Ok

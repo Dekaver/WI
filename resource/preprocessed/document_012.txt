@@ -1,165 +1,143 @@
-Kesalahan HTTP 403 dalam Scraping Web Python 3
-Pemrograman
-Tag
-Account
-Sign In
-Signup
-Kesalahan HTTP 403 dalam Scraping Web Python 3
-100
-Saya mencoba membatalkan situs web untuk latihan, tetapi saya terus mendapatkan Kesalahan HTTP 403 (apakah menurutnya saya bot)?
-Ini kode saya:
-#import requests
-import urllib.request
-from bs4 import BeautifulSoup
-#from urllib import urlopen
-import re
-webpage = urllib.request.urlopen('http://www.cmegroup.com/trading/products/#sortField=oi&sortAsc=false&venues=3&page=1&cleared=1&group=1').read
-findrows = re.compile('<tr class="- banding(?:On|Off)>(.*?)</tr>')
-findlink = re.compile('<a href =">(.*)</a>')
-row_array = re.findall(findrows, webpage)
-links = re.finall(findlink, webpate)
-print(len(row_array))
-iterator = []
-Kesalahan yang saya dapatkan adalah:
-File "C:\Python33\lib\urllib\request.py", line 160, in urlopen
-return opener.open(url, data, timeout)
-File "C:\Python33\lib\urllib\request.py", line 479, in open
-response = meth(req, response)
-File "C:\Python33\lib\urllib\request.py", line 591, in http_response
-'http', request, response, code, msg, hdrs)
-File "C:\Python33\lib\urllib\request.py", line 517, in error
-return self._call_chain(*args)
-File "C:\Python33\lib\urllib\request.py", line 451, in _call_chain
-result = func(*args)
-File "C:\Python33\lib\urllib\request.py", line 599, in http_error_default
-raise HTTPError(req.full_url, code, msg, hdrs, fp)
-urllib.error.HTTPError: HTTP Error 403: Forbidden
+AttributeError: 'numpy.ndarray' object has no attribute 'toarray' - Discoverbits Q&A - Find Answers to Your Technical Questions
+Login
+Remember
+Register
+Questions
+Unanswered
+Tags
+Categories
+Ask a Question
+Blogs
+Contact Us
+Ask a Question
+AttributeError: 'numpy.ndarray' object has no attribute 'toarray'
++3 votes
+asked
+Jan 8, 2018
+in Programming Languages
+by
+phpuser
+(7.3k points)
+I saved a CSR_matrix as .npy file on the disk using np.save(), but when I load the .npy file and try to see the matrix using toarray(), it gives error.>>> X=np.load('rr.npy')>>> X.toarray()Traceback (most recent call last):  File "<stdin>", line 1, in <module>AttributeError: 'numpy.ndarray' object has no attribute 'toarray'How can I see the data in the matrix?
 python
-http
-web
-http-status-code-403
-—
-Josh
-sumber
-Jawaban:
-209
-Ini mungkin karena mod_securityatau beberapa fitur keamanan server serupa yang memblokir agen pengguna spider / bot yang dikenal ( urllibmenggunakan sesuatu seperti python urllib/3.3.0itu, mudah dideteksi). Coba setel agen pengguna browser yang dikenal dengan:
-from urllib.request import Request, urlopen
-req = Request('http://www.cmegroup.com/trading/products/#sortField=oi&sortAsc=false&venues=3&page=1&cleared=1&group=1', headers={'User-Agent': 'Mozilla/5.0'})
-webpage = urlopen(req).read()
-Ini berhasil untuk saya.
-By the way, dalam kode Anda Anda yang hilang ()setelah .readdi urlopenline, tapi saya pikir bahwa itu salah ketik.
-TIPS: karena ini adalah latihan, pilih situs lain yang tidak membatasi. Mungkin mereka memblokir urllibkarena suatu alasan ...
-—
-Stefano Sanfilippo
-sumber
-Saya menganggap aman untuk digunakan kembali requntuk beberapa urlopenpanggilan.
-—
-Acumenus
-Mungkin sedikit terlambat, tetapi saya sudah memiliki Agen-Pengguna di kode saya, tetap saja saya munculError 404: Access denied
-—
-Reema Parakh
-Ini berfungsi tetapi saya merasa mereka pasti memiliki alasan yang baik untuk memblokir bot dan saya melanggar persyaratan layanan mereka
-—
-xjcl
-39
-Jelas itu memblokir karena penggunaan urllib Anda berdasarkan agen pengguna. Hal yang sama terjadi pada saya dengan OfferUp. Anda dapat membuat kelas baru bernama AppURLopener yang menggantikan agen pengguna dengan Mozilla.
-import urllib.request
-class AppURLopener(urllib.request.FancyURLopener):
-version = "Mozilla/5.0"
-opener = AppURLopener()
-response = opener.open('http://httpbin.org/user-agent')
-Sumber
-—
-zeta
-sumber
-2
-Jawaban teratas tidak berhasil untuk saya, sementara jawaban Anda berhasil. Terima kasih banyak!
-—
-Tarun Uday
-Ini berfungsi dengan baik tetapi saya perlu melampirkan konfigurasi ssl untuk ini. Bagaimana saya melakukan ini? Sebelumnya saya baru saja menambahkannya sebagai parameter kedua (urlopen (request, konteks = ctx))
-—
-Hauke
-2
-sepertinya itu benar-benar terbuka tetapi dikatakan 'ValueError: membaca file yang ditutup'
-—
-Martian2049
-@zeta Bagaimana Anda bisa mengikis OfferUp dan memberikan koordinat geografis yang diperlukan untuk melakukan pencarian dari skrip?
-—
-CJ Travis
-@CJTravis, saya tidak mengorek OfferUp. Saya baru saja mengambil nilai item berdasarkan URL item yang tepat. Itu tidak memerlukan koordinat geografis apa pun untuk saya
-—
-zeta
-13
-"Ini mungkin karena mod_security atau beberapa fitur keamanan server serupa yang memblokir yang diketahui
-laba-laba / bot
-agen pengguna (urllib menggunakan sesuatu seperti python urllib / 3.3.0, ini mudah dideteksi) "- seperti yang telah disebutkan oleh Stefano Sanfilippo
-from urllib.request import Request, urlopen
-url="https://stackoverflow.com/search?q=html+error+403"
-req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-web_byte = urlopen(req).read()
-webpage = web_byte.decode('utf-8')
-The web_byte adalah objek byte dikembalikan oleh server dan jenis hadir konten dalam halaman web ini kebanyakan utf-8 . Oleh karena itu, Anda perlu memecahkan kode web_byte menggunakan metode dekode.
-Ini menyelesaikan masalah lengkap ketika saya mencoba untuk menghapus dari situs web menggunakan PyCharm
-PS -> Saya menggunakan python 3.4
-—
-royatirek
-sumber
-2
-Berdasarkan jawaban sebelumnya,
-from urllib.request import Request, urlopen
-#specify url
-url = 'https://xyz/xyz'
-req = Request(url, headers={'User-Agent': 'XYZ/3.0'})
-response = urlopen(req, timeout=20).read()
-Ini berhasil bagi saya dengan memperpanjang waktu tunggu.
-—
-VICTOR IWUOHA
-sumber
-1
-Karena halaman berfungsi di browser dan bukan saat memanggil dalam program python, tampaknya aplikasi web yang melayani url tersebut mengenali bahwa Anda meminta konten bukan oleh browser.
-Demonstrasi:
-curl --dump-header r.txt http://www.cmegroup.com/trading/products/#sortField=oi&sortAsc=false&venues=3&page=1&cleared=1&group=1
+numpy
+toarray
+Please log in or register to add a comment.
+Please log in or register to answer this question.
+1 Answer
+0 votes
+answered
+Jan 8, 2018
+by
+pkumar81
+(30.1k points)
+np.load() converts CSR matrix to an object, so you cannot use toarray() to see the matrix. You need to first use tolist() and then toarray() to see the data.See the value of X with and without tolist().>>> Xarray(<3x3 sparse matrix of type '<class 'numpy.int64'>'        with 6 stored elements in Compressed Sparse Row format>, dtype=object)Here dtype is object, so toarray() will give error.>>> X=np.load('rr.npy').tolist()>>> X<3x3 sparse matrix of type '<class 'numpy.int64'>'        with 6 stored elements in Compressed Sparse Row format> Using tolist(), you can convert object to a list and then use toarray() to see the data.>>> X.toarray()array([[1, 0, 2],       [0, 0, 3],       [4, 5, 6]])
+Please log in or register to add a comment.
+Related questions
++1 vote
+1 answer
+AttributeError: 'tuple' object has no attribute 'sort'
+asked
+6 days ago
+in Programming Languages
+by
+pythonuser
+(17.1k points)
+python
+attributeerror
+sort
+tuple
++2 votes
+1 answer
+AttributeError: 'dict' object has no attribute 'most_common' in Python
+asked
+Jan 10, 2020
+in Programming Languages
+by
+pythonuser
+(17.1k points)
+python
+dictionary
+attributeerror
++2 votes
+1 answer
+Python - AttributeError: 'Namespace' object has no attribute 'rfileTr'
+asked
+Dec 4, 2019
+in Programming Languages
+by
+pythonuser
+(17.1k points)
+python
+attributeerror
+argparse
++2 votes
+1 answer
+TypeError: 'numpy.ndarray' object is not callable
+asked
+Oct 12, 2019
+in Programming Languages
+by
+pythonuser
+(17.1k points)
+python
+callable
+numpy
++2 votes
+1 answer
+TypeError: unhashable type: 'numpy.ndarray'
+asked
+Feb 1
+in Programming Languages
+by
+pythonuser
+(17.1k points)
+python
+numpy
+array
+typeerror
+Categories
+All categories
+General
+(35)
+CMS Tips
+(12)
+Operating Systems
+(81)
+Web & Google
+(59)
+Programming Languages
+(404)
+Databases
+(60)
+Most popular tags
+python
+list
+array
+numpy
+linux
+ubuntu
+php
+pandas
+string
+file
+dataframe
+postgresql
+dictionary
+command
+apache
+mysql
+csr_matrix
+directory
+csv
+vps
+matrix
+sort
+windows
+typeerror
+sql
+Send feedback
+XML Sitemap
+Snow Theme by Q2A Market
+Powered by Question2Answer
 ...
-<HTML><HEAD>
-<TITLE>Access Denied</TITLE>
-</HEAD><BODY>
-<H1>Access Denied</H1>
-You don't have permission to access ...
-</HTML>
-dan konten di r.txt memiliki baris status:
-HTTP/1.1 403 Forbidden
-Coba posting tajuk 'User-Agent' yang memalsukan klien web.
-CATATAN: Halaman ini berisi panggilan Ajax yang membuat tabel yang mungkin ingin Anda parse. Anda harus memeriksa logika javascript halaman atau cukup menggunakan browser debugger (seperti tab Firebug / Net) untuk melihat url mana yang perlu Anda panggil untuk mendapatkan konten tabel.
-—
-Robert Lujo
-sumber
-1
-Anda dapat mencoba dengan dua cara. Detailnya ada di tautan ini .
-1) Melalui pip
-pip install --upgrade certifi
-2) Jika tidak berhasil, coba jalankan cerificates.command yang dibundel dengan Python 3. * untuk Mac: (Buka lokasi instalasi python Anda dan klik dua kali file tersebut)
-buka / Aplikasi / Python \ 3. * / Instal \ Certificates.command
-—
-Johnson
-sumber
-0
-Jika Anda merasa bersalah karena memalsukan agen pengguna sebagai Mozilla (komentar di jawaban teratas dari Stefano), ini juga dapat bekerja dengan Agen Pengguna non-urllib. Ini berfungsi untuk situs yang saya rujuk:
-req = urlrequest.Request(link, headers={'User-Agent': 'XYZ/3.0'})
-urlrequest.urlopen(req, timeout=10).read()
-Aplikasi saya adalah untuk menguji validitas dengan mengorek tautan tertentu yang saya rujuk, di artikel saya. Bukan pengikis umum.
-—
-Sudeep Prasad
-sumber
-0
-Berdasarkan jawaban sebelumnya, ini berhasil untuk saya dengan Python 3.7
-from urllib.request import Request, urlopen
-req = Request('Url_Link', headers={'User-Agent': 'XYZ/3.0'})
-webpage = urlopen(req, timeout=10).read()
-print(webpage)
-—
-Jonny_P
-sumber
-Dengan menggunakan situs kami, Anda mengakui telah membaca dan memahami Kebijakan Cookie dan Kebijakan Privasi kami.
-Licensed under cc by-sa 3.0
-with attribution required.

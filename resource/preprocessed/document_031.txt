@@ -1,4 +1,4 @@
-django - Python: Object has no attribute 'append' Error - Stack Overflow
+python - TypeError: 'str' object cannot be interpreted as an integer - Stack Overflow
 Stack Overflow
 About
 Products
@@ -54,164 +54,250 @@ Teams
 Q&A for work
 Connect and share knowledge within a single location that is structured and easy to search.
 Learn more
-Python: Object has no attribute 'append' Error
+TypeError: 'str' object cannot be interpreted as an integer [duplicate]
 Ask Question
 Asked
-8 years, 3 months ago
+7 years, 8 months ago
 Active
-8 years, 2 months ago
+2 years ago
 Viewed
-5k times
-0
-In my dashboard function I have a profile. Profiles have tags. What i'm trying to do is throw each tag that went through the parser into a list. And then that list to the template:
-import feedparser
-rss_result = []
-tags = profile.tags.all()
-for tag in tags:
-rss = feedparser.parse(tag.tag_rss) #tag.tag_rss is a url string
-rss.append(rss_result)
-context['tag_rss'] = rss_result
-It's throwing this error: Exception Value: object has no attribute 'append
-What am I doing wrong? Thanks for your help in advance.
-python django parsing
+160k times
+20
+7
+This question already has answers here:
+How can I read inputs as numbers?
+(10 answers)
+Closed 1 year ago.
+I don't understand what the problem is with the code, it is very simple so this is an easy one.
+x = input("Give starting number: ")
+y = input("Give ending number: ")
+for i in range(x,y):
+print(i)
+It gives me an error
+Traceback (most recent call last):
+File "C:/Python33/harj4.py", line 6, in <module>
+for i in range(x,y):
+TypeError: 'str' object cannot be interpreted as an integer
+As an example, if x is 3 and y is 14,
+I want it to print
+Give starting number: 4
+Give ending number: 13
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+What is the problem?
+python types
 Share
-Improve this question
 Follow
-asked Mar 1 '13 at 21:06
-ModelesqModelesq
-4,4101515 gold badges5252 silver badges7676 bronze badges
+edited Aug 29 '17 at 8:53
+Mel
+4,9491010 gold badges3333 silver badges3939 bronze badges
+asked Oct 7 '13 at 20:56
+JoeJoe
+20111 gold badge22 silver badges33 bronze badges
 0
 Add a comment
 |
-3 Answers
-3
+8 Answers
+8
 Active
 Oldest
 Votes
-5
-I think you meant to do rss_result.append(rss). You have it backwards.
-Also, you could write it in fewer lines with a list comprehension. Entirely up to you, though.
-import feedparser
-tags = profile.tags.all()
-context['tag_rss'] = [feedparser.parse(tag.tag_rss) for tag in tags]
-# if you don't need to re-use rss_result, this should work okay
+23
+A simplest fix would be:
+x = input("Give starting number: ")
+y = input("Give ending number: ")
+x = int(x)
+# parse string into an integer
+y = int(y)
+# parse string into an integer
+for i in range(x,y):
+print(i)
+input returns you a string (raw_input in Python 2). int tries to parse it into an integer. This code will throw an exception if the string doesn't contain a valid integer string, so you'd probably want to refine it a bit using try/except statements.
 Share
-Improve this answer
 Follow
-edited Apr 2 '13 at 1:11
-answered Mar 1 '13 at 21:09
-AnorovAnorov
-1,8601313 silver badges1818 bronze badges
-0
+edited Oct 29 '17 at 21:20
+answered Oct 7 '13 at 20:57
+BartoszKPBartoszKP
+32.2k1313 gold badges9393 silver badges123123 bronze badges
 Add a comment
 |
-2
-Change
-rss.append(rss_result)
-to
-rss_result.append(rss)
-You want to append the item rss to the list, which is rss_result.
-When you have an error like this it's helpful to try and parse out what the error is actually telling you:
-Exception Value: object has no attribute 'append'
-There seems to be a problem here when trying to call the attribute, append, so if you look back in your code you can see the only place you're trying to append something, is when you have rss.append(rss_result). In this case you can easily see that it's trying to call append on rss, and by looking at your code you can see that rss is the container for the feedparser output, and you don't want to append anything to that, you want that object to be appended to something else.
-In this case you want to take your list, rss_result, and append the rss variable to the end of this empty list. hence: rss_result.append(rss)
+6
+You are getting the error because range() only takes int values as parameters.
+Try using int() to convert your inputs.
 Share
-Improve this answer
 Follow
-answered Mar 1 '13 at 21:10
-GordonsBeardGordonsBeard
-52833 silver badges1414 bronze badges
+answered Jun 10 '19 at 11:20
+Rahul Rahul
+10111 silver badge44 bronze badges
 Add a comment
 |
-0
-your mixed up this line: rss.append(rss_result)
-should be rss_result.append(rss)
+3
+x = int(input("Give starting number: "))
+y = int(input("Give ending number: "))
+P.S. Add function int()
 Share
-Improve this answer
 Follow
-answered Mar 1 '13 at 21:10
-BenjaminBenjamin
-61133 silver badges88 bronze badges
+edited Jan 11 '18 at 22:48
+Bramwell Simpson
+6333 silver badges1010 bronze badges
+answered Dec 7 '17 at 10:33
+Ливиу ГрекуЛивиу Греку
+3122 bronze badges
 Add a comment
 |
-Your Answer
-Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
-Draft saved
-Draft discarded
-Sign up or log in
-Sign up using Google
-Sign up using Facebook
-Sign up using Email and Password
-Submit
-Post as a guest
-Name
-Email
-Required, but never shown
-Post as a guest
-Name
-Email
-Required, but never shown
-Post Your Answer
-Discard
-By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
-Not the answer you're looking for? Browse other questions tagged python django parsing
+3
+x = int(input("Give starting number: "))
+y = int(input("Give ending number: "))
+for i in range(x, y):
+print(i)
+This outputs:
+Share
+Follow
+edited Sep 25 '18 at 6:41
+Dadep
+2,69255 gold badges2323 silver badges3737 bronze badges
+answered Sep 25 '18 at 5:27
+irshadirshad
+3122 bronze badges
+Add a comment
+|
+1
+I'm guessing you're running python3, in which input(prompt) returns a string.
+Try this.
+x=int(input('prompt'))
+y=int(input('prompt'))
+Share
+Follow
+answered Oct 7 '13 at 20:58
+PerkinsPerkins
+2,0411919 silver badges2020 bronze badges
+1
+1
+In python2, use int(raw_input('prompt'))
+– Perkins
+Oct 7 '13 at 20:59
+Add a comment
+|
+1
+You have to convert input x and y into int like below.
+x=int(x)
+y=int(y)
+Share
+Follow
+answered Dec 19 '15 at 6:38
+SPradhanSPradhan
+5711 silver badge88 bronze badges
+Add a comment
+|
+1
+You will have to put:
+X = input("give starting number")
+X = int(X)
+Y = input("give ending number")
+Y = int(Y)
+Share
+Follow
+edited Aug 24 '16 at 11:47
+BartoszKP
+32.2k1313 gold badges9393 silver badges123123 bronze badges
+answered Oct 7 '13 at 21:02
+MafiaCureMafiaCure
+6511 gold badge11 silver badge1111 bronze badges
+Add a comment
+|
+1
+Or you can also use eval(input('prompt')).
+Share
+Follow
+edited Oct 29 '17 at 21:21
+BartoszKP
+32.2k1313 gold badges9393 silver badges123123 bronze badges
+answered Feb 6 '17 at 6:57
+Aditya KumarAditya Kumar
+1122 bronze badges
+3
+eval() will convert the expression to an evaluated version of the input.This is used to counter the backward non-compatiblity of python 3 against Python 2.
+– Aditya Kumar
+Feb 6 '17 at 6:59
+I used this in my program for factorial which was not working before(error given was : for i in range(1,n+1): TypeError: must be str, not int)
+and it worked:
+n = eval(input("Enter a number: ")) j=1 for i in range(1,n+1):
+j=j*i
+i=i+1 print(j)
+– Aditya Kumar
+Feb 6 '17 at 7:01
+This may work... But it creates an enormous security flaw, an attacker has quite literally free reign when you run eval like this without first properly checking the string...
+– 255.tar.xz
+Mar 25 '20 at 17:26
+Add a comment
+|
+Not the answer you're looking for? Browse other questions tagged python types
 or ask your own question.
 The Overflow Blog
 Using low-code tools to iterate products faster
 Podcast 345: A good software tutorial explains the How. A great one explains…
 Featured on Meta
 Take the 2021 Developer Survey
+Linked
+261
+How can I read inputs as numbers?
+0
+creating a list of cordinates (x,y,z variables ) from a single line input
+0
+Python: Google Maps API, TypeError on CSV file
 Related
-5329
-How to execute a program or call a system command from Python
-6195
-What are metaclasses in Python?
-3114
-What is the difference between Python's list methods append and extend?
-6696
-Does Python have a ternary conditional operator?
-3270
-How to get the current time in Python
-1922
-How to know if an object has an attribute in Python
-2952
-How do I concatenate two lists in Python?
-2562
-Manually raising (throwing) an exception in Python
-1492
-Why can't Python parse this JSON data?
-3596
-Does Python have a string 'contains' substring method?
+1456
+Converting integer to string in Python
+1919
+Determine the type of an object?
+1175
+If Python is interpreted, what are .pyc files?
+1681
+Check if a value is an object in JavaScript
+0
+TypeError: 'str' object cannot be interpreted as an integer
+1
+'float' object cannot be interpreted as an integer
+1
+'str' object cannot be interpreted as an integer on groupby
+0
+TypeError: 'str' object cannot be interpreted as an integer python for loop
+0
+Why I'm getting this error “TypeError: 'list' object cannot be interpreted as an integer”
 Hot Network Questions
-Why does Lex turn on the flashlight?
-how to add existing user to existing group id (not group name)?
-Which one would be better for 3.3V outputs among ULN2001 and ULN2003?
-What is the right tool for old, rusty, flat cross head bolts?
-Is it a good idea to go to Japan without a travel guide?
-Does machine learning really need data-efficient algorithms?
-Evaluation order of an APL n-train
-Why are most COB LEDs physically yellow?
-Are there any greater risks of traveling significantly faster to another planet?
-What does 高高矮矮 mean?
-Why is Ken's beer "gay"?
-What are minimal changes to make a truncated pyramid shaped megabuildings a thing?
-Why did this gallon of milk stay fresh for so long?
-Why some CRS are deprecated in QGIS?
-Why are SSH MITM tools able to read and modify data?
-IQ test question assistance
-Is maximum speed a thing?
-What is the hardest part of transitioning from a PhD to a full-time career in academia?
-Alien Instrument produces "visual music", which a Human can temporarily experience
-Why am I seeing the sun slightly north instead of slightly south early in the morning in Malta?
+How well would Max Faget's April 1, 1969 design for the Space Shuttle have actually worked? What would have been the major problems?
 Is there a threadlocker that requires heat to release and can withstand thousands of heat-cool cycles without needing to be reapplied or deteriorating
-Is there any country that jumped to developed status during the past 75 years after WW2?
-Are there any rules for digging out of a grave?
-What would a bear species isolated on an island look like?
+What does existential unforgeability mean in a digital signature scheme?
+Does machine learning really need data-efficient algorithms?
+How do you say " Coup de grâce " in latin?
+A '50s Yeti movie which has a scene with two men sitting around a fire in a cave
+Why would they use human soldiers over undead ones?
+Why aren't resistors being used here?
+How come full throttle is meaning full speed instead of the opposite?
+Where is Lorentz contraction centered on?
+Why did this gallon of milk stay fresh for so long?
+Can an American state ban a (minor) political party?
+Are there good tutorials that explain how to use experimental data to customise the force field in AMDock Vina?
+Revisiting the unreasonable effectiveness of mathematics
+Why is Ken's beer "gay"?
+Are AP slugs for shotguns possible?
+Why can an easily graphable definite integral, be labyrinthine to evaluate?
+How do trademarks apply to Open Source?
+Did I design my LED circuit correctly?
+What is "Horse and Pony II", created by the Battlefield devs (Refraction Games)?
+What are the safety and warranty implications of steaming bread in a domestic oven?
+Telling a coworker they aren't invited into my house
+If I use the word "enumerated", must the list be numeric or can it be bullet points?
+How to get real-looking rust that will be safe to the touch?
 more hot questions
-Question feed
-Subscribe to RSS
-Question feed
-To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
 lang-py
 Stack Overflow
 Questions
@@ -355,7 +441,7 @@ Twitter
 LinkedIn
 Instagram
 site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.6.9.39464
+rev 2021.6.10.39470
 Stack Overflow works best with JavaScript enabled
 Your privacy
 By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.

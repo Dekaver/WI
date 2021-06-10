@@ -1,642 +1,176 @@
-Top Java Software Errors: 50 Common Java Errors and How to Avoid Them – Stackify
-Java Software Errors: How to Avoid 50 Code Issues in Java
-Stackify + Netreo Creates a Dev + Ops Powerhouse. Click here to read more about the acquisition.
-Product
-Features OverviewApplication Performance ManagementCentralized LoggingFull Transaction Tracing
-Menu OverviewApplication Performance ManagementCentralized LoggingFull Transaction Tracing Error TrackingApplication & Server MonitoringReal User MonitoringDeployment Tracking
-Menu Error TrackingApplication & Server MonitoringReal User MonitoringDeployment Tracking
-Try Our Free Code ProfilerWant to write better code? Check out our free transaction tracing tool, Prefix!
-Features OverviewApplication Performance ManagementCentralized LoggingFull Transaction TracingError TrackingApplication & Server MonitoringReal User MonitoringDeployment Tracking
-Menu OverviewApplication Performance ManagementCentralized LoggingFull Transaction TracingError TrackingApplication & Server MonitoringReal User MonitoringDeployment TrackingTry Our Code ProfilerWant to write better code? Check out our free transaction tracing tool, Prefix! PricingSolutions By Role For DevelopersFor DevOps
-Menu For DevelopersFor DevOpsBy Technology Azure MonitoringAWS MonitoringCompatibility
-Menu Azure MonitoringAWS MonitoringCompatibilityBy Language .NETJavaPHPNode.jsRubyPython
-Menu .NETJavaPHPNode.jsRubyPython
-By Role For DevelopersFor DevOps
-Menu For DevelopersFor DevOpsBy Technology Azure MonitoringAWS MonitoringCompatibility
-Menu Azure MonitoringAWS MonitoringCompatibilityBy Language .NETJavaPHPNode.jsRubyPython
-Menu .NETJavaPHPNode.jsRubyPython Learn Resources BlogeBooksCase StudiesWebinarsROI CalculatorNews
-Menu BlogeBooksCase StudiesWebinarsROI CalculatorNewsTechnical DocumentationSupportIdeas Portal
-Menu DocumentationSupportIdeas Portal
-Resources BlogeBooksCase StudiesWebinarsROI CalculatorNews
-Menu BlogeBooksCase StudiesWebinarsROI CalculatorNewsTechnical DocumentationSupportIdeas Portal
-Menu DocumentationSupportIdeas Portal Login
-Start Free Trial
-Product
-Features OverviewApplication Performance ManagementCentralized LoggingFull Transaction Tracing
-Menu OverviewApplication Performance ManagementCentralized LoggingFull Transaction Tracing Error TrackingApplication & Server MonitoringReal User MonitoringDeployment Tracking
-Menu Error TrackingApplication & Server MonitoringReal User MonitoringDeployment Tracking
-Try Our Free Code ProfilerWant to write better code? Check out our free transaction tracing tool, Prefix!
-Features OverviewApplication Performance ManagementCentralized LoggingFull Transaction TracingError TrackingApplication & Server MonitoringReal User MonitoringDeployment Tracking
-Menu OverviewApplication Performance ManagementCentralized LoggingFull Transaction TracingError TrackingApplication & Server MonitoringReal User MonitoringDeployment TrackingTry Our Code ProfilerWant to write better code? Check out our free transaction tracing tool, Prefix! PricingSolutions By Role For DevelopersFor DevOps
-Menu For DevelopersFor DevOpsBy Technology Azure MonitoringAWS MonitoringCompatibility
-Menu Azure MonitoringAWS MonitoringCompatibilityBy Language .NETJavaPHPNode.jsRubyPython
-Menu .NETJavaPHPNode.jsRubyPython
-By Role For DevelopersFor DevOps
-Menu For DevelopersFor DevOpsBy Technology Azure MonitoringAWS MonitoringCompatibility
-Menu Azure MonitoringAWS MonitoringCompatibilityBy Language .NETJavaPHPNode.jsRubyPython
-Menu .NETJavaPHPNode.jsRubyPython Learn Resources BlogeBooksCase StudiesWebinarsROI CalculatorNews
-Menu BlogeBooksCase StudiesWebinarsROI CalculatorNewsTechnical DocumentationSupportIdeas Portal
-Menu DocumentationSupportIdeas Portal
-Resources BlogeBooksCase StudiesWebinarsROI CalculatorNews
-Menu BlogeBooksCase StudiesWebinarsROI CalculatorNewsTechnical DocumentationSupportIdeas Portal
-Menu DocumentationSupportIdeas Portal Login
-Top Java Software Errors: 50 Common Java Errors and How to Avoid Them Stackify May 28, 2021 Developer Tips, Tricks & Resources,
-Insights for Dev Managers
-Imagine, you are developing Java software and suddenly you encounter an error? Where could you have possibly gone wrong?There are many types of errors that you will encounter while developing Java software, but most are avoidable. Some errors are minor lapses when writing codes but that is very much mendable. If you have an error monitoring tool such as Stackify Retrace, you can write codes with ease.In this article you will find:50 of the most common Java software errorsCode examples and tutorials to help you work around common coding problemsRead on to learn about the most common issues and their workarounds.Compiler ErrorsCompiler error messages are created when the Java software code is run through the compiler. It is important to remember that a compiler may throw many error messages for one error. So, fix the first error and recompile. That could solve many problems. 1. “… expected”This error occurs when something is missing from the code. Often this is created by a missing semicolon or closing parenthesis.private static double volume(String solidom, double alturam, double areaBasem, double raiom) {
-double vol;
-if (solidom.equalsIgnoreCase("esfera"){
-vol=(4.0/3)*Math.pi*Math.pow(raiom,3);
-}
-else {
-if (solidom.equalsIgnoreCase("cilindro") {
-vol=Math.pi*Math.pow(raiom,2)*alturam;
-}
-else {
-vol=(1.0/3)*Math.pi*Math.pow(raiom,2)*alturam;
-}
-}
-return vol;
-}
-Often this error message does not pinpoint the exact location of the issue. To find it:Make sure all opening parenthesis have a corresponding closing parenthesis.Look in the line previous to the Java code line indicated. This Java software error doesn’t get noticed by the compiler until further in the code.Sometimes a character such as an opening parenthesis shouldn’t be in the Java code in the first place. So the developer didn’t place a closing parenthesis to balance the parentheses.Check ut an example of how a missed parenthesis can create an error (@StackOverflow).2. “unclosed string literal”The “unclosed string literal” error message is created when the string literal ends without quotation marks and the message will appear on the same line as the error. (@DreamInCode) A literal is a source code of a value. public abstract class NFLPlayersReference {
-private static Runningback[] nflplayersreference;
-private static Quarterback[] players;
-private static WideReceiver[] nflplayers;
-public static void main(String args[]){
-Runningback r = new Runningback("Thomlinsion");
-Quarterback q = new Quarterback("Tom Brady");
-WideReceiver w = new WideReceiver("Steve Smith");
-NFLPlayersReference[] NFLPlayersReference;
-Run();// {
-NFLPlayersReference = new NFLPlayersReference [3];
-nflplayersreference[0] = r;
-players[1] = q;
-nflplayers[2] = w;
-for ( int i = 0; i < nflplayersreference.length; i++ ) {
-System.out.println("My name is " + " nflplayersreference[i].getName());
-nflplayersreference[i].run();
-nflplayersreference[i].run();
-nflplayersreference[i].run();
-System.out.println("NFL offensive threats have great running abilities!");
-}
-}
-private static void Run() {
-System.out.println("Not yet implemented");
-}
-}
-Commonly, this happens when:         The string literal does not end with quote marks. This is easy to correct by closing the string literal with the needed quote mark.         The string literal extends beyond a line. Long string literals can be broken into multiple literals and concatenated with a plus sign (“+”).         Quote marks that are part of the string literal are not escaped with a backslash (“\”).Read a discussion of the unclosed string literal Java software error message. (@Quora)3. “illegal start of an expression”There are numerous reasons why an “illegal start of an expression” error occurs. It ends up being one of the less-helpful error messages. Some developers say it’s caused by bad code.Usually, expressions are created to produce a new value or assign a value to a variable. The compiler expects to find an expression and cannot find it because the syntax does not match expectations. (@StackOverflow) It is in these statements that the error can be found.} // ADD IT HERE
-public void newShape(String shape) {
-switch (shape) {
-case "Line":
-Shape line = new Line(startX, startY, endX, endY);
-shapes.add(line);
-break;
-case "Oval":
-Shape oval = new Oval(startX, startY, endX, endY);
-shapes.add(oval);
-break;
-case "Rectangle":
-Shape rectangle = new Rectangle(startX, startY, endX, endY);
-shapes.add(rectangle);
-break;
-default:
-System.out.println("ERROR. Check logic.");
-}
-}
-} // REMOVE IT FROM HERE
-}
-Browse discussions of how to troubleshoot the “illegal start of an expression” error. (@StackOverflow)4. “cannot find symbol”This is a very common issue because all identifiers in Java need to be declared before they are used. When the code is being compiled, the compiler does not understand what the identifier means.There are many reasons you might receive the “cannot find symbol” message:The spelling of the identifier when declared may not be the same as when it is used in the code.The variable was never declared.The variable is not being used in the same scope it was declared.The class was not imported.Read a thorough discussion of the “cannot find symbol” error and several code examples that create the same issue. (@StackOverflow)5. “public class XXX should be in file”The “public class XXX should be in file” message occurs when the class XXX and the Java program filename do not match. The code will only be compiled when the class and Java file are the same. (@coderanch)package javaapplication3;
-public class Robot {
-int xlocation;
-int ylocation;
-String name;
-static int ccount = 0;
-public Robot(int xxlocation, int yylocation, String nname) {
-xlocation = xxlocation;
-ylocation = yylocation;
-name = nname;
-ccount++;
-}
-}
-public class JavaApplication1 {
-public static void main(String[] args) {
-robot firstRobot = new Robot(34,51,"yossi");
-System.out.println("numebr of robots is now " + Robot.ccount);
-}
-}
-To fix this issue:Name the class and file the same.Make sure the case of both names is consistent.See an example of the “Public class XXX should be in file” error. (@StackOverflow)6. “incompatible types”“Incompatible types” is an error in logic that occurs when an assignment statement tries to pair a variable with an expression of types. It often comes when the code tries to place a text string into an integer — or vice versa. This is not a Java syntax error. (@StackOverflow)test.java:78: error: incompatible types
-return stringBuilder.toString();
-^
-required: int
-found:
-String
-1 error
-There really isn’t an easy fix when the compiler gives an “incompatible types” message:There are functions that can convert types.Developer may need to change what the code is expected to do.Check out an example of how trying to assign a string to an integer created the “incompatible types.”  (@StackOverflow)7. “invalid method declaration; return type required”This Java software error message means the return type of a method was not explicitly stated in the method signature.public class Circle
-{
-private double radius;
-public CircleR(double r)
-{
-radius = r;
-}
-public diameter()
-{
-double d = radius * 2;
-return d;
-}
-}
-There are a few ways to trigger the “invalid method declaration; return type required” error:Forgetting to state the typeIf the method does not return a value then “void” needs to be stated as the type in the method signature.Constructor names do not need to state type. But if there is an error in the constructor name, then the compiler will treat the constructor as a method without a stated type.Follow an example of how constructor naming triggered the “invalid method declaration; return type required” issue. (@StackOverflow)8. “method <X> in class <Y> cannot be applied to given types”This Java software error message is one of the more helpful error messages. It explains how the method signature is calling the wrong parameters.RandomNumbers.java:9: error: method generateNumbers in class RandomNumbers cannot be applied to given types;
-generateNumbers();
-required: int[]
-found:generateNumbers();
-reason: actual and formal argument lists differ in length
-The method called is expecting certain arguments defined in the method’s declaration. Check the method declaration and call carefully to make sure they are compatible.This discussion illustrates how a Java software error message identifies the incompatibility created by arguments in the method declaration and method call. (@StackOverflow)9. “missing return statement”The “missing return statement” message occurs when a method does not have a return statement. Each method that returns a value (a non-void type) must have a statement that literally returns that value so it can be called outside the method.public String[] OpenFile() throws IOException {
-Map<String, Double> map = new HashMap();
-FileReader fr = new FileReader("money.txt");
-BufferedReader br = new BufferedReader(fr);
-try{
-while (br.ready()){
-String str = br.readLine();
-String[] list = str.split(" ");
-System.out.println(list);
-}
-}
-catch (IOException e){
-System.err.println("Error - IOException!");
-}
-}
-There are a couple of reasons why a compiler throws the “missing return statement” message:A return statement was simply omitted by mistake.The method did not return any value but type void was not declared in the method signature.Check out an example of how to fix the “missing return statement” Java software error. (@StackOverflow)10. “possible loss of precision”“Possible loss of precision” occurs when more information is assigned to a variable than it can hold. If this happens, pieces will be thrown out. If this is fine, then the code needs to explicitly declare the variable as a new type.A “possible loss of precision” error commonly occurs when:         Trying to assign a real number to a variable with an integer data type.         Trying to assign a double to a variable with an integer data type.This explanation of Primitive Data Types in Java shows how the data is characterized. (@Oracle)11. “reached end of file while parsing”This error message usually occurs in Java when the program is missing the closing curly brace (“}”). Sometimes it can be quickly fixed by placing it at the end of the code.public class mod_MyMod extends BaseMod
-public String Version()
-{
-return "1.2_02";
-}
-public void AddRecipes(CraftingManager recipes)
-{
-recipes.addRecipe(new ItemStack(Item.diamond), new Object[] {
-"#", Character.valueOf('#'), Block.dirt
-});
-}The above code results in the following error:java:11: reached end of file while parsing }Coding utilities and proper code indenting can make it easier to find these unbalanced braces.This example shows how missing braces can create the “reached end of file while parsing” error message. (@StackOverflow)12. “unreachable statement”“Unreachable statement” occurs when a statement is written in a place that prevents it from being executed. Usually, this is after a break or return statement.for(;;){
-break;
-... // unreachable statement
-}
-int i=1;
-if(i==1)
-...
-else
-... // dead code
-Often simply moving the return statement will fix the error. Read the discussion of how to fix unreachable statement Java software error. (@StackOverflow)13. “variable <X> might not have been initialized”This occurs when a local variable declared within a method has not been initialized. It can occur when a variable without an initial value is part of an if statement.int x;
-if (condition) {
-x = 5;
-}
-System.out.println(x); // x may not have been initializedRead this discussion of how to avoid triggering the “variable <X> might not have been initialized” error. (@reddit)14. “Operator .. cannot be applied to <X>”This issue occurs when operators are used for types, not in their definition.operator < cannot be applied to java.lang.Object,java.lang.ObjectThis often happens when the Java code tries to use a type string in a calculation. To fix it, the string needs to be converted to an integer or float.Read this example of how non-numeric types were causing a Java software error warning that an operator cannot be applied to a type. (@StackOverflow)15. “inconvertible types”The “inconvertible types” error occurs when the Java code tries to perform an illegal conversion.TypeInvocationConversionTest.java:12: inconvertible types
-found   : java.util.ArrayList<java.lang.Class<? extends TypeInvocationConversionTest.Interface1>>
-required: java.util.ArrayList<java.lang.Class<?>>
-lessRestrictiveClassList = (ArrayList<Class<?>>) classList;
-^For example, booleans cannot be converted to an integer.Read this discussion about finding ways to convert inconvertible types in Java software. (@StackOverflow)16. “missing return value”You’ll get the “missing return value” message when the return statement includes an incorrect type. For example, the following code:public class SavingsAcc2
-{
-private double balance;
-private double interest;
-public SavingsAcc2()
-{
-balance = 0.0;
-interest = 6.17;
-}
-public SavingsAcc2(double initBalance, double interested)
-{
-balance = initBalance;
-interest = interested;
-}
-public SavingsAcc2 deposit(double amount)
-{
-balance = balance + amount;
-return;
-}
-public SavingsAcc2 withdraw(double amount)
-{
-balance = balance - amount;
-return;
-}
-public SavingsAcc2 addInterest(double interest)
-{
-balance = balance * (interest / 100) + balance;
-return;
-}
-public double getBalance()
-{
-return balance;
-}
-}
-Returns the following error:
-SavingsAcc2.java:29: missing return value
-return;
-^
-SavingsAcc2.java:35: missing return value
-return;
-^
-SavingsAcc2.java:41: missing return value
-return;
-^
-3 errorsUsually, there is a return statement that doesn’t return anything.Read this discussion about how to avoid the “missing return value” Java software error message. (@coderanch)17. “cannot return a value from method whose result type is void”This Java error occurs when a void method tries to return any value, such as in the following example:public static void move()
-{
-System.out.println("What do you want to do?");
-Scanner scan = new Scanner(System.in);
-int userMove = scan.nextInt();
-return userMove;
-}
-public static void usersMove(String playerName, int gesture)
-{
-int userMove = move();
-if (userMove == -1)
-{
-break;
-}Often this is fixed by changing to method signature to match the type in the return statement. In this case, instances of void can be changed to int:public static int move()
-{
-System.out.println("What do you want to do?");
-Scanner scan = new Scanner(System.in);
-int userMove = scan.nextInt();
-return userMove;
-}Read this discussion about how to fix the “cannot return a value from method whose result type is void” error. (@StackOverflow)18. “non-static variable . . . cannot be referenced from a static context”This error occurs when the compiler tries to access non-static variables from a static method (@javinpaul):public class StaticTest {
-private int count=0;
-public static void main(String args[]) throws IOException {
-count++; //compiler error: non-static variable count cannot be referenced from a static context
-}
-}To fix the “non-static variable . . . cannot be referenced from a static context” error, try these two things:Declare the variable as static in the signature.Check on the code as it can create an instance of a non-static object in the static method.Read this tutorial that explains what is the difference between static and non-static variables. (@sitesbay)19. “non-static method . . . cannot be referenced from a static context”This issue occurs when the Java code tries to call a non-static method in a non-static class. Here is an example:class Sample
-{
-private int age;
-public void setAge(int a)
-{
-age=a;
-}
-public int getAge()
-{
-return age;
-}
-public static void main(String args[])
-{
-System.out.println(“Age is:”+ getAge());
-}
-}Would return this error:Exception in thread “main” java.lang.Error: Unresolved compilation problem:
-Cannot make a static reference to the non–static method getAge() from the type SampleTo call a non-static method from a static method is to declare an instance of the class calling the non-static method.Read this explanation on what is the difference between non-static methods and static methods.20. “(array) <X> not initialized”You’ll get the “(array) <X> not initialized” message when an array has been declared but not initialized. Arrays are fixed in length so each array needs to be initialized with the desired length.The following code is acceptable:AClass[] array = {object1, object2}
-As is:
-AClass[] array = new AClass[2];
-…
-array[0] = object1;
-array[1] = object2;
-But not:
-AClass[] array;
-…
-array = {object1, object2};Read this discussion of how to initialize arrays in Java software. (@StackOverflow)Runtime Exceptions21. “ArrayIndexOutOfBoundsException”This is a runtime error message that occurs when the code attempts to access an array index that is not within the values. The following code would trigger this exception:String[] name = {“tom”, “dick”, “harry”};
-for(int i = 0; i<=name.length; i++) {
-System.out.print(name[i] +‘\n’);
-}
-Here’s another example (@DukeU):
-int[] list = new int[5];
-list[5] = 33;       // illegal index, maximum index is 4Array indexes start at zero and end at one less than the length of the array. Often it is fixed by using “<” instead of “<=” when defining the limits of the array index.Check out this example on how an index triggered the “ArrayIndexOutOfBoundsException” Java software error message. (@StackOverflow)22.  “StringIndexOutOfBoundsException”This is an issue that occurs when the code attempts to access a part of the string that is not within the bounds of the string. Usually, this happens when the code tries to create a substring of a string that is not of the same length as the parameter. Here’s an example (@javacodegeeks):public class StringCharAtExample {
-public static void main(String[] args) {
-String str = “Java Code Geeks!”;
-System.out.println(“Length: “ + str.length());
-//The following statement throws an exception, because
-//the request index is invalid.
-char ch = str.charAt(50);
-}
-}Like array indexes, string indexes start at zero. When indexing a string, the last character is at one less than the length of the string. The “StringIndexOutOfBoundsException” Java software error message usually means the index is trying to access characters that aren’t there.Here’s an example that illustrates how the “StringIndexOutOfBoundsException” can occur and be fixed. (@StackOverflow)23. “NullPointerException”A “NullPointerException” will occur when the program tries to use an object reference that does not have a value assigned to it (@geeksforgeeks).// A Java program to demonstrate that invoking a method
-// on null causes NullPointerException
-import java.io.*;
-class GFG
-{
-public static void main (String[] args)
-{
-// Initializing String variable with null value
-String ptr = null;
-// Checking if ptr.equals null or works fine.
-try
-{
-// This line of code throws NullPointerException
-// because ptr is null
-if (ptr.equals(“gfg”))
-System.out.print(“Same”);
-else
-System.out.print(“Not Same”);
-}
-catch(NullPointerException e)
-{
-System.out.print(“NullPointerException Caught”);
-}
-}
-}The Java program often raises an exception when:A statement references an object with a null value.Trying to access a class that is defined but isn’t assigned a reference.Here’s a discussion of when developers encounter the “NullPointerException” error and how to handle it. (@StackOverflow)24. “NoClassDefFoundError”The “NoClassDefFoundError” will occur when the interpreter cannot find the file containing a class with the main method. Here’s an example from DZone (@DZone):If you compile this program:class A
-{
-// some code
-}
-public class B
-{
-public static void main(String[] args)
-{
-A a = new A();
-}
-}Two .class files are generated: A.class and B.class. Removing the A.class file and running the B.class file, will  get you the “NoClassDefFoundError”:Exception in thread “main” java.lang.NoClassDefFoundError: A
-at MainClass.main(MainClass.java:10)
-Caused by: java.lang.ClassNotFoundException: A
-at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
-at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
-at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:331)
-at java.lang.ClassLoader.loadClass(ClassLoader.java:357)This can happen if:The file is not in the right directory.The name of the class is not the same as the name of the file (without the file extension). Also, the names are case sensitive.Read this discussion of why “NoClassDefFoundError” occurs when running Java software. (@StackOverflow)25. “NoSuchMethodFoundError”This error message will occur when the Java software tries to call a method of a class and the method no longer has a definition (@myUND):Error: Could not find or load main class wiki.javaOften the “NoSuchMethodFoundError” Java software error occurs when there is a typo in the declaration.Read this tutorial to learn how to avoid the error message “NoSuchMethodFoundError”. (@javacodegeeks)26. “NoSuchProviderException”“NoSuchProviderException” occurs when a security provider is requested that is not available (@alvinalexander):javax.mail.NoSuchProviderExceptionWhen trying to find why “NoSuchProviderException” occurs, check:        The JRE configuration.        The Java_home is set in the configuration.        The Java environment being used.        The security provider entry.Read this discussion of what causes “NoSuchProviderException” when you run Java software. (@StackOverflow)27. AccessControlException“AccessControlException” indicates that requested access to system resources such as a file system or network is denied, as in this example from JBossDeveloper (@jbossdeveloper):ERROR Could not register mbeans java.security.
-AccessControlException: WFSM000001: Permission check failed (permission “(“javax.management.MBeanPermission” “org.apache.logging.log4j.core.jmx.LoggerContextAdmin#-
-[org.apache.logging.log4j2:type=51634f]” “registerMBean“)” in code source “(vfs:/C:/wildfly-10.0.0.Final/standalone/deployments/mySampleSecurityApp.war/WEB-INF/lib/log4j-core-2.5.
-jar )” of “null”)Read this discussion of a workaround used to get past an “AccessControlException” error. (@github)28. “ArrayStoreException”An “ArrayStoreException” occurs when the rules of casting elements in Java arrays are broken. Be very careful about what values you place inside an array. (@Roedyg) For instance, this example from JavaScan.com illustrates that this program (@java_scan):/* …………… START …………… */
-public class JavaArrayStoreException {
-public static void main(String… args) {
-Object[] val = new Integer[4];
-val[0] = 5.8;
-}
-}
-/* …………… END …………… */Results in the following output:Exception in thread “main” java.lang.ArrayStoreException: java.lang.Double
-at ExceptionHandling.JavaArrayStoreException.main(JavaArrayStoreException.java:7)When an array is initialized, the sorts of objects allowed into the array need to be declared. Then each array element needs to be of the same type of object.Read this discussion of how to solve for the “ArrayStoreException”. (@StackOverflow)29. “bad magic number”This Java software error message means something may be wrong with the class definition files on the network. Here’s an example from The Server Side (@TSS_dotcom):Java(TM) Plug–in: Version 1.3.1_01
-Using JRE version 1.3.1_01 Java HotSpot(TM) Client VM
-User home directory = C:\Documents and Settings\Ankur
-Proxy Configuration: Manual Configuration
-Proxy: 192.168.11.6:80
-java.lang.ClassFormatError: SalesCalculatorAppletBeanInfo (Bad magic number)
-at java.lang.ClassLoader.defineClass0(Native Method)
-at java.lang.ClassLoader.defineClass(Unknown Source)
-at java.security.SecureClassLoader.defineClass(Unknown Source)
-at sun.applet.AppletClassLoader.findClass(Unknown Source)
-at sun.plugin.security.PluginClassLoader.access$201(Unknown Source)
-at sun.plugin.security.PluginClassLoader$1.run(Unknown Source)
-at java.security.AccessController.doPrivileged(Native Method)
-at sun.plugin.security.PluginClassLoader.findClass(Unknown Source)
-at java.lang.ClassLoader.loadClass(Unknown Source)
-at sun.applet.AppletClassLoader.loadClass(Unknown Source)
-at java.lang.ClassLoader.loadClass(Unknown Source)
-at java.beans.Introspector.instantiate(Unknown Source)
-at java.beans.Introspector.findInformant(Unknown Source)
-at java.beans.Introspector.(Unknown Source)
-at java.beans.Introspector.getBeanInfo(Unknown Source)
-at sun.beans.ole.OleBeanInfo.(Unknown Source)
-at sun.beans.ole.StubInformation.getStub(Unknown Source)
-at sun.plugin.ocx.TypeLibManager$1.run(Unknown Source)
-at java.security.AccessController.doPrivileged(Native Method)
-at sun.plugin.ocx.TypeLibManager.getTypeLib(Unknown Source)
-at sun.plugin.ocx.TypeLibManager.getTypeLib(Unknown Source)
-at sun.plugin.ocx.ActiveXAppletViewer.statusNotification(Native Method)
-at sun.plugin.ocx.ActiveXAppletViewer.notifyStatus(Unknown Source)
-at sun.plugin.ocx.ActiveXAppletViewer.showAppletStatus(Unknown Source)
-at sun.applet.AppletPanel.run(Unknown Source)
-at java.lang.Thread.run(Unknown Source)The “bad magic number” error message happens when:The first four bytes of a class file is not the hexadecimal number CAFEBABE.The class file was uploaded as in ASCII mode, not binary mode.The java program is run before it is compiled.Read this discussion of how to find the reason for a “bad magic number”. (@coderanch)30. “broken pipe”This error message refers to the data stream from a file or network socket that has stopped working or is closed from the other end (@ExpertsExchange).Exception in thread “main” java.net.SocketException: Broken pipe
-at java.net.SocketOutputStream.socketWrite0(Native Method)
-at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:92)
-at java.net.SocketOutputStream.write(SocketOutputStream.java:115)
-at java.io.DataOutputStream.writeThe causes of a “broken pipe” error often include:        Running out of disk scratch space.        RAM may be clogged.        The data stream may be corrupt.        The process of reading the pipe might have been closed.Read this discussion of what is the Java error “broken pipe”. (@StackOverflow)31. “could not create Java Virtual Machine”This Java error message usually occurs when the code tries to invoke Java with the wrong arguments (@ghacksnews):Error: Could not create the Java Virtual Machine
-Error: A fatal exception has occurred. Program will exit.It often is caused by a mistake in the declaration in the code or allocating the proper amount of memory to it.Read this discussion of how to fix the Java software error “Could not create Java Virtual Machine”. (@StackOverflow)32. “class file contains wrong class”The “class file contains wrong class” issue occurs when the Java code tries to find the class file in the wrong directory, resulting in an error message similar to the following:MyTest.java:10: cannot access MyStruct
-bad class file: D:\Java\test\MyStruct.java
-file does not contain class MyStruct
-Please remove or make sure it appears in the correct subdirectory of the classpath.
-MyStruct ms = new MyStruct();
-^To fix this error, these tips should help:Make sure the name of the source file and the name of the class match — including the text case.Check if the package statement is correct or missing.Make sure the source file is in the right directory.Read this discussion of how to fix a “class file contains wrong class” error. (@StackOverflow)33. “ClassCastException”The “ClassCastException” message indicates the Java code is trying to cast an object to the wrong class. Here is an example from Java Concept of the Day:package com;
-class A
-{
-int i = 10;
-}
-class B extends A
-{
-int j = 20;
-}
-class C extends B
-{
-int k = 30;
-}
-public class ClassCastExceptionDemo
-{
-public static void main(String[] args)
-{
-A a = new B();   //B type is auto up casted to A type
-B b = (B) a; //A type is explicitly down casted to B type.
-C c = (C) b;    //Here, you will get class cast exception
-System.out.println(c.k);
-}
-}Results in this error:Exception in thread “main” java.lang.ClassCastException: com.B cannot be cast to com.C
-at com.ClassCastExceptionDemo.main(ClassCastExceptionDemo.java:23)The Java code will create a hierarchy of classes and subclasses. To avoid the “ClassCastException” error, make sure the new type belongs to the right class or one of its parent classes. If Generics are used, these errors can be caught when the code is compiled.Read this tutorial on how to fix “ClassCastException” Java software errors. (@java_concept)34. “ClassFormatError”The “ClassFormatError” message indicates a linkage error and occurs when a class file cannot be read or interpreted as a class file.Caused by: java.lang.ClassFormatError: Absent Code attribute in method that is
-not native or abstract in class file javax/persistence/GenerationType
-at java.lang.ClassLoader.defineClass1(Native Method)
-at java.lang.ClassLoader.defineClassCond(Unknown Source)
-at java.lang.ClassLoader.defineClass(Unknown Source)
-at java.security.SecureClassLoader.defineClass(Unknown Source)
-at java.net.URLClassLoader.defineClass(Unknown Source)
-at java.net.URLClassLoader.access$000(Unknown Source)
-at java.net.URLClassLoader$1.run(Unknown Source)
-at java.security.AccessController.doPrivileged(Native Method)
-at java.net.URLClassLoader.findClass(Unknown Source)
-at java.lang.ClassLoader.loadClass(Unknown Source)
-at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)
-at java.lang.ClassLoader.loadClass(Unknown Source)There are several reasons why a “ClassFormatError” can occur:The class file was uploaded as in ASCII mode not binary mode.The web server must send class files as binary, not ASCII.There could be a classpath error that prevents the code from finding the class file.If the class is loaded twice, the second time will throw an exception.You’re using an old version of Java runtime.Read this discussion about what causes the “ClassFormatError” in Java. (@StackOverflow)35. “ClassNotFoundException”“ClassNotFoundException” only occurs at run time — meaning a class that was there during compilation is missing at run time. This is a linkage error.Much like the “NoClassDefFoundError” this issue can occur if:The file is not in the right directory.The name of the class is not the same as the name of the file (without the file extension). Also, the names are case-sensitive.Read this discussion of what causes “ClassNotFoundException” for more cases. (@StackOverflow)36. “ExceptionInInitializerError”This Java issue will occur when something goes wrong with a static initialization (@GitHub). When the Java code later uses the class, the “NoClassDefFoundError” error will occur.java.lang.ExceptionInInitializerError
-at org.eclipse.mat.hprof.HprofIndexBuilder.fill(HprofIndexBuilder.java:54)
-at org.eclipse.mat.parser.internal.SnapshotFactory.parse(SnapshotFactory.java:193)
-at org.eclipse.mat.parser.internal.SnapshotFactory.openSnapshot(SnapshotFactory.java:106)
-at com.squareup.leakcanary.HeapAnalyzer.openSnapshot(HeapAnalyzer.java:134)
-at com.squareup.leakcanary.HeapAnalyzer.checkForLeak(HeapAnalyzer.java:87)
-at com.squareup.leakcanary.internal.HeapAnalyzerService.onHandleIntent(HeapAnalyzerService.java:56)
-at android.app.IntentService$ServiceHandler.handleMessage(IntentService.java:65)
-at android.os.Handler.dispatchMessage(Handler.java:102)
-at android.os.Looper.loop(Looper.java:145)
-at android.os.HandlerThread.run(HandlerThread.java:61)
-Caused by: java.lang.NullPointerException: in == null
-at java.util.Properties.load(Properties.java:246)
-at org.eclipse.mat.util.MessageUtil.(MessageUtil.java:28)
-at org.eclipse.mat.util.MessageUtil.(MessageUtil.java:13)
-… 10 moreThere needs to be more information to fix the error. Using getCause() in the code can return the exception that caused the error to be returned.Read this discussion about how to track down the cause of the “ExceptionInInitializerError”. (@StackOverflow)37. “IllegalBlockSizeException”An “IllegalBlockSizeException” will occur during decryption when the length message is not a multiple of 8 bytes. Here’s an example from ProgramCreek.com (@ProgramCreek):@Override
-protected byte[] engineWrap(Key key) throws IllegalBlockSizeException, InvalidKeyException {
-try {
-byte[] encoded = key.getEncoded();
-return engineDoFinal(encoded, 0, encoded.length);
-} catch (BadPaddingException e) {
-IllegalBlockSizeException newE = new IllegalBlockSizeException();
-newE.initCause(e);
-throw newE;
-}
-}The “IllegalBlockSizeException” could be caused by:Using different encryption and decryption algorithm options.Truncating or garbling the decrypted message during transmission.Read this discussion about how to prevent the “IllegalBlockSizeException” Java software error message. (@StackOverflow)38. “BadPaddingException”A “BadPaddingException” will occur during decryption when padding was used to create a message that can be measured by a multiple of 8 bytes. Here’s an example from Stack Overflow (@StackOverflow):javax.crypto.BadPaddingException: Given final block not properly padded
-at com.sun.crypto.provider.SunJCE_f.b(DashoA13*..)
-at com.sun.crypto.provider.SunJCE_f.b(DashoA13*..)
-at com.sun.crypto.provider.AESCipher.engineDoFinal(DashoA13*..)
-at javax.crypto.Cipher.doFinal(DashoA13*..)Encrypted data is binary so don’t try to store it in a string or the data will not be padded properly during encryption.Read this discussion about how to prevent the “BadPaddingException”. (@StackOverflow)39. “IncompatibleClassChangeError”An “IncompatibleClassChangeError” is a form of LinkageError that can occur when a base class changes after the compilation of a child class. This example is from How to Do in Java (@HowToDoInJava):Exception in thread “main” java.lang.IncompatibleClassChangeError: Implementing classat java.lang.ClassLoader.defineClass1(Native Method)
-at java.lang.ClassLoader.defineClass(Unknown Source)
-at java.security.SecureClassLoader.defineClass(Unknown Source)
-at java.net.URLClassLoader.defineClass(Unknown Source)
-at java.net.URLClassLoader.access$000(Unknown Source)
-at java.net.URLClassLoader$1.run(Unknown Source)
-at java.security.AccessController.doPrivileged(Native Method)
-at java.net.URLClassLoader.findClass(Unknown Source)
-at java.lang.ClassLoader.loadClass(Unknown Source)
-at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)
-at java.lang.ClassLoader.loadClass(Unknown Source)
-at java.lang.ClassLoader.loadClassInternal(Unknown Source)
-at net.sf.cglib.core.DebuggingClassWriter.toByteArray(DebuggingClassWriter.java:73)
-at net.sf.cglib.core.DefaultGeneratorStrategy.generate(DefaultGeneratorStrategy.java:26)
-at net.sf.cglib.core.AbstractClassGenerator.create(AbstractClassGenerator.java:216)
-at net.sf.cglib.core.KeyFactory$Generator.create(KeyFactory.java:144)
-at net.sf.cglib.core.KeyFactory.create(KeyFactory.java:116)
-at net.sf.cglib.core.KeyFactory.create(KeyFactory.java:108)
-at net.sf.cglib.core.KeyFactory.create(KeyFactory.java:104)
-at net.sf.cglib.proxy.Enhancer.(Enhancer.java:69)When the “IncompatibleClassChangeError” occurs, it is possible that:The static on the main method was forgotten.A legal class was used illegally.A class was changed and there are references to it from another class by its old signatures.Try deleting all class files and recompiling everything, or try these steps to resolve the “IncompatibleClassChangeError”. (@javacodegeeks)40. “FileNotFoundException”This Java software error message is thrown when a file with the specified pathname does not exist.@Override public ParcelFileDescriptor openFile(Uri uri,String mode) throws FileNotFoundException {
-if (uri.toString().startsWith(FILE_PROVIDER_PREFIX)) {
-int m=ParcelFileDescriptor.MODE_READ_ONLY;
-if (mode.equalsIgnoreCase(“rw”)) m=ParcelFileDescriptor.MODE_READ_WRITE;
-File f=new File(uri.getPath());
-ParcelFileDescriptor pfd=ParcelFileDescriptor.open(f,m);
-return pfd;
-}
-else {
-throw new FileNotFoundException(“Unsupported uri: “ + uri.toString());
-}
-}
-In addition to files not exhibiting the specified pathname, this could mean the existing file is inaccessible.Read this discussion about why the “FileNotFoundException” could be thrown. (@StackOverflow)41. “EOFException”An “EOFException” is thrown when an end of file or end of the stream has been reached unexpectedly during input. Here’s an example from JavaBeat of an application that throws an EOFException:import java.io.DataInputStream;
-import java.io.EOFException;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-public class ExceptionExample {
-public void testMethod1(){
-File file = new File(“test.txt”);
-DataInputStream dataInputStream =  null;
-try{
-dataInputStream = new DataInputStream(new FileInputStream(file));
-while(true){
-dataInputStream.readInt();
-}
-}catch (EOFException e){
-e.printStackTrace();
-}
-catch (IOException e){
-e.printStackTrace();
-}
-finally{
-try{
-if (dataInputStream != null){
-dataInputStream.close();
-}
-}catch (IOException e){
-e.printStackTrace();
-}
-}
-}
-public static void main(String[] args){
-ExceptionExample instance1 = new ExceptionExample();
-instance1.testMethod1();
-}
-}Running the program above results in the following exception:java.io.EOFException
-at java.io.DataInputStream.readInt(DataInputStream.java:392)
-at logging.simple.ExceptionExample.testMethod1(ExceptionExample.java:16)
-at logging.simple.ExceptionExample.main(ExceptionExample.java:36)When there is no more data while the class “DataInputStream” is trying to read data in the stream, “EOFException” will be thrown. It can also occur in the “ObjectInputStream” and “RandomAccessFile” classes.Read this discussion about when the “EOFException” can occur while running Java software. (@StackOverflow)42. “UnsupportedEncodingException”This Java software error message is thrown when the character encoding is not supported (@Penn).public UnsupportedEncodingException()It is possible that the Java Virtual Machine being used doesn’t support a given character set.Read this discussion of how to handle “UnsupportedEncodingException” while running Java software. (@StackOverflow)43. “SocketException”A “SocketException” message indicates there is an error creating or accessing a socket (@ProgramCreek).public void init(String contextName, ContextFactory factory) {
-super.init(contextName, factory);
-String periodStr = getAttribute(PERIOD_PROPERTY);
-if (periodStr != null) {
-int period = 0;
-try {
-period = Integer.parseInt(periodStr);
-} catch (NumberFormatException nfe) {
-}
-if (period <= 0) {
-throw new MetricsException(“Invalid period: “ + periodStr);
-}
-setPeriod(period);
-}
-metricsServers =
-Util.parse(getAttribute(SERVERS_PROPERTY), DEFAULT_PORT);
-unitsTable = getAttributeTable(UNITS_PROPERTY);
-slopeTable = getAttributeTable(SLOPE_PROPERTY);
-tmaxTable  = getAttributeTable(TMAX_PROPERTY);
-dmaxTable  = getAttributeTable(DMAX_PROPERTY);
-try {
-datagramSocket = new DatagramSocket();
-}
-catch (SocketException se) {
-se.printStackTrace();
-}
-}This exception usually is thrown when the maximum connections are reached due to:No more network ports available to the application.The system doesn’t have enough memory to support new connections.Read this discussion of how to resolve “SocketException” issues while running Java software. (@StackOverflow)44. “SSLException”This Java software error message occurs when there is failure in SSL-related operations. The following example is from Atlassian (@Atlassian):com.sun.jersey.api.client.ClientHandlerException: javax.net.ssl.SSLException: java.lang.RuntimeException: Unexpected error: java.security.InvalidAlgorithmParameterException: the trustAnchors parameter must be non–empty
-at com.sun.jersey.client.apache.ApacheHttpClientHandler.handle(ApacheHttpClientHandler.java:202)
-at com.sun.jersey.api.client.Client.handle(Client.java:365)
-at com.sun.jersey.api.client.WebResource.handle(WebResource.java:556)
-at com.sun.jersey.api.client.WebResource.get(WebResource.java:178)
-at com.atlassian.plugins.client.service.product.ProductServiceClientImpl.getProductVersionsAfterVersion(ProductServiceClientImpl.java:82)
-at com.atlassian.upm.pac.PacClientImpl.getProductUpgrades(PacClientImpl.java:111)
-at com.atlassian.upm.rest.resources.ProductUpgradesResource.get(ProductUpgradesResource.java:39)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at com.atlassian.plugins.rest.common.interceptor.impl.DispatchProviderHelper$ResponseOutInvoker$1.invoke(DispatchProviderHelper.java:206)
-at com.atlassian.plugins.rest.common.interceptor.impl.DispatchProviderHelper$1.intercept(DispatchProviderHelper.java:90)
-at com.atlassian.plugins.rest.common.interceptor.impl.DefaultMethodInvocation.invoke(DefaultMethodInvocation.java:61)
-at com.atlassian.plugins.rest.common.expand.interceptor.ExpandInterceptor.intercept(ExpandInterceptor.java:38)
-at com.atlassian.plugins.rest.common.interceptor.impl.DefaultMethodInvocation.invoke(DefaultMethodInvocation.java:61)
-at com.atlassian.plugins.rest.common.interceptor.impl.DispatchProviderHelper.invokeMethodWithInterceptors(DispatchProviderHelper.java:98)
-at com.atlassian.plugins.rest.common.interceptor.impl.DispatchProviderHelper.access$100(DispatchProviderHelper.java:28)
-at com.atlassian.plugins.rest.common.interceptor.impl.DispatchProviderHelper$ResponseOutInvoker._dispatch(DispatchProviderHelper.java:202)
-…
-Caused by: javax.net.ssl.SSLException: java.lang.RuntimeException: Unexpected error: java.security.InvalidAlgorithmParameterException: the trustAnchors parameter must be non–empty
-…
-Caused by: java.lang.RuntimeException: Unexpected error: java.security.InvalidAlgorithmParameterException: the trustAnchors parameter must be non–empty
-…
-Caused by: java.security.InvalidAlgorithmParameterException: the trustAnchors parameter must be non–emptyThis can happen if:Certificates on the server or client have expired.A server port has been reset to another port.Read this discussion of what can cause the “SSLException” error in Java software. (@StackOverflow)45. “MissingResourceException”A “MissingResourceException” occurs when a resource is missing. If the resource is in the correct classpath, this is usually because a properties file is not configured properly. Here’s an example (@TIBCO):java.util.MissingResourceException: Can‘t find bundle for base name localemsgs_en_US, locale en_US
-java.util.ResourceBundle.throwMissingResourceException
-java.util.ResourceBundle.getBundleImpl
-java.util.ResourceBundle.getBundle
-net.sf.jasperreports.engine.util.JRResourcesUtil.loadResourceBundle
-net.sf.jasperreports.engine.util.JRResourcesUtil.loadResourceBundleRead this discussion of how to fix “MissingResourceException” while running Java software.46. “NoInitialContextException”A “NoInitialContextException” error occurs when the Java application wants to perform a naming operation but can’t create a connection (@TheASF).[java] Caused by: javax.naming.NoInitialContextException: Need to specify class name in environment or system property, or as an applet parameter, or in an application resource file:  java.naming.factory.initial
-[java] at javax.naming.spi.NamingManager.getInitialContext(NamingManager.java:645)
-[java] at javax.naming.InitialContext.getDefaultInitCtx(InitialContext.java:247)
-[java] at javax.naming.InitialContext.getURLOrDefaultInitCtx(InitialContext.java:284)
-[java] at javax.naming.InitialContext.lookup(InitialContext.java:351)
-[java] at org.apache.camel.impl.JndiRegistry.lookup(JndiRegistry.java:51)This can be a complex problem to solve but here are some possible issues that cause the “NoInitialContextException” Java error message:The application may not have the proper credentials to make a connection.The code may not identify the implementation of JNDI needed.The “InitialContext” class may not be configured with the right properties.Read this discussion of what “NoInitialContextException” means when running Java software. (@StackOverflow)47. “NoSuchElementException”A “NoSuchElementException” error happens when an iteration (such as a “for” loop) tries to access the next element when there is none.public class NoSuchElementExceptionDemo{
-public static void main(String args[]) {
-Hashtable sampleMap = new Hashtable();
-Enumeration enumeration = sampleMap.elements();
-enumeration.nextElement();  //java.util.NoSuchElementExcepiton here because enumeration is empty
-}
-}
-Output:
-Exception in thread “main” java.util.NoSuchElementException: Hashtable Enumerator
-at java.util.Hashtable$EmptyEnumerator.nextElement(Hashtable.java:1084)
-at test.ExceptionTest.main(NoSuchElementExceptionDemo.java:23)The “NoSuchElementException” can be thrown by these methods:Enumeration::nextElement()NamingEnumeration::next()StringTokenizer::nextElement()Iterator::next()Read this tutorial on how to fix “NoSuchElementException” in Java software. (@javinpaul)48. “NoSuchFieldError”This Java software error message is thrown when an application tries to access a field in an object but the specified field no longer exists in the object (@sourceforge).public NoSuchFieldError()Usually, this error is caught in the compiler but will be caught during runtime if a class definition has been changed between compiling and running.Read this discussion of how to find what causes the “NoSuchFieldError” when running Java software. @StackOverflow49. “NumberFormatException”This Java software error message occurs when the application tries to convert a string to a numeric type, but that the number is not a valid string of digits (@alvinalexander).package com.devdaily.javasamples;
-public class ConvertStringToNumber {
-public static void main(String[] args) {
-try {
-String s = “FOOBAR”;
-int i = Integer.parseInt(s);
-// this line of code will never be reached
-System.out.println(“int value = “ + i);
-}
-catch (NumberFormatException nfe) {
-nfe.printStackTrace();
-}
-}
-}
-The error “NumberFormatException” is thrown when:Leading or trailing spaces in the number exist.The sign is not ahead of the number.The number has commas.Localisation may not categorize it as a valid number.The number is too big to fit in the numeric type.Read this discussion of how to avoid “NumberFormatException” when running Java software. (@StackOverflow)50. “TimeoutException”This Java software error message occurs when a blocking operation is timed out.private void queueObject(ComplexDataObject obj) throws TimeoutException, InterruptedException {
-if (!queue.offer(obj,10,TimeUnit.SECONDS)) {
-TimeoutException ex=new TimeoutException(“Timed out waiting for parsed elements to be processed. Aborting.”);
-throw ex;
-}
-}Read this discussion about how to handle “TimeoutException” when running Java software. (@StackOverflow)For the ultimate Java developer’s toolkit, don’t forget to download The Comprehensive Java Developer’s Guide.Retrace Error MonitoringThe fastest way to fix errors in your software is to properly implement an error monitoring system, such as Retrace.With Retrace, you can find hidden errors lying silently in your code. Its powerful and efficient code profiling even tracks the errors you aren’t logging and helps you monitor error spikes and fix them quickly before reaching your users. Not only that, you will know when there are new types of errors discovered within your application because the system will notify you through an email or SMS. Also available to help you write error-free code with ease is Stackify by Netreo’s free code profiler, Prefix, which supports .NET, Java, PHP, Node.js, Ruby, and Python applications. For more tips and tricks for coding better Java programs, download our Comprehensive Java Developer’s Guide, which is jam-packed with everything you need to up your Java game – from tools to the best websites and blogs, YouTube channels, Twitter influencers, LinkedIn groups, podcasts, must-attend events, and more.If you’re working with .NET, you should also check out our guide to the 50 most common .NET software errors and how to avoid them. There is no better time than now. Start your 14-day FREE TRIAL and experience the advantage of Retrace and Prefix from Stackify by Netreo. About the Author Latest PostsAbout StackifyStackify Makes SDTimes100 ‘Best in Show’ - June 8, 2021Application Monitor: Checking Everything that Matters - June 4, 2021Top Java Software Errors: 50 Common Java Errors and How to Avoid Them - May 28, 2021Stackify + Netreo Creates a Dev + Ops Powerhouse - April 20, 2021Netreo Expands APM Capabilities with Strategic Acquisition of Stackify - April 20, 2021
-DeveloperexceptionsJavaretrace
-Search Stackify Search Topics/KeywordsASP.NETProduct Updates.NET CoreApp MonitoringJavaApp Performance TipsAzureError HandlingAWSLogging TipsCloudDevOpsPopular Posts ASP.NET Performance: 9 Types of Tools You Need to Know! How to Troubleshoot IIS Worker Process (w3wp) High CPU Usage How to Monitor IIS Performance: From the Basics to Advanced IIS Performance Monitoring SQL Performance Tuning: 7 Practical Tips for Developers Looking for New Relic Alternatives & Competitors? Learn Why Developers Pick RetraceRecent Posts Stackify Makes SDTimes100 ‘Best in Show’ Application Monitor: Checking Everything that Matters Top Java Software Errors: 50 Common Java Errors and How to Avoid Them How to Monitor CPU Memory and Disk Usage in Java Tips for Application Troubleshooting
-Get In Touch
-Contact UsRequest a DemoStart Free Trial
-Menu Contact UsRequest a DemoStart Free TrialPO Box 2159Mission, KS 66201816-888-5055
-Facebook
+"object has no attribute 'dict'" Code Example
+Follow
+GREPPER
+SEARCH SNIPPETS
+FAQ
+USAGE DOCS
+INSTALL GREPPER
+Log In
+Signup
+All Languages
+>>
+Python
+>>
+"object has no attribute 'dict'"
+“"object has no attribute 'dict'"” Code Answer
+AttributeError: 'dict' object has no attribute 'iteritems'
+python by
+Bored Coder
+on
+Apr 14 2020
+Donate
+Comment
+6
+As you are in python3 , use dict.items() instead of dict.iteritems()
+iteritems() was removed in python3, so you can't use this method
+anymore. Take a look at Python 3.0 Wiki Built-in Changes section,
+where it is stated:
+Removed dict.iteritems(), dict.iterkeys(), and dict.itervalues().
+Instead: use dict.items(), dict.keys(), dict.values() respectively.
+Add a Grepper Answer
+Python answers related to “"object has no attribute 'dict'"”
+'dict' object has no attribute 'append' 'dict_keys' object has no attribute 'tolist' 'FigureWidget' object has no attribute 'on_selection' 'NoneType' object has no attribute 'attname' 'str' object has no attribute 'remove' AttributeError: 'Database' object has no attribute 'remove' AttributeError: 'list' object has no attribute 'dtypes' AttributeError: 'NoneType' object has no attribute 'format' AttributeError: 'str' object has no attribute 'remove' python AttributeError: 'Tensor' object has no attribute 'get_shape' AttributeError: 'tuple' object has no attribute 'name' AttributeError: 'tuple' object has no attribute 'reshape' AttributeError: module 'tkinter' has no attribute 'x' AttributeError: type object 'Product' has no attribute 'Object' django queryset' object has no attribute objects IntegerField' object has no attribute 'value_from_datadict Pandas AttributeError: 'NoneType' object has no attribute 'head python tkinter AttributeError: 'NoneType' object has no attribute 'insert'
+Python queries related to “"object has no attribute 'dict'"”
+attributeerror 'dict' object has no attribute 'iteritems' python3 AttributeError: 'dict' object has no attribute 'iteritems'\ 'dict' object has no attribute 'iterrows' dict' object has no attribute 'iteritems 'dict' object has no attribute '__dict__' AttributeError: 'dict' object has no attribute 'iteritems' in frappe client AttributeError: 'dict' object has no attribute 'iteritems AttributeError: 'dict' object has no attribute 'iteritems' site:stackoverflow.com AttributeError: 'dict' object has no attribute '_mutable' AttributeError: 'dict' object has no attribute 'item' The error was: 'dict object' has no attribute 'invocation 'dict' object has no attribute 'encode' "AttributeError: 'Table' object has no attribute 'table'" "object has no attribute 'dict'" dict object' has no attribute 'stdout' dict has no object iteritems list object has no attribute to_dict AttributeError: object has no attrubute AttributeError: 'dict' object has no attribute 'twiny' AttributeError: 'function' object has no attribute AttributeError: 'NoneType' object has no attribute 'dict' object has no attribute 'text' 'dict_values' object has no attribute 'values' preppy AttributeError: 'dict' object has no attribute 'number' AttributeError: 'dict' object has no attribute 'mycUserId' AttributeError: 'dict' object has no attribute ' ' dict object' has no attribute python AttributeError: 'dict' object has no attribute 'iteritems' AttributeError: 'dict' object has no attribute 'itervalues' dict has no attribute iteritems AttributeError: 'dict' object has no attribute 'toDF' 'dict' object has no attribute 'norm' why iteritems no longer exists in python dict object' has no attribute iteritems resolving 'dict' object has no attribute 'iter' on clean_html resolving 'dict' object has no attribute 'iter' dict' object has no attribute 'iteritems' python3 (<class 'AttributeError'>, AttributeError("'dict' object has no attribute 'itervalues'"), <traceback object at 0x11cfd7e10>) AttributeError: 'mappingproxy' object has no attribute 'iteritems' 'dict' object has no attribute 'iteritems'only size-1 arrays can be converted to Python scalars dict object has no attribute iteritems dict' object has no attribute 'iteritems' python 3 'dict' object has no attribute 'iteritems AttributeError: 'Rect' object has no attribute 'draw' AttributeError: 'Timestamp' object has no attribute 'days' AttributeError: 'Series' object has no attribute 'split' AttributeError: 'Plot_OldSync' object has no attribute 'mpyplot'
+dict' object has no attribute 'iteritems' 'dict' object has no attribute 'iteritems' 'dict object' has no attribute 'iteritems' AttributeError: 'dict' object has no attribute 'iteritems'
+Browse Python Answers by Framework
+Django
+Flask
+More “Kinda” Related Python Answers
+View All Python Answers »
+jupyter ignore warnings python check if path does not exist python request remove warning ignore warnings python ModuleNotFoundError: No module named 'allauth' AttributeError: type object 'Callable' has no attribute '_abc_registry' ParserError: Error tokenizing data. C error: Expected 1 fields in line 87, saw 2 No module named 'rest_framework' Command "python setup.py egg_info" failed with error code 1 XLRDError: Excel xlsx file; not supported no module psycopg2 conda create environment pyaudio not installing ubuntu AttributeError: module 'librosa' has no attribute 'display' site:stackoverflow.com ModuleNotFoundError: No module named 'matplotlib' ModuleNotFoundError: No module named 'exceptions' from Crypto.Cipher import AES ModuleNotFoundError: No module named 'Crypto' No module named 'rest_framework_simplejwt' post has no object memeber in django error ModuleNotFoundError: No module named 'sklearn.cross_validation' from _curses import * ModuleNotFoundError: No module named '_curses' errno 13 permission denied python EnvironmentError command line No module named 'xgboost' OSError: [E050] Can't find model 'de'. It doesn't seem to be a shortcut link, a Python package or a valid path to a data directory. 'Keras requires TensorFlow 2.2 or higher. ' ImportError: Keras requires TensorFlow 2.2 or higher. Install TensorFlow via `pip install tensorflow docker compose command not found conda install lxml File "manage.py", line 17) from exc^ SyntaxError: invalid syntax ModuleNotFoundError: No module named 'rest_auth' ModuleNotFoundError: No module named 'en_core_web_sm' module 'cv2' has no 'videocapture' member python create requirements.txt conda AttributeError: module 'tensorflow' has no attribute 'Session' urllib.error.URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1123)> UserWarning: Using slow pure-python SequenceMatcher. Install python-Levenshtein to remove this warning warnings.warn('Using slow pure-python SequenceMatcher. Install python-Levenshtein to remove this warning' ModuleNotFoundError: No module named 'seaborn' TypeError: dict is not a sequence pipenv freeze requirements.txt python exception element not found OSError: [E050] Can't find model 'en'. It doesn't seem to be a shortcut link, a Python package or a valid path to a data directory. AttributeError: module 'tensorflow' has no attribute 'placeholder' AttributeError: 'dict' object has no attribute 'iteritems' pytesseract tesseract is not installed AttributeError: module 'tensorflow' has no attribute 'GraphDef' python remove cached package No module named 'sqlalchemy' mac ModuleNotFoundError: No module named 'pydub' ModuleNotFoundError: No module named 'pandas' PackagesNotFoundError: The following packages are not available from current channels: - python==3.6 Python.h: No such file or directory DeprecationWarning: an integer is required (got type float). Implicit conversion to integers using __int__ is deprecated, and may be removed in a future version of Python. ModuleNotFoundError: No module named 'sklearn' pylint no name in module cv2 he current Numpy installation ('C:\\Users\\muham\\.virtualenvs\\Backend-vjttHJMD\\lib\\site-packages\\numpy\\__init__.py') fails to pass a sanity check due to a bug in the windows runtime. See this issue for more information: https://tinyurl.com/y3dm3h86 How do I set Conda to activate the base environment by default? The `.create()` method does not support writable nested fields by default. Write an explicit `.create()` method for serializer `room_api.serializers.roomSerializer`, or set `read_only=True` on nested serializer fields. RuntimeError: Attempting to deserialize object on a CUDA device but torch.cuda.is_available() warning ignore python Could not find a version that satisfies the requirement psycopg2>=2.8 (from pgcli) (from versions: 2.7.5, 2.7.6, 2.7.6.1, 2.7.7) No module named 'bidi' return codecs.charmap_decode(input,self.errors,decoding_table)[0] UnicodeDecodeError: 'charmap' codec can't decode byte 0x8d in position 280: character maps to <undefined> ModuleNotFoundError: No module named 'django.core.urlresolvers' geckodriver' executable needs to be in path Message: 'chromedriver' executable needs to be in PATH. Please see https://sites.google.com/a/chromium.org/chromedriver/home cannot import name 'imputer' ModuleNotFoundError: No module named 'png' >>> import numpy Illegal instruction (core dumped) django.core.exceptions.ImproperlyConfigured: Specifying a namespace in include() without providing an app_name is not supported. Set the app_name attribute in the included module, or pass a 2-tuple containing the list of patterns and app_name instead. E: Unable to locate package python3-pip module pygame has no member Module 'cv2' has no 'imread' member No module named 'sklearn.cross_validation' python class typeerror module() takes at most 2 arguments (3 given) ValueError: Failed to convert a NumPy array to a Tensor (Unsupported object type float). error urllib request no attribute Module 'torch' has no 'stack' memberpylint(no-member) 'flask' is not recognized as an internal or external command, operable program or batch file. AttributeError: module 'tensorflow' has no attribute 'Session' site:stackoverflow.com ValueError: Cannot specify ',' with 's'. disable DevTools listening on ws://127.0.0.1 python python print error traceback jupyter notebook no password or token pip install torch error ImportError: No module named django.core.wsgi LookupError: unknown encoding: idna python if __name__ == '__main__' python requests.get pdf An appropriate representation of the requested resource could not be found pycache in gitignore ssl unverified certificate python import requests, sys, urllib, reImportError: No module named requests No module named 'arabic_reshaper' src/_portaudiomodule.c:29:10: fatal error: 'portaudio.h' file not found RuntimeError: error in LoadLibraryA ModuleNotFoundError: No module named 'slugify' Can't find model 'en_core_web_sm'. It doesn't seem to be a shortcut link, a Python package or a valid path to a data directory. ImportError: Couldn django.db.utils.OperationalError: (1045, "Access denied for user 'root'@'localhost' (using password: YES)") pipenv remove environment django gunicorn static file not found fatal error detected failed to execute script cannot import name 'abc' from 'bson.py3compat' jinja len is undefined name 'glob' is not defined spress warnings selenium python sqlite operational error no such column erreur install pyaudio python namespace packages main.pas(1,18) Fatal: Syntax error, ";" expected but "identifier UTILIZADO" found Le module SIP n'a pas pu être chargé. Le support Python va être désactivé. ubbuntu 20.04 snowflake python connector error handling CMake Error at 3rdparty/GLFW/CMakeLists.txt:236 (message): The RandR headers were not found python remove non empty read only directory flask error f = open(f'{getcwd()}/haikus/{haiku}',"r") ^ SyntaxError: invalid syntax render_template not showing images selenium.common.exceptions.SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 81 module 'cv2.cv2' has no attribute 'imWrite' The authorization mechanism you have provided is not supported. Please use AWS4-HMAC-SHA256 pylint: disable=unused-argument pytho narrondir un nombre subprocess the system cannot find the file specified FileNotFoundError: [Errno 2] No such file or directory: 'E:\\Work\\Geeky_B\\NWIS_DEMO\\dist\\ttest_spacy\\thinc\\neural\\_custom_kernels.cu' [1192] Failed to execute script ttest_spacy + pyinstaller 'DIRS': [os.path.join(BASE_DIR,'template')], AttributeError: module 'urllib' has no attribute 'URLopener' The following packages have unmet dependencies: libnode72 : Conflicts: nodejs-legacy E: Broken packages cv2 not found appdata/local/microsoft/windowsapps/python: permission denied python error: command 'x86_64-linux-gnu-gcc' failed with exit status 1 TypeError: takes 0 positional arguments but 1 was given python Could not connect to Redis at 127.0.0.1:6379: Connection refused module subprocess has no attribute popen pycharm remove not in use imports ValueError: There may be at most 1 Subject headers in a message dirs' base_dir / 'templates' error ImportError: cannot import name 'TFAutoModel' from 'transformers' argparse required arguments poetry take the dependencies from requirement.txt pytest-xdist typeerror 'in string ' requires string as left operand not re.match AttributeError: module 'os' has no attribute 'PathLike' mysql.connector.errors.NotSupportedError: Authentication plugin 'caching_sha2_password' is not supported python urlgen error login() got an unexpected keyword argument 'template_name' django keyerror: 'OUTPUT_PATH' conda env FeatureNotFound: Couldn't find a tree builder with the features you requested: lxml. Do you need to install a parser library? zerodivisionerror python from .cv2 import * ImportError: /home/pi/.local/lib/python3.7/site-packages/cv2/cv2.cpython-37m-arm-linux-gnueabihf.so: undefined symbol: __atomic_fetch_add_8 failed to execute script SystemError: <class 'cv2.CascadeClassifier'> returned a result with an error set NameError: name 'os' is not defined django media pipe install ERROR: Could not find a version that satisfies the requirement mediapipe (from versions: none) cannot import name 'cross_validation' from 'sklearn' django forbidden (csrf cookie not set.) selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable how call module in the same directory ls.ProgrammingError: permission denied for table django_migrations vscode not recognizing python import django.core.exceptions.ImproperlyConfigured: WSGI application 'souroSANOU.wsgi.application' could not be loaded; Error importing module. from distutils.util import strtobool ModuleNotFoundError: No module named 'distutils.util' CSRF verification failed. Request aborted. python ModuleNotFoundError git bash permission denied python AttributeError: 'builtin_function_or_method' object has no attribute 'randrange' USB: usb_device_handle_win.cc:1049 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F) 'set' object is not reversible pytesseract configs module 'pygame' has no 'init' member AttributeError: module 'django.contrib.auth.views' has no attribute 'login' install quick-mailer python webdriver element not interactable winerror 5 access is denied pip python context manager example python __debug__ ImportError: Couldn't import Django. Are you sure it's installed and available on your PYTHONPATH environment variable? Did you forget to activate a virtual environment? ImportError: cannot import name 'FieldDoesNotExist' from 'django.db.models.fields' (C:\Users\Admin\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\fields\__init__.py) webbrowser python could not locate runnable browser error handling Pyhtin TypeError: unsupported operand type(s) for +=: 'IntVar' and 'int' rest_framework import-error AttributeError: module 'tkinter' has no attribute 'x' list object is not callable PYTHON INSTALL DIR = os.path.dirname(os.path.dirname(os.__file__)) AttributeError: module 'os' has no attribute '_file_' npm ERR! gyp ERR! stack Error: Can't find Python executable "python", you can set the PYTHON env variable. No module named 'mpl_toolkits.basemap' ImportError: No module named _tkinter, please install the python-tk package stopiteration error python python how to fix unexpected token NameError: name 'request' is not defined Python CSV Has No Attribute 'Writer urllib.error.HTTPError: HTTP Error 403: Forbidden python os.path.isdir exception bash: yarn: command not found TypeError: sequence item 0: expected str instance, int found cannot be loaded because running scripts is disabled on this system cprofile usage python sys.executable google calendar Request had insufficient authentication scopes. python hashlib.sha512() if__name__== '__main__': rsync ignore existing python was not found; run without arguments to install from the microsoft store, or disable this shortcut from settings > manage app execution aliases. attributeerror: No module named 'matplotlib' python no module named python suppress warnings in function app is not a registered namespace django IndentationError: unindent does not match any outer indentation level ImportError: No module named flask what is a ython instance force garbage collection in python python 3.9 ModuleNotFoundError: No module named 'distutils.sysconfig' <built-in function imshow> returned NULL without setting an error conda create environment from file TypeError: a bytes-like object is required, not 'str' filenotfound ignoring warnings conda install ffmpeg Module "django.contrib.auth.hashers" does not define a "BcryptPasswordHasher" attribute/class ModuleNotFoundError: No module named Traceback (most recent call last): File "/usr/bin/pip", line 9, in <module> from pip import main mysql config not found python GOOGLE_APPLICATION_CREDENTIALS AttributeError: 'str' object has no attribute 'remove' python assertion error heroku requirements.txt python json python no whitespace IndentationError: unexpected indent ModuleNotFoundError: No module named 'textract' cannot import name 'httpresponse' from 'django.http' How to fix snap "pycharm-community" has "install-snap" change in progress ImportError: /usr/local/lib/python3.7/dist-packages/cv2/cv2.cpython-37m-arm-linux-gnueabihf.so: undefined symbol: __atomic_fetch_add_8 nzec error in python error command errored out with exit status 1 face_recognition vscode pylint missing module docstring import authenticate No default language could be detected for django app os is not defined python unboundlocalerror local variable referenced before assignment python AttributeError: 'NoneType' object has no attribute 'dropna' recognition request failed: forbidden pyaudio Error tokenizing data. C error: Calling read(nbytes) on source failed. Try engine='python'. app = Flask(_name_) NameError: name '_name_' is not defined OSError: [Errno 98] Address already in use TypeError: 'method' object is not subscriptable In file included from psycopg/psycopgmodule.c:28:./psycopg/psycopg.h:35:10: fatal error: Python.h: No such file or directory35 | #include <Python.h>|
+^~~~~~~~~~compilation terminated. 'charmap' codec can't decode byte 0x98 in position 11354: character maps to <undefined> python missing 1 required positional argument: not builtin_function_or_method python generate requirements.txt argparse multiple arguments as list django.core.exceptions.FieldError: 'date' cannot be specified for Forum model form as it is a non-editable field python file open try except error module 'tensorflow' has no attribute 'InteractiveSession' python webdriver disable logs on_member_join not working attributeerror: 'str' object has no attribute 'decode' pip error could not find a version that satisfies the requirement 'DIRS': [os.path.join(BASE_DIR, 'templates')], json to argparse NameError: name 'views' is not defined python remove directory not empty mongodb not in os.mkdir exceptions unable to import wx python 3 except sys error info python unresolved import vscode pytest run only failed test _getfullpathname: path should be string, bytes or os.PathLike, not list No module named 'bootstrap4' django No module named 'selenium.webdriver.common.action_chain' ImportError: cannot import name ABC 'numpy.float64' object has no attribute 'isnull' KeyError: "['Discount'] not found in axis" Fatal error in launcher: Unable to create process using '"' object_detection module not found takes 1 positional argument but 2 were given python import skbuild ModuleNotFoundError: No module named 'skbuild' ValueError: invalid literal for int() with base 10: site:stackoverflow.com couldn't import django. are you sure it's installed and available on your pythonpath environment variable? did you forget to activate a virtual environment? selenium how to handle element not found python turn off warnings No module named 'filterpy' install python package from git colab django TypeError: __init__() got an unexpected keyword argument 'attrs' python logging basicconfig stdout tuple' object has no attribute 'shape' opencv how to raise stopiteration selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: No module named 'mysite' Use module Crypto.Cipher.PKCS1_OAEP instead how to fix valueerror in python "jupyter (notebook OR lab)" ipynb "not trusted" python Cannot uninstall 'PyYAML'. It is a distutils installed project and thus we cannot accurately determine which files belong t o it which would lead to only a partial uninstall when trying to install chatterbot or chatterbot_corpus ImportError: cannot import name 'StringIO' twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion.> scrapy 'jupyter' is not recognized as an internal or external command, operable program or batch file. WARNING: pip is configured with locations that require TLS/SSL, however the ssl module in Python is not available. MovieWriter stderr: ffmpeg: error while loading shared libraries: libopenh264.so.5: cannot open shared object file: No such file or directory python check namespace has instance Could not build the ssl module! Python requires an OpenSSL 1.0.2 or 1.1 compatible libssl with X509_VERIFY_PARAM_set1_host(). LibreSSL 2.6.4 and earlier do not provide the necessary APIs, https://github.com/libressl-portable/portable/issues/381 argparse accept only few options No module named 'PyQt5.QtWebEngineWidgets' selenium.common.exceptions.TimeoutException: Message: from logging import logger oserror: invalid cross-device link conda auto activate base false ImportError: No module named pandas dockerfile example SyntaxError: unexpected EOF while parsing modulenotfounderror no module named 'config' python UnavailableInvalidChannel error in conda ImportError: cannot import name include unexpected eof while parsing python glob subdirectories use argparse to call function and use argument in function django.core.exceptions.ImproperlyConfigured: Application labels aren't unique, duplicates: auth unittest python how set test failed ModuleNotFoundError: No module named 'thread' flask exception handler No name 'QMessageBox' in module 'PyQt5.QtWidgets' .gitignore cannot find opera binary selenium python re module documentation lib torrent error colab selenium chrome options suppress warnings python journalctl not showing all python prints AttributeError: 'psycopg2.extensions.Column' object has no attribute '_asdict' ModuleNotFoundError: No module named 'html5lib' how to install package offline torch distributed address already in use how to return a missing element in python subprocess the system cannot find the file specifie Undefined variable: 'EmailMessage' IN DJANGO browser = webdriver.firefox() error Error: PythonPipBuilder:ResolveDependencies - {numpy==1.20.3(wheel)} python raise error exit Failed to build wxPython tensorflow io check file exist typeerror: cannot concatenate object of type '<class 'method'>'; only series and dataframe objs are valid logging store info to different files python disable warning deprecated hide verbose in pip install TypeError: 'frozenset' object is not callable TypeError: 'list' object is not callable Error: The file/path provided (flaskr) does not appear to exist. Please verify the path is correct. If app is not on PYTHONPATH, ensure the extension is .py ModuleNotFoundError: No module named 'click' Visual Studio Code doesn't stop on Python breakpoint debug [ WARN:0] global C:\Users\appveyor\AppData\Local\Temp\1\pip-req-build-wwma2wne\o pencv\modules\videoio\src\cap_msmf.cpp (677) CvCapture_MSMF::initStream Failed t o set mediaType (stream 0, (640x480 @ 30) MFVideoFormat_RGB24(codec not found) python wifi moudel [WinError 2] The system cannot find the file specified No module named 'ann_visualizer' mysql Unread result found how to log errors while debug is false in django stackoverflow: install old version of networkx pytest --clrear cache from django.core.management import execute_from_command_line ImportError: No module named django.core.management Traceback (most recent call last): File "main.py", line 3, in <module> y = eval((x**3+2*x)/(x**4+3(x**2)+1)) TypeError: 'int' object is not callable how to install ffmpeg python heroku Timestamp' object has no attribute 'isnull ModuleNotFoundError: No module named 'Cython' python raise filenotfounderror global /tmp/pip-req-build-civioau0/opencv/modules/videoio/src/cap_v4l.cpp (587) autosetup_capture_mode_v4l2 VIDEOIO(V4L2:/dev/video0): device is busy jinja macro import !.gitignore nameerror name 'defaultdict' is not defined Error: Command '['/home/jonas/twitchslam/env/bin/python3.6', '-Im', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1. module 'cv2.cv2' has no attribute 'videowriter' flask form errors no module named googlesearch AttributeError: Can't pickle local object not null constraint failed django AttributeError: module 'string' has no attribute 'join' the requested resource was not found on this server. django request.args.get check if defined you cannot alter to or from M2M fields, or add or remove through= on M2M fields) The Python 2 bindings for rpm are needed for this module. If you require Python 3 support use the `dnf` Ansible module instead.. The Python 2 yum module is needed for this module. If you require Python 3 support use the `dnf` Ansible module instead. pycharm no module named pycharm module not found no python application found, check your startup logs for errors pygame error font not initialized pycharm import pandas AttributeError: cannot assign module before Module.__init__() call Import "flask" could not be resolved from source Pylance takes 2 positional arguments but 3 were given ModuleNotFoundError: No module named 'pyvis' 'djdt' is not a registered namespace ModuleNotFoundError: No module named 'virtualenv.seed.via_app_data' typeerror: ERROR: Could not find a version that satisfies the requirement tensorflow== ERROR: No matching distribution found for tensorflow== PermissionError: [Errno 13] Permission denied on flask Unresolved reference 'django' python 'module' object is not callable FileNotFoundError: [Errno 2] No such file or directory: while os.mkdir*( RuntimeError: 1D target tensor expected, multi-target not supported site:stackoverflow.com Exception has occurred: NameError name 'self' is not defined pytest logcli to write to file TypeError: expected string or bytes-like object create_user() missing 1 required positional argument: 'username' make an assertionerror in python conda create new env httpretty pytest fixture AttributeError: 'tuple' object has no attribute 'name' 'NoneType' object has no attribute 'attname' index error in python TypeError: 'NoneType' object is not iterable CMake Error at pybind11/tools/FindPythonLibsNew.cmake:131 (message): Python config failure: ValueError: unknown is not supported in sklearn.RFECV AttributeError: 'Database' object has no attribute 'remove' gaierror at /members/register [Errno 11001] getaddrinfo failed urllib.error.HTTPError: HTTP Error 502 docker redis python returned non-zero exit status 1. yml anaconda TypeError: _locateAll_python() got an unexpected keyword argument 'confidence' cryptography
+'openssl/opensslv.h' file not found python warn vs warning TypeError: unsupported operand type(s) for +: 'dict' and 'dict' python permission denied on mac oauthlib python error myhtmlparser object has no attribute pos python travis ci .yml for python tkmessagebox not found islink(node1 node2) is used for python tkinter AttributeError: 'NoneType' object has no attribute 'insert' TypeError: __str__ returned non-string (type instance) _rocketcore pypi json not readable python ArgumentParser(parent) typeerror 'nonetype' object is not callable paramiko python ImportError: cannot import name 'Thread' from partially initialized module 'threading' configparser error reading relative file path use argparse that read in file usernames python script missing 1 required positional argument: 'context' no module named 'pygame' visual studio AttributeError: 'generator' object has no attribute 'next' runtime errors in python main() invalid syntax failed to load resource: the server responded with a status of 502 (bad gateway) The requested URL was not found on this server. apache on django float error python multiprocessing map runtime error TypeError at /admin/auth/user/ import settings AttributeError: 'KerasRegressor' object has no attribute 'model' site:stackoverflow.com emr cluster step error ModuleNotFoundError: No module named 'torch' TypeError: unsupported operand type(s) for +: 'Fraction' and 'Fraction' python argparse ignore unrecognized arguments user_info = user_info.save(commit=False) cannot set `other` if drop=True attribute error python python django os error python coule nod import the module virtualenvwrapper.hook_loader Check if file already existing write yaml file without deleting content python Project1/main.py", line 3, in <module> import cv2 python ssl module is not available AttributeError: type object 'User' has no attribute 'query' LINK : error LNK2001: unresolved external symbol PyInit___init__ sqlite3.OperationalError: near "AND": syntax error python Old Handler API is deprecated - see https://git.io/fxJuV for details pd is not defined python error find the error python telepot raise KeyError('No suggested keys %s in %s' % (str(keys), str(d))) i type nano in python and o get error import open3d Illegal instruction (core dumped) TypeError: '_TypedDict' object is not subscriptable ValueError: invalid PNG header How to install packages offline? Ask Question AttributeError: module 'os' has no attribute 'startfile' [ WARN:0] global C:\Users\appveyor\AppData\Local\Temp\1\pip-req-build-nxx381if\opencv\modules\videoio\src\cap_msmf.cpp (435) `anonymous-namespace' is there a gif package for python multigreading sys.exit does not work Invalid HTTP_HOST header: 'dtodo2.herokuapp.com'. You may need to add 'dtodo2.herokuapp.com' to ALLOWED_HOSTS. AttributeError: module 'yaml' has no attribute 'load_all' Gets an existing SparkSession or, if there is no existing one, creates a new python mongodump cv2 assertion failed python detect warning django allauth Reverse for 'password_reset_confirm' not found. 'password_reset_confirm' is not a valid view function or pattern name. récupérer l'extension d'un fichier en python qt platform plugin could not be initialized stackoverflow ModuleNotFoundError: No module named 'myapp' alembic django.db.utils.DatabaseError: DatabaseWrapper objects created in a thread can only be used in that same thread. The object with alias 'default' was created in thread id 140423029811616 and this is thread id 140422957233632.. some problem occurred shows payubiz KeyError: 'ProfilePage' IntegerField' object has no attribute 'value_from_datadict Redirected but the response is missing a Location: header. can't open file 'sherlock.py' errno 2 no such file or directory python PyDrive service account credentials NameError
+Traceback (most recent call last) <ipython-input-36-28457fcc3f62> in <module> ----> 1 plt.bar(freqs.index, freqs.values, color = "green")
+2 plt.show()
+NameError: name 'freqs' is not defined install kivyMD from git Pandas AttributeError: 'NoneType' object has no attribute 'head key error python response object has no code the following packages have unmet dependencies python3-tornado python email exception error python setuptools cythonize except one file args parser subcommand "'S3' object has no attribute 'Bucket'", python boto3 aws ! LaTeX Error: File `pgf{-}pie.sty' not found. DEPRECATION: The default format will switch to columns in the future. You can use --format=(legacy|columns) (or define a format=(legacy|columns) in your pip.conf under the [list] section) to disable this warning. django if self.pattern.name is not None and ":" in self.pattern.name: TypeError: argument of type 'function' is not iterable Missing required parameter in input: "Key" RuntimeError: Please set pin numbering mode using GPIO.setmode(GPIO.BOARD) or GPIO.setmode(GPIO.BCM) UserWarning: Using settings.DEBUG le ads to a memory
+leak, never use this setting in production environments!
+leak, never use this setting in production environments!''') subprocess ffmpeg x265 codec how to fix invalid salt in python flask ./bootstrap command not found in dockerfile sphinx could not understand audio speech recognition windows path object has no attribute encode python what if functionality not in the requirements pydrive list shared folder ValueError: Invalid model reference 'user_auth.models.User'. String model references must be of the form 'app_label.ModelName'. docker opencv python libGL.so.1: cannot open shared object file: No such file or directory python Command '['latexmk', '--pdf', '--interaction=nonstopmode', % returned non-zero exit status 2. Python run module with and without "-m" option and import path setting is Cross policy an issue with puppeteer / headless chrome? mysql.connector.errors.InterfaceError: Failed executing the operation; Not all parameters were used in the SQL statement AttributeError: module 'copy' has no attribute 'deepcopy' RuntimeError: Error in qhull Delaunay triangulation calculation: singular input data (exitcode=2); use python verbose option (-v) to see original qhull error. extra error expo notification django sdk SyntaxError: Non-ASCII character '\xe2' in file /root/Downloads/la_southwest_college/handy/accountDetails.py on line 116, but no encoding declared; see http://python.org/dev/peps/pep-0263/ for details attributeerror 'posixpath' object has no attribute 'startswith' All objects and constants needed to use the ldap3 library can be imported from the ldap3 namespace addDataToExp() psychopy how to run ewa requirement.txt file python [remote rejected] master -> master (pre-receive hook declined) File "datatype.py", line 6 type(Hello World) ^ SyntaxError: invalid syntax import pycocotools._mask as _mask error
+Expected 80, got 88 python generate openssl signing request confirm_allocation() takes 1 positional argument but 2 were given FastAPI SyntaxError: non-default argument follows default argument Ansible playbook to set passwordless sudo fatal error: Python.h: No such file or directory 45 | #include <Python.h> | ^~~~~~~~~~ compilation terminated. error: command 'gcc' failed with exit status 1 FileNotFoundError: No such file or directory. ModuleNotFoundError: No module named 'App_Order' c4d python ReferenceError: could not find 'main' in tag 'Null' reload is not defined python 3 os.name == 'nt' str object not callable Spacy en_core_web_sm error TypeError: 'LazyCorpusLoader' object is not callable gdal user with anaconda asyncio.run() cannot be called from a running event loop from jupyterlab cannot import name 'ttk' from partially initialized module 'tkinter' (most likely due to a circular import) how_color() missing 1 required positional argument: 'color' Invalid Python Environment: Python is unable to find Maya's Python modules W0622: Redefining built-in 'zip' (redefined-builtin) Cannot assign "<SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x7f887abd9910>>": "Comment.username" must be a "User" instance. jetson nx unable to install matplotlib ValueError: Cannot assign id must be an instance error python python "response is not accessed" [Errno 13] Permission denied mkdir cheatsheet pycharm django autocomplete not working tensorboard 2.1.0 has requirement grpcio>=1.24.3, but you'll have grpcio 1.15.0 which is incompatible Use VSCode Variable Explorer (or equivalent) to display all of the local variables in python The module in NAME could not be imported: django.contrib.user_auth.password_validation.UserAttributeSimilarityValidator. Check your AUTH_PASSWORD_VALI python disable logging on unittest NameError: name 'CAP_PROP_FPS' is not defined pylint no name in module opencv ** (ArgumentError) lists in Phoenix.HTML and templates may only contain integers representing bytes, binaries or other lists, got invalid entry: cannot be loaded as Python module module not found after sucessful install ansible vagrant plugin ModuleNotFoundError: No module named 'playsound' tensorflow.python.framework.errors_impl.NotFoundError: Failed to create a directory: checkpoints/export\Servo\temp-b'1604693559'; No such file or directory RuntimeError: input must have 3 dimensions, got 4 site:stackoverflow.com AttributeError: 'tuple' object has no attribute 'reshape' Use if a not trusted message will come up docker-compose.yml for flask celery rabbitmq erreude code Can't open /dev/mem: Permission denied Traceback (most recent call last): System.Windows.Forms.DataGridView.CurrentRow.get returned null.
+c# AttributeError: __enter__ Traceback (most recent call last): File "exploit.py", line 63, in <module> choice = menu() File "exploit.py", line 60, in menu return int(choice) ValueError: invalid literal for int() with base 10: '' AttributeError: 'NoneType' object has no attribute 'format' twitter api ("Connection broken: Invalid Chunk Length(got length b'', 0 bytes read)" django - OSError at /password-reset/ [Errno 101] Network is unreachable after pointing domain to cloudflare TypeError: __init__() missing 1 required positional argument: 'denom' in unit testing python site:stackoverflow.com AttributeError: module 'skimage' has no attribute 'segmentation' python ffmpeg.concat() many files NameError: name 'after_this_request' is not defined pyttsx3 NameError: name 'voices' is not defined address already in use To install a specific version, type the package name followed by the required version: How do i fix a NameError: name 'quiet' is not defined in python An error occurred (NoSuchKey) when calling the GetObject operation: The specified key does not exist. Unknown command: "'migrate\r'". Did you mean migrate? TypeError: __init__(): incompatible constructor arguments. The following argument types are supported:
+1. tensorflow.python._pywrap_file_io.BufferedInputStream(arg0: str, arg1: int) OSError: [WinError 123] The filename, directory name, or volume label syntax is incorrect: '<frozen importlib._bootstrap prettify json in pycharm jupyter notebook not opening import numpy illegal instruction (core dumped) jetson nano testing logging python get_permissions how to deal with this in python AttributeError: 'int' object has no attribute 'counter' python NameError: name 'io' is not defined ImportError: cannot import name 'get_column_letter' openpyxl files and exceptions not working python Forbidden (CSRF token missing or incorrect.): /extension/stripe-pay/ WARNING 2021-06-01 13:45:22,532 log 408 140165573588736 Forbidden (CSRF token missing or incorrect.): /extension/stripe-pay/ python selenium not returning correct source couldn't open showimage no such file or directory python polyfit with errors Exception Value:	 no such table:
+django File "demo_indentation_test.py", line 2 print("Five is greater than two!") ^ IndentationError: expected an indented block [E053] Could not read config.cfg from C:\Users\hp\AppData\Local\Programs\Python\Python37\lib\site-packages\resume_parser\degree\model\config.cfg nameerror name 'e' is not defined python No module named 'django_hitcounter' from threading import thread ImportError: cannot import name 'thread' from 'threading' (/usr/lib/python3.7/threading.py) pyqt5 qtwebenginewidgets not found Uninstalling/removing a package is very easy with pip: print invalid syntax python grepper 'str' object has no attribute 'remove' python is not set from command line or npm configuration node-gyp import arithmetic arranger could not be resolved python name 'typeText' is not defined python TemplateSyntaxError python zip stackoverflow newtorkx remove node python 3.7 centos in _run_pip
+import pip._internal zipimport.ZipImportError: can't decompress data; zlib not available make: *** [altinstall] Error 1 TypeError: 'module' object is not callable playsound name 'q' is not defined in jupyter notebook ApiError('d984ac0ae28d4afda0ddb26e348db535', UploadError('path', UploadWriteFailed(reason=WriteError('malformed_path', None), upload_session_id='AAAAAAAAACLukDh6ck8ZUw'))) python AttributeError: 'module' object has no attribute 'lru_cache' Proj 4.9.0 must be installed. Azure Synapse Analytics failed to execute the JDBC query produced by the connector RuntimeError: You must setup() the GPIO channel first prog = {'Python':'C++', 'Java':['JavaScript', 'JSON', 'C++']'Python Console':('Lucy', 'Dad')} SyntaxError: invalid syntax File "demo_indentation2_error.py", line 3 print("Five is greater than two!") ^ IndentationError: unexpected indent how to fixvalue error in python aws lambda Unable to import module 'lambda_function': No module named 'requests' dockerfile entrypoint python3 if user_answer==answer: ecpeted index erroe pythin fx C:\Users\saverma2>notebook 'notebook' is not recognized as an internal or external command, operable program or batch file. python import module from bitbucket python decorator for error handling python pyinstler not found django BruteBuster error failed attempts create dockerfile RecursionError: maximum recursion depth exceeded while calling a Python object what is add.gitignore python raise indexError PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: import login required 6.2.2.4 packet tracer [WinError 2] The system cannot find the file specified pyflakes invalid syntax invalid syntax AttributeError: 'list' object has no attribute 'dtypes' unindent does not match any outer indentation level (<unknown>, line 26)pylint(syntax-error) sqlite3.ProgrammingError: Incorrect number of bindings supplied. The current statement uses 1, and there are 7 supplied. recursionerror maximum recursion depth exceeded while calling a python object in django how to fix takes 0 positional arguments but 2 were given tensorflow.python.framework.errors_impl.unknownerror: failed to get convolution algorithm. this is probably because cudnn failed to initialize, so try looking to see if a warning log message was printed above. AttributeError How do I ignore an error in Python? re is not defined TypeError: cannot unpack non-iterable float object evaluate AttributeError: 'FacetGrid' object has no attribute 'suptitle' importerror: cannot import name builtins.TypeError TypeError: 'dict' object is not callable The view function did not return a valid response. The return type must be a string, tuple, Response instance, or WSGI callable, but it was a dict. find the error and rectify it.(python except Small_ValueError: print("You Entered small number,please try again") except Large_ValueError: print("You Entered large number,please try again") print("You Entered correct number!! in ",count,"Attempts") File "<ipython-input-42-0159e122a720>", line 2 def checkpoint model(trainer) ^
+SyntaxError: invalid syntax site:stackoverflow.com AttributeError: 'Engine' object has no attribute 'runandwait' python check stl file for errors in pyvista "status": 400, "message": "The string was not recognized as a valid DateTime sys executable juypter is incorrect visual code TypeError: attrib() got an unexpected keyword argument 'convert' ImportError: cannot import name 'run_evaluation' from 'rasa_nlu.evaluate' (c:\users\gwinivac\.conda\envs\chatboty\lib\site-packages\rasa_nlu\evaluate.py) eror api/kernelsUntitled.ipynb?kernel_name=python3 The module in NAME could not be imported: django.contrhtmlib.auth.password_validation.UserAttributeSimilarityValidator. Check your AUTH_PASSWORD_VALIDATORS setting. keylogger to exe Checking Availability of user inputted File name fix all errors in grammarly at once add_signal_handler emacs pipenv not working \n appears in json dump bash: line 1: templates/addtask.html: No such file or directory in flask app The current Numpy installation fails to pass a sanity check due to a bug in the windows runtime. required depend filed odoo ValueError: Invalid format specifier RuntimeError: cannot open featureclass in python In is_lodes_form( : Missing id-axis pairings. python hello world change background color of tkinter sleep function python how to save matplotlib figure to png src/_portaudiomodule.c:29:10: fatal error: 'portaudio.h' file not found python loop through list python iterate through dictionary python text fromatting rows how to import matplotlib in python print multiple lines python how to get the remainder in python python add one python f string how to check if there are duplicates in a list python if list item in string python how to execute bash commands in python script python initialize multidimensional list how to check django version sorting python array python how to align text writen to a file how to use startswith() with list django psql setup Detect Word Then Send Message (discord.py) python scipy.stats.t.ppf how to replace first line of a textfile python ValueError: I/O operation on closed file. scrapy itemloader example discord bot slash how to send a message in a specific channel discord.py Young C so new(pro.cashmoneyap x nazz music) soundcloud python split string python classes python if else python write to file python remove element from list python random python list to string python iterate dictionary key value python virtual environment python list install opencv python try except python python string to int python read json file lambda python enumerate in python python date and time get index of list python how to add a column to a pandas df drop a column pandas random number python python sort list code how pandas save csv file csv python write virtual env create python python check if file exists api in python python project ideas python loops python date format python read file line by line pycharm python zip function round python python pip install matplotlib how to upgrade pip python dictionary methods python list length add something to list python python pandas drop python do while pandas remove duplicates pandas read csv python to exe python if statement how to check python version update tensorflow pip python find index by value python lowercase python string methods python beginner practice problems python add to list for loop python python dict class list methods python how do i sort list in python reverse list python python last element in list request post python datetime python add new keys to a dictionary python how to split a string by character in python python datetime now bytes to string python pandas loop through rows ubuntu install python python loop through list python replace char in string python delete key from dict convert string to list python int to string python python iterate through dictionary how to make a class in python how to import discord in python bot discord python python matplotlib how to read a csv file in python using pandas df.drop reset index pandas queue python open text file in python pandas unique values in column execute command in python script python pyautogui save pandas into csv dataframe create sleep function python python get date and time exception pyton print python insert 'utf-8' codec can't decode byte 0x85 in position 715: invalid start byte pd.to_datetime python simple flask app convert into date python sleep in py py sleep function python beginner projects selenium python python create directory open file python how to calculate the sum of a list in python python read file django admin create superuser threading python reset_index pandas how to plot a graph using matplotlib json to csv python scikit learn linear regression read csv python python filter python current date python for loop range python make txt file python convert string to lowercase python csv reader list to dict python python get square root string to float python threading python example python string to datetime delete a row in pandas dataframe add rows to dataframe pandas how can I sort a dictionary in python according to its values? pillow python python substring export a dataframe to excel pandas convert dataframe to numpy array rename columns pandas create csv file python iterate over rows dataframe python delete file df sort values python floor python append to file string to date python python list .remove mac os install python 3 increase figure size in matplotlib python install pip python list with only unique values python join list to string if substring not in string python python get a substring of a string python get command line arguments Write python program to take command line arguments (word count).
+how to get length of string python python assert send email python delete certain characters from a string python replacing values in pandas dataframe python string trim python print time reverse string in python linux ubuntu install python 3.7 python pygame December global holidays subplots matplotlib save dataframe to csv python remove string from string matplotlib legend drop if nan in column pandas how to define main in python pandas dataframe from dict flask how to run app replace column values pandas append to list python confusion matrix python how to update pip python python to uppercase join on column pandas email in python python os remove file dotenv python python list methods python try catch python string contains substring how to make a python exe python print without newline raise python throwing an exception python python find in list install pip in python append element to an array python static methods in python how to round a float in python create a dataframe python enumerate python python file reading delete file python python capitalize first letter python defaultdict python convert string to bytes python read csv file how to install python libraries python what does yield do round to two decimal places python python datetime string how to print on the same line python 'pip' is not recognized as an internal or external command, operable program or batch file. python how to return unique entries in a list pandas read excel how to make a python list install python in mac pandas read from excel python sleep scikit learn svm sort a dataframe by a column valuepython python square root how to check the type of a variable in python matplotlib histogram python text to speech how to start a django project one. line if statement. python python absolute value python for loop python print format create new django project train test split sklearn how to print error in try except python python post request python check key press decorator python sort dataframe by column python pip install matplotlib install django rest framework python 2 decimal places import python module from another directory python main json dump to file pil python install check tensorflow version print colored text python try catch in python python debugger how to write a while statement in python python write datetime to string python python ascii combining 2 dataframes pandas copy a list python python save df to csv self in python python new line run python file using python code check package version python python loop through dictionary python requests header get text from txt file python youtube.oc yotuube ytouube create a virtual environment python 3 except as Exception: system pause in python how to wait in python command to upgrade python version print no new line python declare class python python iterate over list removing spaces in a string python python version python merge list into string python replace regex UnicodeDecodeError: 'charmap' codec can't decode byte 0x9d in position 6148: character maps to <undefined> python plot how to make a comment python numpy merge arrays copy files python python randint how to change indeces in pandas dataframe python print python rename file python how to use input iterate through dictionary python file handling python copy file python continue gridsearchcv python get filename from path f string in python format time python create and use python classes check type of variable python python lambda python find the key with max value python count characters in string getting time python python matplt check if string is empty python decode base64 python SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 15-16: truncated \UXXXXXXXX escape timestamp python python input try catch python python3 iterate through indexes python remove last character from string python shuffle list drop columns pandas binary search in python python os if file exists change dataframe column type python how to rename columns in pandas dataframe how to print something in python how to label column names and row names in pandas dataframe python input integer how to install python3 in ubuntu python factorial python create virtualenv how to make a discord bot python python async await httpresponse django replace nan in pandas how to run a .exe through python create new thread python django-admin list files in directory python django runserver python access index in for loop python largest value in list django create app python datetime from string python requirements.txt pythagorean theorem python if else python get wd in python python round up use beautifulsoup python open file find nan value in dataframe python how to check if datapoint is in pandas column timestamp to date python pyautogui install how to use virtual environment python python sort list in reverse python file open convert int to binary python one-line for loop python create folder python python bitwise operators python remove last characters from string print variable type python python get dictionary keys lambda function in python python convert json to pandas dataframe python get input python list files in current directory count nan pandas take off character in python string convert list to array python delete a value in list python how to install tkinter only keep rows of a dataframe based on a column value size array python how to check if a number is odd python pip install specific version python check if key is pressed python choose random element from list install selenium python python wait 1 sec python reverse string play music from python round to the nearest integer python sorting by column in pandas Quick Sort python django make migrations how to import turtle in python rename column name pandas dataframe python logging to file average value of list elements in python python startswith python comments python time delay selenium webdriver python pandas apply function to column how to randomly choose from a list python how to write csv from a dataframe pythin get list as input Merge Sort python python hotkey pyautogui merge two dataframes based on column installing django print new line python python generate uid install python on ubuntu python remove duplicates from list datetime python timezone append to front of list python how to start a new django project how to stop the program in python urllib python how to create migrations in django sort dictionary by value python numpy list to array get request python for loop in python python test is nan python type on keyboard empty set python how to reverse a string in python convert str to dict python python multiline comment python if name == main example pandas print column names python check if folder exists while loop python dropping nan in pandas dataframe drop rows with condition pandas remove special characters from string python pandas rename column write json pythonb how to install pyaudio in python python square root function python how to measure code run in time count values pandas odd or even python pandas to list how to generate requirements.txt django how do i convert a list to a string in python python how to append to a list is int python append a line to a text file python how to run cmd line commands in python files python csv split string by spaces python python exception list UnicodeDecodeError: 'utf-8' codec can't decode byte 0xe7 in position 5: invalid continuation byte how to make an int into a string python logistic regression algorithm in python get working directory python python delay python delete key from dictionary python numpy array to list sort list of dictionaries by key python how to sort a dictionary by value in python for in python remove element from list different ways to print a list in python sklearn random forest numpy linspace python create environment variable add item to list python delete element list python python is integer declare numpy zeros matrix python pandas list to df matplotlib plot clear screen python convert column in pandas to datetime python install pil python3 webserver command line create dictionary comprehension python plot a histogram in python matplotlib get files in directory python how to replace nan with 0 in pandas discord py get user by id main function python\ what is lambda in python python list of random values python input function taking input of array in python how to set datetime format in python python local server command read argument from terminal python removing \n from string matplotlib line plot matplotlib set size how to get a row from a dataframe in python add pip to path python arguments square root in python python colours How to see how many times somting is in a list python input in a list in python file exist python rename file python plt figsize python time a funciton import matplotlib.pyplot as plt empty dataframe python get out of loop python string interpolation python exit program get environment variables python if type is string python python find index of first matching element in a list how to find python version mean of a column pandas python3 lowercase convert to timestamp python convert dict to dataframe load model keras python write file how to use speech recognition in python factorial in python how to find no of times a elements in list python cv2.resize() remove item from list python python if __main__ determine if number is prime python
+Browse Popular Code Answers by Language
+SQL
+sql update query sql insert query sql add column create table sql sql order by sql case when sql foreign key insert into mysql mysql create user create table in mysql mysql add foreign key sql select unique sql delete row create database mysql sql server delete column alter table delete column ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO) update value postgresql mysql format date insert into select alter table add column postgresql list db mysql list databases mysql grant all privileges to a user mysql delete row update column sql server sql server convert string to date mysql auto increment install postgresql ubuntu sql server substringShell/Bash
+delete local branch create remore git branch install node js ubuntu delete a branch in git install angular cli git add remote remove directory linux git command to create a branch how to install docker ubuntu git force pull delete local branch git git switch branch how to switch branch how to revert back to previous commit in git oh my zsh install deb file linux how to see ports in use install jupyter notebook git undo last commit install react bootstrap how to see all branches in git install latest npm how to uninstall npm packages git push to branch set up git repository delete branch git rename branch git git delete branch git discard local changes git rename branchSwift
+swift for loop how to loop swift use timer swift create dictionary swift time formats swift swift generate random number create alert in swift show alert swiftui Split a String into an array in Swift convert string to int swift dart capitalize first letter of each word swift change navigation bar color display image from url swift swift get current time add navigation bar button swiftui set image width and height swiftui fnb swift code swift filter array swift hide navigation bar conert data to string swift swift loop through array center text swiftui swift append element to array ios swift convert int to string add top corner radius swift format decimal place swift give background color swiftui replace character in swift play sound swift stack overflow add buton border swiftJavascript
+Javascript remove array item by value remove element from array javascript remove a particular element from array javascript removing item from array javascript array remove element javascript remove element from array js remove speific item from array array remove element js how do you remove a remove element from array in javascript Javascript Remove Element By Id Code Example parse integer javascript Javascript string to int string to number js javascript to integer string to int javascript javascript string to integer javascript convert string to number javascript parse a json string js json to object Javascript parse json string javascript json decode json parse string javascript parse json javascript json parse create react app javascript for loop how to convert string to int js js switch case javascript set and get cookie javascript get cookieVBA
+excel vba find get last row in column vba for loop vba for next loop skip excel vba for next loop skip message box VBA regex numeric digits excel vba find last column excel date to string conversion vba range to array excel vba array vba array from worksheet data excel formula how to create strings containing double quotes xlvba double quotes in string literal xl vba double quotes in string literal excelvba declare global constant xl-vba declare global constant xlvba declare globals vba global vs public excel vba how to declare a global variable excel vba check cell not empty excel add leading zeros to existing values excel vba wait string to date vb excel vba how to check if a worksheet cell is empty xlvba function sheet exists excel vba test or check if sheet exists xl-vba function sheet exists xlvba check if sheet exists vba function sheet exists vb switch casePython
+python split string python if else python write to file python remove element from list python list to string python iterate dictionary key value python virtual environment install opencv python try except python python string to int python read json file enumerate in python python date and time get index of list python how to add a column to a pandas df random number python python sort list drop a column pandas code how pandas save csv file csv python write python check if file exists api in python python project ideas virtual env create python python date format python read file line by line python zip function python pip install python dictionary methods python list lengthR
+bootstrap cdn link read csv in r r install package r for loop simple data frame in R read csv file in r r remove na from dataset how to do linear regression in r r remove row dataframe how to import csv file in r r write to csv r replace na with 0 how to read excel file in r r create a vector fuction in r print in r r combine strings write to csv in r how to change column names in r r language legend parameters write csv in r r read file rep in r r set dataframe column names normalization in r r create a list drop na in R rename column in r read xlsx in r r data typesRuby
+how create migration rails ruby for loop ruby each do method ruby each with index how to add column to table rails how to delete a table in rails ruby array has element change column rails example rails kill server comment in ruby how to check ruby version how to I change the name of a column in rails uruby to lower case A Ruby write to file example Add references rails migration how to remove columns from rails how to add to an array ruby ruby find in array if string contain
+string ruby default value rails migration ruby replace certain character get size of array in ruby ruby each array string interpolation ruby append array in ruby drop rails all db rails remove column from model ruby get current datetime heroku restart rails server rails link_to classRust
+hello world rust for loops in rust rust convertinging string to int how to make an array in rust rust match string read file rust rustlang error: linker `link.exe` not found how to index a string in rust range in rust rust get command line arguments how to read from stdin rust array as a parameter rust how to concatenate two &str in rust if let some rust how to split a string by spaces rust casting in rust rust get current directory rust printing string on stdout how to create a window in rust lang display trait rust how to convert int to float in rust rust non derived debug trait example check if a file exists rust rust replace characters rust trait inheritance rust random number in range rust lang sleep rust reverse range rust impl display rustlang try fromPHP
+php append to array php format date php check if string contains word php string contains substring php string to int php parse json php length of array php split string php sql insert php get current date and time php try catch laravel clear cache laravel run seed php loop through array count array php Allowed memory size of 1610612736 bytes exhausted in array php php connect to mysql php array length php sql connection php json encode query sql in php php array to string array_search in php php date now php for loop phhp for loop php delete array item by value not key common array methods php php delete element by valueJava
+int to string java java scanner stack overflow java random number java array declaration How to split a string in Java sort array java java string to int string to int java how to get a user input in java java split string convert string to int java java how to get current date array in java scanner in java how to create an array in java how to take input in java java string to char array convert char to string java list in java .length array java java convert String to int java parse ineger java read from file writing to a file in java length of string java java how to print an array string replace java java data types java check if string is number java check for string lengthHtml
+bootstrap text color bootstarp btn colors radio buttons html HTML button onclick html drop down list how to link css to html bootstrap login form html navigation bar html input types commenting in html html form checkbox bootstrap 4 dropdown html input textarea http status codes bootstrap border color bootstrap 4 center div html background image html select list new line html create a dropdown in html bootstrap bootstrap select box how to use the label tag in html html center button include script in html bootstrap align right video tag html html a href bootstrap display none import js in html html font sizeC++
+change int to string cpp getline in c++ c++ get length of array range of long long in c++ length of string c++ how to sort a vector in c++ convert stirng to int c++ how to reverse a string in c++ string to int c++ c++ reverse string remove value from vector c++ array length c++ linkedlist implementation in c++ find vector in c++ c++ switch case statement remove element by index from vector c++ declaring 2d vector in c++ read a file c++ flutter datetime format convert entire string to lowercase c++ making random numbers in c++ c++ for loop input a string in c++ c++ template function string in cpp convert decimal to binary in c++ list conda environments random number in c++ how to declare a function in c++ how to sort an array c++CSS
+css background image css media queries background color gradient css center a div in css css center image bootstrap btn classes Attack on titan css box shadow background image size css css align center link css with html css bold text css opacity example table border css linear gradient css css flex center background image css css rounded corners box shadow css font size css hide scrollbar css css style placeholder media query css image cover css image size css justify content css text shadow css position sticky css css align items vertical center css media queryTypeScript
+angular navigate using component check if dict key exists python How to download windows 10 ISO React with Typescript how to see all commits in git comments in css angular date pipe how to check whether file exists in python how to check list of open ports in linux how to print array elements in java for loop typescript cannot be loaded because running scripts is disabled on this system Can't bind to 'formGroup' since it isn't a known property of 'form install typescript using npm use google fonts in css angular number pipe see what ports are in use typescript remove object from array looping through two lists python voting results 2020 live google fonts roboto font awesome angular python requests get proxy How to Reload a Component in Angular typescript optional parameters mat-form-field must contain a MatFormFieldControl append to lists python create react app with typescript config get arguments from url flask react children typescriptC#
+c sharp split string c# switct case foreach syntax c# c# get set c# date formats custom string to int c# c# two dimensional array c sharp substring c# string to datetime try catch c# csharp datetime string format how to make a for loop in c# c# how to convert string to int c sharp string replace regex in c# c# initialize array c# user input c sharp int to string c sharp how to read a text file c# create array asp.net c# write string to text file c# length of array c# throw new exception population of the world c sharp string interpolation movement script c# .sh script: check if file exist how to rotate object unity c sharp tryparse for loop c#Kotlin
+for loop kotlin coroutines kotlin android dependency toast in kotlin make array list kotlin setOnClickListener example kotlin kotlin static method user input in kotlin make hashmap kotlin intent kotlin example how to write hello world in kotlin Kotlin round double string 2d array in kotlin kotlin add element to array what is difference between val and var kotlin comments in kotlin kotlin remove name from an activity how to declare string array in kotlin kotlin list add implement spinner in android kotlin Cannot inline bytecode built with JVM target 1.8 into bytecode that is being built with JVM target 1.6. Please specify proper '-jvm-target' option on click in kotlin android recyclerview scroll to bottom android custom AlertDialog theme how to call a function after delay in kotlin android android disable landscape mode kotlin not configured android studio create empty array in kotlin kotlin mutable list implementation random string generator kotlin kotlin in how to set without findviewbyidC
+struct in C size of an array c for loop c ModuleNotFoundError: No module named 'cv2' string to int c read files in c c int to string write in file in c switch statement in c c concatenate strings for loop in c string length c merge sort in c latex font sizes c bubble sort fahrenheit to celsius formula c data types switch case c visual studio code fibonacci series using recursion enum in c c user input how to run a update comand in linux factorial of a given number in c typedef in c fibonacci series in c bool in c how to print in c boolean in c how to print int in cLua
+lua for loop where can i learn lua where do lua tables start loop true childs roblox lua how to make a loop lua while loops lua add table to value lua click detection roblox on touch script length of table lua block commenting lua wait function lua while in lua Lua array add item lua in pairs repeating loop roblox lua How to remove index from table lua not equal print table lua how to get a random number in lua lua string to number roblox check if player has gamepass lua loop through table lua variable types lua round number sleep function lua break in lua Roblox Studio TweenService Example in lua 2020 lua for each in table how to execute scripts when a button gui is pressed robloxMatlab
+ModuleNotFoundError: No module named 'tkinter' to detect if a data frame has nan values matlab matrix zeros matlab zero vector matlab matrix index matlab matrix size find location of max value in array matlab zsh corrupt history file matlab length of array No module named 'imblearn' break loop for matlab matlab read image num to string matlab wait time matlab matlab clear plot fprintf in directory matlab multiple of value matlab if directory exist matlab save mat file script in matlab directory diff(x) matrix matlab matlab time function mean without nan matlab eval matlab variable name matlab read audio isnull in matlab matlab unix time to datetime Unrecognized function or variable 'matlab.internal.addons.updates.file exchange addon.getType FromPackageInfoUrl'. wait until job matlab load value inside job matlab nan size matlabDart
+Flutter turn string to int flutter push route flutter image asset how to show snackbar in flutter flutter list tile how to use hexadecimal color in flutter color() in flutter flutter container rounded corners timer in flutter flutter get current date rounded raisedbutton in flutter switch case in dart how to add padding flutter loop in dart dart card outline container flutter border radius flutter button border radius how to create a toast in flutter generate random int dart declaring and initializing a list in dart text fieldform color flutter toast in flutter New Year's Eve tabs flutter example dart random number text overflow ellipsis flutter text in column flutter overflow ellipsis not working conditionalstatement in widget flutter flutter container margin flutter center rowGo
+mongo console find by id throw new TypeError('Router.use() requires a middleware function but got a ' + gettype(fn)) drop mongo database signIn google firebase flutter golang convert int to string connect google drive to colab drop a collection in mongodb google forms answers golang string split golang convert string to int go add to slice set up google analytics make image go to center of page how to see number of words in google docs mongodb export entire database golang convert string to int64 initialize map in golang google cloudb pricing golang array syntax Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.20.1:test (default-test) on project upload drop mongodb database cross out google docs csgo jump throw bind go string to byte array how to stop google colab from disconnecting mongo db show datbae unzip a file in google colab go for loop how to search google how to delete google projectBASIC
+Microsoft Flight Simulator. how to send basic auth using fetch basic latex document visual basic how to declare a variable vb string to int32 how to open d drive using conda prompt add combobox in datagridview vb.net visual basic script msgbox how to add basic authentication on haproxy backend server mid visual basic function itextsharp landscape a4 Custom exception visual basic shortcut to rename the file on lenovo s340 Delete all data in neo4j removing illlegal char from filename How to configure cryptodredge docker-compose.yml reusable variablesAssembly
+the answer to life the universe and everything hello world in assembly using shape property in flutter for circular corner appending a vector in vector boku ni pico start learning assembly MOD OPERATOR for register in arm assembly array month name hello world x64 assembly cancel shutdown timer No assembly found containing an OwinStartupAttribute. array days of the week Arm assembly fibonacci dot net core 3.1 The type or namespace name 'TestClassAttribute' could not be found (are you missing a using directive or an assembly reference?) matlab machine epsilon program in assembly language to find even numbers from 1 to 10Perl
+perl for loop perl print array perl get date perl array loop perl set date perl print hash perl string length perl set a specific datetime perl http request perl replace substring perl datetime formatting perl last characters perl hash size perl get first characters perl validate integer perl validate id numberDelphi
+groblersdal to middelburg How to read text files in delphi for loop delphi delphi read file get current date delphi Delphi how copy works delete in delphi how to make message
+in delphi Erro ao inserir invalid byte sequence for encoding “UTF8”: 0x00 delphi postgresql length of string in delphi criar procedure/function delphi atalho delphi keydown enter Multi thread delphi get last element of array delphi delphi asking for inpot via dialog boxObjective-C
+get product image woocommerce xcode format code Error: EPERM: operation not permitted, mkdir 'C:\Users\SHUBHAM~KUNWAR' command not found: create-react-app uialertcontroller example objective c nstimer example objective c loop array objective c Error: EPERM: operation not permitted, mkdir 'C:\Users\Anubhab' command not found: create-react-app obj c write file worst programming language vc_map type number how to add undelete texts to textfield in ios obj c get point of intersection of 2 linesScala
+ValueError: If using all scalar values, you must pass an index scala hello world how to add comment in scala comments in scala scala get the first element of a seq how to get the nth element in a list in scala scala get file from url as string scala last element in listHaskell
+list comprehension haskell haskell multiline comment haskell get last element of list last element of list haskell string to list haskell hello world in haskell get first char from string haskellPascal
+pascal online compiler comment in pascal comments in pascal producto de matrices pascalJulia
+how to push an element to array in julia remove character from string julia julia dereference pointerGroovy
+for loop groovy groovy wait time groovy implementation of the interfaceElixir
+map merge elixir elixir random number elixir length of listFortran
+fortran do while fortran int to string write integer value in name fortran 90ActionScript
+visual studio code change terminal color TypeError: Cannot read property 'version' of undefinedClojure
+clojure get list first item how to make a range clojureAbap
+abap concatenate table abap loop exampleScheme
+how to pass unction in scheme how to make a list in scheme
+Browse Other Code Languages
+Abap
+ActionScript
+Assembly
+BASIC
+C
+Clojure
+Cobol
+C++
+C#
+CSS
+Dart
+Delphi
+Elixir
+Erlang
+Fortran
+F#
+Go
+Groovy
+Haskell
+Html
+Java
+Javascript
+Julia
+Kotlin
+Lisp
+Lua
+Matlab
+Objective-C
+Pascal
+Perl
+PHP
+PostScript
+Prolog
+Python
+R
+Ruby
+Rust
+Scala
+Scheme
+Shell/Bash
+Smalltalk
+SQL
+Swift
+TypeScript
+VBA
+WebAssembly
+Whatever
+Grepper
+Features
+Reviews
+Code Answers
+Search Code Snippets
+Pricing
+FAQ
+Welcome
+Browsers Supported
+Grepper Teams
+Documentation
+Adding a Code Snippet
+Viewing & Copying Snippets
+Social
 Twitter
-Youtube
-Linkedin
-Products
-RetracePrefixStackify Hidden Menu Item.NET MonitoringJava MonitoringPHP MonitoringNode.js MonitoringRuby MonitoringPython MonitoringRetrace vs New RelicRetrace vs Application Insights
-Menu RetracePrefixStackify Hidden Menu Item.NET MonitoringJava MonitoringPHP MonitoringNode.js MonitoringRuby MonitoringPython MonitoringRetrace vs New RelicRetrace vs Application InsightsSolutions
-Application Performance ManagementCentralized LoggingCode ProfilingError TrackingApplication & Server MonitoringReal User MonitoringStackify Hidden Menu ItemFor DevelopersFor DevOps
-Menu Application Performance ManagementCentralized LoggingCode ProfilingError TrackingApplication & Server MonitoringReal User MonitoringStackify Hidden Menu ItemFor DevelopersFor DevOpsResources
-What is APM?PricingCase StudiesBlogDocumentationFree eBooksFree WebinarsVideosIdeas PortalROI CalculatorSupportNews
-Menu What is APM?PricingCase StudiesBlogDocumentationFree eBooksFree WebinarsVideosIdeas PortalROI CalculatorSupportNewsCompany
-About UsNewsCareersGDPRSecurity InformationTerms & ConditionsPrivacy PolicySitemap
-Menu About UsNewsCareersGDPRSecurity InformationTerms & ConditionsPrivacy PolicySitemapPO Box 2159Mission, KS 66201816-888-5055
 Facebook
-Twitter
-Youtube
-Linkedin
-© 2020 Stackify
-Subscribe to Stackify's Developer Things NewsletterStay up to date with the latest in software development with Stackify’s Developer Things newsletter.
-Email
-Sign Up Today
-Start Your Free Trial NowNo credit card required. 14 days free.
+Legal
+Privacy Policy
+Terms
+Contact
+support@codegrepper.com
+X
+Register to vote on and add code examples. Join our developer community to improve your dev skills and code like a boss!
+No Good?
+Help us improve our code examples by registering to vote on and add answers. Join our developer community to improve your dev skills and code like a boss!
+Continue with Google
+By continuing, I agree that I have read and agree to Greppers's Terms of Service and Privacy Policy.
+X
+Grepper Account Login Required
+Oops, You will need to install Grepper and log-in to perform this action.
+Install Grepper Here

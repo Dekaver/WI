@@ -1,438 +1,176 @@
-Python: pop from empty list - Stack Overflow
-Stack Overflow
-About
-Products
-For Teams
-Stack Overflow
-Public questions & answers
-Stack Overflow for Teams
-Where developers & technologists share private knowledge with coworkers
-Jobs
-Programming & related technical career opportunities
-Talent
-Recruit tech talent & build your employer brand
-Advertising
-Reach developers & technologists worldwide
-About the company
-Loading…
-Log in
-Sign up
-current community
-Stack Overflow
-help
-chat
-Meta Stack Overflow
-your communities
-Sign up or log in to customize your list.
-more stack exchange communities
-company blog
-People who code: we want your input.
-Take the Survey
-Join Stack Overflow to learn, share knowledge, and build your career.
-Sign up with email
-Sign up
-Sign up with Google
-Sign up with GitHub
-Sign up with Facebook
-Home
-Public
-Questions
-Tags
-Users
-Find a Job
-Jobs
-Companies
-Teams
-Stack Overflow for Teams
-– Collaborate and share knowledge with a private group.
-Create a free Team
-What is Teams?
-Teams
-What’s this?
-Create free Team
-Teams
-Q&A for work
-Connect and share knowledge within a single location that is structured and easy to search.
-Learn more
-Python: pop from empty list
-Ask Question
-Asked
-5 years, 11 months ago
-Active
-1 year, 5 months ago
-Viewed
-59k times
-18
-2
-I am using below line in a loop in my code
-importer = exporterslist.pop(0)
-If exporterslist has no entries or it is null, it returns error: IndexError: pop from empty list. How can I bypass exporterslist with no entries in it?
-One idea I can think of is if exporterslist is not null then importer = exporterslist.pop(0)
-else get the next entry in the loop.
-If the idea is correct, how to code it in python?
-python python-2.7
-Share
-Follow
-edited Aug 24 '19 at 20:47
-Zoe
-23.7k1616 gold badges9999 silver badges133133 bronze badges
-asked Jul 4 '15 at 2:57
-Karvy1Karvy1
-72244 gold badges99 silver badges2424 bronze badges
-1
-What do you mean by "get the next entry in the loop"?
-– dlask
-Jul 4 '15 at 3:01
-Add a comment
-|
-5 Answers
-5
-Active
-Oldest
-Votes
-21
-You're on the right track.
-if exporterslist: #if empty_list will evaluate as false.
-importer = exporterslist.pop(0)
-else:
-#Get next entry? Do something else?
-Share
-Follow
-answered Jul 4 '15 at 3:01
-NightShadeQueenNightShadeQueen
-2,94633 gold badges1919 silver badges3535 bronze badges
-2
-is it must to use 'else' after 'if'?
-– Karvy1
-Jul 4 '15 at 3:18
-3
-nope! You don't need the else clause, you don't have to use it.
-– NightShadeQueen
-Jul 4 '15 at 3:20
-Add a comment
-|
-10
-You can also use a try/except
-try:
-importer = exporterslist.pop(0)
-except IndexError as e:
-print(e)
-If you are always popping from the front you may find a deque a better option as deque.popleft() is
-0(1).
-Share
-Follow
-answered Jul 4 '15 at 19:47
-Padraic CunninghamPadraic Cunningham
-161k2020 gold badges201201 silver badges287287 bronze badges
-1
-Upvoting as this keep the thread-safe property of pop, and is EAFP
-– ofaurax
-Mar 5 at 9:46
-Add a comment
-|
-10
-This one..
-exporterslist.pop(0) if exporterslist else False
-..is somewhat the same as the accepted answer of @nightshadequeen's just shorter:
->>> exporterslist = []
->>> exporterslist.pop(0) if exporterslist else False
-False
-or maybe you could use this to get no return at all:
-exporterslist.pop(0) if exporterslist else None
->>> exporterslist = []
->>> exporterslist.pop(0) if exporterslist else None
->>>
-Share
-Follow
-edited Oct 16 '17 at 17:16
-answered Oct 16 '17 at 17:10
-Gergely MGergely M
-33722 silver badges1010 bronze badges
-Add a comment
-|
-2
-Use this:
-if exporterslist:
-importer = exporterslist.pop(0)
-Share
-Follow
-edited Dec 17 '19 at 0:07
-answered Jul 4 '15 at 3:01
-Utsav TUtsav T
-1,42522 gold badges2121 silver badges3939 bronze badges
-2
-3
-if exporterslist: will do the same job
-– Padraic Cunningham
-Jul 4 '15 at 19:45
-@pedjjj Thank you for your suggestion. Have included it.
-– Utsav T
-Dec 17 '19 at 0:08
-Add a comment
-|
--2
-You can also .pop() only if the list has items in it by determining if the length of the list is 1 or more:
-if len(exporterslist) > 1:
-importer = exporterslist.pop()
-Share
-Follow
-answered Aug 9 '16 at 0:31
-Josh WoodsJosh Woods
-111 bronze badge
-1
-4
-if len(exporterslist) > 0
-– rapt
-Feb 11 '17 at 18:40
-Add a comment
-|
-Your Answer
-Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
-Draft saved
-Draft discarded
-Sign up or log in
-Sign up using Google
-Sign up using Facebook
-Sign up using Email and Password
-Submit
-Post as a guest
-Name
-Email
-Required, but never shown
-Post as a guest
-Name
-Email
-Required, but never shown
-Post Your Answer
-Discard
-By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
-Not the answer you're looking for? Browse other questions tagged python python-2.7
-or ask your own question.
-The Overflow Blog
-Using low-code tools to iterate products faster
-Podcast 345: A good software tutorial explains the How. A great one explains…
-Featured on Meta
-Take the 2021 Developer Survey
-Visit chat
-Linked
-4
-Pop index out of range
-0
-Python : pop() inside while loop returns error
-2
-Pop from empty list
-1
-why do the assignment statement in cycle only executes once in python
-0
-Pop() an element of a list in the list of lists
-0
-Deleting nth element from a list Python 2.7
-0
-Python: list.pop(0) gives index error while list is full
-0
-Pygame datetime troubles
-0
-Pop from empty list error ONLY on lists with even number of elements
-0
-Index error: pop from empty list
-See more linked questions
-Related
-5679
-How do I merge two dictionaries in a single expression (taking union of dictionaries)?
-3231
-How do I check if a list is empty?
-5329
-How to execute a program or call a system command from Python
-6195
-What are metaclasses in Python?
-3642
-Finding the index of an item in a list
-6696
-Does Python have a ternary conditional operator?
-4099
-How to make a flat list out of a list of lists?
-1465
-Proper way to declare custom exceptions in modern Python?
-3467
-How do I list all files of a directory?
-3596
-Does Python have a string 'contains' substring method?
-Hot Network Questions
-Does gravity bend gravity?
-How to indicate a checkbox/toggle is "always on"
-Why some CRS are deprecated in QGIS?
-Heating of hydraulic oil with hardtail electric MTB brakes
-Is 2 hours 50 mins sufficient in Heathrow to connecting flight with different tickets and airlines
-Mandatory tabs-an unusual pattern?
-How to remove the new weather info from the taskbar?
-History of /f/ sound in Russian
-Simplify K combinatory logic expression
-Why are most women in anime housewives instead of being independent?
-Should I notify a med school about their student's cheating history?
-Can black convert a +5.6 game into a draw (assuming both players play optimally)?
-In Bayesian statistics, data is considered nonrandom but can have a probability or be conditioned on. How?
-Evaluation order of an APL n-train
-Is there any country that jumped to developed status during the past 75 years after WW2?
-Are there any rules for digging out of a grave?
-how to add existing user to existing group id (not group name)?
-Refueling a Mars mission on the way
-Why is Ken's beer "gay"?
-Is there a diff() function in Julia DataFrames like pandas?
-Dealing with extremely inexperienced developers who have daily deadlines?
-Emit random objects inside array-ed object
-"Which dreams, indeed, are ambition" in Hamlet Act 2, Scene 2
-Getting “Bye Bye Big Sur” error on installing Big Sur
-more hot questions
-Question feed
-Subscribe to RSS
-Question feed
-To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
-lang-py
-Stack Overflow
-Questions
-Jobs
-Developer Jobs Directory
-Salary Calculator
-Help
-Mobile
-Products
-Teams
-Talent
-Advertising
-Enterprise
-Company
-About
-Press
-Work Here
-Legal
-Privacy Policy
-Terms of Service
-Contact Us
-Cookie Settings
-Cookie Policy
-Stack Exchange Network
-Technology
-Life / Arts
-Culture / Recreation
-Science
-Other
-Stack Overflow
-Server Fault
-Super User
-Web Applications
-Ask Ubuntu
-Webmasters
-Game Development
-TeX - LaTeX
-Software Engineering
-Unix & Linux
-Ask Different (Apple)
-WordPress Development
-Geographic Information Systems
-Electrical Engineering
-Android Enthusiasts
-Information Security
-Database Administrators
-Drupal Answers
-SharePoint
-User Experience
-Mathematica
-Salesforce
-ExpressionEngine® Answers
-Stack Overflow em Português
-Blender
-Network Engineering
-Cryptography
-Code Review
-Magento
-Software Recommendations
-Signal Processing
-Emacs
-Raspberry Pi
-Stack Overflow на русском
-Code Golf
-Stack Overflow en español
-Ethereum
-Data Science
-Arduino
-Bitcoin
-Software Quality Assurance & Testing
-Sound Design
-Windows Phone
-more (29)
-Photography
-Science Fiction & Fantasy
-Graphic Design
-Movies & TV
-Music: Practice & Theory
-Worldbuilding
-Video Production
-Seasoned Advice (cooking)
-Home Improvement
-Personal Finance & Money
-Academia
-Law
-Physical Fitness
-Gardening & Landscaping
-Parenting
-more (10)
-English Language & Usage
-Skeptics
-Mi Yodeya (Judaism)
-Travel
-Christianity
-English Language Learners
-Japanese Language
-Chinese Language
-French Language
-German Language
-Biblical Hermeneutics
-History
-Spanish Language
-Islam
-Русский язык
-Russian Language
-Arqade (gaming)
-Bicycles
-Role-playing Games
-Anime & Manga
-Puzzling
-Motor Vehicle Maintenance & Repair
-Board & Card Games
-Bricks
-Homebrewing
-Martial Arts
-The Great Outdoors
-Poker
-Chess
-Sports
-more (16)
-MathOverflow
-Mathematics
-Cross Validated (stats)
-Theoretical Computer Science
-Physics
-Chemistry
-Biology
-Computer Science
-Philosophy
-Linguistics
-Psychology & Neuroscience
-Computational Science
-more (10)
-Meta Stack Exchange
-Stack Apps
-API
-Data
-Blog
-Facebook
-Twitter
-LinkedIn
-Instagram
-site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.6.9.39464
-Stack Overflow works best with JavaScript enabled
-Your privacy
-By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
-Accept all cookies
-Customize settings
+pandas.Series.to_numpy — pandas 0.24.0rc1 documentation
+Navigation
+index
+modules |
+next |
+previous |
+pandas 0.24.0rc1 documentation »
+API Reference »
+Series »
+pandas.Series »
+Table Of Contents
+What's New
+Installation
+Contributing to pandas
+Package overview
+10 Minutes to pandas
+Tutorials
+Cookbook
+Intro to Data Structures
+Essential Basic Functionality
+Working with Text Data
+Options and Settings
+Indexing and Selecting Data
+MultiIndex / Advanced Indexing
+Computational tools
+Working with missing data
+Group By: split-apply-combine
+Merge, join, and concatenate
+Reshaping and Pivot Tables
+Time Series / Date functionality
+Time Deltas
+Categorical Data
+Nullable Integer Data Type
+Visualization
+Styling
+IO Tools (Text, CSV, HDF5, …)
+Enhancing Performance
+Sparse data structures
+Frequently Asked Questions (FAQ)
+rpy2 / R interface
+pandas Ecosystem
+Comparison with R / R libraries
+Comparison with SQL
+Comparison with SAS
+Comparison with Stata
+API Reference
+Input/Output
+General functions
+Series
+Constructor
+Attributes
+Conversion
+pandas.Series.astype
+pandas.Series.infer_objects
+pandas.Series.convert_objects
+pandas.Series.copy
+pandas.Series.bool
+pandas.Series.to_numpy
+pandas.Series.to_period
+pandas.Series.to_timestamp
+pandas.Series.to_list
+pandas.Series.get_values
+pandas.Series.__array__
+Indexing, iteration
+Binary operator functions
+Function application, GroupBy & Window
+Computations / Descriptive Stats
+Reindexing / Selection / Label manipulation
+Missing data handling
+Reshaping, sorting
+Combining / joining / merging
+Time series-related
+Accessors
+Plotting
+Serialization / IO / Conversion
+Sparse
+DataFrame
+Pandas Arrays
+Panel
+Indexing
+Date Offsets
+Frequencies
+Window
+GroupBy
+Resampling
+Style
+Plotting
+General utility functions
+Extensions
+Developer
+Internals
+Extending Pandas
+Release Notes
+Search
+Enter search terms or a module, class or function name.
+pandas.Series.to_numpy¶
+Series.to_numpy(dtype=None, copy=False)[source]¶
+A NumPy ndarray representing the values in this Series or Index.
+New in version 0.24.0.
+Parameters:
+dtype : str or numpy.dtype, optional
+The dtype to pass to numpy.asarray()
+copy : bool, default False
+Whether to ensure that the returned value is a not a view on
+another array. Note that copy=False does not ensure that
+to_numpy() is no-copy. Rather, copy=True ensure that
+a copy is made, even if not strictly necessary.
+Returns:
+numpy.ndarray
+See also
+Series.array
+Get the actual data stored within.
+Index.array
+Get the actual data stored within.
+DataFrame.to_numpy
+Similar method for DataFrame.
+Notes
+The returned array will be the same up to equality (values equal
+in self will be equal in the returned array; likewise for values
+that are not equal). When self contains an ExtensionArray, the
+dtype may be different. For example, for a category-dtype Series,
+to_numpy() will return a NumPy array and the categorical dtype
+will be lost.
+For NumPy dtypes, this will be a reference to the actual data stored
+in this Series or Index (assuming copy=False). Modifying the result
+in place will modify the data stored in the Series or Index (not that
+we recommend doing that).
+For extension types, to_numpy() may require copying data and
+coercing the result to a NumPy type (possibly object), which may be
+expensive. When you need a no-copy reference to the underlying data,
+Series.array should be used instead.
+This table lays out the different dtypes and default return types of
+to_numpy() for various dtypes within pandas.
+dtype
+array type
+category[T]
+ndarray[T] (same dtype as input)
+period
+ndarray[object] (Periods)
+interval
+ndarray[object] (Intervals)
+IntegerNA
+ndarray[object]
+datetime64[ns]
+datetime64[ns]
+datetime64[ns, tz]
+ndarray[object] (Timestamps)
+Examples
+>>> ser = pd.Series(pd.Categorical(['a', 'b', 'a']))
+>>> ser.to_numpy()
+array(['a', 'b', 'a'], dtype=object)
+Specify the dtype to control how datetime-aware data is represented.
+Use dtype=object to return an ndarray of pandas Timestamp
+objects, each with the correct tz.
+>>> ser = pd.Series(pd.date_range('2000', periods=2, tz="CET"))
+>>> ser.to_numpy(dtype=object)
+array([Timestamp('2000-01-01 00:00:00+0100', tz='CET', freq='D'),
+Timestamp('2000-01-02 00:00:00+0100', tz='CET', freq='D')],
+dtype=object)
+Or dtype='datetime64[ns]' to return an ndarray of native
+datetime64 values. The values are converted to UTC and the timezone
+info is dropped.
+>>> ser.to_numpy(dtype="datetime64[ns]")
+... # doctest: +ELLIPSIS
+array(['1999-12-31T23:00:00.000000000', '2000-01-01T23:00:00...'],
+dtype='datetime64[ns]')
+Navigation
+index
+modules |
+next |
+previous |
+pandas 0.24.0rc1 documentation »
+API Reference »
+Series »
+pandas.Series »
+Scroll To Top

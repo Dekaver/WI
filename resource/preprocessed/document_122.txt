@@ -1,369 +1,377 @@
-[Solved] Please, help me.i can't find what is error in my program in NETBEANS IDE - CodeProject
-14,916,378 members
-Sign in
-Email
-Password
-Forgot your password?
-Sign in with
-Search within:
-Articles
-Quick Answers
-Messages
-Use my saved content filters
-home
-articles
-Browse Topics>
-Latest Articles
-Top Articles
-Posting/Update Guidelines
-Article Help Forum
-Submit an article or tip
-Import GitHub Project
-Import your Blog
-quick answersQ&A
-Ask a Question
-View Unanswered Questions
-View All Questions
-View C# questions
-View C++ questions
-View Visual Basic questions
-View Javascript questions
-View Python questions
-discussionsforums
-All Message Boards...
-Application Lifecycle>
-Running a Business
-Sales / Marketing
-Collaboration / Beta Testing
-Work
-Issues
-Design and Architecture
-Artificial Intelligence
-ASP.NET
-JavaScript
-Internet of Things
-C / C++ / MFC>
-ATL /
-WTL / STL
-Managed C++/CLI
-C#
-Free Tools
-Objective-C and Swift
-Database
-Hardware & Devices>
-System Admin
-Hosting and Servers
-Java
-Linux Programming
-.NET (Core and Framework)
-Android
-iOS
-Mobile
-WPF
-Visual Basic
+Python indexerror: list index out of range Solution | Career Karma
+Home
+Top Projects
+All Star Projects
 Web Development
-Site Bugs / Suggestions
-Spam and Abuse Watch
-featuresstuff
-Competitions
-Conferences
-News
-The Insider Newsletter
-The Daily Build Newsletter
-Newsletter archive
-Surveys
-Product Showcase
-CodeProject Stuff
-communitylounge
-Who's Who
-Most Valuable Professionals
-The Lounge
-Where I Am: Member Photos
-The Insider News
-The Weird & The Wonderful
-help?
-What is 'CodeProject'?
-General FAQ
-Ask a Question
-Bugs and Suggestions
-Article Help Forum
-About Us
-Ask a Question
-All Questions
-All Unanswered
-FAQ
-Please, help me.i can't find what is error in my program in NETBEANS IDE
-Please Sign up or sign in
-to vote.
-0.00/5
-(No votes)
-See more:
-JavaJavaSEJavaSE6netbeans
-C#Copy Code
-public class JavaApplication19 {
-public static void main(String[] args) {
-Lesson A = new Lesson();
-Lesson B = new Lesson();
-Lesson C = new Lesson();
-Lesson D = new Lesson("CMS 202", "Applied Linear Algebra", 3, 94);
-A.setCode("CMS 205");
-B.setCode("CMS 220");
-C.setCode("GERM 201");
-A.setName("Object Oriented Programming");
-B.setName("Web Programming 1");
-C.setName("German Language 1");
-A.setNote(99);
-B.setNote(97);
-C.setNote(95);
-A.setCredit(3);
-B.setCredit(3);
-C.setCredit(3);
-Student s = new Student("Nazli Elizade");
-System.out.println("Nazli's GPA is" + s.getGPA());
-System.out.println("Nazli's GPA is" +s.getTotalcredit());
-}
-}
-C#Copy Code
-package javaapplication19;
-public class Student {
-private String name;
-private Lesson listLesson[];
-private int size = 20;
-private int number = 0;
-public Student(String name) {
-this.name = name;
-listLesson = new Lesson[size];
-}
-public void addLesson(Lesson l) {
-if (number == size)
-{
-Lesson ListNew[] = new Lesson[size + 1];
-for (int i = 0; i < size; i++) {
-ListNew[i] = listLesson[i];
-}
-listLesson = ListNew;
-size++;
-}
-}
-public double getTotalcredit() {
-double t1;
-double total = 0;
-for (int i = 0; i < number; i++) {
-if (k.getNote() > 60) {
-t1 = k.getNote() * k.getCredit();
-total += t1;
-}
-}
-return total;
-}
-public double getGPA() {
-double GPA = 0.0;
-double t1;
-double total = 0.0;
-double totalcredit=1;
-for (int i = 0; i < number; i++) {
-if (k.getNote() > 60) {
-t1 = k.getNote() * k.getCredit();
-totalcredit += k.getCredit();
-total += t1;
-}
-GPA = total / (totalcredit-1);
-return GPA;
-}
-C#Copy Code
-public class Lesson {
-private String code;
-private String name;
-private double note;
-private int credit;
-public Lesson() {
-this.code = null;
-this.name = null;
-this.note = 0.0;
-this.credit = 0;
-}
-public Lesson(String c, String n, double note, int cre) {
-this.code = c;
-this.name = n;
-this.note = note;
-this.credit = cre;
-}
-public String getCode() {
-return code;
-}
-public void setCode(String code) {
-this.code = code;
-}
-public String getName() {
-return name;
-}
-public void setName(String name) {
-this.name = name;
-}
-public double getNote() {
-return note;
-}
-public void setNote(double note) {
-this.note = note;
-}
-public int getCredit() {
-return credit;
-}
-public void setCredit(int credit) {
-this.credit = credit;
-}
-public String toString() {
-return ("code=" + code + " " + "name=" + name + " " + "note=" + note + " " + "credit=" + credit);
-}
-}
-What I have tried:
-There is no any error in this program,but when i run it ,error appears and it is like this:
-C#Copy Code
-Exception in thread "main" java.lang.RuntimeException: Uncompilable source code - missing return statement
-at javaapplication19.Student.getGPA(Student.java:52)
-at javaapplication19.JavaApplication19.main(JavaApplication19.java:32)
-C:\Users\User\AppData\Local\NetBeans\Cache\8.1\executor-snippets\run.xml:53: Java returned: 1
-BUILD FAILED (total time: 1 second)
-When i click what this error points,i am reached to getGPA function.but please,help me what is problem in my program?
-i wan to get student's GPA with this program.
-I have searched about it,but i can't solve it.
-Posted 25-Oct-16 2:02am
-Member 12702056
-Updated 25-Oct-16 2:25am
-v4
-Add a Solution
-Comments
-[no name]
-25-Oct-16 8:12am
-What is returned from that function when the for loop doesn't do anything? It's exactly what the error message is telling you. Why did you feel the need to post so much code that has nothing to do with your problem?
-2
-solutions
-Top Rated
-Most Recent
-Please Sign up or sign in
-to vote.
-Solution 1
-Accept Solution
-Reject Solution
-Come on!!!
-Can't you read error messages and trace?
-Quote:Exception in thread "main" java.lang.RuntimeException: Uncompilable source code - missing return statement
-It means you have a method somewhere that does not return a value, but should...So it can not be compiled...
-Quote:at javaapplication19.Student.getGPA(Student.java:52)
-This one tells you where you missed the return...
-Now looking into getGPA...
-JavaCopy Code
-public double getGPA() {
-// ...
-for (int i = 0; i < number; i++) {
-// ...
-return GPA;
-}
-}
-Now, who told you it will enter the for loop?
-Permalink
-Posted 25-Oct-16 2:19am
-Kornfeld Eliyahu Peter
-Please Sign up or sign in
-to vote.
-Solution 2
-Accept Solution
-Reject Solution
-Can you bring return GPA; statement out side the for loop and try.
-Permalink
-Posted 25-Oct-16 2:22am
-rah_sin
-Comments
-Member 12702056
-25-Oct-16 8:27am
-thank you a lot,i tried,but now problem with "k" variable, i don't know how can i solve it?
-Richard MacCutchan
-25-Oct-16 8:55am
-Because there is no k variable initialised anywhere. You should go back to your study notes and look more closely at classes and object. It would also help you to use meaningful variable names rather than single letters.
-Add a Solution
-Add your solution here
-B
-I
-U
-S
-small
-BIG
-code
-Plain TextASMASPASP.NETBASICBATC#C++COBOLCoffeeScriptCSSDartdbaseF#FORTRANHTMLJavaJavascriptKotlinLuaMIDLMSILObjectiveCPascalPERLPHPPowerShellPythonRazorRubyScalaShellSLNSQLSwiftT4TerminalTypeScriptVBVBScriptXMLvar
-<
->
-&
-link
-[^]
-encode
-untab
-case
-indent
-outdent
-OKPaste as
-Strip HTMLEncode HTMLPaste as-isCode blockQuoted TextBest guess
-To display as
-Treat my content as plain text, not as HTML
-Preview 0
-…
-Existing Members
-Sign in to your account
-...or Join us
-Download, Vote, Comment, Publish.
-Your Email
-Password
-Forgot your password?
-Your Email
-This
-email is in use. Do you need your password?
-Optional Password
-I have read and agree to the Terms of Service and Privacy Policy
-Please subscribe me to the CodeProject newsletters
-Submit your solution!
-When answering a question please:
-Read the question carefully.
-Understand that English isn't everyone's first language so be lenient of bad
-spelling and grammar.
-If a question is poorly phrased then either ask for clarification, ignore it, or
-edit the question and fix the problem. Insults are not welcome.
-Don't tell someone to read the manual. Chances are they have and don't get it.
-Provide an answer or move on to the next question.
-Let's work to help developers, not make them feel stupid.
-This content, along with any associated source code and files, is licensed under The Code Project Open License (CPOL)
-Top Experts
-Last 24hrsThis month
-OriginalGriff
-341
-Richard Deeming
-135
-Richard MacCutchan
-100
-CPallini
-85
-Greg Utas
-35
-OriginalGriff
-2,102
-Richard MacCutchan
-890
-Richard Deeming
-800
-CPallini
-635
-Patrice T
-459
-Advertise
-Privacy
-Cookies
-Terms of Use
-Last Updated 25 Oct 2016
-Layout: fixed
-|
-fluid
-Copyright © CodeProject, 1999-2021
-All Rights Reserved.
-Web01
-2.8.20210530.1
-CodeProject,
-20 Bay Street, 11th Floor Toronto, Ontario, Canada M5J 2N8
-+1 (416) 849-8900
+Mobile Development
+Design
+Data Science
+Bootcamps
+Best Coding Bootcamps
+Best Online Bootcamps
+Best Web Design
+Bootcamps
+Best Data Science Bootcamps
+Best Data Analytics Bootcamps
+Best Cyber Security Bootcamps
+Best ISA Bootcamps 2020
+Programs
+Web Development
+Mobile Development
+Software Engineer
+Data Science
+Cybersecurity
+Product Management
+Digital Marketing
+UX/UI Designer
+Database Administration
+Social Media Management
+InfoSec Analyst
+Quality Assurance Engineer
+SEO Manager
+Computer Systems Analyst
+WordPress developer
+Blog
+Bootcamps
+Coding
+Career Resources
+Tech Fields
+News & Commentary
+About
+Company
+Jobs
+Values
+Publication
+Press
+Home
+Top Projects
+All Star Projects
+Web Development
+Mobile Development
+Design
+Data Science
+Bootcamps
+Best Coding Bootcamps
+Best Online Bootcamps
+Best Web Design
+Bootcamps
+Best Data Science Bootcamps
+Best Data Analytics Bootcamps
+Best Cyber Security Bootcamps
+Best ISA Bootcamps 2020
+Programs
+Web Development
+Mobile Development
+Software Engineer
+Data Science
+Cybersecurity
+Product Management
+Digital Marketing
+UX/UI Designer
+Database Administration
+Social Media Management
+InfoSec Analyst
+Quality Assurance Engineer
+SEO Manager
+Computer Systems Analyst
+WordPress developer
+Blog
+Bootcamps
+Coding
+Career Resources
+Tech Fields
+News & Commentary
+About
+Company
+Jobs
+Values
+Publication
+Press
+Sign in
+Front Page
+Bootcamps
+Popular Bootcamps
+Bootcamp Prep
+Bootcamp Financing
+University Bootcamps
+Bootcamp Grads
+Coding
+Coding Tools
+HTML
+CSS
+Java
+JavaScript
+Python
+C++
+Ruby
+SQL
+Git
+Career Resources
+Career Advice
+Tech Interviews
+Tech Salaries
+Tech Cities
+Research
+Tech Fields
+Web Development
+Software Engineering
+Web Design
+Data Science
+Higher Ed
+Associate
+Bachelor’s
+Master’s
+Doctoral
+Certifications
+Trade Schools
+About
+HomePython TutorialsPython indexerror: list index out of range Solution
+Python Tutorials
+Python indexerror: list index out of range Solution
+James Gallagher
+Aug 1, 2020
+0
+0 views
+Facebook
+Twitter
+LinkedIn
+IndexErrors are one of the most common types of runtime errors in Python. They’re raised when you try to access an index value inside a Python list that does not exist. In most cases, index errors are easy to resolve. You just need to do a little bit of debugging.
+In this tutorial, we’re going to talk about the “indexerror: list index out of range” error. We’ll discuss how it works and walk through an example scenario where this error is present so that we can solve it.
+The Problem: indexerror: list index out of range
+As always, the best place to start is to read and break down our error message:
+indexerror: list index out of range
+This error message tells us that we’re trying to access a value inside an array that does not have an index position.
+In Python, index numbers start from 0. Here’s a typical Python array:
+programming_languages = ["Java", "Python", "C++"]
+This array contains three values. The first list element, Java, has the index value 0. Each subsequent value has an index number 1 greater than the last. For instance, Python’s index value is 1.
+If we try to access an item at the index position 3, an error will be returned. The last item in our array has the index value 2.
+Example Scenarios (and Solutions)
+There are two common scenarios in which the “list index out of range” error is raised:
+When you try to iterate through a list and forget that lists are indexed from zero.When you forget to use range() to iterate over a list.
+» MORE:  Python AttributeError: ‘numpy.ndarray’ object has no attribute ‘append’ SolutionLet’s walk through both of these scenarios.
+Lists Are Indexed From Zero
+The following program prints out all the values in a list called “programming_languages” to the Python shell:
+programming_languages = ["Java", "Python", "C++"]
+count = 0
+while count <= len(programming_languages):
+print(programming_languages[count])
+count += 1
+First, we have declared two variables. The variable “programming_languages” stores the list of languages that we want to print to the console. The variable “count” is used to track how many values we have printed out to the console.
+Next, we have declared a while loop. This loop prints out the value from the “programming_languages” at the index position stored in “count”. Then, it adds 1 to the “count” variable. This loop continues until the value of “count” is no longer less than or equal to the length of the “programming_languages” list.
+Let’s try to run our code:
+Java
+Python
+C++
+Traceback (most recent call last):
+File "main.py", line 5, in <module>
+print(programming_languages[count])
+IndexError: list index out of range
+All the values in our list are printed to the console but an error is raised. The problem is that our loop keeps going until the value of “count” is no longer less than or equal to the length of “programming_languages”. This means that its last iteration will check for:
+programming_languages[3]
+This value does not exist. This causes an IndexError. To solve this problem, we can change our operator from <= to <. This will ensure that our list only iterates until the value of “count” is no longer less than the length of “programming_languages”. Let’s make this revision:
+programming_languages = ["Java", "Python", "C++"]
+count = 0
+while count < len(programming_languages):
+print(programming_languages[count])
+count += 1
+Our code returns:
+Java
+Python
+C++
+We’ve successfully solved the error! Our loop is no longer trying to print out programming_languages[3]. It stops when the value of “count” is equal to 3 because 3 is not less than the length of “programming_languages”.
+» MORE:  Python Write to File: A GuideForget to Use range()
+When you’re iterating over a list of numbers, it’s easy to forget to include a range() statement. If you are accessing items in this list, an error may be raised.
+Consider the following code:
+ages = [9, 10, 9]
+for age in ages:
+print(ages[age])
+This code should print out all the values inside the “ages” array. This array contains the ages of students in a middle school class. Let’s run our program and see what happens:
+Traceback (most recent call last):
+File "main.py", line 4, in <module>
+print(ages[age])
+IndexError: list index out of range
+An error is raised. Let’s add a print statement inside our loop to see the value of “age” in each iteration to see what has happened:
+ages = [9, 10, 9]
+for age in ages:
+print(age)
+print(ages[age])
+Our code returns:
+9
+Traceback (most recent call last):
+File "main.py", line 5, in <module>
+print(ages[age])
+IndexError: list index out of range
+The first age, 9, is printed to the console. However, the value of “age” is an actual value from “ages”. It’s not an index number. On the “print(ages[age])” line of code, we’re trying to access an age by its index number.
+When we run our code, it checks for: ages[9]. The value of “age” is 9 in the first iteration. There is no item in our “ages” list with this value.
+To solve this problem, we can use a range() statement to iterate through our list of ages:
+ages = [9, 10, 9]
+for age in range(0, len(ages)):
+print(ages[age])
+Let’s run our code again:
+9
+10
+9
+All of the values from the “ages” array are printed to the console. The range() statement creates a list of numbers in a particular range. In this case, the range [0, 1, 2] is created. These numbers can then be used to access values in “ages” by their index number.
+» MORE:  Python args and kwargs: A GuideAlternatively, we could use a “for…in” loop without using indexing:
+ages = [9, 10, 9]
+for age in ages:
+print(age)
+This code returns:
+9
+10
+9
+Our code does not try to access any values by index from the “ages” array. Instead, our loop iterates through each value in the “ages” array and prints it to the console.
+Conclusion
+IndexErrors happen all the time. To solve the “indexerror: list index out of range” error, you should make sure that you’re not trying to access a non-existent item in a list.
+If you are using a loop to access an item, make sure that loop accounts for the fact that lists are indexed from zero. If that does not solve the problem, check to make sure that you are using range() to access each item by its index value.
+Now you’re ready to solve the “indexerror: list index out of range” error like a Python expert!
+About us: Career Karma is a platform designed to help job seekers find, research, and connect with job training programs to advance their careers. Learn about the CK publication.
+What's Next?
+Want to take action?
+Get matched with top bootcamps
+Want to dive deeper?
+Ask a question to our community
+Want to explore tech careers?
+Take our careers quiz
+James Gallagher
+James Gallagher is a self-taught programmer and the technical content manager at Career Karma. He has experience in range of programming languages and extensive expertise in Python, HTML, CSS, and JavaScript. James has written hundreds of programming tutorials, and he frequently contributes to publications like Codecademy, Treehouse, Repl.it, Afrotech, and others. He also serves as a researcher at Career Karma, publishing comprehensive reports on the bootcamp market and income share agreements.
+Read more by James Gallagher
+Share This
+Previous ArticlePython nameerror name is not defined Solution
+Next ArticlePython typeerror: ‘int’ object is not subscriptable Solution
+Aug 1, 2020
+Comments (0)
+Leave a Reply Cancel replyYour email address will not be published. Required fields are marked *Your CommentName *
+Email *
+Website
+Get offers from top bootcampsTake the stress out of picking a bootcamp
+See matches nowTop Community PostsHow long does it take to become a full stack web developer?Marcus Hayes in Full-stack DevelopmentWhat are the laptop requirements for programming?Danny Fuentes in Beginners$2 million in COVID19 ScholarshipsTimur Meyster in Applying to BootcampsPopular ArticlesBest Online BootcampsBest Tech Jobs 2021What is Coding Used For?How Much Do Coders Make?Best Free BootcampsSee all articlesCareer GuidesWeb DevelopmentSoftware EngineeringData ScienceWeb DesignCyber SecuritySee all guidesFree prep coursesFlatiron School Prep80+ hours
+Easy80+ hours of HTML, CSS & JavaScriptKenzie School Prep80+ hours
+Easy20+ hours of HTML & CSSGeneral Assembly Prep50+ hours
+EasyLearn web development basics in HTML, CSS, JavaScript by building projectssee all prep courses
+Get matches
+from top bootcamps
+Select your interest:
+Interest
+Software Engineering
+Design
+Data Science
+Data Analytics
+Cybersecurity Analytics
+Technology Sales
+Select your preferred pace:
+Begin typing a name to filter
+Full-time
+Part-time
+Self-paced
+Begin typing a name to filter
+Full-time
+Part-time
+Self-paced
+See Matches
+Find the Best Online Course for YouGet Matched
+Related Articles
+Python Tutorials
+Python JSONDecodeError Explanation and Solution
+Python Tutorials
+Python Index: A Step-By-Step Guide
+Python Tutorials
+How to Use Python extend()
+Python Tutorials
+Python ValueError: list.remove(x): x not in list Solution
+Home
+About
+Careers
+Mission
+Blog
+Press
+Terms & conditions
+© 2021 Career Karma
+Rankings
+Best Coding Bootcamps
+Best Online Bootcamps
+Best Web Design Bootcamps
+Best Data Science Bootcamps
+Best Data Analytics Bootcamps
+Best Cyber Security Bootcamps
+Best ISA Bootcamps 2020
+See all
+Comparisons
+Flatiron School vs Fullstack Academy
+Hack Reactor vs App Academy
+Fullstack Academy vs Hack Reactor
+Thinkful vs General Assembly
+Flatiron School vs Thinkful
+General Assembly vs Flatiron School
+App Academy vs Lambda School
+General Assembly vs Hack Reactor
+Springboard vs Thinkful
+See all
+Locations
+San Francisco Bootcamps
+New York Bootcamps
+Los Angeles Bootcamps
+Chicago Bootcamps
+Seattle Bootcamps
+Atlanta Bootcamps
+Austin Bootcamps
+See all
+Schools
+Kenzie Academy
+Flatiron School
+Thinkful
+General Assembly
+Springboard
+Galvanize
+Hack Reactor
+App Academy
+Bloc
+See all
+Careers
+Software Engineering
+UX/UI Design
+Data Science
+Web Development
+Mobile Development
+Cybersecurity
+Product Management
+See all
+Subjects
+JavaScript
+Python
+Ruby
+Java
+Swift
+Android
+.Net
+React
+Angular
+See all
+Tell us about you and we will match you with top rated bootcamps with flexible payment options, income sharing (ISAs), or money-back guarantees.
+Select your interest:
+Software Engineering
+Design
+Data Science
+Data Analytics
+Cybersecurity Analytics
+Technology Sales
+First Name
+Last Name
+Email
+Phone Number
+GET MATCHED
+Find the right bootcamp for you
+By continuing you indicate that you have read and agree to
+Career Karma Terms of Service and Privacy Policy
+X
+X
+Jump start your tech career
+Learn the most in-demand skills
+Get started now
+Lost Password Back ⟶
+Login
+Register
+Get new password
+Lost Password?
+Login
+Registration is disabled.

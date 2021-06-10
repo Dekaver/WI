@@ -1,49 +1,512 @@
-What is the meaning of invalid literal for int() with base = ' '? - GeeksforGeeksSkip to content
-Tutorials
-Algorithms
-Analysis of Algorithms
-Asymptotic AnalysisWorst, Average and Best CasesAsymptotic NotationsLittle o and little omega notationsLower and Upper Bound TheoryAnalysis of LoopsSolving RecurrencesAmortized AnalysisWhat does 'Space Complexity' mean ?Pseudo-polynomial AlgorithmsPolynomial Time Approximation SchemeA Time Complexity QuestionSearching AlgorithmsSorting AlgorithmsGraph AlgorithmsPattern SearchingGeometric AlgorithmsMathematicalRandomized AlgorithmsGreedy AlgorithmsDynamic ProgrammingDivide and ConquerBacktrackingBranch and BoundAll AlgorithmsData Structures
-ArraysLinked ListStackQueueBinary TreeBinary Search TreeHeapHashingGraphAdvanced Data StructureMatrixStringsAll Data StructuresLanguages
-CC++JavaPythonC#JavascriptjQuerySQLPHPScalaPerlGo LanguageHTMLCSSKotlinInterview Corner
-Company PreparationTop TopicsPractice Company QuestionsInterview ExperiencesExperienced InterviewsInternship InterviewsCompetititve ProgrammingDesign PatternsMultiple Choice QuizzesGATE
-GATE Computer Science NotesLast Minute NotesGATE CS Solved PapersGATE CS Original Papers and Official KeysGATE 2021 DatesGATE CS 2021 SyllabusImportant Topics for GATE CSISRO CS
-ISRO CS Solved PapersISRO CS Original Papers and Official KeysISRO CS Syllabus for Scientist/Engineer ExamUGC NET CS
-UGC NET CS Notes Paper IIUGC NET CS Notes Paper IIIUGC NET CS Solved PapersCS Subjects
-MathematicsOperating SystemDBMSComputer NetworksComputer Organization and ArchitectureTheory of ComputationCompiler DesignDigital LogicSoftware EngineeringWeb Technologies
-HTMLCSSJavascriptAngularJSReactJSNodeJSBootstrapjQueryPHPSchool Learning
-School ProgrammingMathematics
-AlgebraTrigonometryStatisticsProbabilityGeometryMensurationCalculusMaths Notes (Class 8-11)
-Class 8 NotesClass 9 NotesClass 10 NotesClass 11 NotesNCERT Solutions
-Class 8 Maths SolutionClass 9 Maths SolutionClass 10 Maths SolutionClass 11 Maths SolutionClass 12 Maths SolutionRD Sharma Solutions
-Class 8 Maths SolutionClass 9 Maths SolutionClass 10 Maths SolutionClass 11 Maths SolutionClass 12 Maths SolutionStudent
-Campus Ambassador ProgramSchool Ambassador ProgramProjectGeek of the MonthCampus Geek of the MonthPlacement CourseCompetititve ProgrammingTestimonialsGeek on the TopCareersInternshipJobs
-Apply for JobsPost a JobCourses
-WriteCome write articles for us and get featuredPracticeLearn and code with the best industry expertsPremiumGet access to ad-free content, doubt assistance and more!JobsCome and find your dream job with usGeeks DigestQuizzesGeeks CampusGblog ArticlesIDECampus Mantri
-HomeCoursesGBlogPuzzlesWhat's New ?
-Change Language
-Related Articles
-▲Related ArticlesWhat is the meaning of invalid literal for int() with base = ‘ ‘?Python program to convert hex string to decimalPython | bytearray() functionhex() function in PythonPython | Ways to convert hex into binaryIEEE Standard 754 Floating Point NumbersProgram for conversion of 32 Bits Single Precision IEEE 754 Floating Point RepresentationProgram for Decimal to Binary ConversionProgram for Binary To Decimal ConversionBinary to decimal and vice-versa in pythonPython program to convert decimal to binary numberQuickly convert Decimal to other bases in PythonConvert from any base to decimal and vice versaGiven a number N in decimal base, find number of its digits in any base (base b)Program to find the Discount PercentageProgram to calculate Electricity BillPi(π) in C++ with Examplesacos() function in C++ STLasinh() function in C++ STLacosh() function in C++ STLatanh() function in C++ STLComparator function of qsort() in Cstd::sort() in C++ STLOutput of C Programs | Set 9Arrow operator -> in C/C++ with ExamplesOutput of C Programs | Set 1Output of Java Program | Set 1C++ Programming Multiple Choice Questionsdelete keyword in C++Output of C Programs | Set 2Improve Article
-What is the meaning of invalid literal for int() with base = ‘ ‘?Difficulty Level :
-MediumLast Updated :
-20 Aug, 2020ValueError is encountered when we pass an inappropriate argument type. Here, we are talking about the ValueError caused by passing an incorrect argument to the int() function. When we pass a string representation of a float or any string representation other than that of int, it gives a ValueError.Example 1 : ValueError with base 10.# ValueError caused by conversion of # String representation of float to intint('23.5')Output :ValueError: invalid literal for int() with base 10: '23.5'One can think that while executing the above code, the decimal part ‘.5’ should be truncated and the code should give output as 23 only. But the point to be noted is that the int( ) function uses the decimal number system as its base for conversion ie. base = 10 is the default value for conversion. And in the decimal number system, we have numbers from 0 to 9 excluding the decimal (.) and other characters(alphabets and special chars). Therefore, int() with base = 10 can only convert a string representation of int and not floats or chars.We can first convert the string representation of float into float using float() function and then convert it into an integer using int().print(int(float('23.5')))Output :23Example 2 : Passing alphabets in int().int('abc')Output :invalid literal for int() with base 10: 'abc'The chars a, b, c, d, e, and f are present in the base =16 system and therefore only these chars along with digits 0 to 9 can be converted from their string representation to integer in hexadecimal form. We have to pass an parameter base with value 16.print(int('abc', base = 16))Output :2748 Attention geek! Strengthen your foundations with the Python Programming Foundation Course and learn the basics.  To begin with, your interview preparations Enhance your Data Structures concepts with the Python DS Course. And to begin with your Machine Learning Journey, join the Machine Learning – Basic Level CourseMy Personal Notes
-arrow_drop_upSave
-LikeNext
-Python program to convert hex string to decimalRecommended ArticlesPage :Speak the meaning of the word using Python25, Oct 20How to compute natural, base 10, and base 2 logarithm for all elements in a given array using NumPy?20, Aug 20Python program to convert any base to decimal by using int() method05, Jul 20Python program to check if the given string is IPv4 or IPv6 or Invalid26, Jun 20How to handle invalid arguments with argparse in Python?21, Aug 20String to Int and Int to String in Python10, Jul 20Selenium Base Mini Project Using Python30, Jun 20Python | Pandas TimedeltaIndex.base26, Dec 18PyQt5 QSpinBox - Access display integer base20, Apr 20PyQt5 QSpinBox - Setting display integer base20, Apr 20PyQt5 QSpinBox - Setting base size04, May 20PyQt5 QSpinBox - Getting base size04, May 20PyQt5 QCalendarWidget - Accessing Base Size value01, Jun 20numpy.dtype.base() function - Python02, Jun 20NseTools - Getting Base Price of Comapny Stock06, Aug 20Abstract Base Class (abc) in Python20, Aug 20Python program to convert Base 4 system to binary number30, Mar 21Scroll Web Page Base On Pixel Method Using Selenium in Python17, Dec 20PyQt5 QCalendarWidget - Assigning Base Size value01, Jun 20How to Convert Bytes to Int in Python?22, Dec 20int() function in Python06, Mar 18Assigning multiple characters in an int in C language19, Apr 18Python bit functions on int (bit_length, to_bytes and from_bytes)12, Nov 18Scala short ==(x: Int): Boolean01, Jan 20Article Contributed By :shivanshmishra4@shivanshmishra4Vote for difficultyCurrent difficulty :
-MediumEasy
-Normal
-Medium
-Hard
-ExpertArticle Tags :python-stringProgram OutputPythonReport IssueWhat's NewDSA Self Paced CourseLearn DSA with recorded video lectures and aim top product-based companiesView DetailsAd free experience with GeeksforGeeks PremiumView DetailsBasic to Advanced DSA Live ClassesLearn DSA from scratch in these Live Online Classes and get placement readyView DetailsMost popular in Program OutputOutput of C++ programs | Set 50Output of Python Program | Set 1Output of Java Program | Set 3Runtime ErrorsOutput of C Programs | Set 3Most visited in PythonAdding new column to existing DataFrame in PandasRead JSON file using PythonPython map() functionHow to get column names in Pandas dataframeReading and Writing to text files in PythonWriting code in comment?
-Please use ide.geeksforgeeks.org,
-generate link and share the link here.
-Load Comments×
-5th Floor, A-118,Sector-136, Noida, Uttar Pradesh - 201305
-feedback@geeksforgeeks.orgCompanyAbout UsCareersPrivacy PolicyContact UsCopyright PolicyLearnAlgorithmsData StructuresLanguagesCS
-SubjectsVideo TutorialsPracticeCoursesCompany-wiseTopic-wiseHow to begin?ContributeWrite an ArticleWrite Interview
-ExperienceInternshipsVideos@geeksforgeeks
-, Some rights reserved
-We use cookies to ensure you have the best browsing experience on our website. By using our site, you
-acknowledge that you have read and understood our
-Cookie Policy &
-Privacy Policy
-Got It !
+AttributeError
+numpy ndarray
+object has no attribute
+append
+| Edureka Community
+68448/attributeerror-numpy-ndarray-object-has-attribute-append
+Toggle navigation
+Back
+Ask a question
+Blogs
+Browse Categories
+Browse Categories
+Apache KafkaApache SparkBig Data HadoopBlockchainCareer CounsellingCloud ComputingCyber Security & Ethical HackingData AnalyticsDatabaseDevOps & AgileEvents & Trending TopicsIoT (Internet of Things)JavaLinux AdministrationMachine LearningMicroStrategyPMPPower BIPythonRPASeleniumSoftware TestingTableauTalendWeb DevelopmentAsk us Anything!Others
+Log In
+Sign Up
+Home
+Community
+Categories
+Python
+AttributeError
+numpy ndarray
+object has no...
+AttributeError
+numpy ndarray
+object has no attribute
+append
+0 votes
+Hi Guys,
+I am trying to append new  dataset in my array using append function, but It is showing me the error.
+AttributeError: 'numpy.ndarray' object has no attribute 'append'
+How can I solve this error?
+python
+python-programming
+pandas
+numpy
+python-numeric-module
+python-module
+May 5, 2020
+in Python
+by
+akhtar
+• 38,170 points
+•
+37,018 views
+answer
+comment
+flag
+Thank you. Your answer helped me to solve this error well.
+commented
+Jun 17, 2020
+by
+anonymous
+flag
+reply
+Your comment on this question:
+Your name to display (optional):
+Email me at this address if a comment is added after mine:Email me if a comment is added after mine
+Privacy: Your email address will only be used for sending these notifications.
+Add comment
+Cancel
+3 answers to this question.
+Your answer
+Your name to display (optional):
+Email me at this address if my answer is selected or commented on:Email me if my answer is selected or commented on
+Privacy: Your email address will only be used for sending these notifications.
+Add answer
+Cancel
+0 votes
+Hi@akhtar,
+If you trying to append data in your array, then you can use the below steps.
+import numpy as np
+arr = np.array([1,1,2])
+arr1 = np.append(arr,4)
+arr1
+array([1, 1, 2, 4])
+answered
+May 5, 2020
+by
+MD
+• 95,180 points
+comment
+flag
+ask related question
+Your comment on this answer:
+Your name to display (optional):
+Email me at this address if a comment is added after mine:Email me if a comment is added after mine
+Privacy: Your email address will only be used for sending these notifications.
+Add comment
+Cancel
+0 votes
+Use numpy. append() to append an array to an empty array
+empty_array = np. array([])
+to_append = np. array([1, 2, 3])
+combined_array = np. append(empty_array, to_append) append `to_append` to `empty_array`
+answered
+Dec 11, 2020
+by
+Gitika
+• 65,910 points
+comment
+flag
+ask related question
+Your comment on this answer:
+Your name to display (optional):
+Email me at this address if a comment is added after mine:Email me if a comment is added after mine
+Privacy: Your email address will only be used for sending these notifications.
+Add comment
+Cancel
+0 votes
+for root, dirs, files in os.walk(directory):
+for file in files:
+floc = file
+im = Image.open(str(directory) + '\\' + floc)
+pix = np.array(im.getdata())
+pixels.append(pix)
+labels.append(1)
+# append(i)???
+So far ok. But you want to leave pixels as a list until you are done with the iteration.
+pixels = np.array(pixels)
+labels = np.array(labels)
+You had this indention right in your other question.
+Iterating, collecting values in a list, and then at the end joining things into a bigger array is the right way. To make things clear I often prefer to use notation like:
+alist = []
+for ..
+alist.append(...)
+arr = np.array(alist)
+If names indicate something about the nature of the object I'm less likely to get errors like yours.
+I don't understand what you are trying to do with traindata. I doubt if you need to build it during the loop. pixels and labels have the basic information.
+That
+traindata = np.array([traindata[i][i],traindata[1]], dtype=object)
+comes from the previous question. I'm not sure you understand that answer.
+traindata = []
+traindata.append(pixels)
+traindata.append(labels)
+if done outside the loop is just
+traindata = [pixels, labels]
+labels is a 1d array, a bunch of 1s (or [0,1,2,3...] if my guess is right). pixels is a higher dimension array. What is its shape?
+Stop right there. There's no point in turning that list into an array. You can save the list with pickle.
+answered
+Dec 11, 2020
+by
+Rajiv
+• 8,880 points
+comment
+flag
+ask related question
+Your comment on this answer:
+Your name to display (optional):
+Email me at this address if a comment is added after mine:Email me if a comment is added after mine
+Privacy: Your email address will only be used for sending these notifications.
+Add comment
+Cancel
+Related Questions In Python
+0 votes
+1 answer
+AttributeError: 'numpy.ndarray' object has no attribute 'append'
+Hi@Nilesh,
+You have created two empty lists. And ...READ MORE
+answered
+Aug 10, 2020
+in Python
+by
+MD
+• 95,180 points
+•
+4,060 views
+python
+python-numpy
+0 votes
+1 answer
+AttributeError: type object 'numpy.ndarray' has no attribute '__array_function__'
+Hi@akhtar,
+I think numpy version is not compatible ...READ MORE
+answered
+Apr 13, 2020
+in Python
+by
+MD
+• 95,180 points
+•
+5,609 views
+python
+pandas
+dataframe
+python-programming
++1 vote
+1 answer
+'numpy.ndarray' object has no attribute 'append'
+Hi@Noman,
+You created two empty list. And in ...READ MORE
+answered
+May 17, 2020
+in Python
+by
+MD
+• 95,180 points
+•
+5,943 views
+0 votes
+0 answers
+AttributeError: 'numpy.int32' object has no attribute 'map'
+can any one suggest solution
+data['isLarge'] = data.size.map({'small' ...READ MORE
+Sep 5, 2020
+in Python
+by
+Mohammed
+• 120 points
+•
+1,243 views
+0 votes
+1 answer
+How to create Pandas series from numpy array?
+Hi. Refer to the below command:
+import pandas ...READ MORE
+answered
+Apr 1, 2019
+in Python
+by
+Pavan
+•
+1,752 views
+python
+numpy
+python-numeric-module
+python-module
+python-programming
+pandas
+0 votes
+1 answer
+Pandas series with custom index
+You can do it by specifying index. ...READ MORE
+answered
+Apr 1, 2019
+in Python
+by
+Isha
+•
+2,161 views
+python
+python-programming
+pandas
+numpy
+python-numeric-module
+python-module
+pandas-series
+0 votes
+1 answer
+How to create Pandas series from dictionary?
+Here's a sample script:
+import pandas as pd
+import ...READ MORE
+answered
+Apr 1, 2019
+in Python
+by
+Prateek
+•
+986 views
+python-programming
+python
+pandas
+numpy
+python-numeric-module
+python-module
+pandas-series
+0 votes
+1 answer
+How to convert pandas dataframe to numpy array?
+Irrespective of whether the dataframe has similar ...READ MORE
+answered
+May 12, 2019
+in Python
+by
+Rishi
+•
+5,816 views
+python-programming
+python
+pandas
+numpy
+python-numeric-module
+python-module
++1 vote
+1 answer
+AttributeError: 'numpy.ndarray' object has no attribute 'append'
+Hi,
+You created two empty list. And in ...READ MORE
+answered
+May 17, 2020
+in Python
+by
+MD
+• 95,180 points
+•
+3,308 views
+python
+numpy
+python-numeric-module
+python-module
+python-programming
+0 votes
+1 answer
+AttributeError: 'numpy.ndarray' object has no attribute 'append'
+Hi@Nilesh,
+You created two empty lists. And in ...READ MORE
+answered
+Aug 10, 2020
+in Python
+by
+MD
+• 95,180 points
+•
+1,300 views
+python
+python-numpy
+Recent in Pythonerror install mysqlclient on windows Feb 6 Dickey-Fuller test in Python Feb 5 How to declare an array in Python? Jan 5 How to change the “tick frequency” on x or y axis in matplotlib? Jan 5 How to prompt for user input and read command-line arguments? Jan 5
+All categories
+Apache Kafka
+(84)
+Apache Spark
+(598)
+Big Data Hadoop
+(1,860)
+Blockchain
+(1,513)
+Career Counselling
+(1,058)
+Cloud Computing
+(3,097)
+Cyber Security & Ethical Hacking
+(90)
+Data Analytics
+(1,196)
+Database
+(270)
+DevOps & Agile
+(3,096)
+Events & Trending Topics
+(27)
+IoT (Internet of Things)
+(361)
+Java
+(968)
+Linux Administration
+(234)
+Machine Learning
+(173)
+MicroStrategy
+(5)
+PMP
+(367)
+Power BI
+(460)
+Python
+(2,950)
+RPA
+(649)
+Selenium
+(1,550)
+Software Testing
+(56)
+Tableau
+(474)
+Talend
+(73)
+Web Development
+(1,457)
+Ask us Anything!
+(62)
+Others
+(303)
+×
+Join the world's most active Tech Community!
+Welcome back to the World's most active Tech Community!
+Sign up with Gmail
+Sign up with Facebook
+OR
+Please provide a valid input
+SIGN UP
+Already have an Edureka Account? Login
+Please enter a valid emailid
+Forgot Password?
+LOGIN
+Don’t have edureka account? Sign Up
+resend ?
+reset password
+Don’t have edureka account? Sign Up
+reset password
+Don’t have edureka account? Sign Up
+Send Code
+Don’t have edureka account? Sign Up
+Subscribe to our Newsletter, and get personalized recommendations.
+Sign up with Google
+Signup with Facebook
+Already have an account? Sign in.
+×
+TRENDING CERTIFICATION COURSES
+DevOps Certification Training
+AWS Architect Certification Training
+Big Data Hadoop Certification Training
+Tableau Training & Certification
+Python Certification Training for Data Science
+Selenium Certification Training
+PMP® Certification Exam Training
+Robotic Process Automation Training using UiPath
+Apache Spark and Scala Certification Training
+Microsoft Power BI Training
+Online Java Course and Training
+Python Certification Course
+TRENDING MASTERS COURSES
+Data Scientist Masters Program
+DevOps Engineer Masters Program
+Cloud Architect Masters Program
+Big Data Architect Masters Program
+Machine Learning Engineer Masters Program
+Full Stack Web Developer Masters Program
+Business Intelligence Masters Program
+Data Analyst Masters Program
+Test Automation Engineer Masters Program
+Post-Graduate Program in Artificial Intelligence & Machine Learning
+Post-Graduate Program in Big Data Engineering
+COMPANY
+About us
+News & Media
+Reviews
+Contact us
+Blog
+Community
+Sitemap
+Blog Sitemap
+Community Sitemap
+WORK WITH US
+Careers
+Become an Instructor
+Become an Affiliate
+Become a Partner
+Hire from Edureka
+DOWNLOAD APP
+CATEGORIES
+CATEGORIES
+Cloud Computing
+DevOps
+Big Data
+Data Science
+BI and Visualization
+Programming & Frameworks
+Software Testing
+Project Management and Methodologies
+Robotic Process Automation
+Frontend Development
+Data Warehousing and ETL
+Artificial Intelligence
+Blockchain
+Databases
+Cyber Security
+Mobile Development
+Operating Systems
+Architecture & Design Patterns
+Digital Marketing
+TRENDING BLOG ARTICLES
+TRENDING BLOG ARTICLES
+Selenium tutorial
+Selenium interview questions
+Java tutorial
+What is HTML
+Java interview questions
+PHP tutorial
+JavaScript interview questions
+Spring tutorial
+PHP interview questions
+Inheritance in Java
+Polymorphism in Java
+Spring interview questions
+Pointers in C
+Linux commands
+Android tutorial
+JavaScript tutorial
+jQuery tutorial
+SQL interview questions
+MySQL tutorial
+Machine learning tutorial
+Python tutorial
+What is machine learning
+Ethical hacking tutorial
+SQL injection
+AWS certification career opportunities
+AWS tutorial
+What Is cloud computing
+What is blockchain
+Hadoop tutorial
+What is artificial intelligence
+Node Tutorial
+Collections in Java
+Exception handling in java
+Python Programming Language
+Python interview questions
+Multithreading in Java
+ReactJS Tutorial
+Data Science vs Big Data vs Data Analytics
+Software Testing Interview Questions
+R Tutorial
+Java Programs
+JavaScript Reserved Words and Keywords
+Implement thread.yield() in Java: Examples
+Implement Optical Character Recognition in Python
+All you Need to Know About Implements In Java
+© 2021 Brain4ce Education Solutions Pvt. Ltd. All rights Reserved.
+Terms & Conditions
+Legal & Privacy
+"PMP®","PMI®", "PMI-ACP®" and "PMBOK®" are registered marks of the Project Management Institute, Inc.
+MongoDB®, Mongo and the leaf logo are the registered trademarks of MongoDB, Inc.

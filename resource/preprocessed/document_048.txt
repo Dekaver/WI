@@ -1,953 +1,206 @@
-Computational tools — pandas 0.7.3 documentation
-pandas 0.7.3 documentation
-previous |
-next |
-modules |
-modules |
-index
-Table Of Contents
-What’s New
-Installation
-Frequently Asked Questions (FAQ)
-Package overview
-Intro to Data Structures
-Essential basic functionality
-Indexing and selecting data
-Computational tools
-Statistical functions
-Covariance
-Correlation
-Data ranking
-Moving (rolling) statistics / moments
-Binary rolling moments
-Computing rolling pairwise correlations
-Exponentially weighted moment functions
-Linear and panel regression
-Standard OLS regression
-Panel regression
-Result fields and tests
-Working with missing data
-Group By: split-apply-combine
-Merge, join, and concatenate
-Reshaping and Pivot Tables
-Time Series / Date functionality
-Plotting with matplotlib
-IO Tools (Text, CSV, HDF5, ...)
-Sparse data structures
-Caveats and Gotchas
-rpy2 / R interface
-Related Python libraries
-Comparison with R / R libraries
-API Reference
-Search
-Enter search terms or a module, class or function name.
-Computational tools¶
-Statistical functions¶
-Covariance¶
-The Series object has a method cov to compute covariance between series
-(excluding NA/null values).
-In [157]: s1 = Series(randn(1000))
-In [158]: s2 = Series(randn(1000))
-In [159]: s1.cov(s2)
-Out[159]: 0.019465636696791695
-Analogously, DataFrame has a method cov to compute pairwise covariances
-among the series in the DataFrame, also excluding NA/null values.
-In [160]: frame = DataFrame(randn(1000, 5), columns=['a', 'b', 'c', 'd', 'e'])
-In [161]: frame.cov()
-Out[161]:
-a
-b
-c
-d
-e
-a
-0.953751 -0.029550 -0.006415
-0.001020 -0.004134
-b -0.029550
-0.997223 -0.044276
-0.005967
-0.044884
-c -0.006415 -0.044276
-1.050236
-0.077775
-0.010642
-d
-0.001020
-0.005967
-0.077775
-0.998485 -0.007345
-e -0.004134
-0.044884
-0.010642 -0.007345
-1.025446
-Correlation¶
-Several methods for computing correlations are provided. Several kinds of
-correlation methods are provided:
-Method name
-Description
-pearson (default)
-Standard correlation coefficient
-kendall
-Kendall Tau correlation coefficient
-spearman
-Spearman rank correlation coefficient
-All of these are currently computed using pairwise complete observations.
-In [162]: frame = DataFrame(randn(1000, 5), columns=['a', 'b', 'c', 'd', 'e'])
-In [163]: frame.ix[::2] = np.nan
-# Series with Series
-In [164]: frame['a'].corr(frame['b'])
-Out[164]: 0.013306883832198543
-In [165]: frame['a'].corr(frame['b'], method='spearman')
-Out[165]: 0.022530330121320486
-# Pairwise correlation of DataFrame columns
-In [166]: frame.corr()
-Out[166]:
-a
-b
-c
-d
-e
-a
-1.000000
-0.013307 -0.037801 -0.021905
-0.001165
-b
-0.013307
-1.000000 -0.017259
-0.079246 -0.043606
-c -0.037801 -0.017259
-1.000000
-0.061657
-0.078945
-d -0.021905
-0.079246
-0.061657
-1.000000 -0.036978
-e
-0.001165 -0.043606
-0.078945 -0.036978
-1.000000
-Note that non-numeric columns will be automatically excluded from the
-correlation calculation.
-A related method corrwith is implemented on DataFrame to compute the
-correlation between like-labeled Series contained in different DataFrame
-objects.
-In [167]: index = ['a', 'b', 'c', 'd', 'e']
-In [168]: columns = ['one', 'two', 'three', 'four']
-In [169]: df1 = DataFrame(randn(5, 4), index=index, columns=columns)
-In [170]: df2 = DataFrame(randn(4, 4), index=index[:4], columns=columns)
-In [171]: df1.corrwith(df2)
-Out[171]:
-one
-0.344149
-two
-0.837438
-three
-0.458904
-four
-0.712401
-In [172]: df2.corrwith(df1, axis=1)
-Out[172]:
-a
-0.404019
-b
-0.772204
-c
-0.420390
-d
--0.142959
-e
-NaN
-Data ranking¶
-The rank method produces a data ranking with ties being assigned the mean
-of the ranks (by default) for the group:
-In [173]: s = Series(np.random.randn(5), index=list('abcde'))
-In [174]: s['d'] = s['b'] # so there's a tie
-In [175]: s.rank()
-Out[175]:
-a
-2.0
-b
-3.5
-c
-1.0
-d
-3.5
-e
-5.0
-rank is also a DataFrame method and can rank either the rows (axis=0)
-or the columns (axis=1). NaN values are excluded from the ranking.
-In [176]: df = DataFrame(np.random.randn(10, 6))
-In [177]: df[4] = df[2][:5] # some ties
-In [178]: df
-Out[178]:
+TypeError: 'float' object cannot be interpreted as an integer Code Example
+Follow
+GREPPER
+SEARCH SNIPPETS
+FAQ
+USAGE DOCS
+INSTALL GREPPER
+Log In
+Signup
+All Languages
+>>
+Python
+>>
+TypeError: 'float' object cannot be interpreted as an integer
+“TypeError: 'float' object cannot be interpreted as an integer” Code Answer’s
+TypeError: 'float' object cannot be interpreted as an integer
+python by
+Obsequious Octopus
+on
+Nov 17 2020
+Donate
+Comment
+3
+# Error:
+TypeError: 'float' object cannot be interpreted as an integer
+# Solution:
+# This error usually comes up if you're trying to use floats in a
+# function/context that can only use integers. A common example is
+# trying to use floats in the range() function which only takes integers.
+# A common way to get around this with range() is to use a multiple of
+# the float series you want and then to divide the resulting numbers
+# inside your loop. E.g.:
+for i in range(10):
+print(i/10)
+--> 0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+# This way you can get the floats 0.0 - 0.9 without using floats in range
+Source: stackoverflow.com
+numpy.float64' object cannot be interpreted as an integer
+python by
+Friendly Frog
+on
+Nov 23 2020
+Donate
+Comment
 0
-1
-2
-3
-4
-5
-0
-0.106333
-0.712162 -0.351275
-1.176287 -0.351275
-1.741787
-1 -1.301869
-0.612432 -0.577677
-0.124709 -0.577677 -1.068084
-2 -0.899627
-0.822023
-1.506319
-0.998896
-1.506319
-0.259080
-3 -0.522705 -1.473680 -1.726800
-1.555343 -1.726800 -1.411978
-4
-0.733147
-0.415881 -0.026973
-0.999488 -0.026973
-0.082219
-5
-0.995001 -1.399355
-0.082244 -1.521795
-NaN
-0.416180
-6 -0.779714 -0.226893
-0.956567 -0.443664
-NaN -0.610675
-7 -0.635495 -0.621647
-0.406259 -0.279002
-NaN -1.153000
-8
-0.085011 -0.459422 -1.660917 -1.913019
-NaN
-0.833479
-9 -0.557052
-0.775425
-0.003794
-0.555351
-NaN -1.169977
-In [179]: df.rank(1)
-Out[179]:
-0
-1
-2
-3
-4
-5
-0
-3
-4
-1.5
-5
-1.5
-6
-1
-1
-6
-3.5
-5
-3.5
-2
-2
-1
-3
-5.5
-4
-5.5
-2
-3
-5
-3
-1.5
-6
-1.5
-4
-4
-5
-4
-1.5
-6
-1.5
-3
-5
-5
-2
-3.0
-1
-NaN
-4
-6
-1
-4
-5.0
-3
-NaN
-2
-7
-2
-3
-5.0
-4
-NaN
-1
-8
-4
-3
-2.0
-1
-NaN
-5
-9
-2
-5
-3.0
-4
-NaN
-1
-rank optionally takes a parameter ascending which by default is true;
-when false, data is reverse-ranked, with larger values assigned a smaller rank.
-rank supports different tie-breaking methods, specified with the method
-parameter:
-average : average rank of tied group
-min : lowest rank in the group
-max : highest rank in the group
-first : ranks assigned in the order they appear in the array
-Note
-These methods are significantly faster (around 10-20x) than
-scipy.stats.rankdata.
-Moving (rolling) statistics / moments¶
-For working with time series data, a number of functions are provided for
-computing common moving or rolling statistics. Among these are count, sum,
-mean, median, correlation, variance, covariance, standard deviation, skewness,
-and kurtosis. All of these methods are in the pandas namespace, but
-otherwise they can be found in pandas.stats.moments.
-Function
-Description
-rolling_count
-Number of non-null observations
-rolling_sum
-Sum of values
-rolling_mean
-Mean of values
-rolling_median
-Arithmetic median of values
-rolling_min
-Minimum
-rolling_max
-Maximum
-rolling_std
-Unbiased standard deviation
-rolling_var
-Unbiased variance
-rolling_skew
-Unbiased skewness (3rd moment)
-rolling_kurt
-Unbiased kurtosis (4th moment)
-rolling_quantile
-Sample quantile (value at %)
-rolling_apply
-Generic apply
-rolling_cov
-Unbiased covariance (binary)
-rolling_corr
-Correlation (binary)
-rolling_corr_pairwise
-Pairwise correlation of DataFrame columns
-Generally these methods all have the same interface. The binary operators
-(e.g. rolling_corr) take two Series or DataFrames. Otherwise, they all
-accept the following arguments:
-window: size of moving window
-min_periods: threshold of non-null data points to require (otherwise
-result is NA)
-time_rule: optionally specify a time rule
-to pre-conform the data to
-These functions can be applied to ndarrays or Series objects:
-In [180]: ts = Series(randn(1000), index=DateRange('1/1/2000', periods=1000))
-In [181]: ts = ts.cumsum()
-In [182]: ts.plot(style='k--')
-Out[182]: <matplotlib.axes.AxesSubplot at 0x10a7bd6d0>
-In [183]: rolling_mean(ts, 60).plot(style='k')
-Out[183]: <matplotlib.axes.AxesSubplot at 0x10a7bd6d0>
-They can also be applied to DataFrame objects. This is really just syntactic
-sugar for applying the moving window operator to all of the DataFrame’s columns:
-In [184]: df = DataFrame(randn(1000, 4), index=ts.index,
-.....:
-columns=['A', 'B', 'C', 'D'])
-In [185]: df = df.cumsum()
-In [186]: rolling_sum(df, 60).plot(subplots=True)
-Out[186]:
-array([Axes(0.125,0.747826;0.775x0.152174),
-Axes(0.125,0.565217;0.775x0.152174),
-Axes(0.125,0.382609;0.775x0.152174), Axes(0.125,0.2;0.775x0.152174)], dtype=object)
-Binary rolling moments¶
-rolling_cov and rolling_corr can compute moving window statistics about
-two Series or any combination of DataFrame/Series or
-DataFrame/DataFrame. Here is the behavior in each case:
-two Series: compute the statistic for the pairing
-DataFrame/Series: compute the statistics for each column of the DataFrame
-with the passed Series, thus returning a DataFrame
-DataFrame/DataFrame: compute statistic for matching column names,
-returning a DataFrame
-For example:
-In [187]: df2 = df[:20]
-In [188]: rolling_corr(df2, df2['B'], window=5)
-Out[188]:
-A
-B
+false:
+np.zeros(np.float(3))
+Right:
+np.zeros(np.int(np.float(3)))
+Add a Grepper Answer
+Python answers related to “TypeError: 'float' object cannot be interpreted as an integer”
+check if can convert to float python check if float is integer python convert float in datetime python convert float to int python DeprecationWarning: an integer is required (got type float). Implicit conversion to integers using __int__ is deprecated, and may be removed in a future version of Python. float error python float to int in python float() argument must be a string or a number, not 'dict_values' how convert float to int in python how to convert float64 to int64 in python int to float python int type cast to float in python isinstance float or int python check if number is float or int python check if number is integer or float python float to int TypeError: can't multiply sequence by non-int of type 'float' ValueError: Failed to convert a NumPy array to a Tensor (Unsupported object type float).
+Python queries related to “TypeError: 'float' object cannot be interpreted as an integer”
+TypeError: 'float' object cannot be interpreted as an integer reshape TypeError: 'float' object cannot be interpreted as an integer list comprehension TypeError: 'numpy.float64' object cannot be interpreted as an integer sounddevice 'numpy.float32' object cannot be interpreted as an integer float cannot be interpreted as an integer TypeError: 'numpy.float64' object cannot be interpreted as an integer coco tools
+'float' object cannot be interpreted as an integer for loop typeerror 'numpy.float64' object cannot be interpreted as an integer tensorflow object detection float' object cannot be interpreted as an integer np.random.choice np.max 'numpy.float64' object cannot be interpreted as an integer float' object cannot be interpreted as an integer meaning 'numpy.float16' object cannot be interpreted as an integer typeerror float object cannot be interpreted as an integer fastai TypeError: 'float' object cannot be interpreted as an integer Test Failed: 'numpy.float64' object cannot be interpreted as an integer float' object cannot be interpreted as an integer np.zeros numpy max 'numpy.float64' object cannot be interpreted as an integer E TypeError: 'float' object cannot be interpreted as an integer builtins.TypeError: 'float' object cannot be interpreted as an integer 'float' object cannot be interpreted as an integer range TypeError: 'float' object cannot be interpreted as an integer in for loop typeerror 'float' object cannot be interpreted as an integer numpy 'float' object cannot be interpreted as an integer list ypeError: 'float' object cannot be interpreted as an integer num = operator.index(num) TypeError: 'numpy.float64' object cannot be interpreted as an integer float cannot be interpreted as integer float object cannot be interpreted as an integer python 'float' object cannot be interpreted as an integer crj,rb TypeError: 'float' object cannot be interpreted as an integer site:stackoverflow.com learn.fit_one_cycle for i in range Cannot interpret as a data type python float' object cannot be interpreted as an integer turtle.py turtle user input
+TypeError: 'float' object cannot be interpreted as an integer turtle.py" use input in <module> for x in range(NUM_CIRCLES): TypeError: 'float' object cannot be interpreted as an integer turtle.py", line 9, in <module> for x in range(NUM_CIRCLES): TypeError: 'float' object cannot be interpreted as an integer TypeError: 'float' object cannot be interpreted as an integer python
+TypeError: 'float' object cannot be interpreted as an integer python TypeError: 'float' object cannot be interpreted as an integer for i in range(pages):\nTypeError: \'float\' object cannot be interpreted as an integer' 'numpy.float64' object cannot be interpreted as an integer Line 90 in _driver (Solution.py) float' object cannot be interpreted as an integer python def fbprophet numpy.float64' object cannot be interpreted as an integer site:stackoverflow.com fbprphet numpy.float64' object cannot be interpreted as an integer prophet error
+'numpy.float64' object cannot be interpreted as an integer prophet fit 'numpy.float64' object cannot be interpreted as an integer prophet.fit 'numpy.float64' object cannot be interpreted as an integer prophet 'numpy.float64' object cannot be interpreted as an integer float' object cannot be interpreted as an integer python TypeError: 'float' object cannot be interpreted as an integer in xgbregressor TypeError: 'float' object cannot be interpreted as an integer site:stackoverflow.com float' object cannot be interpreted as an integer python float object cannot be interpreted as an integer python 'float' object cannot be interpreted as an integer typeerror: 'numpy.float64' object cannot be interpreted as an integer tensorflow object detection TypeError: 'float' object cannot be interpreted as an integer django form 'float' object cannot be interpreted as an integer python 'float' object cannot be interpreted as an integer python' float object cannot be interpreted as an integer numpy.float64' object cannot be interpreted as an integer TypeError: 'numpy.float64' object cannot be interpreted as an integer 'float' object cannot be interpreted as an integer TypeError: 'float' object cannot be interpreted as an integer
+Browse Python Answers by Framework
+Django
+Flask
+More “Kinda” Related Python Answers
+View All Python Answers »
+UnicodeDecodeError: 'charmap' codec can't decode byte 0x9d in position 6148: character maps to <undefined> how to make a unit converter in python hex to rgb python how to make otp generator in python bytes to string python generate a color python python to c++ transpiler python convert image to base64 python string to bytes pyspark convert float results to integer replace base64 encode python utf8 python encodage line translate sentences in python argparse python convert nan to empty string python f string float precision 'utf-8' codec can't decode byte 0x85 in position 715: invalid start byte f string float format 'charmap' codec can't decode byte 0x98 in position ERROR:
+character with byte sequence 0xd0 0x9f in encoding "UTF8" has no equivalent in encoding "LATIN1" python open encoding utf-8 pandas - from umeric to string display python 001 input float python how to find the datatype of a variable in python python get numbers from string how to change the rate of speech in pyttsx3 python parse args check if can convert to float python password generator python python simple columnar cipher change type of array python Roman numerals to int python convert int to binary python python password generator charmap codec can't encode character prettytable python python random string python columnar cipher python url encoding f-string ponto decimal python check if string can be converted to int python python format only 1 decimal place override python print for class __str__() one hot encoding python code python: transform as type numeirc how to check if a letter is lowercase in python python vernam cipher python raandom string extract float from string python format integer to be money python python test if uppercase dart char is uppercase python text to speech decode base64 python python import json into pymongo python lowercase python random password generator hex to string python python argparse how to make a morse code translator in python python roman numeral converter python write json to file utf8 python print float in scientific notation TextToSpeech python3 generate random string python text to speech to specific language python base64 decode python convert mp3 to wav python python write to json with indent string to hex python how to create a password generator in python python hex to bytes string python automatic caesar cipher decrypt table to ascii python json encode in python print decimal formatting in python convert hex to decimal python python convert a string of tuples to a tuple of tuples python string to hex double slash python python fdr correction bytes-like object python convert xd8 to utf8 how to convert string to byte without encoding python python psycopg2 utf8 how to make a PKCS8 RSA signature in python python typing as int or float float print format python c
+to python converter convert between bases python UnicodeDecodeError: 'utf-8' codec can't decode byte invalid start byte python saveAsTextFile truncate add weird symbols in python python querystring parse python generate uid print variable type python fstring number format python how to format 1000 to 1k in python Expected ")" python char to binary python python convert binary / hexadecimal / decimal to binary / hexadecimal / decimal pydotprint text to sound python python convert hex to binary how to encrypt a string python encrypt and decrypt python how to parse json in python python string interpolation UnicodeDecodeError: 'utf-8' codec can't decode byte 0xe7 in position 5: invalid continuation byte print string + int in python convert accented characters to normal python converting tuples to string convert string to lowercase in python text to ascii art python invoice parsing ocr python SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 15-16: truncated \UXXXXXXXX escape UnicodeDecodeError: 'charmap' codec can't decode byte 0x9d in position 340: character maps to <undefined> how to convert fahrenheit to celsius in python pretty json python python3 base64 encode basic authentication config python load integer convert string to binary python float to percentage python python decimal input how to change a string to small letter in python is alphanumeric python python AES how to use speech recognition in python python convert character to integer python ieee 754 converter encryption using python python ascii add colour to text in python convert a tuple into string python python best docstring format python convert string to lowercase python format float uppercase string python convert response to json python fasttext python modulo string python cryptography python string to ascii value python python ascii caesar cipher f string in python converting capital letters to lowercase
+and viceversa in python otp generation in python python utf8 int to string python python string to int python generate random string python raw string from uppercase to lowercase python python int binary python create hash from string binary search in python python speech recognition binary to text python binary to decimal in python python unsupported operand type(s) for /: 'str' and 'str' python typewriter effect cast string to double python python upper python convert string to bytes SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 5-6: truncated \UXXXXXXXX escape static typing in python how to encrypt text in python concatenate string and int python python convert b string to dict modulo str python python convert string to integer in base json dumps python decimal in python convert int to byte python python convert to hmac sha256 how to store a number in a variable python python convert set to string unicode error python python3 lowercase convert ui to py python get int from string string hex to decimal python python convert base python Non-UTF-8 code starting with speech recognition in python python convert hex number to decimal json to csv python string to float python how to get a number from a string in python random number generator in python python2 to python3 converter python string cut python string how to convert decimal to binary python TypeError: 'float' object cannot be interpreted as an integer python urlencode python sha256 of file how to make an int into a string python python speech to text concatenate int to string python float to string python make int into string python convert \x unicode utf 8 bytes to \u python UnicodeDecodeError: 'utf-8' codec can't decode byte 0xb0 in position 1968: invalid start byte formatted string python byte strings python json python how do you change a string to only uppercase in python python get object attribute by string python f string convert float to int python python convert string to
+byte array python json stringify parse json python Exception: 'ascii' codec can't decode byte 0xe2 in position 7860: ordinal not in range(128) python string to xml python fstring python bit enum in python python caesar cipher base64 python decode python binary python write txt utf8 how to write the character from its ascii value in python python parse string python lower scientific notation to decimal python python convert string to int int to ascii python convert string to number python python string format long to_bytes python how to use it binary search python python .format python int to char how to concatenate a string with int in python TypeError: can only concatenate str (not "method") to str how to convert to string in python extract number from string in python Json in python text recognition python library UnicodeDecodeError: 'charmap' codec can't decode byte 0x81 in position 92: character maps to <undefined> lsb steganography python python bytes to int mapping in python string to str python python string to lower hex to binary python3 python translator python argparse file argument how to check uppercase and lowercase in python how to convert types of variablesin python python to uppercase int to char python formatting in python how to convert tuple to int in python python format numeric output f string decimal places pdf to string python python color binary representation python how to use %s python python how to detect if
+uppercase is used in input python import stringIO python hmac sha256 python get type of variable std python python 3 stringio usage python cast to float python hash string how to fix speech recognition in python python code to convert a string to lowercase what is f behind string python no implicit conversion of String into Integer (TypeError) python colors code unicode() python 3 print hexadecimal in python convert string to float
+python python add numbers to string how to convert utf-16 file to utf-8 in python convert string to float python convert decimal to hex python python int to binary python converting float to binary python binary string to int .encode python python parse int as string write xor decrypt python decimal to binary in python python f string literal f string python convert string to boolean python python parse xml string pyspark import stringtype to string python random string generate python of 2.7 get char from ascii value python convert number to char python python uppercase 'xml.etree.ElementTree.Element' to string python convert float to string python convert binary string to base 10 value in python camelcase naming convention python how to convert from base 2 to base 10 in python python format specifier python casting format for unit test python str.format python 3 enum python python function docstring python3 print format float how to print data type in python boolean to integer python python format strings string to float in python what should you call a decimal value in python ascii to decimal python python to json pyhon string python ascii code to string python password script Python ValueError: invalid literal for int() with base 10: python unexpected eof while parsing folium float inf in python docstrings in python variable string in string python speech recognition python python ignore unicodedecodeerror python convert ascii to char convert character to unicode python caesar cipher python python translate python f-strings python pickle 'ascii' codec can't decode byte 0x80 in position 0 convert price to float python how to make string to int in python py convert binary to int decimal to int python raw string python url encoded path using python convert 1 digit to 2 digit python decode base64 with python python safe password string generator string formatting in python what is the type of the data python how to convert a binary number to decimal in python new python string formatting python json how to convert uppercase to lowercase and vice versa in python python deserialize json python convert html to text json.stringify equivalent in python concatenate strings and int python python toupper format on str int in python printing float number python python program to get all the integers in a given string convert pdf to base64 python convert base64 to image python python yyyymmdd encapsulation in python python argument parser default value python inf how to play mp3 audio in python {} string python SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 2-3: truncated \UXXXXXXXX escape” Code Answer Python Strings capitalize python python to c converter hash python png json dump python python offline translate pypi how to get a int from string python find pdf encrypted password with python declare float python python print integer in string python test if you can convert to int python how to import a module given a stringg can only concatenate str (not "int") to str parse int python python convert input into lowercase UnicodeDecodeError: 'charmap' codec can't decode byte 0x9e in position 3359: character maps to <undefined> format string python how to convert from binary to base 10 in python python: convert variable as character acronym generator in python standard deviation in python how to covert integer to float in pyhton python float to int python - convert to lowercase change text color docx-python json decode py string format zero padded int python how to check if string is in byte formate pythin how to get the binary value in python ascii values in python of b'string' python convert characters in ascii in python convert int to string python how to turn a string into an integer python speech to text in python convert to roman number code hash symbol in python python get ppretty string representaiton of dictinary sql enum type caesar cipher in python python 3 f string float format get value from enum python character to ascii python how to generate a random code in python python string lowercase python print utf-8 python json write utf 8 python csv reader cast to float How to use .format in python format binary string python aes in python argparse python python data type conversion pyhton to upper case typeof() python python int to string encoding character or string to integer in python speech recognition hexadecimal with python python unicode point to utf8 string how to install a font in python how to check if a string is lowercase in python convert string to int python python ascii art json.dumps python function in oythin test if letter is capital python path from string enumeration python str in python convert int to ascii python float to int in python int to float python text to speech in python how to know if the numbers is par in python python get type python argparser flags python string methods python string procedures turn characters to alpgabetic numper python int to byte array python camel case in python how stract avery .jpg string in a website python shebang line ubuntu python python json random number generator phyton 2.7 convert timedelta to string python alphabet to number convert image to binary python astype numpy python is uppercase pandas convert string from INT TO str str to tuple of float ctypes python generate random float python python elementTree tostring write() argument must be str, not bytes how to change dtype object to int python export 16 bit tiff 'unicodeescape' codec can't decode bytes playfair cipher python password guessing game python python ascii() how to encrypt and decrypt strings python validate string using six library python extract audio from .mp4 python .mp3 python class tostring python ascii to string How would you express the hexadecimal value a5 as a base-16 integer constant in Python? python to uppercase function w3schools override to string python convert utm to decimal degrees python receipt ocr python norm.pdf python glob.glob python get_int python 16 digit number generate on python parse invoice python binary to decimal python float python python doctype decimal to octal python double char python int to alphabet letter python convert video to text python xpath parsing in python python json serialize object show number as 3 digit python how to add string with number in python python integer to string format caesar's encrption python' python 2 format string initialization string python hexadecimal in python python cast to int python escape quotes python convert long floats to usd int ot char python how to check if string is camelcase python python random how to get trng python library to convert decimal into octal and hexadecimal convert string to integer in python python print int in string decimal conversion python python serialize invalid literal for int() with base 10 python pycryptodome rsa encrypt scale of
+decimal place in python how to convert int in python formatted string in python python typeof python file hashlib number to write string python c like struct Python bytes string to int decoding encoding script for pythong parsing text in python .format python 3 python return double quotes instead of single format specificer f strings python type in python float('inf') TypeError: can only concatenate str (not "int") to str formatter in python python XGBoost how to pass in f string python numpy array serialize to string format when turning float into string typecasting inpython how to extract integers from string python c++ to python converter online python convert to percentage English alphabet in caps python return something as a float python docstring python add hyphen to string convert math equation from string to int base conversion python string maniupulation in python unsupported operand type(s) for -: 'str' and 'str' int type cast to float in python python rsa encryption and decryption with password how to use decode method on python to convert hex to ascii give utton a number python formatted print in python convert alphanumeric to numeric python string to tuple python unicodeescape python path error python digit string print("%.2F" S) ^ SyntaxError: invalid syntax Python convert dcm to png common header format python how to make gtts text to speech converter Free online converter of c ++ code to Python python how to request query string korean encode python convert xml to csv tkinter convert Entry to string change variable type python str bytestring python python message from byte Python - Format - Strings python string with si suffix to number file.write must be string python fsting in python applymap(lambda x: x.encode('unicode_escape'). decode('utf-8') if isinstance(x, str) else x) python pytesseract
+int python input byte array how to write string in python frozenset literals python dtype cannot be bool python python map string to int python tabulate float format python read binary quote_from_bytes() expected bytes float() argument must be a string or a number, not 'dict_values' python split string into floats convert 1 to "one" python Python logging comma to dot how to import capstone in python idwt pywt _pickle.UnpicklingError: the STRING opcode argument must be quoted python python format float as currency how to change the type of a values in list from str to object python convert python code to C code f struings pytohn python sha256 crypt decrypt unit converter idle python convert python 2 to 3 how to convert unicode to string python python octal conversion in python f then string meaning how to compare byte string in python int() python convert c++ code to python update string in python python - extract the price from a string python format new python write request must be str not bytes numpy.float64' object cannot be interpreted as an integer python random string for password generator python convert number with a comma and decimal to a float convert sentence to words python how to write a program that installs a font in python multipart/form data
+multipart encoder python java to python conversion md5 decrypt python string representation of object python print in binary python python json indented decimal characters python encrypt password with sha512 + python format number of digits python micropython string to int python find the numbers in the thousands, hundreds, units, tens value python slit bytearray to string python python docstring use int to hex python without 0x python unsupported operand type(s) for & 'str' and 'str' c="He is {} and he is {}".format(a,b) python sring to name variable pyton how to print in double quotes in python lamda in f string json payload python function python format 001 python put double quotes in string parse receipt python shebang line python pdf parsing python auto encoding in python python evaluate string python to lua converter how to convert float64 to int64 in python print lowercase in python from string to flaot python numpy argparse type python hash md5 unicode how to convert variable in Python ? python convert ylabel to currency java to python converter receipt parsing python float to 2 decimals python integer to string how to type shashank in python convert math expression as string to int inject dynamic value into string python python char to byte data parsing app python python catch int conversion error python code to c code converter format 100 python python currency format locale long int in python c++ to python code converter bin to int python show range as a string python how to hash string into pbkdf2 pandas convert hex string to int passport parsing python python how to make integer show 2 numbers python indian currency formatter python enumerlate decimal to ascii python python type casting how to translate to string to different alphabet python lower upper in pytho asdf python py type python utf upper() not using f string in python arabic in python matplotlib convert color string to int string lowercase python how to save string json to json object python py fhir python buffer Python Practice Problems based on type casting pyttsx3 speech to mp3 pyshark decode_as how to code a raycast python how to convert string to int in python how to print string data type in c++ how to tyoecast in python python postfix conversion python string caps lock cast python isupper() in python lowercase letters python python int to ascii string python is ascii %s %d python rgb to hex python cast as float python dtype python python print float format python string tutorial python font python literal string int to string ast python python binary to ascii how convert float to int in python python input lowercase convert to base64 python python f-string padding python binary to string bytearray to hex python python random uuid object to string pandas python to c converter online text extraction from pdf using python type python fast "2 + 2" operación en string python python print bool as string how to convert cost to float in python py to flag converter online ascii python list quotes generator python online python to c converter python from string to bytes to hex python converter to c python convert number to binar python to c
+transpiler python to java converter arabic text recognition from pdf using python python togli spazio Python to C++ converter encode decode python â\x80\x99 python char to hex python hello world change background color of tkinter sleep function python how to save matplotlib figure to png src/_portaudiomodule.c:29:10: fatal error: 'portaudio.h' file not found python loop through list python iterate through dictionary python text fromatting rows how to import matplotlib in python print multiple lines python how to get the remainder in python python add one python f string how to check if there are duplicates in a list python if list item in string python how to execute bash commands in python script python initialize multidimensional list how to check django version sorting python array python how to align text writen to a file how to use startswith() with list django psql setup Detect Word Then Send Message (discord.py) python scipy.stats.t.ppf how to replace first line of a textfile python ValueError: I/O operation on closed file. scrapy itemloader example discord bot slash how to send a message in a specific channel discord.py Young C so new(pro.cashmoneyap x nazz music) soundcloud python split string python classes python if else python write to file python remove element from list python random python list to string python iterate dictionary key value python virtual environment python list install opencv python try except python python read json file lambda python enumerate in python python date and time get index of list python how to add a column to a pandas df drop a column pandas random number python python sort list code how pandas save csv file csv python write virtual env create python python check if file exists api in python python project ideas python loops python date format python read file line by line pycharm python zip function round python python pip install matplotlib how to upgrade pip python dictionary methods python list length add something to list python python pandas drop python do while pandas remove duplicates pandas read csv python to exe python if statement how to check python version update tensorflow pip python find index by value python string methods python beginner practice problems python add to list for loop python list methods python python dict class how do i sort list in python reverse list python python last element in list request post python datetime python add new keys to a dictionary python how to split a string by character in python python datetime now pandas loop through rows ubuntu install python python loop through list python replace char in string python delete key from dict convert string to list python python iterate through dictionary how to make a class in python how to import discord in python bot discord python python matplotlib how to read a csv file in python using pandas df.drop reset index pandas queue python open text file in python pandas unique values in column execute command in python script python pyautogui save pandas into csv dataframe create sleep function python python get date and time exception pyton print python insert pd.to_datetime python simple flask app convert into date python sleep in py py sleep function python beginner projects selenium python python create directory open file python how to calculate the sum of a list in python python read file django admin create superuser conda create environment threading python reset_index pandas how to plot a graph using matplotlib read csv python scikit learn linear regression python filter python current date python for loop range python make txt file python csv reader list to dict python python get square root python string to datetime threading python example add rows to dataframe pandas delete a row in pandas dataframe how can I sort a dictionary in python according to its values? pillow python python substring export a dataframe to excel pandas convert dataframe to numpy array rename columns pandas create csv file python iterate over rows dataframe python delete file df sort values python floor python append to file string to date python python list .remove mac os install python 3 increase figure size in matplotlib python install pip python list with only unique values python join list to string if substring not in string python python get a substring of a string python get command line arguments Write python program to take command line arguments (word count).
+how to get length of string python send email python python assert delete certain characters from a string python replacing values in pandas dataframe python string trim python print time reverse string in python linux ubuntu install python 3.7 python pygame December global holidays subplots matplotlib save dataframe to csv python remove string from string drop if nan in column pandas matplotlib legend how to define main in python pandas dataframe from dict replace column values pandas flask how to run app append to list python confusion matrix python how to update pip python join on column pandas email in python python os remove file dotenv python python list methods how to make a python exe python try catch python string contains substring python print without newline raise python throwing an exception python python find in list install pip in python append element to an array python static methods in python how to round a float in python enumerate python create a dataframe python python file reading delete file python python capitalize first letter python defaultdict python read csv file how to install python libraries python what does yield do how to print on the same line python round to two decimal places python python datetime string 'pip' is not recognized as an internal or external command, operable program or batch file. python how to return unique entries in a list pandas read excel how to make a python list install python in mac python sleep pandas read from excel scikit learn svm sort a dataframe by a column valuepython python square root how to check the type of a variable in python matplotlib histogram how to start a django project one. line if statement. python python absolute value python for loop python print format train test split sklearn create new django project how to print error in try except python python post request python check key press decorator python sort dataframe by column install django rest framework python pip install matplotlib python 2 decimal places import python module from another directory python main json dump to file pil python install check tensorflow version print colored text python try catch in python python debugger how to write a while statement in python python write datetime to string python combining 2 dataframes pandas copy a list python python save df to csv self in python python new line check package version python run python file using python code python loop through dictionary python requests header youtube.oc yotuube get text from txt file python ytouube create a virtual environment python 3 except as Exception: system pause in python how to wait in python command to upgrade python version print no new line python declare class python python iterate over list removing spaces in a string python python version python merge list into string python replace regex python plot how to make a comment python numpy merge arrays copy files python python randint how to change indeces in pandas dataframe python print python rename file python how to use input iterate through dictionary python file handling python continue python copy file gridsearchcv python get filename from path format time python create and use python classes check type of variable python python find the key with max value python lambda python count characters in string getting time python python matplt check if string is empty python python input timestamp python try catch python python3 iterate through indexes python remove last character from string python shuffle list drop columns pandas python os if file exists change dataframe column type how to print something in python python how to rename columns in pandas dataframe how to label column names and row names in pandas dataframe how to install python3 in ubuntu python input integer python factorial how to make a discord bot python python create virtualenv python async await httpresponse django replace nan in pandas how to run a .exe through python create new thread python list files in directory python django runserver django-admin python access index in for loop python largest value in list python datetime from string django create app python requirements.txt pythagorean theorem python if else python get wd in python python round up use beautifulsoup python open file ParserError: Error tokenizing data. C error: Expected 1 fields in line 87, saw 2 how to check if datapoint is in pandas column find nan value in dataframe python timestamp to date python pyautogui install conda env how to use virtual environment python python sort list in reverse python file open create folder python one-line for loop python python bitwise operators python remove last characters from string python get dictionary keys lambda function in python python get input python convert json to pandas dataframe python list files in current directory count nan pandas take off character in python string convert list to array python delete a value in list python how to install tkinter only keep rows of a dataframe based on a column value size array python pip install specific version how to check if a number is odd python python check if key is pressed python choose random element from list python wait 1 sec install selenium python python reverse string play music from python round to the nearest integer python sorting by column in pandas Quick Sort python django make migrations how to import turtle in python python logging to file rename column name pandas dataframe average value of list elements in python python startswith python comments python time delay selenium webdriver python pandas apply function to column how to randomly choose from a list python how to write csv from a dataframe pythin get list as input Merge Sort python python hotkey pyautogui merge two dataframes based on column installing django print new line python install python on ubuntu python remove duplicates from list append to front of list python datetime python timezone how to stop the program in python how to start a new django project urllib python how to create migrations in django sort dictionary by value python numpy list to array get request python for loop in python python test is nan python type on keyboard how to reverse a string in python empty set python python if name == main example python multiline comment convert str to dict python pandas print column names python check if folder exists while loop python dropping nan in pandas dataframe drop rows with condition pandas remove special characters from string python pandas rename column write json pythonb how to install pyaudio in python python square root function python how to measure code run in time count values pandas odd or even python pandas to list how to generate requirements.txt django python how to append to a list how do i convert a list to a string in python is int python append a line to a text file python how to run cmd line commands in python files python csv python exception list split string by spaces python logistic regression algorithm in python python delay get working directory python python delete key from dictionary python numpy array to list how to sort a dictionary by value in python sort list of dictionaries by key python for in python remove element from list different ways to print a list in python sklearn random forest numpy linspace python create environment variable add item to list python delete element list python python is integer declare numpy zeros matrix python pandas list to df matplotlib plot clear screen python convert column in pandas to datetime python install pil python3 webserver command line create dictionary comprehension python plot a histogram in python matplotlib get files in directory python main function python\ what is lambda in python how to replace nan with 0 in pandas discord py get user by id python list of random values taking input of array in python python input function how to set datetime format in python python local server command python removing \n from string matplotlib line plot read argument from terminal matplotlib set size how to get a row from a dataframe in python add pip to path python arguments square root in python python colours How to see how many times somting is in a list python input in a list in python file exist python rename file python plt figsize python time a funciton import matplotlib.pyplot as plt python exit program python get out of loop empty dataframe get environment variables python if type is string python how to find python version python find index of first matching element in a list mean of a column pandas convert to timestamp python convert dict to dataframe load model keras python write file factorial in python how to find no of times a elements in list python cv2.resize() remove item from list python python if __main__ determine if number is prime python python get current file location how to get user input of list in python how to make a numpy array how to use argparse print key of dictionary python how to get user inout in python redirect django python make a random number python selenium explicit wait save json to file how to install tkinter for python how to get distinct value in a column dataframe in python python string length extend a list python how to print hello world in python cv2 resize python create file get
+IP address python pandas left join check strings last letter python remove substring python pil python open image
+Browse Popular Code Answers by Language
+SQL
+sql update query sql insert query sql add column create table sql sql order by sql case when sql foreign key insert into mysql mysql create user create table in mysql mysql add foreign key sql select unique sql delete row create database mysql sql server delete column alter table delete column ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO) update value postgresql mysql format date insert into select alter table add column postgresql list db mysql list databases mysql grant all privileges to a user mysql delete row update column sql server sql server convert string to date mysql auto increment install postgresql ubuntu sql server substringShell/Bash
+delete local branch create remore git branch install node js ubuntu delete a branch in git install angular cli git add remote remove directory linux git command to create a branch how to install docker ubuntu git force pull delete local branch git git switch branch how to switch branch how to revert back to previous commit in git oh my zsh install deb file linux how to see ports in use install jupyter notebook git undo last commit install react bootstrap how to see all branches in git install latest npm how to uninstall npm packages git push to branch set up git repository delete branch git rename branch git git delete branch git discard local changes git rename branchSwift
+swift for loop how to loop swift use timer swift create dictionary swift time formats swift swift generate random number create alert in swift show alert swiftui Split a String into an array in Swift convert string to int swift dart capitalize first letter of each word swift change navigation bar color display image from url swift swift get current time add navigation bar button swiftui set image width and height swiftui fnb swift code swift filter array swift hide navigation bar conert data to string swift swift loop through array center text swiftui swift append element to array ios swift convert int to string add top corner radius swift format decimal place swift give background color swiftui replace character in swift play sound swift stack overflow add buton border swiftJavascript
+Javascript remove array item by value remove element from array javascript remove a particular element from array javascript removing item from array javascript array remove element javascript remove element from array js remove speific item from array array remove element js how do you remove a remove element from array in javascript Javascript Remove Element By Id Code Example parse integer javascript Javascript string to int string to number js javascript to integer string to int javascript javascript string to integer javascript convert string to number javascript parse a json string js json to object Javascript parse json string javascript json decode json parse string javascript parse json javascript json parse create react app javascript for loop how to convert string to int js js switch case javascript set and get cookie javascript get cookieVBA
+excel vba find get last row in column vba for loop vba for next loop skip excel vba for next loop skip message box VBA regex numeric digits excel vba find last column excel date to string conversion vba range to array excel vba array vba array from worksheet data excel formula how to create strings containing double quotes xlvba double quotes in string literal xl vba double quotes in string literal excelvba declare global constant xl-vba declare global constant xlvba declare globals vba global vs public excel vba how to declare a global variable excel vba check cell not empty excel add leading zeros to existing values excel vba wait string to date vb excel vba how to check if a worksheet cell is empty xlvba function sheet exists excel vba test or check if sheet exists xl-vba function sheet exists xlvba check if sheet exists vba function sheet exists vb switch casePython
+python split string python if else python write to file python remove element from list python list to string python iterate dictionary key value python virtual environment install opencv python try except python python string to int python read json file enumerate in python python date and time get index of list python how to add a column to a pandas df random number python python sort list drop a column pandas code how pandas save csv file csv python write python check if file exists api in python python project ideas virtual env create python python date format python read file line by line python zip function python pip install python dictionary methods python list lengthR
+bootstrap cdn link read csv in r r install package r for loop simple data frame in R read csv file in r r remove na from dataset how to do linear regression in r r remove row dataframe how to import csv file in r r write to csv r replace na with 0 how to read excel file in r r create a vector fuction in r print in r r combine strings write to csv in r how to change column names in r r language legend parameters write csv in r r read file rep in r r set dataframe column names normalization in r r create a list drop na in R rename column in r read xlsx in r r data typesRuby
+how create migration rails ruby for loop ruby each do method ruby each with index how to add column to table rails how to delete a table in rails ruby array has element change column rails example rails kill server comment in ruby how to check ruby version how to I change the name of a column in rails uruby to lower case A Ruby write to file example Add references rails migration how to remove columns from rails how to add to an array ruby ruby find in array if string contain
+string ruby default value rails migration ruby replace certain character get size of array in ruby ruby each array string interpolation ruby append array in ruby drop rails all db rails remove column from model ruby get current datetime heroku restart rails server rails link_to classRust
+hello world rust for loops in rust rust convertinging string to int how to make an array in rust rust match string read file rust rustlang error: linker `link.exe` not found how to index a string in rust range in rust rust get command line arguments how to read from stdin rust array as a parameter rust how to concatenate two &str in rust if let some rust how to split a string by spaces rust casting in rust rust get current directory rust printing string on stdout how to create a window in rust lang display trait rust how to convert int to float in rust rust non derived debug trait example check if a file exists rust rust replace characters rust trait inheritance rust random number in range rust lang sleep rust reverse range rust impl display rustlang try fromPHP
+php append to array php format date php check if string contains word php string contains substring php string to int php parse json php length of array php split string php sql insert php get current date and time php try catch laravel clear cache laravel run seed php loop through array count array php Allowed memory size of 1610612736 bytes exhausted in array php php connect to mysql php array length php sql connection php json encode query sql in php php array to string array_search in php php date now php for loop phhp for loop php delete array item by value not key common array methods php php delete element by valueJava
+int to string java java scanner stack overflow java random number java array declaration How to split a string in Java sort array java java string to int string to int java how to get a user input in java java split string convert string to int java java how to get current date array in java scanner in java how to create an array in java how to take input in java java string to char array convert char to string java list in java .length array java java convert String to int java parse ineger java read from file writing to a file in java length of string java java how to print an array string replace java java data types java check if string is number java check for string lengthHtml
+bootstrap text color bootstarp btn colors radio buttons html HTML button onclick html drop down list how to link css to html bootstrap login form html navigation bar html input types commenting in html html form checkbox bootstrap 4 dropdown html input textarea http status codes bootstrap border color bootstrap 4 center div html background image html select list new line html create a dropdown in html bootstrap bootstrap select box how to use the label tag in html html center button include script in html bootstrap align right video tag html html a href bootstrap display none import js in html html font sizeC++
+change int to string cpp getline in c++ c++ get length of array range of long long in c++ length of string c++ how to sort a vector in c++ convert stirng to int c++ how to reverse a string in c++ string to int c++ c++ reverse string remove value from vector c++ array length c++ linkedlist implementation in c++ find vector in c++ c++ switch case statement remove element by index from vector c++ declaring 2d vector in c++ read a file c++ flutter datetime format convert entire string to lowercase c++ making random numbers in c++ c++ for loop input a string in c++ c++ template function string in cpp convert decimal to binary in c++ list conda environments random number in c++ how to declare a function in c++ how to sort an array c++CSS
+css background image css media queries background color gradient css center a div in css css center image bootstrap btn classes Attack on titan css box shadow background image size css css align center link css with html css bold text css opacity example table border css linear gradient css css flex center background image css css rounded corners box shadow css font size css hide scrollbar css css style placeholder media query css image cover css image size css justify content css text shadow css position sticky css css align items vertical center css media queryTypeScript
+angular navigate using component check if dict key exists python How to download windows 10 ISO React with Typescript how to see all commits in git comments in css angular date pipe how to check whether file exists in python how to check list of open ports in linux how to print array elements in java for loop typescript cannot be loaded because running scripts is disabled on this system Can't bind to 'formGroup' since it isn't a known property of 'form install typescript using npm use google fonts in css angular number pipe see what ports are in use typescript remove object from array looping through two lists python voting results 2020 live google fonts roboto font awesome angular python requests get proxy How to Reload a Component in Angular typescript optional parameters mat-form-field must contain a MatFormFieldControl append to lists python create react app with typescript config get arguments from url flask react children typescriptC#
+c sharp split string c# switct case foreach syntax c# c# get set c# date formats custom string to int c# c# two dimensional array c sharp substring c# string to datetime try catch c# csharp datetime string format how to make a for loop in c# c# how to convert string to int c sharp string replace regex in c# c# initialize array c# user input c sharp int to string c sharp how to read a text file c# create array asp.net c# write string to text file c# length of array c# throw new exception population of the world c sharp string interpolation movement script c# .sh script: check if file exist how to rotate object unity c sharp tryparse for loop c#Kotlin
+for loop kotlin coroutines kotlin android dependency toast in kotlin make array list kotlin setOnClickListener example kotlin kotlin static method user input in kotlin make hashmap kotlin intent kotlin example how to write hello world in kotlin Kotlin round double string 2d array in kotlin kotlin add element to array what is difference between val and var kotlin comments in kotlin kotlin remove name from an activity how to declare string array in kotlin kotlin list add implement spinner in android kotlin Cannot inline bytecode built with JVM target 1.8 into bytecode that is being built with JVM target 1.6. Please specify proper '-jvm-target' option on click in kotlin android recyclerview scroll to bottom android custom AlertDialog theme how to call a function after delay in kotlin android android disable landscape mode kotlin not configured android studio create empty array in kotlin kotlin mutable list implementation random string generator kotlin kotlin in how to set without findviewbyidC
+struct in C size of an array c for loop c ModuleNotFoundError: No module named 'cv2' string to int c read files in c c int to string write in file in c switch statement in c c concatenate strings for loop in c string length c merge sort in c latex font sizes c bubble sort fahrenheit to celsius formula c data types switch case c visual studio code fibonacci series using recursion enum in c c user input how to run a update comand in linux factorial of a given number in c typedef in c fibonacci series in c bool in c how to print in c boolean in c how to print int in cLua
+lua for loop where can i learn lua where do lua tables start loop true childs roblox lua how to make a loop lua while loops lua add table to value lua click detection roblox on touch script length of table lua block commenting lua wait function lua while in lua Lua array add item lua in pairs repeating loop roblox lua How to remove index from table lua not equal print table lua how to get a random number in lua lua string to number roblox check if player has gamepass lua loop through table lua variable types lua round number sleep function lua break in lua Roblox Studio TweenService Example in lua 2020 lua for each in table how to execute scripts when a button gui is pressed robloxMatlab
+ModuleNotFoundError: No module named 'tkinter' to detect if a data frame has nan values matlab matrix zeros matlab zero vector matlab matrix index matlab matrix size find location of max value in array matlab zsh corrupt history file matlab length of array No module named 'imblearn' break loop for matlab matlab read image num to string matlab wait time matlab matlab clear plot fprintf in directory matlab multiple of value matlab if directory exist matlab save mat file script in matlab directory diff(x) matrix matlab matlab time function mean without nan matlab eval matlab variable name matlab read audio isnull in matlab matlab unix time to datetime Unrecognized function or variable 'matlab.internal.addons.updates.file exchange addon.getType FromPackageInfoUrl'. wait until job matlab load value inside job matlab nan size matlabDart
+Flutter turn string to int flutter push route flutter image asset how to show snackbar in flutter flutter list tile how to use hexadecimal color in flutter color() in flutter flutter container rounded corners timer in flutter flutter get current date rounded raisedbutton in flutter switch case in dart how to add padding flutter loop in dart dart card outline container flutter border radius flutter button border radius how to create a toast in flutter generate random int dart declaring and initializing a list in dart text fieldform color flutter toast in flutter New Year's Eve tabs flutter example dart random number text overflow ellipsis flutter text in column flutter overflow ellipsis not working conditionalstatement in widget flutter flutter container margin flutter center rowGo
+mongo console find by id throw new TypeError('Router.use() requires a middleware function but got a ' + gettype(fn)) drop mongo database signIn google firebase flutter golang convert int to string connect google drive to colab drop a collection in mongodb google forms answers golang string split golang convert string to int go add to slice set up google analytics make image go to center of page how to see number of words in google docs mongodb export entire database golang convert string to int64 initialize map in golang google cloudb pricing golang array syntax Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.20.1:test (default-test) on project upload drop mongodb database cross out google docs csgo jump throw bind go string to byte array how to stop google colab from disconnecting mongo db show datbae unzip a file in google colab go for loop how to search google how to delete google projectBASIC
+Microsoft Flight Simulator. how to send basic auth using fetch basic latex document visual basic how to declare a variable vb string to int32 how to open d drive using conda prompt add combobox in datagridview vb.net visual basic script msgbox how to add basic authentication on haproxy backend server mid visual basic function itextsharp landscape a4 Custom exception visual basic shortcut to rename the file on lenovo s340 Delete all data in neo4j removing illlegal char from filename How to configure cryptodredge docker-compose.yml reusable variablesAssembly
+the answer to life the universe and everything hello world in assembly using shape property in flutter for circular corner appending a vector in vector boku ni pico start learning assembly MOD OPERATOR for register in arm assembly array month name hello world x64 assembly cancel shutdown timer No assembly found containing an OwinStartupAttribute. array days of the week Arm assembly fibonacci dot net core 3.1 The type or namespace name 'TestClassAttribute' could not be found (are you missing a using directive or an assembly reference?) matlab machine epsilon program in assembly language to find even numbers from 1 to 10Perl
+perl for loop perl print array perl get date perl array loop perl set date perl print hash perl string length perl set a specific datetime perl http request perl replace substring perl datetime formatting perl last characters perl hash size perl get first characters perl validate integer perl validate id numberDelphi
+groblersdal to middelburg How to read text files in delphi for loop delphi delphi read file get current date delphi Delphi how copy works delete in delphi how to make message
+in delphi Erro ao inserir invalid byte sequence for encoding “UTF8”: 0x00 delphi postgresql length of string in delphi criar procedure/function delphi atalho delphi keydown enter Multi thread delphi get last element of array delphi delphi asking for inpot via dialog boxObjective-C
+get product image woocommerce xcode format code Error: EPERM: operation not permitted, mkdir 'C:\Users\SHUBHAM~KUNWAR' command not found: create-react-app uialertcontroller example objective c nstimer example objective c loop array objective c Error: EPERM: operation not permitted, mkdir 'C:\Users\Anubhab' command not found: create-react-app obj c write file worst programming language vc_map type number how to add undelete texts to textfield in ios obj c get point of intersection of 2 linesScala
+ValueError: If using all scalar values, you must pass an index scala hello world how to add comment in scala comments in scala scala get the first element of a seq how to get the nth element in a list in scala scala get file from url as string scala last element in listHaskell
+list comprehension haskell haskell multiline comment haskell get last element of list last element of list haskell string to list haskell hello world in haskell get first char from string haskellPascal
+pascal online compiler comment in pascal comments in pascal producto de matrices pascalJulia
+how to push an element to array in julia remove character from string julia julia dereference pointerGroovy
+for loop groovy groovy wait time groovy implementation of the interfaceElixir
+map merge elixir elixir random number elixir length of listFortran
+fortran do while fortran int to string write integer value in name fortran 90ActionScript
+visual studio code change terminal color TypeError: Cannot read property 'version' of undefinedClojure
+clojure get list first item how to make a range clojureAbap
+abap concatenate table abap loop exampleScheme
+how to pass unction in scheme how to make a list in scheme
+Browse Other Code Languages
+Abap
+ActionScript
+Assembly
+BASIC
 C
-D
-2000-01-03
-NaN NaN
-NaN
-NaN
-2000-01-04
-NaN NaN
-NaN
-NaN
-2000-01-05
-NaN NaN
-NaN
-NaN
-2000-01-06
-NaN NaN
-NaN
-NaN
-2000-01-07
-0.806980
-1 -0.911973 -0.747745
-2000-01-10
-0.689915
-1 -0.609054 -0.680394
-2000-01-11
-0.211679
-1 -0.383565 -0.164879
-2000-01-12
-0.286270
-1
-0.104075
-0.345844
-2000-01-13 -0.565249
-1
-0.039148
-0.333921
-2000-01-14
-0.295310
-1
-0.501143 -0.524100
-2000-01-17
-0.041252
-1
-0.868636 -0.577590
-2000-01-18
-0.205705
-1
-0.917778 -0.819271
-2000-01-19
-0.326449
-1
-0.933352 -0.882750
-2000-01-20
-0.120893
-1
-0.409255 -0.795062
-2000-01-21
-0.680531
-1 -0.192045 -0.349044
-2000-01-24
-0.643667
-1 -0.588676
-0.473287
-2000-01-25
-0.703188
-1 -0.746130
-0.714265
-2000-01-26
-0.065322
-1 -0.209789
-0.635360
-2000-01-27 -0.429914
-1 -0.100807
-0.266005
-2000-01-28 -0.387498
-1
-0.512321
-0.592033
-Computing rolling pairwise correlations¶
-In financial data analysis and other fields it’s common to compute correlation
-matrices for a collection of time series. More difficult is to compute a
-moving-window correlation matrix. This can be done using the
-rolling_corr_pairwise function, which yields a Panel whose items
-are the dates in question:
-In [189]: correls = rolling_corr_pairwise(df, 50)
-In [190]: correls[df.index[-50]]
-Out[190]:
-A
-B
-C
-D
-A
-1.000000 -0.177708 -0.253742
-0.303872
-B -0.177708
-1.000000 -0.085484
-0.008572
-C -0.253742 -0.085484
-1.000000 -0.769233
-D
-0.303872
-0.008572 -0.769233
-1.000000
-You can efficiently retrieve the time series of correlations between two
-columns using ix indexing:
-In [191]: correls.ix[:, 'A', 'C'].plot()
-Out[191]: <matplotlib.axes.AxesSubplot at 0x10a7bd950>
-Exponentially weighted moment functions¶
-A related set of functions are exponentially weighted versions of many of the
-above statistics. A number of EW (exponentially weighted) functions are
-provided using the blending method. For example, where
-is the
-result and
-the input, we compute an exponentially weighted moving
-average as
-One must have , but rather than pass
-directly, it’s easier to think about either the span or center of mass
-(com) of an EW moment:
-You can pass one or the other to these functions but not both. Span
-corresponds to what is commonly called a “20-day EW moving average” for
-example. Center of mass has a more physical interpretation. For example,
-span = 20 corresponds to com = 9.5. Here is the list of functions
-available:
-Function
-Description
-ewma
-EW moving average
-ewvar
-EW moving variance
-ewstd
-EW moving standard deviation
-ewmcorr
-EW moving correlation
-ewmcov
-EW moving covariance
-Here are an example for a univariate time series:
-In [192]: plt.close('all')
-In [193]: ts.plot(style='k--')
-Out[193]: <matplotlib.axes.AxesSubplot at 0x10e817dd0>
-In [194]: ewma(ts, span=20).plot(style='k')
-Out[194]: <matplotlib.axes.AxesSubplot at 0x10e817dd0>
-Note
-The EW functions perform a standard adjustment to the initial observations
-whereby if there are fewer observations than called for in the span, those
-observations are reweighted accordingly.
-Linear and panel regression¶
-Note
-We plan to move this functionality to statsmodels for the next release. Some of the
-result attributes may change names in order to foster naming consistency
-with the rest of statsmodels. We will provide every effort to provide
-compatibility with older versions of pandas, however.
-We have implemented a very fast set of moving-window linear regression
-classes in pandas. Two different types of regressions are supported:
-Standard ordinary least squares (OLS) multiple regression
-Multiple regression (OLS-based) on panel data including with fixed-effects
-(also known as entity or individual effects) or time-effects.
-Both kinds of linear models are accessed through the ols function in the
-pandas namespace. They all take the following arguments to specify either a
-static (full sample) or dynamic (moving window) regression:
-window_type: 'full sample' (default), 'expanding', or
-rolling
-window: size of the moving window in the window_type='rolling'
-case. If window is specified, window_type will be automatically set
-to 'rolling'
-min_periods: minimum number of time periods to require to compute the
-regression coefficients
-Generally speaking, the ols works by being given a y (response) object
-and an x (predictors) object. These can take many forms:
-y: a Series, ndarray, or DataFrame (panel model)
-x: Series, DataFrame, dict of Series, dict of DataFrame or Panel
-Based on the types of y and x, the model will be inferred to either a
-panel model or a regular linear model. If the y variable is a DataFrame,
-the result will be a panel model. In this case, the x variable must either
-be a Panel, or a dict of DataFrame (which will be coerced into a Panel).
-Standard OLS regression¶
-Let’s pull in some sample data:
-In [195]: from pandas.io.data import DataReader
-In [196]: symbols = ['MSFT', 'GOOG', 'AAPL']
-In [197]: data = dict((sym, DataReader(sym, "yahoo"))
-.....:
-for sym in symbols)
----------------------------------------------------------------------------
-IOError
-Traceback (most recent call last)
-<ipython-input-197-f4577f08f45e> in <module>()
-1 data = dict((sym, DataReader(sym, "yahoo"))
-----> 2
-for sym in symbols)
-<ipython-input-197-f4577f08f45e> in <genexpr>((sym,))
-1 data = dict((sym, DataReader(sym, "yahoo"))
-----> 2
-for sym in symbols)
-/Users/changshe/code/pandas/pandas/io/data.py in DataReader(name, data_source, start, end)
-51
-52
-if(data_source == "yahoo"):
----> 53
-return get_data_yahoo(name=name, start=start, end=end)
-54
-elif(data_source == "fred"):
-55
-return get_data_fred(name=name, start=start, end=end)
-/Users/changshe/code/pandas/pandas/io/data.py in get_data_yahoo(name, start, end)
-132
-'&ignore=.csv'
-133
---> 134
-lines = urllib.urlopen(url).read()
-135
-return read_csv(StringIO(lines), index_col=0, parse_dates=True)[::-1]
-136
-/Library/Frameworks/EPD64.framework/Versions/7.3/lib/python2.7/urllib.pyc in urlopen(url, data, proxies)
-84
-opener = _urlopener
-85
-if data is None:
----> 86
-return opener.open(url)
-87
-else:
-88
-return opener.open(url, data)
-/Library/Frameworks/EPD64.framework/Versions/7.3/lib/python2.7/urllib.pyc in open(self, fullurl, data)
-205
-try:
-206
-if data is None:
---> 207
-return getattr(self, name)(url)
-208
-else:
-209
-return getattr(self, name)(url, data)
-/Library/Frameworks/EPD64.framework/Versions/7.3/lib/python2.7/urllib.pyc in open_http(self, url, data)
-342
-if realhost: h.putheader('Host', realhost)
-343
-for args in self.addheaders: h.putheader(*args)
---> 344
-h.endheaders(data)
-345
-errcode, errmsg, headers = h.getreply()
-346
-fp = h.getfile()
-/Library/Frameworks/EPD64.framework/Versions/7.3/lib/python2.7/httplib.pyc in endheaders(self, message_body)
-952
-else:
-953
-raise CannotSendHeader()
---> 954
-self._send_output(message_body)
-955
-956
-def request(self, method, url, body=None, headers={}):
-/Library/Frameworks/EPD64.framework/Versions/7.3/lib/python2.7/httplib.pyc in _send_output(self, message_body)
-812
-msg += message_body
-813
-message_body = None
---> 814
-self.send(msg)
-815
-if message_body is not None:
-816
-#message_body was not a string (i.e. it is a file) and
-/Library/Frameworks/EPD64.framework/Versions/7.3/lib/python2.7/httplib.pyc in send(self, data)
-774
-if self.sock is None:
-775
-if self.auto_open:
---> 776
-self.connect()
-777
-else:
-778
-raise NotConnected()
-/Library/Frameworks/EPD64.framework/Versions/7.3/lib/python2.7/httplib.pyc in connect(self)
-755
-"""Connect to the host and port specified in __init__."""
-756
-self.sock = socket.create_connection((self.host,self.port),
---> 757
-self.timeout, self.source_address)
-758
-759
-if self._tunnel_host:
-/Library/Frameworks/EPD64.framework/Versions/7.3/lib/python2.7/socket.pyc in create_connection(address, timeout, source_address)
-551
-host, port = address
-552
-err = None
---> 553
-for res in getaddrinfo(host, port, 0, SOCK_STREAM):
-554
-af, socktype, proto, canonname, sa = res
-555
-sock = None
-IOError: [Errno socket error] [Errno 8] nodename nor servname provided, or not known
-In [198]: panel = Panel(data).swapaxes('items', 'minor')
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-198-07873b3393db> in <module>()
-----> 1 panel = Panel(data).swapaxes('items', 'minor')
-NameError: name 'data' is not defined
-In [199]: close_px = panel['Close']
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-199-a66091f76327> in <module>()
-----> 1 close_px = panel['Close']
-NameError: name 'panel' is not defined
-# convert closing prices to returns
-In [200]: rets = close_px / close_px.shift(1) - 1
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-200-4d4b48582905> in <module>()
-----> 1 rets = close_px / close_px.shift(1) - 1
-NameError: name 'close_px' is not defined
-In [201]: rets.info()
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-201-b45c30505b95> in <module>()
-----> 1 rets.info()
-NameError: name 'rets' is not defined
-Let’s do a static regression of AAPL returns on GOOG returns:
-In [202]: model = ols(y=rets['AAPL'], x=rets.ix[:, ['GOOG']])
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-202-06740d688d60> in <module>()
-----> 1 model = ols(y=rets['AAPL'], x=rets.ix[:, ['GOOG']])
-NameError: name 'rets' is not defined
-In [203]: model
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-203-458d5f1afc81> in <module>()
-----> 1 model
-NameError: name 'model' is not defined
-In [204]: model.beta
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-204-0d729d4f44c2> in <module>()
-----> 1 model.beta
-NameError: name 'model' is not defined
-If we had passed a Series instead of a DataFrame with the single GOOG
-column, the model would have assigned the generic name x to the sole
-right-hand side variable.
-We can do a moving window regression to see how the relationship changes over
-time:
-In [205]: model = ols(y=rets['AAPL'], x=rets.ix[:, ['GOOG']],
-.....:
-window=250)
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-205-77141e77cc71> in <module>()
-----> 1 model = ols(y=rets['AAPL'], x=rets.ix[:, ['GOOG']],
-2
-window=250)
-NameError: name 'rets' is not defined
-# just plot the coefficient for GOOG
-In [206]: model.beta['GOOG'].plot()
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-206-3fa2144a7140> in <module>()
-----> 1 model.beta['GOOG'].plot()
-NameError: name 'model' is not defined
-It looks like there are some outliers rolling in and out of the window in the
-above regression, influencing the results. We could perform a simple
-winsorization at the 3 STD level
-to trim the impact of outliers:
-In [207]: winz = rets.copy()
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-207-ef159cc28d64> in <module>()
-----> 1 winz = rets.copy()
-NameError: name 'rets' is not defined
-In [208]: std_1year = rolling_std(rets, 250, min_periods=20)
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-208-498f5e1a00b5> in <module>()
-----> 1 std_1year = rolling_std(rets, 250, min_periods=20)
-NameError: name 'rets' is not defined
-# cap at 3 * 1 year standard deviation
-In [209]: cap_level = 3 * np.sign(winz) * std_1year
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-209-eceb7c33338e> in <module>()
-----> 1 cap_level = 3 * np.sign(winz) * std_1year
-NameError: name 'winz' is not defined
-In [210]: winz[np.abs(winz) > 3 * std_1year] = cap_level
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-210-dbfbe3507388> in <module>()
-----> 1 winz[np.abs(winz) > 3 * std_1year] = cap_level
-NameError: name 'cap_level' is not defined
-In [211]: winz_model = ols(y=winz['AAPL'], x=winz.ix[:, ['GOOG']],
-.....:
-window=250)
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-211-71948d79df5f> in <module>()
-----> 1 winz_model = ols(y=winz['AAPL'], x=winz.ix[:, ['GOOG']],
-2
-window=250)
-NameError: name 'winz' is not defined
-In [212]: model.beta['GOOG'].plot(label="With outliers")
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-212-bf6780a1eec6> in <module>()
-----> 1 model.beta['GOOG'].plot(label="With outliers")
-NameError: name 'model' is not defined
-In [213]: winz_model.beta['GOOG'].plot(label="Winsorized"); plt.legend(loc='best')
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-213-815cf4b32c25> in <module>()
-----> 1 winz_model.beta['GOOG'].plot(label="Winsorized"); plt.legend(loc='best')
-NameError: name 'winz_model' is not defined
-So in this simple example we see the impact of winsorization is actually quite
-significant. Note the correlation after winsorization remains high:
-In [214]: winz.corrwith(rets)
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-214-0230c93d5cfd> in <module>()
-----> 1 winz.corrwith(rets)
-NameError: name 'winz' is not defined
-Multiple regressions can be run by passing a DataFrame with multiple columns
-for the predictors x:
-In [215]: ols(y=winz['AAPL'], x=winz.drop(['AAPL'], axis=1))
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-215-de0445896065> in <module>()
-----> 1 ols(y=winz['AAPL'], x=winz.drop(['AAPL'], axis=1))
-NameError: name 'winz' is not defined
-Panel regression¶
-We’ve implemented moving window panel regression on potentially unbalanced
-panel data (see this article if
-this means nothing to you). Suppose we wanted to model the relationship between
-the magnitude of the daily return and trading volume among a group of stocks,
-and we want to pool all the data together to run one big regression. This is
-actually quite easy:
-# make the units somewhat comparable
-In [216]: volume = panel['Volume'] / 1e8
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-216-81ef33fb51c8> in <module>()
-----> 1 volume = panel['Volume'] / 1e8
-NameError: name 'panel' is not defined
-In [217]: model = ols(y=volume, x={'return' : np.abs(rets)})
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-217-4e7bad5a4523> in <module>()
-----> 1 model = ols(y=volume, x={'return' : np.abs(rets)})
-NameError: name 'volume' is not defined
-In [218]: model
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-218-458d5f1afc81> in <module>()
-----> 1 model
-NameError: name 'model' is not defined
-In a panel model, we can insert dummy (0-1) variables for the “entities”
-involved (here, each of the stocks) to account the a entity-specific effect
-(intercept):
-In [219]: fe_model = ols(y=volume, x={'return' : np.abs(rets)},
-.....:
-entity_effects=True)
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-219-123d2b0e6684> in <module>()
-----> 1 fe_model = ols(y=volume, x={'return' : np.abs(rets)},
-2
-entity_effects=True)
-NameError: name 'volume' is not defined
-In [220]: fe_model
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-220-e0aa1859f068> in <module>()
-----> 1 fe_model
-NameError: name 'fe_model' is not defined
-Because we ran the regression with an intercept, one of the dummy variables
-must be dropped or the design matrix will not be full rank. If we do not use an
-intercept, all of the dummy variables will be included:
-In [221]: fe_model = ols(y=volume, x={'return' : np.abs(rets)},
-.....:
-entity_effects=True, intercept=False)
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-221-ebdd062db1f9> in <module>()
-----> 1 fe_model = ols(y=volume, x={'return' : np.abs(rets)},
-2
-entity_effects=True, intercept=False)
-NameError: name 'volume' is not defined
-In [222]: fe_model
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-222-e0aa1859f068> in <module>()
-----> 1 fe_model
-NameError: name 'fe_model' is not defined
-We can also include time effects, which demeans the data cross-sectionally at
-each point in time (equivalent to including dummy variables for each
-date). More mathematical care must be taken to properly compute the standard
-errors in this case:
-In [223]: te_model = ols(y=volume, x={'return' : np.abs(rets)},
-.....:
-time_effects=True, entity_effects=True)
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-223-c1e13ca06b73> in <module>()
-----> 1 te_model = ols(y=volume, x={'return' : np.abs(rets)},
-2
-time_effects=True, entity_effects=True)
-NameError: name 'volume' is not defined
-In [224]: te_model
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-224-b9166339d2b5> in <module>()
-----> 1 te_model
-NameError: name 'te_model' is not defined
-Here the intercept (the mean term) is dropped by default because it will be 0
-according to the model assumptions, having subtracted off the group means.
-Result fields and tests¶
-We’ll leave it to the user to explore the docstrings and source, especially as
-we’ll be moving this code into statsmodels in the near future.
-previous |
-next |
-modules |
-modules |
-index
-Show Source
-© Copyright 2008-2012, the pandas development team.
-Created using Sphinx 1.1.2.
+Clojure
+Cobol
+C++
+C#
+CSS
+Dart
+Delphi
+Elixir
+Erlang
+Fortran
+F#
+Go
+Groovy
+Haskell
+Html
+Java
+Javascript
+Julia
+Kotlin
+Lisp
+Lua
+Matlab
+Objective-C
+Pascal
+Perl
+PHP
+PostScript
+Prolog
+Python
+R
+Ruby
+Rust
+Scala
+Scheme
+Shell/Bash
+Smalltalk
+SQL
+Swift
+TypeScript
+VBA
+WebAssembly
+Whatever
+Grepper
+Features
+Reviews
+Code Answers
+Search Code Snippets
+Pricing
+FAQ
+Welcome
+Browsers Supported
+Grepper Teams
+Documentation
+Adding a Code Snippet
+Viewing & Copying Snippets
+Social
+Twitter
+Facebook
+Legal
+Privacy Policy
+Terms
+Contact
+support@codegrepper.com
+X
+Register to vote on and add code examples. Join our developer community to improve your dev skills and code like a boss!
+No Good?
+Help us improve our code examples by registering to vote on and add answers. Join our developer community to improve your dev skills and code like a boss!
+Continue with Google
+By continuing, I agree that I have read and agree to Greppers's Terms of Service and Privacy Policy.
+X
+Grepper Account Login Required
+Oops, You will need to install Grepper and log-in to perform this action.
+Install Grepper Here

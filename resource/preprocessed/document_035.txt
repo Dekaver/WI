@@ -1,319 +1,83 @@
-8. Kesalahan errors dan Pengecualian exceptions — Dokumentasi Python 3.8.10
-Navigasi
-index
-modul |
-berikut |
-sebelum |
-Python »
-3.8.10 Documentation »
-Tutorial Python »
-|
-8. Kesalahan errors dan Pengecualian exceptions¶
-Sampai sekarang pesan kesalahan belum lebih dari yang disebutkan, tetapi jika Anda telah mencoba contohnya, Anda mungkin telah melihat beberapa. Ada (setidaknya) dua jenis kesalahan yang dapat dibedakan: syntax errors dan exceptions.
-8.1. Kesalahan Sintaksis¶
-Kesalahan sintaksis, juga dikenal sebagai kesalahan penguraian parsing, mungkin merupakan jenis keluhan paling umum yang Anda dapatkan saat Anda masih belajar Python:
->>> while True print('Hello world')
-File "<stdin>", line 1
-while True print('Hello world')
-^
-SyntaxError: invalid syntax
-Pengurai parser mengulangi baris yang menyinggung dan menampilkan sedikit 'arrow' yang menunjuk pada titik paling awal di baris di mana kesalahan terdeteksi. Kesalahan disebabkan oleh (atau setidaknya terdeteksi pada) token preceding panah: dalam contoh, kesalahan terdeteksi pada fungsi print(), karena titik dua (':')) hilang sebelum itu. Nama file dan nomor baris dicetak sehingga Anda tahu ke mana harus mencari kalau-kalau masukan berasal dari skrip.
-8.2. Pengecualian¶
-Bahkan jika suatu pernyataan atau ungkapan secara sintaksis benar, itu dapat menyebabkan kesalahan ketika suatu usaha dilakukan untuk mengeksekusinya. Kesalahan yang terdeteksi selama eksekusi disebut exceptions dan tidak fatal tanpa syarat: Anda akan segera belajar cara menanganinya dalam program Python. Namun, sebagian besar pengecualian tidak ditangani oleh program, dan menghasilkan pesan kesalahan seperti yang ditunjukkan di sini:
->>> 10 * (1/0)
-Traceback (most recent call last):
-File "<stdin>", line 1, in <module>
-ZeroDivisionError: division by zero
->>> 4 + spam*3
-Traceback (most recent call last):
-File "<stdin>", line 1, in <module>
-NameError: name 'spam' is not defined
->>> '2' + 2
-Traceback (most recent call last):
-File "<stdin>", line 1, in <module>
-TypeError: Can't convert 'int' object to str implicitly
-Baris terakhir dari pesan kesalahan menunjukkan apa yang terjadi. Pengecualian ada berbagai jenis yang berbeda, dan tipe dicetak sebagai bagian dari pesan: tipe dalam contoh adalah ZeroDivisionError, NameError dan TypeError. String yang dicetak sebagai jenis pengecualian adalah nama pengecualian bawaan yang terjadi. Ini berlaku untuk semua pengecualian bawaan, tetapi tidak harus sama untuk pengecualian yang dibuat pengguna (meskipun ini adalah konvensi yang bermanfaat). Nama pengecualian standar adalah pengidentifikasi bawaan (bukan kata kunci yang dipesan reserved keyword).
-Sisa baris menyediakan detail berdasarkan jenis pengecualian dan apa yang menyebabkannya.
-Bagian sebelumnya dari pesan kesalahan menunjukkan konteks di mana pengecualian terjadi, dalam bentuk stack traceback. Secara umum berisi daftar baris sumber stack traceback; namun, ini tidak akan menampilkan baris yang dibaca dari masukan standar.
-Built-in Exceptions memberikan daftar pengecualian bawaan dan artinya.
-8.3. Menangani Pengecualian¶
-Dimungkinkan untuk menulis program yang menangani pengecualian yang dipilih. Lihatlah contoh berikut, yang meminta masukan dari pengguna sampai integer yang valid telah dimasukkan, tetapi memungkinkan pengguna untuk menghentikan program (menggunakan Control-C atau apa pun yang didukung sistem operasi); perhatikan bahwa gangguan yang dibuat pengguna ditandai dengan munculnya pengecualian KeyboardInterrupt.
->>> while True:
-...
-try:
-...
-x = int(input("Please enter a number: "))
-...
+Why am I receiving 'list' object cannot be interpreted as an integer and 'str' object cannot be interpreted as an integer? - Python - Codecademy Forums
+Why am I receiving 'list' object cannot be interpreted as an integer and 'str' object cannot be interpreted as an integer?
+Get Help
+Python
+lists-dictionaries
+simanii
+July 3, 2016,
+4:00pm
+#1
+Hi,
+I wrote the following code and receiving error. What is problem with and how can I eradicate errors.
+c=0
+x=[]
+y=[]
+z=[]
+while True:
+o=int(input("enter menu:"))
+if o==1:
+x.append(input("enter name:"))
+z.append(int(input("enter #:")))
+y.append(int(input("enter score:")))
+c+=1
+elif o==2:
+n=int(input("enter student number:"))
+for i in range(0,c):
+if n==z[i]:
+x.pop([i])
+y.pop([i])
+z.pop([i])
+elif o==3:
+for i in range(0,c):
+print("name:",x[i],"st number:",z[i],"score:",y[i])
+elif o==4:
 break
-...
-except ValueError:
-...
-print("Oops!
-That was no valid number.
-Try again...")
-...
-Pernyataan try berfungsi sebagai berikut.
-Pertama, try clause (pernyataan(-pernyataan) di antara kata kunci try dan except) dieksekusi.
-Jika tidak ada pengecualian terjadi, except clause dilewati dan eksekusi pernyataan :keyword: try selesai.
-Jika pengecualian terjadi selama eksekusi klausa try, sisa klausa dilewati. Kemudian jika jenisnya cocok dengan pengecualian yang dinamai dengan kata kunci exception, klausa except dioperasikan, dan kemudian eksekusi berlanjut setelah pernyataan try.
-Jika terjadi pengecualian yang tidak cocok dengan pengecualian yang disebutkan dalam klausa kecuali, itu diteruskan ke luar pernyataan try; jika tidak ada penangan yang ditemukan, ini adalah unhandled exception dan eksekusi berhenti dengan pesan seperti yang ditunjukkan di atas.
-Pernyataan try mungkin memiliki lebih dari satu klausa except, untuk menentukan penangan dari berbagai pengecualian. Paling banyak satu penangan akan dieksekusi. Penangan hanya menangani pengecualian yang terjadi pada klausa try yang sesuai, bukan pada penangan lain yang sama pernyataan try. Klausa except dapat menyebutkan beberapa pengecualian sebagai tanda kurung tuple, misalnya:
-... except (RuntimeError, TypeError, NameError):
-...
-pass
-Kelas dalam klausa except kompatibel dengan pengecualian jika itu adalah kelas yang sama atau kelas basisnya (tapi bukan sebaliknya --- sebuah klausa except dari daftar kelas turunan tidak kompatibel dengan kelas). Misalnya, kode berikut akan mencetak B, C, D dalam urutan itu:
-class B(Exception):
-pass
-class C(B):
-pass
-class D(C):
-pass
-for cls in [B, C, D]:
-try:
-raise cls()
-except D:
-print("D")
-except C:
-print("C")
-except B:
-print("B")
-Perhatikan bahwa jika klausa except dibalik (dengan except B dahulu), itu akan dicetak B, B, B --- pencocokan pertama klausa except dipicu.
-Klausa except terakhir dapat menghilangkan nama-(nama) pengecualian, untuk berfungsi sebagai wildcard. Gunakan ini dengan sangat hati-hati, karena mudah untuk menutupi kesalahan nyata pemrograman dengan cara ini! Ini juga dapat digunakan untuk mencetak pesan kesalahan dan kemudian menimbulkan kembali pengecualian (memungkinkan pemanggil untuk menangani pengecualian juga)
-import sys
-try:
-f = open('myfile.txt')
-s = f.readline()
-i = int(s.strip())
-except OSError as err:
-print("OS error: {0}".format(err))
-except ValueError:
-print("Could not convert data to an integer.")
-except:
-print("Unexpected error:", sys.exc_info()[0])
-raise
-Pernyataan try ... :keywird:`except` memiliki opsi else clause, yang, jika ada, harus mengikuti semua klausa except. Ini berguna untuk kode yang harus dijalankan jika klausa try tidak menimbulkan pengecualian. Sebagai contoh:
-for arg in sys.argv[1:]:
-try:
-f = open(arg, 'r')
-except OSError:
-print('cannot open', arg)
-else:
-print(arg, 'has', len(f.readlines()), 'lines')
-f.close()
-Penggunaan klausa else lebih baik daripada menambahkan kode tambahan ke klausa try karena menghindari secara tidak sengaja menangkap pengecualian yang tidak dimunculkan oleh kode yang dilindungi oleh pernyataan try ... :keyword: !except.
-Ketika pengecualian terjadi, itu mungkin memiliki nilai terkait, juga dikenal sebagai argument pengecualian. Kehadiran dan jenis argumen tergantung pada jenis pengecualian.
-Klausa except dapat menentukan variabel setelah nama pengecualian. Variabel terikat pada instance pengecualian dengan argumen yang disimpan dalam instance.args. Untuk kenyamanan, instance pengecualian mendefinisikan __str__() sehingga argumen dapat dicetak langsung tanpa harus merujuk .args. Seseorang juga dapat membuat instansiasi pengecualian terlebih dahulu sebelum menimbulkannya dan menambahkan atribut apa pun yang diinginkan.
->>> try:
-...
-raise Exception('spam', 'eggs')
-... except Exception as inst:
-...
-print(type(inst))
-# the exception instance
-...
-print(inst.args)
-# arguments stored in .args
-...
-print(inst)
-# __str__ allows args to be printed directly,
-...
-# but may be overridden in exception subclasses
-...
-x, y = inst.args
-# unpack args
-...
-print('x =', x)
-...
-print('y =', y)
-...
-<class 'Exception'>
-('spam', 'eggs')
-('spam', 'eggs')
-x = spam
-y = eggs
-Jika pengecualian memiliki argumen, mereka dicetak sebagai bagian terakhir ('detail') dari pesan untuk pengecualian yang tidak ditangani.
-Penangan pengecualian tidak hanya menangani pengecualian jika mereka muncul segera di klausa try, tetapi juga jika mereka terjadi di dalam fungsi yang disebut (bahkan secara tidak langsung) di klausa try. Sebagai contoh:
->>> def this_fails():
-...
-x = 1/0
-...
->>> try:
-...
-this_fails()
-... except ZeroDivisionError as err:
-...
-print('Handling run-time error:', err)
-...
-Handling run-time error: division by zero
-8.4. Memunculkan Pengecualian¶
-Pernyataan raise memungkinkan programmer untuk memaksa pengecualian yang ditentukan terjadi. Sebagai contoh:
->>> raise NameError('HiThere')
-Traceback (most recent call last):
-File "<stdin>", line 1, in <module>
-NameError: HiThere
-Satu-satunya argumen untuk raise menunjukkan pengecualian yang dimunculkan. Ini harus berupa instance pengecualian atau kelas pengecualian (kelas yang berasal dari Exception). Jika kelas pengecualian dikirimkan, itu akan secara implisit diinstansiasi dengan memanggil pembangunnya constructor tanpa argumen:
-raise ValueError
-# shorthand for 'raise ValueError()'
-Jika Anda perlu menentukan apakah pengecualian muncul tetapi tidak bermaksud menanganinya, bentuk yang lebih sederhana dari pernyataan raise memungkinkan Anda untuk memunculkan kembali pengecualian:
->>> try:
-...
-raise NameError('HiThere')
-... except NameError:
-...
-print('An exception flew by!')
-...
-raise
-...
-An exception flew by!
-Traceback (most recent call last):
-File "<stdin>", line 2, in <module>
-NameError: HiThere
-8.5. Pengecualian yang Ditentukan Pengguna¶
-Program dapat memberi nama pengecualian mereka sendiri dengan membuat kelas pengecualian baru (lihat tut-class untuk informasi lebih lanjut tentang kelas Python). Pengecualian biasanya berasal dari kelas Exception, baik secara langsung atau tidak langsung.
-Kelas pengecualian dapat didefinisikan yang melakukan apa saja yang dapat dilakukan oleh kelas lain, tetapi biasanya tetap sederhana, seringkali hanya menawarkan sejumlah atribut yang memungkinkan informasi tentang kesalahan diekstraksi oleh penangan sebagai pengecualian. Saat membuat modul yang dapat menimbulkan beberapa kesalahan berbeda, praktik yang umum adalah membuat kelas dasar untuk pengecualian yang ditentukan oleh modul itu, dan mensubkelaskan kelas itu untuk membuat kelas pengecualian khusus untuk kondisi kesalahan yang berbeda:
-class Error(Exception):
-"""Base class for exceptions in this module."""
-pass
-class InputError(Error):
-"""Exception raised for errors in the input.
-Attributes:
-expression -- input expression in which the error occurred
-message -- explanation of the error
-"""
-def __init__(self, expression, message):
-self.expression = expression
-self.message = message
-class TransitionError(Error):
-"""Raised when an operation attempts a state transition that's not
-allowed.
-Attributes:
-previous -- state at beginning of transition
-next -- attempted new state
-message -- explanation of why the specific transition is not allowed
-"""
-def __init__(self, previous, next, message):
-self.previous = previous
-self.next = next
-self.message = message
-Sebagian besar pengecualian didefinisikan dengan nama yang diakhiri dengan "Error", mirip dengan penamaan pengecualian standar.
-Banyak modul standar menentukan pengecualian mereka sendiri untuk melaporkan kesalahan yang mungkin terjadi pada fungsi yang mereka tetapkan. Informasi lebih lanjut tentang kelas disajikan dalam bab tut-class.
-8.6. Mendefinisikan Tindakan Pembersihan¶
-Pernyataan try memiliki klausa opsional lain yang dimaksudkan untuk menentukan tindakan pembersihan yang harus dijalankan dalam semua keadaan. Sebagai contoh:
->>> try:
-...
-raise KeyboardInterrupt
-... finally:
-...
-print('Goodbye, world!')
-...
-Goodbye, world!
-KeyboardInterrupt
-Traceback (most recent call last):
-File "<stdin>", line 2, in <module>
-If a finally clause is present, the finally
-clause will execute as the last task before the try
-statement completes. The finally clause runs whether or
-not the try statement produces an exception. The following
-points discuss more complex cases when an exception occurs:
-If an exception occurs during execution of the try
-clause, the exception may be handled by an except
-clause. If the exception is not handled by an except
-clause, the exception is re-raised after the finally
-clause has been executed.
-Pengecualian dapat terjadi selama pelaksanaan klausa except atau else. Sekali lagi, pengecualian akan muncul kembali setelah klausa finally telah dieksekusi.
-If the try statement reaches a break,
-continue or return statement, the
-finally clause will execute just prior to the
-break, continue or return
-statement's execution.
-If a finally clause includes a return
-statement, the returned value will be the one from the
-finally clause's return statement, not the
-value from the try clause's return
-statement.
-Sebagai contoh:
->>> def bool_return():
-...
-try:
-...
-return True
-...
-finally:
-...
-return False
-...
->>> bool_return()
-False
-Contoh yang lebih rumit:
->>> def divide(x, y):
-...
-try:
-...
-result = x / y
-...
-except ZeroDivisionError:
-...
-print("division by zero!")
-...
-else:
-...
-print("result is", result)
-...
-finally:
-...
-print("executing finally clause")
-...
->>> divide(2, 1)
-result is 2.0
-executing finally clause
->>> divide(2, 0)
-division by zero!
-executing finally clause
->>> divide("2", "1")
-executing finally clause
-Traceback (most recent call last):
-File "<stdin>", line 1, in <module>
-File "<stdin>", line 3, in divide
-TypeError: unsupported operand type(s) for /: 'str' and 'str'
-Seperti yang Anda lihat, klausa finally dieksekusi dalam peristiwa apa pun. TypeError yang ditimbulkan dengan membagi dua string tidak ditangani oleh klausa except dan karenanya kembali muncul setelah klausa finally telah dieksekusi.
-Dalam aplikasi dunia nyata, klausa finally berguna untuk melepaskan sumber daya eksternal (seperti berkas atau koneksi jaringan), terlepas dari apakah penggunaan sumber daya tersebut berhasil.
-8.7. Tindakan Pembersihan yang Sudah Ditentukan¶
-Beberapa objek mendefinisikan tindakan pembersihan standar yang harus dilakukan ketika objek tidak lagi diperlukan, terlepas dari apakah operasi menggunakan objek berhasil atau gagal. Lihatlah contoh berikut, yang mencoba membuka berkas dan mencetak isinya ke layar.
-for line in open("myfile.txt"):
-print(line, end="")
-Masalah dengan kode ini adalah bahwa ia membiarkan berkas terbuka untuk jumlah waktu yang tidak ditentukan setelah bagian kode ini selesai dieksekusi. Ini bukan masalah dalam skrip sederhana, tetapi bisa menjadi masalah untuk aplikasi yang lebih besar. Pernyataan with memungkinkan objek seperti berkas digunakan dengan cara yang memastikan mereka selalu dibersihkan secepatnya dan dengan benar.
-with open("myfile.txt") as f:
-for line in f:
-print(line, end="")
-Setelah pernyataan dieksekusi, file f selalu ditutup, bahkan jika ada masalah saat pemrosesan baris-baris. Objek yang, seperti berkas-berkas, memberikan tindakan pembersihan yang telah ditentukan, akan menunjukkan ini dalam dokumentasinya.
-Daftar Isi
-8. Kesalahan errors dan Pengecualian exceptions
-8.1. Kesalahan Sintaksis
-8.2. Pengecualian
-8.3. Menangani Pengecualian
-8.4. Memunculkan Pengecualian
-8.5. Pengecualian yang Ditentukan Pengguna
-8.6. Mendefinisikan Tindakan Pembersihan
-8.7. Tindakan Pembersihan yang Sudah Ditentukan
-Topik sebelumnya
-7. Masukan dan Keluaran
-Topik berikutnya
-9. Classes
-Halaman Ini
-Laporkan Bug
-Lihat Sumber
-Navigasi
-index
-modul |
-berikut |
-sebelum |
-Python »
-3.8.10 Documentation »
-Tutorial Python »
-|
-© Hak Cipta 2001-2021, Python Software Foundation.
-The Python Software Foundation is a non-profit corporation.
-Please donate.
-Terakhir diperbarui pada Mei 04, 2021.
-Found a bug?
-Created using Sphinx 2.4.4.
+I received TypeError: ‘list’ object cannot be interpreted as an integer for x.pop([i])
+then I changed that to x.pop(x[i]) and I received
+TypeError: ‘str’ object cannot be interpreted as an integer
+mtf
+July 3, 2016,
+9:41pm
+#2
+Did you try with just pop(i).?
+Generally speaking, if we only wish to delete without returning the value,
+del(x[i])
+will do the same thing.
+simanii
+July 4, 2016, 12:13pm
+#3
+Thanks for your valuable answer.I replace pop with del, but I get that error again.
+The thing which is strange for me is that I am using the same definition for remove as same as find, but I only receive error from remove.
+Meanwhile, there is a problem with finding maximum on o=2. Please take a look at my run below:
+o=1:::add o=2:::max o=3:::find o=4:::remove o=5:::report
+o=6:::exit enter menu:1
+enter name:sam enter #:5 enter score:90
+o=1:::add o=2:::max o=3:::find o=4:::remove o=5:::report
+o=6:::exit enter menu:1
+enter name:susan enter #:10 enter score:75
+o=1:::add o=2:::max o=3:::find o=4:::remove o=5:::report
+o=6:::exit enter menu:1
+enter name:peter enter #:2 enter score:80
+o=1:::add o=2:::max o=3:::find o=4:::remove o=5:::report
+o=6:::exit enter menu:5
+name: sam st number: 5 score: 90 name: susan st number: 10 score: 75 name: peter st number: 2 score: 80
+o=1:::add o=2:::max o=3:::find o=4:::remove o=5:::report
+o=6:::exit enter menu:2
+max= 90
+o=1:::add o=2:::max o=3:::find o=4:::remove o=5:::report
+o=6:::exit enter menu:5
+name: sam st number: 5 score: 90 name: susan st number: 10 score: 90 name: peter st number: 2 score: 90
+o=1:::add o=2:::max o=3:::find o=4:::remove o=5:::report
+o=6:::exit enter menu:6
+You can see when I enter report as the first time, I will have true results. When I use max after that I find maximum number, although when I use again report you can see that I get false results(the score of sam, susan and peter are changed to 90 all of them) How can I eradicate this problem?
+system
+closed
+July 11, 2016, 11:47am
+#4
+This topic was automatically closed 7 days after the last reply. New replies are no longer allowed.
+Home
+Categories
+FAQ/Guidelines
+Terms of Service
+Privacy Policy
+Powered by Discourse, best viewed with JavaScript enabled

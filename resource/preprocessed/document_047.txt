@@ -1,532 +1,130 @@
-Processing data with Pandas — Geo-Python 2017 Autumn documentation
-Geo-Python
-2017 Autumn
-Course information
-General info
-Learning goals
-Grading
-Installing Python
-Vocabulary - Basic terms
-Resources
-License and terms of usage
-Lesson 1
-Motivation for the course
-Lesson overview
-Lecture
-Course environment
-Using the cloud computing environment
-Communicating with Slack
-A taste of Python
-Exercise 1
-Lesson 2
-Lesson overview
-Lecture
-Introduction to Version Control and GitHub
-Using Classroom for Github
-Working on the assignments
-Basic elements of Python
-Writing your own Python scripts
-Exercise 2
-Exercise 2 hints
-Lesson 3
-Lesson overview
-Lecture
-for loops
-Conditional statements
-Exercise 3
-Exercise 3 hints
-Lesson 4
-Lesson overview
-Lecture
-Functions
-Loading and using modules
-Exercise 4
-Exercise 4 hints
-Lesson 5
-Lesson overview
-Lecture
-What is Pandas?
-Exploring data using Pandas
-Processing data with Pandas
-Calculating with DataFrames
-Selecting data using indices
-Filtering and updating data
-Dealing with missing data
-Sorting data
-Rounding and finding unique values
-Writing data
-Exercise 5
-Hints for Exercise 5
-Lesson 6
-Lesson overview
-Lecture
-Advanced data processing with Pandas
-Dealing with errors
-Debugging Python scripts
-Exercise 6
-Hints for Exercise 6
-Lesson 7
-Lesson overview
-Lecture
-Plotting in Python
-Anatomy of a plot
-Plotting with Matplotlib
-Connecting Matplotlib with plotly
-Advanced plotting with Pandas
-Exercise 7
-Hints for Exercise 7
-Geo-Python
-»
-Processing data with Pandas
-View page source
-Processing data with Pandas¶
-Now you should know the basics of the data structures in Pandas and how to explore your data using some tools that is provided by Pandas.
-Next we continue to explore some of the basic data operations that are regularly needed when doing data analysis.
-Let’s first read the same data as before into Pandas to have a clean start.
-In [1] dataFrame = pd.read_csv('Kumpula-June-2016-w-metadata.txt', sep=',', skiprows=8)
-Calculating with DataFrames¶
-One of the most common things to do in Pandas is to create new columns based on calculations between different variables (columns).
-Creating a new column into our DataFrame is easy by specifying the name of the column and giving it some default value (in this case decimal number 0.0).
-In [1]: dataFrame['DIFF'] = 0.0
+Lr_find throws error "TypeError: 'float' object cannot be interpreted as an integer" - fastai users - Deep Learning Course Forums
+Lr_find throws error "TypeError: 'float' object cannot be interpreted as an integer"
+fastai users
+DomMIas
+(Dominique MIAS)
+April 4, 2019, 12:16pm
+#1
+Hello.
+I’m trying to create a text classifier, but during lr_find, it throws this error:
+LR Finder is complete, type {learner_name}.recorder.plot() to see the graph.
 ---------------------------------------------------------------------------
-NameError
+TypeError
 Traceback (most recent call last)
-<ipython-input-1-467690b2748d> in <module>()
-----> 1 dataFrame['DIFF'] = 0.0
-NameError: name 'dataFrame' is not defined
-In [2]: print(dataFrame)
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-2-23b7e8dbf202> in <module>()
-----> 1 print(dataFrame)
-NameError: name 'dataFrame' is not defined
-Let’s check the datatype of our new column
-In [3]: dataFrame['DIFF'].dtypes
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-3-1da7fdcd046a> in <module>()
-----> 1 dataFrame['DIFF'].dtypes
-NameError: name 'dataFrame' is not defined
-Okey, so we see that Pandas created a new column and recognized automatically that the data type is float as we passed a 0.0 value to it.
-We can also easily do calculations inside our DataFrame. Let’s update the column DIFF by calculating the difference between MAX and MIN columns to get an idea how much the temperatures have
-been varying during different days. Calculations can be done with following syntax where we first specify the column that we want to update (i.e. DIFF) and then do the actual calculation
-using the columns that we have in our dataFrameFrame.
-In [4]: dataFrame['DIFF'] = dataFrame['MAX'] - dataFrame['MIN']
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-4-3f5e45abd704> in <module>()
-----> 1 dataFrame['DIFF'] = dataFrame['MAX'] - dataFrame['MIN']
-NameError: name 'dataFrame' is not defined
-In [5]: print(dataFrame)
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-5-23b7e8dbf202> in <module>()
-----> 1 print(dataFrame)
-NameError: name 'dataFrame' is not defined
-Okey so now we can see that the calculations were inserted into the DIFF column as planned. Notice that you can do calculations directly without first creating the column. Let’s test
-this by calculating the difference between minimum temperature (MIN) and the mean temperature of the day (TEMP).
-In [6]: dataFrame['DIFF_Min'] = dataFrame['TEMP'] - dataFrame['MIN']
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-6-4e18ca0589cb> in <module>()
-----> 1 dataFrame['DIFF_Min'] = dataFrame['TEMP'] - dataFrame['MIN']
-NameError: name 'dataFrame' is not defined
-In [7]: print(dataFrame)
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-7-23b7e8dbf202> in <module>()
-----> 1 print(dataFrame)
-NameError: name 'dataFrame' is not defined
-As you can see, now we created directly a new column with the calculation. In a similar manner, you can do calculations using as many columns as you need and using any kind of math
-algebra (e.g. subtracttion, addition, multiplication, division, exponentiation, etc.).
-We can for example convert the Fahrenheit temperatures in TEMP column into Celsius using the formula that we have seen already many times:
-In [8]: dataFrame['TEMP_Celsius'] = (dataFrame['TEMP'] - 32) / (9/5)
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-8-b731cc09f71d> in <module>()
-----> 1 dataFrame['TEMP_Celsius'] = (dataFrame['TEMP'] - 32) / (9/5)
-NameError: name 'dataFrame' is not defined
-In [9]: print(dataFrame)
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-9-23b7e8dbf202> in <module>()
-----> 1 print(dataFrame)
-NameError: name 'dataFrame' is not defined
-Selecting data using indices¶
-One quite common procedure in programming that you want to select only specific rows from your data and possibly apply some operations into those rows only.
-In Pandas there are different ways of doing this.
-One common way of selecting only specific rows from your DataFrame is done via index slicing to extract part of the DataFrame.
-Let’s select the first five rows and assign them to a variable called rows5.
-In [10]: rows5 = dataFrame[0:5]
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-10-d3acb6d06e91> in <module>()
-----> 1 rows5 = dataFrame[0:5]
-NameError: name 'dataFrame' is not defined
-In [11]: print(rows5)
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-11-ed7163f96669> in <module>()
-----> 1 print(rows5)
-NameError: name 'rows5' is not defined
-As you can see, slicing is done in a similar manner as with normal Python lists, i.e. you specify index range you want to select inside the square brackets
-selection = dataFrame[start_index:stop_index].
-You can also select an individual row from specific position using .loc[] indexing. Here we select all the data values from row 8.
-In [12]: row8 = dataFrame.loc[8]
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-12-cb34aff2ba32> in <module>()
-----> 1 row8 = dataFrame.loc[8]
-NameError: name 'dataFrame' is not defined
-In [13]: print(row8)
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-13-f4466fc18549> in <module>()
-----> 1 print(row8)
-NameError: name 'row8' is not defined
-Attention
-Based on what we know about Python lists, what would you expect to see output from the following code?
-In [13]: print(dataFrame.loc[-1])
-Select your answer from the poll options at https://geo-python.github.io/poll/.
-.loc[] indexing returns the values from that position as a pd.Series where the indices are actually the column names of those variables. Hence, you can access the value of an individual column by referring to its index using following format (both should work):
-In [14]: print(row8['TEMP'])
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-14-cb950ac14330> in <module>()
-----> 1 print(row8['TEMP'])
-NameError: name 'row8' is not defined
-In [15]: print(row8.YEARMODA)
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-15-3a172b663da7> in <module>()
-----> 1 print(row8.YEARMODA)
-NameError: name 'row8' is not defined
-It is also possible to select multiple rows simultaniously. Here, we select only temperature values (TEMP) between indices of 5-10:
-In [16]: temps_5to10 = dataFrame.loc[5:10, 'TEMP']
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-16-b11a046cfae5> in <module>()
-----> 1 temps_5to10 = dataFrame.loc[5:10, 'TEMP']
-NameError: name 'dataFrame' is not defined
-In [17]: print(temps_5to10)
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-17-3ace724319ea> in <module>()
-----> 1 print(temps_5to10)
-NameError: name 'temps_5to10' is not defined
-It is also possible to select multiple columns using those same indices. Here, we select TEMP and the TEMP_Celsius columns by passing them inside a list (.loc[start_index:stop_index, list_of_columns]):
-In [18]: temps_5to10 = dataFrame.loc[5:10, ['TEMP', 'TEMP_Celsius']]
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-18-afa97d7f37e8> in <module>()
-----> 1 temps_5to10 = dataFrame.loc[5:10, ['TEMP', 'TEMP_Celsius']]
-NameError: name 'dataFrame' is not defined
-In [19]: print(temps_5to10)
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-19-3ace724319ea> in <module>()
-----> 1 print(temps_5to10)
-NameError: name 'temps_5to10' is not defined
-Of course, you can also get all values from those columns. This, can be done by simply referring to the dataFrame and inserting a list of columns inside the square brackets that you want to include.
-In [20]: temps_only = dataFrame[['TEMP', 'TEMP_Celsius']]
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-20-a66480fe3896> in <module>()
-----> 1 temps_only = dataFrame[['TEMP', 'TEMP_Celsius']]
-NameError: name 'dataFrame' is not defined
-In [21]: print(temps_only)
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-21-1a9428ee6f37> in <module>()
-----> 1 print(temps_only)
-NameError: name 'temps_only' is not defined
-Filtering and updating data¶
-One really useful feature in Pandas is the ability to easily filter and select rows based on certain criteria using .ix[] indexing.
-The following example shows how to select rows when the Celsius temperature has been higher than 15 degrees into variable w_temps (warm temperatures).
-In [22]: w_temps = dataFrame.ix[dataFrame['TEMP_Celsius'] > 15]
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-22-6c84ba90db30> in <module>()
-----> 1 w_temps = dataFrame.ix[dataFrame['TEMP_Celsius'] > 15]
-NameError: name 'dataFrame' is not defined
-In [23]: print(w_temps)
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-23-cbf24b9bc9d0> in <module>()
-----> 1 print(w_temps)
-NameError: name 'w_temps' is not defined
-It is also possible to combine multiple criteria at the same time. Here, we select temperatures above 15 degrees that were recorded on the second half of June in 2016 (i.e. YEARMODA >= 20160615).
-Combining multiple criteria can be done with & operator (AND) or | operator (OR). Notice, that it is often useful to separate the different clauses inside the parentheses ().
-In [24]: w_temps2 = dataFrame.ix[(dataFrame['TEMP_Celsius'] > 15) & (dataFrame['YEARMODA'] >= 20160615)]
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-24-9105d55e97a3> in <module>()
-----> 1 w_temps2 = dataFrame.ix[(dataFrame['TEMP_Celsius'] > 15) & (dataFrame['YEARMODA'] >= 20160615)]
-NameError: name 'dataFrame' is not defined
-In [25]: print(w_temps2)
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-25-6f06883d8519> in <module>()
-----> 1 print(w_temps2)
-NameError: name 'w_temps2' is not defined
-Now we have a subset of our DataFrame with only rows where the TEMP_Celsius is above 15 and the dates in YEARMODA column start from 15th of June.
-Notice, that the index values (numbers on the left) are still showing the positions from the original DataFrame. It is possible to reset the index using reset_index() function that
-might be useful in some cases to be able to slice the data in a similar manner as above. By default the reset_index() would make a new column called index to keep track on the previous
-index which might be useful in some cases but here not, so we can omit that by passing parameter drop=True.
-In [26]: w_temps2 = w_temps2.reset_index(drop=True)
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-26-cf18e9f68848> in <module>()
-----> 1 w_temps2 = w_temps2.reset_index(drop=True)
-NameError: name 'w_temps2' is not defined
-In [27]: print(w_temps2)
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-27-6f06883d8519> in <module>()
-----> 1 print(w_temps2)
-NameError: name 'w_temps2' is not defined
-As can be seen, now the index values goes from 0 to 12.
-Dealing with missing data¶
-Next we update the first five values of TEMP_Celsius in our w_temps2 DataFrame to be NaN (not-a-number). This can be done by utilizing the loc[] indexing.
-In [28]: w_temps2.loc[:4, 'TEMP_Celsius'] = None
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-28-3251b4a5c3b5> in <module>()
-----> 1 w_temps2.loc[:4, 'TEMP_Celsius'] = None
-NameError: name 'w_temps2' is not defined
-In [29]: print(w_temps2)
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-29-6f06883d8519> in <module>()
-----> 1 print(w_temps2)
-NameError: name 'w_temps2' is not defined
-Now we can see that we have some missing data in our DataFrame.
-Note
-Notice here that you don’t necessary need to specify the starting index if you select data starting from the beginning of the file (at index 0), hence you can leave it empty as in the example above.
-Having missing data in your datafile is really common situation and typically you want to deal with it somehow. Common procedures to deal with NaN is to either remove them from
-the DataFrame or fill them with some value. In Pandas both of these options are really easy to do.
-Let’s first see how we can remove the NoData values (i.e. clean the data) using dropna() function. Inside the function
-you can pass with subset parameter a list of column(s) from which the NaN values should be searched from.
-In [30]: w_temps_clean = w_temps2.dropna(subset=['TEMP_Celsius'])
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-30-fce4ded4bd09> in <module>()
-----> 1 w_temps_clean = w_temps2.dropna(subset=['TEMP_Celsius'])
-NameError: name 'w_temps2' is not defined
-In [31]: print(w_temps_clean)
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-31-d20b7d7caa04> in <module>()
-----> 1 print(w_temps_clean)
-NameError: name 'w_temps_clean' is not defined
-As you can see, as a result we now have a DataFrame without the NoData values.
-Other option is to fill the NoData with some value using fillna() -function. Here we fill it with value 0.
-In [32]: w_temps_na_filled = w_temps2.fillna(0)
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-32-91a0325d8ba1> in <module>()
-----> 1 w_temps_na_filled = w_temps2.fillna(0)
-NameError: name 'w_temps2' is not defined
-In [33]: print(w_temps_na_filled)
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-33-cf35110e4b76> in <module>()
-----> 1 print(w_temps_na_filled)
-NameError: name 'w_temps_na_filled' is not defined
-As a result we now have a DataFrame where NoData values are filled with value 0.00000.
-Warning
-In many cases filling the data with a specific value might be dangerous because you end up modifying the actual data that might affect the results of your analysis. For example in the example above
-we would have dramatically changed the mean Celsius temperature because the 0 values are dramatically decreasing the average temperature of the month. Hence, use filling carefully.
-Sorting data¶
-Quite often it is useful to be able to sort your data (descending/ascending) based on values in some column
-This can be easily done with Pandas using sort_values(by='YourColumnName') -function.
-Let’s first sort the values on ascending order based on the TEMP column:
-In [34]: sorted_temp_a = dataFrame.sort_values(by='TEMP')
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-34-65b63b18249e> in <module>()
-----> 1 sorted_temp_a = dataFrame.sort_values(by='TEMP')
-NameError: name 'dataFrame' is not defined
-In [35]: print(sorted_temp_a)
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-35-3393d4da6d85> in <module>()
-----> 1 print(sorted_temp_a)
-NameError: name 'sorted_temp_a' is not defined
-Of course, it is also possible to sort them in descending order with ascending=False parameter:
-In [36]: sorted_temp_d = dataFrame.sort_values(by='TEMP', ascending=False)
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-36-f81bb97822d3> in <module>()
-----> 1 sorted_temp_d = dataFrame.sort_values(by='TEMP', ascending=False)
-NameError: name 'dataFrame' is not defined
-In [37]: print(sorted_temp_d)
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-37-7fb5979785a6> in <module>()
-----> 1 print(sorted_temp_d)
-NameError: name 'sorted_temp_d' is not defined
-Rounding and finding unique values¶
-It is possible to round values easily by using round() function. Here we round the Celsius temperatures with 0-decimals
-In [38]: dataFrame['Celsius_rounded'] = dataFrame['TEMP_Celsius'].round(0)
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-38-279cbb9149b0> in <module>()
-----> 1 dataFrame['Celsius_rounded'] = dataFrame['TEMP_Celsius'].round(0)
-NameError: name 'dataFrame' is not defined
-In [39]: print(dataFrame)
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-39-23b7e8dbf202> in <module>()
-----> 1 print(dataFrame)
-NameError: name 'dataFrame' is not defined
-Now we have rounded our Celsius temperatures. Sometimes it is useful to extract the unique values that you have in your column.
-We can do that by using unique_values() -function:
-In [40]: unique = dataFrame['Celsius_rounded'].unique()
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-40-47fcb7836a00> in <module>()
-----> 1 unique = dataFrame['Celsius_rounded'].unique()
-NameError: name 'dataFrame' is not defined
-In [41]: unique
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-41-65177198fa9c> in <module>()
-----> 1 unique
-NameError: name 'unique' is not defined
-As a result we get an array of unique values in that column.
-Note
-Sometimes if you have a long list of unique values, you don’t necessary see all the unique values directly as IPython hides them. It is, however, possible to see all those values by printing them as a list:
-In [42]: print(list(unique))
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-42-abd6fbec060c> in <module>()
-----> 1 print(list(unique))
-NameError: name 'unique' is not defined
-How many days with unique mean temperature did we have in June 2016? We can check that!
-In [43]: uniq_temp_days = len(unique)
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-43-8719dceea370> in <module>()
-----> 1 uniq_temp_days = len(unique)
-NameError: name 'unique' is not defined
-In [44]: print("There were", uniq_temp_days, "days with unique mean temperatures in June 2016.")
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-44-a41766ad2f08> in <module>()
-----> 1 print("There were", uniq_temp_days, "days with unique mean temperatures in June 2016.")
-NameError: name 'uniq_temp_days' is not defined
-Writing data¶
-Lastly, it is of course important to be able to write the data that you have analyzed into your computer. This is really handy in Pandas as it supports many different data formats
-by default (see more info here).
-The most typical output format by far is CSV file. Function to_csv() can be used to easily save your data in CSV format.
-Let’s first save the data from our data DataFrame into a file called Kumpula_temp_results_June_2016.csv .
-In [45]: output_fp = "Kumpula_temps_June_2016.csv"
-In [46]: dataFrame.to_csv(output_fp, sep=',')
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-46-b683b7a0065e> in <module>()
-----> 1 dataFrame.to_csv(output_fp, sep=',')
-NameError: name 'dataFrame' is not defined
-Nice, now we have the data from our DataFrame saved to a file:
-As you can see, the first value in the datafile contains now the index value of the rows. There are also quite many decimals present in the new columns
-that we created. Let’s deal with these and save the temperature values from w_temps DataFrame without the index and with only 1 decimal in the floating point numbers.
-In [47]: output_fp2 = "Kumpula_temps_above15_June_2016.csv"
-In [48]: dataFrame.to_csv(output_fp2, sep=',', index=False, float_format="%.1f")
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-48-566e696c670a> in <module>()
-----> 1 dataFrame.to_csv(output_fp2, sep=',', index=False, float_format="%.1f")
-NameError: name 'dataFrame' is not defined
-Omitting the index can be with index=False parameter. Specifying how many decimals should be written can be done with float_fomat -parameter where text %.1f defines Pandas to use 1 decimals
-in all columns when writing the data to a file (changing the value 1 to 2 would write 2 decimals etc.)
-As a results you have a “cleaner” output file without the index column, and with only 1 decimal for floating point numbers.
-Hint
-It is quite common that people (especially non-programmers) want you to deliver data in MS Excel format. Saving DataFrame into Excel is also straightforward in Pandas.
-First, you need to initialize a specific ExcelWriter object, and then you specify the filename and the spreadsheet name where you want to save the DataFrame.
-Optionally, you can also omit the index and specify the float formatting as in our earlier examples:
-In [49]: excel_output_fp = "Kumpula_temps_June_2016.xlsx"
-In [50]: writer = pd.ExcelWriter(excel_output_fp)
----------------------------------------------------------------------------
-ModuleNotFoundError
-Traceback (most recent call last)
-<ipython-input-50-17f6f6c3da7e> in <module>()
-----> 1 writer = pd.ExcelWriter(excel_output_fp)
-~/virtualenv/python3.6.7/lib/python3.6/site-packages/pandas/io/excel/_openpyxl.py in __init__(self, path, engine, mode, **engine_kwargs)
+<ipython-input-24-d81c6bd29d71> in <module>
+----> 1 learn.lr_find()
+~\Anaconda3\envs\fast-ai_projetT\lib\site-packages\fastai\train.py in lr_find(learn, start_lr, end_lr, num_it, stop_div, **kwargs)
+29
+cb = LRFinder(learn, start_lr, end_lr, num_it, stop_div)
+30
+a = int(np.ceil(num_it/len(learn.data.train_dl)))
+---> 31
+learn.fit(a, start_lr, callbacks=[cb], **kwargs)
+32
+33 def to_fp16(learn:Learner, loss_scale:float=512., flat_master:bool=False)->Learner:
+~\Anaconda3\envs\fast-ai_projetT\lib\site-packages\fastai\basic_train.py in fit(self, epochs, lr, wd, callbacks)
+164
+callbacks = [cb(self) for cb in self.callback_fns] + listify(callbacks)
+165
+fit(epochs, self.model, self.loss_func, opt=self.opt, data=self.data, metrics=self.metrics,
+--> 166
+callbacks=self.callbacks+callbacks)
+167
+168
+def create_opt(self, lr:Floats, wd:Floats=0.)->None:
+~\Anaconda3\envs\fast-ai_projetT\lib\site-packages\fastai\basic_train.py in fit(epochs, model, loss_func, opt, data, callbacks, metrics)
+92
+except Exception as e:
+93
+exception = e
+---> 94
+raise e
+95
+finally: cb_handler.on_train_end(exception)
+96
+~\Anaconda3\envs\fast-ai_projetT\lib\site-packages\fastai\basic_train.py in fit(epochs, model, loss_func, opt, data, callbacks, metrics)
+82
+for xb,yb in progress_bar(data.train_dl, parent=pbar):
+83
+xb, yb = cb_handler.on_batch_begin(xb, yb)
+---> 84
+loss = loss_batch(model, xb, yb, loss_func, opt, cb_handler)
+85
+if cb_handler.on_batch_end(loss): break
+86
+~\Anaconda3\envs\fast-ai_projetT\lib\site-packages\fastai\basic_train.py in loss_batch(model, xb, yb, loss_func, opt, cb_handler)
 16
-def __init__(self, path, engine=None, mode="w", **engine_kwargs):
+if not is_listy(xb): xb = [xb]
 17
-# Use the openpyxl module as the Excel writer.
+if not is_listy(yb): yb = [yb]
 ---> 18
-from openpyxl.workbook import Workbook
+out = model(*xb)
 19
+out = cb_handler.on_loss_begin(out)
 20
-super().__init__(path, mode=mode, **engine_kwargs)
-ModuleNotFoundError: No module named 'openpyxl'
-In [51]: dataFrame.to_excel(writer, sheet_name="Kumpula_temperatures", index=False, float_format="%.1f")
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-51-c8c2004e9003> in <module>()
-----> 1 dataFrame.to_excel(writer, sheet_name="Kumpula_temperatures", index=False, float_format="%.1f")
-NameError: name 'dataFrame' is not defined
-As a result you have the DataFrame in Excel format:
-Next
-Previous
-© Copyright 2017 Tenkanen & Whipp, University of Helsinki
-Built with Sphinx using a
-theme
-provided by Read the Docs.
-Other Versions
-v: 2017
-Tags
-2017
-2018
-2019
-Branches
-master
+~\Anaconda3\envs\fast-ai_projetT\lib\site-packages\torch\nn\modules\module.py in __call__(self, *input, **kwargs)
+487
+result = self._slow_forward(*input, **kwargs)
+488
+else:
+--> 489
+result = self.forward(*input, **kwargs)
+490
+for hook in self._forward_hooks.values():
+491
+hook_result = hook(self, input, result)
+~\Anaconda3\envs\fast-ai_projetT\lib\site-packages\torch\nn\modules\container.py in forward(self, input)
+90
+def forward(self, input):
+91
+for module in self._modules.values():
+---> 92
+input = module(input)
+93
+return input
+94
+~\Anaconda3\envs\fast-ai_projetT\lib\site-packages\torch\nn\modules\module.py in __call__(self, *input, **kwargs)
+487
+result = self._slow_forward(*input, **kwargs)
+488
+else:
+--> 489
+result = self.forward(*input, **kwargs)
+490
+for hook in self._forward_hooks.values():
+491
+hook_result = hook(self, input, result)
+~\Anaconda3\envs\fast-ai_projetT\lib\site-packages\fastai\text\models.py in forward(self, input)
+168
+self.reset()
+169
+raw_outputs, outputs = [],[]
+--> 170
+for i in range(0, sl, self.bptt):
+171
+r, o = super().forward(input[:,i: min(i+self.bptt, sl)])
+172
+if i>(sl-self.max_seq):
+TypeError: 'str' object cannot be interpreted as an integer
+and I have no idea why…
+Do you ? Thanks, D.
+sgugger
+April 4, 2019, 12:53pm
+#2
+Us neither since we can’t guess from just lr_find
+If you want help, you have to provide your whole code.
+DomMIas
+(Dominique MIAS)
+April 4, 2019,
+2:31pm
+#3
+It seems it was an issue with the version I used (1.30). I upgraded to the last one, and everything is alright.
+More specificaly, on an earlier line, the model was not downloaded, which raise an error during training.
+Thank you anyway,
+D.
+Home
+Categories
+FAQ/Guidelines
+Terms of Service
+Privacy Policy
+Powered by Discourse, best viewed with JavaScript enabled

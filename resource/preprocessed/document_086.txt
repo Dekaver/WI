@@ -1,529 +1,151 @@
-Java Exceptions (Try...Catch)
-Tutorials
-References
-Exercises
-Menu
-Log in
-Paid Courses
-HTML
-CSS
-JAVASCRIPT
-SQL
-PYTHON
-PHP
-BOOTSTRAP
-HOW TO
-W3.CSS
-JAVA
-JQUERY
-C++
-C#
-R
-
-
-
-×
-Tutorials
-HTML and CSS
-Learn HTML
-Learn CSS
-Learn Bootstrap
-Learn W3.CSS
-Learn Colors
-Learn Icons
-Learn Graphics
-Learn SVG
-Learn Canvas
-Learn How To
-Learn Sass
-Artificial Intelligence
-Learn AI
-Learn Machine Learning
-Learn Data Science
-Learn NumPy
-Learn Pandas
-Learn SciPy
-Learn Statistics
-XML Tutorials
-Learn XML
-Learn XML AJAX
-Learn XML DOM
-Learn XML DTD
-Learn XML Schema
-Learn XSLT
-Learn XPath
-Learn XQuery
-JavaScript
-Learn JavaScript
-Learn jQuery
-Learn React
-Learn AngularJS
-Learn JSON
-Learn AJAX
-Learn AppML
-Learn W3.JS
-Programming
-Learn Python
-Learn Java
-Learn C++
-Learn C#
-Learn R
-Learn Kotlin
-Server Side
-Learn SQL
-Learn MySQL
-Learn PHP
-Learn ASP
-Learn Node.js
-Learn Raspberry Pi
-Learn Git
-Web Building
-Web Templates
-Web Statistics
-Web Certificates
-Web Editor
-Web Development
-Test Your Typing Speed
-Play a Code Game
-Cyber Security
-Accessibility
-Artificial Intelligence
-Learn AI
-Learn Machine Learning
-Learn Data Science
-Learn NumPy
-Learn Pandas
-Learn SciPy
-Learn Statistics
-XML Tutorials
-Learn XML
-Learn XML AJAX
-Learn XML DOM
-Learn XML DTD
-Learn XML Schema
-Learn XSLT
-Learn XPath
-Learn XQuery
-×
-References
-HTML
-HTML Tag Reference
-HTML Browser Support
-HTML Event Reference
-HTML Color Reference
-HTML Attribute Reference
-HTML Canvas Reference
-HTML SVG Reference
-Google Maps Reference
-CSS
-CSS Reference
-CSS Browser Support
-CSS Selector Reference
-Bootstrap 3 Reference
-Bootstrap 4 Reference
-W3.CSS Reference
-Icon Reference
-Sass Reference
-JavaScript
-JavaScript Reference
-HTML DOM Reference
-jQuery Reference
-AngularJS Reference
-AppML Reference
-W3.JS Reference
-Programming
-Python Reference
-Java Reference
-Server Side
-SQL Reference
-MySQL Reference
-PHP Reference
-ASP Reference
-XML
-XML DOM Reference
-XML Http Reference
-XSLT Reference
-XML Schema Reference
-Character Sets
-HTML Character Sets
-HTML ASCII
-HTML ANSI
-HTML Windows-1252
-HTML ISO-8859-1
-HTML Symbols
-HTML UTF-8
-×
-Exercises
-Exercises
-HTML Exercises
-CSS Exercises
-JavaScript Exercises
-SQL Exercises
-MySQL Exercises
-PHP Exercises
-Python Exercises
-NumPy Exercises
-Pandas Exercises
-SciPy Exercises
-jQuery Exercises
-Java Exercises
-Bootstrap Exercises
-Bootstrap 4 Exercises
-C++ Exercises
-C# Exercises
-R Exercises
-Git Exercises
-Quizzes
-HTML Quiz
-CSS Quiz
-JavaScript Quiz
-SQL Quiz
-MySQL Quiz
-PHP Quiz
-Python Quiz
-NumPy Quiz
-Pandas Quiz
-SciPy Quiz
-jQuery Quiz
-Java Quiz
-Bootstrap Quiz
-Bootstrap 4 Quiz
-C++ Quiz
-C# Quiz
-R Quiz
-XML Quiz
-Cyber Security Quiz
-Accessibility Quiz
-Courses
-HTML Course
-CSS Course
-JavaScript Course
-Front End Course
-SQL Course
-Python Course
-NumPy Course
-Pandas Course
-jQuery Course
-PHP Course
-C# Course
-C++ Course
-XML Course
-R Course
-Cyber Security Course
-Accessibility Course
-×
-Tutorials
-References
-Exercises
-Paid Courses
-Shop
-Java Tutorial
-Java HOME
-Java Intro
-Java Get Started
-Java Syntax
-Java Comments
-Java Variables
-Java Data Types
-Java Type Casting
-Java Operators
-Java Strings
-Java Math
-Java Booleans
-Java If...Else
-Java Switch
-Java While Loop
-Java For Loop
-Java Break/Continue
-Java Arrays
-Java Methods
-Java Methods
-Java Method Parameters
-Java Method Overloading
-Java Scope
-Java Recursion
-Java Classes
-Java OOP
-Java Classes/Objects
-Java Class Attributes
-Java Class Methods
-Java Constructors
-Java Modifiers
-Java Encapsulation
-Java Packages / API
-Java Inheritance
-Java Polymorphism
-Java Inner Classes
-Java Abstraction
-Java Interface
-Java Enums
-Java User Input
-Java Date
-Java ArrayList
-Java LinkedList
-Java HashMap
-Java HashSet
-Java Iterator
-Java Wrapper Classes
-Java Exceptions
-Java RegEx
-Java Threads
-Java Lambda
-Java File Handling
-Java Files
-Java Create/Write Files
-Java Read Files
-Java Delete Files
-Java How To
-Add Two Numbers
-Java Reference
-Java Keywords
-abstract
-boolean
-break
-byte
-case
-catch
-char
-class
-continue
-default
-do
-double
-else
-enum
-extends
-final
-finally
-float
-for
-if
-implements
-import
-instanceof
-int
-interface
-long
-new
-package
-private
-protected
-public
-return
-short
-static
-super
-switch
-this
-throw
-throws
-try
-void
-while
-Java String Methods
-Java Math Methods
-Java Examples
-Java Examples
-Java Compiler
-Java Exercises
-Java Quiz
-Java Certificate
-Java Exceptions - Try...Catch
-❮ Previous
-Next ❯
-Java Exceptions
-When executing Java code, different errors can occur: coding errors made by the programmer, errors due to wrong input,
-or other unforeseeable things.
-When an error occurs, Java will normally stop and generate an error message. The technical term for this is: Java will throw an exception (throw an error).
-Java try and catch
-The try statement allows you to define a block of code to be
-tested for errors while it is being executed.
-The catch statement allows you to define a block of code to
-be executed, if an error occurs in the try block.
-The try and catch keywords
-come in pairs:
-Syntax
+undefined array key error is given on php – Cloud Stack Ninja
+Skip to content
+Cloud Stack Ninja
+Main Menu
+Home
+Contact
+undefined array key error is given on phpJSON, mysql, php / By
+GuyWhoCode
+I am learning php, and am fairly new to it... i trying to upload an image then the program converts to base64 and send to the db... i followed a tutorial and
+have the code however i cant figure out how to upload images, just txt files, im not sure how to make it such where i can upload an image and itll produce the base64
+<?php
+/*
+to take encoded files as a parameter,decoded,save as a file,and return json message
+*/
+function upload_file($encoded_string){
+$target_dir = ''; // add the specific path to save the file
+$decoded_file = base64_decode($encoded_string); // decode the file
+$mime_type = finfo_buffer(finfo_open(), $decoded_file, FILEINFO_MIME_TYPE); // extract mime type
+$extension = mime2ext($mime_type); // extract extension from mime type
+$file = uniqid() .'.'. $extension; // rename file as a unique name
+$file_dir = $target_dir . uniqid() .'.'. $extension;
 try {
-//  Block of code to try
-}
-catch(Exception e) {
-//  Block of code to handle errors
-}
-Consider the following example:
-This will generate an error, because myNumbers[10] does not exist.
-public class Main {
-public static void main(String[ ] args) {
-int[] myNumbers = {1, 2, 3};
-System.out.println(myNumbers[10]); // error!
+file_put_contents($file_dir, $decoded_file); // save
+database_saving($file);
+header('Content-Type: application/json');
+echo json_encode("File Uploaded Successfully");
+} catch (Exception $e) {
+header('Content-Type: application/json');
+echo json_encode($e->getMessage());
 }
 }
-The output will be something like this:
-Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 10
-at Main.main(Main.java:4)
-Try it Yourself »
-If an error occurs, we can use try...catch to catch the error and execute some code to handle it:
-Example
-public class Main {
-public static void main(String[ ] args) {
-try {
-int[] myNumbers = {1, 2, 3};
-System.out.println(myNumbers[10]);
-} catch (Exception e) {
-System.out.println("Something went wrong.");
+/*
+to take mime type as a parameter and return the equivalent extension
+*/
+function mime2ext($mime){
+$all_mimes = '{"png":["image\/png","image\/x-png"],"bmp":["image\/bmp","image\/x-bmp",
+"image\/x-bitmap","image\/x-xbitmap","image\/x-win-bitmap","image\/x-windows-bmp",
+"image\/ms-bmp","image\/x-ms-bmp","application\/bmp","application\/x-bmp",
+"application\/x-win-bitmap"],"gif":["image\/gif"],"jpeg":["image\/jpeg",
+"image\/pjpeg"],"xspf":["application\/xspf+xml"],"vlc":["application\/videolan"],
+"wmv":["video\/x-ms-wmv","video\/x-ms-asf"],"au":["audio\/x-au"],
+"ac3":["audio\/ac3"],"flac":["audio\/x-flac"],"ogg":["audio\/ogg",
+"video\/ogg","application\/ogg"],"kmz":["application\/vnd.google-earth.kmz"],
+"kml":["application\/vnd.google-earth.kml+xml"],"rtx":["text\/richtext"],
+"rtf":["text\/rtf"],"jar":["application\/java-archive","application\/x-java-application",
+"application\/x-jar"],"zip":["application\/x-zip","application\/zip",
+"application\/x-zip-compressed","application\/s-compressed","multipart\/x-zip"],
+"7zip":["application\/x-compressed"],"xml":["application\/xml","text\/xml"],
+"svg":["image\/svg+xml"],"3g2":["video\/3gpp2"],"3gp":["video\/3gp","video\/3gpp"],
+"mp4":["video\/mp4"],"m4a":["audio\/x-m4a"],"f4v":["video\/x-f4v"],"flv":["video\/x-flv"],
+"webm":["video\/webm"],"aac":["audio\/x-acc"],"m4u":["application\/vnd.mpegurl"],
+"pdf":["application\/pdf","application\/octet-stream"],
+"pptx":["application\/vnd.openxmlformats-officedocument.presentationml.presentation"],
+"ppt":["application\/powerpoint","application\/vnd.ms-powerpoint","application\/vnd.ms-office",
+"application\/msword"],"docx":["application\/vnd.openxmlformats-officedocument.wordprocessingml.document"],
+"xlsx":["application\/vnd.openxmlformats-officedocument.spreadsheetml.sheet","application\/vnd.ms-excel"],
+"xl":["application\/excel"],"xls":["application\/msexcel","application\/x-msexcel","application\/x-ms-excel",
+"application\/x-excel","application\/x-dos_ms_excel","application\/xls","application\/x-xls"],
+"xsl":["text\/xsl"],"mpeg":["video\/mpeg"],"mov":["video\/quicktime"],"avi":["video\/x-msvideo",
+"video\/msvideo","video\/avi","application\/x-troff-msvideo"],"movie":["video\/x-sgi-movie"],
+"log":["text\/x-log"],"txt":["text\/plain"],"css":["text\/css"],"html":["text\/html"],
+"wav":["audio\/x-wav","audio\/wave","audio\/wav"],"xhtml":["application\/xhtml+xml"],
+"tar":["application\/x-tar"],"tgz":["application\/x-gzip-compressed"],"psd":["application\/x-photoshop",
+"image\/vnd.adobe.photoshop"],"exe":["application\/x-msdownload"],"js":["application\/x-javascript"],
+"mp3":["audio\/mpeg","audio\/mpg","audio\/mpeg3","audio\/mp3"],"rar":["application\/x-rar","application\/rar",
+"application\/x-rar-compressed"],"gzip":["application\/x-gzip"],"hqx":["application\/mac-binhex40",
+"application\/mac-binhex","application\/x-binhex40","application\/x-mac-binhex40"],
+"cpt":["application\/mac-compactpro"],"bin":["application\/macbinary","application\/mac-binary",
+"application\/x-binary","application\/x-macbinary"],"oda":["application\/oda"],
+"ai":["application\/postscript"],"smil":["application\/smil"],"mif":["application\/vnd.mif"],
+"wbxml":["application\/wbxml"],"wmlc":["application\/wmlc"],"dcr":["application\/x-director"],
+"dvi":["application\/x-dvi"],"gtar":["application\/x-gtar"],"php":["application\/x-httpd-php",
+"application\/php","application\/x-php","text\/php","text\/x-php","application\/x-httpd-php-source"],
+"swf":["application\/x-shockwave-flash"],"sit":["application\/x-stuffit"],"z":["application\/x-compress"],
+"mid":["audio\/midi"],"aif":["audio\/x-aiff","audio\/aiff"],"ram":["audio\/x-pn-realaudio"],
+"rpm":["audio\/x-pn-realaudio-plugin"],"ra":["audio\/x-realaudio"],"rv":["video\/vnd.rn-realvideo"],
+"jp2":["image\/jp2","video\/mj2","image\/jpx","image\/jpm"],"tiff":["image\/tiff"],
+"eml":["message\/rfc822"],"pem":["application\/x-x509-user-cert","application\/x-pem-file"],
+"p10":["application\/x-pkcs10","application\/pkcs10"],"p12":["application\/x-pkcs12"],
+"p7a":["application\/x-pkcs7-signature"],"p7c":["application\/pkcs7-mime","application\/x-pkcs7-mime"],"p7r":["application\/x-pkcs7-certreqresp"],"p7s":["application\/pkcs7-signature"],"crt":["application\/x-x509-ca-cert","application\/pkix-cert"],"crl":["application\/pkix-crl","application\/pkcs-crl"],"pgp":["application\/pgp"],"gpg":["application\/gpg-keys"],"rsa":["application\/x-pkcs7"],"ics":["text\/calendar"],"zsh":["text\/x-scriptzsh"],"cdr":["application\/cdr","application\/coreldraw","application\/x-cdr","application\/x-coreldraw","image\/cdr","image\/x-cdr","zz-application\/zz-winassoc-cdr"],"wma":["audio\/x-ms-wma"],"vcf":["text\/x-vcard"],"srt":["text\/srt"],"vtt":["text\/vtt"],"ico":["image\/x-icon","image\/x-ico","image\/vnd.microsoft.icon"],"csv":["text\/x-comma-separated-values","text\/comma-separated-values","application\/vnd.msexcel"],"json":["application\/json","text\/json"]}';
+$all_mimes = json_decode($all_mimes,true);
+foreach ($all_mimes as $key => $value) {
+if(array_search($mime,$value) !== false) return $key;
 }
+return false;
 }
+/*
+to save the file name and extension into database
+*/
+function database_saving($file){
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "upload";
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+die("Connection failed: " . $conn->connect_error);
 }
-The output will be:
-Something went wrong.
-Try it Yourself »
-Finally
-The finally statement lets you execute code, after try...catch, regardless of the result:
-Example
-public class Main {
-public static void main(String[] args) {
-try {
-int[] myNumbers = {1, 2, 3};
-System.out.println(myNumbers[10]);
-} catch (Exception e) {
-System.out.println("Something went wrong.");
-} finally {
-System.out.println("The 'try catch' is finished.");
+$sql = "INSERT INTO uploaded_files (file_name)VALUES ('$file')";
+$conn->query($sql);
+$conn->close();
 }
-}
-}
-The output will be:
-Something went wrong.
-The 'try catch' is finished.
-Try it Yourself »
-The throw keyword
-The throw statement allows you to create a custom error.
-The throw statement is used together with an exception type. There are many exception types available in Java: ArithmeticException,
-FileNotFoundException, ArrayIndexOutOfBoundsException, SecurityException, etc:
-Example
-Throw an exception if age is below 18 (print "Access
-denied"). If age is 18 or older, print "Access granted":
-public class Main {
-static void checkAge(int age) {
-if (age < 18) {
-throw new ArithmeticException("Access denied - You must be at least 18 years old.");
-}
-else {
-System.out.println("Access granted - You are old enough!");
-}
-}
-public static void main(String[] args) {
-checkAge(15); // Set age to 15 (which is below 18...)
-}
-}
-The output will be:
-Exception in thread "main" java.lang.ArithmeticException: Access denied - You must be at least 18 years old.
-at Main.checkAge(Main.java:4)
-at Main.main(Main.java:12)
-Try it Yourself »
-If age was 20, you would not get an exception:
-Example
-checkAge(20);
-The output will be:
-Access granted - You are old enough!
-Try it Yourself »
-Test Yourself With Exercises
-Exercise:
-Insert the missing parts to handle the error in the code below.
-{
-int[] myNumbers = {1, 2, 3};
-System.out.println(myNumbers[10]);
-}
-(Exception e) {
-System.out.println("Something went wrong.");
-}
-Submit Answer »
-Start the Exercise
-❮ Previous
-Next ❯
-COLOR PICKER
-LIKE US
-Get certifiedby completinga course today!
-w3schools CERTIFIED
-.
-2021
-Get started
-CODE GAME
-Play Game
-Certificates
-HTML
-CSS
-JavaScript
-Front End
-Python
-SQL
-And more
-REPORT ERROR
-FORUM
-ABOUT
-SHOP
-×
-Report Error
-If you want to report an error, or if you want to make a suggestion, do not hesitate to send us an e-mail:
-help@w3schools.com
-×
-Thank You For Helping Us!
-Your message has been sent to W3Schools.
-Top Tutorials
-HTML Tutorial
-CSS Tutorial
-JavaScript Tutorial
-How To Tutorial
-SQL Tutorial
-Python Tutorial
-W3.CSS Tutorial
-Bootstrap Tutorial
-PHP Tutorial
-Java Tutorial
-C++ Tutorial
-jQuery Tutorial
-Top References
-HTML Reference
-CSS Reference
-JavaScript Reference
-SQL Reference
-Python Reference
-W3.CSS Reference
-Bootstrap Reference
-PHP Reference
-HTML Colors
-Java Reference
-Angular Reference
-jQuery Reference
-Top Examples
-HTML Examples
-CSS Examples
-JavaScript Examples
-How To Examples
-SQL Examples
-Python Examples
-W3.CSS Examples
-Bootstrap Examples
-PHP Examples
-Java Examples
-XML Examples
-jQuery Examples
-Web Courses
-HTML Course
-CSS Course
-JavaScript Course
-Front End Course
-SQL Course
-Python Course
-PHP Course
-jQuery Course
-Java Course
-C++ Course
-C# Course
-XML Course
-Get Certified »
-W3Schools is optimized for learning and training. Examples might be simplified to improve reading and learning.
-Tutorials, references, and examples are constantly reviewed to avoid errors, but we cannot warrant full correctness of all content.
-While using W3Schools, you agree to have read and accepted our terms of use,
-cookie and privacy policy.
-Copyright 1999-2021 by Refsnes Data. All Rights Reserved.
-W3Schools is Powered by W3.CSS.
+$imagedata=file_put_contents("file.txt");
+$base64=base64_encode($imagedata);
+print $base64;
+/* invoke upload_file function and pass your input as a parameter
+$encoded_string = !empty($_POST['base64_file']) ? $_POST['base64_file'] : 'V2ViZWFzeXN0ZXAgOik=';
+upload_file($encoded_string);
+*/
+?>
+Read more here: https://stackoverflow.com/questions/65901046/undefined-array-key-error-is-given-on-php
+Content AttributionThis content was originally published by GuyWhoCode at Recent Questions - Stack Overflow, and is syndicated here via their RSS feed. You can read the original post over there.
+Post navigation
+← Previous PostNext Post →
+Recent Posts
+Quick question about the UDM-Pro
+June 10, 2021
+MFA Trusted IPs permissions needed
+June 10, 2021
+Removing Outlook 2010 and installing O365 Outlook only via powershell
+June 10, 2021
+I need to have the office tools and i can’t
+June 10, 2021
+General availability: Azure Sphere OS version 21.06 expected on June 23
+June 10, 2021
+Purdue Engineers Showcase Washable, Comfortable, Battery-Free Smart Clothes – Powered by Wi-Fi
+June 10, 2021
+When Walmart comes knocking
+June 10, 2021
+Security flaws found in Samsung’s stock mobile apps
+June 10, 2021
+We built a Visual File Explorer for Cockpit — 45Drives
+June 10, 2021
+TestBox launches with $2.7M seed to make it easier to test software before buying
+June 10, 2021
+Legal DisclaimerCloudStack.Ninja is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com. We also participates in other affiliate programs too. CloudStack.Ninja is compensated for referring traffic and business to these companies. Build5Nines Featured PostsWe are back live for a conference!How my passion for BCDR saved my lifeStopping Azure subdomain takeoversLatest Cloud News: IoT, Security, Azure Sphere, and more! (December 4, 2020 – Build5Nines Weekly)Latest Cloud News: Apple on K8s, IoT, Microsoft Pluton and more! (November 20, 2020 – Build5Nines Weekly)Category CloudAndroid Angular arrays Azure C# css django Flutter github html ios java JavaScript jquery linux Microsoft mysql node.js pandas php python python-3.x r reactjs SQL Startups swift TC Thurrott TypeScript
+Recent Posts
+Quick question about the UDM-Pro
+June 10, 2021
+MFA Trusted IPs permissions needed
+June 10, 2021
+Removing Outlook 2010 and installing O365 Outlook only via powershell
+June 10, 2021
+I need to have the office tools and i can’t
+June 10, 2021
+General availability: Azure Sphere OS version 21.06 expected on June 23
+June 10, 2021
+Copyright © 2021 Cloud Stack Ninja | Powered by Astra WordPress Theme
+%d bloggers like this:

@@ -1,404 +1,58 @@
-python - Is Pandas not importing? 'NameError: global name 'pandas' is not defined' - Stack Overflow
-Stack Overflow
-About
-Products
-For Teams
-Stack Overflow
-Public questions & answers
-Stack Overflow for Teams
-Where developers & technologists share private knowledge with coworkers
-Jobs
-Programming & related technical career opportunities
-Talent
-Recruit tech talent & build your employer brand
-Advertising
-Reach developers & technologists worldwide
-About the company
-Loading…
-Log in
-Sign up
-current community
-Stack Overflow
-help
-chat
-Meta Stack Overflow
-your communities
-Sign up or log in to customize your list.
-more stack exchange communities
-company blog
-People who code: we want your input.
-Take the Survey
-Join Stack Overflow to learn, share knowledge, and build your career.
-Sign up with email
-Sign up
-Sign up with Google
-Sign up with GitHub
-Sign up with Facebook
-Home
-Public
-Questions
-Tags
-Users
-Find a Job
-Jobs
-Companies
-Teams
-Stack Overflow for Teams
-– Collaborate and share knowledge with a private group.
-Create a free Team
-What is Teams?
-Teams
-What’s this?
-Create free Team
-Teams
-Q&A for work
-Connect and share knowledge within a single location that is structured and easy to search.
-Learn more
-Is Pandas not importing? 'NameError: global name 'pandas' is not defined'
-Ask Question
-Asked
-5 years, 10 months ago
-Active
-5 years, 10 months ago
-Viewed
-24k times
-3
-I'm getting a few errors here but I think it's due to pandas not importing as it's greyed out. If that is the problem, how would I fix this?
-C:\Anaconda\python.exe
-C:/Users/nickd/Documents/SKLEARN-STOCKS/stock-mach.py Traceback (most
-recent call last):
-File
-"C:/Users/nickd/Documents/SKLEARN-STOCKS/stock-mach.py", line 38, in
-Key_Stats()
-File "C:/Users/nickd/Documents/SKLEARN-STOCKS/stock-mach.py", line 12, in
-Key_Stats
-df = pandas.DataFrame(columns = ['Date','Unix','Ticker','DE Ratio']) NameError: global name 'pandas' is not defined
-Process finished with exit code 1
-import pandas as pd
-import os
-import time
-from datetime import datetime
-#location of the data files
-path = 'C:\Users\nickd\Documents\SKLEARN-STOCKS'
-#what specific field do you want to grab and in all files in that directory
-def Key_Stats(gather="Total Debt/Equity (mrq) "):
-statspath = path+'/_KeyStats'
-stock_list = [x[0] for x in os.walk(statspath)]
-df = pandas.DataFrame(columns = ['Date','Unix','Ticker','DE Ratio'])
-for each_dir in stock_list[1:5]:
-each_file = os.listdir(each_dir)
-ticker = each_dir.split("//")[1]
-if len(each_file) >0:
-for file in each_file:
-date_stamp = datetime.strptime(file, '%Y%m%d%H%M%S.html')
-#unix_time = time.mktime(date_stamp.timetuple())
-print(date_stamp,unix_time)
-full_file_path = each_file+'/'+file
-#print(full_file_path)
-source = open(full_file_path, 'r').read()
-#print(source)
-try:
-value = float(source.split(gather+':</td><td class="yfnc_tabledata1">')[1].split('</td>')[0])
-df = df.append({'Date':date_stamp,'Unix':unix_time,'Ticker':ticker,'DE Ratio':value,}, ignore_index = True)
-except Exception as e:
-pass
-#print(ticker+":",value)
-save = gather.replace(' ','').replace(')','').replace('(','').replace('/',''+('.csv')
-print(save)
-df.to_csv(save)
-#time.sleep(15)
-Key_Stats()
-python python-2.7 pandas machine-learning
-Share
-Improve this question
-Follow
-asked Jul 30 '15 at 11:01
-Nick DuddyNick Duddy
-68044 gold badges1616 silver badges3030 bronze badges
-0
-Add a comment
-|
-2 Answers
-2
-Active
-Oldest
-Votes
-5
-You have imported it as
-import pandas as pd
-and calling
-#pandas
-df = pandas.DataFrame(columns = ['Date','Unix','Ticker','DE Ratio'])
-You could either change
-import pandas as pd to import pandas or
-df = pandas.DataFrame(columns = ['Date','Unix','Ticker','DE Ratio']) to df = pd.DataFrame(columns = ['Date','Unix','Ticker','DE Ratio']).
-edit:
-error is due to missing )
-save = gather.replace(' ','').replace(')','').replace('(','').replace('/',''+('.csv'))
-Share
-Improve this answer
-Follow
-edited Jul 30 '15 at 12:25
-BioGeek
-19.2k2121 gold badges7575 silver badges123123 bronze badges
-answered Jul 30 '15 at 11:03
-The6thSenseThe6thSense
-7,10366 gold badges2828 silver badges6262 bronze badges
-3
-Hi, Thanks! I'm really new to python (and coding outsite of HTML) so appreciate the example.
-I made the "pd.DataFrame"
-and I'm not getting the below error. Which I confusing because I thought I set the save function above.
-C:\Anaconda\python.exe C:/Users/nickd/Documents/SKLEARN-STOCKS/stock-mach.py
-File "C:/Users/nickd/Documents/SKLEARN-STOCKS/stock-mach.py", line 36
-print(save)
-^ SyntaxError: invalid syntax
-Process finished with exit code 1
-– Nick Duddy
-Jul 30 '15 at 11:38
-Thanks!! I've got terrible eyes :) That's it working now!
-– Nick Duddy
-Jul 30 '15 at 12:15
-@NickDuddy if this solved your question can you accept the answer by ticking the right sign
-– The6thSense
-Jul 30 '15 at 12:16
-Add a comment
-|
-1
-You imported pandas as pd. Either refer to it as such throughout, or remove the as pd from the import.
-(Plus, never ever ever do except Exception... pass. You'll swallow all sorts of errors and never know what they were. If you aren't going to handle them, don't catch them at all.)
-Share
-Improve this answer
-Follow
-answered Jul 30 '15 at 11:02
-Daniel RosemanDaniel Roseman
-543k5555 gold badges755755 silver badges789789 bronze badges
-Add a comment
-|
-Your Answer
-Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
-Draft saved
-Draft discarded
-Sign up or log in
-Sign up using Google
-Sign up using Facebook
-Sign up using Email and Password
-Submit
-Post as a guest
-Name
-Email
-Required, but never shown
-Post as a guest
-Name
-Email
-Required, but never shown
-Post Your Answer
-Discard
-By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
-Not the answer you're looking for? Browse other questions tagged python python-2.7 pandas machine-learning
-or ask your own question.
-The Overflow Blog
-Using low-code tools to iterate products faster
-Podcast 345: A good software tutorial explains the How. A great one explains…
-Featured on Meta
-Take the 2021 Developer Survey
-Linked
--2
-Specify type for arbitrary data types
-Related
-169
-Reloading module giving NameError: name 'reload' is not defined
-161
-NameError: name 'self' is not defined
-212
-NameError: name 'reduce' is not defined in Python
-125
-python NameError: global name '__file__' is not defined
-340
-NameError: global name 'xrange' is not defined in Python 3
-314
-Pandas index column title or name
-155
-NameError: global name 'unicode' is not defined - in Python 3
-589
-How to filter Pandas dataframe using 'in' and 'not in' like in SQL
-244
-input() error - NameError: name '…' is not defined
-Hot Network Questions
-Are there any greater risks of traveling significantly faster to another planet?
-Linux backup script written in bash for tar
-Is there a threadlocker that requires heat to release and can withstand thousands of heat-cool cycles without needing to be reapplied or deteriorating
-Is buying lecture notes wrong?
-Why some CRS are deprecated in QGIS?
-Why is the bond angle of trifluoromethane higher than that of difluoromethane?
-Why aren't resistors being used here?
-What did I just photograph? (rainbow way out of place)
-How was it calculated that Dream cheated on his Minecraft v1.16 glitchless speedrun?
-How realistic is the 1 kg/km² solar sail in "Death's End"?
-What is the DC of Draconic Presence?
-Deriving the energy-momentum tensor of a point particle
-What are minimal changes to make a truncated pyramid shaped megabuildings a thing?
-Should I notify a med school about their student's cheating history?
-Why are most women in anime housewives instead of being independent?
-A manga about a girl and a boy who must hold hands, or die
-What does "parity pattern" mean?
-Has physics ever given a physical significance to a mathematically abstract idea?
-Does Islam have heraditary slavery?
-Alien Instrument produces "visual music", which a Human can temporarily experience
-How to make Mathematica read in CSV as fast as Python's Pandas
-Simplify K combinatory logic expression
-Why are SSH MITM tools able to read and modify data?
-output entries that have highest score
-more hot questions
-Question feed
-Subscribe to RSS
-Question feed
-To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
-lang-py
-Stack Overflow
-Questions
-Jobs
-Developer Jobs Directory
-Salary Calculator
-Help
-Mobile
-Products
-Teams
-Talent
-Advertising
-Enterprise
+Python hex() Method Example | Python Built-In Methods - JavaExercise
+Home(current)
+Beautify HTML
+Python Built-In Methods
+Python abs() Method
+Python any() Method
+Python all() Method
+Python ascii() Method
+Python bin() Method
+Python bool() Method
+Python filter() Method
+Python float() Method
+Python frozenset() Method
+Python hex() Method
+Python isinstance() Method
+Python range() Method
+Python hex() Method
+Python hex() method is a built-in method. It is used to convert an integer value to a hexadecimal string. It returns a lowercase string prefix with ‘0x’.
+Signature
+hex(x)
+Parameter
+Description
+x
+It is an integer argument and if not given, define an index method that returns an integer.
+Return Value
+It returns a lowercase hexadecimal string.
+Error: It returns an error (TypeError), if the argument is not an integer.
+Python hex() Method Example
+Let’s first understand, how this method works and what does it return?
+# hex() method
+a = hex(12)
+b = hex(-12)
+print(a)
+print(b)
+print(type(a))
+Output
+0xc
+-0xc
+< class 'str'>
+See, in the above example, hex() method returns hexadecimal string and the type of return value is string.
+Python hex() Method Example
+As we said, this method takes an integer argument only. If we give any other type of argument, it throws an error. See the example below.
+# hex() method
+a = hex("23")
+print(a)
+Output
+TypeError: 'str' object cannot be interpreted as an integer
+© Copyright 2021, JavaExercise.com
+Resources
+Java Tutorials
+Python Tutorials
+Java Quiz
+Python Quiz
 Company
-About
-Press
-Work Here
-Legal
-Privacy Policy
-Terms of Service
 Contact Us
-Cookie Settings
-Cookie Policy
-Stack Exchange Network
-Technology
-Life / Arts
-Culture / Recreation
-Science
-Other
-Stack Overflow
-Server Fault
-Super User
-Web Applications
-Ask Ubuntu
-Webmasters
-Game Development
-TeX - LaTeX
-Software Engineering
-Unix & Linux
-Ask Different (Apple)
-WordPress Development
-Geographic Information Systems
-Electrical Engineering
-Android Enthusiasts
-Information Security
-Database Administrators
-Drupal Answers
-SharePoint
-User Experience
-Mathematica
-Salesforce
-ExpressionEngine® Answers
-Stack Overflow em Português
-Blender
-Network Engineering
-Cryptography
-Code Review
-Magento
-Software Recommendations
-Signal Processing
-Emacs
-Raspberry Pi
-Stack Overflow на русском
-Code Golf
-Stack Overflow en español
-Ethereum
-Data Science
-Arduino
-Bitcoin
-Software Quality Assurance & Testing
-Sound Design
-Windows Phone
-more (29)
-Photography
-Science Fiction & Fantasy
-Graphic Design
-Movies & TV
-Music: Practice & Theory
-Worldbuilding
-Video Production
-Seasoned Advice (cooking)
-Home Improvement
-Personal Finance & Money
-Academia
-Law
-Physical Fitness
-Gardening & Landscaping
-Parenting
-more (10)
-English Language & Usage
-Skeptics
-Mi Yodeya (Judaism)
-Travel
-Christianity
-English Language Learners
-Japanese Language
-Chinese Language
-French Language
-German Language
-Biblical Hermeneutics
-History
-Spanish Language
-Islam
-Русский язык
-Russian Language
-Arqade (gaming)
-Bicycles
-Role-playing Games
-Anime & Manga
-Puzzling
-Motor Vehicle Maintenance & Repair
-Board & Card Games
-Bricks
-Homebrewing
-Martial Arts
-The Great Outdoors
-Poker
-Chess
-Sports
-more (16)
-MathOverflow
-Mathematics
-Cross Validated (stats)
-Theoretical Computer Science
-Physics
-Chemistry
-Biology
-Computer Science
-Philosophy
-Linguistics
-Psychology & Neuroscience
-Computational Science
-more (10)
-Meta Stack Exchange
-Stack Apps
-API
-Data
-Blog
-Facebook
-Twitter
-LinkedIn
-Instagram
-site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.6.9.39464
-Stack Overflow works best with JavaScript enabled
-Your privacy
-By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
-Accept all cookies
-Customize settings
+Privacy Policy
+Terms and Conditions
+Disclaimer

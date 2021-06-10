@@ -1,73 +1,183 @@
-NameError: name 'pandas' is not defined - How To Fix - Data Independent
-Data Independent
-Learning Data Analysis One CSV At A Time
-HomePandasPython GlossaryPair ProgrammingData JobsData CoursesShould You Join A Data Bootcamp? The FAQ GuideData Learning CourseHow To Learn DataContact
-Search for
-NameError: name ‘pandas’ is not defined – How To Fix
-in
-Functions Pandas
-on
-March 25, 2021
-March 25, 2021
-Pandas NameError is frustrating. This error happens because your python script cannot find the name ‘pandas’ in your namespace. This means you have either imported pandas under a different name or not at all.How to Fix:Go to the top of your script and make sure you actually imported pandasIf you have, make sure you understand which alias you’re using. In this case import pandas as pd ‘pd’ is known as the alias.1. import pandas >> python will recognize 'pandas'
-2. import pandas as pd >> python will recognize 'pd'Pseudo code: import pandas under the correct name Pandas NameErrorIn most cases, my guess is that you haven’t imported pandas to your python script. This is a simple mistake and has a simple answer, head to the top of your script and import it.If this isn’t the case, then you likely imported it under a different alias that you’re not usingPandas AliasesWhen you import python packages, you have the option to specify an alias. As alias is an alternative string (usually a shorter string) that will be used in place of the default name of your package.This is usually done as a shortcut to not type as many letters. For example pandas is usually referred to as ‘pd’, numpy as ‘np’, matplotlib.pyplot as ‘plt’ and so forth.Let’s look at a code example of how to fix this.Pandas Name Error¶You might see the following error in your code: NameError: name 'pandas' is not definedPandas NameError can be annoying. It generally means you have not imported pandas, or if you did, you're not calling the right name or aliasLet's check out some examples:Invoking the errorFixing via 'pandas'Fixing w/ aliasFirst let's try to create a DataFrame...In [2]:pandas.DataFrame([('Foreign Cinema', 'Restaurant'),
-('Liho Liho', 'Restaurant'),
-('500 Club', 'bar'),
-('The Square', 'bar')],
-columns=('name', 'type')
-)
+Not able to convert column to date - 'str' object cannot be interpreted as an integer - Non-DQ Courses - Dataquest Community
+Not able to convert column to date - 'str' object cannot be interpreted as an integer
+Q&A
+Non-DQ Courses
+python
+willx
+June 5, 2020,
+1:49pm
+#1
+Hi i am trying to clean up the column here converting this column to date, but am afraid i was not able to get it.
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from datetime import datetime as dt
+%matplotlib inline
+This is part of the info for the columns.
+S/N
+44 non-null int64
+Date
+44 non-null object
+Time of Reporting
+44 non-null object
+Month
+44 non-null int64
+When i try this
+fraud['Date'] = pd.to_datetime(fraud['Date'], format='%Y%m%d')
+i get the following error message
 ---------------------------------------------------------------------------
-NameError
+TypeError
 Traceback (most recent call last)
-<ipython-input-2-20fdeccb36a4> in <module>
-----> 1 pandas.DataFrame([('Foreign Cinema', 'Restaurant'),
-2
-('Liho Liho', 'Restaurant'),
-3
-('500 Club', 'bar'),
-4
-('The Square', 'bar')],
-5
-columns=('name', 'type')
-NameError: name 'pandas' is not definedOh no! 'pandas' is not defined. Why is that? Well, let's see if we've imported pandas.Checking...Oh whoops, no we haven't. Let make sure to import itIn [3]:import pandas
-Ok let's try that again now that we've imported pandasIn [4]:pandas.DataFrame([('Foreign Cinema', 'Restaurant'),
-('Liho Liho', 'Restaurant'),
-('500 Club', 'bar'),
-('The Square', 'bar')],
-columns=('name', 'type')
-)
-Out[4]:nametype0Foreign CinemaRestaurant1Liho LihoRestaurant2500 Clubbar3The SquarebarNice! Now it works because python now has 'pandas' in it's namespace.But sometimes I'm lazy, and 'pandas' is about 4 characters more than I want to type out. I'm going to use an alias.Aliases are shorter strings that represent a longer string. Kind of like a variable, but for packages.Here I'm going to use 'pd' (the most common alias of pandas) as an alias.In [5]:import pandas as pd
-Now that I've done that, I'm able to use 'pd' instead of pandas when I'm calling the libraryIn [6]:pd.DataFrame([('Foreign Cinema', 'Restaurant'),
-('Liho Liho', 'Restaurant'),
-('500 Club', 'bar'),
-('The Square', 'bar')],
-columns=('name', 'type')
-)
-Out[6]:nametype0Foreign CinemaRestaurant1Liho LihoRestaurant2500 Clubbar3The SquarebarIf I wanted to use another alias, no problem, just define it in your import again.In [7]:import pandas as data_independent_is_awesome
-In [8]:data_independent_is_awesome.DataFrame([('Foreign Cinema', 'Restaurant'),
-('Liho Liho', 'Restaurant'),
-('500 Club', 'bar'),
-('The Square', 'bar')],
-columns=('name', 'type')
-)
-Out[8]:nametype0Foreign CinemaRestaurant1Liho LihoRestaurant2500 Clubbar3The SquarebarLink to code aboveCheck out more Pandas functions on our Pandas Page
-general pandas Share This
-Previous Post← Pair Programming #8: Pandas + NFT + Beeple’s 5,000 everydays
-Pair Programming #8: Pandas + NFT + Beeple's 5,000 everydays
-You May Also Like
-on
-October 26, 2020
-Python Float – Numbers With Decimals, Examples
-on
-July 26, 2020
-Pandas DataFrame From Dict – pd.df.from_dict()
-on
-October 19, 2020
-Python Class
-Recent Posts NameError: name ‘pandas’ is not defined – How To Fix Pair Programming #8: Pandas + NFT + Beeple’s 5,000 everydays Pandas Query Data With Categorical Variables User Retention – How To Manually Calculate KeyError Pandas – How To Fix Multiply Columns To Make New Column Pandas Pair Programming #5: Values Relative To Previous Monday – Pandas Dates Fun Python Jupyter – Evolution of IPython Python Iterable – Items One-By-One Python IPython Python Int – Numbers without a decimal point Python Indent – Group Code Together Python Import – Bring In Another Library Python Immutable – Can not edit Python Generator – Speed Up Your Code Python For Loop – Loop Through Iterables Python Float – Numbers With Decimals, Examples Python Extend – Add Items To List Exploratory Data Analysis – Know Your Data Python ExceptionsCategoriesBlog PostsFunctionsPair ProgrammingPandasPython Glossary Top 10 Pandas FunctionsGet videos, examples, and support learning the top 10 pandas functions
-I consent to my submitted data being collected via this form*
-Thank you for subscribing.Something went wrong.we respect your privacy and take protecting it seriously
-Find the content helpful? Consider donating BTC: 18TQWVC1pLf6vLUCy9BHkw9GXPu2ojTLku
-created with data
-by DataIndependent.com
-Close this module Data Analytics JobsExplore Open PositionsHi! I want to share my list of curated Data Jobs with you. We collect, manually review, and post data jobs in San Francisco, New York, and Remote. My name is Greg and I run Data Independent.See List Of Data JobsNo thanks, I’m not interested!
+C:\ProgramData\Anaconda3_64\lib\site-packages\pandas\core\indexes\base.py in get_value(self, series, key)
+4380
+try:
+-> 4381
+return libindex.get_value_box(s, key)
+4382
+except IndexError:
+pandas/_libs/index.pyx in pandas._libs.index.get_value_box()
+pandas/_libs/index.pyx in pandas._libs.index.get_value_at()
+pandas/_libs/util.pxd in pandas._libs.util.get_value_at()
+pandas/_libs/util.pxd in pandas._libs.util.validate_indexer()
+TypeError: 'str' object cannot be interpreted as an integer
+During handling of the above exception, another exception occurred:
+KeyError
+Traceback (most recent call last)
+<ipython-input-19-b32e0288d98d> in <module>
+----> 1 fraud['Date'] = pd.to_datetime(fraud['Date'], format='%Y%m%d')
+C:\ProgramData\Anaconda3_64\lib\site-packages\pandas\core\series.py in __getitem__(self, key)
+866
+key = com.apply_if_callable(key, self)
+867
+try:
+--> 868
+result = self.index.get_value(self, key)
+869
+870
+if not is_scalar(result):
+C:\ProgramData\Anaconda3_64\lib\site-packages\pandas\core\indexes\category.py in get_value(self, series, key)
+452
+453
+# we might be a positional inexer
+--> 454
+return super(CategoricalIndex, self).get_value(series, key)
+455
+456
+def _can_reindex(self, indexer):
+C:\ProgramData\Anaconda3_64\lib\site-packages\pandas\core\indexes\base.py in get_value(self, series, key)
+4387
+raise InvalidIndexError(key)
+4388
+else:
+-> 4389
+raise e1
+4390
+except Exception:
+# pragma: no cover
+4391
+raise e1
+C:\ProgramData\Anaconda3_64\lib\site-packages\pandas\core\indexes\base.py in get_value(self, series, key)
+4373
+try:
+4374
+return self._engine.get_value(s, k,
+-> 4375
+tz=getattr(series.dtype, 'tz', None))
+4376
+except KeyError as e1:
+4377
+if len(self) > 0 and (self.holds_integer() or self.is_boolean()):
+pandas/_libs/index.pyx in pandas._libs.index.IndexEngine.get_value()
+pandas/_libs/index.pyx in pandas._libs.index.IndexEngine.get_value()
+pandas/_libs/index.pyx in pandas._libs.index.IndexEngine.get_loc()
+pandas/_libs/index_class_helper.pxi in pandas._libs.index.Int8Engine._check_type()
+KeyError: 'Date'
+i tried googling this problem but not sure what’s causing it. am using PC for this exercise.
+info.victoromondi
+June 5, 2020,
+1:54pm
+#2
+hello can we see some rows of the fraud DataFrame and also fraud.columns array?
+willx:
+KeyError: 'Date'
+The error is here.
+willx
+June 7, 2020,
+1:26am
+#3
+Hi does this help?
+sorry, i am masking some of the data here. still learning how to anonymize data
+image1097×169 7.36 KB
+doyinsolamiolaoye
+June 7, 2020,
+2:05am
+#4
+Hello @willx,
+One of the errors in your code is that you put the wrong format. Either change the format value to format='%Y-%m-%d' or do not include the format parameter.
+Let me know if this helps.
+willx
+June 7, 2020,
+3:43am
+#5
+willx:
+format='%Y%m%d'
+oh hi thanks for replying @info.victoromondi @doyinsomoye
+Tried this
+image749×45 2.35 KB
+Tried this also
+format=’%Y/%m/%d’
+Even tried to escape the / with \
+and also removing the format. Still hittting the same problem.
+This is snapshot from the Excel file i am reading from
+austin-deccentric
+June 7, 2020,
+5:18am
+#6
+Have you tried converting the column to an int type and trying again?
+willx
+June 7, 2020, 12:11pm
+#7
+i tried that and get the same error as well. i am importing from Excel. could that be the reason?
+ksenia.kustanovich
+June 7, 2020,
+1:03pm
+#8
+That’s really weird. I get these types of errors when there’s a typo in the column name I try to refer to.
+I would check the fraud.columns attribute to see if there’s a space character
+or something like that…
+1 Like
+info.victoromondi
+June 7, 2020,
+1:10pm
+#9
+info.victoromondi:
+hello can we see some rows of the fraud DataFrame and also fraud.columns array?
+@ksenia.kustanovich that’s true, I adviced him to it here.
+willx
+June 7, 2020,
+2:17pm
+#10
+fraud_tidy_dt.xlsx (12.2 KB)
+sorry can you see this file. i have removed all the columns as i am having problems focusing on the date column as i am having problems anonymizing the data.
+rgds
+doyinsolamiolaoye
+June 8, 2020,
+1:42pm
+#11
+@willx,
+Check out what I did with the file you uploaded:
+DQ.ipynb (7.3 KB)
+BTW, is this all the values you have in the Date column?Click here to view the jupyter notebook file in a new tab
+willx
+June 8, 2020,
+1:42pm
+#12
+hi all, i convert the file a csv file and read from the csv file and it works.
+earlier i was facing problems reading from the csv file due to tokenizing data problem which is why i tried xlsx.
+i guess excel contains some hidden characters or formatting that prevents the reading of the string column. thank you so much guys for your help and time
+Home
+Categories
+FAQ/Guidelines
+Terms of Service
+Privacy Policy
+Powered by Discourse, best viewed with JavaScript enabled

@@ -1,801 +1,183 @@
-php - Troubeling with displaying <div> for larger screens - Stack Overflow
-Stack Overflow
-About
-Products
-For Teams
-Stack Overflow
-Public questions & answers
-Stack Overflow for Teams
-Where developers & technologists share private knowledge with coworkers
-Jobs
-Programming & related technical career opportunities
-Talent
-Recruit tech talent & build your employer brand
-Advertising
-Reach developers & technologists worldwide
-About the company
-Loading…
-Log in
-Sign up
-current community
-Stack Overflow
-help
-chat
-Meta Stack Overflow
-your communities
-Sign up or log in to customize your list.
-more stack exchange communities
-company blog
-People who code: we want your input.
-Take the Survey
-Join Stack Overflow to learn, share knowledge, and build your career.
-Sign up with email
-Sign up
-Sign up with Google
-Sign up with GitHub
-Sign up with Facebook
-Home
-Public
-Questions
-Tags
-Users
-Find a Job
-Jobs
-Companies
-Teams
-Stack Overflow for Teams
-– Collaborate and share knowledge with a private group.
-Create a free Team
-What is Teams?
-Teams
-What’s this?
-Create free Team
-Teams
-Q&A for work
-Connect and share knowledge within a single location that is structured and easy to search.
-Learn more
-Troubeling with displaying <div> for larger screens
-Ask Question
-Asked
-9 days ago
-Active
-9 days ago
-Viewed
-45 times
-0
-Im designing the cart of my woocommerce shop and stucked now for hours on trying to fit the sidebar on the right side.
-I've edited the cart.php of woocommerce like this:
-<div class="cart-wrapper">
-<div class="cart-inner">
-<?php
-/**
-* Cart Page
-*
-* This template can be overridden by copying it to yourtheme/woocommerce/cart/cart.php.
-*
-* HOWEVER, on occasion WooCommerce will need to update template files and you
-* (the theme developer) will need to copy the new files to your theme to
-* maintain compatibility. We try to do this as little as possible, but it does
-* happen. When this occurs the version of the template file will be bumped and
-* the readme will list any important changes.
-*
-* @see
-https://docs.woocommerce.com/document/template-structure/
-* @package WooCommerce/Templates
-* @version 3.8.0
-*/
-defined( 'ABSPATH' ) || exit;
-$row_classes
-= array();
-$main_classes
-= array();
-$sidebar_classes = array();
-$auto_refresh
-= get_theme_mod( 'cart_auto_refresh' );
-$row_classes[] = 'row-large';
-$row_classes[] = 'row-divided';
-if ( $auto_refresh ) {
-$main_classes[] = 'cart-auto-refresh';
-}
-$row_classes
-= implode( ' ', $row_classes );
-$main_classes
-= implode( ' ', $main_classes );
-$sidebar_classes = implode( ' ', $sidebar_classes );
-do_action( 'woocommerce_before_cart' ); ?>
-<div
-class="cart-container <?php echo $row_classes; ?>">
-<div class="left-inner" <?php echo $main_classes; ?>">
-<?php wc_print_notices(); ?>
-<form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
-<?php do_action( 'woocommerce_before_cart_table' ); ?>
-<?php do_action( 'woocommerce_before_cart_contents' ); ?>
-<?php
-foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
-$_product
-= apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
-$product_id = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
-if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
-$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
-?>
-<div class="product-wrapper base-tile <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
-<div class="product-inner">
-<div class="one product-thumbnail">
-<?php
-$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
-if ( ! $product_permalink ) {
-echo $thumbnail; // PHPCS: XSS ok.
-} else {
-printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $thumbnail ); // PHPCS: XSS ok.
-}
-?>
-</div>
-<div class="article_content">
-<div class="article_details_group">
-<div class="article_details">
-<div class="two product-name" data-title="<?php esc_attr_e( 'Product', 'woocommerce' ); ?>">
-<?php
-if ( ! $product_permalink ) {
-echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;' );
-} else {
-echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $_product->get_name() ), $cart_item, $cart_item_key ) );
-}
-do_action( 'woocommerce_after_cart_item_name', $cart_item, $cart_item_key );
-// Meta data.
-echo wc_get_formatted_cart_item_data( $cart_item ); // PHPCS: XSS ok.
-// Backorder notification.
-if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
-echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'woocommerce' ) . '</p>', $product_id ) );
-}
-// Mobile price.
-?>
-<div class="show-for-small mobile-product-price">
-<span class="mobile-product-price__qty"><?php echo $cart_item['quantity']; ?> x </span>
-<?php
-echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
-?>
-</div>
-</div>
-<div class="three product-price" data-title="<?php esc_attr_e( 'Price', 'woocommerce' ); ?>">
-<?php
-echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
-?>
-</div>
-</div>
-<div class="four roduct-quantity" data-title="<?php esc_attr_e( 'Quantity', 'woocommerce' ); ?>">
-<?php
-if ( $_product->is_sold_individually() ) {
-$product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
-} else {
-$product_quantity = woocommerce_quantity_input(
-array(
-'input_name'
-=> "cart[{$cart_item_key}][qty]",
-'input_value'
-=> $cart_item['quantity'],
-'max_value'
-=> $_product->get_max_purchase_quantity(),
-'min_value'
-=> '0',
-'product_name' => $_product->get_name(),
-),
-$_product,
-false
-);
-}
-echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ); // PHPCS: XSS ok.
-?>
-</div>
-</div>
-<div class="article_content_bottom">
-<div class="five product-remove">
-<?php
-echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-'woocommerce_cart_item_remove_link',
-sprintf(
-'<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
-esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
-esc_html__( 'Remove this item', 'woocommerce' ),
-esc_attr( $product_id ),
-esc_attr( $_product->get_sku() )
-),
-$cart_item_key
-);
-?>
-</div>
-<div class="six product-subtotal" data-title="<?php esc_attr_e( 'Subtotal', 'woocommerce' ); ?>">
-<?php
-echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
-?>
-</div>
-</div>
-</div>
-</div>
-</div>
-<?php
-}
-}
-?>
-<?php do_action( 'woocommerce_cart_contents' ); ?>
-<?php do_action( 'woocommerce_cart_actions' ); ?>
-<?php wp_nonce_field( 'woocommerce-cart', 'woocommerce-cart-nonce' ); ?>
-<?php do_action( 'woocommerce_after_cart_contents' ); ?>
-<?php do_action( 'woocommerce_after_cart_table' ); ?>
-</form>
-<div id="payment-container" class="base-tile">
-<div class="left inner">
-<h3> Wir akzeptieren </h3>
-</div>
-<div
-class="base-tile">
-<div class="payment-icons inline-block">
-<div class="payment-icon">
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<?php do_action( 'woocommerce_before_cart_collaterals' ); ?>
-<div class=" cartsidebar base-tile">
-<div class="sticky_cartsidebar">
-<?php flatsome_sticky_column_open( 'cart_sticky_sidebar' ); ?>
-<div class="cart-sidebar <?php echo $sidebar_classes; ?>">
-<?php
-/**
-* Cart collaterals hook.
-*
-* @hooked woocommerce_cross_sell_display
-* @hooked woocommerce_cart_totals - 10
-*/
-do_action( 'woocommerce_cart_collaterals' );
-?>
-<?php if ( wc_coupons_enabled() ) { ?>
-<form class="checkout_coupon mb-0" method="post">
-<div class="coupon">
-<h3 class="widget-title"><?php echo get_flatsome_icon( 'icon-tag' ); ?> <?php esc_html_e( 'Coupon', 'woocommerce' ); ?></h3><input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" /> <input type="submit" class="is-form expand" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>" />
-<?php do_action( 'woocommerce_cart_coupon' ); ?>
-</div>
-</form>
-<?php } ?>
-<?php do_action( 'flatsome_cart_sidebar' ); ?>
-</div>
-<?php flatsome_sticky_column_close( 'cart_sticky_sidebar' ); ?>
-</div>
-</div>
-</div>
-<?php do_action( 'woocommerce_after_cart' ); ?>
-</div>
-</div>
-and also made a custom css like this:
-/*cart*/
-@media screen and (min-width: 1200px){
-.cart-wrapper{
-max-width: 1176px;
-}
-}
-@media screen and (min-width: 960px){
-.cart-wrapper{
-padding:24px;
-}
-}
-@media screen and (min-width: 600px){
-.cart-wrapper{
-padding: 18px;
-margin-top: 0;
-}
-}
-.cart-wrapper {
-background-color: #f3f3f3;
-height: -webkit-fit-content;
-height: -moz-fit-content;
-height: fit-content;
-margin: 0 auto;
-display: -webkit-box;
-display: -ms-flexbox;
-display: flex;
--webkit-box-orient: vertical;
--webkit-box-direction: normal;
--ms-flex-direction: column;
-flex-direction: column;
-padding-top: 18px;
--webkit-box-sizing: border-box;
-box-sizing: border-box;
-}
-@media screen and (min-width: 960px){
-.cart-inner{
--webkit-box-orient: horizontal;
--webkit-box-direction: normal;
--ms-flex-direction: row;
-flex-direction: row;
-}
-}
-.cart-inner{
-display: -webkit-box;
-display: -ms-flexbox;
-display: flex;
--webkit-box-orient: vertical;
--webkit-box-direction: normal;
--ms-flex-direction: column;
-flex-direction: column;
-}
-@media screen and (min-widht:960px){
-.base-tile {
-padding: 24px;
-}
-}
-@media screen and (min-widht:960px){
-.left_inner {
--webkit-box-flex: 1;
--ms-flex: 1;
-flex: 1;
-max-width: 68%;
-padding-right: 24px;
-}
-}
-.left_inner{
-display: -webkit-box;
-display: -ms-flexbox;
-display: flex;
--webkit-box-orient: vertical;
--webkit-box-direction: normal;
--ms-flex-flow: columns;
-flex-flow: columns;
--ms-flex-direction: column;
-flex-direction: column;
-}
-.base-tile {
-background-color:#FFFFFF;
-padding:18px;
-border-radius: 2px;
--webkit-box-shadow:0 1px 2px 0 rgb(26 26 26 / 5%);
-box-shadow: -2 1px 2px 0 rgb(26 26 26 / 5%);
-}
-@media screen and (min-width: 960px){
-.cart-container{
--webkit-box-flex: 1;
--ms-flex: 1;
-flex: 1;
-max-width: 68%;
-padding-right: 24px;
-}
-}
-.cart-container{
-display: -webkit-box;
-display: -ms-flexbox;
-display: flex;
--webkit-box-orient: vertical;
--webkit-box-direction: normal;
--ms-flex-flow: columns;
-flex-flow: columns;
--ms-flex-direction: column;
-flex-direction: column;
-}
-.product-price {
-display:none;
-}
-@media screen and (min-width: 600px)
-.product-wrapper {
-margin-bottom: 12px;
-}
-.product-wrapper {
-margin-bottom:10px;
-}
-.product-inner {
-box-sizing: inherit;
-display: -ms-grid;
-display: grid;
-grid-auto-flow: column;
--ms-grid-columns: 86px 1fr;
-grid-template-columns: 86px 1fr;
-grid-gap: 15px;
--webkit-font-smoothing: antialiased;
--ms-grid-columns: 101px 1fr;
-}
-.one{
-width:86px;
-}
-@media screen and (min-width:600px){
-.article_content{
-display: -ms-grid;
-display: grid;
-grid-auto-flow: row;
--ms-grid-rows: auto 1fr;
--ms-grid-columns: 1fr;
-}
-}
-.article_content{
-position: relative;
-min-width: 0;
--ms-grid-column: 2;
-}
-@media screen and (min-width:600px){
-.article_details_group{
-display: -ms-grid;
-display: grid;
-grid-auto-flow: column;
-grid-gap: 15px;
--ms-grid-columns: 1fr auto;
--ms-grid-row: 1;
-}
-}
-.article_details_group{
-overflow: hidden;
-}
-@media screen and (min-width:600px){
-.article_details{
--ms-grid-column: 1;
-padding-right: 15px;
-margin-bottom: 0;
-}
-}
-.article_details{
-padding-right: 40px;
-min-width: 0;
-margin-bottom: 0.6em;
-}
-@media screen and (min-width:600px){
-.two{
-font-size: 14px;
-line-height: 18px;
-letter-spacing: 0.5px;
-}
-}
-@media screen and (min-width:0px){
-.two
-font-size: 14px;
-line-height: 18px;
-letter-spacing: 0.5px;
-}
-}
-.two {
-display: block;
-margin: 0;
-margin-bottom: 2px;
-font-size: 14px;
-line-height: 18px;
-letter-spacing: 0.5px;
-}
-@media screen and (min-width:600px){
-.four {
-text-align: right;
--ms-grid-column: 2;
-}
-}
-@media screen and (min-width:600px){
-.article_content_bottom{
-display: -ms-grid;
-display: grid;
-grid-auto-flow: column;
-grid-template-areas: "a b";
--ms-grid-row: 2;
--ms-grid-columns: 1fr auto;
-}
-}
-.article_content_bottom{
-margin-bottom: -10px;
-}
-@media screen and (min-width:600px){
-.five {
-grid-area: a;
--ms-flex-item-align: end;
--ms-grid-row-align: end;
-align-self: end;
-}
-}
-@media screen and (min-width:600px){
-.six {
-grid-area: b;
--ms-flex-item-align: end;
--ms-grid-row-align: end;
-align-self: end;
-text-align: right;
-padding-bottom: 14px;
-}
-}
-#payment-container{
-margin-bottom: 0;
-}
-@media screen and (min-width:960px){
-.cartsidebar{
-width: 32%;
-}
-}
-.cartsidebar {
-display: -webkit-box;
-display: -ms-flexbox;
-display: flex;
--webkit-box-orient: vertical;
--webkit-box-direction: normal;
--ms-flex-flow: columns;
-flex-flow: columns;
--ms-flex-direction: column;
-flex-direction: column;
-}
-.sticky_cartsidebar{
-position: sticky;
-top:0;
-}
-.checkout_coupon
-.button-continue-shopping,
-.continue-shopping{display:none;}
-The "cartsidebar" should be displayed on the right side next to the "cart-container".
-What have i done wrong?
-Why does it display on the bottom?
-Can someone help me with this and give me explanation please?
-php html css wordpress woocommerce
-Share
-Improve this question
-Follow
-edited May 31 at 12:07
-tacoshy
-3,13322 gold badges77 silver badges2222 bronze badges
-asked May 31 at 12:04
-m41130m41130
-311 bronze badge
-Add a comment
-|
-1 Answer
+python33, dictionary, NoneType' object has no attribute 'append' - Python
+468,450 Members | 2,932 Online
+Sign in
+Join Now
+New Post
+Home Posts Topics Members FAQ
+home > topics > python > questions
+>
+python33, dictionary, nonetype' object has no attribute 'append'
+Post your question to a community of 468,450 developers.
+It's quick & easy.
+python33, dictionary, NoneType' object has no attribute 'append'
+gintare
+103
+100+
+I am not able to initialize empty dictionary in python33.
+I have tried:
+Expand|Select|Wrap|Line Numbers
+D=dict()
+D={}
+Later i want to insert values using:
+Expand|Select|Wrap|Line Numbers
+D.setdefault(num).append(ansdb2.Rname)
+In both cases i am getting error "NoneType' object has no attribute 'append'"
+Oct 4 '14
+#1
+Follow Post Reply
 1
-Active
-Oldest
-Votes
-0
-Use the following way:
-/*cart*/
-@media screen and (min-width: 1200px){
-.cart-wrapper{
-max-width: 1176px;
-min-width: 1100px;
-}
-}
-@media screen and (min-width: 960px){
-.cart-wrapper{
-padding-left:24px;
-}
-}
-@media screen and (min-width: 600px){
-.cart-wrapper{
-padding: 2%;
-margin: 0;
-}
-}
-Share
-Improve this answer
-Follow
-answered May 31 at 12:08
-Chan-Han-DanChan-Han-Dan
-4711 silver badge99 bronze badges
-1
-Thank you for your answer but it doesn't work either.
-– m41130
-May 31 at 12:40
-Add a comment
-|
-Your Answer
-Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
-Draft saved
-Draft discarded
-Sign up or log in
-Sign up using Google
-Sign up using Facebook
-Sign up using Email and Password
-Submit
-Post as a guest
-Name
-Email
-Required, but never shown
-Post as a guest
-Name
-Email
-Required, but never shown
-Post Your Answer
-Discard
-By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
-Not the answer you're looking for? Browse other questions tagged php html css wordpress woocommerce
-or ask your own question.
-The Overflow Blog
-Using low-code tools to iterate products faster
-Podcast 345: A good software tutorial explains the How. A great one explains…
-Featured on Meta
-Take the 2021 Developer Survey
-Related
-2230
-Make a div fill the height of the remaining screen space
-4221
-Which “href” value should I use for JavaScript links, “#” or “javascript:void(0)”?
-2990
-How can I change an element's class with JavaScript?
-2258
-How can I make a div not larger than its contents?
-1184
-Maintain the aspect ratio of a div with CSS
-2332
-How to make a div 100% height of the browser window
-4131
-Change a HTML5 input's placeholder color with CSS
-1335
-How do I vertically align text in a div?
-1750
-How do I auto-resize an image to fit a 'div' container?
-1763
-Click through div to underlying elements
-Hot Network Questions
-Should I notify a med school about their student's cheating history?
-Why was the neutrino thought to be massless?
-Does machine learning really need data-efficient algorithms?
-I'm Lazy: Close my Superparens
-What is the DC of Draconic Presence?
-Microcontroller bit information for the Core and different peripherals
-Are AP slugs for shotguns possible?
-Mandatory tabs-an unusual pattern?
-Are there any rules for digging out of a grave?
-Is there a threadlocker that requires heat to release and can withstand thousands of heat-cool cycles without needing to be reapplied or deteriorating
-Why are SSH MITM tools able to read and modify data?
-Is buying lecture notes wrong?
-What does "parity pattern" mean?
-Refueling a Mars mission on the way
-Why is Ken's beer "gay"?
-How to make Mathematica read in CSV as fast as Python's Pandas
-Former coworker I gave a reference for sabotaged the company on his last day - Should I update the reference contact with this new information?
-Why am I seeing the sun slightly north instead of slightly south early in the morning in Malta?
-Error creating scratch orgs with "Communities" enabled
-How to get real-looking rust that will be safe to the touch?
-How do I create an insert-only user for a Postgres table with an index?
-Is there a diff() function in Julia DataFrames like pandas?
-Linux backup script written in bash for tar
-Can black convert a +5.6 game into a draw (assuming both players play optimally)?
-more hot questions
-Question feed
-Subscribe to RSS
-Question feed
-To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
-default
-Stack Overflow
-Questions
-Jobs
-Developer Jobs Directory
-Salary Calculator
-Help
-Mobile
-Products
-Teams
-Talent
-Advertising
-Enterprise
-Company
-About
-Press
-Work Here
-Legal
-Privacy Policy
-Terms of Service
-Contact Us
-Cookie Settings
-Cookie Policy
-Stack Exchange Network
-Technology
-Life / Arts
-Culture / Recreation
-Science
-Other
-Stack Overflow
-Server Fault
-Super User
-Web Applications
-Ask Ubuntu
-Webmasters
-Game Development
-TeX - LaTeX
-Software Engineering
-Unix & Linux
-Ask Different (Apple)
-WordPress Development
-Geographic Information Systems
-Electrical Engineering
-Android Enthusiasts
-Information Security
-Database Administrators
-Drupal Answers
-SharePoint
-User Experience
-Mathematica
-Salesforce
-ExpressionEngine® Answers
-Stack Overflow em Português
-Blender
-Network Engineering
-Cryptography
-Code Review
-Magento
-Software Recommendations
-Signal Processing
-Emacs
-Raspberry Pi
-Stack Overflow на русском
-Code Golf
-Stack Overflow en español
-Ethereum
-Data Science
-Arduino
-Bitcoin
-Software Quality Assurance & Testing
-Sound Design
-Windows Phone
-more (29)
-Photography
-Science Fiction & Fantasy
-Graphic Design
-Movies & TV
-Music: Practice & Theory
-Worldbuilding
-Video Production
-Seasoned Advice (cooking)
-Home Improvement
-Personal Finance & Money
-Academia
-Law
-Physical Fitness
-Gardening & Landscaping
-Parenting
-more (10)
-English Language & Usage
-Skeptics
-Mi Yodeya (Judaism)
-Travel
-Christianity
-English Language Learners
-Japanese Language
-Chinese Language
-French Language
-German Language
-Biblical Hermeneutics
-History
-Spanish Language
-Islam
-Русский язык
-Russian Language
-Arqade (gaming)
-Bicycles
-Role-playing Games
-Anime & Manga
-Puzzling
-Motor Vehicle Maintenance & Repair
-Board & Card Games
-Bricks
-Homebrewing
-Martial Arts
-The Great Outdoors
-Poker
-Chess
-Sports
-more (16)
-MathOverflow
-Mathematics
-Cross Validated (stats)
-Theoretical Computer Science
-Physics
-Chemistry
-Biology
-Computer Science
-Philosophy
-Linguistics
-Psychology & Neuroscience
-Computational Science
-more (10)
-Meta Stack Exchange
-Stack Apps
-API
-Data
-Blog
-Facebook
-Twitter
-LinkedIn
-Instagram
-site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.6.9.39464
-Stack Overflow works best with JavaScript enabled
-Your privacy
-By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
-Accept all cookies
-Customize settings
+3497
+gintare
+103
+100+
+It should be empty brackets as a second parameter to setdefault:
+Expand|Select|Wrap|Line Numbers
+D.setdefault(num, []).append(ansdb2.Rname)
+Oct 4 '14
+#2
+reply
+Message
+Cancel Changes
+Post your reply
+Sign in to post your reply or Sign up for a free account.
+Post Reply
+Similar topics
+Python
+NoneType object returned by .fetchone() in MySQLdb
+2 posts
+views
+Thread by Arnaud-F. FAUSSE |
+last post:
+by
+Python
+referencing an object attribute
+sort of indirectly from within list
+4 posts
+views
+Thread by python newbie |
+last post:
+by
+Python
+TypeError: 'NoneType' object is not callable
+1 post
+views
+Thread by Atul Kshirsagar |
+last post:
+by
+C# / C Sharp
+Find object inside arraylists by object attribute
+4 posts
+views
+Thread by Arjen |
+last post:
+by
+Python
+dictionary with object's method as thier items
+7 posts
+views
+Thread by noro |
+last post:
+by
+Python
+NoneType object not iterable
+5 posts
+views
+Thread by tom |
+last post:
+by
+C# / C Sharp
+Dictionary.ContainsKey(object)
+3 posts
+views
+Thread by Al Meadows |
+last post:
+by
+C# / C Sharp
+Dictionary with object for key
+3 posts
+views
+Thread by =?Utf-8?B?THVpZ2k=?= |
+last post:
+by
+Python
+How to fix error "'NoneType' object has no attribute 'split'"?
+4 posts
+views
+Thread by Atrisa |
+last post:
+by
+Python
+TypeError: 'NoneType' object is not iterable - Learning python, tad confused.
+3 posts
+views
+Thread by Barry1point4 |
+last post:
+by
+Java
+How to implement ArrayList data structure in Java
+reply
+views
+Thread by ravipankaj |
+last post:
+by
+Java
+How to implement singly linked list in Java
+reply
+views
+Thread by ravipankaj |
+last post:
+by
+C / C++
+Low-invasive C language library
+reply
+views
+Thread by NPC403 |
+last post:
+by
+HTML / CSS
+How to create an HTML back button
+reply
+views
+Thread by slotstar |
+last post:
+by
+Visual Basic .NET
+sub main was not found - solution for complete noobs
+reply
+views
+Thread by captainhaddock |
+last post:
+by
+C / C++
+Could anyone explain me which are not permitted?
+1 post
+views
+Thread by hanj |
+last post:
+by
+General
+Add New Button
+1 post
+views
+Thread by subhajit12345 |
+last post:
+by
+Python
+Why am I getting a key error when I print my dictionary?
+1 post
+views
+Thread by adamb123 |
+last post:
+by
+Microsoft Access / VBA
+re: Can get a Left Join to Work in one summary table but not another in Access
+2 posts
+views
+Thread by hwsilver |
+last post:
+by
+BYTES.COM © 2021 About Us Advertise Terms Of Use Privacy Policy Manage Cookies Contact Us
+Sitemap
+Follow us! Get the Latest Bytes Updates
+By using this site, you agree to our Privacy Policy and Terms of Use.
+Ok

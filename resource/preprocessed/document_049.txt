@@ -1,229 +1,182 @@
-NameError: name 'panda' is not defined - Kodlogs
-menu
+TypeError: 'float' object cannot be interpreted as an integer
+Register
 Login
-Register
-search
-Log Inaccount_circle
-Log In
-Email or Username
-Password
-Remember
-Log In
-Register
-I forgot my password
-Register
-Username
-Email
-Password
-Register
-add
-Q&A
-Questions
-Tags
-Users
-Ask a Question
+Python
+Photoshop
+SAP
+Java
+PHP
+Android
+C++
+Hadoop
+Oracle
+Interview Questions
 Articles
-Post An Article
-Recent Posts
-What is a flag in c++
-What is static in C++
-How to use /n in C++
-what is the difference between char and varchar?
-Python ASCII to int
-What are the supported wildcard characters for selectors in uipath studio?
-C# convert float to int
-Moving Perl Mojolicious routes to their own module
-Write a java program to count the letters, spaces, numbers and other characters of an input string.
-Uploading files to AWS S3 Bucket using Spring Boot
-NameError: name 'panda' is not defined
-1 vote
-173 views
-Problem:I was doing a project work where I had to use pandas and numpy. I wrote a python program with them:data =pandas.read_csv('valla',nov=',')
-data=data.values
-P=np.ones((13,56))
-Y=data[:,45]
-for i in range (1,12):
-X= np.column_stack((P,(dat[:,i])))
-Xt = np.transpose(X)
-p=np.matmul(Xt,X)But the code gives me the below error message:Traceback (most recent call last):
-File "proj.py", line 1, in <module>
-data =pandas.read_csv('valla',nov=',')
-NameError: name 'pandas' is not definedIs there anything wrong with my code or the problem is with the file I was trying to read?If there is any thing wrong in my code what is that and how to solve that.Thanks in advance.
-python-3
-name-error
-asked
-May 17, 2020
-samhaz
-5k points
-edited
-May 17, 2020
-by samhaz
-answer
-Please log in or register to answer this question.
-1 Answer
-1 vote
-Solution:At first maske sure the file you are calling does exists. And please import numpy and pandas before using those functions:import pandas
-import numpy as np I imported numpy as np because in your code you called numpy as np:import pandas
-import numpy as np
-data =pandas.read_csv('valla',nov=',')
-data=data.values
-P=np.ones((13,56))
-Y=data[:,45]
-for i in range (1,12):
-X= np.column_stack((P,(dat[:,i])))
-Xt = np.transpose(X)
-p=np.matmul(Xt,X)Hope you understand what the error was in your program. Happy coding.
-answered
-May 17, 2020
-kamrulJaman
-35k points
-ask related question
-comment
-Your comment on this answer:
-Your name to display (optional):
-Email me at this address if a comment is added after mine:Email me if a comment is added after mine
-Privacy: Your email address will only be used for sending these notifications.
-Anti-spam verification:
-What is the color of the sky?
-To avoid this verification in future, please log in or register.
-Add comment
-Cancel
-Related questions
-0 votes
-1 answer
-35 views
-35 views
-traceback (most recent call last): NameError: name '…' is not defined .
-Problem: I need to know what is the problem: traceback (most recent call last): NameError: name '&hellip;' is not defined
-asked
-Mar 19
-Wafa Abu Yousef
-6.1k points
-python
-name-error
-python-3
-0 votes
-1 answer
-20 views
-20 views
-traceback (most recent call last): NameError: name '…' is not defined.
-Problem: Any help: traceback (most recent call last): NameError: name '&hellip;' is not defined
-asked
-Mar 19
-Wafa Abu Yousef
-6.1k points
-python
-name-error
-python-3
-0 votes
-1 answer
-37 views
-37 views
-Nameerror name is not defined python 3 .
-Peroblem: How can I fix the issue? Thanks for your concern:Nameerror name is not defined python 3 .
-asked
-Mar 15
-Wafa Abu Yousef
-6.1k points
-name-error
-python-3
-0 votes
-1 answer
-84 views
-84 views
-NameError: name 'pd' is not defined.
-Problem: could anybody help me ! NameError: name 'pd' is not defined.
-asked
-Mar 6
-Wafa Abu Yousef
-6.1k points
-name-error
-python-3
-0 votes
-1 answer
-39 views
-39 views
-python nameerror name is not defined function
-Problem: How to I Solve this: python nameerror name is not defined function HELP! I need help understanding this: python nameerror name is not defined function Can someone please help solve this, I am new in python(). Someone have idea to solve this thanks!
-asked
-Mar 5
-Mashhoodch
-13k points
-name-error
-python-3
-0 votes
-1 answer
-27 views
-27 views
-nameerror: name 'include' is not defined
-Problem: How to I Solve this: nameerror: name 'include' is not defined HELP! I need help understanding this: nameerror: name 'include' is not defined Can someone please help solve this, I am new in python(). Someone have idea to solve this thanks!
-asked
-Mar 3
-Mashhoodch
-13k points
-name-error
-python-3
-0 votes
-1 answer
-566 views
-566 views
-Nameerror: name 'unicode' is not defined in Python 3
-Problem Hello Kodlogs, My code is giving me nameerror: name 'unicode' is not defined. Here is the code # utf-8 ? we need unicode if isinstance(unicode_or_str, unicode): text = unicode_or_str decoded = False else: text = unicode_or_str.decode(encoding) ...
-if isinstance(unicode_or_str, unicode): NameError: global name 'unicode' is not defined It started happening on Python 3. Please help
-asked
-Nov 3, 2020
-hashq
-1.1k points
-python-3
-name-error
-0 votes
-1 answer
-166 views
-166 views
-how to solve nameerror: name 'python' is not defined
-Am encountering this error in Windows Command line,done a wide search but could not get a perfect answer.Please find the error below and help in solving. python Traceback (most recent call last): File "<stdin>", line 1, in <module> NameError: name 'python' is not defined >>> Thanks
-...
-31 '13 at 12:21 you did not include the >>> before the word 'python', right? &ndash; Elazar May 31 '13 at 12:23
-asked
-Oct 25, 2020
-psandprop
-2.4k points
-name-error
-python
-python-3
-0 votes
-1 answer
-839 views
-839 views
-how to solve nameerror: name 'pip' is not defined -
-I've just installed python 3.5, ran Python 3.5 (32-bit) and typed pip and received the message: Traceback (most recent call last): File "<pyshell#2>", line 1, in <module> pip NameError: name 'pip' is not defined I don't see any scripts directories in my path,
-...
-Scripts folder from above, same result. How do I install python so that it actually works (ie. I can run pip, install modules, etc.)?
-asked
-Oct 25, 2020
-psandprop
-2.4k points
-name-error
-python-3
-0 votes
-2 answers
-117 views
-117 views
-traceback (most recent call last): NameError: name '…' is not defined
-There has been an error when trying to run this script : input_variable = input ("Enter your name: ") print ("your name is" + input_variable) Let's say I type in "dude", the error I am getting is: line 1, in <module> input_variable = input ("Enter your name: ") File "<string>", line 1, in <module> NameError: name 'dude' is not defined I am running these scripts with Python 2.7.
-asked
-Oct 24, 2020
-psandprop
-2.4k points
-name-error
-python
-python-3
-Send feedback
+Other
+HomeLearn Python ProgrammingPython Online CompilerPython Training Tutorials for BeginnersSquare Root in PythonAddition of two numbers in PythonNull Object in PythonPython vs PHPTypeError: 'int' object is not subscriptablepip is not recognizedPython CommentPython Min()Python FactorialPython Continue StatementArmstrong Number in PythonPython lowercasePython UppercasePython map()Python String ReplacePython String findPython Max() FunctionInvalid literal for int() with base 10 in PythonTop Online Python CompilerPolymorphism in PythonInheritance in PythonPython : end parameter in print()Python String ConcatenationPython Pass StatementPython EnumeratePython New 3.6 FeaturesPython input()Python String ContainsPython evalPython zip()Python Range Python IDEInstall Opencv Python PIP WindowsPython String Title() MethodString Index Out of Range PythonPython Print Without NewlineId() function in PythonPython Split()Reverse Words in a String PythonOrd Function in PythonOnly Size-1 Arrays Can be Converted to Python ScalarsArea of Circle in PythonPython Reverse StringBubble Sort in PythonAttribute Error PythonPython Combine ListsPython slice() functionConvert List to String PythonPython list append and extendPython Sort Dictionary by Key or Valueindentationerror: unindent does not match any outer indentation level in PythonRemove Punctuation PythonCompare Two Lists in PythonPython InfinityPython KeyErrorPython Return Outside FunctionPangram Program in Python
+Python » Python Tutorial					TypeError: 'float' object cannot be interpreted as an integer
+In this article, we will learn about the TypeError: ‘float’ object can not be interpreted as an integer.
+This error will occur in all the functions or methods. Where the function or method accepts only the integer value as a parameter. But instead, we have passed float values. The most common example is the range function. Since the range function only accepts an integer as a parameter.
+For example, when we divide 16 by 8 using division operator ‘/’ in python, it’ll return a float value i.e. 2.0 and not an integer. This raises an error when we want an int as a parameter, but we have a float value.
+Let us understand it more with the help of an example.
+Example 1:
+for i in range(3.0):
+print(i)
+print('end of loop')
+Output:
+File "float.py", line 1, in <module>
+for i in range(3.0):
+TypeError: 'float' object cannot be interpreted as an integer
+In the above example, we did not perform any arithmetic operations. Instead, we passed a float value as a range parameter. In this case, the cause for the TypeError is that the range function does not take float value as a parameter.
+Solution:
+for i in range(3):
+print(i)
+print('end of loop')
+Output:
+0
+1
+2
+end of loop
+Example 2:
+for i in range(16/8):
+print(i)
+print('end of loop')
+Output:
+Traceback (most recent call last):
+File "pyprogram.py", line 1, in <module>
+for i in range(16/8):
+TypeError: 'float' object cannot be interpreted as an integer
+In the above example, when we performed division operation inside the range() function. We got a float value (2.0). But the range function takes only an integer value as a parameter.
+Thus the error “TypeError: 'float' object cannot be interpreted as an integer” is encountered.
+Solution:
+for i in range(5//8):
+print(i)
+print('end of loop')
+Output:
+0
+1
+end of loop
+Unlike the division operator ‘/’ the floor division operator ‘//’ in python, returns an integer value. The floor division operator removes the digits after the decimal point. Thus we get an integer value.
+So on dividing 16 by 8 using floor division operator ‘//’ we get ‘2’ as a parameter in range function. Thus no error is encountered, and we get the desired output.
+Recommended Posts:
+Python Training Tutorials for Beginners
+TypeError: 'int' object is not subscriptable
+Armstrong Number in Python
+Python String Replace
+Python Max() Function
+Python : end parameter in print()
+Python Pass Statement
+Python New 3.6 Features
+Python input()
+Python String Contains
+Python eval
+Python Range
+Python IDE
+String Index Out of Range Python
+Python Reverse String
+Bubble Sort in Python
+Python Sort Dictionary by Key or Value
+Python Infinity
+Python KeyError
+Pangram Program in Python
+Tutorials
+Learn Python Programming
+Python Online Compiler
+Python Training Tutorials for Beginners
+Square Root in Python
+Addition of two numbers in Python
+Null Object in Python
+Python vs PHP
+TypeError: 'int' object is not subscriptable
+pip is not recognized
+Python Comment
+Python Min()
+Python Factorial
+Python Continue Statement
+Armstrong Number in Python
+Python lowercase
+Python Uppercase
+Python map()
+Python String Replace
+Python String find
+Python Max() Function
+Invalid literal for int() with base 10 in Python
+Top Online Python Compiler
+Polymorphism in Python
+Inheritance in Python
+Python : end parameter in print()
+Python String Concatenation
+Python Pass Statement
+Python Enumerate
+Python New 3.6 Features
+Python input()
+Python String Contains
+Python eval
+Python zip()
+Python Range
+Python IDE
+Install Opencv Python PIP Windows
+Python String Title() Method
+String Index Out of Range Python
+Python Print Without Newline
+Id() function in Python
+Python Split()
+Reverse Words in a String Python
+Ord Function in Python
+Only Size-1 Arrays Can be Converted to Python Scalars
+Area of Circle in Python
+Python Reverse String
+Bubble Sort in Python
+Attribute Error Python
+Python Combine Lists
+Python slice() function
+Convert List to String Python
+Python list append and extend
+Python Sort Dictionary by Key or Value
+indentationerror: unindent does not match any outer indentation level in Python
+Remove Punctuation Python
+Compare Two Lists in Python
+Python Infinity
+Python KeyError
+Python Return Outside Function
+Pangram Program in Python
+Follow Us
+Contact Information
+#3940 Sector 23,Gurgaon, Haryana (India)Pin :- 122015
+contact@stechies.com
+Top Tutorials
+SAP Tutorial
+SAP HANA Tutorial
+SAP BASIS Tutorial
+Android Tutorial
+Python Tutorial
+Java Tutorial
+Hadoop Tutorial
+Photoshop Tutorial
+Difference Between Article
+Interview Questions
+Top Interview Questions
+ABAP Interview Questions
+BASIS Interview Questions
+HANA Interview Questions
+SD Interview Questions
+FICO Interview Questions
+Hibernate Interview Questions
+QTP/UFT Interview Questions
+Tableau Interview Questions
+TestNG Interview Questions
+Hive Interview Questions
+Quick Links
+Write for us
+Career Guidance Tool
+SAP Transaction Codes
+Sample Resume
+Institutes
+SAP PDF Books
+Classifieds
+Recent Articles
+Contact Us
 About Us
+Terms of Use
 Privacy Policy
-Guest Blog
-XML Sitemap
-Facebook
-Twitter
-Pinterest
-Dark theme
+Cookies Policy

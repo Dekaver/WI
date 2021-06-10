@@ -1,93 +1,601 @@
-Memahami Exception Handling Pada Pemrograman Java - Belajar Java Dengan Mudah
-Belajar Java Dengan Mudah
-JAVA DASAR
-Contoh Program
-Tutorial
-Java
-×
-Beranda
-›
-Exception handling
-Memahami Exception Handling Pada Pemrograman Java
-Ditulis oleh
-Gaby Julie
-Tambah Komentar
-Edit
-Jika Java Virtual Machine (JVM) mendeteksi operasi yang mustahil untuk dilakukan, maka saat  aktivitas berjalan akan muncul runtime error.
-Sebagai contoh, jikalau anda mengakses suatu array memakai index yang out of bonds, maka anda akan mendapat runtime error dengan ArrayIndexOutOfBoundsException.
-Atau misalkan ketika anda memasukkan nilai dengan tipe double, padahal aktivitas anda dirancang untuk nilai integer, maka anda akan mendapat runtime error InputMismatchException.
-Pada aktivitas Java, runtime error ini akan dilemparkan sebagai pengecualian-pengecualian atau exceptions.
-Exceptions ini juga ialah objek yang merepresentasikan suatu error atau kondisi yang mencegah sanksi berjalan secara normal.
-Jika exception tidak ditangani maka aktivitas akan berhenti secara tidak normal.
-Pertanyaannya ialah bagaimana cara anda untuk menangani exception sehingga aktivitas sanggup terus berjalan atau berhenti dengan baik?
-Exception handling merupakan bab penting dari penulisan aplikasi Java yang tangguh.
-Oleh alasannya itu, bab ini ialah persyaratan non-fungsional untuk aplikasi apa pun. Bertujuan untuk menangani kondisi di mana terjadi kekeliruan dengan baik ibarat resources yang tidak tersedia, input yang tidak valid, input null dan lain sebagainya.
-Java menyediakan beberapa fitur untuk handling exception, terdapat secara built-in dalam bentuk keyword try, catch dan finally. Bahasa pemrograman Java juga memungkinkan anda untuk menciptakan exception yang gres dan melemparnya dengan memakai keyword throw dan throws.
-Ikhtisar Exception Handling Exceptions dilemparkan (thrown) dari suatu method. Pemanggil (caller) dari method tersebut sanggup menangkap (catch) dan menangani exception itu.
-Untuk memahami exception handing lihat referensi aba-aba aktivitas di bawah ini:
-Pada aba-aba di atas ketika user memasukkan angka 0 pada angka ke dua, maka runtime error akan terjadi lantaran integer tidak sanggup di bagi oleh angka 0. Misalkan referensi output ibarat di bawah ini:
-Masukkan dua buah integer:  1 0 Exception in thread "main" java.lang.ArithmeticException: / by zero
-at Pembagian.main(Pembagian.java:15)
-Cara sederhana untuk mengatasi persoalan ini ialah dengan memakai kondisional if, ibarat pada referensi berikut ini:
-Contoh output: Masukkan dua buah integer: 1 0 Angka pembagi tidak boleh nol!
-Sebelum melangkah lebih jauh pada exception handling, aba-aba di atas sanggup ditulis ulang dengan memakai method untuk pembagian ibarat referensi di bawah ini:
-Pada aba-aba di atas method pada line (6-12) akan mengembalikan hasil pembagian dari dua buah integer. Jika angka ke dua ialah 0 sebagai pembagi maka aktivitas akan tidak boleh pada line 9.
-Ini terperinci ialah sebuah persoalan lantaran anda seharusnya tidak menciptakan method untuk menghentikan program.
-Jadi, bagaimana suatu method sanggup memberitahu pemanggilnya bahwa suatu exception telah terjadi? Java mengizinkan suatu method untuk melemparkan suatu exception yang sanggup ditangkap dan ditangani oleh caller atau pemanggil.
-Makara aba-aba di atas sanggup ditulis kembali sebagai:
-Pada aba-aba di atas jikalau angka kedua atau pembagi ialah 0, maka method akan melemparkan exception pada line 9:
-throw new ArithmeticException("Angka pembagi tidak boleh nol!");
-Nilai yang dilemparkan, dalam hal ini ialah new ArithmeticException("Angka pembagi tidak boleh nol!"); disebut dengan suatu exception. Sedangkan sanksi dari pernyataan throw disebut dengan melemparkan suatu exception atau throwing an exception.
-Objek exception adalah suatu object yang dibentuk dari class Exception. Dalam hal ini class Exception ialah java.lang.ArithmeticException.
-Dengan hirarki:
-java.lang.Object        java.lang.Throwable            java.lang.Exception                java.lang.RuntimeException                    java.lang.ArithmeticException
-Konstruktor ArithmeticException(String s) dipanggil untuk mengkonstruksi objek exception. Di mana String s ialah pesan yang menjelaskan mengenai exception.
-Ketika sebuah exception dilemparkan, maka alur sanksi secara normal akan terganggu. Seperti istilah "throw an exception" yang artinya ialah untuk mem-pass-kan exception dari satu daerah ke daerah lainnya.
-Blok try dan catch
-Pernyataan untuk memanggil method terkandung dalam blok try dan catch. Blok try pada line 23 - 28  berisi aba-aba yang dijalankan pada keadaan normal.
-Sementara itu exception akan ditangkap oleh blok catch pada line 30 - 33. Makara aba-aba yang terdapat pada blok catch bertujuan untuk menangani exception.
-Kemudian pernyataan pada line 35 akan dihukum sehabis blok catch dieksekusi.
-Pernyataan throw ini sanggup dianalogikan dengan pemanggilan method. Namun, bukan method yang dipanggil, melainkan blok catch.
-Dalam hal ini, suatu blok catch ialah ibarat sebuah definisi method dengan parameter yang sesuai dengan tipe nilai yang dilemparkan. Tidak ibarat method, bagaimanapun, sehabis blok catch dieksekusi, kontrol aktivitas tidak kembali lagi kepada pernyataan throw, melainkan akan melanjutkan ekseskusi pada pernyataan selanjutnya sehabis blok catch.
-Parameter Blok catch
-Pada line 30:
-catch (ArithmeticException exception)
-Identifier exception berperan sama ibarat parameter dalam sebuah method. Dengan demikian, parameter ini disebut sebagai suatu parameter blok catch.
-ArithmeticException di atas, yang ditulis lebih dulu sebelum exception ialah untuk memilih jenis exception apa yang sanggup ditangkap oleh blok catch. Sekali exception ditangkap maka anda sanggup mengakses nilai yang dilemparkan dari parameter ini di dalam body dari blok catch.
-Secara ringkas, sebuah template dari blok try-throw-catch akan tampak ibarat ini:
-Sebuah exception mungkin sanggup dilontarkan secara eksklusif dengan memakai pernyataan throw di dalam blok try. Atau sanggup juga dengan memakai method yang sanggup melemparkan exception.
-Pada line 24, method main memanggil hitungPembagian(). Jika method hitungPembagian() berjalan dengan normal maka maka mengembalikan sebuuah nilai pada caller.
-Sebaliknya jikalau method hitungPembagian() menemukan exception maka ia akan melemparkan kembali exception tersebut pada caller. Selanjutnya blok catch dari caller akan menangani exception tersebut.
-Keuntungan Menggunakan Exception Handling Sekarang anda sanggup melihat laba memakai exception handling. Keuntungannya dalah memungkinkan sebuah method untuk melemparkan exception pada pemanggilnya atau caller dan memungkinkan caller untuk menangani exception tersebut.
-Dapat dibayangkan bila tanpa kapabilitas tersebut method yang dipanggil itu sendiri harus menangani exception atau menghentikan program. Seringkali method yang dipanggil tidak mengetahui apa yang harus dilakukan ketika terjadi error. Ini ialah kasus yang tipikal untuk method-method library. Library method sanggup mendeteksi error namun hanya caller yang sanggup mengetahui apa yang harus dilakukan ketika error muncul.
-Manfaat utama dari exception handling ialah memisahkan pendeteksian suatu error dari penanganan error.
-Banyak method library melemparkan exceptions. Berikut ini ialah referensi menangani InputMismatchException ketika membaca sebuah input.
-Ketika mengeksekusi input.nextInt() pada line 13, suatu InputMismatchException muncul jikalau user memasukkan angka yang bukan merupakan integer.
-Misalkan nilai 2.9 diinput, maka  InputMismatchException terjadi dan kontrol aktivitas akan dipindahkan ke blok catch line 20-23. Pernyataan di dalam blok tersebut akan dieksekusi.
-Pernyataan input.nextLine() pada line 22 akan memusnahkan input line dikala ini dan lalu user sanggup memasukkan input pada line yang baru.
-Variabel lanjutkanInput mengontrol loop. Nilai inisialnya ialah true pada line 8 dan lalu diubah menjadi false pada line 17 ketika nilai yang valid diterima. Ketika sebuah input nilai yang valid diterima maka tidak diharapkan lagi untuk melanjutkan input angka.
-Bagikan Artikel ini
-Belum ada Komentar untuk "Memahami Exception Handling Pada Pemrograman Java"
-Posting Komentar
-Posting Lebih Baru
-Posting Lama
-Beranda
-Langganan:
-Posting Komentar (Atom)
-Iklan Atas Artikel
-Iklan Tengah Artikel 1
-Iklan Tengah Artikel 2
-Iklan Bawah Artikel
-Postingan Terbaru
-Popular Posts
-Pengertian Dan Fungsi Import Pada Java, Import Java.Io.*, Util.Date Dan Lainnya
-Contoh Kegiatan Menghitung Jumlah Digit Angka Integer Di Java
-Kenali Jenis Error Pada Pemrograman Java
-Penjelasan Dan Fungsi Inputstreamreader Dan Bufferedreader Pada Java
-6 Perbedaan Signifikan Antara Bufferedreader Dan Scanner Pada Java
-Memahami Checked Dan Unchecked Exception Pada Kegiatan Java
+laravel - Php artisan make:auth command is not defined - Stack Overflow
+Stack Overflow
 About
-Contact
+Products
+For Teams
+Stack Overflow
+Public questions & answers
+Stack Overflow for Teams
+Where developers & technologists share private knowledge with coworkers
+Jobs
+Programming & related technical career opportunities
+Talent
+Recruit tech talent & build your employer brand
+Advertising
+Reach developers & technologists worldwide
+About the company
+Loading…
+Log in
+Sign up
+current community
+Stack Overflow
+help
+chat
+Meta Stack Overflow
+your communities
+Sign up or log in to customize your list.
+more stack exchange communities
+company blog
+People who code: we want your input.
+Take the Survey
+Join Stack Overflow to learn, share knowledge, and build your career.
+Sign up with email
+Sign up
+Sign up with Google
+Sign up with GitHub
+Sign up with Facebook
+Home
+Public
+Questions
+Tags
+Users
+Find a Job
+Jobs
+Companies
+Teams
+Stack Overflow for Teams
+– Collaborate and share knowledge with a private group.
+Create a free Team
+What is Teams?
+Teams
+What’s this?
+Create free Team
+Teams
+Q&A for work
+Connect and share knowledge within a single location that is structured and easy to search.
+Learn more
+Php artisan make:auth command is not defined
+Ask Question
+Asked
+5 years, 5 months ago
+Active
+2 months ago
+Viewed
+220k times
+95
+30
+I am trying to run this command in laravel 5.2 but it's not working.
+php artisan make:auth
+and prompts with these statements.
+[InvalidArgumentException]
+Command "make:auth" is not defined
+Did you mean one of these?
+make:test
+make:request
+make:migration
+make:seeder
+make:middleware
+make:controller
+make:provider
+make:policy
+make:event
+make:console
+make:job
+make:listener
+make:model
+make:command
+php laravel
+Share
+Follow
+edited Oct 18 '19 at 0:16
+Saeed
+2,60422 gold badges2121 silver badges3636 bronze badges
+asked Dec 31 '15 at 11:16
+naannaan
+1,03111 gold badge99 silver badges1010 bronze badges
+6
+their is nothing like use Illuminate\Contracts\Auth\Authenticator; in AuthenticateUser.php.as i mentioned i'm using laravel 5.2
+– naan
+Dec 31 '15 at 11:34
+Have you tried to composer update?
+– Yauheni Prakopchyk
+Dec 31 '15 at 12:05
+yes just last night..
+– naan
+Dec 31 '15 at 12:27
+@YauheniPrakopchyk do you use laravel 5.2?
+– naan
+Dec 31 '15 at 12:29
+There must be any problem with your exist code, You must try with new fresh installation. laravel.com/docs/master/installation . Probably your would understand the exact problem.
+– user3737083
+Dec 31 '15 at 13:14
+|
+Show 1 more comment
+8 Answers
+8
+Active
+Oldest
+Votes
+156
+For Laravel >=6
+composer require laravel/ui
+php artisan ui vue --auth
+php artisan migrate
+Reference : Laravel Documentation for authentication
+it looks you are not using Laravel 5.2, these are the available make commands in L5.2 and you are missing more than just the make:auth command
+make:auth
+Scaffold basic login and registration views and routes
+make:console
+Create a new Artisan command
+make:controller
+Create a new controller class
+make:entity
+Create a new entity.
+make:event
+Create a new event class
+make:job
+Create a new job class
+make:listener
+Create a new event listener class
+make:middleware
+Create a new middleware class
+make:migration
+Create a new migration file
+make:model
+Create a new Eloquent model class
+make:policy
+Create a new policy class
+make:presenter
+Create a new presenter.
+make:provider
+Create a new service provider class
+make:repository
+Create a new repository.
+make:request
+Create a new form request class
+make:seeder
+Create a new seeder class
+make:test
+Create a new test class
+make:transformer
+Create a new transformer.
+Be sure you have this dependency in your composer.json file
+"laravel/framework": "5.2.*",
+Then run
+composer update
+Share
+Follow
+edited Oct 25 '19 at 13:10
+Rameez Rami
+4,05911 gold badge2222 silver badges3030 bronze badges
+answered Dec 31 '15 at 12:55
+Luis Fernando MontoyaLuis Fernando Montoya
+2,12711 gold badge1212 silver badges1717 bronze badges
+4
+my mistake.sorry.I didn't checked my composr.json file.
+– naan
+Jan 1 '16 at 19:57
+3
+This answer needs to be updated - Laravel is at 7.0 at the moment.
+– Fresz
+Jun 10 '20 at 9:13
+composer require laravel/ui doesn't work with me
+– TECNO
+Aug 2 '20 at 9:30
+Worked with Laravel 8.5. Thank you.
+– s3c
+Mar 7 at 15:53
+Add a comment
+|
+88
+Update for Laravel 8
+laravel/ui still works but is considered legacy. Consider using Laravel Breeze or Laravel Jetstream.
+Update for Laravel 6
+Now that Laravel 6 is released you need to install laravel/ui.
+composer require laravel/ui --dev
+php artisan ui vue --auth
+You can change vue with react or bootstrap if you use React or Bootstrap in your project (see Using React).
+And then you need to perform the migrations and compile the frontend
+php artisan migrate
+npm install && npm run dev
+Source : Laravel Documentation for authentication
+Want to get started fast? Install the laravel/ui Composer package and
+run php artisan ui vue --auth in a fresh Laravel application. After
+migrating your database, navigate your browser to
+http://your-app.test/register or any other URL that is assigned to
+your application. These commands will take care of scaffolding your
+entire authentication system!
+Note: That's only if you want to use scaffolding, you can use the default User model and the Eloquent authentication driver.
+Share
+Follow
+edited Apr 5 at 8:09
+answered Sep 4 '19 at 14:44
+NinoNino
+1,05711 gold badge66 silver badges1212 bronze badges
+6
+3
+Thanks. What if I don't want Vue, just the auth scaffolding?
+– Amir Asyraf
+Sep 5 '19 at 13:57
+@AmirAsyraf I would recommend to write it yourself, the auth middleware is native, you just need to write the routes then.
+– Nino
+Sep 7 '19 at 9:48
+This should be the accepted answer. After adding laravel/ui, the ui:auth command is available.
+– zeljko_a
+Oct 5 '19 at 19:06
+1
+Thanks. What if I don't want Vue, just the auth scaffolding? use php artisan ui:auth check answer stackoverflow.com/a/58449383/9978078
+– Dilip Hirapara
+Oct 18 '19 at 10:54
+1
+@Nino You have missed bootstrap parameter. like php artisan ui bootstrap --auth
+– Mahmood Jenami
+Apr 2 at 14:54
+|
+Show 1 more comment
+69
+In Laravel 6.0 make:auth no longer exists. Read more here
+A- Shorthand:
+Update Nov 18th:
+Taylor just released Laravel Installer 2.3.0 added a new "--auth" flag to create a new project with the authentication scaffolding installed!
+To update laravel installer read here
+It means we can do:
+laravel new project --auth
+cd project
+php artisan migrate
+npm install
+npm run dev
+Which is a shorthand of commands in the Section B. Also read more here
+B - Details:
+Follow these three steps
+Step 1 - First do this:
+laravel new project
+cd project
+composer require laravel/ui --dev
+Note:
+Laravel UI Composer package is a new first-party package that extracts the UI portion of a Laravel project ( frontend scaffolding typically provided with previous releases of Laravel ) into a separate laravel/ui package. The separate package enables the Laravel team to update, develop and version UI scaffolding package separately from the primary framework and the main Laravel codebase.
+Step 2 - Then do this:
+php artisan ui bootstrap --auth
+php artisan migrate
+or
+php artisan ui vue --auth
+php artisan migrate
+instead of
+php artisan make:auth
+( which works for Laravel 5.8 and older versions )
+More Options here
+php artisan ui:auth
+The above command will generate only the auth routes, a HomeController, auth views, and a app.blade.php layout file.
+You can also generate the views only with:
+php artisan ui:auth --views
+The console command will prompt you to confirm overwriting auth files if you've already run the command before.
+// Generate basic scaffolding...
+php artisan ui vue
+php artisan ui react
+and also:
+// Generate login / registration scaffolding...
+php artisan ui vue --auth
+php artisan ui react --auth
+To see differences read this article
+Step 3 - Then you need to do:
+npm install
+npm run dev
+Share
+Follow
+edited Jun 20 '20 at 9:12
+Community♦
+111 silver badge
+answered Sep 9 '19 at 12:13
+panjehpanjeh
+1,01311 gold badge1010 silver badges1010 bronze badges
+1
+4
+You're largely just duplicating @Nino's answer from a week ago.
+– ceejayoz
+Sep 10 '19 at 14:16
+Add a comment
+|
+13
+In the Laravel 6 application the make:auth command no longer exists.
+Laravel UI is a new first-party package that extracts the UI portion of a Laravel project into a separate laravel/ui
+package. The separate package enables the Laravel team to iterate on the UI package separately from the main Laravel codebase.
+You can install the laravel/ui package via composer:
+composer require laravel/ui
+The ui:auth Command
+Besides the new ui command, the laravel/ui package comes with another command for generating the auth scaffolding:
+php artisan ui:auth
+If you run the ui:auth command, it will generate the auth routes, a HomeController, auth views, and a app.blade.php layout file.
+If you want to generate the views alone, type the following command instead:
+php artisan ui:auth --views
+If you want to generate the auth scaffolding at the same time:
+php artisan ui vue --auth
+php artisan ui react --auth
+php artisan ui vue --auth command will create all of the views you need for authentication and place them in the resources/views/auth directory
+The ui command will also create a resources/views/layouts directory containing a base layout for your application. All of these views use the Bootstrap CSS framework, but you are free to customize them however you wish.
+More detail follow. laravel-news & documentation
+Simply you've to follow this two-step.
+composer require laravel/ui
+php artisan ui:auth
+Share
+Follow
+edited Nov 21 '19 at 10:06
+code_master
+522 bronze badges
+answered Oct 18 '19 at 10:53
+Dilip HiraparaDilip Hirapara
+11.7k22 gold badges2020 silver badges4343 bronze badges
+Add a comment
+|
+7
+In short and precise, all you need to do is
+composer require laravel/ui --dev
+php artisan ui vue --auth and then the migrate php artisan migrate.
+Just for an overview of Laravel Authentication
+Laravel Authentication facilities comes with Guard and Providers, Guards define how users are authenticated for each request whereas Providers define how users are retrieved from you persistent storage.
+Database Consideration - By default Laravel includes an App\User Eloquent Model in your app directory.
+Auth Namespace - App\Http\Controllers\Auth
+Controllers - RegisterController, LoginController, ForgotPasswordController and ResetPasswordController, all names are meaningful and easy to understand!
+Routing - Laravel/ui package provides a quick way to scaffold all the routes and views you need for authentication using a few simple commands (as mentioned in the start instead of make:auth).
+You can disable any newly created controller, e. g. RegisterController and modify your route declaration like, Auth::routes(['register' => false]);
+For further detail please look into the Laravel Documentation.
+Share
+Follow
+answered Sep 25 '19 at 11:01
+zaffarzaffar
+49155 silver badges1212 bronze badges
+Add a comment
+|
+3
+If you using >5 version of laravel then you will use.
+composer require laravel/ui --dev **or** composer require laravel/ui
+And then
+php artisan ui:auth
+Share
+Follow
+answered Nov 28 '20 at 9:52
+Siraj AliSiraj Ali
+14388 bronze badges
+Add a comment
+|
+2
+This two commands work for me in my project
+composer require laravel/ui --dev
+Then
+php artisan ui:auth
+Share
+Follow
+answered Oct 24 '20 at 16:38
+MuktaMukta
+77588 silver badges1010 bronze badges
+Add a comment
+|
+1
+Checkout your laravel/framework version on your composer.json file,
+If it's either "^6.0" or higher than "^5.9",
+you have to use php artisan ui:auth instead of php artisan make:auth.
+Before using that you have to install new dependencies by calling
+composer require laravel/ui --dev in the current directory.
+Share
+Follow
+answered Oct 28 '20 at 5:39
+Hanan RatnamHanan Ratnam
+4144 bronze badges
+Add a comment
+|
+Highly active question. Earn 10 reputation in order to answer this question. The reputation requirement helps protect this question from spam and non-answer activity.
+Not the answer you're looking for? Browse other questions tagged php laravel
+or ask your own question.
+The Overflow Blog
+Using low-code tools to iterate products faster
+Podcast 345: A good software tutorial explains the How. A great one explains…
+Featured on Meta
+Take the 2021 Developer Survey
+Linked
+-1
+php artisan make auth is not defined in laravel 6
+24
+Artisan command “make:auth” is not defined in Laravel 6
+0
+How can i show a modal through a route and a controller in laravel?
+0
+Laravel artisan QueryExceptions and dependency problems
+1
+why auth login view won't extend basic layouts
+Related
+2773
+How can I prevent SQL injection in PHP?
+2736
+Deleting an element from an array in PHP
+4725
+Reference — What does this symbol mean in PHP?
+1193
+Reference - What does this error mean in PHP?
+2584
+Why shouldn't I use mysql_* functions in PHP?
+311
+Could not open input file: artisan
+3
+Command “make:seeder” is not defined in laravel 5.0
+1
+error while trying to run artisan command with Artisan Facade
+1
+Artisan make:auth login failing
+Hot Network Questions
+Why can an easily graphable definite integral, be labyrinthine to evaluate?
+Is there a threadlocker that requires heat to release and can withstand thousands of heat-cool cycles without needing to be reapplied or deteriorating
+Mansfield 40 toilet flush levers keep breaking
+Is maximum speed a thing?
+Why did this gallon of milk stay fresh for so long?
+Why were the apollo CM RCS thrusters all placed in only one half of the module?
+How well would Max Faget's April 1, 1969 design for the Space Shuttle have actually worked? What would have been the major problems?
+Traditionally, is prosciutto never to be cooked?
+Critical differences between Ubuntu Server and Ubuntu Desktop for 20.04 LTS?
+How was it calculated that Dream cheated on his Minecraft v1.16 glitchless speedrun?
+Why are SSH MITM tools able to read and modify data?
+How to get real-looking rust that will be safe to the touch?
+Sum of set bits from 1 to n
+Sharing a research proposal when applying for funds
+What is the name of this rhythm? (embedded 4:3 polyrhythm)
+Why doesn't the sun produce an emission spectrum?
+Is cohomology always related to topology?
+Interview by fellow PhD students, not the professor himself
+Former coworker I gave a reference for sabotaged the company on his last day - Should I update the reference contact with this new information?
+Has physics ever given a physical significance to a mathematically abstract idea?
+Why are high power LEDs categorized by wattage, not voltage & amperage?
+Is there objective proof that recent bills (1st half of 2021) that restrict voting are targeting Democratic voters specifically?
+Are there any greater risks of traveling significantly faster to another planet?
+Is it a good idea to go to Japan without a travel guide?
+more hot questions
+Question feed
+Subscribe to RSS
+Question feed
+To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+lang-php
+Stack Overflow
+Questions
+Jobs
+Developer Jobs Directory
+Salary Calculator
+Help
+Mobile
+Products
+Teams
+Talent
+Advertising
+Enterprise
+Company
+About
+Press
+Work Here
+Legal
 Privacy Policy
-Disclaimer
-Copyright 2019-2020 Belajar Java Dengan Mudah
+Terms of Service
+Contact Us
+Cookie Settings
+Cookie Policy
+Stack Exchange Network
+Technology
+Life / Arts
+Culture / Recreation
+Science
+Other
+Stack Overflow
+Server Fault
+Super User
+Web Applications
+Ask Ubuntu
+Webmasters
+Game Development
+TeX - LaTeX
+Software Engineering
+Unix & Linux
+Ask Different (Apple)
+WordPress Development
+Geographic Information Systems
+Electrical Engineering
+Android Enthusiasts
+Information Security
+Database Administrators
+Drupal Answers
+SharePoint
+User Experience
+Mathematica
+Salesforce
+ExpressionEngine® Answers
+Stack Overflow em Português
+Blender
+Network Engineering
+Cryptography
+Code Review
+Magento
+Software Recommendations
+Signal Processing
+Emacs
+Raspberry Pi
+Stack Overflow на русском
+Code Golf
+Stack Overflow en español
+Ethereum
+Data Science
+Arduino
+Bitcoin
+Software Quality Assurance & Testing
+Sound Design
+Windows Phone
+more (29)
+Photography
+Science Fiction & Fantasy
+Graphic Design
+Movies & TV
+Music: Practice & Theory
+Worldbuilding
+Video Production
+Seasoned Advice (cooking)
+Home Improvement
+Personal Finance & Money
+Academia
+Law
+Physical Fitness
+Gardening & Landscaping
+Parenting
+more (10)
+English Language & Usage
+Skeptics
+Mi Yodeya (Judaism)
+Travel
+Christianity
+English Language Learners
+Japanese Language
+Chinese Language
+French Language
+German Language
+Biblical Hermeneutics
+History
+Spanish Language
+Islam
+Русский язык
+Russian Language
+Arqade (gaming)
+Bicycles
+Role-playing Games
+Anime & Manga
+Puzzling
+Motor Vehicle Maintenance & Repair
+Board & Card Games
+Bricks
+Homebrewing
+Martial Arts
+The Great Outdoors
+Poker
+Chess
+Sports
+more (16)
+MathOverflow
+Mathematics
+Cross Validated (stats)
+Theoretical Computer Science
+Physics
+Chemistry
+Biology
+Computer Science
+Philosophy
+Linguistics
+Psychology & Neuroscience
+Computational Science
+more (10)
+Meta Stack Exchange
+Stack Apps
+API
+Data
+Blog
+Facebook
+Twitter
+LinkedIn
+Instagram
+site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
+rev 2021.6.10.39470
+Stack Overflow works best with JavaScript enabled
+Your privacy
+By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
+Accept all cookies
+Customize settings

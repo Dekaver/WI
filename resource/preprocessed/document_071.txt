@@ -1,49 +1,657 @@
-How to check if an object is iterable in Python? - GeeksforGeeksSkip to content
-Tutorials
-Algorithms
-Analysis of Algorithms
-Asymptotic AnalysisWorst, Average and Best CasesAsymptotic NotationsLittle o and little omega notationsLower and Upper Bound TheoryAnalysis of LoopsSolving RecurrencesAmortized AnalysisWhat does 'Space Complexity' mean ?Pseudo-polynomial AlgorithmsPolynomial Time Approximation SchemeA Time Complexity QuestionSearching AlgorithmsSorting AlgorithmsGraph AlgorithmsPattern SearchingGeometric AlgorithmsMathematicalRandomized AlgorithmsGreedy AlgorithmsDynamic ProgrammingDivide and ConquerBacktrackingBranch and BoundAll AlgorithmsData Structures
-ArraysLinked ListStackQueueBinary TreeBinary Search TreeHeapHashingGraphAdvanced Data StructureMatrixStringsAll Data StructuresLanguages
-CC++JavaPythonC#JavascriptjQuerySQLPHPScalaPerlGo LanguageHTMLCSSKotlinInterview Corner
-Company PreparationTop TopicsPractice Company QuestionsInterview ExperiencesExperienced InterviewsInternship InterviewsCompetititve ProgrammingDesign PatternsMultiple Choice QuizzesGATE
-GATE Computer Science NotesLast Minute NotesGATE CS Solved PapersGATE CS Original Papers and Official KeysGATE 2021 DatesGATE CS 2021 SyllabusImportant Topics for GATE CSISRO CS
-ISRO CS Solved PapersISRO CS Original Papers and Official KeysISRO CS Syllabus for Scientist/Engineer ExamUGC NET CS
-UGC NET CS Notes Paper IIUGC NET CS Notes Paper IIIUGC NET CS Solved PapersCS Subjects
-MathematicsOperating SystemDBMSComputer NetworksComputer Organization and ArchitectureTheory of ComputationCompiler DesignDigital LogicSoftware EngineeringWeb Technologies
-HTMLCSSJavascriptAngularJSReactJSNodeJSBootstrapjQueryPHPSchool Learning
-School ProgrammingMathematics
-AlgebraTrigonometryStatisticsProbabilityGeometryMensurationCalculusMaths Notes (Class 8-11)
-Class 8 NotesClass 9 NotesClass 10 NotesClass 11 NotesNCERT Solutions
-Class 8 Maths SolutionClass 9 Maths SolutionClass 10 Maths SolutionClass 11 Maths SolutionClass 12 Maths SolutionRD Sharma Solutions
-Class 8 Maths SolutionClass 9 Maths SolutionClass 10 Maths SolutionClass 11 Maths SolutionClass 12 Maths SolutionStudent
-Campus Ambassador ProgramSchool Ambassador ProgramProjectGeek of the MonthCampus Geek of the MonthPlacement CourseCompetititve ProgrammingTestimonialsGeek on the TopCareersInternshipJobs
-Apply for JobsPost a JobCourses
-WriteCome write articles for us and get featuredPracticeLearn and code with the best industry expertsPremiumGet access to ad-free content, doubt assistance and more!JobsCome and find your dream job with usGeeks DigestQuizzesGeeks CampusGblog ArticlesIDECampus Mantri
-HomeCoursesGBlogPuzzlesWhat's New ?
-Change Language
-Related Articles
-▲Related ArticlesAdding new column to existing DataFrame in PandasPython map() functionTaking input in PythonIterate over a list in PythonPython program to convert a list to stringHow to get column names in Pandas dataframeReading and Writing to text files in PythonRead a file line by line in PythonPython String | replace()Enumerate() in Pythonisupper(), islower(), lower(), upper() in Python and their applicationsPrint lists in Python (4 Different Ways)sum() function in PythonPython DictionaryPython String | split()Python | Get a list as input from userPython | Program to convert String to a ListDifferent ways to create Pandas DataframeConvert integer to string in PythonPython String find()Python ListsTaking multiple inputs from user in Pythonappend() and extend() in PythonFind average of a list in pythonfloor() and ceil() function Python*args and **kwargs in PythonRead JSON file using PythonGET and POST requests using PythonHow to print without newline in Python?Python - Pandas dataframe.append()Improve Article
-How to check if an object is iterable in Python?Difficulty Level :
-MediumLast Updated :
-13 Jan, 2021In simple words, any object that could be looped over is iterable. For instance, a list object is iterable and so is an str object. The list numbers and string names are iterables because we are able to loop over them (using a for-loop in this case).  In this article, we are going to see how to check if an object is iterable in Python.Examples: Input: “Hello”Output: object is not iterableExplanation: Object could be like( h, e, l, l, o)Input: 5Output: ‘int’ object is not iterableExample 1:Python3# codename = "Hello"  for letter in name:  print(letter, end = " ")Output:H e l l oExample 2:Python3# codenumber = 5 for i in number:  print(i)OutputTypeError: 'int' object is not iterableHowever, an int object is not iterable and so is a float object. The integer object number is not iterable, as we are not able to loop over it.Checking an object’s iterabilityWe are going to explore the different ways of checking whether an object is iterable or not. We use the hasattr() function to test whether the string object name has __iter__ attribute for checking iterability. However, this check is not comprehensive.Method 1: Using __iter__ method check.Python3# codename = 'Roster'  if hasattr(name, '__iter__'):  print(f'{name} is iterable')    else:  print(f'{name} is not iterable')Output:Roster is iterableMethod 2: Using the Iterable class of collections.abc module.We could verify that an object is iterable by checking whether it is an instance of the Iterable class. The instance check reports the string object as iterable correctly using the Iterable class. This works for Python 3 as well. For Python 3.3 and above, you will have to import the Iterable class from collections.abc and not from collections like so:Python3# codefrom collections.abc import Iterable    name = 'Roster'  if isinstance(name, Iterable):  print(f"{name} is iterable")    else:  print(f"{name} is not iterable")Output:Roster is iterableMethod 3: Using the iter() builtin function.The iter built-in function works in the following way:Checks whether the object implements __iter__, and calls that to obtain an iterator.If that fails, Python raises TypeError, usually saying “C object is not iterable,” where C is the class of the target object.Code:Python3# codename = "Roster"  try:  iter(name)  print("{} is iterable".format(name))     except TypeError:  print("{} is not iterable".format(name))Output:Roster is iterable Attention geek! Strengthen your foundations with the Python Programming Foundation Course and learn the basics.  To begin with, your interview preparations Enhance your Data Structures concepts with the Python DS Course. And to begin with your Machine Learning Journey, join the Machine Learning – Basic Level CourseMy Personal Notes
-arrow_drop_upSave
-LikePreviousGenerate QR Code using qrcode in PythonNext
-How to Change Legend Font Size in Matplotlib?Recommended ArticlesPage :Python | Difference between iterable and iterator14, May 18Python | Consuming an Iterable and Diagnosing faults in C06, Jun 19Object Oriented Programming in Python | Set 1 (Class, Object and Members)16, May 16Object Oriented Programming in Python | Set 2 (Data Hiding and Object Printing)26, May 16Python | Check if a given object is list or not19, Mar 19Python - Read blob object in python using wand library21, Apr 20Python __iter__() and __next__() | Converting an object into an iterator18, Jan 18Python Object Comparison : "is" vs "=="10, Sep 18Python object() method01, Oct 18Python | Convert dictionary object into string21, Jan 19Python | Matplotlib Sub plotting using object oriented API15, Feb 19Python | Ways to convert string to json object26, Feb 19Python | dtype object length of Numpy array of strings13, Mar 19Python | Matplotlib Graph plotting using object oriented API08, May 19Python | os.environ object21, May 19Python | os.supports_bytes_environ object29, May 19Python | os.supports_bytes_environ object07, Jun 19Python | os.path.supports_unicode_filenames object07, Jun 19Python | os.supports_fd object18, Jun 19Python | os.supports_dir_fd object18, Jun 19Python | os.supports_follow_symlinks object19, Jun 19How to create a list of object in Python class03, Jul 19Python | os.confstr_names object12, Jul 19Python | os.sysconf_names object12, Jul 19Article Contributed By :snowflake203@snowflake203Vote for difficultyCurrent difficulty :
-MediumEasy
-Normal
-Medium
-Hard
-ExpertArticle Tags :Python collections-modulePython-Built-in-functionsPythonReport IssueWhat's NewDSA Self Paced CourseLearn DSA with recorded video lectures and aim top product-based companiesView DetailsAd free experience with GeeksforGeeks PremiumView DetailsBasic to Advanced DSA Live ClassesLearn DSA from scratch in these Live Online Classes and get placement readyView DetailsMost popular in PythonCreate a Pandas DataFrame from ListsHow to drop one or multiple columns in Pandas DataframeDefaultdict in PythonPython | os.path.join() methodGraph Plotting in Python | Set 1More related articles in PythonHow To Convert Python Dictionary To JSON?Python | Get unique values from a list__init__ in Pythonjoin() function in PythonCheck if element exists in list in PythonWriting code in comment?
-Please use ide.geeksforgeeks.org,
-generate link and share the link here.
-Load Comments×
-5th Floor, A-118,Sector-136, Noida, Uttar Pradesh - 201305
-feedback@geeksforgeeks.orgCompanyAbout UsCareersPrivacy PolicyContact UsCopyright PolicyLearnAlgorithmsData StructuresLanguagesCS
-SubjectsVideo TutorialsPracticeCoursesCompany-wiseTopic-wiseHow to begin?ContributeWrite an ArticleWrite Interview
-ExperienceInternshipsVideos@geeksforgeeks
-, Some rights reserved
-We use cookies to ensure you have the best browsing experience on our website. By using our site, you
-acknowledge that you have read and understood our
-Cookie Policy &
+performance - PHP: Fastest way to handle undefined array key - Stack Overflow
+Stack Overflow
+About
+Products
+For Teams
+Stack Overflow
+Public questions & answers
+Stack Overflow for Teams
+Where developers & technologists share private knowledge with coworkers
+Jobs
+Programming & related technical career opportunities
+Talent
+Recruit tech talent & build your employer brand
+Advertising
+Reach developers & technologists worldwide
+About the company
+Loading…
+Log in
+Sign up
+current community
+Stack Overflow
+help
+chat
+Meta Stack Overflow
+your communities
+Sign up or log in to customize your list.
+more stack exchange communities
+company blog
+People who code: we want your input.
+Take the Survey
+Join Stack Overflow to learn, share knowledge, and build your career.
+Sign up with email
+Sign up
+Sign up with Google
+Sign up with GitHub
+Sign up with Facebook
+Home
+Public
+Questions
+Tags
+Users
+Find a Job
+Jobs
+Companies
+Teams
+Stack Overflow for Teams
+– Collaborate and share knowledge with a private group.
+Create a free Team
+What is Teams?
+Teams
+What’s this?
+Create free Team
+Teams
+Q&A for work
+Connect and share knowledge within a single location that is structured and easy to search.
+Learn more
+PHP: Fastest way to handle undefined array key
+Ask Question
+Asked
+8 years ago
+Active
+1 month ago
+Viewed
+82k times
+38
+10
+in a very tight loop I need to access tenthousands of values in an array containing millions of elements. The key can be undefinied: In that case it shall be legal to return NULL without any error message:
+Array key exists: return value of element.
+Array key does not exist: return null.
+I do know multiple solutions:
+if (isset($lookup_table[$key])) {
+return $lookup_table[$key];
+} else {
+return;
+}
+or
+@return $lookup_table[$key];
+or
+error_reporting(0);
+$return = $lookup_table[$key];
+error_reporting(E_ALL);
+return $return;
+All solutions are far from optimal:
+The first one requires 2 lookup in the B-TREE: One to check existence, another to retrieve value. That effectively doubles the runtime.
+The secondone uses the error supression operator, and thus creates a massive overhead on that line.
+The third one calls the error handler (that will check error_reporting setting and then display nothing) and thereby creates an overhead.
+My question is if I miss a way to avoid error handling and yet work with a single btree lookup?
+To answer some questions:
+The array caches the results of a complex calculation - to complex to be done in real time.
+Out of billions of possible values, only millions yied a valid result. The array looks like 1234567 => 23457, 1234999 => 74361, .... That is saved to a php-file of several megabyte, and include_once-d at the beginning of the execution. Initial load time does not matter.
+If the key is not found, it simply means that this specific calue will not return a valid result. The trouble is to get this done 50k+ per second.
+Conclusion
+As there is no way found to get the value with a single lookup and without error handling, I hve trouble accepting a single answer. Instead I upvoted all the great contributions.
+The most valuable inputs where:
+- use array_key_exists, as it is faster than alternatives
+- Check out php's QuickHash
+There was a lot of confusion on how PHP handles arrays. If you check the sourcecode, you will see that all arrays are balanced trees. Building own lookup methods is common in C and C++, but is not performant in higher script-languages like php.
+php performance
+Share
+Follow
+edited May 31 '13 at 12:55
+Zsolt Szilagyi
+asked May 21 '13 at 17:13
+Zsolt SzilagyiZsolt Szilagyi
+3,92144 gold badges2323 silver badges4040 bronze badges
+16
+isset($lookup_table[$key]) will return false if $lookup_table[$key] is null ... isn't this the opposite of what you want? not sure what its performance is like, but array_key_exists will return true if the key exists but its value is null.
+– user428517
+May 21 '13 at 17:16
+@sgroves: The example did reflect my intention. I updated the question to clarify: If key exists, return value, otherwise return null. (Value of existent keys will never be null.) array_key_exist is, frankly, slower that the isset version, so I skipped it in my examples.
+– Zsolt Szilagyi
+May 21 '13 at 17:22
+2
+Quickhash might be good for your case.
+– Alex Howansky
+May 21 '13 at 17:24
+"an array containing millions of elements". You may need to rethink your strategy and involve some type of pagination or way to segment the data.
+– Mike Purcell
+May 21 '13 at 17:27
+1
+Mike, Mathew, I updated my question to answer yours. Sean, that´s not a matter of believe. Of course native C is faster than PHP. I am simply unwilling to spend a month writing code I can write over night in PHP. :)
+– Zsolt Szilagyi
+May 21 '13 at 17:53
+|
+Show 11 more comments
+8 Answers
+8
+Active
+Oldest
+Votes
+47
+Update
+Since PHP 7 you can accomplish this with the null coalesce operator:
+return $table[$key] ?? null;
+Old answer
+First of all, arrays are not implemented as a B-tree, it's a hash table; an array of buckets (indexed via a hash function), each with a linked list of actual values (in case of hash collisions). This means that lookup times depend on how well the hash function has "spread" the values across the buckets, i.e. the number of hash collisions is an important factor.
+Technically, this statement is the most correct:
+return array_key_exists($key, $table) ? $table[$key] : null;
+This introduces a function call and is therefore much slower than the optimized isset(). How much? ~2e3 times slower.
+Next up is using a reference to avoid the second lookup:
+$tmp = &$lookup_table[$key];
+return isset($tmp) ? $tmp : null;
+Unfortunately, this modifies the original $lookup_table array if the item does not exist, because references are always made valid by PHP.
+That leaves the following method, which is much like your own:
+return isset($lookup_table[$key]) ? $lookup_table[$key] : null;
+Besides not having the side effect of references, it's also faster in runtime, even when performing the lookup twice.
+You could look into dividing your arrays into smaller pieces as one way to mitigate long lookup times.
+Share
+Follow
+edited May 23 '17 at 11:33
+Community♦
+111 silver badge
+answered May 21 '13 at 17:27
+Ja͢ckJa͢ck
+161k3333 gold badges239239 silver badges294294 bronze badges
+16
+1
+I was skeptical about this approach, so I generated a random array of about 5000 keys in the range of 0-100,000, and ran through the array from 0-100,000. I tried your methoed with reference, a method without reference, but still an auxiliary variable, and a simple approach without either auxiliary variable or reference. Your reference approach took more than twice as long as the other ones. The naive approach was marginally faster than the auxiliary variable approach.
+– kba
+May 21 '13 at 17:40
+1
+@kba The answer mentions that it modifies the array (if the item doesn't exist), so obviously that takes time. It also mentions that without it, the first solution given by OP is likely the fastest.
+– Ja͢ck
+May 21 '13 at 17:43
+In what way does your approach modify the array? I don't see you making any changes to $tmp or $lookup_table[$key].
+– kba
+May 21 '13 at 17:49
+3
+@ZsoltSzilagy When you create a reference on a non-existent variable, PHP creates the necessary structures to make it a valid reference; in this case, it creates an array entry with value null. It works well if the item will always be there of course :)
+– Ja͢ck
+May 21 '13 at 17:58
+2
+Still, however, my tests imply that this doesn't improve the performance after all. Even after having run through every item in the array once, the lookup time is still worse. My tests could be bad.
+– kba
+May 21 '13 at 18:09
+|
+Show 11 more comments
+4
+I did some bench marking with the following code:
+set_time_limit(100);
+$count = 2500000;
+$search_index_end = $count * 1.5;
+$search_index_start = $count * .5;
+$array = array();
+for ($i = 0; $i < $count; $i++)
+$array[md5($i)] = $i;
+$start = microtime(true);
+for ($i = $search_index_start; $i < $search_index_end; $i++) {
+$key = md5($i);
+$test = isset($array[$key]) ? $array[$key] : null;
+}
+$end = microtime(true);
+echo ($end - $start) . " seconds<br/>";
+$start = microtime(true);
+for ($i = $search_index_start; $i < $search_index_end; $i++) {
+$key = md5($i);
+$test = array_key_exists($key, $array) ? $array[$key] : null;
+}
+$end = microtime(true);
+echo ($end - $start) . " seconds<br/>";
+$start = microtime(true);
+for ($i = $search_index_start; $i < $search_index_end; $i++) {
+$key = md5($i);
+$test = @$array[$key];
+}
+$end = microtime(true);
+echo ($end - $start) . " seconds<br/>";
+$error_reporting = error_reporting();
+error_reporting(0);
+$start = microtime(true);
+for ($i = $search_index_start; $i < $search_index_end; $i++) {
+$key = md5($i);
+$test = $array[$key];
+}
+$end = microtime(true);
+echo ($end - $start) . " seconds<br/>";
+error_reporting($error_reporting);
+$start = microtime(true);
+for ($i = $search_index_start; $i < $search_index_end; $i++) {
+$key = md5($i);
+$tmp = &$array[$key];
+$test = isset($tmp) ? $tmp : null;
+}
+$end = microtime(true);
+echo ($end - $start) . " seconds<br/>";
+and I found that the fastest running test was the one that uses isset($array[$key]) ? $array[$key] : null followed closely by the solution that just disables error reporting.
+Share
+Follow
+edited May 22 '13 at 19:50
+Sean Bright
+110k1717 gold badges131131 silver badges138138 bronze badges
+answered May 21 '13 at 17:49
+DiverseAndRemote.comDiverseAndRemote.com
+17.2k77 gold badges5959 silver badges7070 bronze badges
+4
+Even with error reporting off, the errors are still generated.
+– Ja͢ck
+May 21 '13 at 17:51
+1
+Correct @Jack. Although contraintuitive, it is called error_reporting off, not error_generation.
+– Zsolt Szilagyi
+May 21 '13 at 17:59
+I wonder if a try/catch and discarded exception is faster than turning off error reporting.
+– Reactgular
+May 21 '13 at 18:51
+1
+warnings aren't thrown so a try/catch wont do anything of use in this case
+– DiverseAndRemote.com
+May 21 '13 at 18:53
+Add a comment
+|
+1
+There are two typical approaches to this.
+Define defaults for an undefined key.
+Check for undefined key.
+Here is how to perform the first and as little code as possible.
+$data = array_merge(array($key=>false),$data);
+return $data[$key];
+Here is how to perform the second.
+return isset($data[$key]) ? $data[$key] : false;
+Share
+Follow
+answered May 21 '13 at 17:22
+ReactgularReactgular
+43.5k1414 gold badges114114 silver badges177177 bronze badges
+4
+Thank you. The second version with the ternary operator is a double-lookup like in my first snippet. The first version is exciting, but I have little hope: It temporaly creates a copy of a huge array, and while there is only one btree lookup, there is a complete (temporary) array to be balanced. Runtime raises from 2log(n) to 2n.
+– Zsolt Szilagyi
+May 21 '13 at 17:27
+2
+Do you have the option to re-organize this data for performance? An octree lookup would be more efficient than a linear search. You could group by the first letter of each key, and then by the second letter and so on. en.wikipedia.org/wiki/Octree
+– Reactgular
+May 21 '13 at 17:32
+Great approach! PHP internally handles arrays as fully balanced trees. I assume that won´t be outperformed by an octree, but I am not that deep into algorithm analysis. Do you have experience on that comparison? Thanks!
+– Zsolt Szilagyi
+May 21 '13 at 17:39
+The only way PHP could be faster is if the keys are sorted internally, and an optimized lookup is used to find a key. I've never read anything that says PHP uses optimized indexes for array keys.
+– Reactgular
+May 21 '13 at 17:42
+Add a comment
+|
+1
+Just a sudden idea that would have to be tested, but did you try using array_intersect_key() to get the existing values and a array_merge to fill() the rest ? It would remove the need of a loop to access the data. Something like that :
+$searched_keys = array ('key1' => null, 'key2' => null); // the list of the keys to find
+$exiting_values = array_intersect_key($lookup_table, $searched_keys);
+$all_values = array_merge($searched_keys, $exiting_keys);
+Please note that I did not tried it performance-wise.
+Share
+Follow
+answered May 21 '13 at 17:42
+AraliciaAralicia
+84755 silver badges1414 bronze badges
+1
+Nice approach. Unfortunately $all_values would be considered beeing a new array, thus it would build a new index.
+– Zsolt Szilagyi
+May 21 '13 at 18:07
+Add a comment
+|
+0
+First, re-organize the data for performance by saving a new array where the data is sorted by the keys, but the new array contains a regular numeric index.
+This part will be time consuming, but only done once.
+// first sort the array by it's keys
+ksort($data);
+// second create a new array with numeric index
+$tmp = new array();
+foreach($data as $key=>$value)
+{
+$tmp[] = array('key'=>$key,'value'=>$value);
+}
+// now save and use this data instead
+save_to_file($tmp);
+Once that is done it should be quick to find the key using a Binary Search. Later you can use a function like this.
+function findKey($key, $data, $start, $end)
+{
+if($end < $start)
+{
+return null;
+}
+$mid = (int)(($end - $start) / 2) + $start;
+if($data[$mid]['key'] > $key)
+{
+return findKey($key, $data, $start, $mid - 1);
+}
+else if($data[$mid]['key'] < $key)
+{
+return findKey($key, $data, $mid + 1, $end);
+}
+return $data[$mid]['value'];
+}
+To perform a search for a key you would do this.
+$result = findKey($key, $data, 0, count($data));
+if($result === null)
+{
+// key not found.
+}
+If the count($data) is done all the time, then you could cache that in the file that you stored the array data.
+I suspect this method will be a lot faster in performance then a regular linear search that is repeated against the $data. I can't promise it's faster. Only an octree would be quicker, but the time to build the octree might cancel out the search performance (I've experienced that before). It depends on how much searching in the data you have to do.
+Share
+Follow
+edited Oct 23 '14 at 11:38
+answered May 21 '13 at 18:12
+ReactgularReactgular
+43.5k1414 gold badges114114 silver badges177177 bronze badges
+Add a comment
+|
+0
+This Work for me
+{{ isset($array['key']) ? $array['key']: 'Default' }}
+but this is fast
+{{ $array['key'] or 'Default' }}
+Share
+Follow
+answered Jan 25 '16 at 0:06
+Antonio Reyes MontufarAntonio Reyes Montufar
+11111 silver badge11 bronze badge
+Add a comment
+|
+0
+The @ operator and the error_reporting methods will both be slower than using isset. With both of these methods, it modifies the error reporting setting for PHP, but PHP's error handler will still be called. The error handler will check against the error_reporting setting and exit without reporting anything, however this has still taken time.
+Share
+Follow
+answered Mar 15 '17 at 1:21
+thomasrutterthomasrutter
+105k2424 gold badges137137 silver badges160160 bronze badges
+Add a comment
+|
+0
+I prefer using the isset function instead of escaping the error.
+I made a function to check the key exists and if not returns a default value, in the case of nested arrays you just need to add the other keys in order:
+Nested array lookup:
+/**
+* Lookup array value.
+*
+* @param array $array
+* @param array $keys
+* @param $defaultValue
+*/
+public static function array_key_lookup($array, $keys, $defaultValue)
+{
+$value = $array;
+foreach ($keys as $key) {
+if (isset($value[$key])) {
+$value = $value[$key];
+} else {
+$value = $defaultValue;
+break;
+}
+}
+return $value;
+}
+Usage example:
+$array = [
+'key1' => 'value1',
+'key2' => 'value2',
+'key3' => [
+'key3a' => 'value3a',
+'key3b' => 'value3b'
+]
+];
+array_key_lookup($array, ['key3', 'key3a'], 'default')
+'value3a'
+array_key_lookup($array, ['key2', 'key2a'], 'default')
+'default'
+array_key_lookup($array, ['key2'], 'default')
+'value2'
+array_key_lookup($array, ['key5'], 'default')
+'default'
+Escaping the error:
+$value = @$array[$key1][$key2] ?: $defaultValue;
+Share
+Follow
+answered Oct 11 '19 at 15:00
+Ivan BabicIvan Babic
+1122 bronze badges
+1
+Hey, that's a nice approach form the usability perspective, but performancewise it's actually worse than the alternatives. The function call implicitely creates an array, the foreach makes a copy of it, the first line duplicates a variable etc. It would be much faster to call $value = isset($array[$key1][$key2]) ? $array[$key1][$key2] : $defaultValue;
+– Zsolt Szilagyi
+Oct 22 '19 at 12:30
+Add a comment
+|
+Your Answer
+Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
+Draft saved
+Draft discarded
+Sign up or log in
+Sign up using Google
+Sign up using Facebook
+Sign up using Email and Password
+Submit
+Post as a guest
+Name
+Email
+Required, but never shown
+Post as a guest
+Name
+Email
+Required, but never shown
+Post Your Answer
+Discard
+By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
+Not the answer you're looking for? Browse other questions tagged php performance
+or ask your own question.
+The Overflow Blog
+Using low-code tools to iterate products faster
+Podcast 345: A good software tutorial explains the How. A great one explains…
+Featured on Meta
+Take the 2021 Developer Survey
+Visit chat
+Linked
+3
+Is there a function to check if an array key exists, and get the value if it does, in one call?
+1
+How to resolve non-existant index in array?
+-1
+What is the fastest and most effective way to make comparisons (PHP)
+0
+Is searching a huge associative array with binary search faster than accessing via array key
+Related
+834
+How to check if PHP array is associative or sequential?
+2736
+Deleting an element from an array in PHP
+786
+Get first key in a (possibly) associative array?
+4725
+Reference — What does this symbol mean in PHP?
+1262
+“Notice: Undefined variable”, “Notice: Undefined index”, and “Notice: Undefined offset” using PHP
+856
+Convert a PHP object to an associative array
+437
+Fastest way to check if a string is JSON in PHP?
+986
+PHP array delete by value (not key)
+1003
+Fastest way to check if a value exists in a list
+1193
+Reference - What does this error mean in PHP?
+Hot Network Questions
+Why does Lex turn on the flashlight?
+Why can an easily graphable definite integral, be labyrinthine to evaluate?
+Are there good tutorials that explain how to use experimental data to customise the force field in AMDock Vina?
+Telling a coworker they aren't invited into my house
+Dealing with extremely inexperienced developers who have daily deadlines?
+What are minimal changes to make a truncated pyramid shaped megabuildings a thing?
+How do you say " Coup de grâce " in latin?
+Did any countries other than the Asian Tigers jump to developed status during the past 75 years after WW2?
+If I use the word "enumerated", must the list be numeric or can it be bullet points?
+What can US senators do against diversity trainings in the US Army?
+Sum of set bits from 1 to n
+Why would a modern city with a warm climate have a skyway system?
+Did I design my LED circuit correctly?
+Can always @ (*) introduce randomness in FPGA?
+Is there a threadlocker that requires heat to release and can withstand thousands of heat-cool cycles without needing to be reapplied or deteriorating
+Did the Kohen Gadol minister barefoot?
+Why would they use human soldiers over undead ones?
+What are the benefits of hand built wheels over automated ones?
+Are there any greater risks of traveling significantly faster to another planet?
+What does existential unforgeability mean in a digital signature scheme?
+How was it calculated that Dream cheated on his Minecraft v1.16 glitchless speedrun?
+What's the easiest way to change from MS-DOS 6.22 to DR-DOS?
+Refueling a Mars mission on the way
+What are the numbers below the notes in Sarasate's "Gypsy Airs"
+more hot questions
+Question feed
+Subscribe to RSS
+Question feed
+To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+lang-php
+Stack Overflow
+Questions
+Jobs
+Developer Jobs Directory
+Salary Calculator
+Help
+Mobile
+Products
+Teams
+Talent
+Advertising
+Enterprise
+Company
+About
+Press
+Work Here
+Legal
 Privacy Policy
-Got It !
+Terms of Service
+Contact Us
+Cookie Settings
+Cookie Policy
+Stack Exchange Network
+Technology
+Life / Arts
+Culture / Recreation
+Science
+Other
+Stack Overflow
+Server Fault
+Super User
+Web Applications
+Ask Ubuntu
+Webmasters
+Game Development
+TeX - LaTeX
+Software Engineering
+Unix & Linux
+Ask Different (Apple)
+WordPress Development
+Geographic Information Systems
+Electrical Engineering
+Android Enthusiasts
+Information Security
+Database Administrators
+Drupal Answers
+SharePoint
+User Experience
+Mathematica
+Salesforce
+ExpressionEngine® Answers
+Stack Overflow em Português
+Blender
+Network Engineering
+Cryptography
+Code Review
+Magento
+Software Recommendations
+Signal Processing
+Emacs
+Raspberry Pi
+Stack Overflow на русском
+Code Golf
+Stack Overflow en español
+Ethereum
+Data Science
+Arduino
+Bitcoin
+Software Quality Assurance & Testing
+Sound Design
+Windows Phone
+more (29)
+Photography
+Science Fiction & Fantasy
+Graphic Design
+Movies & TV
+Music: Practice & Theory
+Worldbuilding
+Video Production
+Seasoned Advice (cooking)
+Home Improvement
+Personal Finance & Money
+Academia
+Law
+Physical Fitness
+Gardening & Landscaping
+Parenting
+more (10)
+English Language & Usage
+Skeptics
+Mi Yodeya (Judaism)
+Travel
+Christianity
+English Language Learners
+Japanese Language
+Chinese Language
+French Language
+German Language
+Biblical Hermeneutics
+History
+Spanish Language
+Islam
+Русский язык
+Russian Language
+Arqade (gaming)
+Bicycles
+Role-playing Games
+Anime & Manga
+Puzzling
+Motor Vehicle Maintenance & Repair
+Board & Card Games
+Bricks
+Homebrewing
+Martial Arts
+The Great Outdoors
+Poker
+Chess
+Sports
+more (16)
+MathOverflow
+Mathematics
+Cross Validated (stats)
+Theoretical Computer Science
+Physics
+Chemistry
+Biology
+Computer Science
+Philosophy
+Linguistics
+Psychology & Neuroscience
+Computational Science
+more (10)
+Meta Stack Exchange
+Stack Apps
+API
+Data
+Blog
+Facebook
+Twitter
+LinkedIn
+Instagram
+site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
+rev 2021.6.10.39470
+Stack Overflow works best with JavaScript enabled
+Your privacy
+By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
+Accept all cookies
+Customize settings

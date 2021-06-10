@@ -1,489 +1,235 @@
-pandas - Python TfidfVectorizer throwing : empty vocabulary; perhaps the documents only contain stop words" - Stack Overflow
-Stack Overflow
-About
-Products
-For Teams
-Stack Overflow
-Public questions & answers
-Stack Overflow for Teams
-Where developers & technologists share private knowledge with coworkers
-Jobs
-Programming & related technical career opportunities
-Talent
-Recruit tech talent & build your employer brand
-Advertising
-Reach developers & technologists worldwide
-About the company
-Loading…
-Log in
-Sign up
-current community
-Stack Overflow
-help
-chat
-Meta Stack Overflow
-your communities
-Sign up or log in to customize your list.
-more stack exchange communities
-company blog
-People who code: we want your input.
-Take the Survey
-Join Stack Overflow to learn, share knowledge, and build your career.
-Sign up with email
-Sign up
-Sign up with Google
-Sign up with GitHub
-Sign up with Facebook
-Home
-Public
-Questions
-Tags
-Users
-Find a Job
-Jobs
-Companies
-Teams
-Stack Overflow for Teams
-– Collaborate and share knowledge with a private group.
-Create a free Team
-What is Teams?
-Teams
-What’s this?
-Create free Team
-Teams
-Q&A for work
-Connect and share knowledge within a single location that is structured and easy to search.
-Learn more
-Python TfidfVectorizer throwing : empty vocabulary; perhaps the documents only contain stop words"
-Ask Question
-Asked
-7 years, 5 months ago
-Active
-7 months ago
-Viewed
-36k times
-16
-2
-I'm trying to use Python's Tfidf to transform a corpus of text.
-However, when I try to fit_transform it, I get a value error ValueError: empty vocabulary; perhaps the documents only contain stop words.
-In [69]: TfidfVectorizer().fit_transform(smallcorp)
----------------------------------------------------------------------------
-ValueError
-Traceback (most recent call last)
-<ipython-input-69-ac16344f3129> in <module>()
-----> 1 TfidfVectorizer().fit_transform(smallcorp)
-/Users/maxsong/anaconda/lib/python2.7/site-packages/sklearn/feature_extraction/text.pyc in fit_transform(self, raw_documents, y)
-1217
-vectors : array, [n_samples, n_features]
-1218
-"""
--> 1219
-X = super(TfidfVectorizer, self).fit_transform(raw_documents)
-1220
-self._tfidf.fit(X)
-1221
-# X is already a transformed view of raw_documents so
-/Users/maxsong/anaconda/lib/python2.7/site-packages/sklearn/feature_extraction/text.pyc in fit_transform(self, raw_documents, y)
-778
-max_features = self.max_features
-779
---> 780
-vocabulary, X = self._count_vocab(raw_documents, self.fixed_vocabulary)
-781
-X = X.tocsc()
-782
-/Users/maxsong/anaconda/lib/python2.7/site-packages/sklearn/feature_extraction/text.pyc in _count_vocab(self, raw_documents, fixed_vocab)
-725
-vocabulary = dict(vocabulary)
-726
-if not vocabulary:
---> 727
-raise ValueError("empty vocabulary; perhaps the documents only"
-728
-" contain stop words")
-729
-ValueError: empty vocabulary; perhaps the documents only contain stop words
-I read through the SO question here: Problems using a custom vocabulary for TfidfVectorizer scikit-learn and tried ogrisel's suggestion of using TfidfVectorizer(**params).build_analyzer()(dataset2) to check the results of the text analysis step and that seems to be working as expected: snippet below:
-In [68]: TfidfVectorizer().build_analyzer()(smallcorp)
-Out[68]:
-[u'due',
-u'to',
-u'lack',
-u'of',
-u'personal',
-u'biggest',
-u'education',
-u'and',
-u'husband',
-u'to',
-Is there something else that I am doing wrong? the corpus I am feeding it is just one giant long string punctuated by newlines.
-Thanks!
-python pandas scikit-learn tf-idf
-Share
-Improve this question
-Follow
-edited May 23 '17 at 10:30
-Community♦
-111 silver badge
-asked Jan 5 '14 at 1:00
-Max SongMax Song
-1,32722 gold badges1515 silver badges2424 bronze badges
-1
-I had the same problem and downgraded from v0.19 to 0.18
-– Nacho
-Apr 28 '18 at 19:17
-Add a comment
-|
-5 Answers
-5
-Active
-Oldest
-Votes
-19
-I guess it's because you just have one string. Try splitting it into a list of strings, e.g.:
-In [51]: smallcorp
-Out[51]: 'Ah! Now I have done Philosophy,\nI have finished Law and Medicine,\nAnd sadly even Theology:\nTaken fierce pains, from end to end.\nNow here I am, a fool for sure!\nNo wiser than I was before:'
-In [52]: tf = TfidfVectorizer()
-In [53]: tf.fit_transform(smallcorp.split('\n'))
-Out[53]:
-<6x28 sparse matrix of type '<type 'numpy.float64'>'
-with 31 stored elements in Compressed Sparse Row format>
-Share
-Improve this answer
-Follow
-answered Jan 5 '14 at 13:06
-herrfzherrfz
-4,54033 gold badges2424 silver badges3737 bronze badges
-2
-1
-This should be the correct answer.
-Any link to the documentation about this?
-I can't find it anywhere
-– Goodword
-Sep 21 '15 at 4:43
-There is an example in this document. scikit-learn.org/stable/modules/… (In section 4.2.3.3,
-a corpus variable)
-– satojkovic
-May 3 '16 at 4:30
-Add a comment
-|
-4
-In version 0.12, we set the minimum document frequency to 2, which means that only words that appear at least twice will be considered. For your example to work, you need to set min_df=1. Since 0.13, this is the default setting.
-So I guess you are using 0.12, right?
-Share
-Improve this answer
-Follow
-answered Jan 6 '14 at 9:20
-Andreas MuellerAndreas Mueller
-23.5k77 gold badges5454 silver badges6565 bronze badges
-Add a comment
-|
-0
-You can alternatively put your single string as a tuple, if you insist to have only one string. Instead of having:
-smallcorp = "your text"
-you'd rather put it within a tuple.
-In [22]: smallcorp = ("your text",)
-In [23]: tf.fit_transform(smallcorp)
-Out[23]:
-<1x2 sparse matrix of type '<type 'numpy.float64'>'
-with 2 stored elements in Compressed Sparse Row format>
-Share
-Improve this answer
-Follow
-answered Apr 28 '16 at 23:38
-iparjonoiparjono
-32122 silver badges99 bronze badges
-Add a comment
-|
-0
-I encountered a similar error while running a TF-IDF Python 3 script over a large corpus.
-Some small files (apparently) lacked keywords, throwing an error message.
-I tried several solutions (adding dummy strings to my filtered list if len(filtered = 0, ...) that did not help.
-The simplest solution was to add a try: ... except ... continue expression.
-pattern = "(?u)\\b[\\w-]+\\b"
-cv = CountVectorizer(token_pattern=pattern)
-# filtered is a list
-filtered = [w for w in filtered if not w in my_stopwords and not w.isdigit()]
-# ValueError:
-# cv.fit(text)
-# File "tfidf-sklearn.py", line 1675, in tfidf
-#
-cv.fit(filtered)
-#
-File "/home/victoria/venv/py37/lib/python3.7/site-packages/sklearn/feature_extraction/text.py", line 1024, in fit
-#
-self.fit_transform(raw_documents)
-#
-...
-#
-ValueError: empty vocabulary; perhaps the documents only contain stop words
-# Did not help:
-# https://stackoverflow.com/a/20933883/1904943
-#
-# if len(filtered) == 0:
-#
-filtered = ['xxx', 'yyy', 'zzz']
-# Solution:
-try:
-cv.fit(filtered)
-cv.fit_transform(filtered)
-doc_freq_term_matrix = cv.transform(filtered)
-except ValueError:
-continue
-Share
-Improve this answer
-Follow
-answered Nov 1 '19 at 17:31
-Victoria StuartVictoria Stuart
-3,15422 gold badges2828 silver badges2626 bronze badges
-1
-Hey @Victoria,
-it seems to me that in this case you just avoid performing the operation that you wanted (vectorizing). What is your understanding here?
-– Aleksander Molak
-Jun 24 '20 at 14:15
-Add a comment
-|
-0
-I also had the same problem.
-Transform list of int(nums) to list of str(nums) didn't help.
-But I converted to:
-['d'+str(nums) for nums in set] #where d is some letter which mention, we work with strings
-This helped.
-Share
-Improve this answer
-Follow
-answered Nov 3 '20 at 11:25
-Alex IvanovAlex Ivanov
-47111 silver badge1010 bronze badges
-Add a comment
-|
-Your Answer
-Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
-Draft saved
-Draft discarded
-Sign up or log in
-Sign up using Google
-Sign up using Facebook
-Sign up using Email and Password
-Submit
-Post as a guest
-Name
-Email
-Required, but never shown
-Post as a guest
-Name
-Email
-Required, but never shown
-Post Your Answer
-Discard
-By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
-Not the answer you're looking for? Browse other questions tagged python pandas scikit-learn tf-idf
-or ask your own question.
-The Overflow Blog
-Using low-code tools to iterate products faster
-Podcast 345: A good software tutorial explains the How. A great one explains…
-Featured on Meta
-Take the 2021 Developer Survey
-Linked
-4
-Problems using a custom vocabulary for TfidfVectorizer scikit-learn
-0
-ValueError: Found input variables with inconsistent numbers of samples: [6, 80]
-0
-How to solve CountVectorizer ValueError: empty vocabulary; perhaps the documents only contain stop words?
-1
-Tfidf empty vocabulary; perhaps the documents only contain stop words
-0
-how to transform data using tfidf python
-Related
-260
-Label encoding across multiple columns in scikit-learn
-1
-Why is TfidfVectorizer in scikit-learn showing this behavior?
-6
-Custom Sklearn Transformer works alone, Throws Error When Used in Pipeline
-1
-How to pass stopwords from a column of dataframe
-2
-How can I use a list of lists, or a list of sets, for the TfidfVectorizer?
-0
-ValueError: “Empty vocabulary; perhaps the documents only contain stop words”
-Hot Network Questions
-How important is learning hardware/architecture for scientific computing?
-How realistic is the 1 kg/km² solar sail in "Death's End"?
-Emit random objects inside array-ed object
-Evaluation order of an APL n-train
-Can I gain AC efficiency by spraying condensate water on the outdoor coils?
-Show exit code of last command in Bash prompt if it returned error
-Is there a diff() function in Julia DataFrames like pandas?
-Extracting work from people who are on PIPs but who we also cannot fire?
-What did I just photograph? (rainbow way out of place)
-Why are most women in anime housewives instead of being independent?
-Interviewer was two hours late
-Are AP slugs for shotguns possible?
-Why are most COB LEDs physically yellow?
-Interview by fellow PhD students, not the professor himself
-Refueling a Mars mission on the way
-Linux backup script written in bash for tar
-Does Islam have heraditary slavery?
-How to get real-looking rust that will be safe to the touch?
-What is the hardest part of transitioning from a PhD to a full-time career in academia?
-Is there a threadlocker that requires heat to release and can withstand thousands of heat-cool cycles without needing to be reapplied or deteriorating
-Former coworker I gave a reference for sabotaged the company on his last day - Should I update the reference contact with this new information?
-Deriving the energy-momentum tensor of a point particle
-Why are SSH MITM tools able to read and modify data?
-"Which dreams, indeed, are ambition" in Hamlet Act 2, Scene 2
-more hot questions
-Question feed
-Subscribe to RSS
-Question feed
-To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
-lang-py
-Stack Overflow
-Questions
-Jobs
-Developer Jobs Directory
-Salary Calculator
-Help
-Mobile
-Products
-Teams
-Talent
-Advertising
-Enterprise
-Company
-About
-Press
-Work Here
-Legal
-Privacy Policy
-Terms of Service
-Contact Us
-Cookie Settings
-Cookie Policy
-Stack Exchange Network
-Technology
-Life / Arts
-Culture / Recreation
-Science
-Other
-Stack Overflow
-Server Fault
-Super User
-Web Applications
-Ask Ubuntu
-Webmasters
-Game Development
-TeX - LaTeX
-Software Engineering
-Unix & Linux
-Ask Different (Apple)
-WordPress Development
-Geographic Information Systems
-Electrical Engineering
-Android Enthusiasts
-Information Security
-Database Administrators
-Drupal Answers
-SharePoint
-User Experience
-Mathematica
-Salesforce
-ExpressionEngine® Answers
-Stack Overflow em Português
-Blender
-Network Engineering
-Cryptography
-Code Review
-Magento
-Software Recommendations
-Signal Processing
-Emacs
-Raspberry Pi
-Stack Overflow на русском
-Code Golf
-Stack Overflow en español
-Ethereum
-Data Science
-Arduino
-Bitcoin
-Software Quality Assurance & Testing
-Sound Design
-Windows Phone
-more (29)
-Photography
-Science Fiction & Fantasy
-Graphic Design
-Movies & TV
-Music: Practice & Theory
-Worldbuilding
-Video Production
-Seasoned Advice (cooking)
-Home Improvement
-Personal Finance & Money
-Academia
-Law
-Physical Fitness
-Gardening & Landscaping
-Parenting
-more (10)
-English Language & Usage
-Skeptics
-Mi Yodeya (Judaism)
-Travel
-Christianity
-English Language Learners
-Japanese Language
-Chinese Language
-French Language
-German Language
-Biblical Hermeneutics
-History
-Spanish Language
-Islam
-Русский язык
-Russian Language
-Arqade (gaming)
-Bicycles
-Role-playing Games
-Anime & Manga
-Puzzling
-Motor Vehicle Maintenance & Repair
-Board & Card Games
-Bricks
-Homebrewing
-Martial Arts
-The Great Outdoors
-Poker
-Chess
-Sports
-more (16)
-MathOverflow
-Mathematics
-Cross Validated (stats)
-Theoretical Computer Science
-Physics
-Chemistry
-Biology
-Computer Science
-Philosophy
-Linguistics
-Psychology & Neuroscience
-Computational Science
-more (10)
-Meta Stack Exchange
-Stack Apps
-API
-Data
-Blog
+AttributeError using scipy.sparse.toarray()
+Skip to main content
+搜尋此網誌
+Sfyjdyy
+Subscribe
+Subscribe to this blog
+AttributeError using scipy.sparse.toarray()
+Clash Royale CLAN TAG#URR8PPP AttributeError using scipy.sparse.toarray()import scipy as spimport numpy as npa=sp.sparse.coo_matrix(np.random.randint(0,9,[4,5]))b=sp.sparse.coo_matrix(np.random.randint(0,9,[4,2]))sp.hstack([a,b]).toarray() is giving meAttributeError: 'numpy.ndarray' object has no attribute 'toarray' could you help me with my silly mistake here?
+1 Answer 1
+sp.hstack (i.e. numpy.hstack) is the ordinary, dense hstack, which won't combine the sparse arrays correctly. It builds a 1D numpy array already (of object dtype; in other words, it just wraps the Python-level objects and crams them in there.) You want scipy.sparse.hstack:sp.hstacknumpy.hstackscipy.sparse.hstackIn [332]: sp.hstack([a, b])Out[332]: array([<4x5 sparse matrix of type '<class 'numpy.int64'>' with 17 stored elements in COOrdinate format>, <4x2 sparse matrix of type '<class 'numpy.int64'>' with 7 stored elements in COOrdinate format>], dtype=object)In [333]: sp.hstack([a, b]).toarray()---------------------------------------------------------------------------AttributeError Traceback (most recent call last)<ipython-input-333-4f469eb98b12> in <module>()----> 1 sp.hstack([a, b]).toarray()AttributeError: 'numpy.ndarray' object has no attribute 'toarray'In [334]: sp.sparse.hstack([a, b])Out[334]: <4x7 sparse matrix of type '<class 'numpy.int64'>' with 24 stored elements in COOrdinate format>In [335]: sp.sparse.hstack([a, b]).toarray()Out[335]: array([[3, 2, 7, 0, 5, 5, 1], [7, 1, 2, 1, 7, 0, 8], [6, 1, 6, 1, 8, 6, 2], [7, 6, 0, 5, 0, 8, 8]], dtype=int64)
+😠 .... thanks!!! – Kam Aug 6 at 1:27
+By clicking "Post Your Answer", you acknowledge that you have read our updated terms of service, privacy policy and cookie policy, and that your continued use of the website is subject to these policies.
+-
+September 25, 2018
+Get link
 Facebook
 Twitter
-LinkedIn
-Instagram
-site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.6.9.39464
-Stack Overflow works best with JavaScript enabled
-Your privacy
-By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
-Accept all cookies
-Customize settings
+Pinterest
+Email
+Other Apps
+Popular posts from this blog
+Can't bind to 'dataSource' since it isn't a known property of 'table' even when modules are imported
+Clash Royale CLAN TAG #URR8PPP
+Can't bind to 'dataSource' since it isn't a known property of 'table' even when modules are imported
+I am implementing a mat-table ui. In my app.module I imported my material.module like so: import MaterialModule from './material-design/material.module'; imports: [
+MaterialModule,
+],
+In my component that implements this, I have this code: import Component, OnInit, ViewChild from '@angular/core'; import MatTableDataSource, MatSort, MatPaginator from '@angular/material'; displayedColumns: string = ['PlateNumber', 'Purpose', 'Schedule', 'Select']; dataSource: MatTableDataSource<ScheduledVehicleModel>; @ViewChild(MatPaginator) paginator: MatPaginator; @ViewChild(MatSort) sort: MatSort; getScheduledVhicles()
+this.vs.getScheduledVhicles()
+.subscribe((data: any) =>
+this.dataSource = new MatTableDataSource(data);
+this.dataSource.paginator = this.paginator;
+this.data
+Read more
+Get week number in month from date in PHP?
+Clash Royale CLAN TAG #URR8PPP
+Get week number in month from date in PHP?
+I have an array of random dates (not coming from MySQL). I need to group them by the week as Week1, Week2, and so on upto Week5.
+What I have is this: $dates = array('2015-09-01','2015-09-05','2015-09-06','2015-09-15','2015-09-17');
+What I need is a function to get the week number of the month by providing the date.
+I know that I can get the weeknumber by doing
+date('W',strtotime('2015-09-01'));
+but this week number is the number between year (1-52) but I need the week number of the month only, e.g. in Sep 2015 there are 5 weeks: date('W',strtotime('2015-09-01'));
+I should be able to get the week Week1 by just providing the date e.g. $weekNumber = getWeekNumber('2015-09-01') //output 1; $weekNumber = getWeekNumber('2015-09-17') //output 3;
+Please clarify your question.
+– William Smith
+Sep 16 '15 at 18:19
+9
+Read more
+TS2339: Property 'includes' does not exist on type 'string'
+Clash Royale CLAN TAG #URR8PPP
+TS2339: Property 'includes' does not exist on type 'string'
+I have seen this error mentioned in regards to string arrays but not actual strings. I have a TypeScript file with the line if (!bus.lineInfo.PublishedLineName.includes(input)) {
+This gives me an error of TS2339: Property 'includes' does not exist on type 'string'.
+bus
+is a variable that implements the bus
+interface: bus bus interface bus
+"lineInfo": string // false if this is "FFFFFF", otherwise it's the color
+,
+"warnings": boolean
+lineInfo.PublishedLineName
+is declared as a string , and String.prototype.includes()
+is a function according to MDN, so why does the TypeScript compiler complain about the missing property/method? lineInfo.PublishedLineName string String.prototype.includes()
+What is includes or what do you think it is?
+– rmlan
+Aug 12 at 17:34
+I believe it is a string method; I've updated my pos
+Read more
+Archive
+2018
+6565
+September 2018
+5422
+Sep 25
+349
+add score in Screen libgdx
+Angular 6 - Update *ngIf after Component Loads
+Is it posibble to prevent the outer transaction co...
+How to specify tint as custom attribute on ImageVi...
+Netlogo: how to register the tick-advance counter ...
+evaluate relational operator from a string
+How to store a value of variable in javascript for...
+yield n files from disk
+AttributeError using scipy.sparse.toarray()
+CSS: how to set a min-width that is overridden by ...
+Transferring specific data in Excel into individua...
+Table referencing multiple tables. Error in save “...
+Can I have multiple “categories” on one connection?
+Strategy for getting a “real” device time while of...
+Ionic 3 add class dynamically if the input is not ...
+Animation positioning on window resize
+Select between two tables, two columns
+How to change your app's target API using flash CS6
+New column based on multiple conditions ignoring m...
+All Schema Columns were Removed After Removing MyS...
+Error: “CUDNN STATUS NOT INITIALIZED” in keras-bas...
+MySQL Pivot Tables Without Numbers
+Node.js beginner struggling with arrays, promises ...
+Collecting keyword arguments in Ruby
+Running Apply with Function of prime number on dat...
+Scan files in a directory to get the number of met...
+Swift - Singleton without global access
+Redirect a URL to new URL and original subdomain t...
+(Unity) Rapidly click to speed up an object (other...
+How to fix npm audit fix issues?
+How to execute powershell/cmd commands using gnuwi...
+Change files & photos folders to one storage folde...
+dealing with canvas copy trouble in tcl
+using a parameterised insert query but getting con...
+How to read in an XML file asynchronously?
+Getting CSS tab to be open by default
+Nginx Reverse Proxy with Dynamic Containers
+Null Pointer When Passing Data from App to Widget ...
+How to gather the logits according to a 2D index?
+Assigning specific value to checkbox
+Get Drawn Data from Google Maps
+Log execution time of each method of the request u...
+SAP UI5 value help only for Smartfield
+R Feature Selection with caret - Limit results plo...
+Removing characters with sed
+Convert d3 svg coordinates to canvas coordinates
+Properly handling of QAction shortcut
+AlarmManager Repeat
+How to use re in python3 to print only the desired...
+Value of String won't change in Swift despite clea...
+Sorting PriorityQueue
+Rounding all possible numbers below 1 to the first...
+Getting the Code to Restart After Invalid Entry (J...
+How do I write to an access query that uses linked...
+Convert case of an HTML page to lower in R
+Laravel - joining 3 tables
+Add BoxCollider from other object to current object
+why is there no render() in functional components
+getting max value of binary search tree in js
+Subsetting Hierarchical Index and Hierarchical col...
+Connecting RDS Instance to MySQL Workbench
+What is the partial ordering procedure in template...
+Fabric8 java library to edit existing resource
+EditText.getText().toString() error [duplicate]
+Error installing jekyll: ERROR: Failed to build ge...
+how to make table view shows specific row after re...
+Resize images with Glide in a ImageView Android
+Django create new instances of a different model u...
+Selecting shape by shapeid VBA powerpoint
+Address prompt results in unexpected map on iOS Go...
+removing all false elements from a linked list in ...
+JSON data table does not upload?
+How to remove any co-occurrence of sub-list elemen...
+VLCJ - Bundling native VLC libraries on 64 bit Linux
+How to create custom fields for IdentityUser in as...
+Creating a leaderboard in HTML/JS
+Rails Routing: Set specific controller action to a...
+Laravel “The 'name' argument does not exist” Error
+how to open ejabberd server to public
+Excel: Find Which Range A Value Belongs To If Any ...
+How does one override .Equals() for a Discriminate...
+Swift-based iOS App Extension using NSExtension
+Point Microsoft Bot DirectLine API to slot instance
+Moving multiple Widgets in Kivy independently
+Docusign Python SDK Authentication Example Error: ...
+Adjust margin/padding in the 'PreferenceScreen' in...
+connect 2 websockets ws and socket.io
+Autocomplete of xml tags in VSCode based on xml sc...
+Update product price if specific meta_key contains...
+flexbox with expandable children
+Why does a JavaFX Image not read the file itself d...
+If I statically link a C library, will the unused ...
+Parsing a JSON file with PHP
+Error: Cannot find module 'less' with pnpm
+Drag and Drop in ListView
+Subclass `pathlib.Path` fails
+Chart.js - Font only renders after you reload the ...
+git submodule “you need to resolve your current in...
+How to access electron.app.getPath()?
+Can i put anything in for x
+Sep 24
+172
+Sep 23
+416
+Sep 22
+190
+Sep 21
+305
+Sep 20
+364
+Sep 19
+342
+Sep 18
+262
+Sep 17
+268
+Sep 16
+361
+Sep 15
+41
+Sep 14
+407
+Sep 13
+165
+Sep 12
+281
+Sep 11
+237
+Sep 10
+52
+Sep 09
+152
+Sep 08
+85
+Sep 07
+86
+Sep 06
+48
+Sep 05
+278
+Sep 04
+43
+Sep 03
+173
+Sep 02
+130
+Sep 01
+215
+August 2018
+1143
+Aug 31
+266
+Aug 30
+149
+Aug 29
+269
+Aug 28
+316
+Aug 27
+143

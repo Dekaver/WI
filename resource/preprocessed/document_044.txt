@@ -1,409 +1,188 @@
-Python Pandas: NameError: name is not defined - Stack Overflow
-Stack Overflow
-About
-Products
-For Teams
-Stack Overflow
-Public questions & answers
-Stack Overflow for Teams
-Where developers & technologists share private knowledge with coworkers
-Jobs
-Programming & related technical career opportunities
-Talent
-Recruit tech talent & build your employer brand
-Advertising
-Reach developers & technologists worldwide
-About the company
-Loading…
-Log in
-Sign up
-current community
-Stack Overflow
-help
-chat
-Meta Stack Overflow
-your communities
-Sign up or log in to customize your list.
-more stack exchange communities
-company blog
-People who code: we want your input.
-Take the Survey
-Join Stack Overflow to learn, share knowledge, and build your career.
-Sign up with email
-Sign up
-Sign up with Google
-Sign up with GitHub
-Sign up with Facebook
-Home
-Public
-Questions
-Tags
-Users
-Find a Job
-Jobs
-Companies
-Teams
-Stack Overflow for Teams
-– Collaborate and share knowledge with a private group.
-Create a free Team
-What is Teams?
-Teams
-What’s this?
-Create free Team
-Teams
-Q&A for work
-Connect and share knowledge within a single location that is structured and easy to search.
-Learn more
-Python Pandas: NameError: name is not defined
-Ask Question
-Asked
-6 years, 3 months ago
-Active
-6 months ago
-Viewed
-42k times
-2
-Ok, this is my first Python Pandas program and I'm having a hard time figuring out what the column name is so I can reference it in a function call.
-Below is my code. parseDeviceType is calling a function to parse useragentstring. But when I call it using what I think the column name is, I get an error that name is not defined:
-df = pd.read_csv('user_agent_strings.txt',index_col=None, na_values=['NA'],sep=',')
-dt=parseDeviceType(user_agent_string)
-print df.columns
-NameError: name 'user_agent_string' is not defined
-Index([u'user_agent_string'], dtype='object')
-And here's the
-header and first row of data from the input file containing the useragentstrings:
-"user_agent_string"
-"Mozilla/5.0 (iPad; CPU OS 7_1_1 like Mac OS X) AppleWebKit/537.51.2 (KHTML, like Gecko) Version/7.0 Mobile/11D201 Safari/9537.53"
-Can you help me understand how to reference the column name in the dt=parseDeviceType(user_agent_string) call? I'd like to also know how to reference it by column number if that is possible in a call to a function.
-Thanks
-python pandas
-Share
-Improve this question
-Follow
-edited May 30 '19 at 5:48
-Hatshepsut
-4,06044 gold badges2929 silver badges6161 bronze badges
-asked Feb 16 '15 at 3:47
-JazzmineJazzmine
-1,60566 gold badges3131 silver badges4949 bronze badges
-6
-1
-Should user_agent_string be a string? Like: dt=parseDeviceType('user_agent_string').
-– 101
-Feb 16 '15 at 3:58
-Hi: I'm trying to pass a column name. Wouldn't putting the user_agent_string in quotes imply that I'm passing a literal rather than a variable?
-– Jazzmine
-Feb 16 '15 at 4:01
-1
-@Jazzmine try df. user_agent_string
-– Liam Foley
-Feb 16 '15 at 4:13
-As your code is now that variable doesn't seem to exist ;)
-– 101
-Feb 16 '15 at 4:20
-As you've not shown the code for parseDeviceType my guess is that you are trying to pass a variable name rather than a string for column selection from your df, have you tried what figs has suggested and wrapping quotes around user_agent_string?
-– EdChum
-Feb 16 '15 at 9:18
-|
-Show 1 more comment
-4 Answers
-4
-Active
-Oldest
-Votes
-1
-Import pandas package to read data
-import pandas as pd
-df = pd.read_csv('user_agent_strings', index_col=None, na_values=['NA'],sep=',')
-Share
-Improve this answer
-Follow
-edited Jun 6 '18 at 7:26
-Zoe
-23.7k1616 gold badges9999 silver badges133133 bronze badges
-answered Jun 6 '18 at 6:59
-Sunitha GSunitha G
-13511 silver badge66 bronze badges
-Add a comment
-|
-1
-The first thing you need to understand is the error message you are seeing:
-NameError is a Python exception and is not related to Pandas in this case. You can get exactly the same error by trying to use any name which the interpreter doesn't know about:
->>> b = a
-Traceback (most recent call last):
-File "<stdin>", line 1, in <module>
-NameError: name 'a' is not defined
-It is important to know that very few Python commands will "magically" create names. To create a name, you would almost always need an assignment (name = ...). So as a general rule if you you haven't done this, name will not exist. In your code, the name you have created is df, so you will need to go through that to get to your data.
-You can use two different ways to access the data in the dataframe, which are equivalent: df['user_agent_string'] or df.user_agent_string. I recommend trying this out in an interactive environment so that you can see the results before passing it to a function.
-I'm also going to guess that your function parseDeviceType only does this for one string (based on the comments), but you want to call this function on every item in your file. To do this you would need apply:
-parsed_types = df.user_agent_string.apply(parseDeviceType)
-To access columns by number instead of name (which I don't recommend), you can use iloc. This allows you to access all the rows (:) and the first colum (0) from the dataframe object:
-user_agent_string = df.iloc[:, 0]
-Share
-Improve this answer
-Follow
-edited Dec 30 '18 at 7:48
-answered Dec 30 '18 at 7:40
-chthonicdaemonchthonicdaemon
-16.7k11 gold badge3939 silver badges5959 bronze badges
-Add a comment
-|
--1
-In here , you didnt import the pandas
-import pandas as pd
-pd = pd.read_csv('anythinf.csv')
-When you save your file and open later this time you will get same error so you need to restart your project and compile your code from the start ...if you use jupyter notebook..
-you can easily erase all the errors
-Share
-Improve this answer
-Follow
-answered Dec 2 '20 at 16:29
-ROHITROHIT
-122 bronze badges
-Add a comment
-|
--2
-Try to remove .txt from your file name might help.
-Like the following:
-df = pd.read_csv('user_agent_strings', index_col=None, na_values=['NA'],sep=',')
-Share
-Improve this answer
-Follow
-edited Jul 10 '15 at 22:14
-answered Jul 10 '15 at 22:05
-ZMatrixZMatrix
-133 bronze badges
-1
-2
-Could you please provide some explanation as to why this is correct?
-– bcdan
-Jul 10 '15 at 22:22
-Add a comment
-|
-Your Answer
-Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
-Draft saved
-Draft discarded
-Sign up or log in
-Sign up using Google
-Sign up using Facebook
-Sign up using Email and Password
-Submit
-Post as a guest
-Name
-Email
-Required, but never shown
-Post as a guest
-Name
-Email
-Required, but never shown
-Post Your Answer
-Discard
-By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
-Not the answer you're looking for? Browse other questions tagged python pandas
-or ask your own question.
-The Overflow Blog
-Using low-code tools to iterate products faster
-Podcast 345: A good software tutorial explains the How. A great one explains…
-Featured on Meta
-Take the 2021 Developer Survey
-Related
-5329
-How to execute a program or call a system command from Python
-6195
-What are metaclasses in Python?
-6696
-Does Python have a ternary conditional operator?
-3270
-How to get the current time in Python
-2952
-How do I concatenate two lists in Python?
-3596
-Does Python have a string 'contains' substring method?
-2226
-Renaming columns in Pandas
-1140
-Adding new column to existing DataFrame in Python pandas
-1652
-Delete a column from a Pandas DataFrame
-2776
-How to iterate over rows in a DataFrame in Pandas
-Hot Network Questions
-Can black convert a +5.6 game into a draw (assuming both players play optimally)?
-Can a petrified wizard communicate telepathically with their familiar?
-Does gravity bend gravity?
-Is there a diff() function in Julia DataFrames like pandas?
-Is maximum speed a thing?
-What is the DC of Draconic Presence?
-Why can the block production rate be as low as two per hour?
-Alien Instrument produces "visual music", which a Human can temporarily experience
-Should I notify a med school about their student's cheating history?
-Is Huang Yanling (a Wuhan virology researcher) the world's first COVID-19 patient?
-What should be the income to list on a credit card application?
-What are the main reasons for using full justification when ragged right is more readable?
-What does "parity pattern" mean?
-Why am I seeing the sun slightly north instead of slightly south early in the morning in Malta?
-Does Islam have heraditary slavery?
-Is it illegal to implement a patented algorithm or method and take advantage from it?
-Simplify K combinatory logic expression
-Is 2 hours 50 mins sufficient in Heathrow to connecting flight with different tickets and airlines
-Why is Ken's beer "gay"?
-How come full throttle is meaning full speed instead of the opposite?
-Does machine learning really need data-efficient algorithms?
-Why are most COB LEDs physically yellow?
-How realistic is the 1 kg/km² solar sail in "Death's End"?
-Are there any greater risks of traveling significantly faster to another planet?
-more hot questions
-Question feed
-Subscribe to RSS
-Question feed
-To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
-lang-py
-Stack Overflow
-Questions
-Jobs
-Developer Jobs Directory
-Salary Calculator
-Help
-Mobile
-Products
-Teams
-Talent
-Advertising
-Enterprise
-Company
-About
-Press
-Work Here
-Legal
-Privacy Policy
+Python 3 TypeError: 'str' object cannot ... | DaniWeb
+Menu
+DaniWeb
+Log In
+Sign Up
+Read
+Contribute
+Search
+Search
+Navigation
+Search
+Search
+Forum Categories
+laptop
+Hardware/Software
+code
+Programming
+live_tv
+Digital Media
+local_cafe
+Community Center
+Latest Content
+Newest Topics
+Latest Topics
+forumLatest Posts
+Top Tags
+Topics Feed
+Social
+Top Members
+DaniWeb Premium
+Newsletter Archive
+Community Rules
+Connect API
+Forum API Docs
+DaniWeb Ads
 Terms of Service
+Privacy Policy
+FAQ
+About Us
 Contact Us
-Cookie Settings
-Cookie Policy
-Stack Exchange Network
-Technology
-Life / Arts
-Culture / Recreation
-Science
-Other
-Stack Overflow
-Server Fault
-Super User
-Web Applications
-Ask Ubuntu
-Webmasters
-Game Development
-TeX - LaTeX
-Software Engineering
-Unix & Linux
-Ask Different (Apple)
-WordPress Development
-Geographic Information Systems
-Electrical Engineering
-Android Enthusiasts
-Information Security
-Database Administrators
-Drupal Answers
-SharePoint
-User Experience
-Mathematica
-Salesforce
-ExpressionEngine® Answers
-Stack Overflow em Português
-Blender
-Network Engineering
-Cryptography
-Code Review
-Magento
-Software Recommendations
-Signal Processing
-Emacs
-Raspberry Pi
-Stack Overflow на русском
-Code Golf
-Stack Overflow en español
-Ethereum
-Data Science
-Arduino
-Bitcoin
-Software Quality Assurance & Testing
-Sound Design
-Windows Phone
-more (29)
-Photography
-Science Fiction & Fantasy
-Graphic Design
-Movies & TV
-Music: Practice & Theory
-Worldbuilding
-Video Production
-Seasoned Advice (cooking)
-Home Improvement
-Personal Finance & Money
-Academia
-Law
-Physical Fitness
-Gardening & Landscaping
-Parenting
-more (10)
-English Language & Usage
-Skeptics
-Mi Yodeya (Judaism)
-Travel
-Christianity
-English Language Learners
-Japanese Language
-Chinese Language
-French Language
-German Language
-Biblical Hermeneutics
-History
-Spanish Language
-Islam
-Русский язык
-Russian Language
-Arqade (gaming)
-Bicycles
-Role-playing Games
-Anime & Manga
-Puzzling
-Motor Vehicle Maintenance & Repair
-Board & Card Games
-Bricks
-Homebrewing
-Martial Arts
-The Great Outdoors
-Poker
-Chess
-Sports
-more (16)
-MathOverflow
-Mathematics
-Cross Validated (stats)
-Theoretical Computer Science
-Physics
-Chemistry
-Biology
-Computer Science
-Philosophy
-Linguistics
-Psychology & Neuroscience
-Computational Science
-more (10)
-Meta Stack Exchange
-Stack Apps
-API
-Data
-Blog
+© 2021 DaniWeb® LLC
+Python 3 TypeError: 'str' object cannot be interpreted as an integer.
+Home
+Programming Forum
+Software Development Forum
+Discussion / Question
+Martin_8
+0
+Newbie Poster
+5 Years Ago
+I am making a chat client to connect to a server I already made with sockets in Python 3, but I am having a problem with the new encoding and decosing stuff for Python 3. Here is the relevant code:
+else :
+# user entered a message
+msg = sys.stdin.readline()
+s.send(bytes((msg, 'utf-8')))
+sys.stdout.write(bytes('[Me] '))
+sys.stdout.flush()
+and here is the error I get when running this client from python in terminal:
+# It connects to the server fine, as we can see from the next two lines, but if I try to type a message it closes and outputs the error message.
+Connected to remote host. You can start sending messages
+[Me] hi
+Traceback (most recent call last):
+File "client.py", line 50, in <module>
+client()
+File "client.py", line 45, in client
+s.send(bytes((msg, 'utf-8')))
+TypeError: 'str' object cannot be interpreted as an integer
+I read this: http://www.pythoncentral.io/encoding-and-decoding-strings-in-python-3-x/ and adjusted my code accordingly, but it still gives me the same error. Please feel free to ask for anything else you may need.
+python
+typeerror
+0
+0
+Share
+2
+Contributors
+forum
+1
+Reply
+4,456
+Views
+5 Hours
+Discussion Span
+comment
+Latest Post
+5 Years Ago
+Latest Post
+by Gribouillis
+Gribouillis
+1,391
+Programming Explorer
+Team Colleague
+5 Years Ago
+The signature of the bytes() function gives the solution
+class bytes(object)
+|
+bytes(iterable_of_ints) -> bytes
+|
+bytes(string, encoding[, errors]) -> bytes
+|
+bytes(bytes_or_buffer) -> immutable copy of bytes_or_buffer
+|
+bytes(int) -> bytes object of size given by the parameter initialized with null bytes
+|
+bytes() -> empty bytes object
+...
+You want to use the second form bytes(string, encoding) but instead you wrote bytes((string, encoding)), that is to say a single tuple argument. Since a tuple is iterable, the only option for python is to believe that you used the first form. Then python expects that your tuple is a tuple of ints, and as this fails, you get the error. So use
+bytes(msg, 'utf-8')
+1
+0
+Share
+ddanbe
+commented:
+Great knowledge.
++15
+Facebook
+Like
+Twitter
+Tweet
+Be a part of the DaniWeb community
+We're a friendly, industry-focused community of
+1.21 million developers, IT pros, digital marketers,
+and technology enthusiasts learning and sharing knowledge.
+Sign Up — It's Free!
+Related Topics
+Python/csv: 'module' object has no attribute 'writer'
+8
+Problem with a value being a float not an integer?
+1
+PyQT4 TreeModel example
+4
+AttributeError: 'str' object has no attribute 'keys'
+13
+Object is not callable
+2
+2-dimensional array using user input of high /low temps
+8
+Starting Python
+398
+Review of Python Tools for Visual Studio
+15
+Linker Error in Turbo C++ v3.0
+22
+Convert python examples to runnable code.
+3
+Is a python os possible?
+4
+win32 - about WM_PAINT message
+5
+TypeError: attribute of type 'NoneType' is not callable object
+6
+Python CPU Performance Analysis
+1
+link list
+3
+problem with deleting a list indexes with both int and str
+5
+Python errors
+2
+Delete an item from array with algorithm
+2
+Can anyone explain this python code of snake game
+2
+My simple python program to calculate the volumes of some popular solids
+1
+Not what you need?
+Reach out to all the awesome people in our software development community by starting your own topic.
+We equally welcome both specific questions as well as open-ended discussions.
+Start New Topic
+Topics Feed
+add_comment
+Reply to this Topic
+This topic is old!
+No one has contributed to this discussion in over 5 years.
+Are you sure you have something valuable to add to revive the existing conversation?
+Consider starting a new topic instead.
+Otherwise, please be thoughtful, detailed and courteous, and adhere to our posting rules.
+Edit
+Preview
+Message
+H1
+H2
+Post Reply
+Insert Code Block
+Insert Code Block
+Share Post
+Permanent Link
 Facebook
 Twitter
-LinkedIn
-Instagram
-site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.6.9.39464
-Stack Overflow works best with JavaScript enabled
-Your privacy
-By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
-Accept all cookies
-Customize settings

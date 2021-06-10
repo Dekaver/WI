@@ -1,145 +1,397 @@
-Arithmetic exception In Java - Class java.lang.ArithmeticException
-Skip to primary navigation Skip to main content Skip to primary sidebarSoftwareTestingo - Jira Selenium Protractor Testing SDLC Agile MethodologyJava Selenium Tutorial & Testing Interview Questions
+dictionary - Python AttributeError: 'dict' object has no attribute 'append' - Stack Overflow
+Stack Overflow
+About
+Products
+For Teams
+Stack Overflow
+Public questions & answers
+Stack Overflow for Teams
+Where developers & technologists share private knowledge with coworkers
+Jobs
+Programming & related technical career opportunities
+Talent
+Recruit tech talent & build your employer brand
+Advertising
+Reach developers & technologists worldwide
+About the company
+Loading…
+Log in
+Sign up
+current community
+Stack Overflow
+help
+chat
+Meta Stack Overflow
+your communities
+Sign up or log in to customize your list.
+more stack exchange communities
+company blog
+People who code: we want your input.
+Take the Survey
+Join Stack Overflow to learn, share knowledge, and build your career.
+Sign up with email
+Sign up
+Sign up with Google
+Sign up with GitHub
+Sign up with Facebook
 Home
-Interview Questions
-Java
-Java Programs
-Test Cases
-Selenium
-Manual Testing
-Difference
-Search
-Search this website
-SoftwareTestingo » Java » Java Tutorial » What Is Arithmetic exception In Java – Class java.lang.ArithmeticExceptionWhat Is Arithmetic exception In Java – Class java.lang.ArithmeticException
-Last Updated on: August 16, 2020 By Softwaretestingo Editorial Board
-What Is Arithmetic exception?
-Thrown when an exceptional arithmetic condition has occurred. For example, an integer “divide by zero” throws an instance of this class.
-In this tutorial, we will take a look at a few examples that will highlight the causes of getting an ArithmeticException in the Java program. Also, we will discuss the common causes of Arithmetic exception and how can we handle this exception.
-An arithmetic exception is an error that is thrown when a “wrong” arithmetic situation occurs. This usually happens when mathematical or calculation errors occur within a program during run-time. There various causes to an ArithmeticException, the following are a few of them:
-List of all invalid operations that throw an ArithmeticException() in Java
-Dividing by an integer Zero
-Non-terminating decimal numbers using BigDecimal
-Dividing by an integer Zero:
-Java throws an Arithmetic exception when a calculation attempt is done to divide by zero, where the zero is an integer. Take the following piece of code as an example:
-package co.java.exception;
-public class ArithmaticExceptionEx
-{
-void divide(int a,int b)
-{
-int q=a/b;
-System.out.println("Sucessfully Divided");
-System.out.println("The Value After Divide Is :-" +q);
-}
-public static void main(String[] args)
-{
-ArithmaticExceptionEx obj=new ArithmaticExceptionEx();
-obj.divide(10, 0);
-}
-}
-When you run the above program you will get, link
-When we run the code, we get the following error:
-Exception in thread "main" java.lang.ArithmeticException: / by zero at co.java.exception.ArithmaticExceptionEx.divide(ArithmaticExceptionEx.java:7) at co.java.exception.ArithmaticExceptionEx.main(ArithmaticExceptionEx.java:14)
-Since we divided 10 by 0, where 0 is an integer, java throws the above exception. However, if the zero is a floating-point as in the following code, we get a completely different result.
-Arithmetic Exception Divide By Float
-Here, no exception is thrown, and “Q” now has a value of infinity.  Note that is (almost) always a bad idea to divide by zero, even if no exception is thrown.
-Non-terminating decimal numbers using BigDecimal:
-The BigDecimal class is a Java class used to represent decimal numbers up to a very high number of precision digits. The class also offers a set of functionalities that are not available using primitive data types such as doubles and floats. These functionalities include rounding up/down, defining the number of decimal places we need from a number, etc.
-Since BigDecimals are used to represent numbers to a high degree of accuracy, a problem might occur with some numbers, for example, when dividing 1 by 3, or 2 by 12. These numbers do not have a specific number of decimal places, for example, 1/3 = 0.33333333333333333…
-Take the following program for example :
-package co.java.exception;
-import java.math.BigDecimal;
-public class ArithmeticExceptionExamples {
-public static void main(String[] args) {
-// TODO Auto-generated method stub
-BigDecimal x = new BigDecimal(1);
-BigDecimal y = new BigDecimal(3);
-x = x.divide(y);
-System.out.println(x.toString());
-}
-}
-Take a Look On The Execution:
-Arithmetic exception – Divide By BigDecimal
-In the program above, since the class doesn’t know what to do with the division result, an exception is thrown.
-Exception in thread "main" java.lang.ArithmeticException: Non-terminating decimal expansion; no exact representable decimal result. at java.math.BigDecimal.divide(Unknown Source) at co.java.exception.ArithmeticExceptionExamples.main(ArithmeticExceptionExamples.java:11)
-As we said, the program doesn’t know what to do with the result of the division, hence an exception is thrown with the message “Non-terminating decimal expansion”. One possible solution to the above problem is to define the number of decimal places we require from a big decimal, and the form of rounding that will be used to limit the value to a certain number of decimals. For example, we could  say that z should be limited to 7 decimal places, by rounding up at the 7th decimal place:
-package co.java.exception;
-import java.math.BigDecimal;
-public class ArithmeticExceptionExamples {
-public static void main(String[] args) {
-// TODO Auto-generated method stub
-BigDecimal x = new BigDecimal(1);
-BigDecimal y = new BigDecimal(3);
-x = x.divide(y, 7, BigDecimal.ROUND_DOWN);//here we limit the # of decimal places
-System.out.println(x.toString());
-}
-}
-Here, the program runs properly, since we defined a limit to the number of places the variable “x”  could assume.
-Arithmetic exception – Divide By BigDecimal Solution
-If You Have any doubts feel free to drop your doubts in the Comment Section.
-Filed Under: Java Tutorial Reader Interactions
-Leave a Reply Cancel replyYour email address will not be published. Required fields are marked *Comment Name *
-Email *
-Primary Sidebar
-Search this website
-Tutorials Important Links
-Software Testing Jobs
-Manual Testing Tutorial
-Selenium Tutorial
-Core Java Tutorial
-TestNG Tutorial
-Java Programs
-Selenium Programs
-Manual Test Cases
-Interview Tips
-Contact US
-www.softwaretestingo.com
-Important Links
-Software Testing Interview Questions
-Agile Interview Questions
-Manual Testing Interview Questions
-Testing Interview Questions
-Selenium Interview Questions
-Selenium Real Time Interview Questions
-Selenium WebDriver Interview Questions
-Automation Framework Interview Questions
-Appium Interview Questions
-TestNG Interview Questions
-Java Interview Questions
-Core Java Interview Questions
-Categories
-Categories
-Select Category
-Arts & Crafts Courses
-Bangalore Testing Jobs
-Design Courses
-Development Course
-Difference
-Exception
-GIT
-Interview Questions
-Java
-Java Courses
-Java Programs
-Java Tutorial
-Jenkins
-JIRA
-JMeter
-Manual Testing
-Manual Testing Tutorial
-Other IT & Software
-Python Courses
-Selenium
-Selenium Programs
-Selenium Tutorial
-Social Courses
-Software Testing Courses
-Software Testing Tools Courses
-SQL
-SQL Courses
-Test Cases Example
-Testing Question & Answers
-Tips & Tricks
-Tools
-Udemy Free Courses
-Unix
-Copyright © 2021 SoftwareTestingo.com ~ Contact Us ~ Sitemap ~ Privacy Policy
+Public
+Questions
+Tags
+Users
+Find a Job
+Jobs
+Companies
+Teams
+Stack Overflow for Teams
+– Collaborate and share knowledge with a private group.
+Create a free Team
+What is Teams?
+Teams
+What’s this?
+Create free Team
+Teams
+Q&A for work
+Connect and share knowledge within a single location that is structured and easy to search.
+Learn more
+Python AttributeError: 'dict' object has no attribute 'append'
+Ask Question
+Asked
+3 years, 4 months ago
+Active
+1 year, 7 months ago
+Viewed
+78k times
+14
+7
+I am creating a loop in order to append continuously values from user input to a dictionary but i am getting this error:
+AttributeError: 'dict' object has no attribute 'append'
+This is my code so far:
+for index, elem in enumerate(main_feeds):
+print(index,":",elem)
+temp_list = index,":",elem
+li = {}
+print_user_areas(li)
+while True:
+n = (input('\nGive number: '))
+if n == "":
+break
+else:
+if n.isdigit():
+n=int(n)
+print('\n')
+print (main_feeds[n])
+temp = main_feeds[n]
+for item in user:
+user['areas'].append[temp]
+Any ideas?
+python dictionary for-loop tuples
+Share
+Follow
+edited Jan 12 '18 at 22:00
+DYZ
+45.8k99 gold badges4848 silver badges7676 bronze badges
+asked Jan 12 '18 at 21:50
+anonymousanonymous
+16111 gold badge11 silver badge33 bronze badges
+3
+3
+Well, a dict doesn't have an append method. And even if it did, you couldn't call it with square brackets.
+– Daniel Roseman
+Jan 12 '18 at 21:56
+use defaultdict instead (with list in it)
+– RandomB
+Jan 12 '18 at 21:59
+You assign values to a dict using its key like this : user['areas'] = temp. Your code would only work IF user[areas] was already a list. If you need it to be a list, construct the list first, THEN assign that list to the key.
+– JacobIRR
+Jan 12 '18 at 22:00
+Add a comment
+|
+2 Answers
+2
+Active
+Oldest
+Votes
+15
+Like the error message suggests, dictionaries in Python do not provide an append operation.
+You can instead just assign new values to their respective keys in a dictionary.
+mydict = {}
+mydict['item'] = input_value
+If you're wanting to append values as they're entered you could instead use a list.
+mylist = []
+mylist.append(input_value)
+Your line user['areas'].append[temp] looks like it is attempting to access a dictionary at the value of key 'areas', if you instead use a list you should be able to perform an append operation.
+Using a list instead:
+user['areas'] = []
+On that note, you might want to check out the possibility of using a defaultdict(list) for your problem. See here
+Share
+Follow
+edited Jan 12 '18 at 22:15
+answered Jan 12 '18 at 22:12
+Shane WilliamsonShane Williamson
+15111 silver badge55 bronze badges
+2
+4
+Dictionaries in Python do provide an update method though.
+So, if you want to add more key-value pairs: dict.update({'another_key': 'another_value'}).
+Maybe of value here.
+update will overwrite existing keys of the same name, so caveat emptor.
+– Matt Morgan
+Jan 12 '18 at 22:15
+Very true Matt! Although, it looks like they're trying to just append values here.
+– Shane Williamson
+Jan 12 '18 at 22:17
+Add a comment
+|
+-2
+Either
+use dict.setdefault() if the key is not added yet to dictionary :
+dict.setdefault(key,[]).append(value)
+or use, if you already have the keys set up:
+dict[key].append(value)
+source: stackoverflow answers
+Share
+Follow
+answered Oct 18 '19 at 8:50
+sivisivi
+9,06822 gold badges4343 silver badges4747 bronze badges
+1
+you should at least add a link to which answer from stackoverflow you're refering to
+– João Ciocca
+May 10 at 19:52
+Add a comment
+|
+Your Answer
+Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
+Draft saved
+Draft discarded
+Sign up or log in
+Sign up using Google
+Sign up using Facebook
+Sign up using Email and Password
+Submit
+Post as a guest
+Name
+Email
+Required, but never shown
+Post as a guest
+Name
+Email
+Required, but never shown
+Post Your Answer
+Discard
+By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
+Not the answer you're looking for? Browse other questions tagged python dictionary for-loop tuples
+or ask your own question.
+The Overflow Blog
+Using low-code tools to iterate products faster
+Podcast 345: A good software tutorial explains the How. A great one explains…
+Featured on Meta
+Take the 2021 Developer Survey
+Linked
+630
+How does collections.defaultdict work?
+6
+'dict' object has no attribute 'append' Json
+1
+'dict' object has no attribute 'append'
+Related
+1922
+How to know if an object has an attribute in Python
+220
+AttributeError: 'module' object has no attribute
+589
+Convert nested Python dict to object?
+1204
+In Python, how do I determine if an object is iterable?
+1307
+Referring to the null object in Python
+1429
+Why do Python classes inherit object?
+348
+Accessing dict keys like an attribute?
+373
+Converting Python dict to kwargs?
+345
+Why do I get AttributeError: 'NoneType' object has no attribute 'something'?
+502
+Error: “ 'dict' object has no attribute 'iteritems' ”
+Hot Network Questions
+Heating of hydraulic oil with hardtail electric MTB brakes
+Did I design my LED circuit correctly?
+Being forced to take annual leave against my wishes, what are my options
+What is the hardest part of transitioning from a PhD to a full-time career in academia?
+Is Huang Yanling (a Wuhan virology researcher) the world's first COVID-19 patient?
+How do trademarks apply to Open Source?
+What is this token?
+Are there any greater risks of traveling significantly faster to another planet?
+In the sentence "Ich begegnete einem alten Freund in Berlin", why the dative einem instead of the accusative einen?
+Sum of set bits from 1 to n
+Showing the bounding box for every coordinate system in QGIS
+Why doesn't the sun produce an emission spectrum?
+Refueling a Mars mission on the way
+How to indicate a checkbox/toggle is "always on"
+Are AP slugs for shotguns possible?
+A '50s Yeti movie which has a scene with two men sitting around a fire in a cave
+IQ test question assistance
+How do you say " Coup de grâce " in latin?
+Has physics ever given a physical significance to a mathematically abstract idea?
+How well would Max Faget's April 1, 1969 design for the Space Shuttle have actually worked? What would have been the major problems?
+Why aren't resistors being used here?
+Is buying lecture notes wrong?
+Is it a coincidence that on the far side of the moon almost no seas are visible?
+How come full throttle is meaning full speed instead of the opposite?
+more hot questions
+Question feed
+Subscribe to RSS
+Question feed
+To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+lang-py
+Stack Overflow
+Questions
+Jobs
+Developer Jobs Directory
+Salary Calculator
+Help
+Mobile
+Products
+Teams
+Talent
+Advertising
+Enterprise
+Company
+About
+Press
+Work Here
+Legal
+Privacy Policy
+Terms of Service
+Contact Us
+Cookie Settings
+Cookie Policy
+Stack Exchange Network
+Technology
+Life / Arts
+Culture / Recreation
+Science
+Other
+Stack Overflow
+Server Fault
+Super User
+Web Applications
+Ask Ubuntu
+Webmasters
+Game Development
+TeX - LaTeX
+Software Engineering
+Unix & Linux
+Ask Different (Apple)
+WordPress Development
+Geographic Information Systems
+Electrical Engineering
+Android Enthusiasts
+Information Security
+Database Administrators
+Drupal Answers
+SharePoint
+User Experience
+Mathematica
+Salesforce
+ExpressionEngine® Answers
+Stack Overflow em Português
+Blender
+Network Engineering
+Cryptography
+Code Review
+Magento
+Software Recommendations
+Signal Processing
+Emacs
+Raspberry Pi
+Stack Overflow на русском
+Code Golf
+Stack Overflow en español
+Ethereum
+Data Science
+Arduino
+Bitcoin
+Software Quality Assurance & Testing
+Sound Design
+Windows Phone
+more (29)
+Photography
+Science Fiction & Fantasy
+Graphic Design
+Movies & TV
+Music: Practice & Theory
+Worldbuilding
+Video Production
+Seasoned Advice (cooking)
+Home Improvement
+Personal Finance & Money
+Academia
+Law
+Physical Fitness
+Gardening & Landscaping
+Parenting
+more (10)
+English Language & Usage
+Skeptics
+Mi Yodeya (Judaism)
+Travel
+Christianity
+English Language Learners
+Japanese Language
+Chinese Language
+French Language
+German Language
+Biblical Hermeneutics
+History
+Spanish Language
+Islam
+Русский язык
+Russian Language
+Arqade (gaming)
+Bicycles
+Role-playing Games
+Anime & Manga
+Puzzling
+Motor Vehicle Maintenance & Repair
+Board & Card Games
+Bricks
+Homebrewing
+Martial Arts
+The Great Outdoors
+Poker
+Chess
+Sports
+more (16)
+MathOverflow
+Mathematics
+Cross Validated (stats)
+Theoretical Computer Science
+Physics
+Chemistry
+Biology
+Computer Science
+Philosophy
+Linguistics
+Psychology & Neuroscience
+Computational Science
+more (10)
+Meta Stack Exchange
+Stack Apps
+API
+Data
+Blog
+Facebook
+Twitter
+LinkedIn
+Instagram
+site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
+rev 2021.6.10.39470
+Stack Overflow works best with JavaScript enabled
+Your privacy
+By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
+Accept all cookies
+Customize settings

@@ -1,4 +1,4 @@
-python - AttributeError: 'str' object has no attribute 'append' - Stack Overflow
+html - Beginner php "Warning: Undefined array key" - Stack Overflow
 Stack Overflow
 About
 Products
@@ -54,248 +54,150 @@ Teams
 Q&A for work
 Connect and share knowledge within a single location that is structured and easy to search.
 Learn more
-AttributeError: 'str' object has no attribute 'append'
+Beginner php “Warning: Undefined array key” [duplicate]
 Ask Question
 Asked
-10 years, 7 months ago
+5 months ago
 Active
-11 days ago
+5 months ago
 Viewed
-262k times
-23
-9
->>> myList[1]
-'from form'
->>> myList[1].append(s)
-Traceback (most recent call last):
-File "<pyshell#144>", line 1, in <module>
-myList[1].append(s)
-AttributeError: 'str' object has no attribute 'append'
->>>
-Why myList[1] is considered a 'str' object? mList[1] returns the first item in the list 'from form' but I cannot append to item 1 in the list myList. Thank you.
-Edit01:
-@pyfunc: Thank you for the explanation; now I understand.
-I need to have a list of lists; so 'from form' should be a list. I did this (please correct if this not the right way):
->>> myList
-[1, 'from form', [1, 2, 't']]
->>> s = myList[1]
->>> s
-'from form'
->>> s = [myList[1]]
->>> s
-['from form']
->>> myList[1] = s
->>> myList
-[1, ['from form'], [1, 2, 't']]
->>>
-python
+12k times
+2
+This question already has answers here:
+“Notice: Undefined variable”, “Notice: Undefined index”, and “Notice: Undefined offset” using PHP
+(29 answers)
+Closed 3 days ago.
+So, I'm learning PHP and I keep getting "Warning: Undefined array key" in $GET_["fname"] and
+$GET_["age"]:
+<main>
+<form action="inputs.php" method="get">
+Name:
+<br/>
+<input type="text" name="fname">
+<br/>
+Age:
+<br/>
+<input type="number" name="age">
+<br/>
+<input type="submit" name="submit">
+</form>
+<br/>
+Your name is <?php echo $_GET["fname"]; ?>
+<br/>
+Your age is <?php echo $_GET["age"]; ?>
+</main>
+php html forms
 Share
-Improve this question
 Follow
-edited Oct 23 '10 at 20:16
-Zeynel
-asked Oct 23 '10 at 19:59
-ZeynelZeynel
-11.5k2727 gold badges8989 silver badges138138 bronze badges
+asked Jan 6 at 21:33
+mintfudgemintfudge
+2311 gold badge11 silver badge44 bronze badges
+2
 1
-1
-mList[1] returns second item of the mList
-– SilentGhost
-Oct 23 '10 at 20:06
+One the "first call" of the page the parameters are not set, that's why the error shows up. Check first if they are set using isset, then output them. (You can remove the action parameter if the page you submit to is the same page as the one your form is on)
+– brombeer
+Jan 6 at 21:34
+Thx for the action tip. :))
+– mintfudge
+Jan 6 at 21:52
 Add a comment
 |
-6 Answers
-6
+1 Answer
+1
 Active
 Oldest
 Votes
-23
-myList[1] is an element of myList and it's type is string.
-myList[1] is str, you can not append to it.
-myList is a list, you should have been appending to it.
->>> myList = [1, 'from form', [1,2]]
->>> myList[1]
-'from form'
->>> myList[2]
-[1, 2]
->>> myList[2].append('t')
->>> myList
-[1, 'from form', [1, 2, 't']]
->>> myList[1].append('t')
-Traceback (most recent call last):
-File "<stdin>", line 1, in <module>
-AttributeError: 'str' object has no attribute 'append'
->>>
-Share
-Improve this answer
-Follow
-answered Oct 23 '10 at 20:00
-pyfuncpyfunc
-60.4k1414 gold badges138138 silver badges132132 bronze badges
-Add a comment
-|
-7
-If you want to append a value to myList, use myList.append(s).
-Strings are immutable -- you can't append to them.
-Share
-Improve this answer
-Follow
-answered Oct 23 '10 at 20:00
-bstpierrebstpierre
-27k1414 gold badges6363 silver badges100100 bronze badges
-Add a comment
-|
 2
-Why myList[1] is considered a 'str' object?
-Because it is a string. What else is 'from form', if not a string? (Actually, strings are sequences too, i.e. they can be indexed, sliced, iterated, etc. as well - but that's part of the str class and doesn't make it a list or something).
-mList[1] returns the first item in the list 'from form'
-If you mean that myList is 'from form', no it's not!!! The second (indexing starts at 0) element is 'from form'. That's a BIG difference. It's the difference between a house and a person.
-Also, myList doesn't have to be a list from your short code sample - it could be anything that accepts 1 as index - a
-dict with 1 as index, a list, a tuple, most other sequences, etc. But that's irrelevant.
-but I cannot append to item 1 in the list myList
-Of course not, because it's a string and you can't append to string. String are immutable. You can concatenate (as in, "there's a new object that consists of these two") strings. But you cannot append (as in, "this specific object now has this at the end") to them.
+I'll assume you want to know how to get rid of this error message.
+The first time you load this page you display a form and $_GET is empty (that's why it is triggering warnings). Then you submit the form and the fname and age parameters will be added to the url (because your form's method is 'get').
+To resolve your issue you could wrap the two lines inside some if-statement, for example:
+<?php if(isset($_GET['fname']) && isset($_GET['age'])): ?>
+<br/>
+Your name is <?php echo $_GET["fname"]; ?>
+<br/>
+Your age is <?php echo $_GET["age"]; ?>
+<?php endif; ?>
 Share
-Improve this answer
 Follow
-answered Oct 23 '10 at 20:09
-user395760user395760
-1
-Thanks for the explanation; now I understand that myList[1] is the string "from form".
-– Zeynel
-Oct 23 '10 at 20:22
-Add a comment
-|
-0
-What you are trying to do is add additional information to each item in the list that you already created so
-alist[ 'from form', 'stuff 2', 'stuff 3']
-for j in range( 0,len[alist]):
-temp= []
-temp.append(alist[j]) # alist[0] is 'from form'
-temp.append('t') # slot for first piece of data 't'
-temp.append('-') # slot for second piece of data
-blist.append(temp)
-# will be alist with 2 additional fields for extra stuff assocated with each item in alist
-Share
-Improve this answer
-Follow
-answered Mar 14 '15 at 15:53
-Dr. BobDr. Bob
-111 bronze badge
-Add a comment
-|
-0
-This is simple program showing append('t') to the list.
-n=['f','g','h','i','k']
-for i in range(1):
-temp=[]
-temp.append(n[-2:])
-temp.append('t')
-print(temp)
-Output: [['i', 'k'], 't']
-Share
-Improve this answer
-Follow
-answered May 3 '19 at 19:45
-ReshmaReshma
+answered Jan 6 at 21:39
+Joshua AngnoeJoshua Angnoe
+80011 silver badge1010 bronze badges
 5
+I'm learning from a youtube course that was recorded in 2018, could be because it was an old version of php? In the video the teacher don't show any "isset" and his code still works, but mine doesn't.
+– mintfudge
+Jan 6 at 21:53
+I doubt that the tutorial code works without warnings/errors. Turn off error reporting/display and errors are not shown (bad practice), but your $_GET parameters will nevertheless not be set if the form isn't submitted
+– brombeer
+Jan 6 at 21:56
+Got it. Thank you so much for the help @brombeer
+– mintfudge
+Jan 6 at 22:06
+Yes, since php 8.0 (latest version) this type of errors are presented as warnings, before this they where classified as notices and notices are often times ignored.
+– Joshua Angnoe
+Jan 6 at 22:08
+Thank you @JoshuaAngnoe.
+– mintfudge
+Jan 7 at 17:55
 Add a comment
 |
-0
-Instead you can use the += syntax:
-a = "prin"
-a.append("T") #doesn't wok
-a += "t" #works
-Share
-Improve this answer
-Follow
-answered May 29 at 5:07
-Jesvin Vijesh SJesvin Vijesh S
-43944 silver badges2222 bronze badges
-Add a comment
-|
-Your Answer
-Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
-Draft saved
-Draft discarded
-Sign up or log in
-Sign up using Google
-Sign up using Facebook
-Sign up using Email and Password
-Submit
-Post as a guest
-Name
-Email
-Required, but never shown
-Post as a guest
-Name
-Email
-Required, but never shown
-Post Your Answer
-Discard
-By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
-Not the answer you're looking for? Browse other questions tagged python
+Not the answer you're looking for? Browse other questions tagged php html forms
 or ask your own question.
 The Overflow Blog
 Using low-code tools to iterate products faster
 Podcast 345: A good software tutorial explains the How. A great one explains…
 Featured on Meta
 Take the 2021 Developer Survey
-Visit chat
 Linked
-0
-AttributeError: str has no attribute append ( web scraping , links )
-0
-Python AttributeError: 'str' object has no attribute 'append'
-1
-AttributeError: 'str' object has no attribute 'sign'
+1262
+“Notice: Undefined variable”, “Notice: Undefined index”, and “Notice: Undefined offset” using PHP
 Related
-3114
-What is the difference between Python's list methods append and extend?
-1922
-How to know if an object has an attribute in Python
-1919
-Determine the type of an object?
-1758
-How do you append to a file?
-2
-Python - AttributeError: 'str' object has no attribute 'append'
-1
-AttributeError: 'module' object has no attribute 'Fieldstorage'
-19
-TensorFlow: AttributeError: 'Tensor' object has no attribute 'shape'
-2
-AttributeError: 'str' object has no attribute 'seek' using textfsm module (regex)
+2773
+How can I prevent SQL injection in PHP?
+2736
+Deleting an element from an array in PHP
+1594
+startsWith() and endsWith() functions in PHP
+2195
+How do you parse and process HTML/XML in PHP?
+4725
+Reference — What does this symbol mean in PHP?
+1262
+“Notice: Undefined variable”, “Notice: Undefined index”, and “Notice: Undefined offset” using PHP
+986
+PHP array delete by value (not key)
+2130
+How does PHP 'foreach' actually work?
+1193
+Reference - What does this error mean in PHP?
+2584
+Why shouldn't I use mysql_* functions in PHP?
 Hot Network Questions
-output entries that have highest score
-Can a petrified wizard communicate telepathically with their familiar?
-Why are SSH MITM tools able to read and modify data?
-Dsus4 In A major
-What is the advantage of gate resistor (R3) in this JFET voltage divider biasing circuit?
 Getting “Bye Bye Big Sur” error on installing Big Sur
-Is there a canonical source for the Arcane Trickster's magic?
-What are these sixteenth notes with left-right arrows beneath them supposed to mean
-Is Huang Yanling (a Wuhan virology researcher) the world's first COVID-19 patient?
+What does existential unforgeability mean in a digital signature scheme?
+How does black proceed in the below position?
+What are the numbers below the notes in Sarasate's "Gypsy Airs"
+Is there a threadlocker that requires heat to release and can withstand thousands of heat-cool cycles without needing to be reapplied or deteriorating
+What are the DM's responsibilities when dealing with a character's death?
+I'm Lazy: Close my Superparens
+Did I design my LED circuit correctly?
+Why is Ken's beer "gay"?
+Why do CMOS NOT gate designs differ from BJT NOT gate designs?
+Dealing with extremely inexperienced developers who have daily deadlines?
+What is "Horse and Pony II", created by the Battlefield devs (Refraction Games)?
+Interview by fellow PhD students, not the professor himself
+Being forced to take annual leave against my wishes, what are my options
+Why am I seeing the sun slightly north instead of slightly south early in the morning in Malta?
+What are the safety and warranty implications of steaming bread in a domestic oven?
+Mansfield 40 toilet flush levers keep breaking
+Showing the bounding box for every coordinate system in QGIS
+What's the definition of an artifact in regards to a Sphere of Annihilation?
+Why are SSH MITM tools able to read and modify data?
+In Bayesian statistics, data is considered nonrandom but can have a probability or be conditioned on. How?
+Former coworker I gave a reference for sabotaged the company on his last day - Should I update the reference contact with this new information?
 Are AP slugs for shotguns possible?
-Mandatory tabs-an unusual pattern?
-Why was the neutrino thought to be massless?
-Can I gain AC efficiency by spraying condensate water on the outdoor coils?
-Telling a coworker they aren't invited into my house
-"Which dreams, indeed, are ambition" in Hamlet Act 2, Scene 2
-History of /f/ sound in Russian
-How to indicate a checkbox/toggle is "always on"
-What does 高高矮矮 mean?
-Show exit code of last command in Bash prompt if it returned error
-IQ test question assistance
-Is buying lecture notes wrong?
-How realistic is the 1 kg/km² solar sail in "Death's End"?
-What is the point of hedging in this scenario?
-Emit random objects inside array-ed object
+How do airliner pilots practice recovering from a bounced landing?
 more hot questions
-Question feed
-Subscribe to RSS
-Question feed
-To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
-lang-py
+default
 Stack Overflow
 Questions
 Jobs
@@ -438,7 +340,7 @@ Twitter
 LinkedIn
 Instagram
 site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.6.9.39464
+rev 2021.6.10.39470
 Stack Overflow works best with JavaScript enabled
 Your privacy
 By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.

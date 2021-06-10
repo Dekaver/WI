@@ -1,395 +1,894 @@
-I get an error message when I try FreqDist() in NLTK -- NameError: name 'nltk' is not defined - Stack Overflow
-Stack Overflow
-About
-Products
-For Teams
-Stack Overflow
-Public questions & answers
-Stack Overflow for Teams
-Where developers & technologists share private knowledge with coworkers
-Jobs
-Programming & related technical career opportunities
-Talent
-Recruit tech talent & build your employer brand
-Advertising
-Reach developers & technologists worldwide
-About the company
-Loading…
-Log in
-Sign up
-current community
-Stack Overflow
-help
-chat
-Meta Stack Overflow
-your communities
-Sign up or log in to customize your list.
-more stack exchange communities
-company blog
-People who code: we want your input.
-Take the Survey
-Join Stack Overflow to learn, share knowledge, and build your career.
-Sign up with email
-Sign up
-Sign up with Google
-Sign up with GitHub
-Sign up with Facebook
-Home
-Public
-Questions
-Tags
-Users
-Find a Job
-Jobs
-Companies
-Teams
-Stack Overflow for Teams
-– Collaborate and share knowledge with a private group.
-Create a free Team
-What is Teams?
-Teams
-What’s this?
-Create free Team
-Teams
-Q&A for work
-Connect and share knowledge within a single location that is structured and easy to search.
-Learn more
-I get an error message when I try FreqDist() in NLTK — NameError: name 'nltk' is not defined
-Ask Question
-Asked
-8 years, 6 months ago
-Active
-1 year, 9 months ago
-Viewed
-22k times
-8
-1
-I'm learning about the NLTK and my mac
-is working fine except I have trouble with the FreqDist(). (I saw another question about FreqDist() but he was getting a different error message. TypeError: unhashable type: 'list')
-Here's an example:
->>> from nltk.corpus import brown
->>> news_text = brown.words(categories='news')
->>> fdist = nltk.FreqDist([w.lower() for w in news_text])
-Traceback (most recent call last):
-`
-File "<stdin>", line 1, in <module>`
-`NameError: name 'nltk' is not defined`
-This error message is pretty consistent. I get this message every time I try the FreqDist(). Other commands like - >>> brown.fileids() are fine.
-Thanks for your help!
-nltk
-Share
-Improve this question
-Follow
-edited Mar 31 '13 at 22:43
-alvas
-95.2k9191 gold badges367367 silver badges643643 bronze badges
-asked Nov 20 '12 at 15:42
-user1839239user1839239
-7911 gold badge11 silver badge55 bronze badges
-Add a comment
-|
-4 Answers
-4
-Active
-Oldest
-Votes
-16
-Before you can use FreqDist, you need to import it.
-Add a line as follows:
-import nltk
-or if you just want to use FreqDist you should try this:
->>> from nltk.corpus import brown
->>> from nltk import FreqDist
->>> news_text = brown.words(categories='news')
->>> fdist = FreqDist([w.lower() for w in news_text])
-Share
-Improve this answer
-Follow
-edited Mar 31 '13 at 22:49
-alvas
-95.2k9191 gold badges367367 silver badges643643 bronze badges
-answered Nov 21 '12 at 13:06
-SpaceghostSpaceghost
-6,07733 gold badges2525 silver badges4141 bronze badges
-2
-1
-or if you want to save yourself some typing in the long term, do "from nltk import FreqDist". That will allow you to write "FreqDist" in place of "nltk.FreqDist".
-– verbsintransit
-Nov 21 '12 at 17:00
-I have tried all the above and still get an error when I run the above code as below:
-– MindBrain
-Jul 15 '14 at 14:23
-Add a comment
-|
-1
-which means you haven't installed nltk.
-follow these steps to install nltk:
-1:go to this link https://pypi.python.org/pypi/setuptools at the end of page you find setuptools-7.0.zip (md5) download it, then unzip it. you can find easy_install.py python script.
-2:use the command sudo easy_install pip. By this time pip will be installed ready to use, (make sure you are in the directory where you can find easy_install script file).
-3:use this command sudo pip install -U nltk. successful execution ensure that nltk is now installed.
-4:open the IDLE then you type the following:
-import nltk
-if nltk is installed properly then you will be returned with console.
-Share
-Improve this answer
-Follow
-answered Oct 22 '14 at 11:27
-Manjunath NManjunath N
-1,1951010 silver badges2020 bronze badges
-Add a comment
-|
-0
-setuptools are required for older versions of Python. There is no need for the same if you are running 3.2+
-You can easily download the same from https://pypi.python.org/pypi/nltk
-For more information on http://www.nltk.org/install.html
-Share
-Improve this answer
-Follow
-answered Jun 14 '16 at 17:55
-ssssss
-40855 silver badges1818 bronze badges
-0
-Add a comment
-|
-0
-nltk requires data you need to download first.
-Then run the following code:
-import nltk
-nltk.download('stopwords')
-from nltk.corpus import stopwords
-stopwords.words("english")
-Share
-Improve this answer
-Follow
-edited Aug 17 '19 at 7:32
-marc
-85966 silver badges1818 bronze badges
-answered Aug 17 '19 at 6:38
-Mr S CoderMr S Coder
-39811 silver badge1212 bronze badges
-Add a comment
-|
-Your Answer
-Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
-Draft saved
-Draft discarded
-Sign up or log in
-Sign up using Google
-Sign up using Facebook
-Sign up using Email and Password
-Submit
-Post as a guest
-Name
-Email
-Required, but never shown
-Post as a guest
-Name
-Email
-Required, but never shown
-Post Your Answer
-Discard
-By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
-Not the answer you're looking for? Browse other questions tagged nltk
-or ask your own question.
-The Overflow Blog
-Using low-code tools to iterate products faster
-Podcast 345: A good software tutorial explains the How. A great one explains…
-Featured on Meta
-Take the 2021 Developer Survey
-Visit chat
-Linked
-2
-When using nltk. before a nltk function
-Related
-0
-tokenizer errors with nltk
-1
-POS tagging on GAE
-2
-I get an error message when I try FreqDist() in NLTK — NameError: name 'nltk' is not defined
-7
-AttributeError: can't set attribute from nltk.book import *
-1
-Sorting FreqDist in NLTK with get vs get()
-1
-Python, NLTK: NameError: name 'load_parser' is not defined
-0
-name 'nltk' is not defined
-Hot Network Questions
-Should I notify a med school about their student's cheating history?
-Is it illegal to implement a patented algorithm or method and take advantage from it?
-Dealing with extremely inexperienced developers who have daily deadlines?
-How realistic is the 1 kg/km² solar sail in "Death's End"?
-Simplest/cheapest way to build a tensegrity model?
-Is there a fundamental reason for the exponential dependence of the evolution of the temperature in an electronic deviced that is powered on?
-Is there a canonical source for the Arcane Trickster's magic?
-How important is "MIPS-C2® Brain Protection System" for a bicycle helmet?
-Are there any greater risks of traveling significantly faster to another planet?
-Is there a threadlocker that requires heat to release and can withstand thousands of heat-cool cycles without needing to be reapplied or deteriorating
-What would a bear species isolated on an island look like?
-What is the advantage of gate resistor (R3) in this JFET voltage divider biasing circuit?
-How to make Mathematica read in CSV as fast as Python's Pandas
-Can I gain AC efficiency by spraying condensate water on the outdoor coils?
-Why can't quantum computation replace classical computation?
-Why was the neutrino thought to be massless?
-Why aren't resistors being used here?
-Telling a coworker they aren't invited into my house
-Why some CRS are deprecated in QGIS?
-Is 2 hours 50 mins sufficient in Heathrow to connecting flight with different tickets and airlines
-Why would a modern city with a warm climate have a skyway system?
-Why does Lex turn on the flashlight?
-Is it a coincidence that on the far side of the moon almost no seas are visible?
-Refueling a Mars mission on the way
-more hot questions
-Question feed
-Subscribe to RSS
-Question feed
-To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
-Stack Overflow
-Questions
-Jobs
-Developer Jobs Directory
-Salary Calculator
-Help
-Mobile
-Products
-Teams
-Talent
-Advertising
+urllib.error.HTTPError: HTTP Error 403: Forbidden · Issue #399 · pytube/pytube · GitHub
+Skip to content
+Sign up
+Why GitHub?
+Features →
+Mobile →
+Actions →
+Codespaces →
+Packages →
+Security →
+Code review →
+Project management →
+Integrations →
+GitHub Sponsors →
+Customer stories→
+Team
 Enterprise
-Company
-About
-Press
-Work Here
-Legal
-Privacy Policy
-Terms of Service
-Contact Us
-Cookie Settings
-Cookie Policy
-Stack Exchange Network
-Technology
-Life / Arts
-Culture / Recreation
-Science
-Other
-Stack Overflow
-Server Fault
-Super User
-Web Applications
-Ask Ubuntu
-Webmasters
-Game Development
-TeX - LaTeX
-Software Engineering
-Unix & Linux
-Ask Different (Apple)
-WordPress Development
-Geographic Information Systems
-Electrical Engineering
-Android Enthusiasts
-Information Security
-Database Administrators
-Drupal Answers
-SharePoint
-User Experience
-Mathematica
-Salesforce
-ExpressionEngine® Answers
-Stack Overflow em Português
-Blender
-Network Engineering
-Cryptography
-Code Review
-Magento
-Software Recommendations
-Signal Processing
-Emacs
-Raspberry Pi
-Stack Overflow на русском
-Code Golf
-Stack Overflow en español
-Ethereum
-Data Science
-Arduino
-Bitcoin
-Software Quality Assurance & Testing
-Sound Design
-Windows Phone
-more (29)
-Photography
-Science Fiction & Fantasy
-Graphic Design
-Movies & TV
-Music: Practice & Theory
-Worldbuilding
-Video Production
-Seasoned Advice (cooking)
-Home Improvement
-Personal Finance & Money
-Academia
-Law
-Physical Fitness
-Gardening & Landscaping
-Parenting
-more (10)
-English Language & Usage
-Skeptics
-Mi Yodeya (Judaism)
-Travel
-Christianity
-English Language Learners
-Japanese Language
-Chinese Language
-French Language
-German Language
-Biblical Hermeneutics
-History
-Spanish Language
-Islam
-Русский язык
-Russian Language
-Arqade (gaming)
-Bicycles
-Role-playing Games
-Anime & Manga
-Puzzling
-Motor Vehicle Maintenance & Repair
-Board & Card Games
-Bricks
-Homebrewing
-Martial Arts
-The Great Outdoors
-Poker
-Chess
-Sports
-more (16)
-MathOverflow
-Mathematics
-Cross Validated (stats)
-Theoretical Computer Science
-Physics
-Chemistry
-Biology
-Computer Science
-Philosophy
-Linguistics
-Psychology & Neuroscience
-Computational Science
-more (10)
-Meta Stack Exchange
-Stack Apps
+Explore
+Explore GitHub →
+Learn and contribute
+Topics →
+Collections →
+Trending →
+Learning Lab →
+Open source guides →
+Connect with others
+The ReadME Project →
+Events →
+Community forum →
+GitHub Education →
+GitHub Stars program →
+Marketplace
+Pricing
+Plans →
+Compare plans →
+Contact Sales →
+Education →
+In this repository
+All GitHub
+↵
+Jump to
+↵
+No suggested jump to results
+In this repository
+All GitHub
+↵
+Jump to
+↵
+In this organization
+All GitHub
+↵
+Jump to
+↵
+In this repository
+All GitHub
+↵
+Jump to
+↵
+Sign in
+Sign up
+{{ message }}
+pytube
+/
+pytube
+Notifications
+Star
+4.4k
+Fork
+1.1k
+Code
+Issues
+18
+Pull requests
+1
+Actions
+Wiki
+Security
+Insights
+More
+Code
+Issues
+Pull requests
+Actions
+Wiki
+Security
+Insights
+New issue
+Have a question about this project? Sign up for a free GitHub account to open an issue and contact its maintainers and the community.
+Pick a username
+Email Address
+Password
+Sign up for GitHub
+By clicking “Sign up for GitHub”, you agree to our terms of service and
+privacy statement. We’ll occasionally send you account related emails.
+Already on GitHub?
+Sign in
+to your account
+Jump to bottom
+urllib.error.HTTPError: HTTP Error 403: Forbidden
+#399
+Closed
+NeverAskWhy
+opened this issue
+Jun 6, 2019
+· 63 comments
+Closed
+urllib.error.HTTPError: HTTP Error 403: Forbidden
+#399
+NeverAskWhy
+opened this issue
+Jun 6, 2019
+· 63 comments
+Labels
+stat: stale
+Comments
+Copy link
+NeverAskWhy
+commented
+Jun 6, 2019
+Hi all,
+I'm aware that there are some older issues with the same error, howevery I thought I would just give it a try. For some videos (like this one: https://www.youtube.com/watch?v=393C3pr2ioY ) I get a 403 error...others work fine though. Do you know of any workaround for that? I saw this thread in the older issue https://stackoverflow.com/questions/16627227/http-error-403-in-python-3-web-scraping but I'm not good enough in Python to find the right spot to implement it. Any help would be appreciated.
+PS: I already updated to the most current version (9.5.0).
+The text was updated successfully, but these errors were encountered:
+👍
+3
+Copy link
+Waarbubble
+commented
+Jun 7, 2019
+I am having the same problem, but for me, it is random whether the same youtube link will generate a 403 or not. My current testing links are:
+https://www.youtube.com/watch?v=pAgnJDJN4VA&index=117&list=PL3LCt07uiILKduYr52ZMYrE_PvbSuUdZM
+https://www.youtube.com/watch?v=t9psCAWrISg&index=136&list=PL3LCt07uiILKduYr52ZMYrE_PvbSuUdZM
+I am only trying to download the audio stream.
+Copy link
+Nowbob
+commented
+Jun 7, 2019
+It's a hack of a fix, but this is how I've got mine working for now (I'm running in python 2.7, you may need to fiddle depending on your version):
+In pytube/request.py:
+At line 4 I added:
+from urllib2 import Request
+And above line 21 (response = urlopen(url)):
+req = Request(url, headers = {"User-Agent": "Mozilla/5.0"})
+And then replace the line below:
+response = urlopen(url)
+with:
+response = urlopen(req)
+👍
+6
+Copy link
+Waarbubble
+commented
+Jun 7, 2019
+Just tested the solution, keeps randomly giving 403, and then working again.
+Copy link
+Author
+NeverAskWhy
+commented
+Jun 7, 2019
+@Waarbubble : you mean you tested @Nowbob's solution?
+Copy link
+Waarbubble
+commented
+Jun 7, 2019
+•
+edited
+yes
+Tested in python 3
+Copy link
+Nowbob
+commented
+Jun 7, 2019
+Yeah I was having the same "sometimes it works sometimes it doesn't" problem, but it's the best I could come up with in a short time.
+Copy link
+Waarbubble
+commented
+Jun 7, 2019
+It was worth a try.
+Copy link
+Author
+NeverAskWhy
+commented
+Jun 7, 2019
+I'm doing something wrong...
+In line for of request.py:
+from urllib import request
+then line 22/23:
+req = request(url, headers = {"User-Agent": "Mozilla/5.0"})
+response = urlopen(req)
+now I'm getting this error:
+self.watch_html = request.get(url=self.watch_url)
+File "C:\Users\janvo\AppData\Local\Programs\Python\Python37-32\lib\site-packages\pytube\request.py", line 22, in get
+req = request(url, headers = {"User-Agent": "Mozilla/5.0"})
+TypeError: 'module' object is not callable
+Copy link
+Waarbubble
+commented
+Jun 7, 2019
+If you are using python 3 the
+fourth line needs to be from urllib.request import Request
+and then line 22 will need a capital R in request
+👍
+3
+Copy link
+Author
+NeverAskWhy
+commented
+Jun 7, 2019
+Thanks...I changed it now. It's behaving the same way...three times I got the 403-error and then it worked.
+Copy link
+hoetaek
+commented
+Jun 11, 2019
+Getting the same error. I tried all the solutions above. And some works and some don't.
+👍
+1
+Copy link
+danielgordon10
+commented
+Jun 11, 2019
+This got much more frequent for me today for some reason. The above solutions do not seem to work for the new cases. Example video https://www.youtube.com/watch?v=ZYoUXaU81Gk
+Copy link
+fofofofofofofofo
+commented
+Jun 11, 2019
+I believe I've managed to fix this by changing &signature= in line 64 of mixins.py to &sig=.
+👍
+11
+This was referenced Jun 11, 2019
+The stream is empty since today. Alexa accept the command and make the response correctly but nothing is to hear
+ndg63276/alexa-youtube#74
+Closed
+cant find any enabled video skills
+ndg63276/alexa-youtube#72
+Closed
+Copy link
+Waarbubble
+commented
+Jun 11, 2019
+The solution works for me, no more random 403
+Copy link
+danielgordon10
+commented
+Jun 11, 2019
+•
+edited
+Neither suggested solution fixes my test video https://www.youtube.com/watch?v=ZYoUXaU81Gk
+👍
+1
+Copy link
+fofofofofofofofo
+commented
+Jun 11, 2019
+•
+edited
+@danielgordon10 What error are you getting? I just tried downloading that link and it seems to be working with the &sig= fix.
+pytube https://www.youtube.com/watch?v=ZYoUXaU81Gk --list
+<Stream: itag="43" mime_type="video/webm" res="360p" fps="30fps" vcodec="vp8.0" acodec="vorbis">
+<Stream: itag="18" mime_type="video/mp4" res="360p" fps="30fps" vcodec="avc1.42001E" acodec="mp4a.40.2">
+<Stream: itag="135" mime_type="video/mp4" res="480p" fps="30fps" vcodec="avc1.4d400b">
+<Stream: itag="244" mime_type="video/webm" res="480p" fps="30fps" vcodec="vp9">
+<Stream: itag="134" mime_type="video/mp4" res="360p" fps="30fps" vcodec="avc1.4d401e">
+<Stream: itag="243" mime_type="video/webm" res="360p" fps="30fps" vcodec="vp9">
+<Stream: itag="133" mime_type="video/mp4" res="240p" fps="30fps" vcodec="avc1.4d400c">
+<Stream: itag="242" mime_type="video/webm" res="240p" fps="30fps" vcodec="vp9">
+<Stream: itag="160" mime_type="video/mp4" res="144p" fps="30fps" vcodec="avc1.4d400b">
+<Stream: itag="278" mime_type="video/webm" res="144p" fps="30fps" vcodec="vp9">
+<Stream: itag="140" mime_type="audio/mp4" abr="128kbps" acodec="mp4a.40.2">
+<Stream: itag="171" mime_type="audio/webm" abr="128kbps" acodec="vorbis">
+<Stream: itag="249" mime_type="audio/webm" abr="50kbps" acodec="opus">
+<Stream: itag="250" mime_type="audio/webm" abr="70kbps" acodec="opus">
+<Stream: itag="251" mime_type="audio/webm" abr="160kbps" acodec="opus">
+pytube https://www.youtube.com/watch?v=ZYoUXaU81Gk --itag 251
+Мисс Новоуральск 2012.webm | 7446370 bytes
+Copy link
+danielgordon10
+commented
+Jun 11, 2019
+So I am able to get the stream but I can't download it.
+import pytube
+video_url = 'https://www.youtube.com/watch?v=ZYoUXaU81Gk'
+yt = pytube.YouTube(video_url)
+streams = yt.streams
+streams = (
+streams.filter(progressive=True, custom_filter_functions=[lambda x: x.resolution is not None])
+.order_by("resolution")
+.all()
+)
+stream = streams[0]
+video = stream.download()
+Then I get the urllib.error.HTTPError
+video = stream.download()
+File "/home/xkcd/miniconda3/envs/video-env/lib/python3.7/site-packages/pytube/streams.py", line 217, in download
+bytes_remaining = self.filesize
+File "/home/xkcd/miniconda3/envs/video-env/lib/python3.7/site-packages/pytube/streams.py", line 164, in filesize
+headers = request.get(self.url, headers=True)
+File "/home/xkcd/miniconda3/envs/video-env/lib/python3.7/site-packages/pytube/request.py", line 22, in get
+response = urlopen(url)
+File "/home/xkcd/miniconda3/envs/video-env/lib/python3.7/urllib/request.py", line 222, in urlopen
+return opener.open(url, data, timeout)
+File "/home/xkcd/miniconda3/envs/video-env/lib/python3.7/urllib/request.py", line 531, in open
+response = meth(req, response)
+File "/home/xkcd/miniconda3/envs/video-env/lib/python3.7/urllib/request.py", line 641, in http_response
+'http', request, response, code, msg, hdrs)
+File "/home/xkcd/miniconda3/envs/video-env/lib/python3.7/urllib/request.py", line 569, in error
+return self._call_chain(*args)
+File "/home/xkcd/miniconda3/envs/video-env/lib/python3.7/urllib/request.py", line 503, in _call_chain
+result = func(*args)
+File "/home/xkcd/miniconda3/envs/video-env/lib/python3.7/urllib/request.py", line 649, in http_error_default
+raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 403: Forbidden
+👍
+3
+Copy link
+fofofofofofofofo
+commented
+Jun 12, 2019
+I've only used this in CLI before so I'm not sure, my guess would be to check if it's importing the correct one.
+Copy link
+danielgordon10
+commented
+Jun 12, 2019
+It works fine for other videos...
+Copy link
+danielgordon10
+commented
+Jun 13, 2019
+I think I have a working fix now for this and a related issue (#392). It's not pretty, but it seems to get the job done.
+in mixins.py
+if ('signature=' in url or
+('s' not in stream and
+('&sig=' in url or '&lsig=' in url))):
+# For certain videos, YouTube will just provide them pre-signed, in
+# which case there's no real magic to download them and we can skip
+# the whole signature descrambling entirely.
+logger.debug('signature found, skip decipher')
+continue
+if js is not None:
+signature = cipher.get_signature(js, stream['s'])
+else:
+# signature not present in url (line 33), need js to descramble
+# TypeError caught in __main__
+raise TypeError('JS is None')
+logger.debug(
+'finished descrambling signature for itag=%s\n%s',
+stream['itag'], pprint.pformat(
+{
+'s': stream['s'],
+'signature': signature,
+}, indent=2,
+),
+)
+stream_manifest[i]['url'] = url + '&sig=' + signature
+👍
+20
+🎉
+10
+❤️
+4
+🚀
+1
+Copy link
+rsistema
+commented
+Jun 17, 2019
+I believe I've managed to fix this by changing &signature= in line 64 of mixins.py to &sig=.
+I tried the first fix from @Nowbob, but the problem persisted.
+Change the line 64 as you said and now it's working again. Perfectly on Python 2.7
+FearlessENT
+mentioned this issue
+Jun 18, 2019
+NameError: name 'pytube' is not defined
+#404
+Closed
+Copy link
+t4ke0
+commented
+Jun 18, 2019
+still have that error !?
+Copy link
+genesysvip
+commented
+Jun 27, 2019
+I think I have a working fix now for this and a related issue (#392). It's not pretty, but it seems to get the job done.
+in mixins.py
+if ('signature=' in url or
+('s' not in stream and
+('&sig=' in url or '&lsig=' in url))):
+# For certain videos, YouTube will just provide them pre-signed, in
+# which case there's no real magic to download them and we can skip
+# the whole signature descrambling entirely.
+logger.debug('signature found, skip decipher')
+continue
+if js is not None:
+signature = cipher.get_signature(js, stream['s'])
+else:
+# signature not present in url (line 33), need js to descramble
+# TypeError caught in __main__
+raise TypeError('JS is None')
+logger.debug(
+'finished descrambling signature for itag=%s\n%s',
+stream['itag'], pprint.pformat(
+{
+'s': stream['s'],
+'signature': signature,
+}, indent=2,
+),
+)
+stream_manifest[i]['url'] = url + '&sig=' + signature
+It's work thank you!
+But I modify two file mixins.py & cipher.py
+% mixins.py
+ref #402
+if ('signature=' in url) or ('&sig=' in url) or ('&lsig=' in url):
+to
+if ('signature=' in url or
+('s' not in stream and
+('&sig=' in url or '&lsig=' in url))):
+and
+stream_manifest[i]['url'] = url + '&signature=' + signature
+to
+stream_manifest[i]['url'] = url + '&sig=' + signature
+and change pattern in cipher.py
+pattern = [
+r'yt.akamaized.net/)\s*||\s*'
+r'.?\sc\s*&&\sd.set([^,]+\s,\s*(?:encodeURIComponent'
+r'\s*()?(?P[a-zA-Z0-9$]+)(',
+r'.sig||(?P[a-zA-Z0-9$]+)(',
+r'\bc\s*&&\sd.set([^,]+\s,\s*(?:encodeURIComponent'
+r'\s*()?(?P[a-zA-Z0-9$]+)(',
+]
+to
+pattern = [
+r'\b[cs]\s*&&\s*[adf].set([^,]+\s*,\sencodeURIComponent\s(\s*(?P[a-zA-Z0-9$]+)(',
+r'\b[a-zA-Z0-9]+\s*&&\s*[a-zA-Z0-9]+.set([^,]+\s*,\sencodeURIComponent\s(\s*(?P[a-zA-Z0-9$]+)(',
+r'(?P[a-zA-Z0-9$]+)\s*=\sfunction(\sa\s*)\s*{\sa\s=\sa.split(\s""\s*)',
+r'(["'])signature\1\s*,\s*(?P[a-zA-Z0-9$]+)(',
+r'.sig||(?P[a-zA-Z0-9$]+)(',
+r'yt.akamaized.net/)\s*||\s*.?\s[cs]\s*&&\s*[adf].set([^,]+\s*,\s*(?:encodeURIComponent\s*()?\s*'
+r'(?P[a-zA-Z0-9$]+)(',
+r'\b[cs]\s*&&\s*[adf].set([^,]+\s*,\s*(?P[a-zA-Z0-9$]+)(',
+r'\b[a-zA-Z0-9]+\s*&&\s*[a-zA-Z0-9]+.set([^,]+\s*,\s*(?P[a-zA-Z0-9$]+)(',
+r'\bc\s*&&\sa.set([^,]+\s,\s*([^)])\s(\s*(?P[a-zA-Z0-9$]+)(',
+r'\bc\s*&&\s*[a-zA-Z0-9]+.set([^,]+\s*,\s*([^)])\s(\s*(?P[a-zA-Z0-9$]+)(',
+r'\bc\s*&&\s*[a-zA-Z0-9]+.set([^,]+\s*,\s*([^)])\s(\s*(?P[a-zA-Z0-9$]+)('
+]
+I forget this issue number, someone can help me to link?
+work on python 3.6, pytube 9.5.0, urllib3 1.25.3
+👍
+2
+marcounetB
+mentioned this issue
+Jun 27, 2019
+HTTP Error 403: Forbidden
+#414
+Closed
+This was referenced Jun 29, 2019
+Pytube don't works with some videos
+#413
+Closed
+Regex Pattern
+#416
+Closed
+403 error
+#407
+Closed
+22 hidden items
+Load more…
+Copy link
+martis-git
+commented
+Aug 16, 2019
+•
+edited
+@gittethis
+You're the best!
+Thanks for fixing solution
+😄
+1
+gittethis
+mentioned this issue
+Aug 18, 2019
+pytube --bug KeyError: 'title' who can help me
+#450
+Closed
+nicholsonjf
+mentioned this issue
+Aug 20, 2019
+AttributeError: 'NoneType' object has no attribute 'default_filename'
+#457
+Closed
+jscpeterson
+mentioned this issue
+Aug 20, 2019
+Accidental issue, please ignore or delete
+#458
+Closed
+Copy link
+snwfdhmp
+commented
+Aug 26, 2019
+I tried for 15 minutes before realising that : for the mixins.py fix, you have to replace the whole snippet, not just replace signature to sig.
+Now it works, thanks a lot !
+👍
+2
+Copy link
+ogspeace
+commented
+Aug 27, 2019
+•
+edited
+With 9.5.1 (the latest downloaded) I tinkered with all the fixes from this thread and finally got it working. There are two separate issues that i had to tackle:
+1. KeyError:['title'] and
+2. "403: Forbidden"
+1)FIrst one to solve was the KeyError:['title']
+For some reason the 'title' key is not retrieved anymore in the root of the player_config_args dictionary, hence the error. Upon debugging of the req/reply I found It is instead present in "player_response/videoDetails/title", so edit main.py:
+def title(self):
+#Get the video title.
+#:rtype: str
+try:
+tt1 = self.player_config_args['title']
+except:
+tt1 = self.player_config_args.get('player_response', {}).get('videoDetails', {}).get('title')
+finally:
+if not tt1:
+tt1 = "Unknown YTube video"
+return tt1
+and streams.py:
+def default_filename(self):
+"""Generate filename based on the video title.
+:rtype: str
+:returns:
+An os file system compatible filename.
+"""
+try:
+title = self.player_config_args['title']
+except:
+title = self.player_config_args.get('player_response', {}).get('videoDetails', {}).get('title')
+finally:
+if not title:
+title = "Unknown YTube video"
+filename = safe_filename(title)
+return '{filename}.{s.subtype}'.format(filename=filename, s=self)
+I did also apply the fix found in this thread to request.py about the Agent-User:
+from urllib2 import Request
+and
+req = Request(url, headers = {"User-Agent": "Mozilla/5.0"})
+#response = urlopen(url)
+response = urlopen(req)
+2)For the "403 Forbidden" I applied first the suggestion about mixins.py in the apply_signature function:
+if ('signature=' in url or
+('s' not in stream and
+('&sig=' in url or '&lsig=' in url))):
+# For certain videos, YouTube will just provide them pre-signed, in
+# which case there's no real magic to download them and we can skip
+# the whole signature descrambling entirely.
+logger.debug('signature found, skip decipher')
+continue
+if js is not None:
+signature = cipher.get_signature(js, stream['s'])
+else:
+# signature not present in url (line 33), need js to descramble
+# TypeError caught in __main__
+raise TypeError('JS is None')
+logger.debug(
+'finished descrambling signature for itag=%s\n%s',
+stream['itag'], pprint.pformat(
+{
+'s': stream['s'],
+'signature': signature,
+}, indent=2,
+),
+)
+stream_manifest[i]['url'] = url + '&sig=' + signature
+then in the cipher.py I replaced the regex pattern as suggested in another post of this thread:
+pattern = [
+r'\b[cs]\s*&&\s*[adf]\.set\([^,]+\s*,\s*encodeURIComponent\s*\(\s*(?P<sig>[a-zA-Z0-9$]+)\(',
+r'\b[a-zA-Z0-9]+\s*&&\s*[a-zA-Z0-9]+\.set\([^,]+\s*,\s*encodeURIComponent\s*\(\s*(?P<sig>[a-zA-Z0-9$]+)\(',
+r'(?P<sig>[a-zA-Z0-9$]+)\s*=\s*function\(\s*a\s*\)\s*{\s*a\s*=\s*a\.split\(\s*""\s*\)',
+r'(["\'])signature\1\s*,\s*(?P<sig>[a-zA-Z0-9$]+)\(',
+r'\.sig\|\|(?P<sig>[a-zA-Z0-9$]+)\(',
+r'yt\.akamaized\.net/\)\s*\|\|\s*.*?\s*[cs]\s*&&\s*[adf]\.set\([^,]+\s*,\s*(?:encodeURIComponent\s*\()?\s*(?P<si$',
+r'\b[cs]\s*&&\s*[adf]\.set\([^,]+\s*,\s*(?P<sig>[a-zA-Z0-9$]+)\(',
+r'\b[a-zA-Z0-9]+\s*&&\s*[a-zA-Z0-9]+\.set\([^,]+\s*,\s*(?P<sig>[a-zA-Z0-9$]+)\(',
+r'\bc\s*&&\s*a\.set\([^,]+\s*,\s*\([^)]*\)\s*\(\s*(?P<sig>[a-zA-Z0-9$]+)\(',
+r'\bc\s*&&\s*[a-zA-Z0-9]+\.set\([^,]+\s*,\s*\([^)]*\)\s*\(\s*(?P<sig>[a-zA-Z0-9$]+)\(',
+r'\bc\s*&&\s*[a-zA-Z0-9]+\.set\([^,]+\s*,\s*\([^)]*\)\s*\(\s*(?P<sig>[a-zA-Z0-9$]+)\('
+]
+@gitethis 's solutions work, and tried it on my scripts, however, here's a slight tweak for python3 users:
+in request.py instead of: from urllib2 import Request
+use this: from urllib.request import Request
+/ogs
+👍
+5
+Copy link
+jrial
+commented
+Aug 27, 2019
+Seeing as how this appears to be solved with the changes described in various comments, did anyone create a pull request already? I noticed one while quickly scanning this issue, but that one's CI tests failed.
+Copy link
+Algomorph
+commented
+Sep 8, 2019
+@jrial ,
+Unfortunately, I seem to have applied all the fixes so helpfully summarized
+by @ogspeace, and I'm still getting "urllib.error.HTTPError: HTTP Error 403: Forbidden"
+Copy link
+halfendt
+commented
+Sep 12, 2019
+Thank you! Works for me as well on Python 3.6.5, urllib3 1.25.3, and PyTube 9.5.1.
+To summarize the patches needed:
+mixins.py - patch by @danielgordon10 in #399 (comment)
+cipher.py - edit of @GravelCZ's patch by @nhatton96 at the bottom of #399 (comment)
+This also worked very well for me.
+Copy link
+xyang5987
+commented
+Sep 16, 2019
+I changed both mixins.py and cipher.py, but I still got HTTPError: Forbidden
+Copy link
+xyang5987
+commented
+Sep 16, 2019
+I use Python 3.7 and pytube 9.5.2 with win 10.
+Copy link
+Algomorph
+commented
+Sep 18, 2019
+Thank you! Works for me as well on Python 3.6.5, urllib3 1.25.3, and PyTube 9.5.1.
+To summarize the patches needed:
+mixins.py - patch by @danielgordon10 in #399 (comment)
+cipher.py - edit of @GravelCZ's patch by @nhatton96 at the bottom of #399 (comment)
+I tried this in Windows 10, and it did finally work. Python 3.7.4, PyTube 9.5.2 with the above 2 patches. I also had to apply the title retrieval patch in main.py and streams.py as outlined by @ogspeace. Did not have to mess with urllib for whatever reason, but maybe just got lucky on the ~50 videos I've tried.
+👍
+1
+😄
+1
+Copy link
+gittethis
+commented
+Sep 18, 2019
+I use Python 3.7 and pytube 9.5.2 with win 10.
+did you use also my patches on "title" retrieval for main.py and streams.py, as outlined and confirmed by @ogspeace ?
+Copy link
+Algomorph
+commented
+Sep 18, 2019
+To keep things clear here, the 'title' retrieval patches fixed a separate issue, e.g. using you_tube_object.video after it's been created. It doesn't affect the "HTTPError: Forbidden" issue, and as such should be kept in a separate PR.
+Copy link
+eyobofficial
+commented
+Sep 26, 2019
+For me, the errors are not occurring randomly. They always seem to occur when I attempt to download music videos.
+Copy link
+santoslopes
+commented
+Oct 19, 2019
+Not working
+It seems to be a good option to download youtube contents but no support, therefore let's look after other options.
+VanDenHendeSimon
+referenced
+this issue
+in VanDenHendeSimon/youtube-downloader
+Oct 28, 2019
+changes to pytube scripts
+67b0b41
+Copy link
+MrSlagovich
+commented
+Nov 2, 2019
+I think I have a working fix now for this and a related issue (#392). It's not pretty, but it seems to get the job done.
+in mixins.py
+if ('signature=' in url or
+('s' not in stream and
+('&sig=' in url or '&lsig=' in url))):
+# For certain videos, YouTube will just provide them pre-signed, in
+# which case there's no real magic to download them and we can skip
+# the whole signature descrambling entirely.
+logger.debug('signature found, skip decipher')
+continue
+if js is not None:
+signature = cipher.get_signature(js, stream['s'])
+else:
+# signature not present in url (line 33), need js to descramble
+# TypeError caught in __main__
+raise TypeError('JS is None')
+logger.debug(
+'finished descrambling signature for itag=%s\n%s',
+stream['itag'], pprint.pformat(
+{
+'s': stream['s'],
+'signature': signature,
+}, indent=2,
+),
+)
+stream_manifest[i]['url'] = url + '&sig=' + signature
+How do i find this mixins py file?
+👍
+1
+Copy link
+YashKarthik
+commented
+Dec 3, 2019
+I tried @Nowbob fix but does'nt work, it says Request not defined.
+Copy link
+gittethis
+commented
+Dec 3, 2019
+You’re missing the Request module in your python installation.
+Sent with the great iPhone
+…
+On 3 Dec 2019, at 15:17, Yash ***@***.***> wrote:
+﻿
+I tried @Nowbob fix but does'nt work, it says Request not defined.
+—
+You are receiving this because you were mentioned.
+Reply to this email directly, view it on GitHub, or unsubscribe.
+Copy link
+Contributor
+hbmartin
+commented
+Feb 6, 2020
+@YashKarthik @gittethis fixed in pytube3: https://github.com/hbmartin/pytube3/
+Copy link
+yijun-li-20
+commented
+Feb 9, 2020
+Cannot work with the solutions in this thread
+Probably because of copyright?
+Mac OS Mojave, Python 3.7
+Copy link
+Contributor
+hbmartin
+commented
+Feb 9, 2020
+@yijun-li-20 what url are you looking at? what version of pytube are you using?
+Copy link
+makesnosense
+commented
+Mar 29, 2020
+hi, pytube3 9.6.4 get urllib.error.HTTPError: HTTP Error 403: Forbidden on this video:
+https://www.youtube.com/watch?v=yEG2VTHS9yg
+Copy link
+aulorbe
+commented
+May 5, 2020
+Where is the mixins.py file in urllib3?
+Copy link
+amitbirajdar
+commented
+Aug 1, 2020
+I am using Python3 and the following changes worked for me:
+So, you basically study the structure of your URL. In my case since I'm working with Youtube Data API and hence a sample URL for me looked like:
+https://www.googleapis.com/youtube/v3/videos?part=snippet&id=8SbUC-UaAxE&key=AIzaSyAVtcurxxUyQznBtLU5UmxqrRSENZ6gAIA
+I used the urllib.parse library and then generated the above URL using the strategy below:
+params = {'part':'snippet','id':VIDEO_KEY_goes_here', 'key':'YOUR_API_KEY_goes_here'}
+querystring = urllib.parse.urlencode(params)
+stats_url = 'https://www.googleapis.com/youtube/v3/videos'+'?'+querystring
+👍
+1
+Copy link
+github-actions
+bot
+commented
+Sep 30, 2020
+This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs. Thank you for your contributions.
+github-actions
+bot
+added
+the
+stat: stale
+label
+Sep 30, 2020
+github-actions
+bot
+closed this
+Oct 7, 2020
+Copy link
+cha1m
+commented
+Mar 25, 2021
+With 9.5.1 (the latest downloaded) I tinkered with all the fixes from this thread and finally got it working. There are two separate issues that i had to tackle:
+KeyError:['title'] and
+"403: Forbidden"
+1)FIrst one to solve was the KeyError:['title']
+For some reason the 'title' key is not retrieved anymore in the root of the player_config_args dictionary, hence the error. Upon debugging of the req/reply I found It is instead present in "player_response/videoDetails/title", so edit main.py:
+def title(self):
+#Get the video title.
+#:rtype: str
+try:
+tt1 = self.player_config_args['title']
+except:
+tt1 = self.player_config_args.get('player_response', {}).get('videoDetails', {}).get('title')
+finally:
+if not tt1:
+tt1 = "Unknown YTube video"
+return tt1
+and streams.py:
+def default_filename(self):
+"""Generate filename based on the video title.
+:rtype: str
+:returns:
+An os file system compatible filename.
+"""
+try:
+title = self.player_config_args['title']
+except:
+title = self.player_config_args.get('player_response', {}).get('videoDetails', {}).get('title')
+finally:
+if not title:
+title = "Unknown YTube video"
+filename = safe_filename(title)
+return '{filename}.{s.subtype}'.format(filename=filename, s=self)
+I did also apply the fix found in this thread to request.py about the Agent-User:
+from urllib2 import Request
+and
+req = Request(url, headers = {"User-Agent": "Mozilla/5.0"})
+#response = urlopen(url)
+response = urlopen(req)
+2)For the "403 Forbidden" I applied first the suggestion about mixins.py in the apply_signature function:
+if ('signature=' in url or
+('s' not in stream and
+('&sig=' in url or '&lsig=' in url))):
+# For certain videos, YouTube will just provide them pre-signed, in
+# which case there's no real magic to download them and we can skip
+# the whole signature descrambling entirely.
+logger.debug('signature found, skip decipher')
+continue
+if js is not None:
+signature = cipher.get_signature(js, stream['s'])
+else:
+# signature not present in url (line 33), need js to descramble
+# TypeError caught in __main__
+raise TypeError('JS is None')
+logger.debug(
+'finished descrambling signature for itag=%s\n%s',
+stream['itag'], pprint.pformat(
+{
+'s': stream['s'],
+'signature': signature,
+}, indent=2,
+),
+)
+stream_manifest[i]['url'] = url + '&sig=' + signature
+then in the cipher.py I replaced the regex pattern as suggested in another post of this thread:
+pattern = [
+r'\b[cs]\s*&&\s*[adf]\.set\([^,]+\s*,\s*encodeURIComponent\s*\(\s*(?P<sig>[a-zA-Z0-9$]+)\(',
+r'\b[a-zA-Z0-9]+\s*&&\s*[a-zA-Z0-9]+\.set\([^,]+\s*,\s*encodeURIComponent\s*\(\s*(?P<sig>[a-zA-Z0-9$]+)\(',
+r'(?P<sig>[a-zA-Z0-9$]+)\s*=\s*function\(\s*a\s*\)\s*{\s*a\s*=\s*a\.split\(\s*""\s*\)',
+r'(["\'])signature\1\s*,\s*(?P<sig>[a-zA-Z0-9$]+)\(',
+r'\.sig\|\|(?P<sig>[a-zA-Z0-9$]+)\(',
+r'yt\.akamaized\.net/\)\s*\|\|\s*.*?\s*[cs]\s*&&\s*[adf]\.set\([^,]+\s*,\s*(?:encodeURIComponent\s*\()?\s*(?P<si$',
+r'\b[cs]\s*&&\s*[adf]\.set\([^,]+\s*,\s*(?P<sig>[a-zA-Z0-9$]+)\(',
+r'\b[a-zA-Z0-9]+\s*&&\s*[a-zA-Z0-9]+\.set\([^,]+\s*,\s*(?P<sig>[a-zA-Z0-9$]+)\(',
+r'\bc\s*&&\s*a\.set\([^,]+\s*,\s*\([^)]*\)\s*\(\s*(?P<sig>[a-zA-Z0-9$]+)\(',
+r'\bc\s*&&\s*[a-zA-Z0-9]+\.set\([^,]+\s*,\s*\([^)]*\)\s*\(\s*(?P<sig>[a-zA-Z0-9$]+)\(',
+r'\bc\s*&&\s*[a-zA-Z0-9]+\.set\([^,]+\s*,\s*\([^)]*\)\s*\(\s*(?P<sig>[a-zA-Z0-9$]+)\('
+]
+any chance get your help in privet? on e mail maybe?
+🚀
+1
+Sign up for free
+to join this conversation on GitHub.
+Already have an account?
+Sign in to comment
+Assignees
+No one assigned
+Labels
+stat: stale
+Projects
+None yet
+Milestone
+No milestone
+Linked pull requests
+Successfully merging a pull request may close this issue.
+None yet
+39 participants
+and others
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
 API
-Data
+Training
 Blog
-Facebook
-Twitter
-LinkedIn
-Instagram
-site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.6.9.39464
-Stack Overflow works best with JavaScript enabled
-Your privacy
-By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
-Accept all cookies
-Customize settings
+About
+You can’t perform that action at this time.
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.

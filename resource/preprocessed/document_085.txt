@@ -1,63 +1,104 @@
-Understanding Array IndexOutofbounds Exception in Java - GeeksforGeeksSkip to content
-Tutorials
-Algorithms
-Analysis of Algorithms
-Asymptotic AnalysisWorst, Average and Best CasesAsymptotic NotationsLittle o and little omega notationsLower and Upper Bound TheoryAnalysis of LoopsSolving RecurrencesAmortized AnalysisWhat does 'Space Complexity' mean ?Pseudo-polynomial AlgorithmsPolynomial Time Approximation SchemeA Time Complexity QuestionSearching AlgorithmsSorting AlgorithmsGraph AlgorithmsPattern SearchingGeometric AlgorithmsMathematicalRandomized AlgorithmsGreedy AlgorithmsDynamic ProgrammingDivide and ConquerBacktrackingBranch and BoundAll AlgorithmsData Structures
-ArraysLinked ListStackQueueBinary TreeBinary Search TreeHeapHashingGraphAdvanced Data StructureMatrixStringsAll Data StructuresLanguages
-CC++JavaPythonC#JavascriptjQuerySQLPHPScalaPerlGo LanguageHTMLCSSKotlinInterview Corner
-Company PreparationTop TopicsPractice Company QuestionsInterview ExperiencesExperienced InterviewsInternship InterviewsCompetititve ProgrammingDesign PatternsMultiple Choice QuizzesGATE
-GATE Computer Science NotesLast Minute NotesGATE CS Solved PapersGATE CS Original Papers and Official KeysGATE 2021 DatesGATE CS 2021 SyllabusImportant Topics for GATE CSISRO CS
-ISRO CS Solved PapersISRO CS Original Papers and Official KeysISRO CS Syllabus for Scientist/Engineer ExamUGC NET CS
-UGC NET CS Notes Paper IIUGC NET CS Notes Paper IIIUGC NET CS Solved PapersCS Subjects
-MathematicsOperating SystemDBMSComputer NetworksComputer Organization and ArchitectureTheory of ComputationCompiler DesignDigital LogicSoftware EngineeringWeb Technologies
-HTMLCSSJavascriptAngularJSReactJSNodeJSBootstrapjQueryPHPSchool Learning
-School ProgrammingMathematics
-AlgebraTrigonometryStatisticsProbabilityGeometryMensurationCalculusMaths Notes (Class 8-11)
-Class 8 NotesClass 9 NotesClass 10 NotesClass 11 NotesNCERT Solutions
-Class 8 Maths SolutionClass 9 Maths SolutionClass 10 Maths SolutionClass 11 Maths SolutionClass 12 Maths SolutionRD Sharma Solutions
-Class 8 Maths SolutionClass 9 Maths SolutionClass 10 Maths SolutionClass 11 Maths SolutionClass 12 Maths SolutionStudent
-Campus Ambassador ProgramSchool Ambassador ProgramProjectGeek of the MonthCampus Geek of the MonthPlacement CourseCompetititve ProgrammingTestimonialsGeek on the TopCareersInternshipJobs
-Apply for JobsPost a JobCourses
-WriteCome write articles for us and get featuredPracticeLearn and code with the best industry expertsPremiumGet access to ad-free content, doubt assistance and more!JobsCome and find your dream job with usGeeks DigestQuizzesGeeks CampusGblog ArticlesIDECampus Mantri
-HomeCoursesGBlogPuzzlesWhat's New ?
-Change Language
-Related Articles
-▲Related ArticlesJavaFX | Button with examplesJavaFX | LabelJavaFX | VBox ClassJavaFX | HBox ClassJavaFX | How to set padding between nodes of a GridPaneJavaFX | Insets ClassUnderstanding Array IndexOutofbounds Exception in JavaWorking with JAR and Manifest files In JavaJar files in JavaConverting Text to Speech in JavaHow to play an Audio file using JavaJavaFX | Building a Media PlayerJavaFX | TextFieldArrays in JavaSplit() String method in Java with examplesArrays.sort() in Java with examplesFor-each loop in JavaReverse a string in JavaHow to iterate any Map in JavaInitialize an ArrayList in JavaStack Class in JavaCollections.sort() in Java with ExamplesObject Oriented Programming (OOPs) Concept in JavaHow to add an element to an Array in Java?Overriding in JavaMultidimensional Arrays in JavaHashMap in Java with ExamplesQueue Interface In JavaLinkedList in JavaInheritance in JavaImprove Article
-Understanding Array IndexOutofbounds Exception in JavaDifficulty Level :
-EasyLast Updated :
-06 Feb, 2019Java supports creation and manipulation of arrays, as a data structure. The index of an array is an integer value that has value in interval [0, n-1], where n is the size of the array. If a request for a negative or an index greater than or equal to size of array is made, then the JAVA throws a ArrayIndexOutOfBounds Exception. This is unlike C/C++ where no index of bound check is done.The ArrayIndexOutOfBoundsException is a Runtime Exception thrown only at runtime. The Java Compiler does not check for this error during the compilation of a program.// A Common cause index out of boundpublic class NewClass2{    public static void main(String[] args)    {        int ar[] = {1, 2, 3, 4, 5};        for (int i=0; i<=ar.length; i++)          System.out.println(ar[i]);    }}Runtime error throws an Exception:Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 5
-at NewClass2.main(NewClass2.java:5)
-Output:1
-2
-3
-4
-5
-Here if you carefully see, the array is of size 5. Therefore while accessing its element using for loop, the maximum value of index can be 4 but in our program it is going till 5 and thus the exception.Let’s see another example using arraylist:// One more example with index out of boundimport java.util.ArrayList;public class NewClass2{    public static void main(String[] args)    {        ArrayList<String> lis = new ArrayList<>();        lis.add("My");        lis.add("Name");        System.out.println(lis.get(2));    }}Runtime error here is a bit more informative than the previous time-Exception in thread "main" java.lang.IndexOutOfBoundsException: Index: 2, Size: 2
-at java.util.ArrayList.rangeCheck(ArrayList.java:653)
-at java.util.ArrayList.get(ArrayList.java:429)
-at NewClass2.main(NewClass2.java:7)
-Lets understand it in a bit of detail-Index here defines the index we are trying to access.The size gives us information of the size of the list.Since size is 2, the last index we can access is (2-1)=1, and thus the exceptionThe correct way to access array is :for (int i=0; i<ar.length; i++)
-{
-}Handling the Exception:Use for-each loop: This automatically handles indices while accessing the elements of an array. Example-for(int m : ar){
-}Use Try-Catch: Consider enclosing your code inside a try-catch statement and manipulate the exception accordingly. As mentioned, Java won’t let you access an invalid index and will definitely throw an ArrayIndexOutOfBoundsException. However, we should be careful inside the block of the catch statement, because if we don’t handle the exception appropriately, we may conceal it and thus, create a bug in your application.Quiz QuestionThis article is contributed by Rishabh Mahrsee. If you like GeeksforGeeks and would like to contribute, you can also write an article and mail your article to contribute@geeksforgeeks.org. See your article appearing on the GeeksforGeeks main page and help other Geeks.Please write comments if you find anything incorrect, or you want to share more information about the topic discussed aboveAttention reader! Don’t stop learning now. Get hold of all the important Java Foundation and Collections concepts with the Fundamentals of Java and Java Collections Course at a student-friendly price and become industry ready. To complete your preparation from learning a language to DS Algo and many more,  please refer Complete Interview Preparation Course.My Personal Notes
-arrow_drop_upSave
-LikePreviousJavaFX | Insets ClassNext
-Working with JAR and Manifest files In JavaRecommended ArticlesPage :Understanding OutOfMemoryError Exception in Java05, Jul 17Comparison of Exception Handling in C++ and Java10, Dec 10Exception Propagation in Java26, Dec 17Nested try blocks in Exception Handling in Java21, Oct 18Exception Handling with Method Overriding in Java10, Dec 18Version Enhancements in Exception Handling introduced in Java SE 703, Apr 20Java Program to Handle Unchecked Exception03, Nov 20Java Program to Handle Checked Exception26, Oct 20Java Program to use Catch to Handle the Exception09, Nov 20Java Program to Handle the Exception Methods15, Nov 20Java Program to Handle the Exception Hierarchies14, Nov 20User-defined Custom Exception in Java15, Jan 16Infinity or Exception in Java when divide by 0?16, Jan 16Null Pointer Exception In Java23, Sep 16Types of Exception in Java with Examples14, Dec 163 Different ways to print Exception messages in Java18, May 17Output of Java program | Set 12(Exception Handling)22, May 17Understanding "static" in "public static void main" in Java10, Sep 18Understanding Classes and Objects in Java11, Sep 18Understanding for loops in Java18, Oct 18Understanding public static void main(String[] args) in Java21, Jan 19Understanding Object Cloning in Java with Examples14, Jun 19Understanding threads on Producer Consumer Problem | Java08, May 20Understanding storage of static methods and static variables in Java16, May 20Article Contributed By :GeeksforGeeksVote for difficultyCurrent difficulty :
-EasyEasy
-Normal
-Medium
-Hard
-ExpertArticle Tags :Java-Array-ProgramsJava-ArraysJava-ExceptionsJavaSchool ProgrammingPractice Tags :JavaReport IssueWhat's NewDSA Self Paced CourseView DetailsAd free experience with GeeksforGeeks PremiumView DetailsMost popular in JavaSingleton Class in JavaInterfaces in JavaSet in JavaArrayList in JavaMultithreading in JavaMost visited in School ProgrammingPython DictionaryArrays in C/C++Inheritance in C++C++ Classes and ObjectsConstructors in C++Writing code in comment?
-Please use ide.geeksforgeeks.org,
-generate link and share the link here.
-Load Comments×
-5th Floor, A-118,Sector-136, Noida, Uttar Pradesh - 201305
-feedback@geeksforgeeks.orgCompanyAbout UsCareersPrivacy PolicyContact UsCopyright PolicyLearnAlgorithmsData StructuresLanguagesCS
-SubjectsVideo TutorialsPracticeCoursesCompany-wiseTopic-wiseHow to begin?ContributeWrite an ArticleWrite Interview
-ExperienceInternshipsVideos@geeksforgeeks
-, Some rights reserved
-We use cookies to ensure you have the best browsing experience on our website. By using our site, you
-acknowledge that you have read and understood our
-Cookie Policy &
-Privacy Policy
-Got It !
+Warning: undefined array key … in wp-cli.phar on line 213 | WordPress.org
+About WordPressAbout WordPressWordPress.orgDocumentationSupportFeedbackSearchLog InRegister
+Skip to content	WordPress.org
+Search WordPress.org for:
+Submit
+Toggle Menu
+Showcase
+Learn
+Themes
+Plugins
+Mobile
+SupportDocumentationForums
+Get InvolvedFive for the Future
+About
+Blog
+Hosting
+Get WordPress
+Skip to content
+Support
+Forums
+Guidelines
+Documentation
+Get Involved
+Search for:
+Search forums
+Support » Localhost Installs » Warning: undefined array key … in wp-cli.phar on line 213
+Warning: undefined array key … in wp-cli.phar on line 213
+Resolved
+enrique71
+(@enrique71)
+2 months, 1 week ago
+I installed wp-cli according to instructions on Win 10 but now it’s giving me this weird error that appears nowhere on the internet. When I use command wp cli update:
+Warning: Undefined array key “a:1:{s:3:”ssl”;b:1;}” in phar://C:/wp-cli/wp-cli.phar/vendor/rmccue/requests/library/Requests.php on line 213
+Error: Failed to get url ‘https://api.github.com/repos/wp-cli/wp-cli/releases?per_page=100&#8217;: No working transports found.
+I figured it was an environment issue so I checked and php wasn’t installed. So I installed latest version. Turns out that on Windows, php requires Visual Studio 19 so I installed that. Then I re-downloaded the .phar and it still gives that error.
+The PATH has everything it should afaik. I am using MAMP for Windows. Maybe I don’t need PHP installed to my Windows since it’s running virtualized in MAMP? Is there a conflict between the MAMP php.ini and the Windows php.ini? Is there a conflict between MAMP’s php 7.4.1 and Windows’ php 8.0.3? Does the “ssl” in the array mean I need to install ssl keys?
+Thanks for any suggestions.
+This topic was modified 2 months, 1 week ago by enrique71.
+This topic was modified 2 months, 1 week ago by enrique71.
+Viewing 3 replies - 1 through 3 (of 3 total)
+Thread Starter
+enrique71
+(@enrique71)
+2 months, 1 week ago
+Update: I needed to create a (development) php.ini and uncomment extension=openssl as well as the extension_dir = "ext" variable.
+Now php is giving two “fsockopen.php” errors.
+Thread Starter
+enrique71
+(@enrique71)
+2 months, 1 week ago
+Well, I managed to get php working on my machine by following instructions here:
+http://www.jamespgilbert.com/2019/09/up-and-running-fast-with-php-apache-on-windows-10/
+However now that installation conflicts with MAMP, so that MAMP has to run on port 81. The locally installed WP no longer runs.
+…
+Uninstalled the separate install of php by removing the Path declaration. Then went back into Windows Features and unchecked all Internet Information Services that the above site recommended for php. Restarted, and now MAMP and the site work again.
+Now, back to the start: type wp at the administrator command line… the result:
+‘php’ is not recognized as an internal or external command,
+operable program or batch file.
+Completely flummoxed.
+This reply was modified 2 months, 1 week ago by enrique71.
+Thread Starter
+enrique71
+(@enrique71)
+2 months, 1 week ago
+The problem was that the php version running under MAMP was not registered in the Windows PATH. Not sure how that happened. I added the path directly to the currently running version and restarted Windows, and everything runs fine.
+This reply was modified 2 months, 1 week ago by enrique71.
+This reply was modified 2 months, 1 week ago by enrique71.
+Viewing 3 replies - 1 through 3 (of 3 total)
+You must be logged in to reply to this topic.
+In: Localhost Installs
+3 replies
+1 participant
+Last reply from: enrique71
+Last activity: 2 months, 1 week ago
+Status: resolved
+Topic TagsInstall
+Views
+Topics with no replies
+Non-support topics
+Resolved topics
+Unresolved topics
+All topics
+About
+Blog
+Hosting
+Donate
+Support
+Developers
+Get Involved
+Learn
+Showcase
+Plugins
+Themes
+WordCamp
+WordPress.TV
+BuddyPress
+bbPress
+WordPress.com
+Matt
+Privacy
+Public Code
+@WordPress
+WordPress
+Code is Poetry.

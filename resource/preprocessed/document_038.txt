@@ -1,341 +1,184 @@
-jupyter notebook - NameError: name 'np' is not defined - Stack Overflow
-Stack Overflow
-About
-Products
-For Teams
-Stack Overflow
-Public questions & answers
-Stack Overflow for Teams
-Where developers & technologists share private knowledge with coworkers
-Jobs
-Programming & related technical career opportunities
-Talent
-Recruit tech talent & build your employer brand
-Advertising
-Reach developers & technologists worldwide
-About the company
-Loading…
-Log in
-Sign up
-current community
-Stack Overflow
-help
-chat
-Meta Stack Overflow
-your communities
-Sign up or log in to customize your list.
-more stack exchange communities
-company blog
-People who code: we want your input.
-Take the Survey
-Join Stack Overflow to learn, share knowledge, and build your career.
-Sign up with email
-Sign up
-Sign up with Google
-Sign up with GitHub
-Sign up with Facebook
-Home
-Public
-Questions
-Tags
-Users
-Find a Job
-Jobs
-Companies
-Teams
-Stack Overflow for Teams
-– Collaborate and share knowledge with a private group.
-Create a free Team
-What is Teams?
-Teams
-What’s this?
-Create free Team
-Teams
-Q&A for work
-Connect and share knowledge within a single location that is structured and easy to search.
-Learn more
-NameError: name 'np' is not defined
-Ask Question
-Asked
-1 year, 6 months ago
-Active
-2 months ago
-Viewed
-5k times
-0
-1
-I try to import the following functions:
-import numpy as np
-def load_labels(path):
-y = np.load(path)
-return y
-def print_sentence():
-print("hi")
-from a Jupyter notebook, with name "save_load" into another Jupyter notebook with the following code:
-!pip install import-ipynb
-import import_ipynb
-import save_load
-from save_load import load_labels, print_sentence
-The function print_sentence works fine in the notebook, but with the function load_labels I receive the following error:
-NameError: name 'np' is not defined
-What could be the reason for this error? I've imported numpy as np in both notebooks.
-jupyter-notebook python-import nameerror
-Share
-Improve this question
-Follow
-asked Dec 2 '19 at 18:16
-Code NowCode Now
-51155 silver badges1414 bronze badges
-Add a comment
-|
-2 Answers
-2
-Active
-Oldest
-Votes
-0
-In "save_load" instead of import numpy as np try import numpy, it worked for me.
-Share
-Improve this answer
-Follow
-answered Mar 23 '20 at 19:25
-RogerRoger
-1
-Add a comment
-|
-0
-You can try this:
-import numpy as np
-or
-from numpy import *
-Share
-Improve this answer
-Follow
-answered Apr 9 at 7:05
-illeasilleas
-28433 silver badges1717 bronze badges
-Add a comment
-|
-Your Answer
-Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
-Draft saved
-Draft discarded
-Sign up or log in
-Sign up using Google
-Sign up using Facebook
-Sign up using Email and Password
-Submit
-Post as a guest
-Name
-Email
-Required, but never shown
-Post as a guest
-Name
-Email
-Required, but never shown
-Post Your Answer
-Discard
-By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
-Not the answer you're looking for? Browse other questions tagged jupyter-notebook python-import nameerror
-or ask your own question.
-The Overflow Blog
-Using low-code tools to iterate products faster
-Podcast 345: A good software tutorial explains the How. A great one explains…
-Featured on Meta
-Take the 2021 Developer Survey
-Related
-584
-How to import a module given its name as string?
-773
-How to fix “Attempted relative import in non-package” even with __init__.py
-589
-Using IPython notebooks under version control
-462
-Conda environments not showing up in Jupyter Notebook
-1
-In Jupyter Notebook NameError when I try to import a module
-3
-name '_C' is not defined pytorch+jupyter notebook
-1
-error NameError: name 'head' is not defined on jupyter notebook
--1
-Import soundfile as sf but on jupyter notebook sf gives NameError
-Hot Network Questions
-Term for "place of death"
-Why can the block production rate be as low as two per hour?
-What would a bear species isolated on an island look like?
-How to make Mathematica read in CSV as fast as Python's Pandas
-Why some CRS are deprecated in QGIS?
-Is cohomology always related to topology?
-Why am I seeing the sun slightly north instead of slightly south early in the morning in Malta?
-Why did this gallon of milk stay fresh for so long?
-What does 高高矮矮 mean?
-Are there any greater risks of traveling significantly faster to another planet?
-Can a petrified wizard communicate telepathically with their familiar?
-What can US senators do against diversity trainings in the US Army?
-Emit random objects inside array-ed object
-History of /f/ sound in Russian
-How come full throttle is meaning full speed instead of the opposite?
-Can't open snap-store
-How important is learning hardware/architecture for scientific computing?
-Is LUKS still an effective option for consumer FDE considering Elcomsoft can break it?
-Is it a coincidence that on the far side of the moon almost no seas are visible?
-What does "parity pattern" mean?
-Display polygon as a line in legend
-Why are most women in anime housewives instead of being independent?
-Dsus4 In A major
-How realistic is the 1 kg/km² solar sail in "Death's End"?
-more hot questions
-Question feed
-Subscribe to RSS
-Question feed
-To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
-lang-py
-Stack Overflow
-Questions
-Jobs
-Developer Jobs Directory
-Salary Calculator
-Help
-Mobile
-Products
-Teams
-Talent
-Advertising
-Enterprise
-Company
-About
-Press
-Work Here
-Legal
-Privacy Policy
-Terms of Service
-Contact Us
-Cookie Settings
-Cookie Policy
-Stack Exchange Network
-Technology
-Life / Arts
-Culture / Recreation
-Science
-Other
-Stack Overflow
-Server Fault
-Super User
-Web Applications
-Ask Ubuntu
-Webmasters
-Game Development
-TeX - LaTeX
-Software Engineering
-Unix & Linux
-Ask Different (Apple)
-WordPress Development
-Geographic Information Systems
-Electrical Engineering
-Android Enthusiasts
-Information Security
-Database Administrators
-Drupal Answers
-SharePoint
-User Experience
-Mathematica
-Salesforce
-ExpressionEngine® Answers
-Stack Overflow em Português
-Blender
-Network Engineering
-Cryptography
-Code Review
-Magento
-Software Recommendations
-Signal Processing
-Emacs
-Raspberry Pi
-Stack Overflow на русском
-Code Golf
-Stack Overflow en español
-Ethereum
+Python TypeError: str object cannot be interpreted as an integer | Python | cppsecrets.com
+Articles
+C++
+C++ Algorithms
+Python
+Python Django
+GDB
+Linux
 Data Science
-Arduino
-Bitcoin
-Software Quality Assurance & Testing
-Sound Design
-Windows Phone
-more (29)
-Photography
-Science Fiction & Fantasy
-Graphic Design
-Movies & TV
-Music: Practice & Theory
-Worldbuilding
-Video Production
-Seasoned Advice (cooking)
-Home Improvement
-Personal Finance & Money
-Academia
-Law
-Physical Fitness
-Gardening & Landscaping
-Parenting
-more (10)
-English Language & Usage
-Skeptics
-Mi Yodeya (Judaism)
-Travel
-Christianity
-English Language Learners
-Japanese Language
-Chinese Language
-French Language
-German Language
-Biblical Hermeneutics
-History
-Spanish Language
-Islam
-Русский язык
-Russian Language
-Arqade (gaming)
-Bicycles
-Role-playing Games
-Anime & Manga
-Puzzling
-Motor Vehicle Maintenance & Repair
-Board & Card Games
-Bricks
-Homebrewing
-Martial Arts
-The Great Outdoors
-Poker
-Chess
-Sports
-more (16)
-MathOverflow
-Mathematics
-Cross Validated (stats)
-Theoretical Computer Science
-Physics
-Chemistry
-Biology
-Computer Science
-Philosophy
-Linguistics
-Psychology & Neuroscience
-Computational Science
-more (10)
-Meta Stack Exchange
-Stack Apps
-API
-Data
-Blog
-Facebook
-Twitter
-LinkedIn
-Instagram
-site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.6.9.39464
-Stack Overflow works best with JavaScript enabled
-Your privacy
-By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
-Accept all cookies
-Customize settings
+Assignment
+Shell Scripting
+Vim
+OpenSSL
+Docker
+AWS
+SQL
+Tech News
+Git
+Blockchain
+Authors
+All Authors
+Leaderboard
+Services
+Certification
+Workshops
+Internship
+Sign In
+×
+Password Recovery
+To recover your password please fill in your email address
+Email
+Submit
+Back To Login
+Don't Have An Account Yet ?
+Signup!
+×
+Create An Account
+Please fill in below form to create an account with us
+First Name
+First Name
+Email
+Gender
+Male
+Female
+Password
+Signup
+Back To Login
+×
+Login
+Email
+Password
+Forgot Your Password ?
+Don't Have An Account Yet ?
+Signup!
+×
+Search
+Search
+Cateogry
+Select Category
+C++
+C++ Algorithms
+Python
+Python Django
+GDP
+Linux
+Data Science
+Assignment
+Shell Scripting
+Vim
+OpenSSL
+Docker
+AWS
+SQL
+Tech News
+Other
+Python TypeError: str object cannot be interpreted as an integer
+Python
+/
+Python TypeError: str object cannot be interpreted as an integer
+C++C++ AlgorithmsPythonPython DjangoGDBLinuxData ScienceAssignmentShell ScriptingVimOpenSSLDockerAWSSQLTech NewsGitBlockchain
+Top Latest Articles
+Top Viewed Articles
+Authors
+Certificates
+Code Formatter
+Python TypeError: str object cannot be interpreted as an integerArticle Creation Date : 07-Jan-2020 04:45:32 PMPython TypeError: 'str' object cannot be interpreted as an IntegerTypeError occurs when you made a function call or use an operator on inappropriate data type.For example: Below is the example for summation of 'n' natural numbers.In this case, you have passed input as string in 'main' method, where the function 'result' waitsfor integer value. Which results in TypeError. To get rid of error, add integer datatype to input.And the result will be:Use Try and Except in python. When an error occurs, python generate an exception which can be handled.Exceptions can be used for handling errors in the program. When you think your code will generate an error,  then you can use exception handling.And output of program will be:Read more about TypeError in the link given below:http://cs.carleton.edu/cs_comps/1213/pylearn/final_results/encyclopedia/typeError.html
+Views : 4880
+ABOUT THE AUTHOR
+Photo Credit : Designed by Freepik
+sowmya k
+India
+View Profile
+More Articles of sowmya k:
+Name
+Views
+Likes
+Python geometry in tkinter
+344
+0
+Python SyntaxError: inconsistent use of tabs and spaces in indentation
+1156
+1
+Python program to concatenate two lists
+230
+1
+Indentation error in Python
+267
+0
+Python IndexError: list index out of range
+779
+1
+python ModuleNotFoundError, How to fix it?
+517
+0
+Python import python file into another python file
+717
+0
+Exception Handling in python
+267
+0
+Python Convert python file into .exe file
+278
+0
+Types of Errors in Python
+1486
+2
+Python TypeError: can only concatenate tuple (not set) to tuple
+726
+0
+Python ModuleNotFoundError: No module named pytest
+2381
+1
+Python ModuleNotFoundError: No module named tensorflow
+2069
+1
+Python ModuleNotFoundError: No Module named scipy
+9284
+1
+PythonTypeError: Tuple object does not support item assignment.
+5077
+1
+Python EOF Error
+373
+1
+Python TypeError: str object cannot be interpreted as an integer
+4880
+1
+PythonTypeError: can only concatenate str (not int) to str
+1719
+3
+Python ModuleNotFoundError: No module named django
+1844
+1
+conda is not recognized as internal or external command
+2007
+1
+Comments
+cppsecrets.com
+A platform for C++ and Python Engineers, where they can contribute their C++ and Python experience along with tips and tricks.
+Articles
+C++
+C++ Algorithms
+Python
+Python Django
+GDB
+Linux
+Tech News
+Other
+Quick Links
+Home
+About us
+Portfolio
+Articles
+Leaderboard
+News and Highlights
+Author's
+Services
+Internships
+Webinar
+Campus Ambassador
+Contact Us
+Terms and Conditions
+Copyright © 2017 - 2020 CPPSECRETS TECHNOLOGIES PVT LTD
+All Rights Reserved.

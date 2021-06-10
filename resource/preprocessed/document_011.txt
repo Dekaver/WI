@@ -1,4 +1,4 @@
-python - Raw_Input() Is Not Defined - Stack Overflow
+python - AttributeError: 'numpy.ndarray' object has no attribute 'toarray' - Stack Overflow
 Stack Overflow
 About
 Products
@@ -54,48 +54,118 @@ Teams
 Q&A for work
 Connect and share knowledge within a single location that is structured and easy to search.
 Learn more
-Raw_Input() Is Not Defined [duplicate]
+AttributeError: 'numpy.ndarray' object has no attribute 'toarray'
 Ask Question
 Asked
-5 years, 4 months ago
+7 years, 6 months ago
 Active
-3 years, 7 months ago
+7 years, 6 months ago
 Viewed
-185k times
-50
-6
-This question already has answers here:
-How do I use raw_input in Python 3
-(8 answers)
-Closed 5 years ago.
-I'm a seventh grade programmer so I may be missing a lot of things in this program, but for my coding club my instructor asked us to make a guess the number game. I have very limited knowledge on this subject, since I've only attended four classes. Anyway, when I run this program in Python IDLE 3.5 this is what it says:
+23k times
+4
+1
+I am extracting features out of a text corpus, and I am using a td-fidf vectorizer and truncated singular value decomposition from scikit-learn in order to achieve that. However, since the algorithm I want to try out requires dense matrices and the vectorizer returns sparse matrices I need to convert those matrices to dense arrays. But, whenever I try to convert those arrays I get an error telling me that my numpy array object has no atribute "toarray". What am I doing wrong?
+The function:
+def feature_extraction(train,train_test,test_set):
+vectorizer = TfidfVectorizer(min_df = 3,strip_accents = "unicode",analyzer = "word",token_pattern = r'\w{1,}',ngram_range = (1,2))
+print("fitting Vectorizer")
+vectorizer.fit(train)
+print("transforming text")
+train = vectorizer.transform(train)
+train_test = vectorizer.transform(train_test)
+test_set = vectorizer.transform(test_set)
+print("Dimensionality reduction")
+svd = TruncatedSVD(n_components = 100)
+svd.fit(train)
+train = svd.transform(train)
+train_test = svd.transform(train_test)
+test_set = svd.transform(test_set)
+print("convert to dense array")
+train = train.toarray()
+test_set = test_set.toarray()
+train_test = train_test.toarray()
+print(train.shape)
+return train,train_test,test_set
+traceback:
 Traceback (most recent call last):
-File "C:\Users\morrris\AppData\Local\Programs\Python\Python35-32\guess_that_number.py", line 7, in <module>
-name= raw_input()
-NameError: name 'raw_input' is not defined
-I tried changing the code, but it seems to not like the raw_input().
-python undefined raw-input
+File "C:\Users\Anonymous\workspace\final_submission\src\linearSVM.py", line 24, in <module>
+x_train,x_test,test_set = feature_extraction(x_train,x_test,test_set)
+File "C:\Users\Anonymous\workspace\final_submission\src\Preprocessing.py", line 57, in feature_extraction
+train = train.toarray()
+AttributeError: 'numpy.ndarray' object has no attribute 'toarray'
+Update:
+Willy pointed out that my assumption of the matrix being sparse might be wrong. So I tried feeding my data to my algorithm with dimensionality reduction and it actually worked without any conversion, however when I excluded dimensionality reduction, which gave me around 53k features I get the following error:
+Traceback (most recent call last):
+File "C:\Users\Anonymous\workspace\final_submission\src\linearSVM.py", line 28, in <module>
+result = bayesian_ridge(x_train,x_test,y_train,y_test,test_set)
+File "C:\Users\Anonymous\workspace\final_submission\src\Algorithms.py", line 84, in bayesian_ridge
+algo = algo.fit(x_train,y_train[:,i])
+File "C:\Python27\lib\site-packages\sklearn\linear_model\bayes.py", line 136, in fit
+dtype=np.float)
+File "C:\Python27\lib\site-packages\sklearn\utils\validation.py", line 220, in check_arrays
+raise TypeError('A sparse matrix was passed, but dense '
+TypeError: A sparse matrix was passed, but dense data is required. Use X.toarray() to convert to a dense numpy array.
+Can someone explain this?
+Update2
+As requested, I'll give all the code involved. Since it is scattered over different files I'll just post it in steps. For clarity I'll leave all the module imports out.
+This is how I preprocess my code:
+def regexp(data):
+for row in range(len(data)):
+data[row] = re.sub(r'[\W_]+'," ",data[row])
+return data
+def clean_the_text(data):
+alist = []
+data = nltk.word_tokenize(data)
+for j in data:
+j = j.lower()
+alist.append(j.rstrip('\n'))
+alist = " ".join(alist)
+return alist
+def loop_data(data):
+for i in range(len(data)):
+data[i] = clean_the_text(data[i])
+return data
+if __name__ == "__main__":
+print("loading train")
+train_text = porter_stemmer(loop_data(regexp(list(np.array(p.read_csv(os.path.join(dir,"train.csv")))[:,1]))))
+print("loading test_set")
+test_set = porter_stemmer(loop_data(regexp(list(np.array(p.read_csv(os.path.join(dir,"test.csv")))[:,1]))))
+After splitting my train_set into a x_train and a x_test for cross_validation I transform my data using the feature_extraction function above.
+x_train,x_test,test_set = feature_extraction(x_train,x_test,test_set)
+Finally I feed them into my algorithm
+def bayesian_ridge(x_train,x_test,y_train,y_test,test_set):
+algo = linear_model.BayesianRidge()
+algo = algo.fit(x_train,y_train)
+pred = algo.predict(x_test)
+error = pred - y_test
+result.append(algo.predict(test_set))
+print("Bayes_error: ",cross_val(error))
+return result
+python numpy machine-learning scikit-learn
 Share
 Follow
-edited Nov 3 '17 at 11:39
-Olivier Pons
-14k2424 gold badges9898 silver badges190190 bronze badges
-asked Feb 3 '16 at 4:26
-Makailah MorrisMakailah Morris
-51111 gold badge44 silver badges33 bronze badges
-3
+edited Nov 22 '13 at 20:45
+Learner
+asked Nov 22 '13 at 18:22
+LearnerLearner
+78533 gold badges1313 silver badges2121 bronze badges
 5
-Python 3.5 doesn't have raw_input. It has input()
-– Andy♦
-Feb 3 '16 at 4:27
-In the future, when you post code, try to post the minimum needed to exhibit the symptom you are asking about.
-In this case, name= raw_input() is quite sufficient.
-See stackoverflow.com/help/mcve
-– Terry Jan Reedy
-Feb 3 '16 at 14:53
-I'm sorry, I didn't know
-– Makailah Morris
-Feb 3 '16 at 21:53
+4
+If train is already an ndarray, then your assumption about it returning a sparse matrix is incorrect.
+– willy
+Nov 22 '13 at 18:26
+You might be right, let me check that.
+– Learner
+Nov 22 '13 at 18:28
+Checked it. Going to add an edit to my question right now.
+– Learner
+Nov 22 '13 at 18:33
+you should include all the code, not just messages. ndarray is dense by definition, sparse matrices are represented in different objects, so there is rather an error in your code (which you did not attach)
+– lejlot
+Nov 22 '13 at 19:50
+Ok, I'll add all the code involved.
+– Learner
+Nov 22 '13 at 20:22
 Add a comment
 |
 1 Answer
@@ -103,73 +173,91 @@ Add a comment
 Active
 Oldest
 Votes
-98
-For Python 3.x, use input(). For Python 2.x, use raw_input(). Don't forget you can add a prompt string in your input() call to create one less print statement. input("GUESS THAT NUMBER!").
+2
+TruncatedSVD.transform returns an array, not a sparse matrix. In fact, in the present version of scikit-learn, only the vectorizers return sparse matrices.
 Share
 Follow
-answered Feb 3 '16 at 4:28
-heinstheinst
-7,48855 gold badges3434 silver badges7373 bronze badges
-0
+answered Nov 23 '13 at 13:07
+Fred FooFred Foo
+329k6969 gold badges690690 silver badges802802 bronze badges
+1
+@Learner: it's in the docstring for that method.
+– Fred Foo
+Nov 23 '13 at 16:00
 Add a comment
 |
-Not the answer you're looking for? Browse other questions tagged python undefined raw-input
+Your Answer
+Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
+Draft saved
+Draft discarded
+Sign up or log in
+Sign up using Google
+Sign up using Facebook
+Sign up using Email and Password
+Submit
+Post as a guest
+Name
+Email
+Required, but never shown
+Post as a guest
+Name
+Email
+Required, but never shown
+Post Your Answer
+Discard
+By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
+Not the answer you're looking for? Browse other questions tagged python numpy machine-learning scikit-learn
 or ask your own question.
 The Overflow Blog
 Using low-code tools to iterate products faster
 Podcast 345: A good software tutorial explains the How. A great one explains…
 Featured on Meta
 Take the 2021 Developer Survey
-Linked
-610
-How do I use raw_input in Python 3
--2
-How i over come with name error in python
--3
-Have this error (name 'raw_input' is not defined)
-62
-How to show matplotlib plots in python
-0
-If-Else statement not asking for input in Python
 Related
-965
-How to check a not-defined variable in JavaScript
-2021
-JavaScript check if variable exists (is defined/initialized)
+1922
+How to know if an object has an attribute in Python
+1919
+Determine the type of an object?
+502
+Error: “ 'dict' object has no attribute 'iteritems' ”
 2
-pydev interactive console and raw_input
+How to split sparse matrix into train and test sets?
 0
-Python 3 Dice Sim issue
+how does validation_split work in training a neural network model?
 0
-Problems Installing Tensor Flow Windows 10
-40
-“Could not interpret optimizer identifier” error in Keras
+ValueError: Input arrays should have the same number of samples as target arrays. Found 1280 input samples and 320 target samples
+1
+How to Increase accuracy and precision for my logistic regression model?
 Hot Network Questions
-Are AP slugs for shotguns possible?
-What is the hardest part of transitioning from a PhD to a full-time career in academia?
-Is there any country that jumped to developed status during the past 75 years after WW2?
-What does "parity pattern" mean?
-A recently published paper seriously impairs the novelty of my dissertation. Which should be the purpose of the next meeting with my supervisor?
-Display polygon as a line in legend
-Why are most women in anime housewives instead of being independent?
-Why was the neutrino thought to be massless?
-Why would they use human soldiers over undead ones?
-3-dimensional h-cobordisms
-Has physics ever given a physical significance to a mathematically abstract idea?
-History of /f/ sound in Russian
-Is there a diff() function in Julia DataFrames like pandas?
-Should I notify a med school about their student's cheating history?
-Why some CRS are deprecated in QGIS?
-How to make Mathematica read in CSV as fast as Python's Pandas
-Telling a coworker they aren't invited into my house
-What did I just photograph? (rainbow way out of place)
-How important is "MIPS-C2® Brain Protection System" for a bicycle helmet?
-Why are most COB LEDs physically yellow?
-What would a bear species isolated on an island look like?
-Simplify K combinatory logic expression
+Critical differences between Ubuntu Server and Ubuntu Desktop for 20.04 LTS?
+How to remove the new weather info from the taskbar?
+Does machine learning really need data-efficient algorithms?
+Decode USB packets
+What does existential unforgeability mean in a digital signature scheme?
+Is it a coincidence that on the far side of the moon almost no seas are visible?
+Why are high power LEDs categorized by wattage, not voltage & amperage?
+Why aren't resistors being used here?
+How to get real-looking rust that will be safe to the touch?
+Getting “Bye Bye Big Sur” error on installing Big Sur
+Being forced to take annual leave against my wishes, what are my options
+Confused about the numbers on the grippers
 Can I gain AC efficiency by spraying condensate water on the outdoor coils?
-What should be the income to list on a credit card application?
+Showing the bounding box for every coordinate system in QGIS
+Why can an easily graphable definite integral, be labyrinthine to evaluate?
+What's the easiest way to change from MS-DOS 6.22 to DR-DOS?
+Revisiting the unreasonable effectiveness of mathematics
+Photo Competition 2021-06-07: Long Exposure
+A '50s Yeti movie which has a scene with two men sitting around a fire in a cave
+What is the hardest part of transitioning from a PhD to a full-time career in academia?
+How does black proceed in the below position?
+Has physics ever given a physical significance to a mathematically abstract idea?
+Is there a threadlocker that requires heat to release and can withstand thousands of heat-cool cycles without needing to be reapplied or deteriorating
+Can always @ (*) introduce randomness in FPGA?
 more hot questions
+Question feed
+Subscribe to RSS
+Question feed
+To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
 lang-py
 Stack Overflow
 Questions
@@ -313,7 +401,7 @@ Twitter
 LinkedIn
 Instagram
 site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.6.9.39464
+rev 2021.6.10.39470
 Stack Overflow works best with JavaScript enabled
 Your privacy
 By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.

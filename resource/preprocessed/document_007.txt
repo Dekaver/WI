@@ -1,449 +1,70 @@
-python - TypeError: 'str' object cannot be interpreted as an integer - Stack Overflow
-Stack Overflow
-About
-Products
-For Teams
-Stack Overflow
-Public questions & answers
-Stack Overflow for Teams
-Where developers & technologists share private knowledge with coworkers
-Jobs
-Programming & related technical career opportunities
-Talent
-Recruit tech talent & build your employer brand
-Advertising
-Reach developers & technologists worldwide
-About the company
-Loading…
-Log in
-Sign up
-current community
-Stack Overflow
-help
-chat
-Meta Stack Overflow
-your communities
-Sign up or log in to customize your list.
-more stack exchange communities
-company blog
-People who code: we want your input.
-Take the Survey
-Join Stack Overflow to learn, share knowledge, and build your career.
-Sign up with email
-Sign up
-Sign up with Google
-Sign up with GitHub
-Sign up with Facebook
-Home
-Public
-Questions
-Tags
-Users
-Find a Job
-Jobs
-Companies
-Teams
-Stack Overflow for Teams
-– Collaborate and share knowledge with a private group.
-Create a free Team
-What is Teams?
-Teams
-What’s this?
-Create free Team
-Teams
-Q&A for work
-Connect and share knowledge within a single location that is structured and easy to search.
-Learn more
-TypeError: 'str' object cannot be interpreted as an integer [duplicate]
-Ask Question
-Asked
-7 years, 8 months ago
-Active
-2 years ago
-Viewed
-160k times
-20
-7
-This question already has answers here:
-How can I read inputs as numbers?
-(10 answers)
-Closed 1 year ago.
-I don't understand what the problem is with the code, it is very simple so this is an easy one.
-x = input("Give starting number: ")
-y = input("Give ending number: ")
-for i in range(x,y):
-print(i)
-It gives me an error
+I get an error message when I try FreqDist() in NLTK — NameError: name 'nltk' is not defined - nltk
+Keep Coding
+csharp, asp.net, actionscript-3, postgresql, reactjs.
+nltk
+I get an error message when I try FreqDist() in NLTK — NameError: name 'nltk' is not defined
+I'm learning about the NLTK and my mac
+is working fine except I have trouble with the FreqDist(). (I saw another question about FreqDist() but he was getting a different error message. TypeError: unhashable type: 'list')
+Here's an example:
+>>> from nltk.corpus import brown
+>>> news_text = brown.words(categories='news')
+>>> fdist = nltk.FreqDist([w.lower() for w in news_text])
 Traceback (most recent call last):
-File "C:/Python33/harj4.py", line 6, in <module>
-for i in range(x,y):
-TypeError: 'str' object cannot be interpreted as an integer
-As an example, if x is 3 and y is 14,
-I want it to print
-Give starting number: 4
-Give ending number: 13
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-What is the problem?
-python types
-Share
-Follow
-edited Aug 29 '17 at 8:53
-Mel
-4,9491010 gold badges3333 silver badges3939 bronze badges
-asked Oct 7 '13 at 20:56
-JoeJoe
-20111 gold badge22 silver badges33 bronze badges
-0
-Add a comment
+` File "<stdin>", line 1, in <module>`
+`NameError: name 'nltk' is not defined`
+This error message is pretty consistent. I get this message every time I try the FreqDist(). Other commands like - >>> brown.fileids() are fine.
+Thanks for your help!
+Before you can use FreqDist, you need to import it.
+Add a line as follows:
+import nltk
+or if you just want to use FreqDist you should try this:
+>>> from nltk.corpus import brown
+>>> from nltk import FreqDist
+>>> news_text = brown.words(categories='news')
+>>> fdist = FreqDist([w.lower() for w in news_text])
+which means you haven't installed nltk.
+follow these steps to install nltk:
+1:go to this link https://pypi.python.org/pypi/setuptools at the end of page you find setuptools-7.0.zip (md5) download it, then unzip it. you can find easy_install.py python script.
+2:use the command sudo easy_install pip. By this time pip will be installed ready to use, (make sure you are in the directory where you can find easy_install script file).
+3:use this command sudo pip install -U nltk. successful execution ensure that nltk is now installed.
+4:open the IDLE then you type the following:
+import nltk
+if nltk is installed properly then you will be returned with console.
+setuptools are required for older versions of Python. There is no need for the same if you are running 3.2+
+You can easily download the same from https://pypi.python.org/pypi/nltk
+For more information on http://www.nltk.org/install.html
+Previous Page |
+nltk
 |
-8 Answers
-8
-Active
-Oldest
-Votes
-23
-A simplest fix would be:
-x = input("Give starting number: ")
-y = input("Give ending number: ")
-x = int(x)
-# parse string into an integer
-y = int(y)
-# parse string into an integer
-for i in range(x,y):
-print(i)
-input returns you a string (raw_input in Python 2). int tries to parse it into an integer. This code will throw an exception if the string doesn't contain a valid integer string, so you'd probably want to refine it a bit using try/except statements.
-Share
-Follow
-edited Oct 29 '17 at 21:20
-answered Oct 7 '13 at 20:57
-BartoszKPBartoszKP
-32.2k1313 gold badges9393 silver badges123123 bronze badges
-Add a comment
-|
-6
-You are getting the error because range() only takes int values as parameters.
-Try using int() to convert your inputs.
-Share
-Follow
-answered Jun 10 '19 at 11:20
-Rahul Rahul
-10111 silver badge44 bronze badges
-Add a comment
-|
-3
-x = int(input("Give starting number: "))
-y = int(input("Give ending number: "))
-P.S. Add function int()
-Share
-Follow
-edited Jan 11 '18 at 22:48
-Bramwell Simpson
-6333 silver badges1010 bronze badges
-answered Dec 7 '17 at 10:33
-Ливиу ГрекуЛивиу Греку
-3122 bronze badges
-Add a comment
-|
-3
-x = int(input("Give starting number: "))
-y = int(input("Give ending number: "))
-for i in range(x, y):
-print(i)
-This outputs:
-Share
-Follow
-edited Sep 25 '18 at 6:41
-Dadep
-2,69255 gold badges2323 silver badges3737 bronze badges
-answered Sep 25 '18 at 5:27
-irshadirshad
-3122 bronze badges
-Add a comment
-|
-1
-I'm guessing you're running python3, in which input(prompt) returns a string.
-Try this.
-x=int(input('prompt'))
-y=int(input('prompt'))
-Share
-Follow
-answered Oct 7 '13 at 20:58
-PerkinsPerkins
-2,0411919 silver badges2020 bronze badges
-1
-1
-In python2, use int(raw_input('prompt'))
-– Perkins
-Oct 7 '13 at 20:59
-Add a comment
-|
-1
-You have to convert input x and y into int like below.
-x=int(x)
-y=int(y)
-Share
-Follow
-answered Dec 19 '15 at 6:38
-SPradhanSPradhan
-5711 silver badge88 bronze badges
-Add a comment
-|
-1
-You will have to put:
-X = input("give starting number")
-X = int(X)
-Y = input("give ending number")
-Y = int(Y)
-Share
-Follow
-edited Aug 24 '16 at 11:47
-BartoszKP
-32.2k1313 gold badges9393 silver badges123123 bronze badges
-answered Oct 7 '13 at 21:02
-MafiaCureMafiaCure
-6511 gold badge11 silver badge1111 bronze badges
-Add a comment
-|
-1
-Or you can also use eval(input('prompt')).
-Share
-Follow
-edited Oct 29 '17 at 21:21
-BartoszKP
-32.2k1313 gold badges9393 silver badges123123 bronze badges
-answered Feb 6 '17 at 6:57
-Aditya KumarAditya Kumar
-1122 bronze badges
-3
-eval() will convert the expression to an evaluated version of the input.This is used to counter the backward non-compatiblity of python 3 against Python 2.
-– Aditya Kumar
-Feb 6 '17 at 6:59
-I used this in my program for factorial which was not working before(error given was : for i in range(1,n+1): TypeError: must be str, not int)
-and it worked:
-n = eval(input("Enter a number: ")) j=1 for i in range(1,n+1):
-j=j*i
-i=i+1 print(j)
-– Aditya Kumar
-Feb 6 '17 at 7:01
-This may work... But it creates an enormous security flaw, an attacker has quite literally free reign when you run eval like this without first properly checking the string...
-– 255.tar.xz
-Mar 25 '20 at 17:26
-Add a comment
-|
-Not the answer you're looking for? Browse other questions tagged python types
-or ask your own question.
-The Overflow Blog
-Using low-code tools to iterate products faster
-Podcast 345: A good software tutorial explains the How. A great one explains…
-Featured on Meta
-Take the 2021 Developer Survey
-Linked
-261
-How can I read inputs as numbers?
-0
-creating a list of cordinates (x,y,z variables ) from a single line input
-0
-Python: Google Maps API, TypeError on CSV file
-Related
-1454
-Converting integer to string in Python
-1919
-Determine the type of an object?
-1175
-If Python is interpreted, what are .pyc files?
-1681
-Check if a value is an object in JavaScript
-0
-TypeError: 'str' object cannot be interpreted as an integer
-1
-'float' object cannot be interpreted as an integer
-1
-'str' object cannot be interpreted as an integer on groupby
-0
-TypeError: 'str' object cannot be interpreted as an integer python for loop
-0
-Why I'm getting this error “TypeError: 'list' object cannot be interpreted as an integer”
-Hot Network Questions
-Which one would be better for 3.3V outputs among ULN2001 and ULN2003?
-How come full throttle is meaning full speed instead of the opposite?
-Simplest/cheapest way to build a tensegrity model?
-Dsus4 In A major
-What should be the income to list on a credit card application?
-How realistic is the 1 kg/km² solar sail in "Death's End"?
-Is there any country that jumped to developed status during the past 75 years after WW2?
-Why some CRS are deprecated in QGIS?
-3-dimensional h-cobordisms
-Why does Lex turn on the flashlight?
-Telling a coworker they aren't invited into my house
-Is it illegal to implement a patented algorithm or method and take advantage from it?
-Can black convert a +5.6 game into a draw (assuming both players play optimally)?
-Why was the neutrino thought to be massless?
-Should I notify a med school about their student's cheating history?
-Why did old IBM-PC-compatible computers only have 16 colors available?
-Is buying lecture notes wrong?
-Does Islam have heraditary slavery?
-What does 高高矮矮 mean?
-Can a petrified wizard communicate telepathically with their familiar?
-Is it a good idea to go to Japan without a travel guide?
-In Bayesian statistics, data is considered nonrandom but can have a probability or be conditioned on. How?
-Why are most women in anime housewives instead of being independent?
-Alien Instrument produces "visual music", which a Human can temporarily experience
-more hot questions
-lang-py
-Stack Overflow
-Questions
-Jobs
-Developer Jobs Directory
-Salary Calculator
-Help
-Mobile
-Products
-Teams
-Talent
-Advertising
-Enterprise
-Company
-About
-Press
-Work Here
-Legal
-Privacy Policy
-Terms of Service
-Contact Us
-Cookie Settings
-Cookie Policy
-Stack Exchange Network
-Technology
-Life / Arts
-Culture / Recreation
-Science
-Other
-Stack Overflow
-Server Fault
-Super User
-Web Applications
-Ask Ubuntu
-Webmasters
-Game Development
-TeX - LaTeX
-Software Engineering
-Unix & Linux
-Ask Different (Apple)
-WordPress Development
-Geographic Information Systems
-Electrical Engineering
-Android Enthusiasts
-Information Security
-Database Administrators
-Drupal Answers
-SharePoint
-User Experience
-Mathematica
-Salesforce
-ExpressionEngine® Answers
-Stack Overflow em Português
-Blender
-Network Engineering
-Cryptography
-Code Review
-Magento
-Software Recommendations
-Signal Processing
-Emacs
-Raspberry Pi
-Stack Overflow на русском
-Code Golf
-Stack Overflow en español
-Ethereum
-Data Science
-Arduino
-Bitcoin
-Software Quality Assurance & Testing
-Sound Design
-Windows Phone
-more (29)
-Photography
-Science Fiction & Fantasy
-Graphic Design
-Movies & TV
-Music: Practice & Theory
-Worldbuilding
-Video Production
-Seasoned Advice (cooking)
-Home Improvement
-Personal Finance & Money
-Academia
-Law
-Physical Fitness
-Gardening & Landscaping
-Parenting
-more (10)
-English Language & Usage
-Skeptics
-Mi Yodeya (Judaism)
-Travel
-Christianity
-English Language Learners
-Japanese Language
-Chinese Language
-French Language
-German Language
-Biblical Hermeneutics
-History
-Spanish Language
-Islam
-Русский язык
-Russian Language
-Arqade (gaming)
-Bicycles
-Role-playing Games
-Anime & Manga
-Puzzling
-Motor Vehicle Maintenance & Repair
-Board & Card Games
-Bricks
-Homebrewing
-Martial Arts
-The Great Outdoors
-Poker
-Chess
-Sports
-more (16)
-MathOverflow
-Mathematics
-Cross Validated (stats)
-Theoretical Computer Science
-Physics
-Chemistry
-Biology
-Computer Science
-Philosophy
-Linguistics
-Psychology & Neuroscience
-Computational Science
-more (10)
-Meta Stack Exchange
-Stack Apps
-API
-Data
-Blog
-Facebook
-Twitter
-LinkedIn
-Instagram
-site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.6.9.39464
-Stack Overflow works best with JavaScript enabled
-Your privacy
-By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
-Accept all cookies
-Customize settings
+HOME
+Related Links
+What is the tagset for NLTK perceptron tagger?
+nltk for parsing of USA Name and Address
+wordnet on different text?
+Using syntaxnet output with ConllChunkCorpusReader
+Can one define a chunk grammar for OpenNLP?
+How to create NLTK custom stopword file
+Basic text similarity through WorldNet synsets for taxonomy mapping/merging
+How to make cluster.em.EMClusterer converge/stop?
+How to get the probability of each vector belonging to each cluster?
+How to load plwordnet (Słowosieć) 3.0 into NLTK
+How to install NLTK 3.0 on Python 3.3 on 32 bit windows. Tried all ways but still unsuccessful
+Spacy Wont Run In a Script, Suspecting “English()” as culprit
+trying to extract phone number from a resume
+error while using nltk.post_tag
+Error: “api-ms-win-crt-string-|l1-1-0.dll missing from your computer ” while installing NLTK
+Import NLTK : no module NLTK corpus
+Categories
+HOMEclassificationmaxjoomlassmsprocessglslsqueakdownloadannyangwebsealdompdfowncloudviewsvaladev-c++multipartrndisbeaker-notebookinfinite-loopconcatenationchartist.jsvisual-studio-communityandroid-cursorloaderboostingcheckmarxkeilimdbnode-soapwebclientoffsethttp-proxypowerbi-embeddedframebuffersuperclassapimanapi-keynpocog77historymultivalueopenidmtry-catch-finallybipartiteblackberry-webworkstoggleclasssymantecgit-cherry-picksprocketsdiameter-protocolaudiorecordabstractgoogle-app-engine-phpgithub-for-macgtkwavewindows-kernelroslyn-code-analysissparkcoreweb-standardsteamworkperfect-scrollbarchunkslauncherdiffmergeserializerdisabled-controlhotlinkingwinrun4jlogo-langzend-db-tablearchitectural-patternsios6-mapsdjango-admin-toolsfacebook-winjs-sdkvirtual-printerrjssessiontrackingdesignated-initializernetduinoconditional-operatorfor-xmlversionsscala-designerauthkitjgrowl
+Resources
+Encrypt Message
+code
+soft
+python
+ios
+c
+html
+jquery
+cloud
+mobile
+Copyright @ 2017 wekeepcoding.com , All Rights Reserved

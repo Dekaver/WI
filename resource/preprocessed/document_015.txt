@@ -1,272 +1,339 @@
-ValueError: literal tidak valid untuk int () dengan basis 10: ''
-Pemrograman
-Tag
-Account
-Sign In
-Signup
-ValueError: literal tidak valid untuk int () dengan basis 10: ''
-333
-Saya membuat program yang membaca file dan jika baris pertama file tidak kosong, itu membaca empat baris berikutnya. Perhitungan dilakukan pada baris tersebut dan kemudian baris berikutnya dibaca. Jika baris itu tidak kosong, baris itu berlanjut. Namun, saya mendapatkan kesalahan ini:
-ValueError: invalid literal for int() with base 10: ''.
-Itu membaca baris pertama tetapi tidak dapat mengubahnya menjadi bilangan bulat.
-Apa yang bisa saya lakukan untuk memperbaiki masalah ini?
-Kode:
-file_to_read = raw_input("Enter file name of tests (empty string to end program):")
-try:
-infile = open(file_to_read, 'r')
-while file_to_read != " ":
-file_to_write = raw_input("Enter output file name (.csv will be appended to it):")
-file_to_write = file_to_write + ".csv"
-outfile = open(file_to_write, "w")
-readings = (infile.readline())
-print readings
-while readings != 0:
-global count
-readings = int(readings)
-minimum = (infile.readline())
-maximum = (infile.readline())
-python
-—
-Sarah Cox
-sumber
-3
-Anda harus mempertimbangkan menggunakannya di with open(file_to_read, 'r') as infile:sana.
-—
-Mahakuasa
-Jawaban:
-313
-Sebagai catatan:
->>> int('55063.000000')
-Traceback (most recent call last):
-File "<stdin>", line 1, in <module>
-ValueError: invalid literal for int() with base 10: '55063.000000'
-Punya aku di sini ...
->>> int(float('55063.000000'))
-55063.0
-Harus digunakan!
-—
-FdoBad
-sumber
-101
-Saya hanya akan menambahkan, untuk memberikan kejelasan lebih bagi pembaca masa depan, bahwa memang, int (float ('1.0')) berfungsi ketika int ('1.0') melempar ValueError.
-—
-katyhuff
-5
-Ini harus menjadi jawaban atas yang diterima untuk pertanyaan ini. Saya hampir menutup halaman dan tidak melihatnya. Terima kasih!
-—
-iTurki
-2
-tambahkan ke jawab int (float ('55063.000000')) karena pertanyaannya adalah int (). Daripada itu akan benar-benar jawaban teratas
-—
-Max
-Mengapa ini terjadi? @katyhuff
-—
-Muhamed Huseinbašić
-7
-Jawaban ini sepertinya tidak ada hubungannya dengan pertanyaan. Pertanyaannya adalah bagaimana seseorang dapat mencegah ValueError ketika Anda memanggil int()string kosong. "Gunakan float () sebagai gantinya" tidak menyelesaikan masalah itu. Anda masih mendapatkan ValueError.
-—
-Kevin
-74
-Berikut ini benar-benar dapat diterima dalam python:
-meneruskan representasi string integer ke int
-melewati representasi string float ke float
-meneruskan representasi string integer ke float
-melewati pelampung ke int
-melewatkan bilangan bulat ke dalam float
-Tetapi Anda mendapatkan ValueErrorjika Anda melewatkan representasi string float ke int, atau representasi string apa pun kecuali bilangan bulat (termasuk string kosong). Jika Anda ingin meneruskan representasi string float ke int, seperti yang ditunjukkan @katyhuff di atas, Anda dapat mengonversi ke float terlebih dahulu, kemudian ke integer:
->>> int('5')
-5
->>> float('5.0')
-5.0
->>> float('5')
-5.0
->>> int(5.0)
-5
->>> float(5)
-5.0
->>> int('5.0')
-Traceback (most recent call last):
-File "<stdin>", line 1, in <module>
-ValueError: invalid literal for int() with base 10: '5.0'
->>> int(float('5.0'))
-5
-—
-Peter
-sumber
-7
-Jawaban ini sepertinya tidak ada hubungannya dengan pertanyaan. Pertanyaannya adalah bagaimana seseorang dapat mencegah ValueError ketika Anda memanggil int()string kosong. "Gunakan float () sebagai gantinya" tidak menyelesaikan masalah itu. Anda masih mendapatkan ValueError.
-—
-Kevin
-3
-@Kevin Meskipun ini tidak secara langsung menjawab pertanyaan OP. Namun itu membantu orang yang memiliki masalah ini dan tidak keberatan int(float(x)). Karena ini adalah pertanyaan pertama yang muncul ketika mencari kesalahan ini.
-—
-Kerwin Sneijders
-57
-Cara Pythonic untuk mengulangi file dan mengkonversi ke int:
-for line in open(fname):
-if line.strip():
-# line contains eol character(s)
-n = int(line)
-# assuming single integer on each line
-Apa yang Anda coba lakukan sedikit lebih rumit, tetapi masih belum jelas:
-h = open(fname)
-for line in h:
-if line.strip():
-[int(next(h).strip()) for _ in range(4)]
-# list of integers
-Dengan cara ini memproses 5 baris pada saat itu. Gunakan h.next()alih-alih next(h)sebelum Python 2.6.
-Alasan yang Anda miliki ValueErroradalah karena inttidak dapat mengonversi string kosong ke integer. Dalam hal ini, Anda perlu memeriksa konten string sebelum konversi, atau kecuali kesalahan:
-try:
-int('')
-except ValueError:
-pass
-# or whatever
-—
-SilentGhost
-sumber
+scikit learn - AttributeError: 'numpy.ndarray' object has no attribute 'columns' - Data Science Stack Exchange
+Stack Exchange Network
+Stack Exchange network consists of 177 Q&A communities including Stack Overflow, the largest, most trusted online community for developers to learn, share their knowledge, and build their careers.
+Visit Stack Exchange
+Loading…
+0
++0
+Tour
+Start here for a quick overview of the site
+Help Center
+Detailed answers to any questions you might have
+Meta
+Discuss the workings and policies of this site
+About Us
+Learn more about Stack Overflow the company
+Business
+Learn more about hiring developers or posting ads with us
+Log in
+Sign up
+current community
+Data Science
+help
+chat
+Data Science Meta
+your communities
+Sign up or log in to customize your list.
+more stack exchange communities
+company blog
+People who code: we want your input.
+Take the Survey
+Data Science Stack Exchange is a question and answer site for Data science professionals, Machine Learning specialists, and those interested in learning more about the field. It only takes a minute to sign up.
+Sign up to join this community
+Anybody can ask a question
+Anybody can answer
+The best answers are voted up and rise to the top
+Data Science
+Home
+Public
+Questions
+Tags
+Users
+Unanswered
+Find a Job
+Jobs
+Companies
+Teams
+Stack Overflow for Teams
+– Collaborate and share knowledge with a private group.
+Create a free Team
+What is Teams?
+Teams
+What’s this?
+Create free Team
+Teams
+Q&A for work
+Connect and share knowledge within a single location that is structured and easy to search.
+Learn more
+AttributeError: 'numpy.ndarray' object has no attribute 'columns'
+Ask Question
+Asked
+1 year, 11 months ago
+Active
+1 year, 1 month ago
+Viewed
+69k times
 4
-Percobaan Anda / kecuali tidak membedakan antara sesuatu yang masuk akal yang diharapkan (baris kosong / kosong) dan sesuatu yang buruk seperti non-integer.
-—
-John Machin
-dan mengapa Anda ingin membedakan hal-hal itu?
-—
-SilentGhost
-3
-karena salah satu cukup expectable dan dapat diketahui tetapi yang lain merupakan indikasi dari kesalahan
-—
-John Machin
-3
-dan mengapa garis kosong cukup diharapkan dan non-integer bukan?
-—
-SilentGhost
 1
-ini bagus jika Anda yakin bahwa daftar Anda sebenarnya adalah daftar bilangan bulat yang dikodifikasi. Jika Anda tidak yakin dapat melakukannyan = int(line) if line.is_integer() else int(float(line))
-—
-Mike Furlender
-23
-Saya menemukan pekerjaan di sekitar. Python akan mengonversi angka menjadi float. Cukup dengan memanggil float terlebih dahulu kemudian mengubahnya menjadi int akan berfungsi:
-output = int(float(input))
-—
-Brad123
-sumber
-11
-Alasannya adalah bahwa Anda mendapatkan string kosong atau string sebagai argumen ke int. Periksa apakah kosong atau mengandung karakter alfa. Jika berisi karakter, abaikan saja bagian itu.
-—
-rajender kumar
-sumber
+$\begingroup$
+import numpy as np
+import pandas as pd
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.feature_selection import SelectFromModel
+from scipy.io import arff
+data = arff.loadarff("C:\\Users\\manib\\Desktop\\Python Job\\Project Work\\Breast\\Breast.arff")
+df = pd.DataFrame(data[0])
+df.head()
+df["Class"].value_counts()
+X = df.iloc[:,:24481].values
+y = df.iloc[:, -1].values
+from sklearn import preprocessing
+label_encoder = preprocessing.LabelEncoder()
+y=y.astype('str')
+y= label_encoder.fit_transform(y)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_state=0)
+sel = SelectFromModel(RandomForestClassifier(n_estimators = 100))
+sel.fit(X_train, y_train)
+sel.get_support()
+selected_feat= X_train.columns[(sel.get_support())]
+len(selected_feat)
+print(selected_feat)
+scikit-learn pandas numpy
+Share
+Improve this question
+Follow
+edited Jun 21 '19 at 12:04
+Djib2011
+6,83355 gold badges2020 silver badges3333 bronze badges
+asked Jun 21 '19 at 11:48
+BaluBalu
+4111 gold badge11 silver badge22 bronze badges
+$\endgroup$
+Add a comment
+|
+2 Answers
 2
-Ini lebih mirip komentar. Ketika Anda memiliki reputasi yang cukup, Anda akan dapat mengomentari setiap pos.
-—
-Joshua Drake
-8
-Alasan Anda mendapatkan kesalahan ini adalah karena Anda mencoba mengubah karakter spasi menjadi integer, yang sama sekali tidak mungkin dan dibatasi. Dan itulah sebabnya Anda mendapatkan kesalahan ini.
-Periksa kode Anda dan perbaiki, itu akan berfungsi dengan baik
-—
-Joish
-sumber
-8
-Jadi kalau sudah
-floatInString = '5.0'
-Anda dapat mengubahnya intdenganfloatInInt = int(float(floatInString))
-—
-Harvey
-sumber
-3
-Anda punya masalah dengan baris ini:
-while file_to_read != " ":
-Ini tidak menemukan string kosong. Ia menemukan string yang terdiri dari satu ruang. Agaknya ini bukan yang Anda cari.
-Dengarkan saran orang lain. Ini bukan kode python yang sangat idiomatis, dan akan jauh lebih jelas jika Anda beralih ke file secara langsung, tapi saya pikir masalah ini patut dicatat juga.
-—
-jcdyer
-sumber
-3
-Silakan uji fungsi ini ( split()) pada file sederhana. Saya menghadapi masalah yang sama dan menemukan bahwa itu karena split()tidak ditulis dengan benar (pengecualian penanganan).
-—
-elixenide
-sumber
-1
-readings = (infile.readline())
-print readings
-while readings != 0:
-global count
-readings = int(readings)
-Ada masalah dengan kode itu. readingsadalah baris baru yang dibaca dari file - ini adalah string. Oleh karena itu Anda tidak boleh membandingkannya dengan 0. Selanjutnya, Anda tidak bisa hanya mengubahnya menjadi bilangan bulat kecuali Anda yakin itu memang satu. Misalnya, baris kosong akan menghasilkan kesalahan di sini (seperti yang pasti Anda ketahui).
-Dan mengapa Anda membutuhkan perhitungan global? Itu pasti desain yang buruk di Python.
-—
-Eli Bendersky
-sumber
-1
-Ini juga bisa terjadi ketika Anda harus memetakan bilangan bulat yang dipisahkan ruang ke daftar tetapi Anda memasukkan bilangan bulat baris demi baris menggunakan .input(). Seperti misalnya saya sedang memecahkan masalah ini pada HackerRank Bon-Appetit , dan mendapat kesalahan berikut saat kompilasi
-Jadi alih-alih memberikan input ke program baris demi baris cobalah untuk memetakan bilangan bulat yang dipisahkan ruang menjadi daftar menggunakan map()metode ini.
-—
-Amit Kumar
-sumber
-0
-Saya membuat program yang membaca file dan jika baris pertama file tidak kosong, itu membaca empat baris berikutnya. Perhitungan dilakukan pada baris tersebut dan kemudian baris berikutnya dibaca.
-Sesuatu seperti ini seharusnya bekerja:
-for line in infile:
-next_lines = []
-if line.strip():
-for i in xrange(4):
-try:
-next_lines.append(infile.next())
-except StopIteration:
-break
-# Do your calculation with "4 lines" here
-—
-Imran
-sumber
-0
-Saya mendapatkan kesalahan yang serupa, ternyata dataset memiliki nilai kosong yang tidak dapat dikonversi oleh python menjadi integer.
-—
-pengguna2162611
-sumber
+Active
+Oldest
+Votes
 4
-Bisakah Anda menguraikan sedikit lebih banyak dengan beberapa contoh tentang bagaimana OP bisa menyelesaikannya?
-—
-fmendez
-nilai kosong berarti kosong yang dapat dikonversi ke string float. Jika Anda mencoba mengonversi ke float juga akan menampilkan kesalahan
-—
-saravanan saminathan
+$\begingroup$
+The problem is that train_test_split(X, y, ...) returns numpy arrays and not pandas dataframes. Numpy arrays have no attribute named columns
+If you want to see what features SelectFromModel kept, you need to substitute X_train (which is a numpy.array) with X which is a pandas.DataFrame.
+selected_feat= X.columns[(sel.get_support())]
+This will return a list of the columns kept by the feature selector.
+If you wanted to see how many features were kept you can just run this:
+sel.get_support().sum()
+# by default this will count 'True' as 1 and 'False' as 0
+Share
+Improve this answer
+Follow
+answered Jun 21 '19 at 12:14
+Djib2011Djib2011
+6,83355 gold badges2020 silver badges3333 bronze badges
+$\endgroup$
+Add a comment
+|
+1
+$\begingroup$
+because this :
+X = df.iloc[:,:24481].values
+y = df.iloc[:, -1].values
+you should remove .values or make extra X_col, y_col like that
+X_col = df.iloc[:,:24481]
+y_col = df.iloc[:, -1]
+Share
+Improve this answer
+Follow
+edited Apr 18 '20 at 22:09
+Stephen Rauch♦
+1,7351111 gold badges1717 silver badges3131 bronze badges
+answered Apr 18 '20 at 18:51
+Esraa GamalEsraa Gamal
+2111 bronze badge
+$\endgroup$
+Add a comment
+|
+Highly active question. Earn 10 reputation in order to answer this question. The reputation requirement helps protect this question from spam and non-answer activity.
+Not the answer you're looking for? Browse other questions tagged scikit-learn pandas numpy
+or ask your own question.
+The Overflow Blog
+Using low-code tools to iterate products faster
+Podcast 345: A good software tutorial explains the How. A great one explains…
+Related
+1
+Python - AttributeError: type object 'DataFrame' has no attribute 'read_csv'
+4
+AttributeError: 'numpy.ndarray' object has no attribute 'predict'
+1
+AttributeError: 'numpy.ndarray' object has no attribute 'nan_to_num'
 0
-Saya masuk ke masalah yang sama ketika mencoba menggunakan readlines () di dalam untuk loop untuk objek file yang sama ... Kecurigaan saya adalah menembak readling () di dalam readline () untuk objek file yang sama menyebabkan kesalahan ini.
-Solusi terbaik dapat digunakan seek (0) untuk mengatur ulang penunjuk file atau Kondisi penanganan dengan menetapkan beberapa flag kemudian membuat objek baru untuk file yang sama dengan memeriksa ketentuan yang ditetapkan ....
-—
-Abhishek Jain
-sumber
-0
-Baru-baru ini saya menemukan sebuah kasus di mana tidak ada jawaban yang berfungsi. Saya menemukan data CSV di mana ada byte nol yang dicampur dengan data, dan byte nol itu tidak dilucuti. Jadi, string numerik saya, setelah pengupasan, terdiri dari byte seperti ini:
-\x00\x31\x00\x0d\x00
-Untuk mengatasi ini, saya lakukan:
-countStr = fields[3].replace('\x00', '').strip()
-count = int(countStr)
-... di mana bidang adalah daftar nilai csv yang dihasilkan dari pemisahan garis.
-—
-T. Reed
-sumber
-0
-Sepertinya pembacaan terkadang berupa string kosong dan jelas kesalahan muncul. Anda dapat menambahkan pemeriksaan tambahan ke loop sementara Anda sebelum perintah int (bacaan) seperti:
-while readings != 0 | readings != '':
-global count
-readings = int(readings)
-—
-Kanishk Mair
-sumber
-0
-Saya kesulitan menemukan alasan sebenarnya, itu terjadi ketika kita tidak membaca dengan benar dari file. Anda perlu membuka file dan membaca dengan metode readlines () seperti di bawah ini:
-with open('/content/drive/pre-processed-users1.1.tsv') as f:
-file=f.readlines()
-Ini mengoreksi output yang diformat
-—
-Shaina Raza
-sumber
-0
-jawaban Anda melempar kesalahan karena baris ini
-readings = int(readings)
-Di sini Anda mencoba mengubah string menjadi tipe int yang bukan basis-10. Anda dapat mengonversi string menjadi int hanya jika basis-10 jika tidak maka akan membuang ValueError, yang menyatakan literal tidak valid untuk int () dengan basis 10.
-—
-Shubham
-sumber
-Dengan menggunakan situs kami, Anda mengakui telah membaca dan memahami Kebijakan Cookie dan Kebijakan Privasi kami.
-Licensed under cc by-sa 3.0
-with attribution required.
+sklearn package with AttributeError: 'MissingValues' object has no attribute 'to_list'
+Hot Network Questions
+What is the right tool for old, rusty, flat cross head bolts?
+Confused about the numbers on the grippers
+Interview by fellow PhD students, not the professor himself
+Why doesn't the sun produce an emission spectrum?
+Why would a modern city with a warm climate have a skyway system?
+In Bayesian statistics, data is considered nonrandom but can have a probability or be conditioned on. How?
+Do the murder statistics of 5 cities bring the USA to the 3rd highest country, from 189th?
+LaTex error : "Missing } inserted"
+How does black proceed in the below position?
+IQ test question assistance
+Did I design my LED circuit correctly?
+Is there a threadlocker that requires heat to release and can withstand thousands of heat-cool cycles without needing to be reapplied or deteriorating
+How well would Max Faget's April 1, 1969 design for the Space Shuttle have actually worked? What would have been the major problems?
+Is it a coincidence that on the far side of the moon almost no seas are visible?
+Heating of hydraulic oil with hardtail electric MTB brakes
+Are AP slugs for shotguns possible?
+Revisiting the unreasonable effectiveness of mathematics
+Sharing a research proposal when applying for funds
+What is the name of this rhythm? (embedded 4:3 polyrhythm)
+How come full throttle is meaning full speed instead of the opposite?
+How do airliner pilots practice recovering from a bounced landing?
+Why is Ken's beer "gay"?
+Has physics ever given a physical significance to a mathematically abstract idea?
+How do trademarks apply to Open Source?
+more hot questions
+Question feed
+Subscribe to RSS
+Question feed
+To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+lang-py
+Data Science
+Tour
+Help
+Chat
+Contact
+Feedback
+Mobile
+Company
+Stack Overflow
+For Teams
+Advertise With Us
+Hire a Developer
+Developer Jobs
+About
+Press
+Legal
+Privacy Policy
+Terms of Service
+Cookie Settings
+Cookie Policy
+Stack Exchange Network
+Technology
+Life / Arts
+Culture / Recreation
+Science
+Other
+Stack Overflow
+Server Fault
+Super User
+Web Applications
+Ask Ubuntu
+Webmasters
+Game Development
+TeX - LaTeX
+Software Engineering
+Unix & Linux
+Ask Different (Apple)
+WordPress Development
+Geographic Information Systems
+Electrical Engineering
+Android Enthusiasts
+Information Security
+Database Administrators
+Drupal Answers
+SharePoint
+User Experience
+Mathematica
+Salesforce
+ExpressionEngine® Answers
+Stack Overflow em Português
+Blender
+Network Engineering
+Cryptography
+Code Review
+Magento
+Software Recommendations
+Signal Processing
+Emacs
+Raspberry Pi
+Stack Overflow на русском
+Code Golf
+Stack Overflow en español
+Ethereum
+Data Science
+Arduino
+Bitcoin
+Software Quality Assurance & Testing
+Sound Design
+Windows Phone
+more (29)
+Photography
+Science Fiction & Fantasy
+Graphic Design
+Movies & TV
+Music: Practice & Theory
+Worldbuilding
+Video Production
+Seasoned Advice (cooking)
+Home Improvement
+Personal Finance & Money
+Academia
+Law
+Physical Fitness
+Gardening & Landscaping
+Parenting
+more (10)
+English Language & Usage
+Skeptics
+Mi Yodeya (Judaism)
+Travel
+Christianity
+English Language Learners
+Japanese Language
+Chinese Language
+French Language
+German Language
+Biblical Hermeneutics
+History
+Spanish Language
+Islam
+Русский язык
+Russian Language
+Arqade (gaming)
+Bicycles
+Role-playing Games
+Anime & Manga
+Puzzling
+Motor Vehicle Maintenance & Repair
+Board & Card Games
+Bricks
+Homebrewing
+Martial Arts
+The Great Outdoors
+Poker
+Chess
+Sports
+more (16)
+MathOverflow
+Mathematics
+Cross Validated (stats)
+Theoretical Computer Science
+Physics
+Chemistry
+Biology
+Computer Science
+Philosophy
+Linguistics
+Psychology & Neuroscience
+Computational Science
+more (10)
+Meta Stack Exchange
+Stack Apps
+API
+Data
+Blog
+Facebook
+Twitter
+LinkedIn
+Instagram
+site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
+rev 2021.6.10.39470
+Data Science Stack Exchange works best with JavaScript enabled
+Your privacy
+By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
+Accept all cookies
+Customize settings

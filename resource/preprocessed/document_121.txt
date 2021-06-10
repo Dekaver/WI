@@ -1,4 +1,4 @@
-exception in thread "main" java.lang.indexoutofboundsexception: index: 0, size: 0 - Kodlogs
+command "make:auth" is not defined. - Kodlogs
 menu
 Login
 Register
@@ -17,49 +17,73 @@ Email
 Password
 Register
 add
-Q&A
-Questions
 Tags
 Users
-Ask a Question
 Articles
 Post An Article
-Recent Posts
-What is a flag in c++
-What is static in C++
-How to use /n in C++
-what is the difference between char and varchar?
-Python ASCII to int
-What are the supported wildcard characters for selectors in uipath studio?
-C# convert float to int
-Moving Perl Mojolicious routes to their own module
-Write a java program to count the letters, spaces, numbers and other characters of an input string.
-Uploading files to AWS S3 Bucket using Spring Boot
-exception in thread "main" java.lang.indexoutofboundsexception: index: 0, size: 0
+command "make:auth" is not defined.
 0 votes
-853 views
-Problem :I am getting bellow error while compiling Arraylistexception in thread "main" java.lang.indexoutofboundsexception: index: 0, size: 0
-java
-arraylist
+48 views
+Problem:the command "make:auth" is not defined.I am trying to run this command in laravel 5.2 but it's not working. Kindly help me to fix it!
 asked
-Oct 19, 2019
-peterlaw
-6.9k points
+Feb 25
+Umar Ahmad
+4.1k points
 edited
-Oct 19, 2019
-by AbhijitJ
+Feb 26
+by Umar Ahmad
 answer
 Please log in or register to answer this question.
 1 Answer
 0 votes
-Solution:It seems "ArrayList<ArrayList<Integer>> " this list doesnt have any element at the (0)th postion and now the compiler throws "out of bounds exception" as it doesn't find any element in that postion.when you try executing bellow codelist.get(0).set(placeHolder.get(k), (int) (Math.random() * (99999) + 1));  your list is empty so you need to iterate through the inner list to set the values for the list.Further Readings:https://github.com/owlcs/owlapi/issues/724
+Answer:For Laravel >=6composer require laravel/ui
+php artisan ui vue --auth
+php artisan migrate
+it looks you are not using Laravel 5.2, these are the available make commands in L5.2 and you are missing more than just the make:auth command
+make:auth
+Scaffold basic login and registration views and routes
+make:console
+Create a new Artisan command
+make:controller
+Create a new controller class
+make:entity
+Create a new entity.
+make:event
+Create a new event class
+make:job
+Create a new job class
+make:listener
+Create a new event listener class
+make:middleware
+Create a new middleware class
+make:migration
+Create a new migration file
+make:model
+Create a new Eloquent model class
+make:policy
+Create a new policy class
+make:presenter
+Create a new presenter.
+make:provider
+Create a new service provider class
+make:repository
+Create a new repository.
+make:request
+Create a new form request class
+make:seeder
+Create a new seeder class
+make:test
+Create a new test class
+make:transformer
+Create a new transformer.
+Be sure you have this dependency in your composer.json file
+"laravel/framework": "5.2.*",
+Then run
+composer update
 answered
-Oct 19, 2019
-AbhijitJ
-38.6k points
-edited
-Oct 30, 2019
-by AbhijitJ
+Feb 26
+Ahmad
+7.9k points
 ask related question
 comment
 Your comment on this answer:
@@ -74,132 +98,129 @@ Cancel
 Related questions
 0 votes
 1 answer
-72 views
-72 views
-“Exception in thread ”main“ java.lang.IndexOutOfBoundsException: Index: 0, Size: 0” with ArrayList?
-How can I fix this?
+17 views
+17 views
+Command "migrate:make" is not defined.
+Problem: I used Google to check for a response online to the above questions. But I have not received any useful tips.
 asked
-Dec 28, 2020
-TeamScript
-13.5k points
-java
-0 votes
-1 answer
-69 views
-69 views
-Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 5 - Solving Array IndexOutOfBoundsException in Java
-solve this problem, please.
-asked
-Jan 22
-TeamScript
-13.5k points
-java
-0 votes
-1 answer
-34 views
-34 views
-java.lang.indexoutofboundsexception: invalid index 1, size is 1
-Problem: I am a beginner, started learning Java recently. While working with arrays, my program generated the following error: java.lang.indexoutofboundsexception: invalid index 1, size is 1 Following is the code that I am trying to execute: public class Main { public static void main(String[] ... ++) { System.out.println(nums[i]); } } } I do not know what the problem is with my program. Any help?
-asked
-Dec 4, 2020
-Code Learner
-10.4k points
-java
-array
-indexoutofboundsexception
-0 votes
-1 answer
-29 views
-29 views
-exception in thread "main" java.lang.stringindexoutofboundsexception: string index out of range: 11
-Problem: I have written code for exception. It's building a file but not letting it run, it just throws exception This is code : public static void main(String args[]) { String name = "Umer Hassan"; String name1 = "Hassan Umer"; char[] name2 = new ...
-at Anagram.main(Anagram.java:24)exception in thread "main" java.lang.stringindexoutofboundsexception: string index out of range: 11, Why is that???
-asked
-Apr 26
-nabin
-4.6k points
-exception
-java
+Apr 13
+zayed1
+61.8k points
+migration
 0 votes
 1 answer
 19 views
 19 views
-Ftb unhandled exception in thread[awt-eventqueue-0,6,main]: java.lang.nullpointerexception
-Problem: I have a form with a button and an icon assigned to the button. This code was generated by NetBeans. I get an 'Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException" error when trying to run the application. I created a brand new Gradle project with ...
-and an icon in the button. This exact same process worked for an Ant project, but won't work with my new Gradle project.
+Command: auth tls error: could not connect to server
+problem: Please help me to solve it... command: auth tls error: could not connect to server
+asked
+Mar 25
+Ifra
+43.4k points
+filezilla
+0 votes
+1 answer
+9 views
+9 views
+The font size command normalsize is not defined
+Problem: I did read some questions here but none of the answers solved it for me. Any ideas : The font size command normalsize is not defined?
+asked
+May 25
+Irenka Kiri
+84.8k points
+latex
+0 votes
+1 answer
+74 views
+74 views
+com.google.firebase.auth.firebaseauth is not linked. skipping initialization.
+Problem com.google.firebase.auth.firebaseauth is not linked. skipping initialization.
+asked
+Feb 9
+charles mathews
+5.5k points
+android
+push-notification
+firebase
+google-cloud-messaging
+1 vote
+1 answer
+27 views
+27 views
+Cant send email via python using gmail > smtplib.SMTPException: SMTP AUTH extension not supported by server
+Problem : Cant send email via python using gmail > smtplib.SMTPException: SMTP AUTH extension not supported by server
+asked
+May 2
+Abik Dey
+4k points
+python
+email
+python-2-7
+smtp
+smtplib
+0 votes
+1 answer
+10 views
+10 views
+Local module descriptor class for com.google.firebase.auth not found.
+Problem: And finally the error: Local module descriptor class for com.google.firebase.auth not found.
+asked
+May 2
+ochena
+23.3k points
+android
+firebase
+0 votes
+1 answer
+13 views
+13 views
+Android auth firebase error: Local module descriptor class for com.google.firebase.auth not found
+Problem: I'm trying to build an app with login/register capabilities through Firebase. I'm working on it with a partner (he's on Linux, I'm on Mac), and he's able to get the authentication working but for some reason I am not. We have all the same
+... was taken textbook from the Firebase website. Please help, we've been stuck on this for hours, and none of the other similar questions have helped.
+asked
+Apr 25
+Supti
+13k points
+android
+0 votes
+1 answer
+8 views
+8 views
+Authentication error. server returned error "[auth] username and password not accepted."
+Problem: I'm trying to figure out how to send my credentials to Gmail. RFC5034 gives an example S: IMPLEMENTATION BlurdyBlurp POP3 server S: . C: AUTH PLAIN dGVzdAB0ZXN0AHRlc3Q= S: +OK Maildrop locked and ready and the base64 encoded string decodes to test\0test\ ... still rejected. So, can someone confirm the correct method of base64 encoding? Oh, and I have Pop mail activated in my settings.
 asked
 Apr 25
 sumaiya simi
 43.9k points
-java
-netbeans
-nullpointerexception
+authentication
+pop3
 0 votes
 1 answer
-98 views
-98 views
-unhandled exception in thread[awt-eventqueue-0,6,main]: java.lang.nullpointerexception
-I am finding difficulty with
+46 views
+46 views
+I got this error > class 'app\http\controllers\auth' not found
+Problem: I got this error > class 'app\http\controllers\auth' not found
 asked
-Jul 25, 2020
+Mar 30
+Azlan2020
+2.5k points
+file-not-found
+laravel-5
+http-status-code-404
+php
+0 votes
+1 answer
+454 views
+454 views
+w/dynamitemodule: local module descriptor class for com.google.firebase.auth not found.
+asked
+Jul 22, 2020
 James Martin
 2.2k points
 java
-javascript
 python
-c
-c#
-0 votes
-1 answer
-82 views
-82 views
-Exception in thread "main" java.lang.arrayindexoutofboundsexception: 0
-Problem : Currently I am learning Java. I have written code in Java but it gives me below error &ldquo;Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0 at Minesweeper.main(Minesweeper.java:5)&rdquo;. I am unable to understand above error. How can I fix above error.
-asked
-Feb 22, 2020
-mphil
-2.3k points
-java
-1 vote
-1 answer
-51 views
-51 views
-Attempt to invoke virtual method 'int.java.lang.Integer.intValue()' on a null object reference at Cast.writetoParce
-Problem : Getting error in sending arraylist of object from adapter to other activity. I wanna send my arraylist from onBindViewHolder method of Adapter to another activity but its is showing null exception error on the Cast Class in writetoParcel Method. Getting Error ... Attempt to invoke virtual method 'int java.lang.Integer.intValue()' on a null object reference How to send arraylist properly?
-asked
-Mar 31
-Sabbir Hossain
-14.6k points
-java
-android
-arraylist
-android-recyclerview
-0 votes
-1 answer
-11 views
-11 views
-You can use index to traverse elements in an arraylist.
-Problem: Please let me know any solution regarding this .. You can use index to traverse elements in an arraylist.
-asked
-May 7
-Ifra
-43.4k points
-java
-arraylist
-foreach
-indexing
-0 votes
-1 answer
-12 views
-12 views
-Exception in thread main java lang abstractmethoderror
-Problem: Can anyone give me some idea about this? > Exception in thread main java lang abstractmethoderror
-asked
-May 15
-Junia Phoebe
-81.8k points
-java
-spring-boot
+mysql
+local-module
 Send feedback
 About Us
 Privacy Policy
