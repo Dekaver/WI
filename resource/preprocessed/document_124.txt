@@ -1,41 +1,429 @@
-Python IndexError: List Index Out of Range (How to Fix This Stupid Bug) | Finxter
-Skip to content
-Main Menu
-Python + BusinessMenu ToggleWebinar FreelancerCourse Python FreelancerBooksMenu ToggleAll Finxter BooksTop Book Recommendations[Bundle] The Intelligent CoderCoffee Break SeriesPython One-LinersCoursesMenu Toggle10+ Python, ML, Algorithm, Data Science CoursesThe World’s #1 Python Freelancer CourseResourcesMenu ToggleTutorialsPuzzlesCheat SheetsPEP8 CheckerFinxter Computer Science AcademyPython One-Liners Book ResourcesFinxter Computer Science Email AcademyAboutMenu ToggleAboutTestimonialsSupport Free Education AcademyPython IndexError: List Index Out of Range (How to Fix This Stupid Bug)Python / By
-Chris
-If you’re like me, you try things first in your code and fix the bugs as they come. One frequent bug in Python is the IndexError: list index out of range. So, what does this error message mean?The error “list index out of range” arises if you access invalid indices in your Python list. For example, if you try to access the list element with index 100 but your lists consist only of three elements, Python will throw an IndexError telling you that the list index is out of range.Do you want to develop the skills of a well-rounded Python professional—while getting paid in the process? Become a Python freelancer and order your book Leaving the Rat Race with Python on Amazon (Kindle/Print)!Let’s have a look at an example where this error arises:lst = ['Alice', 'Bob', 'Carl']
-print(lst[3])The element with index 3 doesn’t exist in the list with three elements. Why is that? The following graphic shows that the maximal index in your list is 2. The call lst[2] would retrieve the third list element 'Carl'. Did you try to access the third element with index 3? It’s a common mistake: The index of the third element is 2 because the index of the first list element is 0.lst[0] –> Alicelst[1] –> Boblst[2] –> Carllst[3] –> ??? Error ???Try It Yourself: Before I tell you what to do about it, try to fix the code yourself in our interactive Python shell: Exercise: Fix the code in the interactive code shell to get rid of the error message.How to Fix the IndexError in a For Loop? [General Strategy]So, how can you fix the code? Python tells you in which line and on which list the error occurs.To pin down the exact problem, check the value of the index just before the error occurs. To achieve this, you can print the index that causes the error before you use it on the list. This way, you’ll have your wrong index in the shell right before the error message.Here’s an example of wrong code that will cause the error to appear:# WRONG CODE
-lst = ['Alice', 'Bob', 'Ann', 'Carl']
-for i in range(len(lst)+1):
-lst[i]
-# Traceback (most recent call last):
-#
-File "C:\Users\xcent\Desktop\code.py", line 5, in <module>
-#
-lst[i]
-# IndexError: list index out of range
-The error message tells you that the error appears in line 5. So, let’s insert a print statement before that line:lst = ['Alice', 'Bob', 'Ann', 'Carl']
-for i in range(len(lst)+1):
-print(i)
-lst[i]The result of this code snippet is still an error. But there’s more:0
-1
-2
+php - json_decode() expects parameter 1 to be string, array given - Stack Overflow
+Stack Overflow
+About
+Products
+For Teams
+Stack Overflow
+Public questions & answers
+Stack Overflow for Teams
+Where developers & technologists share private knowledge with coworkers
+Jobs
+Programming & related technical career opportunities
+Talent
+Recruit tech talent & build your employer brand
+Advertising
+Reach developers & technologists worldwide
+About the company
+Loading…
+Log in
+Sign up
+current community
+Stack Overflow
+help
+chat
+Meta Stack Overflow
+your communities
+Sign up or log in to customize your list.
+more stack exchange communities
+company blog
+People who code: we want your input.
+Take the Survey
+Join Stack Overflow to learn, share knowledge, and build your career.
+Sign up with email
+Sign up
+Sign up with Google
+Sign up with GitHub
+Sign up with Facebook
+Home
+Public
+Questions
+Tags
+Users
+Find a Job
+Jobs
+Companies
+Teams
+Stack Overflow for Teams
+– Collaborate and share knowledge with a private group.
+Create a free Team
+What is Teams?
+Teams
+What’s this?
+Create free Team
+Teams
+Q&A for work
+Connect and share knowledge within a single location that is structured and easy to search.
+Learn more
+json_decode() expects parameter 1 to be string, array given
+Ask Question
+Asked
+9 years, 9 months ago
+Active
+12 months ago
+Viewed
+137k times
+18
+7
+What causes this error in my code?
+$query = $this->db->query("SELECT * FROM tour_foreign ORDER BY id desc");
+$data = array();
+foreach ($query->result() as $row)
+$data[] = array('guide' => $row->guide);
+echo json_decode($data); //Line 167
+error:
+erro: json_decode() expects parameter 1 to be string, array given: Line Number: 167
+UPDATE:
+If I use json_encode instead of json_decode, my output is this:
+[{"guide":["\u0633\u06cc\u062f \u0633\u0639\u06cc\u062f \u062f\u0627\u062f\u0627\u0634\u0632\u0627\u062f\u0647"]},{"guide":["\u0633\u06c‌​c\u062f \u0633\u0639\u06cc\u062f \u062f\u0627\u062f\u0627\u0634\u0632\u0627\u062f\u0647"]},{"guide":null}]
+They are persian words.
+php json
+Share
+Follow
+edited Jul 18 '19 at 9:50
+DarkWiiPlayer
+5,91122 gold badges1818 silver badges2929 bronze badges
+asked Sep 15 '11 at 20:14
+Jennifer AnthonyJennifer Anthony
+2,06799 gold badges3333 silver badges5555 bronze badges
 3
-4
-Traceback (most recent call last):
-File "C:\Users\xcent\Desktop\code.py", line 6, in <module>
-lst[i]
-IndexError: list index out of rangeYou can now see all indices used to retrieve an element. The final one is the index i=4 which points to the fifth element in the list (remember: Python starts indexing at index 0!). But the list has only four elements, so you need to reduce the number of indices you’re iterating over. The correct code is, therefore:# CORRECT CODE
-lst = ['Alice', 'Bob', 'Ann', 'Carl']
-for i in range(len(lst)):
-lst[i]Note that this is a minimal example and it doesn’t make a lot of sense. But the general debugging strategy remains even for advanced code projects:Figure out the faulty index just before the error is thrown.Eliminate the source of the faulty index.IndexError When Modifying a List as You Iterate Over ItThe IndexError also frequently occurs if you iterate over a list but you remove elements as you iterate over the list:l=[1,2,3,0,0,1]
-for i in range(0, len(l)):
-if l[i]==0:
-l.pop(i)This code snippet is from a StackOverflow question. The source is simply that the list.pop() method removes the element with value 0. All subsequent elements now have a smaller index. But you iterate over all indices up to len(l)-1 = 6-1 = 5 and the index 5 does not exist in the list after removing elements in a previous iteration.You can simply fix this with a short list comprehension statement that accomplishes the same thing:l = [x for x in l if x]Only non-zero elements are included in the list.String IndexError: List Index Out of RangeThe error can occur when accessing strings as well:s = 'Python'
-print(s[6])To fix the error for strings, make sure that the index falls between the range 0 ... len(s)-1 (included):s = 'Python'
-print(s[5])
-# nTuple IndexError: List Index Out of RangeIn fact, the IndexError can occur for all ordered collections where you can use indexing to retrieve certain elements. Thus, it also occurs when accessing tuple indices that do not exist:s = ('Alice', 'Bob')
-print(s[2])Again, start counting with index 0 to get rid of this:s = ('Alice', 'Bob')
-print(s[1])
-# BobNote: The index of the last element in any sequence is len(sequence)-1. Where to Go From Here?Enough theory, let’s get some practice!To become successful in coding, you need to get out there and solve real problems for real people. That’s how you can become a six-figure earner easily. And that’s how you polish the skills you really need in practice. After all, what’s the use of learning theory that nobody ever needs?Practice projects is how you sharpen your saw in coding!Do you want to become a code master by focusing on practical code projects that actually earn you money and solve problems for people?Then become a Python freelance developer! It’s the best way of approaching the task of improving your Python skills—even if you are a complete beginner.Join my free webinar “How to Build Your High-Income Skill Python” and watch how I grew my coding business online and how you can, too—from the comfort of your own home.Join the free webinar now! ChrisWhile working as a researcher in distributed systems, Dr. Christian Mayer found his love for teaching computer science students.To help students reach higher levels of Python success, he founded the programming education website Finxter.com. He’s author of the popular programming book Python One-Liners (NoStarch 2020), coauthor of the Coffee Break Python series of self-published books, computer science enthusiast, freelancer, and owner of one of the top 10 largest Python blogs worldwide.His passions are writing, reading, and coding. But his greatest passion is to serve aspiring coders through Finxter and help them to boost their skills. You can join his free email academy here.Post navigation← Previous PostNext Post →MenuAboutImpressumPrivacyTermsEarnings DisclaimerPuzzlesAcademyBooks & Courses
-Copyright © 2021 Finxter
+You are passing an array where a string is expected. You are creating the array in the line before - is that necessary? Why not just use $row->guide directly?
+– Pekka
+Sep 15 '11 at 20:15
+1
+What are you trying to accomplish ?
+– aziz punjani
+Sep 15 '11 at 20:20
+What are you trying to do here?
+– Rocket Hazmat
+Sep 15 '11 at 20:40
+Add a comment
+|
+6 Answers
+6
+Active
+Oldest
+Votes
+51
+I think you want json_encode, not json_decode.
+Share
+Follow
+edited Apr 15 '12 at 14:46
+Tim Cooper
+144k3535 gold badges302302 silver badges262262 bronze badges
+answered Sep 15 '11 at 20:15
+Rocket HazmatRocket Hazmat
+205k3939 gold badges283283 silver badges323323 bronze badges
+7
+if use of json_encode my output is this: [{"guide":["\u0633\u06cc\u062f \u0633\u0639\u06cc\u062f \u062f\u0627\u062f\u0627\u0634\u0632\u0627\u062f\u0647"]},{"guide":["\u0633\u06cc\u062f \u0633\u0639\u06cc\u062f \u062f\u0627\u062f\u0627\u0634\u0632\u0627\u062f\u0647"]},{"guide":null}], they are persian word
+– Jennifer Anthony
+Sep 15 '11 at 20:18
+@Selena: The \u0633 characters are just Unicode characters that are encoded.
+The first guide is سید سعید داداشزاده.
+Is that right?
+– Rocket Hazmat
+Sep 15 '11 at 20:23
+@Selena: Show it where?
+If you echo the string (in JavaScript) they will print correctly.
+You don't need to do anything special, just echo them normally.
+– Rocket Hazmat
+Sep 15 '11 at 20:29
+i not want echo they in JavaScript, What do you mean of just echo them normally!?
+– Jennifer Anthony
+Sep 15 '11 at 20:33
+@Selena: What are you trying to do here?
+What do you want to do with the words?
+– Rocket Hazmat
+Sep 15 '11 at 20:34
+|
+Show 2 more comments
+23
+Set decoding to true
+Your decoding is not set to true.
+If you don't have access to set the source to true. The code below will fix it for you.
+$WorkingArray = json_decode(json_encode($data),true);
+Share
+Follow
+edited Apr 25 '19 at 9:51
+answered Oct 19 '14 at 11:46
+KareemKareem
+4,1503737 silver badges3434 bronze badges
+Add a comment
+|
+3
+json_decode() is used to decode a json string to an array/data object. json_encode() creates a json string from an array or data. You are using the wrong function my friend, try json_encode();
+Share
+Follow
+answered Sep 15 '11 at 20:42
+macintosh264macintosh264
+97322 gold badges1010 silver badges2626 bronze badges
+Add a comment
+|
+1
+here is the solution for similar problem which i was facing while extracting name from user profile facebook json object
+$uname=json_encode($userprof);
+$uname=json_decode($uname);
+echo "Welcome " . $uname -> name
+;
+Share
+Follow
+edited Jun 17 '15 at 4:58
+answered Feb 28 '12 at 7:17
+Akhil JainAkhil Jain
+12.8k1313 gold badges5151 silver badges8888 bronze badges
+0
+Add a comment
+|
+0
+Make an object
+$obj = json_decode(json_encode($need_to_json));
+Show data from this $obj
+$obj->{'needed'};
+Reference
+Share
+Follow
+answered Dec 10 '19 at 11:04
+Ayman ElshehawyAyman Elshehawy
+81777 silver badges1010 bronze badges
+Add a comment
+|
+0
+Ok I was running into the same issue. What I failed to notice is that I was using json_decode() instead of using json_encode() so for those who are going to come here please make sure you are using the right function, which is json_encode()
+Note: Depends on what you are working on but make sure you are using the right function.
+Share
+Follow
+edited Jun 11 '20 at 15:15
+answered Jun 11 '20 at 14:41
+ZaMyZaMy
+34044 silver badges99 bronze badges
+Add a comment
+|
+Your Answer
+Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
+Draft saved
+Draft discarded
+Sign up or log in
+Sign up using Google
+Sign up using Facebook
+Sign up using Email and Password
+Submit
+Post as a guest
+Name
+Email
+Required, but never shown
+Post as a guest
+Name
+Email
+Required, but never shown
+Post Your Answer
+Discard
+By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
+Not the answer you're looking for? Browse other questions tagged php json
+or ask your own question.
+The Overflow Blog
+Using low-code tools to iterate products faster
+Podcast 345: A good software tutorial explains the How. A great one explains…
+Featured on Meta
+Take the 2021 Developer Survey
+Linked
+3
+Querying a collection with an array of mongoID
+Related
+1402
+Safely turning a JSON string into an object
+2736
+Deleting an element from an array in PHP
+1244
+JavaScriptSerializer - JSON serialization of enum as string
+980
+mysql_fetch_array()/mysql_fetch_assoc()/mysql_fetch_row()/mysql_num_rows etc… expects parameter 1 to be resource
+1301
+Convert JS object to JSON string
+2660
+How do I check if a string contains a specific word?
+443
+json_decode to array
+0
+How to use Json URL in android application
+0
+json_decode() expects parameter 1 to be string, array given
+1
+json_decode() expects parameter 1 to be string, array given?
+Hot Network Questions
+Why would a modern city with a warm climate have a skyway system?
+Traditionally, is prosciutto never to be cooked?
+Why don't demons possess children until after puberty?
+Where is Lorentz contraction centered on?
+When is it appropriate to foam a landing strip? (example JB292)
+What are the numbers below the notes in Sarasate's "Gypsy Airs"
+How can I use basename with parallel?
+Is co-authoring with friends a good idea?
+Can I gain AC efficiency by spraying condensate water on the outdoor coils?
+Does machine learning really need data-efficient algorithms?
+What's the definition of an artifact in regards to a Sphere of Annihilation?
+Parallelogram law of vectors
+Sum of set bits from 1 to n
+Is LUKS still an effective option for consumer FDE considering Elcomsoft can break it?
+Can an American state ban a (minor) political party?
+Why can an easily graphable definite integral, be labyrinthine to evaluate?
+How to use df.loc (or some other method) to make a new column based on specific conditions?
+What is the hardest part of transitioning from a PhD to a full-time career in academia?
+Is it suspicious that gravitational waves propagate at the speed of light?
+How should a company manage physical 2FA tokens?
+Why did this gallon of milk stay fresh for so long?
+Interview by fellow PhD students, not the professor himself
+How do trademarks apply to Open Source?
+Why was the neutrino thought to be massless?
+more hot questions
+Question feed
+Subscribe to RSS
+Question feed
+To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+lang-php
+Stack Overflow
+Questions
+Jobs
+Developer Jobs Directory
+Salary Calculator
+Help
+Mobile
+Products
+Teams
+Talent
+Advertising
+Enterprise
+Company
+About
+Press
+Work Here
+Legal
+Privacy Policy
+Terms of Service
+Contact Us
+Cookie Settings
+Cookie Policy
+Stack Exchange Network
+Technology
+Life / Arts
+Culture / Recreation
+Science
+Other
+Stack Overflow
+Server Fault
+Super User
+Web Applications
+Ask Ubuntu
+Webmasters
+Game Development
+TeX - LaTeX
+Software Engineering
+Unix & Linux
+Ask Different (Apple)
+WordPress Development
+Geographic Information Systems
+Electrical Engineering
+Android Enthusiasts
+Information Security
+Database Administrators
+Drupal Answers
+SharePoint
+User Experience
+Mathematica
+Salesforce
+ExpressionEngine® Answers
+Stack Overflow em Português
+Blender
+Network Engineering
+Cryptography
+Code Review
+Magento
+Software Recommendations
+Signal Processing
+Emacs
+Raspberry Pi
+Stack Overflow на русском
+Code Golf
+Stack Overflow en español
+Ethereum
+Data Science
+Arduino
+Bitcoin
+Software Quality Assurance & Testing
+Sound Design
+Windows Phone
+more (29)
+Photography
+Science Fiction & Fantasy
+Graphic Design
+Movies & TV
+Music: Practice & Theory
+Worldbuilding
+Video Production
+Seasoned Advice (cooking)
+Home Improvement
+Personal Finance & Money
+Academia
+Law
+Physical Fitness
+Gardening & Landscaping
+Parenting
+more (10)
+English Language & Usage
+Skeptics
+Mi Yodeya (Judaism)
+Travel
+Christianity
+English Language Learners
+Japanese Language
+Chinese Language
+French Language
+German Language
+Biblical Hermeneutics
+History
+Spanish Language
+Islam
+Русский язык
+Russian Language
+Arqade (gaming)
+Bicycles
+Role-playing Games
+Anime & Manga
+Puzzling
+Motor Vehicle Maintenance & Repair
+Board & Card Games
+Bricks
+Homebrewing
+Martial Arts
+The Great Outdoors
+Poker
+Chess
+Sports
+more (16)
+MathOverflow
+Mathematics
+Cross Validated (stats)
+Theoretical Computer Science
+Physics
+Chemistry
+Biology
+Computer Science
+Philosophy
+Linguistics
+Psychology & Neuroscience
+Computational Science
+more (10)
+Meta Stack Exchange
+Stack Apps
+API
+Data
+Blog
+Facebook
+Twitter
+LinkedIn
+Instagram
+site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
+rev 2021.6.10.39473
+Stack Overflow works best with JavaScript enabled
+Your privacy
+By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
+Accept all cookies
+Customize settings

@@ -1,83 +1,188 @@
-Why am I receiving 'list' object cannot be interpreted as an integer and 'str' object cannot be interpreted as an integer? - Python - Codecademy Forums
-Why am I receiving 'list' object cannot be interpreted as an integer and 'str' object cannot be interpreted as an integer?
-Get Help
-Python
-lists-dictionaries
-simanii
-July 3, 2016,
-4:00pm
-#1
-Hi,
-I wrote the following code and receiving error. What is problem with and how can I eradicate errors.
-c=0
-x=[]
-y=[]
-z=[]
-while True:
-o=int(input("enter menu:"))
-if o==1:
-x.append(input("enter name:"))
-z.append(int(input("enter #:")))
-y.append(int(input("enter score:")))
-c+=1
-elif o==2:
-n=int(input("enter student number:"))
-for i in range(0,c):
-if n==z[i]:
-x.pop([i])
-y.pop([i])
-z.pop([i])
-elif o==3:
-for i in range(0,c):
-print("name:",x[i],"st number:",z[i],"score:",y[i])
-elif o==4:
-break
-I received TypeError: ‘list’ object cannot be interpreted as an integer for x.pop([i])
-then I changed that to x.pop(x[i]) and I received
-TypeError: ‘str’ object cannot be interpreted as an integer
-mtf
-July 3, 2016,
-9:41pm
-#2
-Did you try with just pop(i).?
-Generally speaking, if we only wish to delete without returning the value,
-del(x[i])
-will do the same thing.
-simanii
-July 4, 2016, 12:13pm
-#3
-Thanks for your valuable answer.I replace pop with del, but I get that error again.
-The thing which is strange for me is that I am using the same definition for remove as same as find, but I only receive error from remove.
-Meanwhile, there is a problem with finding maximum on o=2. Please take a look at my run below:
-o=1:::add o=2:::max o=3:::find o=4:::remove o=5:::report
-o=6:::exit enter menu:1
-enter name:sam enter #:5 enter score:90
-o=1:::add o=2:::max o=3:::find o=4:::remove o=5:::report
-o=6:::exit enter menu:1
-enter name:susan enter #:10 enter score:75
-o=1:::add o=2:::max o=3:::find o=4:::remove o=5:::report
-o=6:::exit enter menu:1
-enter name:peter enter #:2 enter score:80
-o=1:::add o=2:::max o=3:::find o=4:::remove o=5:::report
-o=6:::exit enter menu:5
-name: sam st number: 5 score: 90 name: susan st number: 10 score: 75 name: peter st number: 2 score: 80
-o=1:::add o=2:::max o=3:::find o=4:::remove o=5:::report
-o=6:::exit enter menu:2
-max= 90
-o=1:::add o=2:::max o=3:::find o=4:::remove o=5:::report
-o=6:::exit enter menu:5
-name: sam st number: 5 score: 90 name: susan st number: 10 score: 90 name: peter st number: 2 score: 90
-o=1:::add o=2:::max o=3:::find o=4:::remove o=5:::report
-o=6:::exit enter menu:6
-You can see when I enter report as the first time, I will have true results. When I use max after that I find maximum number, although when I use again report you can see that I get false results(the score of sam, susan and peter are changed to 90 all of them) How can I eradicate this problem?
-system
-closed
-July 11, 2016, 11:47am
-#4
-This topic was automatically closed 7 days after the last reply. New replies are no longer allowed.
-Home
-Categories
-FAQ/Guidelines
+Python 3 TypeError: 'str' object cannot ... | DaniWeb
+Menu
+DaniWeb
+Log In
+Sign Up
+Read
+Contribute
+Search
+Search
+Navigation
+Search
+Search
+Forum Categories
+laptop
+Hardware/Software
+code
+Programming
+live_tv
+Digital Media
+local_cafe
+Community Center
+Latest Content
+Newest Topics
+Latest Topics
+forumLatest Posts
+Top Tags
+Topics Feed
+Social
+Top Members
+DaniWeb Premium
+Newsletter Archive
+Community Rules
+Connect API
+Forum API Docs
+DaniWeb Ads
 Terms of Service
 Privacy Policy
-Powered by Discourse, best viewed with JavaScript enabled
+FAQ
+About Us
+Contact Us
+© 2021 DaniWeb® LLC
+Python 3 TypeError: 'str' object cannot be interpreted as an integer.
+Home
+Programming Forum
+Software Development Forum
+Discussion / Question
+Martin_8
+0
+Newbie Poster
+5 Years Ago
+I am making a chat client to connect to a server I already made with sockets in Python 3, but I am having a problem with the new encoding and decosing stuff for Python 3. Here is the relevant code:
+else :
+# user entered a message
+msg = sys.stdin.readline()
+s.send(bytes((msg, 'utf-8')))
+sys.stdout.write(bytes('[Me] '))
+sys.stdout.flush()
+and here is the error I get when running this client from python in terminal:
+# It connects to the server fine, as we can see from the next two lines, but if I try to type a message it closes and outputs the error message.
+Connected to remote host. You can start sending messages
+[Me] hi
+Traceback (most recent call last):
+File "client.py", line 50, in <module>
+client()
+File "client.py", line 45, in client
+s.send(bytes((msg, 'utf-8')))
+TypeError: 'str' object cannot be interpreted as an integer
+I read this: http://www.pythoncentral.io/encoding-and-decoding-strings-in-python-3-x/ and adjusted my code accordingly, but it still gives me the same error. Please feel free to ask for anything else you may need.
+python
+typeerror
+0
+0
+Share
+2
+Contributors
+forum
+1
+Reply
+4,456
+Views
+5 Hours
+Discussion Span
+comment
+Latest Post
+5 Years Ago
+Latest Post
+by Gribouillis
+Gribouillis
+1,391
+Programming Explorer
+Team Colleague
+5 Years Ago
+The signature of the bytes() function gives the solution
+class bytes(object)
+|
+bytes(iterable_of_ints) -> bytes
+|
+bytes(string, encoding[, errors]) -> bytes
+|
+bytes(bytes_or_buffer) -> immutable copy of bytes_or_buffer
+|
+bytes(int) -> bytes object of size given by the parameter initialized with null bytes
+|
+bytes() -> empty bytes object
+...
+You want to use the second form bytes(string, encoding) but instead you wrote bytes((string, encoding)), that is to say a single tuple argument. Since a tuple is iterable, the only option for python is to believe that you used the first form. Then python expects that your tuple is a tuple of ints, and as this fails, you get the error. So use
+bytes(msg, 'utf-8')
+1
+0
+Share
+ddanbe
+commented:
+Great knowledge.
++15
+Facebook
+Like
+Twitter
+Tweet
+Be a part of the DaniWeb community
+We're a friendly, industry-focused community of
+1.21 million developers, IT pros, digital marketers,
+and technology enthusiasts learning and sharing knowledge.
+Sign Up — It's Free!
+Related Topics
+Python/csv: 'module' object has no attribute 'writer'
+8
+Problem with a value being a float not an integer?
+1
+PyQT4 TreeModel example
+4
+AttributeError: 'str' object has no attribute 'keys'
+13
+Object is not callable
+2
+2-dimensional array using user input of high /low temps
+8
+Starting Python
+398
+Review of Python Tools for Visual Studio
+15
+Linker Error in Turbo C++ v3.0
+22
+Convert python examples to runnable code.
+3
+Is a python os possible?
+4
+win32 - about WM_PAINT message
+5
+TypeError: attribute of type 'NoneType' is not callable object
+6
+Python CPU Performance Analysis
+1
+link list
+3
+problem with deleting a list indexes with both int and str
+5
+Python errors
+2
+Delete an item from array with algorithm
+2
+Can anyone explain this python code of snake game
+2
+My simple python program to calculate the volumes of some popular solids
+1
+Not what you need?
+Reach out to all the awesome people in our software development community by starting your own topic.
+We equally welcome both specific questions as well as open-ended discussions.
+Start New Topic
+Topics Feed
+add_comment
+Reply to this Topic
+This topic is old!
+No one has contributed to this discussion in over 5 years.
+Are you sure you have something valuable to add to revive the existing conversation?
+Consider starting a new topic instead.
+Otherwise, please be thoughtful, detailed and courteous, and adhere to our posting rules.
+Edit
+Preview
+Message
+H1
+H2
+Post Reply
+Insert Code Block
+Insert Code Block
+Share Post
+Permanent Link
+Facebook
+Twitter

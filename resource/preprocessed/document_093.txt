@@ -1,397 +1,46 @@
-dictionary - Python AttributeError: 'dict' object has no attribute 'append' - Stack Overflow
-Stack Overflow
-About
-Products
-For Teams
-Stack Overflow
-Public questions & answers
-Stack Overflow for Teams
-Where developers & technologists share private knowledge with coworkers
-Jobs
-Programming & related technical career opportunities
-Talent
-Recruit tech talent & build your employer brand
-Advertising
-Reach developers & technologists worldwide
-About the company
-Loading…
-Log in
-Sign up
-current community
-Stack Overflow
-help
-chat
-Meta Stack Overflow
-your communities
-Sign up or log in to customize your list.
-more stack exchange communities
-company blog
-People who code: we want your input.
-Take the Survey
-Join Stack Overflow to learn, share knowledge, and build your career.
-Sign up with email
-Sign up
-Sign up with Google
-Sign up with GitHub
-Sign up with Facebook
-Home
-Public
-Questions
-Tags
-Users
-Find a Job
-Jobs
-Companies
-Teams
-Stack Overflow for Teams
-– Collaborate and share knowledge with a private group.
-Create a free Team
-What is Teams?
-Teams
-What’s this?
-Create free Team
-Teams
-Q&A for work
-Connect and share knowledge within a single location that is structured and easy to search.
-Learn more
-Python AttributeError: 'dict' object has no attribute 'append'
-Ask Question
-Asked
-3 years, 4 months ago
-Active
-1 year, 7 months ago
-Viewed
-78k times
-14
-7
-I am creating a loop in order to append continuously values from user input to a dictionary but i am getting this error:
-AttributeError: 'dict' object has no attribute 'append'
-This is my code so far:
-for index, elem in enumerate(main_feeds):
-print(index,":",elem)
-temp_list = index,":",elem
-li = {}
-print_user_areas(li)
-while True:
-n = (input('\nGive number: '))
-if n == "":
-break
-else:
-if n.isdigit():
-n=int(n)
-print('\n')
-print (main_feeds[n])
-temp = main_feeds[n]
-for item in user:
-user['areas'].append[temp]
-Any ideas?
-python dictionary for-loop tuples
-Share
-Follow
-edited Jan 12 '18 at 22:00
-DYZ
-45.8k99 gold badges4848 silver badges7676 bronze badges
-asked Jan 12 '18 at 21:50
-anonymousanonymous
-16111 gold badge11 silver badge33 bronze badges
-3
-3
-Well, a dict doesn't have an append method. And even if it did, you couldn't call it with square brackets.
-– Daniel Roseman
-Jan 12 '18 at 21:56
-use defaultdict instead (with list in it)
-– RandomB
-Jan 12 '18 at 21:59
-You assign values to a dict using its key like this : user['areas'] = temp. Your code would only work IF user[areas] was already a list. If you need it to be a list, construct the list first, THEN assign that list to the key.
-– JacobIRR
-Jan 12 '18 at 22:00
-Add a comment
-|
-2 Answers
-2
-Active
-Oldest
-Votes
-15
-Like the error message suggests, dictionaries in Python do not provide an append operation.
-You can instead just assign new values to their respective keys in a dictionary.
-mydict = {}
-mydict['item'] = input_value
-If you're wanting to append values as they're entered you could instead use a list.
-mylist = []
-mylist.append(input_value)
-Your line user['areas'].append[temp] looks like it is attempting to access a dictionary at the value of key 'areas', if you instead use a list you should be able to perform an append operation.
-Using a list instead:
-user['areas'] = []
-On that note, you might want to check out the possibility of using a defaultdict(list) for your problem. See here
-Share
-Follow
-edited Jan 12 '18 at 22:15
-answered Jan 12 '18 at 22:12
-Shane WilliamsonShane Williamson
-15111 silver badge55 bronze badges
-2
-4
-Dictionaries in Python do provide an update method though.
-So, if you want to add more key-value pairs: dict.update({'another_key': 'another_value'}).
-Maybe of value here.
-update will overwrite existing keys of the same name, so caveat emptor.
-– Matt Morgan
-Jan 12 '18 at 22:15
-Very true Matt! Although, it looks like they're trying to just append values here.
-– Shane Williamson
-Jan 12 '18 at 22:17
-Add a comment
-|
--2
-Either
-use dict.setdefault() if the key is not added yet to dictionary :
-dict.setdefault(key,[]).append(value)
-or use, if you already have the keys set up:
-dict[key].append(value)
-source: stackoverflow answers
-Share
-Follow
-answered Oct 18 '19 at 8:50
-sivisivi
-9,06822 gold badges4343 silver badges4747 bronze badges
-1
-you should at least add a link to which answer from stackoverflow you're refering to
-– João Ciocca
-May 10 at 19:52
-Add a comment
-|
-Your Answer
-Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
-Draft saved
-Draft discarded
-Sign up or log in
-Sign up using Google
-Sign up using Facebook
-Sign up using Email and Password
-Submit
-Post as a guest
-Name
-Email
-Required, but never shown
-Post as a guest
-Name
-Email
-Required, but never shown
-Post Your Answer
-Discard
-By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
-Not the answer you're looking for? Browse other questions tagged python dictionary for-loop tuples
-or ask your own question.
-The Overflow Blog
-Using low-code tools to iterate products faster
-Podcast 345: A good software tutorial explains the How. A great one explains…
-Featured on Meta
-Take the 2021 Developer Survey
-Linked
-630
-How does collections.defaultdict work?
-6
-'dict' object has no attribute 'append' Json
-1
-'dict' object has no attribute 'append'
-Related
-1922
-How to know if an object has an attribute in Python
-220
-AttributeError: 'module' object has no attribute
-589
-Convert nested Python dict to object?
-1204
-In Python, how do I determine if an object is iterable?
-1307
-Referring to the null object in Python
-1429
-Why do Python classes inherit object?
-348
-Accessing dict keys like an attribute?
-373
-Converting Python dict to kwargs?
-345
-Why do I get AttributeError: 'NoneType' object has no attribute 'something'?
-502
-Error: “ 'dict' object has no attribute 'iteritems' ”
-Hot Network Questions
-Why some CRS are deprecated in QGIS?
-Is LUKS still an effective option for consumer FDE considering Elcomsoft can break it?
-Telling a coworker they aren't invited into my house
-Being forced to take annual leave against my wishes, what are my options
-What is "Horse and Pony II", created by the Battlefield devs (Refraction Games)?
-Is maximum speed a thing?
-Is it a coincidence that on the far side of the moon almost no seas are visible?
-Where is Lorentz contraction centered on?
-Did any countries other than the Asian Tigers jump to developed status during the past 75 years after WW2?
-Why does Lex turn on the flashlight?
-How did law enforcement decrypt messages of ANOM devices?
-How to remove the new weather info from the taskbar?
-Find the mean of two values, take two
-What are the benefits of hand built wheels over automated ones?
-Is there objective proof that recent bills (1st half of 2021) that restrict voting are targeting Democratic voters specifically?
-What would a bear species isolated on an island look like?
-Is there a threadlocker that requires heat to release and can withstand thousands of heat-cool cycles without needing to be reapplied or deteriorating
-Does machine learning really need data-efficient algorithms?
-Why is Ken's beer "gay"?
-How do you say " Coup de grâce " in latin?
-In the sentence "Ich begegnete einem alten Freund in Berlin", why the dative einem instead of the accusative einen?
-Why am I seeing the sun slightly north instead of slightly south early in the morning in Malta?
-Why did this gallon of milk stay fresh for so long?
-What can US senators do against diversity trainings in the US Army?
-more hot questions
-Question feed
-Subscribe to RSS
-Question feed
-To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
-lang-py
-Stack Overflow
-Questions
-Jobs
-Developer Jobs Directory
-Salary Calculator
-Help
-Mobile
-Products
-Teams
-Talent
-Advertising
-Enterprise
-Company
-About
-Press
-Work Here
-Legal
-Privacy Policy
-Terms of Service
-Contact Us
-Cookie Settings
-Cookie Policy
-Stack Exchange Network
-Technology
-Life / Arts
-Culture / Recreation
-Science
-Other
-Stack Overflow
-Server Fault
-Super User
-Web Applications
-Ask Ubuntu
-Webmasters
-Game Development
-TeX - LaTeX
-Software Engineering
-Unix & Linux
-Ask Different (Apple)
-WordPress Development
-Geographic Information Systems
-Electrical Engineering
-Android Enthusiasts
-Information Security
-Database Administrators
-Drupal Answers
-SharePoint
-User Experience
-Mathematica
-Salesforce
-ExpressionEngine® Answers
-Stack Overflow em Português
-Blender
-Network Engineering
-Cryptography
-Code Review
-Magento
-Software Recommendations
-Signal Processing
-Emacs
-Raspberry Pi
-Stack Overflow на русском
-Code Golf
-Stack Overflow en español
-Ethereum
-Data Science
-Arduino
-Bitcoin
-Software Quality Assurance & Testing
-Sound Design
-Windows Phone
-more (29)
-Photography
-Science Fiction & Fantasy
-Graphic Design
-Movies & TV
-Music: Practice & Theory
-Worldbuilding
-Video Production
-Seasoned Advice (cooking)
-Home Improvement
-Personal Finance & Money
-Academia
-Law
-Physical Fitness
-Gardening & Landscaping
-Parenting
-more (10)
-English Language & Usage
-Skeptics
-Mi Yodeya (Judaism)
-Travel
-Christianity
-English Language Learners
-Japanese Language
-Chinese Language
-French Language
-German Language
-Biblical Hermeneutics
-History
-Spanish Language
-Islam
-Русский язык
-Russian Language
-Arqade (gaming)
-Bicycles
-Role-playing Games
-Anime & Manga
-Puzzling
-Motor Vehicle Maintenance & Repair
-Board & Card Games
-Bricks
-Homebrewing
-Martial Arts
-The Great Outdoors
-Poker
-Chess
-Sports
-more (16)
-MathOverflow
-Mathematics
-Cross Validated (stats)
-Theoretical Computer Science
-Physics
-Chemistry
-Biology
-Computer Science
-Philosophy
-Linguistics
-Psychology & Neuroscience
-Computational Science
-more (10)
-Meta Stack Exchange
-Stack Apps
-API
-Data
-Blog
+Laravel 6 make:auth not defined! [Solved] | Laravel Article
+Laravel Article
+Search
+Laravel 6 make:auth not defined! [Solved]
+Published Oct 23, 2019
+Topic: Articles
+Author: Harun
+If you used Laravel version up to 5.8 and now trying to run artisan command make:auth to make authentication scaffolding in Laravel 6 but is it's saying like command make:auth is not defined! In Laravel 6 the command php artisan make:auth removed. This command no longer available in Laravel 6 version. From Laravel version 6 the command php artisan make:auth that's mean auth scaffolding will be available via another official package called Laravel UI. See the Laravel 6 release note at the bottom section. You are thinking now, why Taylor Otwell removed authentication UI scaffolding in Laravel 6? The think behind is Modern frontend development. Now you are free to use any preset in your Laravel application where previously you had to use Bootstrap as a default UI scaffold. Now you can choose preset which you like to work as a frontend part like Bootstrap, Vue, React. To archive the authentication UI scaffolding in your Laravel 6 project, you have to install Laravel UI package. Let's do that. First, run the command composer require laravel/ui --dev After successfully installation laravel UI package, check the ui:auth command available instead of   make:auth command in your artisan command list. php artisan list
+Now you can see the UI scaffolding command available. For generating the auth scaffold run the artisan command below.
+Presets Command
+For VueJs preset php artisan ui vue --auth
+For Bootstrap preset php artisan ui bootstrap --auth
+For ReactJs Preset php artisan ui react --auth
+Choose any one command which frontend you like to work in frontend of your application. Suppose we want to use bootstrap without VueJs or ReactJs. So we have to run the command like as below. php artisan ui bootstrap --auth After running this command all authentication scaffold will generate successfully in your resources/views folder. Now we have to use npm install the command to install all js dependency in our project. npm install npm run dev   Wait until finished the npm dependency installation. After finish the process you will find everything working as expected :)
+Share on
 Facebook
 Twitter
-LinkedIn
-Instagram
-site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.6.10.39470
-Stack Overflow works best with JavaScript enabled
-Your privacy
-By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
-Accept all cookies
-Customize settings
+Linkedin
+Newsletter
+To get new article, Please subscribe with your e-mail
+Submit
+Topics
+ArticlesPackagesToolsCRUDLaravel SEO
+Related Post - Latest Post
+Laravel Barcode generation tutorial
+Jun 29, 2020
+Articles
+Make laravel site super fast by page-cache!
+Jan 05, 2021
+Articles
+Laravel maintenance mode bypass by Secret Route!
+Dec 30, 2020
+Articles
+Laravel database backup automatically - cPanel shared hosting, VPS
+Dec 13, 2020
+Articles
+Laravel Datatables - Ajax, Column, Buttons, Customization
+Dec 04, 2020
+Articles
+Laravel 8 authentication tutorial
+Sep 16, 2020
+Articles
+TinkerPad Giveaway2020 Contest
+Close What is TinkerPad? Contest Details
+Home | About | Advertise | Faq | Terms | Privacy Policy | Sitemap | Contact
+© Copyright 2021 | all rights reserved

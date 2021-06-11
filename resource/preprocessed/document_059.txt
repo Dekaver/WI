@@ -1,243 +1,57 @@
-How To Solve python urllib.error.httperror: http error 403: forbidden - Kodlogs
-menu
-Login
-Register
-search
-Log Inaccount_circle
-Log In
-Email or Username
-Password
-Remember
-Log In
-Register
-I forgot my password
-Register
-Username
-Email
-Password
-Register
-add
-Tags
-Users
-Articles
-Post An Article
-How To Solve python urllib.error.httperror: http error 403: forbidden
-0 votes
-1.4k views
-On trying to scrap a website for practice, but I kept on getting the HTTP Error 403 (does it think the user is a bot)?Here is the code:#import requests
-import urllib.request
-from bs4 import BeautifulSoup
-#from urllib import urlopen
-import re
-webpage = urllib.request.urlopen('http://www.cmegroup.com/trading/products/#sortField=oi&sortAsc=false&venues=3&page=1&cleared=1&group=1').read
-findrows = re.compile('<tr class="- banding(?:On|Off)>(.*?)</tr>')
-findlink = re.compile('<a href =">(.*)</a>')
-row_array = re.findall(findrows, webpage)
-links = re.finall(findlink, webpate)
-print(len(row_array))
-iterator = [] with error : File "C:\Python33\lib\urllib\request.py", line 160, in urlopen
-return opener.open(url, data, timeout)
-File "C:\Python33\lib\urllib\request.py", line 479, in open
-response = meth(req, response)
-File "C:\Python33\lib\urllib\request.py", line 591, in http_response
-'http', request, response, code, msg, hdrs)
-File "C:\Python33\lib\urllib\request.py", line 517, in error
-return self._call_chain(*args)
-File "C:\Python33\lib\urllib\request.py", line 451, in _call_chain
-result = func(*args)
-File "C:\Python33\lib\urllib\request.py", line 599, in http_error_default
-raise HTTPError(req.full_url, code, msg, hdrs, fp)
-urllib.error.HTTPError: HTTP Error 403: Forbidden
-urllib
-http-status-code-403
-python
-python-3
-asked
-Oct 24, 2020
-psandprop
-2.4k points
-answer
-Please log in or register to answer this question.
-1 Answer
-0 votes
-This is probably because of mod_security or some similar server security feature which blocks known spider/bot user agents (urllib uses something like python urllib/3.3.0, it's easily detected). Try setting a known browser user agent with:from urllib.request import Request, urlopen
-req = Request('site link)', headers={'User-Agent': 'Mozilla/5.0'})
-webpage = urlopen(req).read()
-This works for me.By the way, in your code you are missing the () after .read in the urlopen line, but I think that it's a typo.TIP: since this is exercise, choose a different, non restrictive site. Maybe they are blocking urllib for some reason… Definitely it's blocking because of the use of urllib based on the user agent. This same thing is happened with OfferUp. You can create a new class called AppURLopener which overrides the user-agent with Mozilla.import urllib.request
-class AppURLopener(urllib.request.FancyURLopener):
-version = "Mozilla/5.0"
-opener = AppURLopener()
-response = opener.open('site link*')Source - https://docs.python.org/3.0/library/urllib.request.html#urllib.request._urlopener"This is probably because of mod_security or some similar server security feature which blocks known user agents (urllib uses something like python urllib/3.3.0, it's easily detected)" - as already mentioned by Stefano Sanfilippofrom urllib.request import Request, urlopen
-url="site link"
-req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-web_byte = urlopen(req).read()
-webpage = web_byte.decode('utf-8')The web_byte is a byte object returned by the server and the content type present in webpage is mostly utf-8. Therefore you need to decode web_byte using decode method.This solves complete problem while I was having trying to scrap from a website.Based on the previous answer,from urllib.request import Request, urlopen
-#specify url
-url = 'site link'
-req = Request(url, headers={'User-Agent': 'XYZ/3.0'})
-response = urlopen(req, timeout=20).read()This worked  by extending the timeout
-answered
-Oct 29, 2020
-hubconcepts
-4.1k points
-ask related question
-comment
-Your comment on this answer:
-Your name to display (optional):
-Email me at this address if a comment is added after mine:Email me if a comment is added after mine
-Privacy: Your email address will only be used for sending these notifications.
-Anti-spam verification:
-What is the color of the sky?
-To avoid this verification in future, please log in or register.
-Add comment
-Cancel
-Related questions
-0 votes
-1 answer
-35 views
-35 views
-Urllib.error.httperror: http error 403: forbidden
-Problem: Why is this fix urllib.error.httperror: http error 403: forbidden?
-asked
-Apr 13
-jamuna1
-30.2k points
-urllib
-http-status-code-403
-0 votes
-1 answer
-62 views
-62 views
-urllib.error.httperror: http error 404: not found
-Problem: I wrote a script to find spelling mistakes in SO questions' titles. I used it for about a month.This was working fine UPDATE This is the url causing the problem.Even though this url exists. I tried changing the range to some lower values. It works fine now. Why this happened with above url?
-asked
-Feb 21
-Mashhoodch
-13k points
-python
-urllib
-http-status-code-403
-python-3
-0 votes
-1 answer
-13 views
-13 views
-Urllib.error.httperror: http error 500: internal server error
-Problem: How can I solve this? > Urllib.error.httperror: http error 500: internal server error
-asked
-May 7
-Junia Phoebe
-82.2k points
-urllib
-python
-sockets
-http
-0 votes
-1 answer
-155 views
-155 views
-module 'urllib' has no attribute 'request'
-1 I have tried import urllib.request or import urllib The path for my urllib is /Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/urllib/__init__.py I am wondering where is urlopen, or is my python module pointing to the wrong file?
-asked
-Oct 25, 2020
-psandprop
-2.4k points
-urllib
-attributeerror
-python
-python-3
-1 vote
-1 answer
-34 views
-34 views
-Verifying HTTPS certificates with urllib.request
-I am trying to open an https URL using the urlopen method in Python 3's urllib.request module. It seems to work fine, but the documentation warns that "[i]f neither cafile nor capath is specified, an HTTPS request will not do any verification of the server&rsquo;s
-...
-get this list from? Is there any simple and cross-platform way to use the same list of certificates that my OS or browser uses?
-asked
-Sep 13, 2020
-Marivoke
-530 points
-python
-ssl
-python-3
-https
-urllib
-0 votes
-1 answer
-6 views
-6 views
-How to get around a 403 forbidden error
-Problem: I'm looking for a solution : How to get around a 403 forbidden error?
-asked
-5 days ago
-Rada Gracelynn
-42.6k points
-http-status-code-403
-1 vote
-1 answer
-110 views
-110 views
-403 Forbidden: the server understood the request, but is refusing to fulfill it.
-Problem : I keep on facing the below 403 error while performing the AJAX call to the API. &ldquo;403 forbidden: the server understood the request, but is refusing to fulfill it.&rdquo; Above error occurs usually in Microsoft Edge, but does not come up in IE,
-... browsers and also the response/request headers match to one another - So is it the case that the POST request is sending the incorrect?
-asked
-Jan 2, 2020
-alecxe
-7.5k points
-javascript
-ajax
-http-status-code-403
-0 votes
-1 answer
-77 views
-77 views
-attributeerror: module 'urllib' has no attribute 'request'
-Problem: I have tried import urllib.request or import urllib The path for my urllib is /Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/urllib/__init__.py I am wondering where is urlopen, or is my python module pointing to the wrong file?
-asked
-Feb 18
-Mashhoodch
-13k points
-python-3
-attributeerror
-urllib
-url
-module
-0 votes
-1 answer
-123 views
-123 views
-module 'urllib' has no attribute 'urlencode'
-Problem: When I try to follow the Python Wiki's example related to URL encoding: >>> import urllib >>> params = urllib.urlencode({'spam': 1, 'eggs': 2, 'bacon': 0}) >>> f = urllib.urlopen("http://www.musi-cal.com/cgi-bin/query", params) >>> print ...
-(most recent call last): File "<stdin>", line 1, in <module> AttributeError: 'module' object has no attribute 'urlencode' What am I missing?
-asked
-Jan 21
-Mashhoodch
-13k points
-python-3
-url
-urllib
-attributeerror
-0 votes
-1 answer
-462 views
-462 views
-Attributeerror: module 'urllib' has no attribute 'urlretrieve'.
-Problem: I have only basic knowledge in python and urllib. Currently I am trying to write the program which should download the mp3's from the website and after that join them together but on every occasion I try to download the mp3 files I face below error: Traceback ( ... usc.edu/~chiso/oldspice/m-b1-hello.mp3") Looking for the python and urlllib expert who can help me in fixing my above error.
-asked
-Jul 22, 2020
-Raphael Pacheco
-4.9k points
-python-3
-x
-urllib
-attributeerror
-Send feedback
-About Us
-Privacy Policy
-Guest Blog
-XML Sitemap
-Facebook
-Twitter
-Pinterest
-Dark theme
+Download Image from URL using Python - jdhao's blogjdhao's blogHomeArchivesTagsCategoriesAboutjdhao's blogHomeArchivesTagsCategoriesAboutDownload Image from URL using Python2020-06-17Python322 words
+2 mins read
+times readContentsUsing urllib packageUsing requests packageDownloading large files with streamingresponse.iter_contentresponse.rawReferencesRecently, I want to download some images using Python. This is what I’ve
+learned after survey.Using urllib packageThe native and naive way is to use
+urllib.request module to download an image.import urllib.request
+url = "https://cdn.pixabay.com/photo/2020/05/12/17/04/wind-turbine-5163993_960_720.jpg"
+r = urllib.request.urlopen(url)
+with open("wind_turbine.jpg", "wb") as f:
+f.write(r.read())
+However, the above code may error out with following message:urllib.error.HTTPError: HTTP Error 403: ForbiddenIn this case, we need to add a HTTP header to the request:import urllib.request
+# The following way works. Ref: https://stackoverflow.com/a/45358832/6064933
+req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+with open("wind_turbine.jpg", "wb") as f:
+with urllib.request.urlopen(req) as r:
+f.write(r.read())
+Using requests packageA better way is to use requests
+package. Here is a simple example to download an image using requests:import requests
+url = "https://cdn.pixabay.com/photo/2020/05/12/17/04/wind-turbine-5163993_960_720.jpg"
+r = requests.get(url)
+with open("wind-turbine.jpg", "wb") as f:
+f.write(r.content)
+Downloading large files with streamingresponse.iter_contentIn the above code, all content of the image will be read into memory at once.
+If the image is large, it may consume too much memory.Alternatively, we can set stream parameter to True to stream request. In
+this case, only the response header is downloaded. We can retrieve the image in
+a whole using response.content1 or chunk by chunk by using
+response.iter_content method:# Using requests to download large files.
+with requests.get(url, stream=True) as r:
+with open("wind-turbine.jpg", "wb") as f:
+for chunk in r.iter_content(chunk_size=1024):
+if chunk:
+f.write(chunk)
+response.rawWhen stream is True, we can also use response.raw to stream the download.
+response.raw is a file-like object. With the help of shutil.copyfileobj(),
+we can save the image like this:# using r.raw
+with requests.get(url, stream=True) as r:
+with open("wind-turbine.jpg", "wb") as f:
+r.raw.decode_content = True
+shutil.copyfileobj(r.raw, f)
+# or f.write(r.raw.read())
+ReferencesPython 3 urllib HTTP 403 error.Why to use iter_content and chunk_size in python requests?How to download image using requests?Download large file in python with requests.https://requests.readthedocs.io/en/latest/user/advanced/#body-content-workflowYou may want to avoid this for large files! ↩︎Author
+jdhaoLastMod
+2020-06-18License
+CC BY-NC-ND 4.0
+Reward
+wechat
+alipayrequestsDuplicate Logging Messages in Python
+Prev
+Tmux: Open Terminal Failed in Kitty Terminal
+Next
+Please enable JavaScript to view the comments powered by Disqus.Powered by Hugo
+|
+Theme -
+Evensite pv:
+|
+site uv: ©
+2017 -
+2021jdhao

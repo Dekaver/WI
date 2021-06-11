@@ -1,232 +1,120 @@
-command "make:auth" is not defined. - Kodlogs
-menu
-Login
-Register
-search
-Log Inaccount_circle
-Log In
-Email or Username
-Password
-Remember
-Log In
-Register
-I forgot my password
-Register
-Username
-Email
-Password
-Register
-add
-Tags
-Users
-Articles
-Post An Article
-command "make:auth" is not defined.
-0 votes
-48 views
-Problem:the command "make:auth" is not defined.I am trying to run this command in laravel 5.2 but it's not working. Kindly help me to fix it!
-asked
-Feb 25
-Umar Ahmad
-4.1k points
-edited
-Feb 26
-by Umar Ahmad
-answer
-Please log in or register to answer this question.
-1 Answer
-0 votes
-Answer:For Laravel >=6composer require laravel/ui
-php artisan ui vue --auth
-php artisan migrate
-it looks you are not using Laravel 5.2, these are the available make commands in L5.2 and you are missing more than just the make:auth command
-make:auth
-Scaffold basic login and registration views and routes
-make:console
-Create a new Artisan command
-make:controller
-Create a new controller class
-make:entity
-Create a new entity.
-make:event
-Create a new event class
-make:job
-Create a new job class
-make:listener
-Create a new event listener class
-make:middleware
-Create a new middleware class
-make:migration
-Create a new migration file
-make:model
-Create a new Eloquent model class
-make:policy
-Create a new policy class
-make:presenter
-Create a new presenter.
-make:provider
-Create a new service provider class
-make:repository
-Create a new repository.
-make:request
-Create a new form request class
-make:seeder
-Create a new seeder class
-make:test
-Create a new test class
-make:transformer
-Create a new transformer.
-Be sure you have this dependency in your composer.json file
-"laravel/framework": "5.2.*",
-Then run
-composer update
-answered
-Feb 26
-Ahmad
-7.9k points
-ask related question
-comment
-Your comment on this answer:
-Your name to display (optional):
-Email me at this address if a comment is added after mine:Email me if a comment is added after mine
-Privacy: Your email address will only be used for sending these notifications.
-Anti-spam verification:
-What is the color of the sky?
-To avoid this verification in future, please log in or register.
-Add comment
-Cancel
-Related questions
-0 votes
-1 answer
-17 views
-17 views
-Command "migrate:make" is not defined.
-Problem: I used Google to check for a response online to the above questions. But I have not received any useful tips.
-asked
-Apr 13
-zayed1
-61.8k points
-migration
-0 votes
-1 answer
-19 views
-19 views
-Command: auth tls error: could not connect to server
-problem: Please help me to solve it... command: auth tls error: could not connect to server
-asked
-Mar 25
-Ifra
-43.4k points
-filezilla
-0 votes
-1 answer
-9 views
-9 views
-The font size command normalsize is not defined
-Problem: I did read some questions here but none of the answers solved it for me. Any ideas : The font size command normalsize is not defined?
-asked
-May 25
-Irenka Kiri
-84.8k points
-latex
-0 votes
-1 answer
-74 views
-74 views
-com.google.firebase.auth.firebaseauth is not linked. skipping initialization.
-Problem com.google.firebase.auth.firebaseauth is not linked. skipping initialization.
-asked
-Feb 9
-charles mathews
-5.5k points
-android
-push-notification
-firebase
-google-cloud-messaging
-1 vote
-1 answer
-27 views
-27 views
-Cant send email via python using gmail > smtplib.SMTPException: SMTP AUTH extension not supported by server
-Problem : Cant send email via python using gmail > smtplib.SMTPException: SMTP AUTH extension not supported by server
-asked
-May 2
-Abik Dey
-4k points
-python
-email
-python-2-7
-smtp
-smtplib
-0 votes
-1 answer
-10 views
-10 views
-Local module descriptor class for com.google.firebase.auth not found.
-Problem: And finally the error: Local module descriptor class for com.google.firebase.auth not found.
-asked
-May 2
-ochena
-23.3k points
-android
-firebase
-0 votes
-1 answer
-13 views
-13 views
-Android auth firebase error: Local module descriptor class for com.google.firebase.auth not found
-Problem: I'm trying to build an app with login/register capabilities through Firebase. I'm working on it with a partner (he's on Linux, I'm on Mac), and he's able to get the authentication working but for some reason I am not. We have all the same
-... was taken textbook from the Firebase website. Please help, we've been stuck on this for hours, and none of the other similar questions have helped.
-asked
-Apr 25
-Supti
-13k points
-android
-0 votes
-1 answer
-8 views
-8 views
-Authentication error. server returned error "[auth] username and password not accepted."
-Problem: I'm trying to figure out how to send my credentials to Gmail. RFC5034 gives an example S: IMPLEMENTATION BlurdyBlurp POP3 server S: . C: AUTH PLAIN dGVzdAB0ZXN0AHRlc3Q= S: +OK Maildrop locked and ready and the base64 encoded string decodes to test\0test\ ... still rejected. So, can someone confirm the correct method of base64 encoding? Oh, and I have Pop mail activated in my settings.
-asked
-Apr 25
-sumaiya simi
-43.9k points
-authentication
-pop3
-0 votes
-1 answer
-46 views
-46 views
-I got this error > class 'app\http\controllers\auth' not found
-Problem: I got this error > class 'app\http\controllers\auth' not found
-asked
-Mar 30
-Azlan2020
-2.5k points
-file-not-found
-laravel-5
-http-status-code-404
-php
-0 votes
-1 answer
-454 views
-454 views
-w/dynamitemodule: local module descriptor class for com.google.firebase.auth not found.
-asked
-Jul 22, 2020
-James Martin
-2.2k points
-java
-python
-mysql
-local-module
-Send feedback
-About Us
-Privacy Policy
-Guest Blog
-XML Sitemap
-Facebook
-Twitter
-Pinterest
-Dark theme
+TypeError: ‘int’ object is not iterable while training a neural network – Cloud Stack Ninja
+Skip to content
+Cloud Stack Ninja
+Main Menu
+Home
+Contact
+TypeError: ‘int’ object is not iterable while training a neural networkneural-network, python, tensorflow, training-data, types / By
+Tanya Stevens
+I am trying to train NeRF (https://github.com/bmild/nerf), below is the error I am getting. I have tried to print the datatype of the of the variables. I do not know how to proceed next.
+Here is a code snippet:
+In run_nerf_helpers.py:
+def init_nerf_model(D=8, W=256, input_ch=3, input_ch_views=3, output_ch=4, skips=[4], use_viewdirs=False):
+relu = tf.keras.layers.ReLU()
+def dense(W, act=relu): return tf.keras.layers.Dense(W, activation=act)
+print('MODEL', input_ch, input_ch_views, type(
+input_ch), type(input_ch_views), use_viewdirs)
+input_ch = int(input_ch)
+input_ch_views = int(input_ch_views)
+inputs = tf.keras.Input(shape=(input_ch + input_ch_views))
+inputs_pts, inputs_views = tf.split(inputs, [input_ch, input_ch_views], -1)
+inputs_pts.set_shape([None, input_ch])
+inputs_views.set_shape([None, input_ch_views])
+print(inputs.shape, inputs_pts.shape, inputs_views.shape)
+outputs = inputs_pts
+for i in range(D):
+outputs = dense(W)(outputs)
+if i in skips:
+outputs = tf.concat([inputs_pts, outputs], -1)
+In run_nerf.py
+def create_nerf(args):
+"""Instantiate NeRF's MLP model."""
+embed_fn, input_ch = get_embedder(args.multires, args.i_embed)
+input_ch_views = 0
+embeddirs_fn = None
+if args.use_viewdirs:
+embeddirs_fn, input_ch_views = get_embedder(
+args.multires_views, args.i_embed)
+output_ch = 4
+skips = [4]
+model = init_nerf_model(
+D=args.netdepth, W=args.netwidth,
+input_ch=input_ch, output_ch=output_ch, skips=skips,
+input_ch_views=input_ch_views, use_viewdirs=args.use_viewdirs)
+grad_vars = model.trainable_variables
+models = {'model': model}
+def create_nerf(args):
+"""Instantiate NeRF's MLP model."""
+embed_fn, input_ch = get_embedder(args.multires, args.i_embed)
+input_ch_views = 0
+embeddirs_fn = None
+if args.use_viewdirs:
+embeddirs_fn, input_ch_views = get_embedder(
+args.multires_views, args.i_embed)
+output_ch = 4
+skips = [4]
+model = init_nerf_model(
+D=args.netdepth, W=args.netwidth,
+input_ch=input_ch, output_ch=output_ch, skips=skips,
+input_ch_views=input_ch_views, use_viewdirs=args.use_viewdirs)
+grad_vars = model.trainable_variables
+models = {'model': model}
+Error:
+('input_ch_views:', <type 'int'>)
+('output_ch:', <type 'int'>)
+('use_viewdirs:', <type 'bool'>)
+('MODEL', 63, 27, <type 'int'>, <type 'int'>, True)
+Traceback (most recent call last):
+File "run_nerf.py", line 938, in <module>
+train()
+File "run_nerf.py", line 682, in train
+args)
+File "run_nerf.py", line 397, in create_nerf
+input_ch_views=input_ch_views, use_viewdirs=args.use_viewdirs)
+File "/home/nerf-master/run_nerf_helpers.py", line 90, in init_nerf_model
+inputs = tf.keras.Input(shape=(input_ch + input_ch_views))
+File "/usr/local/lib/python2.7/dist-packages/tensorflow/python/keras/engine/input_layer.py", line 231, in Input
+input_tensor=tensor)
+File "/usr/local/lib/python2.7/dist-packages/tensorflow/python/keras/engine/input_layer.py", line 91, in __init__
+batch_input_shape = (batch_size,) + tuple(input_shape)
+TypeError: 'int' object is not iterable
+I am new at this. Any help would be really appreciated. Thank you :)
+Read more here: https://stackoverflow.com/questions/66794501/typeerror-int-object-is-not-iterable-while-training-a-neural-network
+Content AttributionThis content was originally published by Tanya Stevens at Recent Questions - Stack Overflow, and is syndicated here via their RSS feed. You can read the original post over there.
+Post navigation
+← Previous PostNext Post →
+Recent Posts
+Bootstrap row with multiple columns in react app not aligning in the center with some space on the right
+June 10, 2021
+Stored procedure for execute multiple conditions
+June 10, 2021
+VS Code Interactive notebook
+June 10, 2021
+Conda command to list size of packages
+June 10, 2021
+Get title using puppeteer
+June 10, 2021
+Using Regex with no string splits, how do I finding the 3rd string?
+June 10, 2021
+Python check if one value is greater than the next one in array/vector
+June 10, 2021
+Mercadopago with React Native. How to implement it?
+June 10, 2021
+when i execute my face recognition training program python stops working
+June 10, 2021
+Dynamic Nav-link-bars
+June 10, 2021
+Legal DisclaimerCloudStack.Ninja is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com. We also participates in other affiliate programs too. CloudStack.Ninja is compensated for referring traffic and business to these companies. Build5Nines Featured PostsWe are back live for a conference!How my passion for BCDR saved my lifeStopping Azure subdomain takeoversLatest Cloud News: IoT, Security, Azure Sphere, and more! (December 4, 2020 – Build5Nines Weekly)Latest Cloud News: Apple on K8s, IoT, Microsoft Pluton and more! (November 20, 2020 – Build5Nines Weekly)Category CloudAndroid Angular arrays Azure C# css Flutter github html ios java JavaScript jquery JSON linux Microsoft mysql node.js pandas php python python-3.x r reactjs SQL Startups swift TC Thurrott TypeScript
+Recent Posts
+Bootstrap row with multiple columns in react app not aligning in the center with some space on the right
+June 10, 2021
+Stored procedure for execute multiple conditions
+June 10, 2021
+VS Code Interactive notebook
+June 10, 2021
+Conda command to list size of packages
+June 10, 2021
+Get title using puppeteer
+June 10, 2021
+Copyright © 2021 Cloud Stack Ninja | Powered by Astra WordPress Theme
+%d bloggers like this:

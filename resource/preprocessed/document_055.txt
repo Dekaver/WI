@@ -1,14 +1,30 @@
-Kesalahan HTTP 403 dalam Scraping Web Python 3
-Pemrograman
-Tag
-Account
-Sign In
-Signup
-Kesalahan HTTP 403 dalam Scraping Web Python 3
-100
-Saya mencoba membatalkan situs web untuk latihan, tetapi saya terus mendapatkan Kesalahan HTTP 403 (apakah menurutnya saya bot)?
-Ini kode saya:
-#import requests
+How To Solve python urllib.error.httperror: http error 403: forbidden - Kodlogs
+menu
+Login
+Register
+search
+Log Inaccount_circle
+Log In
+Email or Username
+Password
+Remember
+Log In
+Register
+I forgot my password
+Register
+Username
+Email
+Password
+Register
+add
+Tags
+Users
+Articles
+Post An Article
+How To Solve python urllib.error.httperror: http error 403: forbidden
+0 votes
+1.4k views
+On trying to scrap a website for practice, but I kept on getting the HTTP Error 403 (does it think the user is a bot)?Here is the code:#import requests
 import urllib.request
 from bs4 import BeautifulSoup
 #from urllib import urlopen
@@ -19,9 +35,7 @@ findlink = re.compile('<a href =">(.*)</a>')
 row_array = re.findall(findrows, webpage)
 links = re.finall(findlink, webpate)
 print(len(row_array))
-iterator = []
-Kesalahan yang saya dapatkan adalah:
-File "C:\Python33\lib\urllib\request.py", line 160, in urlopen
+iterator = [] with error : File "C:\Python33\lib\urllib\request.py", line 160, in urlopen
 return opener.open(url, data, timeout)
 File "C:\Python33\lib\urllib\request.py", line 479, in open
 response = meth(req, response)
@@ -34,132 +48,196 @@ result = func(*args)
 File "C:\Python33\lib\urllib\request.py", line 599, in http_error_default
 raise HTTPError(req.full_url, code, msg, hdrs, fp)
 urllib.error.HTTPError: HTTP Error 403: Forbidden
-python
-http
-web
+urllib
 http-status-code-403
-—
-Josh
-sumber
-Jawaban:
-209
-Ini mungkin karena mod_securityatau beberapa fitur keamanan server serupa yang memblokir agen pengguna spider / bot yang dikenal ( urllibmenggunakan sesuatu seperti python urllib/3.3.0itu, mudah dideteksi). Coba setel agen pengguna browser yang dikenal dengan:
-from urllib.request import Request, urlopen
-req = Request('http://www.cmegroup.com/trading/products/#sortField=oi&sortAsc=false&venues=3&page=1&cleared=1&group=1', headers={'User-Agent': 'Mozilla/5.0'})
+python
+python-3
+asked
+Oct 24, 2020
+psandprop
+2.4k points
+answer
+Please log in or register to answer this question.
+1 Answer
+0 votes
+This is probably because of mod_security or some similar server security feature which blocks known spider/bot user agents (urllib uses something like python urllib/3.3.0, it's easily detected). Try setting a known browser user agent with:from urllib.request import Request, urlopen
+req = Request('site link)', headers={'User-Agent': 'Mozilla/5.0'})
 webpage = urlopen(req).read()
-Ini berhasil untuk saya.
-By the way, dalam kode Anda Anda yang hilang ()setelah .readdi urlopenline, tapi saya pikir bahwa itu salah ketik.
-TIPS: karena ini adalah latihan, pilih situs lain yang tidak membatasi. Mungkin mereka memblokir urllibkarena suatu alasan ...
-—
-Stefano Sanfilippo
-sumber
-Saya menganggap aman untuk digunakan kembali requntuk beberapa urlopenpanggilan.
-—
-Acumenus
-Mungkin sedikit terlambat, tetapi saya sudah memiliki Agen-Pengguna di kode saya, tetap saja saya munculError 404: Access denied
-—
-Reema Parakh
-Ini berfungsi tetapi saya merasa mereka pasti memiliki alasan yang baik untuk memblokir bot dan saya melanggar persyaratan layanan mereka
-—
-xjcl
-39
-Jelas itu memblokir karena penggunaan urllib Anda berdasarkan agen pengguna. Hal yang sama terjadi pada saya dengan OfferUp. Anda dapat membuat kelas baru bernama AppURLopener yang menggantikan agen pengguna dengan Mozilla.
-import urllib.request
+This works for me.By the way, in your code you are missing the () after .read in the urlopen line, but I think that it's a typo.TIP: since this is exercise, choose a different, non restrictive site. Maybe they are blocking urllib for some reason… Definitely it's blocking because of the use of urllib based on the user agent. This same thing is happened with OfferUp. You can create a new class called AppURLopener which overrides the user-agent with Mozilla.import urllib.request
 class AppURLopener(urllib.request.FancyURLopener):
 version = "Mozilla/5.0"
 opener = AppURLopener()
-response = opener.open('http://httpbin.org/user-agent')
-Sumber
-—
-zeta
-sumber
-2
-Jawaban teratas tidak berhasil untuk saya, sementara jawaban Anda berhasil. Terima kasih banyak!
-—
-Tarun Uday
-Ini berfungsi dengan baik tetapi saya perlu melampirkan konfigurasi ssl untuk ini. Bagaimana saya melakukan ini? Sebelumnya saya baru saja menambahkannya sebagai parameter kedua (urlopen (request, konteks = ctx))
-—
-Hauke
-2
-sepertinya itu benar-benar terbuka tetapi dikatakan 'ValueError: membaca file yang ditutup'
-—
-Martian2049
-@zeta Bagaimana Anda bisa mengikis OfferUp dan memberikan koordinat geografis yang diperlukan untuk melakukan pencarian dari skrip?
-—
-CJ Travis
-@CJTravis, saya tidak mengorek OfferUp. Saya baru saja mengambil nilai item berdasarkan URL item yang tepat. Itu tidak memerlukan koordinat geografis apa pun untuk saya
-—
-zeta
-13
-"Ini mungkin karena mod_security atau beberapa fitur keamanan server serupa yang memblokir yang diketahui
-laba-laba / bot
-agen pengguna (urllib menggunakan sesuatu seperti python urllib / 3.3.0, ini mudah dideteksi) "- seperti yang telah disebutkan oleh Stefano Sanfilippo
-from urllib.request import Request, urlopen
-url="https://stackoverflow.com/search?q=html+error+403"
+response = opener.open('site link*')Source - https://docs.python.org/3.0/library/urllib.request.html#urllib.request._urlopener"This is probably because of mod_security or some similar server security feature which blocks known user agents (urllib uses something like python urllib/3.3.0, it's easily detected)" - as already mentioned by Stefano Sanfilippofrom urllib.request import Request, urlopen
+url="site link"
 req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
 web_byte = urlopen(req).read()
-webpage = web_byte.decode('utf-8')
-The web_byte adalah objek byte dikembalikan oleh server dan jenis hadir konten dalam halaman web ini kebanyakan utf-8 . Oleh karena itu, Anda perlu memecahkan kode web_byte menggunakan metode dekode.
-Ini menyelesaikan masalah lengkap ketika saya mencoba untuk menghapus dari situs web menggunakan PyCharm
-PS -> Saya menggunakan python 3.4
-—
-royatirek
-sumber
-2
-Berdasarkan jawaban sebelumnya,
-from urllib.request import Request, urlopen
+webpage = web_byte.decode('utf-8')The web_byte is a byte object returned by the server and the content type present in webpage is mostly utf-8. Therefore you need to decode web_byte using decode method.This solves complete problem while I was having trying to scrap from a website.Based on the previous answer,from urllib.request import Request, urlopen
 #specify url
-url = 'https://xyz/xyz'
+url = 'site link'
 req = Request(url, headers={'User-Agent': 'XYZ/3.0'})
-response = urlopen(req, timeout=20).read()
-Ini berhasil bagi saya dengan memperpanjang waktu tunggu.
-—
-VICTOR IWUOHA
-sumber
-1
-Karena halaman berfungsi di browser dan bukan saat memanggil dalam program python, tampaknya aplikasi web yang melayani url tersebut mengenali bahwa Anda meminta konten bukan oleh browser.
-Demonstrasi:
-curl --dump-header r.txt http://www.cmegroup.com/trading/products/#sortField=oi&sortAsc=false&venues=3&page=1&cleared=1&group=1
+response = urlopen(req, timeout=20).read()This worked  by extending the timeout
+answered
+Oct 29, 2020
+hubconcepts
+4.1k points
+ask related question
+comment
+Your comment on this answer:
+Your name to display (optional):
+Email me at this address if a comment is added after mine:Email me if a comment is added after mine
+Privacy: Your email address will only be used for sending these notifications.
+Anti-spam verification:
+What is the color of the sky?
+To avoid this verification in future, please log in or register.
+Add comment
+Cancel
+Related questions
+0 votes
+1 answer
+35 views
+35 views
+Urllib.error.httperror: http error 403: forbidden
+Problem: Why is this fix urllib.error.httperror: http error 403: forbidden?
+asked
+Apr 13
+jamuna1
+30.2k points
+urllib
+http-status-code-403
+0 votes
+1 answer
+62 views
+62 views
+urllib.error.httperror: http error 404: not found
+Problem: I wrote a script to find spelling mistakes in SO questions' titles. I used it for about a month.This was working fine UPDATE This is the url causing the problem.Even though this url exists. I tried changing the range to some lower values. It works fine now. Why this happened with above url?
+asked
+Feb 21
+Mashhoodch
+13k points
+python
+urllib
+http-status-code-403
+python-3
+0 votes
+1 answer
+13 views
+13 views
+Urllib.error.httperror: http error 500: internal server error
+Problem: How can I solve this? > Urllib.error.httperror: http error 500: internal server error
+asked
+May 7
+Junia Phoebe
+83.8k points
+urllib
+python
+sockets
+http
+0 votes
+1 answer
+155 views
+155 views
+module 'urllib' has no attribute 'request'
+1 I have tried import urllib.request or import urllib The path for my urllib is /Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/urllib/__init__.py I am wondering where is urlopen, or is my python module pointing to the wrong file?
+asked
+Oct 25, 2020
+psandprop
+2.4k points
+urllib
+attributeerror
+python
+python-3
+1 vote
+1 answer
+34 views
+34 views
+Verifying HTTPS certificates with urllib.request
+I am trying to open an https URL using the urlopen method in Python 3's urllib.request module. It seems to work fine, but the documentation warns that "[i]f neither cafile nor capath is specified, an HTTPS request will not do any verification of the server&rsquo;s
 ...
-<HTML><HEAD>
-<TITLE>Access Denied</TITLE>
-</HEAD><BODY>
-<H1>Access Denied</H1>
-You don't have permission to access ...
-</HTML>
-dan konten di r.txt memiliki baris status:
-HTTP/1.1 403 Forbidden
-Coba posting tajuk 'User-Agent' yang memalsukan klien web.
-CATATAN: Halaman ini berisi panggilan Ajax yang membuat tabel yang mungkin ingin Anda parse. Anda harus memeriksa logika javascript halaman atau cukup menggunakan browser debugger (seperti tab Firebug / Net) untuk melihat url mana yang perlu Anda panggil untuk mendapatkan konten tabel.
-—
-Robert Lujo
-sumber
-1
-Anda dapat mencoba dengan dua cara. Detailnya ada di tautan ini .
-1) Melalui pip
-pip install --upgrade certifi
-2) Jika tidak berhasil, coba jalankan cerificates.command yang dibundel dengan Python 3. * untuk Mac: (Buka lokasi instalasi python Anda dan klik dua kali file tersebut)
-buka / Aplikasi / Python \ 3. * / Instal \ Certificates.command
-—
-Johnson
-sumber
-0
-Jika Anda merasa bersalah karena memalsukan agen pengguna sebagai Mozilla (komentar di jawaban teratas dari Stefano), ini juga dapat bekerja dengan Agen Pengguna non-urllib. Ini berfungsi untuk situs yang saya rujuk:
-req = urlrequest.Request(link, headers={'User-Agent': 'XYZ/3.0'})
-urlrequest.urlopen(req, timeout=10).read()
-Aplikasi saya adalah untuk menguji validitas dengan mengorek tautan tertentu yang saya rujuk, di artikel saya. Bukan pengikis umum.
-—
-Sudeep Prasad
-sumber
-0
-Berdasarkan jawaban sebelumnya, ini berhasil untuk saya dengan Python 3.7
-from urllib.request import Request, urlopen
-req = Request('Url_Link', headers={'User-Agent': 'XYZ/3.0'})
-webpage = urlopen(req, timeout=10).read()
-print(webpage)
-—
-Jonny_P
-sumber
-Dengan menggunakan situs kami, Anda mengakui telah membaca dan memahami Kebijakan Cookie dan Kebijakan Privasi kami.
-Licensed under cc by-sa 3.0
-with attribution required.
+get this list from? Is there any simple and cross-platform way to use the same list of certificates that my OS or browser uses?
+asked
+Sep 13, 2020
+Marivoke
+530 points
+python
+ssl
+python-3
+https
+urllib
+0 votes
+1 answer
+6 views
+6 views
+How to get around a 403 forbidden error
+Problem: I'm looking for a solution : How to get around a 403 forbidden error?
+asked
+6 days ago
+Rada Gracelynn
+42.6k points
+http-status-code-403
+1 vote
+1 answer
+110 views
+110 views
+403 Forbidden: the server understood the request, but is refusing to fulfill it.
+Problem : I keep on facing the below 403 error while performing the AJAX call to the API. &ldquo;403 forbidden: the server understood the request, but is refusing to fulfill it.&rdquo; Above error occurs usually in Microsoft Edge, but does not come up in IE,
+... browsers and also the response/request headers match to one another - So is it the case that the POST request is sending the incorrect?
+asked
+Jan 2, 2020
+alecxe
+7.5k points
+javascript
+ajax
+http-status-code-403
+0 votes
+1 answer
+77 views
+77 views
+attributeerror: module 'urllib' has no attribute 'request'
+Problem: I have tried import urllib.request or import urllib The path for my urllib is /Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/urllib/__init__.py I am wondering where is urlopen, or is my python module pointing to the wrong file?
+asked
+Feb 18
+Mashhoodch
+13k points
+python-3
+attributeerror
+urllib
+url
+module
+0 votes
+1 answer
+123 views
+123 views
+module 'urllib' has no attribute 'urlencode'
+Problem: When I try to follow the Python Wiki's example related to URL encoding: >>> import urllib >>> params = urllib.urlencode({'spam': 1, 'eggs': 2, 'bacon': 0}) >>> f = urllib.urlopen("http://www.musi-cal.com/cgi-bin/query", params) >>> print ...
+(most recent call last): File "<stdin>", line 1, in <module> AttributeError: 'module' object has no attribute 'urlencode' What am I missing?
+asked
+Jan 21
+Mashhoodch
+13k points
+python-3
+url
+urllib
+attributeerror
+0 votes
+1 answer
+462 views
+462 views
+Attributeerror: module 'urllib' has no attribute 'urlretrieve'.
+Problem: I have only basic knowledge in python and urllib. Currently I am trying to write the program which should download the mp3's from the website and after that join them together but on every occasion I try to download the mp3 files I face below error: Traceback ( ... usc.edu/~chiso/oldspice/m-b1-hello.mp3") Looking for the python and urlllib expert who can help me in fixing my above error.
+asked
+Jul 22, 2020
+Raphael Pacheco
+4.9k points
+python-3
+x
+urllib
+attributeerror
+Send feedback
+About Us
+Privacy Policy
+Guest Blog
+XML Sitemap
+Facebook
+Twitter
+Pinterest
+Dark theme

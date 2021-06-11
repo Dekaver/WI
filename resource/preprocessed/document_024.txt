@@ -1,79 +1,458 @@
-AttributeError: 'numpy.ndarray' object has no attribute 'images - pyroomacoustics
-profile
-viewpoint
-nodejs
-Spring Boot
-React
-Rust
-tensorflow
-Ask
-questionsAttributeError: 'numpy.ndarray' object has no attribute 'images
-I found that in your example code, the weight of the beamformer is not consistent with the definition. for example:
-But in the definition ：
-And then, I want to use the method you defined to find the weight, there are some errors, I tried a lot of ways to solve it, but all failed.
-If I define some of the parameters in the weights as you would in the sample code. Then the code will not report an error, but the voice after beamforming has no sound.
-I don't know what the reason for doing this is? Can you explain it to me in your spare time?
-LCAV/pyroomacoustics
-Answer
-questions
-fakufaku
-One more tip 😄 : you can use code block formatting to enhance readability. I have updated your reply above in this way.
-Now, I have tried to run the above code sample and it doesn't produce the same error for me. I see above that you are using a notebook. Notebooks are well-known for their hidden state (because of splitting the code in cells run in arbitrary order), so maybe that was the cause ? You could try to paste all this into a script and run it from the command line. Here is the slightly modified code that produces the expected output from the example.
-import numpy as np
-import matplotlib.pyplot as plt
-from scipy.io import wavfile
-from scipy.signal import fftconvolve
-import IPython
-import pyroomacoustics as pra
-# specify signal and noise source
-# >> Modified to use samples available in pyroomacoustics examples
-fs, signal = wavfile.read("examples/input_samples/cmu_arctic_us_aew_a0001.wav")
-fs, noise = wavfile.read("examples/input_samples/doing_the_dishes.wav")
-# Create 6x6 shoebox room with source and interferer and simulate
-Lg_t = 0.100
-# filter size in seconds
-Lg = np.ceil(Lg_t*fs)
-# in samples
-room_bf = pra.ShoeBox([6,6], fs=fs, max_order=12)
-source = np.array([3, 1])
-interferer = np.array([3, 5])
-room_bf.add_source(source, delay=0., signal=signal)
-room_bf.add_source(interferer, delay=0., signal=noise[:len(signal)])
-# Create geometry equivalent to Amazon Echo
-center = [3, 3]; radius =0.027
-fft_len = 512; M = 4;
-echo = pra.circular_2D_array(center=center, M=4, phi0=0, radius=radius)
-echo = np.concatenate((echo, np.array(center, ndmin=2).T), axis=1)
-mics = pra.Beamformer(echo, room_bf.fs, N=fft_len, Lg=Lg)
-room_bf.add_microphone_array(mics)
-R_n = (M * Lg)*(M * Lg)
-# Compute
-weights
-# >> This function also requires the R_n parameter when there is only one source
-mics.rake_max_sinr_weights(room_bf.sources[0][:1], R_n=np.eye(mics.M))
-room_bf.compute_rir()
-room_bf.simulate()
-# plot the room and resulting beamformer before simulation
-fig, ax = room_bf.plot(freq=[500, 1000, 2000, 4000], img_order=0)
-ax.legend(['500', '1000', '2000', '4000'])
-# >> I was getting an empty figure and had to get rid of the line below
-# fig.set_size_inches(20, 8)
-plt.show()
-useful!
-Related questions
-No questions were found.
-source：https://uonfu.com/
-answerer
-Robin Scheibler fakufaku
-Japan
-http://robinscheibler.org
-Engineer. I ❤️ audio, microphone arrays, IoT, Python, and data.
-repos
-66
-gists
+python - TypeError: 'str' object cannot be interpreted as an integer - Stack Overflow
+Stack Overflow
+About
+Products
+For Teams
+Stack Overflow
+Public questions & answers
+Stack Overflow for Teams
+Where developers & technologists share private knowledge with coworkers
+Jobs
+Programming & related technical career opportunities
+Talent
+Recruit tech talent & build your employer brand
+Advertising
+Reach developers & technologists worldwide
+About the company
+Loading…
+Log in
+Sign up
+current community
+Stack Overflow
+help
+chat
+Meta Stack Overflow
+your communities
+Sign up or log in to customize your list.
+more stack exchange communities
+company blog
+People who code: we want your input.
+Take the Survey
+Join Stack Overflow to learn, share knowledge, and build your career.
+Sign up with email
+Sign up
+Sign up with Google
+Sign up with GitHub
+Sign up with Facebook
+Home
+Public
+Questions
+Tags
+Users
+Find a Job
+Jobs
+Companies
+Teams
+Stack Overflow for Teams
+– Collaborate and share knowledge with a private group.
+Create a free Team
+What is Teams?
+Teams
+What’s this?
+Create free Team
+Teams
+Q&A for work
+Connect and share knowledge within a single location that is structured and easy to search.
+Learn more
+TypeError: 'str' object cannot be interpreted as an integer [duplicate]
+Ask Question
+Asked
+7 years, 8 months ago
+Active
+2 years ago
+Viewed
+160k times
+20
+7
+This question already has answers here:
+How can I read inputs as numbers?
+(10 answers)
+Closed 1 year ago.
+I don't understand what the problem is with the code, it is very simple so this is an easy one.
+x = input("Give starting number: ")
+y = input("Give ending number: ")
+for i in range(x,y):
+print(i)
+It gives me an error
+Traceback (most recent call last):
+File "C:/Python33/harj4.py", line 6, in <module>
+for i in range(x,y):
+TypeError: 'str' object cannot be interpreted as an integer
+As an example, if x is 3 and y is 14,
+I want it to print
+Give starting number: 4
+Give ending number: 13
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+What is the problem?
+python types
+Share
+Improve this question
+Follow
+edited Aug 29 '17 at 8:53
+Mel
+4,9491010 gold badges3333 silver badges3939 bronze badges
+asked Oct 7 '13 at 20:56
+JoeJoe
+20111 gold badge22 silver badges33 bronze badges
+0
+Add a comment
+|
+8 Answers
+8
+Active
+Oldest
+Votes
+23
+A simplest fix would be:
+x = input("Give starting number: ")
+y = input("Give ending number: ")
+x = int(x)
+# parse string into an integer
+y = int(y)
+# parse string into an integer
+for i in range(x,y):
+print(i)
+input returns you a string (raw_input in Python 2). int tries to parse it into an integer. This code will throw an exception if the string doesn't contain a valid integer string, so you'd probably want to refine it a bit using try/except statements.
+Share
+Improve this answer
+Follow
+edited Oct 29 '17 at 21:20
+answered Oct 7 '13 at 20:57
+BartoszKPBartoszKP
+32.2k1313 gold badges9393 silver badges123123 bronze badges
+Add a comment
+|
+6
+You are getting the error because range() only takes int values as parameters.
+Try using int() to convert your inputs.
+Share
+Improve this answer
+Follow
+answered Jun 10 '19 at 11:20
+Rahul Rahul
+10111 silver badge44 bronze badges
+Add a comment
+|
 3
-followers
-151
-following
-96
-Github User Rank List
+x = int(input("Give starting number: "))
+y = int(input("Give ending number: "))
+P.S. Add function int()
+Share
+Improve this answer
+Follow
+edited Jan 11 '18 at 22:48
+Bramwell Simpson
+6333 silver badges1010 bronze badges
+answered Dec 7 '17 at 10:33
+Ливиу ГрекуЛивиу Греку
+3122 bronze badges
+Add a comment
+|
+3
+x = int(input("Give starting number: "))
+y = int(input("Give ending number: "))
+for i in range(x, y):
+print(i)
+This outputs:
+Share
+Improve this answer
+Follow
+edited Sep 25 '18 at 6:41
+Dadep
+2,69255 gold badges2323 silver badges3737 bronze badges
+answered Sep 25 '18 at 5:27
+irshadirshad
+3122 bronze badges
+Add a comment
+|
+1
+I'm guessing you're running python3, in which input(prompt) returns a string.
+Try this.
+x=int(input('prompt'))
+y=int(input('prompt'))
+Share
+Improve this answer
+Follow
+answered Oct 7 '13 at 20:58
+PerkinsPerkins
+2,0411919 silver badges2020 bronze badges
+1
+1
+In python2, use int(raw_input('prompt'))
+– Perkins
+Oct 7 '13 at 20:59
+Add a comment
+|
+1
+You have to convert input x and y into int like below.
+x=int(x)
+y=int(y)
+Share
+Improve this answer
+Follow
+answered Dec 19 '15 at 6:38
+SPradhanSPradhan
+5711 silver badge88 bronze badges
+Add a comment
+|
+1
+You will have to put:
+X = input("give starting number")
+X = int(X)
+Y = input("give ending number")
+Y = int(Y)
+Share
+Improve this answer
+Follow
+edited Aug 24 '16 at 11:47
+BartoszKP
+32.2k1313 gold badges9393 silver badges123123 bronze badges
+answered Oct 7 '13 at 21:02
+MafiaCureMafiaCure
+6511 gold badge11 silver badge1111 bronze badges
+Add a comment
+|
+1
+Or you can also use eval(input('prompt')).
+Share
+Improve this answer
+Follow
+edited Oct 29 '17 at 21:21
+BartoszKP
+32.2k1313 gold badges9393 silver badges123123 bronze badges
+answered Feb 6 '17 at 6:57
+Aditya KumarAditya Kumar
+1122 bronze badges
+3
+eval() will convert the expression to an evaluated version of the input.This is used to counter the backward non-compatiblity of python 3 against Python 2.
+– Aditya Kumar
+Feb 6 '17 at 6:59
+I used this in my program for factorial which was not working before(error given was : for i in range(1,n+1): TypeError: must be str, not int)
+and it worked:
+n = eval(input("Enter a number: ")) j=1 for i in range(1,n+1):
+j=j*i
+i=i+1 print(j)
+– Aditya Kumar
+Feb 6 '17 at 7:01
+This may work... But it creates an enormous security flaw, an attacker has quite literally free reign when you run eval like this without first properly checking the string...
+– 255.tar.xz
+Mar 25 '20 at 17:26
+Add a comment
+|
+Not the answer you're looking for? Browse other questions tagged python types
+or ask your own question.
+The Overflow Blog
+Using low-code tools to iterate products faster
+Podcast 345: A good software tutorial explains the How. A great one explains…
+Featured on Meta
+Take the 2021 Developer Survey
+Linked
+261
+How can I read inputs as numbers?
+0
+creating a list of cordinates (x,y,z variables ) from a single line input
+0
+Python: Google Maps API, TypeError on CSV file
+Related
+1456
+Converting integer to string in Python
+1919
+Determine the type of an object?
+1175
+If Python is interpreted, what are .pyc files?
+1682
+Check if a value is an object in JavaScript
+0
+TypeError: 'str' object cannot be interpreted as an integer
+1
+'float' object cannot be interpreted as an integer
+1
+'str' object cannot be interpreted as an integer on groupby
+0
+TypeError: 'str' object cannot be interpreted as an integer python for loop
+0
+Why I'm getting this error “TypeError: 'list' object cannot be interpreted as an integer”
+Hot Network Questions
+Rewrite strings without changing their order
+Why is there so much reluctance to make the COVID vaccine mandatory for adults?
+What is "Horse and Pony II", created by the Battlefield devs (Refraction Games)?
+How to solve these algebraic identities?
+Why was the neutrino thought to be massless?
+How come full throttle is meaning full speed instead of the opposite?
+Why some CRS are deprecated in QGIS?
+Why would they use human soldiers over undead ones?
+Why are high power LEDs categorized by wattage, not voltage & amperage?
+What are the safety and warranty implications of steaming bread in a domestic oven?
+How to use df.loc (or some other method) to make a new column based on specific conditions?
+Why put a resistor in series with the postive terminal in a non inverting op-amp circuit?
+In Bayesian statistics, data is considered nonrandom but can have a probability or be conditioned on. How?
+Photo Competition 2021-06-07: Long Exposure
+What are the benefits of hand built wheels over automated ones?
+Mansfield 40 toilet flush levers keep breaking
+How to get real-looking rust that will be safe to the touch?
+Showing the bounding box for every coordinate system in QGIS
+How should a company manage physical 2FA tokens?
+Traditionally, is prosciutto never to be cooked?
+Dealing with extremely inexperienced developers who have daily deadlines?
+Are noun+noun and noun's (aphostrope) + noun the same?
+What can US senators do against diversity trainings in the US Army?
+How do trademarks apply to Open Source?
+more hot questions
+lang-py
+Stack Overflow
+Questions
+Jobs
+Developer Jobs Directory
+Salary Calculator
+Help
+Mobile
+Products
+Teams
+Talent
+Advertising
+Enterprise
+Company
+About
+Press
+Work Here
+Legal
+Privacy Policy
+Terms of Service
+Contact Us
+Cookie Settings
+Cookie Policy
+Stack Exchange Network
+Technology
+Life / Arts
+Culture / Recreation
+Science
+Other
+Stack Overflow
+Server Fault
+Super User
+Web Applications
+Ask Ubuntu
+Webmasters
+Game Development
+TeX - LaTeX
+Software Engineering
+Unix & Linux
+Ask Different (Apple)
+WordPress Development
+Geographic Information Systems
+Electrical Engineering
+Android Enthusiasts
+Information Security
+Database Administrators
+Drupal Answers
+SharePoint
+User Experience
+Mathematica
+Salesforce
+ExpressionEngine® Answers
+Stack Overflow em Português
+Blender
+Network Engineering
+Cryptography
+Code Review
+Magento
+Software Recommendations
+Signal Processing
+Emacs
+Raspberry Pi
+Stack Overflow на русском
+Code Golf
+Stack Overflow en español
+Ethereum
+Data Science
+Arduino
+Bitcoin
+Software Quality Assurance & Testing
+Sound Design
+Windows Phone
+more (29)
+Photography
+Science Fiction & Fantasy
+Graphic Design
+Movies & TV
+Music: Practice & Theory
+Worldbuilding
+Video Production
+Seasoned Advice (cooking)
+Home Improvement
+Personal Finance & Money
+Academia
+Law
+Physical Fitness
+Gardening & Landscaping
+Parenting
+more (10)
+English Language & Usage
+Skeptics
+Mi Yodeya (Judaism)
+Travel
+Christianity
+English Language Learners
+Japanese Language
+Chinese Language
+French Language
+German Language
+Biblical Hermeneutics
+History
+Spanish Language
+Islam
+Русский язык
+Russian Language
+Arqade (gaming)
+Bicycles
+Role-playing Games
+Anime & Manga
+Puzzling
+Motor Vehicle Maintenance & Repair
+Board & Card Games
+Bricks
+Homebrewing
+Martial Arts
+The Great Outdoors
+Poker
+Chess
+Sports
+more (16)
+MathOverflow
+Mathematics
+Cross Validated (stats)
+Theoretical Computer Science
+Physics
+Chemistry
+Biology
+Computer Science
+Philosophy
+Linguistics
+Psychology & Neuroscience
+Computational Science
+more (10)
+Meta Stack Exchange
+Stack Apps
+API
+Data
+Blog
+Facebook
+Twitter
+LinkedIn
+Instagram
+site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
+rev 2021.6.10.39473
+Stack Overflow works best with JavaScript enabled
+Your privacy
+By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
+Accept all cookies
+Customize settings

@@ -1,1 +1,335 @@
-Kotakode.com | Komunitas Developer IndonesiaYou need to enable JavaScript to run this app.
+TypeError: ‘str’ object cannot be interpreted as an integer | Career Karma
+Home
+Top Projects
+All Star Projects
+Web Development
+Mobile Development
+Design
+Data Science
+Bootcamps
+Best Coding Bootcamps
+Best Online Bootcamps
+Best Web Design
+Bootcamps
+Best Data Science Bootcamps
+Best Data Analytics Bootcamps
+Best Cyber Security Bootcamps
+Best ISA Bootcamps 2020
+Programs
+Web Development
+Mobile Development
+Software Engineer
+Data Science
+Cybersecurity
+Product Management
+Digital Marketing
+UX/UI Designer
+Database Administration
+Social Media Management
+InfoSec Analyst
+Quality Assurance Engineer
+SEO Manager
+Computer Systems Analyst
+WordPress developer
+Blog
+Bootcamps
+Coding
+Career Resources
+Tech Fields
+News & Commentary
+About
+Company
+Jobs
+Values
+Publication
+Press
+Home
+Top Projects
+All Star Projects
+Web Development
+Mobile Development
+Design
+Data Science
+Bootcamps
+Best Coding Bootcamps
+Best Online Bootcamps
+Best Web Design
+Bootcamps
+Best Data Science Bootcamps
+Best Data Analytics Bootcamps
+Best Cyber Security Bootcamps
+Best ISA Bootcamps 2020
+Programs
+Web Development
+Mobile Development
+Software Engineer
+Data Science
+Cybersecurity
+Product Management
+Digital Marketing
+UX/UI Designer
+Database Administration
+Social Media Management
+InfoSec Analyst
+Quality Assurance Engineer
+SEO Manager
+Computer Systems Analyst
+WordPress developer
+Blog
+Bootcamps
+Coding
+Career Resources
+Tech Fields
+News & Commentary
+About
+Company
+Jobs
+Values
+Publication
+Press
+Sign in
+Front Page
+Bootcamps
+Popular Bootcamps
+Bootcamp Prep
+Bootcamp Financing
+University Bootcamps
+Bootcamp Grads
+Coding
+Coding Tools
+HTML
+CSS
+Java
+JavaScript
+Python
+C++
+Ruby
+SQL
+Git
+Career Resources
+Career Advice
+Tech Interviews
+Tech Salaries
+Tech Cities
+Research
+Tech Fields
+Web Development
+Software Engineering
+Web Design
+Data Science
+Higher Ed
+Associate
+Bachelor’s
+Master’s
+Doctoral
+Certifications
+Trade Schools
+About
+HomePython TutorialsPython TypeError: ‘str’ object cannot be interpreted as an integer Solution
+Python Tutorials
+Python TypeError: ‘str’ object cannot be interpreted as an integer Solution
+James Gallagher
+Sep 10, 2020
+0
+Facebook
+Twitter
+LinkedIn
+The range() method only accepts integer values as a parameter. If you try to use the range() method with a string value, you’ll encounter the “TypeError: ‘str’ object cannot be interpreted as an integer” error.
+This guide discusses why you may encounter this error and what it means. We’ll walk through an example scenario to help you understand this problem and fix it in your program.
+TypeError: ‘str’ object cannot be interpreted as an integer
+The range() method creates a list of values in a particular range. It is commonly used with a for loop to run a certain number of iterations.
+The method only accepts integer values as arguments. This is because the values that range() creates are integers. Consider the following program:
+create_range = range(5, 10)
+for n in create_range:
+print(n)
+Our program prints out five integers to the console:
+5
+6
+7
+8
+9
+If range() accepted strings, it would be more difficult for the function to determine what range of numbers should be created. That’s why you always need to specify integers as arguments. In the above example, 5 and 10 were our arguments.
+An Example Scenario
+We’re going to build a program that lets a pizza restaurant view the names and prices of the most popular pizzas on their menu. To start, define two lists that store the information with which our program will work:
+names = ["Pepperoni", "Margherita", "Ham and Pineapple", "Brie and Chive"]
+prices = [9.00, 8.40, 8.40, 9.50]
+These lists are parallel and appear in order of how popular a pizza is. That means the values at a particular position in the list correspond with each other. For instance, the price of a “Brie and Chive” pizza is $9.50.
+» MORE:  Python Tuples: A Step-By-Step GuideOur next task is to ask the user how many pizzas they would like to display. We can do this using an input() statement:
+to_display = input("Enter the number of pizzas you would like to display: ")
+Now we know the number of pizzas about which the user is seeking information, we can use a for loop to print each pizza and its price to the console:
+for p in range(0, to_display):
+print("{} costs ${}.".format(names[p], prices[p]))
+Our program prints out a message containing the name of each pizza and the price of that pizza. Our loop stops when it has iterated through the number of pizzas a user has requested to display to the console.
+Let’s run our program and see if it works:
+Enter the number of pizzas you would like to display: 2
+Traceback (most recent call last):
+File "main.py", line 6, in <module>
+for p in range(0, to_display):
+TypeError: 'str' object cannot be interpreted as an integer
+Our program returns an error on the line of code where we define our for loop.
+The Solution
+We have created a for loop that runs a particular set of times depending on the value the user inserted into the console.
+The problem with our code is that input() returns a string, not an integer. This means our range() statement is trying to create a range of values using a string, which is not allowed. This is what our code evaluated in our program:
+for p in range(0, "2"):
+print("{} costs ${}.".format(names[p], prices[p]))
+To fix this error, we must convert “to_display” to an integer. We can do this using the int() method:
+for p in range(0, int(to_display)):
+print("{} costs ${}.".format(names[p], prices[p]))
+“to_display” is now an integer. This means we can use the value to create a range of numbers. Let’s run our code:
+Enter the number of pizzas you would like to display: 2
+Pepperoni costs $9.0.
+Margherita costs $8.4.
+Our code successfully prints out the information that we requested. We can see the names of the two most popular pizzas and the prices of those pizzas.
+» MORE:  Python Pass: A How to GuideConclusion
+The “TypeError: ‘str’ object cannot be interpreted as an integer” error is raised when you pass a string as an argument into a range() statement. To fix this error, make sure all the values you use in a range() statement are integers.
+Now you have the knowledge you need to fix this error like a professional!
+About us: Career Karma is a platform designed to help job seekers find, research, and connect with job training programs to advance their careers. Learn about the CK publication.
+What's Next?
+Want to take action?
+Get matched with top bootcamps
+Want to dive deeper?
+Ask a question to our community
+Want to explore tech careers?
+Take our careers quiz
+James Gallagher
+James Gallagher is a self-taught programmer and the technical content manager at Career Karma. He has experience in range of programming languages and extensive expertise in Python, HTML, CSS, and JavaScript. James has written hundreds of programming tutorials, and he frequently contributes to publications like Codecademy, Treehouse, Repl.it, Afrotech, and others. He also serves as a researcher at Career Karma, publishing comprehensive reports on the bootcamp market and income share agreements.
+Read more by James Gallagher
+Share This
+Previous ArticlePython TypeError: object of type ‘int’ has no len() Solution
+Next ArticlePython TypeError: slice indices must be integers or None or have an __index__ method Solution
+Sep 10, 2020
+Comments (0)
+Leave a Reply Cancel replyYour email address will not be published. Required fields are marked *Your CommentName *
+Email *
+Website
+Get offers from top bootcampsTake the stress out of picking a bootcamp
+See matches nowTop Community PostsHow long does it take to become a full stack web developer?Marcus Hayes in Full-stack DevelopmentWhat are the laptop requirements for programming?Danny Fuentes in Beginners$2 million in COVID19 ScholarshipsTimur Meyster in Applying to BootcampsPopular ArticlesBest Online BootcampsBest Tech Jobs 2021What is Coding Used For?How Much Do Coders Make?Best Free BootcampsSee all articlesCareer GuidesWeb DevelopmentSoftware EngineeringData ScienceWeb DesignCyber SecuritySee all guidesFree prep coursesFlatiron School Prep80+ hours
+Easy80+ hours of HTML, CSS & JavaScriptKenzie School Prep80+ hours
+Easy20+ hours of HTML & CSSGeneral Assembly Prep50+ hours
+EasyLearn web development basics in HTML, CSS, JavaScript by building projectssee all prep courses
+Get matches
+from top bootcamps
+Select your interest:
+Interest
+Software Engineering
+Design
+Data Science
+Data Analytics
+Cybersecurity Analytics
+Technology Sales
+Select your preferred pace:
+Begin typing a name to filter
+Full-time
+Part-time
+Self-paced
+Begin typing a name to filter
+Full-time
+Part-time
+Self-paced
+See Matches
+Find the Best Online Course for YouGet Matched
+Related Articles
+Python Tutorials
+Python ‘numpy.ndarray’ object is not callable Solution
+Python Tutorials
+Python FileNotFoundError: [Errno 2] No such file or directory Solution
+Python Tutorials
+Python JSONDecodeError Explanation and Solution
+Python Tutorials
+Python ValueError: list.remove(x): x not in list Solution
+Home
+About
+Careers
+Mission
+Blog
+Press
+Terms & conditions
+© 2021 Career Karma
+Rankings
+Best Coding Bootcamps
+Best Online Bootcamps
+Best Web Design Bootcamps
+Best Data Science Bootcamps
+Best Data Analytics Bootcamps
+Best Cyber Security Bootcamps
+Best ISA Bootcamps 2020
+See all
+Comparisons
+Flatiron School vs Fullstack Academy
+Hack Reactor vs App Academy
+Fullstack Academy vs Hack Reactor
+Thinkful vs General Assembly
+Flatiron School vs Thinkful
+General Assembly vs Flatiron School
+App Academy vs Lambda School
+General Assembly vs Hack Reactor
+Springboard vs Thinkful
+See all
+Locations
+San Francisco Bootcamps
+New York Bootcamps
+Los Angeles Bootcamps
+Chicago Bootcamps
+Seattle Bootcamps
+Atlanta Bootcamps
+Austin Bootcamps
+See all
+Schools
+Kenzie Academy
+Flatiron School
+Thinkful
+General Assembly
+Springboard
+Galvanize
+Hack Reactor
+App Academy
+Bloc
+See all
+Careers
+Software Engineering
+UX/UI Design
+Data Science
+Web Development
+Mobile Development
+Cybersecurity
+Product Management
+See all
+Subjects
+JavaScript
+Python
+Ruby
+Java
+Swift
+Android
+.Net
+React
+Angular
+See all
+Tell us about you and we will match you with top rated bootcamps with flexible payment options, income sharing (ISAs), or money-back guarantees.
+Select your interest:
+Software Engineering
+Design
+Data Science
+Data Analytics
+Cybersecurity Analytics
+Technology Sales
+First Name
+Last Name
+Email
+Phone Number
+GET MATCHED
+Find the right bootcamp for you
+By continuing you indicate that you have read and agree to
+Career Karma Terms of Service and Privacy Policy
+X
+X
+Jump start your tech career
+Learn the most in-demand skills
+Get started now
+Lost Password Back ⟶
+Login
+Register
+Get new password
+Lost Password?
+Login
+Registration is disabled.

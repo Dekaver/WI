@@ -173,30 +173,30 @@ Using British National Corpus in NLTK
 0
 Finding NLTK module in python
 Hot Network Questions
-Grep and Cut command in linux
-Getting “Bye Bye Big Sur” error on installing Big Sur
-Why are high power LEDs categorized by wattage, not voltage & amperage?
-Does machine learning really need data-efficient algorithms?
-How to solve these algebraic identities?
-What is this token?
-What would a bear species isolated on an island look like?
-Is it suspicious that gravitational waves propagate at the speed of light?
-Is maximum speed a thing?
+Has physics ever given a physical significance to a mathematically abstract idea?
 Where is Lorentz contraction centered on?
-How to get real-looking rust that will be safe to the touch?
-What does 高高矮矮 mean?
+Is it a coincidence that on the far side of the moon almost no seas are visible?
+What are the safety and warranty implications of steaming bread in a domestic oven?
+Grep and Cut command in linux
 How do trademarks apply to Open Source?
-Why was the neutrino thought to be massless?
-are the power connections for BECs of ESCs made in parallel or series with each other?
+Is it suspicious that gravitational waves propagate at the speed of light?
+If I use the word "enumerated", must the list be numeric or can it be bullet points?
+Showing the bounding box for every coordinate system in QGIS
+How to solve these algebraic identities?
+What can US senators do against diversity trainings in the US Army?
+Does Ubuntu Server have any special preinstalled packages
+How to use df.loc (or some other method) to make a new column based on specific conditions?
+Why would they use human soldiers over undead ones?
+Why are (many) bike multitools not stainless, unlike penknives?
+How does this switch statement do "multiple things"?
+Do AFCI and GFCI protect against cheap equipment and bad wiring?
+Why is angular momentum a vector?
+Why is there so much reluctance to make the COVID vaccine mandatory for adults?
+How is it possible for Jesus to be quoted in the NT during moments of solitude (Gethsemane) or away from the disciples (Nicodemus, Pilate etc.)?
+Parallelogram law of vectors
+Why can an easily graphable definite integral, be labyrinthine to evaluate?
 Why did this gallon of milk stay fresh for so long?
-Why put a resistor in series with the postive terminal in a non inverting op-amp circuit?
-What are the numbers below the notes in Sarasate's "Gypsy Airs"
-Find the mean of two values, take two
-What does existential unforgeability mean in a digital signature scheme?
-Revisiting the unreasonable effectiveness of mathematics
-Interview by fellow PhD students, not the professor himself
-Is there a threadlocker that requires heat to release and can withstand thousands of heat-cool cycles without needing to be reapplied or deteriorating
-Can an American state ban a (minor) political party?
+Are noun+noun and noun's (aphostrope) + noun the same?
 more hot questions
 Question feed
 Subscribe to RSS
@@ -344,7 +344,7 @@ Twitter
 LinkedIn
 Instagram
 site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.6.10.39470
+rev 2021.6.10.39473
 Stack Overflow works best with JavaScript enabled
 Your privacy
 By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.

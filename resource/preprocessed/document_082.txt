@@ -1,205 +1,210 @@
-Undefined array key 1 in PHP 8 | WordPress.org
-About WordPressAbout WordPressWordPress.orgDocumentationSupportFeedbackSearchLog InRegister
-Skip to content	WordPress.org
-Search WordPress.org for:
-Submit
-Toggle Menu
-Showcase
-Learn
-Themes
-Plugins
-Mobile
-SupportDocumentationForums
-Get InvolvedFive for the Future
-About
-Blog
-Hosting
-Get WordPress
-Skip to content
-Support
-Forums
-Guidelines
-Documentation
-Get Involved
-Search for:
-Search forums
-Support » Plugin: Autoptimize » Undefined array key 1 in PHP 8
-Undefined array key 1 in PHP 8
-Resolved
-Knightycool
-(@knightycool)
-1 month, 3 weeks ago
-I get this warning after upgrading to php 8.0.3
-[17-Apr-2021 09:38:57 UTC] PHP Warning:
-Undefined array key 1 in /var/www/mywebsite/wp-content/plugins/autoptimize/classes/autoptimizeStyles.php on line 275
-Viewing 15 replies - 1 through 15 (of 16 total)
+Smartsheet Data Tracker: AttributeError: 'dict' object has no attribute 'append'
+Quabr
+answers we find
+Explore tags
+Advanced Dictionary for Chrome
 1
+Translate worlds/phrases
+Translation unknown words or phrases by selection text in a small pop-up bubble.
 2
-→
-Plugin Author
-Optimizing Matters
-(@optimizingmatters)
-1 month, 3 weeks ago
-Hmm …
-The code runs a regular expression if media= is found and the regex _should_ return the attribute value in $medias[1], so it looks like somehow that regex is not (always) returning an attribute value.
-Can you check the HTML source of a couple of pages on your site and tell me what different media attribute-values are there for your CSS?
-Thread Starter
-Knightycool
-(@knightycool)
-1 month, 3 weeks ago
-itemprop, viewbox (for svg),
-Thread Starter
-Knightycool
-(@knightycool)
-1 month, 3 weeks ago
-I added this line up to the original line:
-error_log(print_r($medias[1],true));
-$medias = explode( ‘,’, $medias[1] );
-And i’ll check the error log.
-Thread Starter
-Knightycool
-(@knightycool)
-1 month, 3 weeks ago
-ok here is an update
-Normally the entry in the error log is like this:
-[17-Apr-2021 12:31:52 UTC] Array
-(
-[0] => media=’all’
-[1] => all
-)`
-BUT sometimes it becomes this:
-17-Apr-2021 12:32:22 UTC] Array
-(
+Add flashcards
+Create cards in one click with the translated words.
+3
+Build vocabulary lists
+Organize flashcards in different themed decks as you wish.
+Get Free Extension
+Related questions
+My VS code interface for Jupyter notebook is very different from the new version
+pd.read_csv optimization to reduce the running time
+Cannot locate child element Selenium
+Access Smartsheet by column Name instead of Column Id
+Get hyperlink to sheet based on SheetID
+Call Web Service when contents change
+Smartsheet Data Tracker: AttributeError: 'dict' object has no attribute 'append'
+2014-04-11 15:19
+David
+imported from Stackoverflow
+python
+smartsheet-api
+I am new to Python and I'm working with Smartsheet Data Tracker to update a sheet from a CSV file.
+I have problems about the array list management in Python; I don't know about this error, I was reading about this error on StackOverflow but I don't understand it:
+The error:
+"File "C:\Users\David\DataTraker\connectors\CSVCon.py", line 61, in __init__
+self.csvData.append(readerRow)
+AttributeError: 'dict' object has no attribute 'append'"
+And my code:
+def __init__(self, sourceConfig):
+self.csvData = []
+self.csvData = {"sourceId": "siniestros",
+"connectorClassName": "CSVCon",
+"fileName": "siniestros.csv",
+"isStrict": False}
+for readerRow in sourceReader:
+self.csvData.append(readerRow)
+2 answers
+answered 2014-04-11 15:23
+Alex Thornton
+What is going wrong is that you create a list to which you would like to append later. However you overwrite that afterwards with a dictionary, to which you cannot append. This is why you get an AttributeError.
+To fix this, I would rename your dictionary (self.csvData={stuff}) that you created after your list to something else such as self.meta, perhaps. Alternatively, you could rename your list.
+It doesn't matter which, you just need to remove the naming conflict so both variables can co-exist in the namespace.
+answered 2014-04-17 23:38
+stmcallister
+Actually, this was more an issue of poorly commented code in the Data Tracker project that caused the confusion in the CSVCon.py file. The CSV Configuration settings that are in those comments are an example of what should be in the settings/sources.json file.
+The Configure Source section in the project documentation provides some more detail on setting up your source in the sources.json file.
+There is also a section with an explanation of the CSV source specifically.
+The confusing commenting has been updated to be more clear.
+See also questions close to this topic
+My VS code interface for Jupyter notebook is very different from the new version
+I recently started learning python for data analysis and decided to use VS code for its new Jupyter notebook feature. I installed the extension for python and jupyter notebook in VS code but for some reason my interface is very different from the one in the new update.
+I understand this is a small issue but, It's really throwing me off. Can someone please let me know what I am doing wrong here?
+Thank you
+pd.read_csv optimization to reduce the running time
+My input file is 20GB .txt file, So It faces performance issues when I test run the below code.
+pd.read_csv is taking more than 3 hours. Need to optimization in the reading stage.
+Sample input file.
+007064770000|SODIUM|95 MILLIGRAM|0
+007064770000|MULTI|001|0
+007064770000|PET STARCH FREE|NOT APPLICABLE|0
+007064770000|GRAIN TYPE|FLOUR|0
+003980010200|MULTI|001|0
+003980010200|DEAL|NON-DEAL|0
+003980010200|PRODUCT SIZE|1 COUNT|0
+003980010200|BASE SIZE|1 COUNT|0
+757582821517|HW APPLIANCES|001|0
+757582821516|HW APPLIANCES|001|0
+757582821517|PACKAGE GENERAL SHAPE|BOTTLE|0
+757582821517|SYND FORM|CREAM|0
+757582821517|FORM|CREAM|0
+757582821517|TARGET SKIN CONDITION|DRY SKIN|0
+003980010205|HW MEDICINE|NON-DEAL|0
+003980010205|PRODUCT SIZE|1 COUNT|0
+003980010205|BASE SIZE|1 COUNT|0
+007064770054|SODIUM|95 MILLIGRAM|0
+007064770054|HW SPORTS|001|0
+007064770054|PET STARCH FREE|NOT APPLICABLE|0
+007064770054|GRAIN TYPE|FLOUR|0
+003980010312|HW DIAMETER|1 COUNT|0
+003980010312|BASE SIZE|1 COUNT|0
+Output file
+UPC code HW APPLIANCES HW DIAMETER HW MEDICINE HW SPORTS
+0
+3980010205
+NaN
+NaN
+NON-DEAL
+NaN
+1
+3980010312
+NaN
+1 COUNT
+NaN
+NaN
+2
+7064770054
+NaN
+NaN
+NaN
+001
+3
+757582821516
+001
+NaN
+NaN
+NaN
+4
+757582821517
+001
+NaN
+NaN
+NaN
+Existing code
+import pandas as pd
+import datetime
+df = pd.read_csv('sample.txt', sep='|', names=['upc_cd', 'chr_typ', 'chr_vl', 'chr_vl_typ'], engine='python')
+df = df[df['chr_typ'].str.contains('HW ')]
+df.sort_values('chr_typ')
+df = (
+df.iloc[:, :-1]
+# Remove last Column
+.pivot(index=['upc_cd'], columns=['chr_typ'])
+.droplevel(0, axis=1)
+# Fix Levels and axes names
+.rename_axis('UPC code')
+.rename_axis(None, axis=1)
+.reset_index()
 )
-[17-Apr-2021 12:32:22 UTC] PHP Warning:
-Undefined array key 1 in /var/www/mywebsite/wp-content/plugins/autoptimize/classes/autoptimizeStyles.php on line 276`
-This reply was modified 1 month, 3 weeks ago by Knightycool.
-This reply was modified 1 month, 3 weeks ago by Knightycool.
-Thread Starter
-Knightycool
-(@knightycool)
-1 month, 3 weeks ago
-Is there a way to learn in which post this happens?
-Thread Starter
-Knightycool
-(@knightycool)
-1 month, 3 weeks ago
-Ok i get it now. I added the id number and could pinpoint where it happened…
-In the custom css of a single page (where it happens), there is a comment like this:
-/*! CSS Used from: https://www.mysite.net/wp-content/myapp.css ; media=all */
-So it matches media=all
-I removed it and try to see if the warning happens again. Perhaps you may find a way to capture media=all only if its between certain html tags.
-Plugin Author
-Optimizing Matters
-(@optimizingmatters)
-1 month, 3 weeks ago
-that’s unlikely to be the culprit; the code I referenced earlier is only applied on <style and <link rel=stylesheet tags, see https://github.com/futtta/autoptimize/blob/2.8.3/classes/autoptimizeStyles.php#L266 … :-/
-could you share the URL of the page/post with the id so I can have a look at the HTML source?
-Thread Starter
-Knightycool
-(@knightycool)
-1 month, 3 weeks ago
-It was the reason because the said comment was inside <style> </style>
-<style>
-.myclass {
-font-size: 10px;
-background-color: red;
-}
-.myclass2 {
-height: 100px;
-width: 100px;
-}
-/*! CSS Used from: https://www.mysite.net/wp-content/myapp.css ; media=all */
-.myclass3 {
-border-color: black;
-}
-</style>
-Plugin Author
-Optimizing Matters
-(@optimizingmatters)
-1 month, 3 weeks ago
-OK, I’ll test with that code locally, more soon 🙂
-Thread Starter
-Knightycool
-(@knightycool)
-1 month, 3 weeks ago
-If you want, i can add back the comment and email you the url but i dont want to post the url here.
-Plugin Author
-Optimizing Matters
-(@optimizingmatters)
-1 month, 3 weeks ago
-OK, I have a fix in AO beta, could you download from https://github.com/futtta/autoptimize/archive/refs/heads/beta.zip, install that instead of 2.8.3 and test if that fixes the notice?
-(the beta has some other new features already;
-per page/post settings for AO + new “defer inline JS” option)
-Thread Starter
-Knightycool
-(@knightycool)
-1 month, 3 weeks ago
-umm ok, the notice has already disappeared but i will re enter the comment and then install the beta and try to see what happens.
-Thread Starter
-Knightycool
-(@knightycool)
-1 month, 3 weeks ago
-Ok. This is what i did:
-1) Added back the comment line.
-2) Check to see the warning happens. And it happened when i visit the post.
-3) I installed beta
-4) Visited the post and there is no warning. I think it is fixed.
-Thanks a lot. What have you changed exactly? May you show me line? And when a new update comes, i can just update this via wordpress right?
-Plugin Author
-Optimizing Matters
-(@optimizingmatters)
-1 month, 3 weeks ago
-Great!
-this is the change: https://github.com/futtta/autoptimize/commit/37b13d4e19269bb2f50df123257de51afa37244f
-And indeed when 2.9 is released this will be in it. If you keep the beta active you will receive updates of that as well by the way, so you can keep track of both 😉
-Thread Starter
-Knightycool
-(@knightycool)
-1 month, 3 weeks ago
-Thanks a lot. You are great. Loves from Turkey..
-Viewing 15 replies - 1 through 15 (of 16 total)
-1
-2
-→
-You must be logged in to reply to this topic.
-Autoptimize
-Frequently Asked Questions
-Support Threads
-Active Topics
-Unresolved Topics
-Reviews
-In: Plugins
-16 replies
-2 participants
-Last reply from: Optimizing Matters
-Last activity: 1 month, 3 weeks ago
-Status: resolved
-Views
-Topics with no replies
-Non-support topics
-Resolved topics
-Unresolved topics
-All topics
-About
-Blog
-Hosting
-Donate
-Support
-Developers
-Get Involved
-Learn
-Showcase
-Plugins
-Themes
-WordCamp
-WordPress.TV
-BuddyPress
-bbPress
-WordPress.com
-Matt
-Privacy
-Public Code
-@WordPress
-WordPress
-Code is Poetry.
+print(df)
+df.to_csv('output.csv', sep=',', index=None, mode='w', encoding='utf-8')
+Please suggest the modification to the code in order to reduce the running time
+Cannot locate child element Selenium
+Trying to pick out single restaurant elements under the All Restaurants category on this page. https://www.foodpanda.sg/restaurants/new?lat=1.2915902&lng=103.8379066&vertical=restaurants
+All li elements have a different class name. The only working xpath, I have been able to figure out is this one.
+//ul[@class="vendor-list"]//li[3]
+I cannot figure out how to increase this number and get all the restaurants, which is complicated by the fact that there is an infinite scroll as well.
+j = 1
+def get_rest():
+global j
+while True:
+driver.execute_script("window.scrollBy(0,2525)", "")
+time.sleep(5)
+var = f'{[j]}'
+elems = driver.find_elements_by_xpath(f'//ul[@class="vendor-list"]//li{var})
+return elems
+Access Smartsheet by column Name instead of Column Id
+I am a newbie working with Smartsheet, I am trying to access the values of columns and store them in a list, and I am able to access the values by the index. In my use case, people can delete random columns from the smartsheet and that can cause my index numbering affected while reading the data. For Example - My smartsheet looks like below:
+Vin | Owner | Use | Location
+123
+abc
+test
+CA
+456
+xyz
+prod
+TX
+The code I used so far to access the data is:
+import smartsheet
+from simple_smartsheet import Smartsheet
+from simple_smartsheet.models import Sheet, Column, Row, Cell, ColumnType
+from pprint import pprint
+import pandas as pd
+import re
+import sasl
+import json
+from fastparquet import write
+# from influxdb import InfluxDBClient
+import thrift_sasl
+import prestodb
+import s3fs
+import boto3
+from pyhive import hive
+smartsheet = smartsheet.Smartsheet('adjgdjcdjchbdclkcn')
+# Get current user
+#user_profile = smartsheet.Users.get_current_user()
+# Get all columns.
+MySheet = smartsheet.Sheets.get_sheet(1234567891234567)
+Vin = []
+Owner = []
+Use = []
+Location = []
+def Data():
+for RowIndex in range(0, len(MySheet.rows)):
+Vin.append(MySheet.rows[RowIndex].cells[2].display_value)
+Use.append(MySheet.rows[RowIndex].cells[3].display_value)
+Owner.append(MySheet.rows[RowIndex].cells[4].display_value)
+Location.append(MySheet.rows[RowIndex].cells[5].display_value)
+print(Vin)
+print(Use)
+Print(Owner)
+Print(Location)
+Result I want is (Using the column name instead of Index):
+Vin = [123, 456]
+Owner = [abc, xyz]
+Use = [test, prod]
+Location = [CA, TX]
+Now Instead of accessing the values by index, how can I append the values in a list using column name instead? Any help or lead is much appreciated. Thank You in advance!
+Get hyperlink to sheet based on SheetID
+I am importing a Smartsheet Report through Python, using an API. One of the columns in this report contains a hyperlink that works in Smartsheet, however when importing the report with Python I only receive the words of this column, and not the link behind them. Is it possible to get the URLs of the sheets that these hyperlinks are referring to in any other way? I was thinking maybe based on SheetID (which I can find using the title of the indepentent sheets), but all other suggestions are very welcome!
+Call Web Service when contents change
+We'd like to allow our users to make changes to our ERP (only very limited conditions) from within the smartsheet.
+Is there a way to add a web service call based on changes to a cell?
+Quabr.com is StackOverFlow proxy site | Sitemap

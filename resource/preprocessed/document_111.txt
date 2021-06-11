@@ -1,4 +1,4 @@
-dictionary - Python AttributeError: 'dict' object has no attribute 'append' - Stack Overflow
+list - Python - TypeError: 'int' object is not iterable - Stack Overflow
 Stack Overflow
 About
 Products
@@ -54,111 +54,178 @@ Teams
 Q&A for work
 Connect and share knowledge within a single location that is structured and easy to search.
 Learn more
-Python AttributeError: 'dict' object has no attribute 'append'
+Python - TypeError: 'int' object is not iterable
 Ask Question
 Asked
-3 years, 4 months ago
+7 years, 7 months ago
 Active
-1 year, 7 months ago
+5 months ago
 Viewed
-78k times
-14
-7
-I am creating a loop in order to append continuously values from user input to a dictionary but i am getting this error:
-AttributeError: 'dict' object has no attribute 'append'
-This is my code so far:
-for index, elem in enumerate(main_feeds):
-print(index,":",elem)
-temp_list = index,":",elem
-li = {}
-print_user_areas(li)
-while True:
-n = (input('\nGive number: '))
-if n == "":
-break
-else:
-if n.isdigit():
-n=int(n)
-print('\n')
-print (main_feeds[n])
-temp = main_feeds[n]
-for item in user:
-user['areas'].append[temp]
-Any ideas?
-python dictionary for-loop tuples
+854k times
+80
+31
+Here's my code:
+import math
+print "Hey, lets solve Task 4 :)"
+number1 = input ("How many digits do you want to look at? ")
+number2 = input ("What would you like the digits to add up to? ")
+if number1 == 1:
+cow = range(0,10)
+elif number1 == 2:
+cow = range(10,100)
+elif number1 == 3:
+cow = range(100,1000)
+elif number1 == 4:
+cow = range(1000,10000)
+elif number1 == 5:
+cow = range(10000,100000)
+elif number1 == 6:
+cow = range(100000,1000000)
+elif number1 == 7:
+cow = range(1000000,10000000)
+elif number1 == 8:
+cow = range(10000000,100000000)
+elif number1 == 9:
+cow = range(100000000,1000000000)
+elif number1 == 10:
+cow = range(1000000000,10000000000)
+number3 = cow[-1] + 1
+n = 0
+while n < number3:
+number4 = list(cow[n])
+n += 1
+I am looking to make a loop so that for each element in the list, it will get broken down into each of it's characters. For example, say the number 137 was in the list then it would be turned into [1,3,7]. Then I want to add these numbers together (I haven't started that bit yet but I have some idea of how to do it).
+However, I keep getting the error message
+TypeError: 'int' object is not iterable
+when I try and run this.
+What am I doing wrong?
+python list loops iterable
 Share
 Follow
-edited Jan 12 '18 at 22:00
-DYZ
-45.8k99 gold badges4848 silver badges7676 bronze badges
-asked Jan 12 '18 at 21:50
-anonymousanonymous
-16111 gold badge11 silver badge33 bronze badges
+edited Sep 3 '15 at 11:08
+perror
+6,3291616 gold badges5656 silver badges7272 bronze badges
+asked Oct 22 '13 at 16:37
+user2908001user2908001
+4
 3
-3
-Well, a dict doesn't have an append method. And even if it did, you couldn't call it with square brackets.
-– Daniel Roseman
-Jan 12 '18 at 21:56
-use defaultdict instead (with list in it)
-– RandomB
-Jan 12 '18 at 21:59
-You assign values to a dict using its key like this : user['areas'] = temp. Your code would only work IF user[areas] was already a list. If you need it to be a list, construct the list first, THEN assign that list to the key.
-– JacobIRR
-Jan 12 '18 at 22:00
+What do you expect list(cow[n]) to do ?
+– Jon Clements♦
+Oct 22 '13 at 16:39
+12
+Hint: you can give range() dynamic arguments too: cow = range(10 ** (number1 - 1) if number1 > 1 else 0, 10 ** number1) would give you the exact same results as all your if statements, in just one line.
+– Martijn Pieters♦
+Oct 22 '13 at 16:42
+1
+@MartijnPieters I was just thinking about that - but think IIRC, 10 ** 0 is 1 not 0
+– Jon Clements♦
+Oct 22 '13 at 16:43
+1
+@JonClements: adjusted. :-) That 0 is quite inconsistent in this case; all the other numbers are powers of 10..
+– Martijn Pieters♦
+Oct 22 '13 at 16:45
 Add a comment
 |
-2 Answers
-2
+3 Answers
+3
 Active
 Oldest
 Votes
-15
-Like the error message suggests, dictionaries in Python do not provide an append operation.
-You can instead just assign new values to their respective keys in a dictionary.
-mydict = {}
-mydict['item'] = input_value
-If you're wanting to append values as they're entered you could instead use a list.
-mylist = []
-mylist.append(input_value)
-Your line user['areas'].append[temp] looks like it is attempting to access a dictionary at the value of key 'areas', if you instead use a list you should be able to perform an append operation.
-Using a list instead:
-user['areas'] = []
-On that note, you might want to check out the possibility of using a defaultdict(list) for your problem. See here
+112
+Your problem is with this line:
+number4 = list(cow[n])
+It tries to take cow[n], which returns an integer, and make it a list.
+This doesn't work, as demonstrated below:
+>>> a = 1
+>>> list(a)
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+TypeError: 'int' object is not iterable
+>>>
+Perhaps you meant to put cow[n] inside a list:
+number4 = [cow[n]]
+See a demonstration below:
+>>> a = 1
+>>> [a]
+[1]
+>>>
+Also, I wanted to address two things:
+Your while-statement is missing a : at the end.
+It is considered very dangerous to use input like that, since it evaluates its input as real Python code.
+It would be better here to use raw_input and then convert the input to an integer with int.
+To split up the digits and then add them like you want, I would first make the number a string.
+Then, since strings are iterable, you can use sum:
+>>> a = 137
+>>> a = str(a)
+>>> # This way is more common and preferred
+>>> sum(int(x) for x in a)
+11
+>>> # But this also works
+>>> sum(map(int, a))
+11
+>>>
 Share
 Follow
-edited Jan 12 '18 at 22:15
-answered Jan 12 '18 at 22:12
-Shane WilliamsonShane Williamson
-15111 silver badge55 bronze badges
-2
-4
-Dictionaries in Python do provide an update method though.
-So, if you want to add more key-value pairs: dict.update({'another_key': 'another_value'}).
-Maybe of value here.
-update will overwrite existing keys of the same name, so caveat emptor.
-– Matt Morgan
-Jan 12 '18 at 22:15
-Very true Matt! Although, it looks like they're trying to just append values here.
-– Shane Williamson
-Jan 12 '18 at 22:17
+edited Oct 22 '13 at 17:02
+answered Oct 22 '13 at 16:40
+user2555451user2555451
+6
+Thanks for answering so quickly. How would I then split the number up into individual characters? I tried putting a list(number4) beneath it but that then causes it to run forever when I run it on terminal.
+– user2908001
+Oct 22 '13 at 16:48
+Integers don't have characters. However, you could convert it to a string, which does: str(..).
+You might not need to convert it to a list after that, depending on what you intend to do with it, because strings are iterable and yield their constituent characters.
+– kindall
+Oct 22 '13 at 16:54
+@Mikey6743 - See my edit.
+While you could use a for-loop for this, the quickest option is to use sum.
+– user2555451
+Oct 22 '13 at 16:58
+This is great guys, thank you so much! I've just started learning how to code :) I'm still confused on how to repeat get this to repeat without using a loop. For example, say the user want's to look at 3 digits then I must work it out from 100 to 999. E.g. sum of the integers in 100 = 1 and sum of the integers in 999 = 27.
+– user2908001
+Oct 22 '13 at 19:28
+@Mikey6743 - Hmm, then you might have to use a loop.
+However, since the topic of this question was the TypeError (which my post fixes), why not first close this question as answered (click the tick next to my answer) and then ask another question that focuses on that problem in particular?
+You'll get better help that way.
+You definitely have to make the number a string first though so that you can split it into digits.
+– user2555451
+Oct 22 '13 at 20:07
+|
+Show 1 more comment
+3
+This is very simple you are trying to convert an integer to a list object !!! of course it will fail and it should ...
+To demonstrate/prove this to you by using the example you provided ...just use type function for each case as below and the results will speak for itself !
+>>> type(cow)
+<class 'range'>
+>>>
+>>> type(cow[0])
+<class 'int'>
+>>>
+>>> type(0)
+<class 'int'>
+>>>
+>>> >>> list(0)
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+TypeError: 'int' object is not iterable
+>>>
+Share
+Follow
+answered Dec 29 '18 at 23:19
+grepitgrepit
+16.6k66 gold badges8383 silver badges7272 bronze badges
 Add a comment
 |
--2
-Either
-use dict.setdefault() if the key is not added yet to dictionary :
-dict.setdefault(key,[]).append(value)
-or use, if you already have the keys set up:
-dict[key].append(value)
-source: stackoverflow answers
+1
+If the case is:
+n=int(input())
+Instead of -> for i in n: -> gives error- 'int' object is not iterable
+Use -> for i in range(0,n): -> works fine..!
 Share
 Follow
-answered Oct 18 '19 at 8:50
-sivisivi
-9,06822 gold badges4343 silver badges4747 bronze badges
-1
-you should at least add a link to which answer from stackoverflow you're refering to
-– João Ciocca
-May 10 at 19:52
+answered Dec 30 '20 at 20:22
+Augustine JoseAugustine Jose
+72944 silver badges66 bronze badges
 Add a comment
 |
 Your Answer
@@ -181,66 +248,79 @@ Required, but never shown
 Post Your Answer
 Discard
 By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
-Not the answer you're looking for? Browse other questions tagged python dictionary for-loop tuples
-or ask your own question.
 The Overflow Blog
 Using low-code tools to iterate products faster
 Podcast 345: A good software tutorial explains the How. A great one explains…
 Featured on Meta
 Take the 2021 Developer Survey
 Linked
-630
-How does collections.defaultdict work?
-6
-'dict' object has no attribute 'append' Json
-1
-'dict' object has no attribute 'append'
+-1
+How does type casting happens in Python between list and tuple?
+-2
+python program to reverse the list iterable problem
+3
+list comprehension vs iterable. Python newbie
+0
+Failing to understand simple error message
+0
+How do I print lists side by side in Python?
+-3
+For Loop at Python
+0
+Python Web Scraping Error TypeError: 'int' object is not iterable
+-3
+Compare each number from the same integer
+-3
+How can I create a function in Python that takes a list of numbers and an integer?
+0
+Problems Listing Gmail Messages with User Created Label via Google API
+See more linked questions
 Related
-1922
+5328
+How to execute a program or call a system command from Python
+6197
+What are metaclasses in Python?
+6698
+Does Python have a ternary conditional operator?
+3270
+How to get the current time in Python
+1923
 How to know if an object has an attribute in Python
-220
-AttributeError: 'module' object has no attribute
-589
-Convert nested Python dict to object?
+3175
+How do I loop through or enumerate a JavaScript object?
+2954
+How do I concatenate two lists in Python?
 1204
 In Python, how do I determine if an object is iterable?
-1307
-Referring to the null object in Python
-1429
-Why do Python classes inherit object?
-348
-Accessing dict keys like an attribute?
-373
-Converting Python dict to kwargs?
-345
-Why do I get AttributeError: 'NoneType' object has no attribute 'something'?
-502
-Error: “ 'dict' object has no attribute 'iteritems' ”
+3596
+Does Python have a string 'contains' substring method?
+2189
+Iterate through object properties
 Hot Network Questions
-Heating of hydraulic oil with hardtail electric MTB brakes
-Did I design my LED circuit correctly?
-Being forced to take annual leave against my wishes, what are my options
-What is the hardest part of transitioning from a PhD to a full-time career in academia?
-Is Huang Yanling (a Wuhan virology researcher) the world's first COVID-19 patient?
-How do trademarks apply to Open Source?
-What is this token?
-Are there any greater risks of traveling significantly faster to another planet?
-In the sentence "Ich begegnete einem alten Freund in Berlin", why the dative einem instead of the accusative einen?
-Sum of set bits from 1 to n
-Showing the bounding box for every coordinate system in QGIS
-Why doesn't the sun produce an emission spectrum?
-Refueling a Mars mission on the way
-How to indicate a checkbox/toggle is "always on"
-Are AP slugs for shotguns possible?
-A '50s Yeti movie which has a scene with two men sitting around a fire in a cave
-IQ test question assistance
-How do you say " Coup de grâce " in latin?
-Has physics ever given a physical significance to a mathematically abstract idea?
-How well would Max Faget's April 1, 1969 design for the Space Shuttle have actually worked? What would have been the major problems?
+Interviewer was two hours late
+Revisiting the unreasonable effectiveness of mathematics
+Can I gain AC efficiency by spraying condensate water on the outdoor coils?
+Can a Rogue find an undetectable Trap?
+When is it appropriate to foam a landing strip? (example JB292)
+Sharing a research proposal when applying for funds
+Dedekind-"finiteness" for arbitrary limit cardinals
+Critical differences between Ubuntu Server and Ubuntu Desktop for 20.04 LTS?
+Is Occam's Razor a Prior?
+Remove All Smalltalk Comments for Code Golf
+Make git diff aware of Emacs Lisp functions?
+How is it possible for Jesus to be quoted in the NT during moments of solitude (Gethsemane) or away from the disciples (Nicodemus, Pilate etc.)?
+Grep and Cut command in linux
+Decode USB packets
+Why are (many) bike multitools not stainless, unlike penknives?
 Why aren't resistors being used here?
-Is buying lecture notes wrong?
-Is it a coincidence that on the far side of the moon almost no seas are visible?
-How come full throttle is meaning full speed instead of the opposite?
+Is co-authoring with friends a good idea?
+Did the Kohen Gadol minister barefoot?
+What's the easiest way to change from MS-DOS 6.22 to DR-DOS?
+Why some CRS are deprecated in QGIS?
+How does black proceed in the following position?
+Why don't demons possess children until after puberty?
+Telling a coworker they aren't invited into my house
+How should a company manage physical 2FA tokens?
 more hot questions
 Question feed
 Subscribe to RSS
@@ -389,7 +469,7 @@ Twitter
 LinkedIn
 Instagram
 site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.6.10.39470
+rev 2021.6.10.39473
 Stack Overflow works best with JavaScript enabled
 Your privacy
 By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.

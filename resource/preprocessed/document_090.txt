@@ -1,520 +1,101 @@
-Adam Cameron's Dev Blog: PHP: accessing an undefined array element yields a notice. Or does it? WTF, PHP?
-Adam Cameron's Dev Blog
-"the tone... it sounds very heated and abrasive" - Ben Nadel
-Monday, 30 January 2017
-PHP: accessing an undefined array element yields a notice. Or does it? WTF, PHP?
-G'day:
-So we encountered this today:
-<?php
-$array = [1, 2, 3];
-var_dump($array['id']); // this yields a warning
-var_dump($array[0]['id']); // none of these do
-var_dump($array[0][0]['id']);
-var_dump($array[0]['id'][0]);
-As indicated, this yields results:
-C:\temp>php shite.php
-PHP Notice:  Undefined index: id in C:\temp\shite.php on line 4
-PHP Stack trace:
-PHP   1. {main}() C:\temp\shite.php:0
-Notice: Undefined index: id in C:\temp\shite.php on line 4
-Call Stack:
-0.0002     353472   1. {main}() C:\temp\shite.php:0
-C:\temp\shite.php:4:
-NULL
-C:\temp\shite.php:5:
-NULL
-C:\temp\shite.php:6:
-NULL
-C:\temp\shite.php:7:
-NULL
-C:\temp>
-I think this behaviour is bloody daft. Accessing something that doesn't exist should be more than a notice, and it shouldn't then go ahead and return "null" anyhow. And giving a notice and returning null is possibly the worst way of combining possible actions here. What am I supposed to do with that? Other than bury my head in my hands a weep.
-Now this is partially documented on the Arrays page of the docs:
-Note:
-Attempting to access an array key which has not been defined is
-the same as accessing any other undefined variable:
-an E_NOTICE-level error message will be
-issued, and the result will be NULL.
-Note:
-Array dereferencing a scalar value which is not a string
-silently yields NULL, i.e. without issuing an error message.
-That's shit, but... well: it's not that surprising (I mean... it's PHP, right?). But how come
-$array['id']
-incurs the warning, but this doesn't:
-$array[0]['id']
-This just seems to make fairly unhelpful behaviour just that much less helpful.
-I'm sure there's a reason for this. Not a good one, I hasten to add, but no doubt there's a reason.
-Anyone know what it is?
-Update:
-Thanks to Dave (comment below) for pointing out there's a bug been raised for this: 68110.
-Righto.
---
-Adam
-Posted by
-Adam Cameron
-at
-12:04
-Email ThisBlogThis!Share to TwitterShare to FacebookShare to Pinterest
-Labels:
+Menjalankan php artisan make:auth di Laravel 6 - Kawan Koding
+PROMO !!
+DISKON 99RB BUKU LARAVEL & VUEJS
+Menu
+Artikel
+Video
+Kursus
+Podcast
+Blog Baru
+Login
+Daftar
+Menjalankan php artisan make:auth di Laravel 6
+09 September 2019
+/ Muhammad Amirul Ihsan
+Assalamualaikum Warrahmatullah Wabarakatuh,
+Pada Laravel 6 kita tidak bisa lagi menjalankan perintah php artisan make:auth karena di Laravel 6 untuk frontend scaffolding dipindahkan ke dalam komponen laravel/ui jadi akan ada sedikit perubahan dalam proses pembuatan auth scaffolding juga.
+Di Laravel 6 pertama kita harus menginstall package laravel/ui terlebih dulu sebelum membuat auth scaffoldingnya dengan menjalankan perintah ini.
+composer require laravel/ui
+Setelah terinstall langkah berikutnya kita bisa menjalankan perintah
+php artisan ui vue --auth
+Pada bagian vue bisa diganti dengan pilihan lainnya seperti bootstrap, react  sesuaikan dengan kebutuhan kawan kawan, berikutnya setelah menjalankan perintah tersebut kita harus menjalankan perintah untuk mengambil dependency dan mengcompile dengan perintah
+npm install && npm run dev
+Untuk menjalankan perintah diatas pastikan di komputer / laptop kawan kawan sudah terinstall nodeJS dan npm ya.
+Dan auth scaffolding yang kita inginkan sudah bisa kita gunakan seperti biasanya, mungkin terasa agak lebih memakan waktu untuk proses ini tapi tetap terasa mudah dengan fitur yang didapatakan seperti register, login, forgot password.
+Wassalamualaikum Warrahmatullah Wabarakatuh,
+Suka dengan artikel ini? Bantu bagikan ke yang lainnya :)
+Artikel Terkait
+Belajar Laravel 6 - Menginstall Laravel
+Laravel 6 - Fix Bug Langsung dari Browser
+Laravel 7 Akan Meminindahkan Auth Controller ke Package laravel/ui
+Promosi
+Topik
+API
+Atom Editor
+Belajar Android
+Belajar CI 4
+Belajar Codeigniter
+Belajar Dart
+Belajar Flutter
+Belajar JavaScript
+Belajar Laravel
+CI 4
+Codeigniter
+Codeigniter 4
+CSS
+Dart
+Database
+Flutter
+Git
+HTML
+Ignition
+Info Laravel
+Informasi
+Jatim Developer Day
+JavaScript
+Komunitas
+Komunitas Koding
+Komunitas Koding Jawa Timur
+Komunitas Pemrograman
+Lain Lain
+Laravel
+Laravel 5.8
+Laravel 6
+Laravel 7
+Laravel 8
+Laravel Livewire
+Laravel MIgration
+MySQL
+Perlengkapan
 PHP
-Newer Post
-Older Post
-Home
-Search This Blog
-About
-I've been a web developer since 2001: 13yrs as a CFML developer; 6yrs as a PHP dev; and now back in the CFML community but focusing on code quality, design and testing. The code I write and discuss here is pretty much just looking at random conundrums I encounter in my day job.I tend to be a bit "forthright" in my opinions, I am indelicate, and I tend to swear too much. This will come out occasionally here: I make no apology for it.Everything said here is my own opinion. Feel free to disagree with me :-)
-Feeds / Links
-This blog's communication policy
-Default feed
-Last ten articles (full)
-Last ten articles (summary)
-Subscribe To
-Posts
-Atom
-Posts
-Comments
-Atom
-Comments
-Followers
-Follow by Email
-Blog Archive
-►
-2021
-(57)
-►
-June
-(3)
-►
-May
-(12)
-►
-April
-(15)
-►
-March
-(8)
-►
-February
-(9)
-►
-January
-(10)
-►
-2020
-(8)
-►
-December
-(3)
-►
-October
-(3)
-►
-April
-(2)
-►
-2019
-(2)
-►
-December
-(1)
-►
-November
-(1)
-►
-2018
-(3)
-►
-July
-(1)
-►
-May
-(2)
-▼
-2017
-(30)
-►
-November
-(3)
-►
-August
-(1)
-►
-July
-(3)
-►
-May
-(1)
-►
-April
-(3)
-►
-March
-(4)
-►
-February
-(2)
-▼
-January
-(13)
-PHP: accessing an undefined array element yields a...
-Survey results: most useful response first
-I'm a dick: part 4: why I'm a dick
-I'm a dick: part 3 Email sent to Bristol Trading S...
-I'm a dick: part 2 T&Cs located! partial correctio...
-I'm a dick: part 1 Survey results: we've been stit...
-Incredibly: a reader asks me for help with PHP & N...
-PHP: 2000 words on elseif (and PHPMD)
-Testing: Too much detail, Cameron?
-Survey: CFML usage and migration strategies
-PHP: looking into usage of the ::class constant
-PHP: looking at the Chain of Responsibility pattern
-20162017
-►
-2016
-(98)
-►
-December
-(6)
-►
-November
-(12)
-►
-September
-(6)
-►
-August
-(6)
-►
-July
-(4)
-►
-May
-(5)
-►
-April
-(6)
-►
-March
-(10)
-►
-February
-(19)
-►
-January
-(24)
-►
-2015
-(259)
-►
-December
-(7)
-►
-November
-(19)
-►
-October
-(19)
-►
-September
-(21)
-►
-August
-(18)
-►
-July
-(23)
-►
-June
-(32)
-►
-May
-(19)
-►
-April
-(37)
-►
-March
-(9)
-►
-February
-(24)
-►
-January
-(31)
-►
-2014
-(372)
-►
-December
-(22)
-►
-November
-(23)
-►
-October
-(31)
-►
-September
-(39)
-►
-August
-(19)
-►
-July
-(36)
-►
-June
-(23)
-►
-May
-(28)
-►
-April
-(36)
-►
-March
-(42)
-►
-February
-(37)
-►
-January
-(36)
-►
-2013
-(384)
-►
-December
-(38)
-►
-November
-(28)
-►
-October
-(46)
-►
-September
-(42)
-►
-August
-(30)
-►
-July
-(51)
-►
-June
-(20)
-►
-May
-(35)
-►
-April
-(39)
-►
-March
-(25)
-►
-February
-(10)
-►
-January
-(20)
-►
-2012
-(143)
-►
-December
-(23)
-►
-November
-(24)
-►
-October
-(30)
-►
-September
-(26)
-►
-August
-(19)
-►
-July
-(21)
-People
-Sean Corfield
-(50)
-Adam Tuttle
-(30)
-Ray Camden
-(29)
-Brad Wood
-(25)
-Rakshith Naresh
-(24)
-Rupesh Kumar
-(20)
-Micha Offner-Streit
-(19)
-Russ Michaels
-(17)
-Brian Sadler
-(16)
-Alex Skinner
-(15)
-Andrew Myers
-(14)
-Ryan Guill
-(14)
-Gavin Pickin
-(13)
-Mark Drew
-(13)
-Dave Ferguson
-(11)
-Duncan Cumming
-(11)
-Gert Franz
-(10)
-Scott Stroz
-(10)
-Luis Majano
-(9)
-Simon Baynes
-(9)
-Anit Kumar Panda
-(8)
-Dominic Watson
-(8)
-Henry Ho
-(8)
-Kai Koenig
-(8)
-Andrew Scott
-(7)
-Ben Nadel
-(7)
-Matt Bourke
-(7)
-Mike Hnat
-(7)
-Aaron Neff
-(6)
-Acker Apple
-(6)
-Bruce Kirkpatrick
-(6)
-Chris Kobrzak
-(6)
-Adam Presley
-(5)
-Andrew Dixon
-(5)
-David Epler
-(5)
-Frank Jennings
-(5)
-Jason Dean
-(5)
-John Whish
-(5)
-Mark Mandel
-(5)
-Rob Glover
-(5)
-Ron Stewart
-(5)
-Labels
-CFML
-(328)
-ColdFusion
-(256)
-Adobe
-(152)
-Railo
-(149)
-Bugs
-(129)
-PHP
-(124)
-Code Examples
-(101)
-Community Members
-(101)
-Lucee
-(78)
-Blog
-(70)
-Rhetoric
-(54)
-Unit Testing
-(43)
-TDD
-(40)
-Courting Controversy
-(32)
-StackOverflow
-(32)
-Code Puzzle
-(27)
-Closure
-(25)
-Javascript
-(24)
-Conference
-(23)
-Theory
-(22)
-CFClient
-(21)
-CFlib
-(21)
-CFCamp
-(19)
-Documentation
-(18)
-PHP 7
-(18)
-Regular expressions
-(18)
-Application.cfc
-(16)
-Ruby
-(16)
-Arrays
-(15)
-TestBox
-(15)
-Java
-(14)
-PHPUnit
-(13)
-JSON
-(12)
-Interfaces
-(11)
-CFHour
-(10)
-GuzzleHttp
-(10)
-REST
-(10)
-Custom Tags
-(9)
-CFUI
-(6)
-Mockbox
-(6)
-Python
-(6)
-Silex
-(6)
-Generators
-(5)
-Lunacy
-(5)
-Railo 5
-(5)
-Wolpertinger
-(2)
-Disqus for Adam Cameron's Dev Blog
-© Adam Cameron 2012-2021. Powered by Blogger.
+PHP 7.4
+Podcast
+PostgreSQL
+Referensi
+REST API
+SEO
+Sublime Text
+Tailwind CSS
+Text Editor
+Tips Laravel
+Tutorial Android
+Tutorial Flutter
+Tutorial Javascript
+Tutorial Laravel
+VSCode
+VueJS
+Sosial Media
+Instagram Kawan Koding
+Youtube Kawan Koding
+Facebook Kawan Koding
+Telegram Kawan Koding
+Tautan
+Artikel
+Video
+Lainnya
+Kursus
+Laravel
+Podcast
+© Kawan Koding, Sidoarjo, Indonesia
+Please enable JavaScript to view the comments powered by
+Disqus.

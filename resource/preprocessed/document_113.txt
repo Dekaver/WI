@@ -1,356 +1,230 @@
-composer php - Did they remove the make:auth command in Laravel 6.0? - Stack Overflow
-Stack Overflow
-About
-Products
-For Teams
-Stack Overflow
-Public questions & answers
-Stack Overflow for Teams
-Where developers & technologists share private knowledge with coworkers
-Jobs
-Programming & related technical career opportunities
-Talent
-Recruit tech talent & build your employer brand
-Advertising
-Reach developers & technologists worldwide
-About the company
-Loading…
-Log in
-Sign up
-current community
-Stack Overflow
-help
-chat
-Meta Stack Overflow
-your communities
-Sign up or log in to customize your list.
-more stack exchange communities
-company blog
-People who code: we want your input.
-Take the Survey
-Join Stack Overflow to learn, share knowledge, and build your career.
-Sign up with email
-Sign up
-Sign up with Google
-Sign up with GitHub
-Sign up with Facebook
-Home
-Public
-Questions
-Tags
-Users
-Find a Job
-Jobs
-Companies
-Teams
-Stack Overflow for Teams
-– Collaborate and share knowledge with a private group.
-Create a free Team
-What is Teams?
-Teams
-What’s this?
-Create free Team
-Teams
-Q&A for work
-Connect and share knowledge within a single location that is structured and easy to search.
-Learn more
-Did they remove the make:auth command in Laravel 6.0? [duplicate]
-Ask Question
-Asked
-1 year, 9 months ago
-Active
-1 year, 9 months ago
-Viewed
-6k times
-1
-This question already has answers here:
-Artisan command “make:auth” is not defined in Laravel 6
-(9 answers)
-Closed 1 year ago.
-I wanted to create a new project so I can fiddle with the authentication a bit, see what I could do. However, when I tried to run the make:auth command, I got an error.
-I decided to look in the composer.json file to see if I maybe had an outdated Composer version, but I saw the updated laravel/framework.
-I can't find anything about the make:auth command being removed on so I thought I'd come here and ask about it.
-Command "make:auth" is not defined.
-Did you mean one of these?
-make:channel
-make:command
-make:controller
-make:event
-make:exception
-make:factory
-make:job
-make:listener
-make:mail
-make:middleware
-make:migration
-make:model
-make:notification
-make:observer
-make:policy
-make:provider
-make:request
-make:resource
-make:rule
-make:seeder
-make:test
-laravel composer-php laravel-6
-Share
-Follow
-edited Sep 5 '19 at 2:34
-Karl Hill
-7,04033 gold badges4040 silver badges6464 bronze badges
-asked Sep 4 '19 at 7:42
-bartske2002bartske2002
-3711 silver badge66 bronze badges
-2
-Reading the documentation is the greatest help :)
-– nakov
-Sep 4 '19 at 7:45
-You can install the laravel/ui package via composer: composer require laravel/ui
-The ui:auth Command php artisan ui:auth
-– Pervez
-Nov 1 '19 at 9:59
-Add a comment
-|
-2 Answers
-2
-Active
-Oldest
-Votes
-8
-First Install the laravel/ui Composer package with the following command:
-composer require laravel/ui
-and then run the following command in a new
-Laravel application:
-php artisan ui vue --auth
-Laravel 6 has moved the Auth Scaffolding into a seperate package.
-Source : https://laravel.com/docs/6.0/authentication
-Share
-Follow
-edited Sep 6 '19 at 11:17
-answered Sep 4 '19 at 7:50
-ShamsheerShamsheer
-56622 silver badges77 bronze badges
-1
-php artisan ui:auth
-– Pervez
-Nov 1 '19 at 10:00
-Add a comment
-|
-2
-Yes in Laravel 6 auth command has been removed and authentication scaffolding has been moved as separate package named laravel/ui
-Here you can read about Laravel 6 and laravel/ui and also here you can read about laravel/ui in laravel documentation
-Thanks
-Share
-Follow
-edited Sep 4 '19 at 8:19
-answered Sep 4 '19 at 7:48
-Salman ZafarSalman Zafar
-3,08944 gold badges1616 silver badges3636 bronze badges
-Add a comment
-|
-Not the answer you're looking for? Browse other questions tagged laravel composer-php laravel-6
-or ask your own question.
-The Overflow Blog
-Using low-code tools to iterate products faster
-Podcast 345: A good software tutorial explains the How. A great one explains…
-Featured on Meta
-Take the 2021 Developer Survey
-Visit chat
-Linked
-24
-Artisan command “make:auth” is not defined in Laravel 6
-Related
-1
-Composer update “could not completely remove doctrine/dbal”, Laravel 4 broken
-496
-How to remove a package from Laravel using composer?
-1
-Where exactly does laravel require the illuminate folder?
-6
-how to prevent over writing file while 'composer update' command
-3
-Command “make:seeder” is not defined in laravel 5.0
-1
-error while trying to run artisan command with Artisan Facade
-4
-Can't require laravel/passport with composer
-0
-How do I connect and use bootstrap 4 in Laravel 6?
-2
-Installing Laravel with Composer create-project - how to use the newest version?
-Hot Network Questions
-In the sentence "Ich begegnete einem alten Freund in Berlin", why the dative einem instead of the accusative einen?
-What is the right tool for old, rusty, flat cross head bolts?
-are the power connections for BECs of ESCs made in parallel or series with each other?
-Can an American state ban a (minor) political party?
-Mansfield 40 toilet flush levers keep breaking
-Why are high power LEDs categorized by wattage, not voltage & amperage?
-Traditionally, is prosciutto never to be cooked?
-Telling a coworker they aren't invited into my house
-Why are SSH MITM tools able to read and modify data?
-In Bayesian statistics, data is considered nonrandom but can have a probability or be conditioned on. How?
-Why was the neutrino thought to be massless?
-Being forced to take annual leave against my wishes, what are my options
-Dsus4 In A major
-How to get real-looking rust that will be safe to the touch?
-How does black proceed in the below position?
-Simplify K combinatory logic expression
-Understanding the Rune Knight Fighter's 15th level feature
-A '50s Yeti movie which has a scene with two men sitting around a fire in a cave
-What's the definition of an artifact in regards to a Sphere of Annihilation?
-Where is Lorentz contraction centered on?
-Can always @ (*) introduce randomness in FPGA?
-Did any countries other than the Asian Tigers jump to developed status during the past 75 years after WW2?
-Do the murder statistics of 5 cities bring the USA to the 3rd highest country, from 189th?
-Revisiting the unreasonable effectiveness of mathematics
-more hot questions
-lang-php
-Stack Overflow
-Questions
-Jobs
-Developer Jobs Directory
-Salary Calculator
-Help
-Mobile
-Products
-Teams
-Talent
-Advertising
-Enterprise
-Company
-About
-Press
-Work Here
-Legal
-Privacy Policy
-Terms of Service
-Contact Us
-Cookie Settings
-Cookie Policy
-Stack Exchange Network
-Technology
-Life / Arts
-Culture / Recreation
-Science
-Other
-Stack Overflow
-Server Fault
-Super User
-Web Applications
-Ask Ubuntu
-Webmasters
-Game Development
-TeX - LaTeX
-Software Engineering
-Unix & Linux
-Ask Different (Apple)
-WordPress Development
-Geographic Information Systems
-Electrical Engineering
-Android Enthusiasts
-Information Security
-Database Administrators
-Drupal Answers
-SharePoint
-User Experience
-Mathematica
-Salesforce
-ExpressionEngine® Answers
-Stack Overflow em Português
-Blender
-Network Engineering
-Cryptography
-Code Review
-Magento
-Software Recommendations
-Signal Processing
-Emacs
-Raspberry Pi
-Stack Overflow на русском
-Code Golf
-Stack Overflow en español
-Ethereum
-Data Science
-Arduino
-Bitcoin
-Software Quality Assurance & Testing
-Sound Design
-Windows Phone
-more (29)
-Photography
-Science Fiction & Fantasy
-Graphic Design
-Movies & TV
-Music: Practice & Theory
-Worldbuilding
-Video Production
-Seasoned Advice (cooking)
-Home Improvement
-Personal Finance & Money
-Academia
-Law
-Physical Fitness
-Gardening & Landscaping
-Parenting
-more (10)
-English Language & Usage
-Skeptics
-Mi Yodeya (Judaism)
-Travel
-Christianity
-English Language Learners
-Japanese Language
-Chinese Language
-French Language
-German Language
-Biblical Hermeneutics
-History
-Spanish Language
-Islam
-Русский язык
-Russian Language
-Arqade (gaming)
-Bicycles
-Role-playing Games
-Anime & Manga
-Puzzling
-Motor Vehicle Maintenance & Repair
-Board & Card Games
-Bricks
-Homebrewing
-Martial Arts
-The Great Outdoors
-Poker
-Chess
-Sports
-more (16)
-MathOverflow
-Mathematics
-Cross Validated (stats)
-Theoretical Computer Science
-Physics
-Chemistry
-Biology
-Computer Science
-Philosophy
-Linguistics
-Psychology & Neuroscience
-Computational Science
-more (10)
-Meta Stack Exchange
-Stack Apps
-API
-Data
+TypeError: 'int' object is not iterable | Odoo
+Login
+Coba secara gratis
+Aplikasi
+Finance
+Akuntansi
+Faktur
+Pengeluaran
+Spreadsheet (BI)
+Dokumen
+Tanda
+Penjualan
+CRM
+Penjualan
+Kasir
+Langganan
+Penyewaan
+Penghubung Amazon
+Websites
+Pembuat Situs Web
+eNiaga
 Blog
-Facebook
-Twitter
-LinkedIn
-Instagram
-site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.6.10.39470
-Stack Overflow works best with JavaScript enabled
-Your privacy
-By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
-Accept all cookies
-Customize settings
+Forum
+Obrolan Langsung
+eLearning
+Inventory & MRP
+Inventaris
+Produksi
+PLM
+Pembelian
+Pemeliharaan
+Kualitas
+Sumber Daya Manusia
+Karyawan
+Perekrutan
+Time Off
+Penilaian
+Rujukan
+Armada
+Pemasaran
+Social Marketing
+Email Marketing
+SMS Marketing
+Acara
+Marketing Automation
+Survei
+Services
+Proyek
+Timesheet
+Servis Lapangan
+Pusat bantuan
+Perencanaan
+Janji Bertemu
+Productivity
+Diskusi
+Persetujuan
+IoT
+Aplikasi pihak ketiga
+Odoo Studio
+Platform Odoo Cloud
+Komunitas
+Belajar
+Tutorials
+Documentation
+Certifications
+Education Program
+Scale Up! Business Game
+Customer References
+Get the Software
+Download
+Compare Editions
+Releases
+Collaborate
+Github
+Forum
+Acara
+Translations
+Become a Partner
+Register your Accounting Firm
+Get Services
+Find a Partner
+Find an Accountant
+Jadwalkan demo
+Harga
+Help
+Dismiss
+Odoo is the world's easiest all-in-one management software. It includes hundreds of business apps:
+CRM
+e-Commerce
+Accounting
+Inventory
+PoS
+Project management
+MRP
+Take the tour
+All Forums
+Topics
+Orang
+Tag
+Lencana
+About
+Go to:
+Pertanyaan
+All Topics
+Orang
+Tag
+Lencana
+About
+1
+Sunting
+Tutup
+Hapus
+Flag
+TypeError: 'int' object is not iterable
+Sunting
+Tutup
+Hapus
+Flag
+Grf
+9 Maret 2017
+Berhenti Berlangganan
+Langganan
+Thanks for your subscription!
+methodtypeerrorcompute
+Guys what i did wrong... im getting message = "TypeError: 'int' object is not iterable"age = fields.Integer(string="Age", required=False, default="1")
+group = fields.Char(string="Group", compute="_compute_group", store=True)
+total = fields.Char(string="Total" )
+totalage = fields.Integer(string="Totalage", compute="_calculate_total_age", store=True)
+@api.one@api.depends('age') def _calculate_total_age(self): currentage = 0 for number in self.age: currentage = currentage + number.age self.totalage = currentage
+Comment
+Share
+1
+Komentar
+Post Comment
+Abaikan
+Esther Martín
+-
+29 April 2017
+Hapus
+Convert as a answer
+What do you want yo compute? No sense a loop with integer field.
+4
+Semua Jawaban
+1
+Niyas Raphy
+10 Maret 2017
+Best Answer
+Try this, change for loop like this, for number in self: or try the below oneage = fields.Integer(string="Age", required=False, default="1")group = fields.Char(string="Group", compute="_compute_group", store=True)total = fields.Char(string="Total" )totalage = fields.Integer(string="Totalage", compute="_calculate_total_age", store=True)@api.one@api.depends('age')def _calculate_total_age(self):
+currentage = 0
+currentage = currentage + self.age
+self.totalage = currentage
+Komentar
+Share
+Post Comment
+Abaikan
+1
+Mohammed Amal N
+29 April 2017
+Best Answer
+you defined age as an integer.i dont understand why you used for number in self.age:  This format ( for i in variable ) is used if variable is an array or stringTry these instead :for number in range(self.age):     //number will have values from 0 - self.ageor if self.age :     // if you want to check there is value in field age
+Komentar
+Share
+Post Comment
+Abaikan
+0
+Rakesh Vadeghar
+4 September 2017
+Best Answer
+@api.depends('age')def _calculate_total_age(self):if self.age:
+self.totalage=self.age
+Komentar
+Share
+Post Comment
+Abaikan
+Community
+Tutorials
+Dokumentasi
+Forum
+Daftar Email
+Open Source
+Download
+Github
+Runbot
+Terjemahan
+Services
+Odoo.sh Hosting
+Dukungan
+Peningkatan
+Pendidikan
+Find an Accountant
+Temukan mitra
+Menjadi mitra
+About us
+Perusahaan kami
+Hubungi kami
+Tugas
+Acara
+Blog
+Pelanggan
+Mitra
+Hukum
+Privasi
+Keamanan
+Bahasa Indonesia
+الْعَرَبيّة
+简体中文
+繁體中文
+Nederlands
+English
+Français
+Deutsch
+Bahasa Indonesia
+Italiano
+日本語
+한국어 (KR)
+Português (BR)
+русский язык
+Slovenský jazyk
+Español
+ภาษาไทย
+Türkçe
+українська
+Tiếng Việt
+Odoo is a suite of open source business apps that cover all your company needs: CRM, eCommerce, accounting, inventory, point of sale, project management, etc.
+Odoo's unique value proposition is to be at the same time very easy to use and fully integrated.
+Website made with
+Subscriptions w/Odoo on YouTube
+1. Use the live chat to ask your questions.
+2. The operator answers within a few minutes.
+Watch now

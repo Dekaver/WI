@@ -1,241 +1,180 @@
-TypeError: 'str' object cannot be interpreted as an integer · Issue #2 · hfawaz/InceptionTime · GitHub
-Skip to content
-Sign up
-Why GitHub?
-Features →
-Mobile →
-Actions →
-Codespaces →
-Packages →
-Security →
-Code review →
-Project management →
-Integrations →
-GitHub Sponsors →
-Customer stories→
-Team
-Enterprise
-Explore
-Explore GitHub →
-Learn and contribute
-Topics →
-Collections →
-Trending →
-Learning Lab →
-Open source guides →
-Connect with others
-The ReadME Project →
-Events →
-Community forum →
-GitHub Education →
-GitHub Stars program →
-Marketplace
-Pricing
-Plans →
-Compare plans →
-Contact Sales →
-Education →
-In this repository
-All GitHub
-↵
-Jump to
-↵
-No suggested jump to results
-In this repository
-All GitHub
-↵
-Jump to
-↵
-In this user
-All GitHub
-↵
-Jump to
-↵
-In this repository
-All GitHub
-↵
-Jump to
-↵
-Sign in
-Sign up
-{{ message }}
-hfawaz
-/
-InceptionTime
-Notifications
-Star
-339
-Fork
-81
-Code
-Issues
-4
-Pull requests
-15
-Actions
-Projects
-0
-Wiki
-Security
-Insights
+Learn using Python Bytes/bytearray Functions
+Search for:
+Hit enter after type your search item
+A-Z Tech
+PHP, Bootstrap, jQuery, CSS, Python, Java and others
+Programming
+Python
+Java
+C#
+Kotlin
+Web
+HTML
+CSS
+Bootstrap 3
+Bootstrap 4
+Materialize
+jQuery
+jQuery UI
+AngularJS
+Web Elements
+Tables
+Forms
+Buttons
+Menus
+Animations
+Text
+Effects
+Sliders
+Dropdown
+Modals
+Tabs
+Date & Time
+Scripting
+PHP
+JavaScript
+Bash
+Database
+SQL
+MySQL
 More
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-New issue
-Have a question about this project? Sign up for a free GitHub account to open an issue and contact its maintainers and the community.
-Pick a username
-Email Address
-Password
-Sign up for GitHub
-By clicking “Sign up for GitHub”, you agree to our terms of service and
-privacy statement. We’ll occasionally send you account related emails.
-Already on GitHub?
-Sign in
-to your account
-Jump to bottom
-TypeError: 'str' object cannot be interpreted as an integer
-#2
-Closed
-czarmanu
-opened this issue
-Sep 23, 2019
-· 7 comments
-Closed
-TypeError: 'str' object cannot be interpreted as an integer
-#2
-czarmanu
-opened this issue
-Sep 23, 2019
-· 7 comments
-Comments
-Copy link
-czarmanu
-commented
-Sep 23, 2019
-Traceback (most recent call last):
-File "/usr/lib/python3/dist-packages/pandas/core/indexes/base.py", line 2566, in get_value
-return libts.get_value_box(s, key)
-File "pandas/_libs/tslib.pyx", line 1017, in pandas._libs.tslib.get_value_box
-File "pandas/_libs/tslib.pyx", line 1025, in pandas._libs.tslib.get_value_box
-TypeError: 'str' object cannot be interpreted as an integer
-During handling of the above exception, another exception occurred:
-Traceback (most recent call last):
-File "main.py", line 117, in
-fit_classifier()
-File "main.py", line 49, in fit_classifier
-classifier.fit(x_train, y_train, x_test, y_test, y_true)
-File "/home/pf/pfstaff/projects/LakeIce_2/Experiments/GeoLocalize/InceptionTime/classifiers/inception.py", line 145, in fit
-plot_test_acc=plot_test_acc)
-File "/home/pf/pfstaff/projects/LakeIce_2/Experiments/GeoLocalize/InceptionTime/utils/utils.py", line 211, in save_logs
-df_best_model['best_model_train_acc'] = row_best_model['acc']
-File "/usr/lib/python3/dist-packages/pandas/core/series.py", line 623, in getitem
-result = self.index.get_value(self, key)
-File "/usr/lib/python3/dist-packages/pandas/core/indexes/base.py", line 2574, in get_value
-raise e1
-File "/usr/lib/python3/dist-packages/pandas/core/indexes/base.py", line 2560, in get_value
-tz=getattr(series.dtype, 'tz', None))
-File "pandas/_libs/index.pyx", line 83, in pandas._libs.index.IndexEngine.get_value
-File "pandas/_libs/index.pyx", line 91, in pandas._libs.index.IndexEngine.get_value
-File "pandas/_libs/index.pyx", line 139, in pandas._libs.index.IndexEngine.get_loc
-File "pandas/_libs/hashtable_class_helper.pxi", line 1265, in pandas._libs.hashtable.PyObjectHashTable.get_item
-File "pandas/_libs/hashtable_class_helper.pxi", line 1273, in pandas._libs.hashtable.PyObjectHashTable.get_item
-KeyError: 'acc'
-The text was updated successfully, but these errors were encountered:
-Copy link
-Owner
-hfawaz
-commented
-Sep 23, 2019
-Thanks for posting, what command did you run ?
-Copy link
-Author
-czarmanu
-commented
-Sep 23, 2019
-python3 main.py InceptionTime
-Copy link
-Owner
-hfawaz
-commented
-Sep 23, 2019
-How does this issue relate to the other one you have just opened ?
-Did you resolve this one ?
-Copy link
-Author
-czarmanu
-commented
-Sep 23, 2019
-I am trying on two machines:
-Cluster with GTX 1080 Ti (This issue is solved when i did pip3 install pandas==0.23.0) which throws out [the other error]
-Local PC with GTX 1080 Ti (This issue still exist even after the pip as above)
-Copy link
-Owner
-hfawaz
-commented
-Sep 23, 2019
-Okay I think I cannot help with this error as I am not able to re-produce it.
-I will check out the other error ASAP.
-I guess the problem on your local machine has something to do with your python environment.
-Copy link
-Author
-czarmanu
-commented
-Sep 24, 2019
-It worked fine when the panda version was upgraded to 0.25.1 and the following change was done in utils.py:
-if 'acc' in row_best_model.index:
-df_best_model['best_model_train_acc'] = row_best_model['acc']
-else:
-df_best_model['best_model_train_acc'] = 0
-👍
-1
-czarmanu
-closed this
-Sep 24, 2019
-Copy link
-liadbiz
-commented
-Oct 29, 2019
-same issue here.
-I fixed it by changing two lines of code:
-df_best_model['best_model_train_acc'] = row_best_model['accuracy']
-if plot_test_acc:
-df_best_model['best_model_val_acc'] = row_best_model['val_accuracy']
-I guess this problem is due to the version of pandas or something because I did not install all the lib in requirements.txt. You can print row_best_model to check it out.
-Hope it helps.
-Sign up for free
-to join this conversation on GitHub.
-Already have an account?
-Sign in to comment
-Assignees
-No one assigned
-Labels
-None yet
-Projects
-None yet
-Milestone
-No milestone
-Linked pull requests
-Successfully merging a pull request may close this issue.
-None yet
-3 participants
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-You can’t perform that action at this time.
-You signed in with another tab or window. Reload to refresh your session.
-You signed out in another tab or window. Reload to refresh your session.
+MS Excel
+Github
+What Why How
+The Bytes Function in Python
+The bytes and bytearray are the core built-in types in Python to manipulate binary data.
+The bytes function returns bytes object which is an immutable sequence of single bytes.
+The Headlines
+hide
+1.
+How to use bytes function
+2.
+An example of using an integer in byte function
+3.
+The example of using a string in bytes function
+4.
+The example of bytes with a list
+5.
+What if the list contained a string item?
+6.
+An example of Python bytearray example
+7.
+Using a string in bytearray example
+How to use bytes function
+The general syntax for using the bytes function is:
+class bytes([source[, encoding[, errors]]])
+Where the source can be an integer, string, Object, or iterable.
+All the parameters in bytes function are optional. So, if the source is not provided, the bytes function creates an array of zero size.
+If a string is used as a source then make sure you provide the encoding argument as well.
+The third parameter error is used when the source is provided as a string and it fails.
+An example of using an integer in byte function
+The example below uses just the first argument in the bytes function i.e. integer as the source. I provided value 9 and see the output:
+1234567
+#Bytes Demo   obj_byte = bytes(2) print (obj_byte)
+The result:
+b’\x00\x00′
+The example of using a string in bytes function
+In this examples, I used a string and also given the encoding parameter value i.e. “utf-8”. See the code and output:
+1234567
+#Bytes Demo with string   obj_byte = bytes("Hello Python", "utf-8") print (obj_byte)
+The output:
+b’Hello Python’
+Note: The TypeError occurs if you do not provide encoding type there. That is:
+TypeError: string argument without an encoding
+The example of bytes with a list
+In the example below, we have a list of numeric elements. Remember, the definition of bytes function states that you may use an iterator as the source?
+The code below uses a list and displays the returned bytes object:
+123456789
+#Bytes Demo with list   lst_num = [1, 15, 25] obj_byte_lst = bytes(lst_num) print (obj_byte_lst)
+The result:
+b’\x01\x0f\x19′
+What if the list contained a string item?
+I just added a string item in the above list and see the output:
+123456789
+#Bytes Demo with list (a string item)   lst_mix = [1, 15, 25, "A string"] obj_byte_lst = bytes(lst_mix) print (obj_byte_lst)
+The result:
+TypeError: ‘str’ object cannot be interpreted as an integer
+An example of Python bytearray example
+As mentioned earlier, the bytes function returns a byte object which is immutable. If you want a mutable object then use the bytearray() function.
+The bytearray() function returns a bytearray object that is mutable. The bytearray object is an array of the given bytes.
+The syntax for using this function is:
+class bytearray([source[, encoding[, errors]]])
+The example below shows using an integer as the source in the bytearray function:
+1234567
+#Bytearray Demo   int_x = bytearray(5) print (int_x)
+The result:
+bytearray(b’\x00\x00\x00\x00\x00′)
+Using a string in bytearray example
+The example below shows using a string in bytearray function.
+1234567
+#Bytearray Demowith string   obj_bytearray = bytearray("Python is cool", "utf-8") print (obj_bytearray)
+The result:
+bytearray(b’Python is cool’)
+Related Tutorials:
+Python int() function
+What is Python ascii function?
+What is any() function in Python?
+Python all() function
+What is float function in Python?
+What is Python floor function?
+Python max function
+Python Reduce Function
+What is Python Zip function?
+What is isinstance function in Python?
+Post navigation
+Prev TutorialWhat is Enumerate in Python?
+Next TutorialPython int() function
+Python if, else and elif
+Python for loop
+Python While loop
+Python List
+Python Dictionary
+Python Tuple
+Python Set
+Python Exception Handling
+Python string to int and float
+Python open / read /write
+Related Tutorials
+Python int() functionWhat is Python ascii function?What is any() function in Python?Python all() functionWhat is float function in Python?What is Python floor function?Python max functionPython Reduce FunctionWhat is Python Zip function?What is isinstance function in Python?
+This div height required for enabling the sticky sidebar
+Go by TagsAccordion
+AJAX
+Animations
+Autocomplete
+Buttons
+Carousel
+Charts
+Checkbox
+Date & Time
+Dropdown
+Effects
+Forms
+Hover
+Layout
+Lightbox
+Loader
+Maps
+Menus
+Mobile
+Modals
+Parallax
+Popover
+Progress bar
+Responsive
+Rotator
+Scroll
+Shopping Cart
+Sliders
+slideshow
+Table
+Tabs
+Text
+Tooltips
+Transitions
+Validation
+Zoom
+AboutCookies & Privacy Policy
+About & Terms
+Contact
+jQuery-AZ 2020. All Rights Reserved.
+↑

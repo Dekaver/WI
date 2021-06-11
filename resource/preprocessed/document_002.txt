@@ -168,30 +168,30 @@ NameError: name 'word' is not defined ,python
 10
 Architecture Not Supported Error when installing nltk with pip on Mac
 Hot Network Questions
-Is it a coincidence that on the far side of the moon almost no seas are visible?
-Is it a good idea to go to Japan without a travel guide?
-Refueling a Mars mission on the way
-In the sentence "Ich begegnete einem alten Freund in Berlin", why the dative einem instead of the accusative einen?
-Why am I seeing the sun slightly north instead of slightly south early in the morning in Malta?
-How does black proceed in the below position?
-A '50s Yeti movie which has a scene with two men sitting around a fire in a cave
-Rewrite strings without changing their order
-Is buying lecture notes wrong?
 How to indicate a checkbox/toggle is "always on"
-Why are SSH MITM tools able to read and modify data?
-Interview by fellow PhD students, not the professor himself
-What are the benefits of hand built wheels over automated ones?
-Why is there so much reluctance to make the COVID vaccine mandatory for adults?
-Why is Ken's beer "gay"?
-Is there a threadlocker that requires heat to release and can withstand thousands of heat-cool cycles without needing to be reapplied or deteriorating
-Is cohomology always related to topology?
-How to remove the new weather info from the taskbar?
-What would a bear species isolated on an island look like?
-Why would a modern city with a warm climate have a skyway system?
-Grep and Cut command in linux
-Where is Lorentz contraction centered on?
 Sum of set bits from 1 to n
-How to solve these algebraic identities?
+What does existential unforgeability mean in a digital signature scheme?
+Decode USB packets
+Why was the neutrino thought to be massless?
+Is maximum speed a thing?
+Critical differences between Ubuntu Server and Ubuntu Desktop for 20.04 LTS?
+Do the murder statistics of 5 cities bring the USA to the 3rd highest country, from 189th?
+Interviewer was two hours late
+Why don't demons possess children until after puberty?
+Are there any greater risks of traveling significantly faster to another planet?
+Telling a coworker they aren't invited into my house
+Does folic acid contain a benzyl or a phenyl group?
+Why put a resistor in series with the postive terminal in a non inverting op-amp circuit?
+How are intersex people explained by Christianity?
+Why aren't resistors being used here?
+Can a Rogue find an undetectable Trap?
+Why do CMOS NOT gate designs differ from BJT NOT gate designs?
+What are the DM's responsibilities when dealing with a character's death?
+Make git diff aware of Emacs Lisp functions?
+Does Ubuntu Server have any special preinstalled packages
+Is it suspicious that gravitational waves propagate at the speed of light?
+Being forced to take annual leave against my wishes, what are my options
+How can I use basename with parallel?
 more hot questions
 Question feed
 Subscribe to RSS
@@ -339,7 +339,7 @@ Twitter
 LinkedIn
 Instagram
 site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.6.10.39470
+rev 2021.6.10.39473
 Stack Overflow works best with JavaScript enabled
 Your privacy
 By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.

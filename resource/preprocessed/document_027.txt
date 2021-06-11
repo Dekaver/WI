@@ -1,235 +1,241 @@
-AttributeError using scipy.sparse.toarray()
-Skip to main content
-搜尋此網誌
-Sfyjdyy
-Subscribe
-Subscribe to this blog
-AttributeError using scipy.sparse.toarray()
-Clash Royale CLAN TAG#URR8PPP AttributeError using scipy.sparse.toarray()import scipy as spimport numpy as npa=sp.sparse.coo_matrix(np.random.randint(0,9,[4,5]))b=sp.sparse.coo_matrix(np.random.randint(0,9,[4,2]))sp.hstack([a,b]).toarray() is giving meAttributeError: 'numpy.ndarray' object has no attribute 'toarray' could you help me with my silly mistake here?
-1 Answer 1
-sp.hstack (i.e. numpy.hstack) is the ordinary, dense hstack, which won't combine the sparse arrays correctly. It builds a 1D numpy array already (of object dtype; in other words, it just wraps the Python-level objects and crams them in there.) You want scipy.sparse.hstack:sp.hstacknumpy.hstackscipy.sparse.hstackIn [332]: sp.hstack([a, b])Out[332]: array([<4x5 sparse matrix of type '<class 'numpy.int64'>' with 17 stored elements in COOrdinate format>, <4x2 sparse matrix of type '<class 'numpy.int64'>' with 7 stored elements in COOrdinate format>], dtype=object)In [333]: sp.hstack([a, b]).toarray()---------------------------------------------------------------------------AttributeError Traceback (most recent call last)<ipython-input-333-4f469eb98b12> in <module>()----> 1 sp.hstack([a, b]).toarray()AttributeError: 'numpy.ndarray' object has no attribute 'toarray'In [334]: sp.sparse.hstack([a, b])Out[334]: <4x7 sparse matrix of type '<class 'numpy.int64'>' with 24 stored elements in COOrdinate format>In [335]: sp.sparse.hstack([a, b]).toarray()Out[335]: array([[3, 2, 7, 0, 5, 5, 1], [7, 1, 2, 1, 7, 0, 8], [6, 1, 6, 1, 8, 6, 2], [7, 6, 0, 5, 0, 8, 8]], dtype=int64)
-😠 .... thanks!!! – Kam Aug 6 at 1:27
-By clicking "Post Your Answer", you acknowledge that you have read our updated terms of service, privacy policy and cookie policy, and that your continued use of the website is subject to these policies.
--
-September 25, 2018
-Get link
-Facebook
-Twitter
-Pinterest
-Email
-Other Apps
-Popular posts from this blog
-Can't bind to 'dataSource' since it isn't a known property of 'table' even when modules are imported
-Clash Royale CLAN TAG #URR8PPP
-Can't bind to 'dataSource' since it isn't a known property of 'table' even when modules are imported
-I am implementing a mat-table ui. In my app.module I imported my material.module like so: import MaterialModule from './material-design/material.module'; imports: [
-MaterialModule,
-],
-In my component that implements this, I have this code: import Component, OnInit, ViewChild from '@angular/core'; import MatTableDataSource, MatSort, MatPaginator from '@angular/material'; displayedColumns: string = ['PlateNumber', 'Purpose', 'Schedule', 'Select']; dataSource: MatTableDataSource<ScheduledVehicleModel>; @ViewChild(MatPaginator) paginator: MatPaginator; @ViewChild(MatSort) sort: MatSort; getScheduledVhicles()
-this.vs.getScheduledVhicles()
-.subscribe((data: any) =>
-this.dataSource = new MatTableDataSource(data);
-this.dataSource.paginator = this.paginator;
-this.data
-Read more
-Get week number in month from date in PHP?
-Clash Royale CLAN TAG #URR8PPP
-Get week number in month from date in PHP?
-I have an array of random dates (not coming from MySQL). I need to group them by the week as Week1, Week2, and so on upto Week5.
-What I have is this: $dates = array('2015-09-01','2015-09-05','2015-09-06','2015-09-15','2015-09-17');
-What I need is a function to get the week number of the month by providing the date.
-I know that I can get the weeknumber by doing
-date('W',strtotime('2015-09-01'));
-but this week number is the number between year (1-52) but I need the week number of the month only, e.g. in Sep 2015 there are 5 weeks: date('W',strtotime('2015-09-01'));
-I should be able to get the week Week1 by just providing the date e.g. $weekNumber = getWeekNumber('2015-09-01') //output 1; $weekNumber = getWeekNumber('2015-09-17') //output 3;
-Please clarify your question.
-– William Smith
-Sep 16 '15 at 18:19
-9
-Read more
-TS2339: Property 'includes' does not exist on type 'string'
-Clash Royale CLAN TAG #URR8PPP
-TS2339: Property 'includes' does not exist on type 'string'
-I have seen this error mentioned in regards to string arrays but not actual strings. I have a TypeScript file with the line if (!bus.lineInfo.PublishedLineName.includes(input)) {
-This gives me an error of TS2339: Property 'includes' does not exist on type 'string'.
-bus
-is a variable that implements the bus
-interface: bus bus interface bus
-"lineInfo": string // false if this is "FFFFFF", otherwise it's the color
-,
-"warnings": boolean
-lineInfo.PublishedLineName
-is declared as a string , and String.prototype.includes()
-is a function according to MDN, so why does the TypeScript compiler complain about the missing property/method? lineInfo.PublishedLineName string String.prototype.includes()
-What is includes or what do you think it is?
-– rmlan
-Aug 12 at 17:34
-I believe it is a string method; I've updated my pos
-Read more
-Archive
-2018
-6565
-September 2018
-5422
-Sep 25
-349
-add score in Screen libgdx
-Angular 6 - Update *ngIf after Component Loads
-Is it posibble to prevent the outer transaction co...
-How to specify tint as custom attribute on ImageVi...
-Netlogo: how to register the tick-advance counter ...
-evaluate relational operator from a string
-How to store a value of variable in javascript for...
-yield n files from disk
-AttributeError using scipy.sparse.toarray()
-CSS: how to set a min-width that is overridden by ...
-Transferring specific data in Excel into individua...
-Table referencing multiple tables. Error in save “...
-Can I have multiple “categories” on one connection?
-Strategy for getting a “real” device time while of...
-Ionic 3 add class dynamically if the input is not ...
-Animation positioning on window resize
-Select between two tables, two columns
-How to change your app's target API using flash CS6
-New column based on multiple conditions ignoring m...
-All Schema Columns were Removed After Removing MyS...
-Error: “CUDNN STATUS NOT INITIALIZED” in keras-bas...
-MySQL Pivot Tables Without Numbers
-Node.js beginner struggling with arrays, promises ...
-Collecting keyword arguments in Ruby
-Running Apply with Function of prime number on dat...
-Scan files in a directory to get the number of met...
-Swift - Singleton without global access
-Redirect a URL to new URL and original subdomain t...
-(Unity) Rapidly click to speed up an object (other...
-How to fix npm audit fix issues?
-How to execute powershell/cmd commands using gnuwi...
-Change files & photos folders to one storage folde...
-dealing with canvas copy trouble in tcl
-using a parameterised insert query but getting con...
-How to read in an XML file asynchronously?
-Getting CSS tab to be open by default
-Nginx Reverse Proxy with Dynamic Containers
-Null Pointer When Passing Data from App to Widget ...
-How to gather the logits according to a 2D index?
-Assigning specific value to checkbox
-Get Drawn Data from Google Maps
-Log execution time of each method of the request u...
-SAP UI5 value help only for Smartfield
-R Feature Selection with caret - Limit results plo...
-Removing characters with sed
-Convert d3 svg coordinates to canvas coordinates
-Properly handling of QAction shortcut
-AlarmManager Repeat
-How to use re in python3 to print only the desired...
-Value of String won't change in Swift despite clea...
-Sorting PriorityQueue
-Rounding all possible numbers below 1 to the first...
-Getting the Code to Restart After Invalid Entry (J...
-How do I write to an access query that uses linked...
-Convert case of an HTML page to lower in R
-Laravel - joining 3 tables
-Add BoxCollider from other object to current object
-why is there no render() in functional components
-getting max value of binary search tree in js
-Subsetting Hierarchical Index and Hierarchical col...
-Connecting RDS Instance to MySQL Workbench
-What is the partial ordering procedure in template...
-Fabric8 java library to edit existing resource
-EditText.getText().toString() error [duplicate]
-Error installing jekyll: ERROR: Failed to build ge...
-how to make table view shows specific row after re...
-Resize images with Glide in a ImageView Android
-Django create new instances of a different model u...
-Selecting shape by shapeid VBA powerpoint
-Address prompt results in unexpected map on iOS Go...
-removing all false elements from a linked list in ...
-JSON data table does not upload?
-How to remove any co-occurrence of sub-list elemen...
-VLCJ - Bundling native VLC libraries on 64 bit Linux
-How to create custom fields for IdentityUser in as...
-Creating a leaderboard in HTML/JS
-Rails Routing: Set specific controller action to a...
-Laravel “The 'name' argument does not exist” Error
-how to open ejabberd server to public
-Excel: Find Which Range A Value Belongs To If Any ...
-How does one override .Equals() for a Discriminate...
-Swift-based iOS App Extension using NSExtension
-Point Microsoft Bot DirectLine API to slot instance
-Moving multiple Widgets in Kivy independently
-Docusign Python SDK Authentication Example Error: ...
-Adjust margin/padding in the 'PreferenceScreen' in...
-connect 2 websockets ws and socket.io
-Autocomplete of xml tags in VSCode based on xml sc...
-Update product price if specific meta_key contains...
-flexbox with expandable children
-Why does a JavaFX Image not read the file itself d...
-If I statically link a C library, will the unused ...
-Parsing a JSON file with PHP
-Error: Cannot find module 'less' with pnpm
-Drag and Drop in ListView
-Subclass `pathlib.Path` fails
-Chart.js - Font only renders after you reload the ...
-git submodule “you need to resolve your current in...
-How to access electron.app.getPath()?
-Can i put anything in for x
-Sep 24
-172
-Sep 23
-416
-Sep 22
-190
-Sep 21
-305
-Sep 20
-364
-Sep 19
-342
-Sep 18
-262
-Sep 17
-268
-Sep 16
-361
-Sep 15
-41
-Sep 14
-407
-Sep 13
-165
-Sep 12
-281
-Sep 11
-237
-Sep 10
-52
-Sep 09
-152
-Sep 08
-85
-Sep 07
-86
-Sep 06
-48
-Sep 05
-278
-Sep 04
-43
-Sep 03
-173
-Sep 02
-130
-Sep 01
-215
-August 2018
-1143
-Aug 31
-266
-Aug 30
-149
-Aug 29
-269
-Aug 28
-316
-Aug 27
-143
+TypeError: 'str' object cannot be interpreted as an integer · Issue #2 · hfawaz/InceptionTime · GitHub
+Skip to content
+Sign up
+Why GitHub?
+Features →
+Mobile →
+Actions →
+Codespaces →
+Packages →
+Security →
+Code review →
+Project management →
+Integrations →
+GitHub Sponsors →
+Customer stories→
+Team
+Enterprise
+Explore
+Explore GitHub →
+Learn and contribute
+Topics →
+Collections →
+Trending →
+Learning Lab →
+Open source guides →
+Connect with others
+The ReadME Project →
+Events →
+Community forum →
+GitHub Education →
+GitHub Stars program →
+Marketplace
+Pricing
+Plans →
+Compare plans →
+Contact Sales →
+Education →
+In this repository
+All GitHub
+↵
+Jump to
+↵
+No suggested jump to results
+In this repository
+All GitHub
+↵
+Jump to
+↵
+In this user
+All GitHub
+↵
+Jump to
+↵
+In this repository
+All GitHub
+↵
+Jump to
+↵
+Sign in
+Sign up
+{{ message }}
+hfawaz
+/
+InceptionTime
+Notifications
+Star
+339
+Fork
+81
+Code
+Issues
+4
+Pull requests
+15
+Actions
+Projects
+0
+Wiki
+Security
+Insights
+More
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+New issue
+Have a question about this project? Sign up for a free GitHub account to open an issue and contact its maintainers and the community.
+Pick a username
+Email Address
+Password
+Sign up for GitHub
+By clicking “Sign up for GitHub”, you agree to our terms of service and
+privacy statement. We’ll occasionally send you account related emails.
+Already on GitHub?
+Sign in
+to your account
+Jump to bottom
+TypeError: 'str' object cannot be interpreted as an integer
+#2
+Closed
+czarmanu
+opened this issue
+Sep 23, 2019
+· 7 comments
+Closed
+TypeError: 'str' object cannot be interpreted as an integer
+#2
+czarmanu
+opened this issue
+Sep 23, 2019
+· 7 comments
+Comments
+Copy link
+czarmanu
+commented
+Sep 23, 2019
+Traceback (most recent call last):
+File "/usr/lib/python3/dist-packages/pandas/core/indexes/base.py", line 2566, in get_value
+return libts.get_value_box(s, key)
+File "pandas/_libs/tslib.pyx", line 1017, in pandas._libs.tslib.get_value_box
+File "pandas/_libs/tslib.pyx", line 1025, in pandas._libs.tslib.get_value_box
+TypeError: 'str' object cannot be interpreted as an integer
+During handling of the above exception, another exception occurred:
+Traceback (most recent call last):
+File "main.py", line 117, in
+fit_classifier()
+File "main.py", line 49, in fit_classifier
+classifier.fit(x_train, y_train, x_test, y_test, y_true)
+File "/home/pf/pfstaff/projects/LakeIce_2/Experiments/GeoLocalize/InceptionTime/classifiers/inception.py", line 145, in fit
+plot_test_acc=plot_test_acc)
+File "/home/pf/pfstaff/projects/LakeIce_2/Experiments/GeoLocalize/InceptionTime/utils/utils.py", line 211, in save_logs
+df_best_model['best_model_train_acc'] = row_best_model['acc']
+File "/usr/lib/python3/dist-packages/pandas/core/series.py", line 623, in getitem
+result = self.index.get_value(self, key)
+File "/usr/lib/python3/dist-packages/pandas/core/indexes/base.py", line 2574, in get_value
+raise e1
+File "/usr/lib/python3/dist-packages/pandas/core/indexes/base.py", line 2560, in get_value
+tz=getattr(series.dtype, 'tz', None))
+File "pandas/_libs/index.pyx", line 83, in pandas._libs.index.IndexEngine.get_value
+File "pandas/_libs/index.pyx", line 91, in pandas._libs.index.IndexEngine.get_value
+File "pandas/_libs/index.pyx", line 139, in pandas._libs.index.IndexEngine.get_loc
+File "pandas/_libs/hashtable_class_helper.pxi", line 1265, in pandas._libs.hashtable.PyObjectHashTable.get_item
+File "pandas/_libs/hashtable_class_helper.pxi", line 1273, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'acc'
+The text was updated successfully, but these errors were encountered:
+Copy link
+Owner
+hfawaz
+commented
+Sep 23, 2019
+Thanks for posting, what command did you run ?
+Copy link
+Author
+czarmanu
+commented
+Sep 23, 2019
+python3 main.py InceptionTime
+Copy link
+Owner
+hfawaz
+commented
+Sep 23, 2019
+How does this issue relate to the other one you have just opened ?
+Did you resolve this one ?
+Copy link
+Author
+czarmanu
+commented
+Sep 23, 2019
+I am trying on two machines:
+Cluster with GTX 1080 Ti (This issue is solved when i did pip3 install pandas==0.23.0) which throws out [the other error]
+Local PC with GTX 1080 Ti (This issue still exist even after the pip as above)
+Copy link
+Owner
+hfawaz
+commented
+Sep 23, 2019
+Okay I think I cannot help with this error as I am not able to re-produce it.
+I will check out the other error ASAP.
+I guess the problem on your local machine has something to do with your python environment.
+Copy link
+Author
+czarmanu
+commented
+Sep 24, 2019
+It worked fine when the panda version was upgraded to 0.25.1 and the following change was done in utils.py:
+if 'acc' in row_best_model.index:
+df_best_model['best_model_train_acc'] = row_best_model['acc']
+else:
+df_best_model['best_model_train_acc'] = 0
+👍
+1
+czarmanu
+closed this
+Sep 24, 2019
+Copy link
+liadbiz
+commented
+Oct 29, 2019
+same issue here.
+I fixed it by changing two lines of code:
+df_best_model['best_model_train_acc'] = row_best_model['accuracy']
+if plot_test_acc:
+df_best_model['best_model_val_acc'] = row_best_model['val_accuracy']
+I guess this problem is due to the version of pandas or something because I did not install all the lib in requirements.txt. You can print row_best_model to check it out.
+Hope it helps.
+Sign up for free
+to join this conversation on GitHub.
+Already have an account?
+Sign in to comment
+Assignees
+No one assigned
+Labels
+None yet
+Projects
+None yet
+Milestone
+No milestone
+Linked pull requests
+Successfully merging a pull request may close this issue.
+None yet
+3 participants
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+You can’t perform that action at this time.
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.

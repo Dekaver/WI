@@ -1,1 +1,288 @@
-Kotakode.com | Komunitas Developer IndonesiaYou need to enable JavaScript to run this app.
+urllib.error.HTTPError: HTTP Error 403: Forbidden : Forums : PythonAnywhere
+×
+We use cookies to provide social media features and to analyse our traffic. We also share information about your use of our site with our social media and analytics partners. Details here.
+Send feedback
+Forums
+Help
+Blog
+Pricing & signup
+Log in
+Toggle navigation
+Send feedback
+Forums
+Help
+Blog
+Pricing & signup
+Log in
+Forums
+Start a new topic |
+Back to all topics |
+This topic's RSS
+urllib.error.HTTPError: HTTP Error 403: Forbidden
+:::python
+13:54 ~ (master)$ python3
+Python 3.7.0 (default, Aug 22 2018, 20:50:05)
+[GCC 5.4.0 20160609] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import pandas
+>>> url = 'http://www.nseindia.com/content/historical/EQUITIES/2019/SEP/cm16SEP2019bhav.csv.zip'
+>>> df = pandas.read_csv(url, compression='zip')
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+File "/usr/lib/python3.7/site-packages/pandas/io/parsers.py", line 678, in parser_f
+return _read(filepath_or_buffer, kwds)
+File "/usr/lib/python3.7/site-packages/pandas/io/parsers.py", line 424, in _read
+filepath_or_buffer, encoding, compression)
+File "/usr/lib/python3.7/site-packages/pandas/io/common.py", line 195, in get_filepath_or_buffer
+req = _urlopen(filepath_or_buffer)
+File "/usr/lib/python3.7/urllib/request.py", line 222, in urlopen
+return opener.open(url, data, timeout)
+File "/usr/lib/python3.7/urllib/request.py", line 531, in open
+response = meth(req, response)
+File "/usr/lib/python3.7/urllib/request.py", line 641, in http_response
+'http', request, response, code, msg, hdrs)
+File "/usr/lib/python3.7/urllib/request.py", line 569, in error
+return self._call_chain(*args)
+File "/usr/lib/python3.7/urllib/request.py", line 503, in _call_chain
+result = func(*args)
+File "/usr/lib/python3.7/urllib/request.py", line 649, in http_error_default
+raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 403: Forbidden
+>>>
+I am trying to get something called a 'bhav_copy' from the website of National Stock Exchange of India. It is essential for my project. I wish to download this file only once everyday.
+Please advise how to rectify this error or a workaround.
+Thanks in advance.
+deleted-user-6050593
+|
+3
+posts
+|
+Sept. 16, 2019, 1:59 p.m.
+|
+permalink
+Free accounts can only access sites on our whitelist, and that site isn't on it.
+I also believe that the National Stock Exchange of India block incoming connections from cloud service providers like PythonAnywhere, so even in a paid account you would not be able to connect.
+giles
+|
+10233
+posts
+|
+PythonAnywhere staff
+|
+Sept. 16, 2019, 2:17 p.m.
+|
+permalink
+Thank you for your prompt reply. After I started this thread I read through the FAQ section and i now understand the reason for the error.
+However I would like to request you to consider white listing only the following URL which provides one zipped CSV file that contains End of Day prices of stocks.
+https://www.nseindia.com/content/historical/EQUITIES/
+This file is required only once a day and will not be a huge traffic burden for NSE.
+The data in this file is static in nature and as such does not change given the time of day.
+It is available much after the stock market as closed for trading.
+Also this this is the one and only source of this information and there are no services as of now that publishes this information.
+I therefore beg you to consider adding that url to your white list if possible.
+deleted-user-6050593
+|
+3
+posts
+|
+Sept. 16, 2019, 2:31 p.m.
+|
+permalink
+The problem is that it's blocked from the other end -- even if we whitelisted it, you would not be able to access it from our servers.
+giles
+|
+10233
+posts
+|
+PythonAnywhere staff
+|
+Sept. 16, 2019, 3:13 p.m.
+|
+permalink
+I am also getting the same error with the url: 'https://docs.google.com/forms/d/e/1FAIpQLSeDSC6eoL9swnSzJcMHPIRMC3crefjNyr2NeSRcr6ktEMXzOw/formResponse'
+Since i have the "hacker" subscription, i assume python anywhere could also be blocked by google forms?
+beardlesslumberjack
+|
+2
+posts
+|
+Sept. 25, 2019, 6:14 p.m.
+|
+permalink
+It's possible, but they might just be blocking automated access in general -- if I'm reading that URL correctly, it's one that's designed for human consumption rather than for automated access.
+What are you trying to do by accessing the form?
+Perhaps they provide a proper API for filling in forms instead of using a web-scraping solution.
+giles
+|
+10233
+posts
+|
+PythonAnywhere staff
+|
+Sept. 26, 2019, 11:02 a.m.
+|
+permalink
+Thanks for the quick reply.
+It's definitely for human use, it's to fill in guest information for airbnb bookings for a condo association.
+The weird thing is that it works intermittently. I'll look into an api.
+beardlesslumberjack
+|
+2
+posts
+|
+Sept. 26, 2019, 11:17 a.m.
+|
+permalink
+It might also be worth looking at the response you're getting in more detail -- even if the status code is 403, it might have some details as to why they're refusing the request in the page content.
+giles
+|
+10233
+posts
+|
+PythonAnywhere staff
+|
+Sept. 26, 2019, 11:28 a.m.
+|
+permalink
+If u can add nseindia.com with whitelist atleast block from our side. We can access then via headers.
+kapil020519
+|
+7
+posts
+|
+Feb. 26, 2020, 12:24 p.m.
+|
+permalink
+Replied to you here
+conrad
+|
+4186
+posts
+|
+PythonAnywhere staff
+|
+Feb. 26, 2020, 9:17 p.m.
+|
+permalink
+I have same problem. for solving my problem I request you to add the following URL in the whitelist so I can access it. I have a very simple small project on which the user can get a message when his result appears on the website. so I need to access the URL so can you please add the following URL?
+https://www.gtu.ac.in/result.aspx
+deleted-user-7003873
+|
+2
+posts
+|
+Feb. 27, 2020, 2:20 p.m.
+|
+permalink
+We can only add sites if they have an official public API -- if that site has one, please post a link to the API docs.
+giles
+|
+10233
+posts
+|
+PythonAnywhere staff
+|
+Feb. 27, 2020, 5:45 p.m.
+|
+permalink
+Hi,
+Getting same error but via module, using as below
+from nsetools import Nse
+It does connect same link internally. It is possible to make it available.
+sumitgupta15
+|
+1
+post
+|
+Feb. 28, 2020, 5:35 p.m.
+|
+permalink
+We need an endpoint name and official api docs.
+fjl
+|
+2105
+posts
+|
+PythonAnywhere staff
+|
+Feb. 28, 2020, 7:08 p.m.
+|
+permalink
+Nsetools is a package in https://pypi.org/
+Which is official website. The same should be allowed right.
+kapil020519
+|
+7
+posts
+|
+Feb. 29, 2020, 10:14 a.m.
+|
+permalink
+we allow the install of the nsetools package, but that doesn't mean that the package will work. also I believe that india nse blocks access from computers outside of india- so you wouldn't be able to use our services (which is outside of india)
+conrad
+|
+4186
+posts
+|
+PythonAnywhere staff
+|
+Feb. 29, 2020, 1:29 p.m.
+|
+permalink
+Hi Admin,
+I don’t think 403 is blocked from their side its blocked by pythonanywhere. I don’t think their is any good site other than python anywhere when its very neat to execute and deploy. Please see if you can grant access to nseindia.com. I truely feel this fill fix above issues.
+Please see to it.
+Thanks
+kapil020519
+|
+7
+posts
+|
+March 1, 2020, 4:39 p.m.
+|
+permalink
+Currently as a free user you are being blocked by PythonAnywhere. You can try upgrading, but I believe you may then be blocked by NSE.
+conrad
+|
+4186
+posts
+|
+PythonAnywhere staff
+|
+March 1, 2020, 5:54 p.m.
+|
+permalink
+please whitelist cowin public api i can execute my code
+anipython
+|
+1
+post
+|
+May 21, 2021, 3:42 p.m.
+|
+permalink
+Send us a link to the API documentation and we'll consider it for the whitelist.
+glenn
+|
+6989
+posts
+|
+PythonAnywhere staff
+|
+May 21, 2021, 4:33 p.m.
+|
+permalink
+Copyright © 2011-2021 PythonAnywhere LLP
+—
+Terms
+—
+Privacy & Cookies
+It's always a pleasure to hear from you!
+Ask us a question, or tell us what you love or hate about PythonAnywhere.
+We'll get back to you over email ASAP.
+Sorry, there was an error connecting to the server. Please try again in a few moments...
+Sorry, we have had to rate-limit your feedback sending.Please try again in a few moments...
+Thanks for the feedback! Our tireless devs will get back to you soon.
+OK
+Cancel
+Close

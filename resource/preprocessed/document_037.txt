@@ -1,149 +1,129 @@
-TypeError: 'str' object cannot be interpreted as an integer - Python - The freeCodeCamp Forum
-TypeError: 'str' object cannot be interpreted as an integer
-Python
-benthecoder
-October 28, 2020,
-1:27am
+Lr_find throws error "TypeError: 'float' object cannot be interpreted as an integer" - fastai users - Deep Learning Course Forums
+Lr_find throws error "TypeError: 'float' object cannot be interpreted as an integer"
+fastai users
+DomMIas
+(Dominique MIAS)
+April 4, 2019, 12:16pm
 #1
-Tell us what’s happening:
-I can’t seem to get this part right.
-My results end up being 0 percent.
-Percentage with higher education that earn >50K: 0.0%
-Percentage without higher education that earn >50K: 0.0%
-Your code so far
-import pandas as pd
-def calculate_demographic_data(print_data=True):
-# Read data from file
-df = pd.read_csv("adult.data.csv")
-# How many of each race are represented in this dataset? This should be a Pandas series with race names as the index labels.
-race_count = df['race'].value_counts()
-# What is the average age of men?
-average_age_men = round(df.loc[df['sex'] == 'Male', 'age'].mean(), 1)
-# What is the percentage of people who have a Bachelor's degree?
-percentage_bachelors = round(len(df[df['education'] == 'Bachelors']) / len(df) * 100, 1)
-# What percentage of people with advanced education (`Bachelors`, `Masters`, or `Doctorate`) make more than 50K?
-# What percentage of people without advanced education make more than 50K?
-# with and without `Bachelors`, `Masters`, or `Doctorate`
-higher_education = df[df['education'].isin('Bachelors', 'Masters', 'Doctorate')]
-lower_education = df[~df['education'].isin('Bachelors', 'Masters', 'Doctorate')]
-# percentage with salary >50K
-higher_education_rich = round(len(higher_education[higher_education['salary'] == '>50k']) / len(higher_education) * 100, 1)
-lower_education_rich = round(len(lower_education[lower_education['salary'] == '>50k']) / len(lower_education) * 100, 1)
-# What is the minimum number of hours a person works per week (hours-per-week feature)?
-min_work_hours = df["hours-per-week"].min()
-# What percentage of the people who work the minimum number of hours per week have a salary of >50K?
-num_min_workers = len(df[df['hours-per-week'] == min_work_hours])
-rich_percentage = round(len(df[(df['hours-per-week'] == min_work_hours) & (df['salary'] == '>50K')]) / num_min_workers * 100, 1)
-# What country has the highest percentage of people that earn >50K?
-highest_earning_country = (df.loc[df['salary'] == ">50K", 'native-country'].value_counts() / df['native-country'].value_counts()).fillna(0).sort_values(ascending=False).index[0]
-highest_earning_country_percentage = round(len(df[(df['native-country'] == higher_earning_country) & (df['salary'] == '>50K')]) / len(df[df['native-country'] == highest_earning_country]) * 100, 1)
-# Identify the most popular occupation for those who earn >50K in India.
-top_IN_occupation = df[(df['salary'] == ">50K") & (df['native-country'] == "India")]["occupation"].value_counts().index[0]
-# DO NOT MODIFY BELOW THIS LINE
-if print_data:
-print("Number of each race:\n", race_count)
-print("Average age of men:", average_age_men)
-print(f"Percentage with Bachelors degrees: {percentage_bachelors}%")
-print(f"Percentage with higher education that earn >50K: {higher_education_rich}%")
-print(f"Percentage without higher education that earn >50K: {lower_education_rich}%")
-print(f"Min work time: {min_work_hours} hours/week")
-print(f"Percentage of rich among those who work fewest hours: {rich_percentage}%")
-print("Country with highest percentage of rich:", highest_earning_country)
-print(f"Highest percentage of rich people in country: {highest_earning_country_percentage}%")
-print("Top occupations in India:", top_IN_occupation)
-return {
-'race_count': race_count,
-'average_age_men': average_age_men,
-'percentage_bachelors': percentage_bachelors,
-'higher_education_rich': higher_education_rich,
-'lower_education_rich': lower_education_rich,
-'min_work_hours': min_work_hours,
-'rich_percentage': rich_percentage,
-'highest_earning_country': highest_earning_country,
-'highest_earning_country_percentage':
-highest_earning_country_percentage,
-'top_IN_occupation': top_IN_occupation
-}
-Your browser information:
-safari
-User Agent is: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.2 Safari/605.1.15.
-Challenge: Demographic Data Analyzer
-Link to the challenge:
-freecodecamp.org
-freeCodeCamp.org
-Learn to code. Build projects. Earn certifications.Since 2015, 40,000 graduates have gotten jobs at tech companies including Google, Apple, Amazon, and Microsoft.
-benthecoder
-July 21, 2020, 10:40am
+Hello.
+I’m trying to create a text classifier, but during lr_find, it throws this error:
+LR Finder is complete, type {learner_name}.recorder.plot() to see the graph.
+---------------------------------------------------------------------------
+TypeError
+Traceback (most recent call last)
+<ipython-input-24-d81c6bd29d71> in <module>
+----> 1 learn.lr_find()
+~\Anaconda3\envs\fast-ai_projetT\lib\site-packages\fastai\train.py in lr_find(learn, start_lr, end_lr, num_it, stop_div, **kwargs)
+29
+cb = LRFinder(learn, start_lr, end_lr, num_it, stop_div)
+30
+a = int(np.ceil(num_it/len(learn.data.train_dl)))
+---> 31
+learn.fit(a, start_lr, callbacks=[cb], **kwargs)
+32
+33 def to_fp16(learn:Learner, loss_scale:float=512., flat_master:bool=False)->Learner:
+~\Anaconda3\envs\fast-ai_projetT\lib\site-packages\fastai\basic_train.py in fit(self, epochs, lr, wd, callbacks)
+164
+callbacks = [cb(self) for cb in self.callback_fns] + listify(callbacks)
+165
+fit(epochs, self.model, self.loss_func, opt=self.opt, data=self.data, metrics=self.metrics,
+--> 166
+callbacks=self.callbacks+callbacks)
+167
+168
+def create_opt(self, lr:Floats, wd:Floats=0.)->None:
+~\Anaconda3\envs\fast-ai_projetT\lib\site-packages\fastai\basic_train.py in fit(epochs, model, loss_func, opt, data, callbacks, metrics)
+92
+except Exception as e:
+93
+exception = e
+---> 94
+raise e
+95
+finally: cb_handler.on_train_end(exception)
+96
+~\Anaconda3\envs\fast-ai_projetT\lib\site-packages\fastai\basic_train.py in fit(epochs, model, loss_func, opt, data, callbacks, metrics)
+82
+for xb,yb in progress_bar(data.train_dl, parent=pbar):
+83
+xb, yb = cb_handler.on_batch_begin(xb, yb)
+---> 84
+loss = loss_batch(model, xb, yb, loss_func, opt, cb_handler)
+85
+if cb_handler.on_batch_end(loss): break
+86
+~\Anaconda3\envs\fast-ai_projetT\lib\site-packages\fastai\basic_train.py in loss_batch(model, xb, yb, loss_func, opt, cb_handler)
+16
+if not is_listy(xb): xb = [xb]
+17
+if not is_listy(yb): yb = [yb]
+---> 18
+out = model(*xb)
+19
+out = cb_handler.on_loss_begin(out)
+20
+~\Anaconda3\envs\fast-ai_projetT\lib\site-packages\torch\nn\modules\module.py in __call__(self, *input, **kwargs)
+487
+result = self._slow_forward(*input, **kwargs)
+488
+else:
+--> 489
+result = self.forward(*input, **kwargs)
+490
+for hook in self._forward_hooks.values():
+491
+hook_result = hook(self, input, result)
+~\Anaconda3\envs\fast-ai_projetT\lib\site-packages\torch\nn\modules\container.py in forward(self, input)
+90
+def forward(self, input):
+91
+for module in self._modules.values():
+---> 92
+input = module(input)
+93
+return input
+94
+~\Anaconda3\envs\fast-ai_projetT\lib\site-packages\torch\nn\modules\module.py in __call__(self, *input, **kwargs)
+487
+result = self._slow_forward(*input, **kwargs)
+488
+else:
+--> 489
+result = self.forward(*input, **kwargs)
+490
+for hook in self._forward_hooks.values():
+491
+hook_result = hook(self, input, result)
+~\Anaconda3\envs\fast-ai_projetT\lib\site-packages\fastai\text\models.py in forward(self, input)
+168
+self.reset()
+169
+raw_outputs, outputs = [],[]
+--> 170
+for i in range(0, sl, self.bptt):
+171
+r, o = super().forward(input[:,i: min(i+self.bptt, sl)])
+172
+if i>(sl-self.max_seq):
+TypeError: 'str' object cannot be interpreted as an integer
+and I have no idea why…
+Do you ? Thanks, D.
+sgugger
+April 4, 2019, 12:53pm
 #2
-Number of each race:
-White
-27816
-Black
-3124
-Asian-Pac-Islander
-1039
-Amer-Indian-Eskimo
-311
-Other
-271
-Name: race, dtype: int64
-Average age of men: 39.4
-Percentage with Bachelors degrees: 16.4%
-Percentage with higher education that earn >50K: 0.0%
-Percentage without higher education that earn >50K: 0.0%
-Min work time: 1 hours/week
-Percentage of rich among those who work fewest hours: 10.0%
-Country with highest percentage of rich: Iran
-Highest percentage of rich people in country: 41.9%
-Top occupations in India: Prof-specialty
-.E..E.....
-=============================================================
-=========
-ERROR: test_higher_education_rich (test_module.DemographicAna
-lyzerTestCase)
--------------------------------------------------------------
----------
-Traceback (most recent call last):
-File "/home/runner/fcc-demographic-data-analyzer/test_modul
-e.py", line 26, in test_higher_education_rich
-self.assertAlmostEqual(actual, expected, "Expected differ
-ent value for percentage with higher education that earn >50K
-.")
-File "/usr/lib/python3.8/unittest/case.py", line 957, in as
-sertAlmostEqual
-if round(diff, places) == 0:
-TypeError: 'str' object cannot be interpreted as an integer
-=============================================================
-=========
-ERROR: test_lower_education_rich (test_module.DemographicAnalyzerTestCase)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-File "/home/runner/fcc-demographic-data-analyzer/test_module.py", line 31, in test_lower_education_rich
-self.assertAlmostEqual(actual, expected, "Expected different value for percentage without higher education that earn >50K.")
-File "/usr/lib/python3.8/unittest/case.py", line 957, in assertAlmostEqual
-if round(diff, places) == 0:
-TypeError: 'str' object cannot be interpreted as an integer
-----------------------------------------------------------------------
-Ran 10 tests in 6.293s
-FAILED (errors=2)
-SupremeSadat
-July 21, 2020, 11:56pm
+Us neither since we can’t guess from just lr_find
+If you want help, you have to provide your whole code.
+DomMIas
+(Dominique MIAS)
+April 4, 2019,
+2:31pm
 #3
-higher_education_rich = round(len(higher_education[higher_education['salary'] == '>50k']) / len(higher_education) * 100, 1)
-lower_education_rich = round(len(lower_education[lower_education['salary'] == '>50k']) / len(lower_education) * 100, 1)
-the ‘>50k’, the K needs to be capital.
-benthecoder
-July 22, 2020,
-4:21am
-#4
-Ahh got it. Thanks mate!
-ieahleen
-closed
-June 1, 2021,
-6:30pm
-#5
+It seems it was an issue with the version I used (1.30). I upgraded to the last one, and everything is alright.
+More specificaly, on an earlier line, the model was not downloaded, which raise an error during training.
+Thank you anyway,
+D.
 Home
-Subforums
+Categories
 FAQ/Guidelines
 Terms of Service
 Privacy Policy

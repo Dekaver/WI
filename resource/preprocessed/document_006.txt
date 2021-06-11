@@ -150,7 +150,6 @@ Using low-code tools to iterate products faster
 Podcast 345: A good software tutorial explains the How. A great one explains…
 Featured on Meta
 Take the 2021 Developer Survey
-Visit chat
 Related
 8
 I get an error message when I try FreqDist() in NLTK — NameError: name 'nltk' is not defined
@@ -169,30 +168,30 @@ NameError: name 'word' is not defined ,python
 10
 Architecture Not Supported Error when installing nltk with pip on Mac
 Hot Network Questions
-A '50s Yeti movie which has a scene with two men sitting around a fire in a cave
-Is LUKS still an effective option for consumer FDE considering Elcomsoft can break it?
-Why is Ken's beer "gay"?
-Understanding the Rune Knight Fighter's 15th level feature
+Why did this gallon of milk stay fresh for so long?
 How to get real-looking rust that will be safe to the touch?
-Can a Rogue find an undetectable Trap?
-Why put a resistor in series with the postive terminal in a non inverting op-amp circuit?
-Why can an easily graphable definite integral, be labyrinthine to evaluate?
-Is buying lecture notes wrong?
-Why do CMOS NOT gate designs differ from BJT NOT gate designs?
-In Bayesian statistics, data is considered nonrandom but can have a probability or be conditioned on. How?
-Why would they use human soldiers over undead ones?
-What are minimal changes to make a truncated pyramid shaped megabuildings a thing?
-What are the DM's responsibilities when dealing with a character's death?
-Can I gain AC efficiency by spraying condensate water on the outdoor coils?
-How was it calculated that Dream cheated on his Minecraft v1.16 glitchless speedrun?
-Former coworker I gave a reference for sabotaged the company on his last day - Should I update the reference contact with this new information?
-What's the easiest way to change from MS-DOS 6.22 to DR-DOS?
-Why am I seeing the sun slightly north instead of slightly south early in the morning in Malta?
-Why were the apollo CM RCS thrusters all placed in only one half of the module?
-Do the murder statistics of 5 cities bring the USA to the 3rd highest country, from 189th?
-Mansfield 40 toilet flush levers keep breaking
-Interview by fellow PhD students, not the professor himself
+Dedekind-"finiteness" for arbitrary limit cardinals
 What are the safety and warranty implications of steaming bread in a domestic oven?
+short story: future gameshow in which failure is fatal
+Revisiting the unreasonable effectiveness of mathematics
+What are the numbers below the notes in Sarasate's "Gypsy Airs"
+Can an American state ban a (minor) political party?
+Does folic acid contain a benzyl or a phenyl group?
+Is LUKS still an effective option for consumer FDE considering Elcomsoft can break it?
+Why put a resistor in series with the postive terminal in a non inverting op-amp circuit?
+Why are high power LEDs categorized by wattage, not voltage & amperage?
+"She need not worry" or "she needs to not worry"?
+Trying to identify this symbol ⎋ used for a key in a tutorial
+Can a Rogue find an undetectable Trap?
+Is Occam's Razor a Prior?
+Where is Lorentz contraction centered on?
+Interview by fellow PhD students, not the professor himself
+Is there objective proof that recent bills (1st half of 2021) that restrict voting are targeting Democratic voters specifically?
+Why is the integral of the tangent function a natural log function?
+Is the speed of light through a medium invariant, just like the speed of light through vacuum is invariant? Also, do time dilation etc. still occur?
+Showing the bounding box for every coordinate system in QGIS
+QGIS grouping by attributes
+Did I design my LED circuit correctly?
 more hot questions
 Question feed
 Subscribe to RSS
@@ -340,7 +339,7 @@ Twitter
 LinkedIn
 Instagram
 site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.6.10.39470
+rev 2021.6.10.39473
 Stack Overflow works best with JavaScript enabled
 Your privacy
 By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.

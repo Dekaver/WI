@@ -1,584 +1,182 @@
-Modul 7: Testing dan Debugging — Pengenalan Pemrograman - School of Computing, Telkom University
-Pengenalan Pemrograman - School of Computing, Telkom University
-Modul 0: Selamat Datang
-Modul 1: Cara Kerja Pemrograman Komputer
-Modul 2: Input/Output, Tipe Data, Operator, dan Variable
-Modul 3: Pengkondisian
-Modul 4: Perulangan
-Modul 5: Studi Kasus Turtle
-Modul 6: Fungsi
-Modul 7: Testing dan Debugging
-Modul 8: Tipe Data Terstruktur
-Modul 9: Pengolahan String
-Powered by Jupyter Book
-.ipynb
-.pdf
-Contents
-Error/Bug
-Defensive Programming
-Assertion
-Exception Handling
-Testing
-Black box testing
-Menjalankan testing
-Glass box testing
-Debugging
-Debugging dengan Print
-Debugger pada IDLE
-Modul 7: Testing dan Debugging¶
-Error/Bug¶
-Semakin komplek fungsi dan program yang dibuat, maka semakin banyak celah yang memungkinkan program terdapat kesalahan. Sebagai contoh, berikut ini adalah error-error yang pernah terjadi di saat menjalankan beberapa kode di module-module sebelumnya:
-SyntaxError: invalid syntax
-SyntaxError: can't assign to keyword
-IndentationError: expected an indented block
-NameError: name 'harga' is not defined
-TypeError: unsupported operand type(s) for ** or pow(): 'str' and 'int'
-TypeError: 'str' object cannot be interpreted as an integer
-TypeError: my_print() missing 1 required positional argument: 'kata'
-UnboundLocalError: local variable 'x' referenced before assignment
-NameError: name 'z' is not defined
-Di python, setidaknya ada 2 jenis error, yaitu syntax error dan exception.
-Syntax Error : jenis error yang timbul karena kesalahan pada syntax yang tidak mengikuti aturan bahasa pemrograman. Error jenis ini bisa ditemukan letaknya oleh parser sebelum program tersebut dieksekusi. Misalnya saat menggunakan 10v atau True sebagai nama variable.
-Exception : meskipun secara syntax sudah tidak terdapat error, namun instruksi tertentu mungkin menimbulkan error saat dieksekusi. Sebagai contoh ketika kita ingin menggunakan nilai variable harga yang ternyata belum pernah di-assign sebelumnya, maka akan muncul error bahwa variable belum didefinisikan (is not defined).
-Kedua jenis error tersebut termasuk yang mudah ditemukan dan diperbaiki, karena biasanya Python bisa menunjukkan lokasi error sebelum atau setelah program gagal dieksekusi. Ada jenis error yang lain yang paling sulit untuk ditemukan, yaitu logic error.
-Logic Error : logic error adalah yang paling sulit dikarenakan program yang dibuat seperti berjalan dengan baik tanpa error yang membuat program berhenti, namun output atau perilaku program tidak seperti yang seharusnya. Misalnya anda membuat program konversi nilai dari angka ke index, program berjalan dengan lancar, namun nilai 100 ternyata dikonversikan ke “E”, padahal harusnya “A”. Python tidak bisa menunjuk baris kode yang menyebabkan kesalahan output tersebut, sehingga programmer sendiri yang harus menelusuri kode yang telah dibuatnya. Semakin kompleks program, maka akan semakin sulit mencari letak kode yang menyebabkan logic error.
-Error pada software juga biasa disebut sebagai bug. Dalam sejarah, bug pada software dapat menyebabkan hal yang sangat fatal, misalnya:
-Tahun 2004: Toyota harus me-recall 170.000 mobil Prius karena bug pada program smart car-nya yang menyebabkan lampu-lampu indikator menyala tanpa sebab.
-Tahun 2000: bug pada perhitungan dosis radiasi untuk terapi kanker menyebabkan setidaknya 8 pasien meninggal di National Cancer Institute, Panama City.
-Tahun 1996: roket Ariana 5 meledak saat peluncuran diakibatkan kesalahan dalam konversi data floating point.
-Oleh sebab itu, meskipun kita tidak sedang membuat program seperti contoh di atas, kehati-hatian dalam programming sangat penting. Bahkan walaupun kita yakin program yang kita buat sudah benar, namun pada saat dijalankan banyak situasi tidak ideal yang sebelumnya kita anggap tidak akan terjadi ternyata terjadi. Sebagai contoh kerusakan hardware, user yang mengakses program kita secara bersamaan terlalu banyak, user memasukkan input yang diluar dugaan, dan sebagainya, yang pada akhirnya membuat program kita menjadi error.
-Selanjutnya mari kita lihat bagaimana langkah-langkah dalam menghindari dan mengatasi bug pada program.
-Defensive Programming¶
-Defensive programming adalah sebuah pendekatan dalam memprogram dimana programmer selalu berhati-hati dan memikirkan berbagai kondisi yang memungkinkan terjadinya kesalahan, serta berusaha mengantisipasinya. Mindset defensive programming juga mencari cara paling efektif membangun kode yang memudahkan pencarian dan perbaikan bug jika suatu saat terjadi, terutama bug yang terkait logic error.
-Berikut adalah beberapa langkah umum dalam defensive programming:
-Menerapkan modularisasi pada program melalui fungsi. Memecah program yang besar menjadi modul-modul kecil seharusnya sudah dipikirkan sejak proses mendesain program. Hal ini akan memudahkan pengujian program, serta pencarian bug jika suatu saat terjadi.
-Menuliskan spesifikasi fungsi dengan jelas pada docstring. Spesifikasi yang jelas tentang input dan output yang diharapkan akan menghindari kesalahpahaman oleh programmer lain atau pun user yang akan memakai fungsi yang kita buat. Spesifikasi harus dibuat ketika membuat sebuah fungsi. Spesifikasi juga akan menjadi acuan oleh orang yang akan menguji program kita (tester) dengan memberikan input dan memeriksa kesesuaian outputnya.
-Mengecek kondisi input/output pada fungsi dengan assertion. Untuk memastikan output sesuai harapan, maka input harus selalu sesuai dengan asumsi programmer. Untuk itu, jika terjadi input yang tidak sesuai, maka programmer bisa memilih untuk menghentikan program sehingga user menyadari terdapat kesalahan. Hal ini lebih baik daripada meneruskan program namun hasilnya tidak benar. Begitu juga dengan output fungsi.
-Assertion¶
-Assertion adalah suatu pengecekan untuk memastikan suatu kondisi harus benar untuk bisa melakukan proses berikutnya. Mirip seperti if-statement, namun bedanya, jika kondisi False, maka program akan dihentikan. Sehingga assertion digunakan hanya untuk pengecekan yang krusial, yang jika False maka program sebaiknya dihentikan.
-Sebagai contoh ada sebuah fungsi untuk menghitung luas sebuah segi empat berdasarkan koordinat dua buah titik, yaitu titik pojok kiri bawah, dan titik pojok kanan atas. Berikut kira-kira fungsi menghitung luas tersebut.
-def luas_segiempat(x0, y0, x1, y1):
-""" Menghitung luas segi empat berdasarkan koordinat 2 titik: pojok kiri bawah (x0, y0), dan kanan atas (x1, y1).
-"""
-deltax = x1 - x0
-deltay = y1 - y0
-return deltax * deltay
-segi4_1 = luas_segiempat(1, 1, 3, 3)
-segi4_2 = luas_segiempat(2, 4, 3, 3)
-print(segi4_1 + segi4_2)
-3
-Terlihat bahwa ketika kode di atas dijalankan, maka akan tertampil nilai 3 yang merupakan penjumlahan luas kedua segi. Sekilas tidak ada yang aneh, namun jika dilihat dengan teliti akan ditemukan logic error. segi4_1 saja harusnya memiliki luas 4, karena panjangnya 2 dan lebarnya 2. Namun totalnya penjumlahan malah berkurang menjadi 3. Hal ini dikarenakan segi4_2 ternyata bernilai -1, yang merupakan penyebab terjadinya logic error. Setelah diperhatikan lebih lanjut, penyebab sebenarnya adalah input yang tidak sesuai asumsi, y0 = 4 ternyata lebih besar dari y1 = 3, sehingga titik (2, 4) bukanlah titik pojok kiri bawah, melainkan kiri atas.
-Opsi Solusi
-Mari kita bahas beberapa opsi yang bisa digunakan untuk menghindari hal tersebut.
-Seharusnya sebelum pemanggilan fungsi sudah ada pengecekan nilai koordinat yang akan diberikan ke fungsi, misalnya:
-x0 = 2
-y0 = 4
-x1 = 3
-y1 = 3
-# cek (x0, y0) kiri bawah, dan (x1, y1) kanan atas
-if x0 < x1 and y0 < y1:
-# panggil fungsi
-else:
-# jangan panggil fungsi, keluarkan info ke user nilai salah
-Meskipun bisa dilakukan, tetapi tentu hal ini bukanlah solusi terbaik, karena orang kita sendiri atau orang lain mungkin saja lupa untuk menambahkan pengecekan tersebut, dan akhirnya berakibat fatal.
-Tambahkan pengecekan di dalam fungsi. Jika kondisi tidak terpenuhi maka jangan lakukan apa-apa, misalnya:
-def luas_segiempat(x0, y0, x1, y1):
-""" Menghitung luas segi empat berdasarkan koordinat 2 titik: pojok kiri bawah (x0, y0), dan kanan atas (x1, y1).
-"""
-# cek (x0, y0) kiri bawah, dan (x1, y1) kanan atas
-if x0 < x1 and y0 < y1:
-deltax = x1 - x0
-deltay = y1 - y0
-return deltax * deltay
-segi4_1 = luas_segiempat(1, 1, 3, 3)
-segi4_2 = luas_segiempat(2, 4, 3, 3)
-print(segi4_1 + segi4_2)
----------------------------------------------------------------------------
-TypeError
-Traceback (most recent call last)
-<ipython-input-3-931b1318cd94> in <module>()
-11 segi4_1 = luas_segiempat(1, 1, 3, 3)
-12 segi4_2 = luas_segiempat(2, 4, 3, 3)
----> 13 print(segi4_1 + segi4_2)
-TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
-Ketika kondisi salah, maka fungsi luas_segiempat tidak mengeksekusi return, sehingga nilai defaultnya adalah None. Hal ini menyebabkan error saat ditambahkan dengan integer. Error ini akan menyulitkan kita atau orang lain, karena penyebab sebenarnya belum terlihat, yaitu koordinat tidak valid. Sehingga untuk memperbaikinya perlu penelusuran yang lebih lanjut, dan ini adalah salah satu hal yang coba dihindari pada prinsip defensive programming.
-Mengeset return dengan 0 tentu saja bisa menghindari TypeError tersebut, tapi malah menimbulkan error yang lebih berbahaya, yaitu LogicError seperti sebelumnya.
-Penggunaan Assertion
-Salah satu solusi yang lebih baik adalah menggunakan assertion. Sebelumnya kita lihat dulu bentuk statement assertion pada python berikut ini:
-assert <kondisi>, <pesan_error>
-assert adalah keyword
-<kondisi> adalah ekspresi boolean seperti pada if dan while
-<pesan_error> adalah pesan yang akan ditampilkan ketika kondisi False dan program berhenti
-Mari kita lihat penggunaannya pada fungsi.
-def luas_segiempat(x0, y0, x1, y1):
-""" Menghitung luas segi empat berdasarkan koordinat 2 titik: pojok kiri bawah (x0, y0), dan kanan atas (x1, y1).
-"""
-# untuk memastikan koordinat input sudah sesuai asumsi
-assert x0 < x1 and y0 < y1, "koordinat tidak valid"
-deltax = x1 - x0
-deltay = y1 - y0
-return deltax * deltay
-segi4_1 = luas_segiempat(1, 1, 3, 3)
-segi4_2 = luas_segiempat(2, 4, 3, 3)
-print(segi4_1 + segi4_2)
----------------------------------------------------------------------------
-AssertionError
-Traceback (most recent call last)
-<ipython-input-2-1c133d01193d> in <module>()
-11
-12 segi4_1 = luas_segiempat(1, 1, 3, 3)
----> 13 segi4_2 = luas_segiempat(2, 4, 3, 3)
-14 print(segi4_1 + segi4_2)
-15
-<ipython-input-2-1c133d01193d> in luas_segiempat(x0, y0, x1, y1)
-4
-5
-# untuk memastikan koordinat input sudah sesuai asumsi
-----> 6
-assert x0 < x1 and y0 < y1, "koordinat tidak valid"
-7
-8
-deltax = x1 - x0
-AssertionError: koordinat tidak valid
-Terlihat bahwa program akan memunculkan Assertion Error beserta pesannya. Dengan demikian maka siapapun yang menggunakan fungsi tersebut akan segera menyadari adanya kesalahan dan tau secara persis di mana letak kesalahan tersebut.
-Sekali lagi perlu diperhatikan, Assertion akan membuat program berhenti, untuk itu pastikan hanya menggunakan assertion di saat tidak ada opsi lain yang lebih baik tanpa harus membuat program berhenti.
-Exception Handling¶
-Sebelumnya kita telah membahas tentang perbedaan syntax error dengan exception, dimana exception muncul saat program sedang dieksekusi.
-Ada banyak jenis exception bawaan Python (built-in exception), di antaranya:
-NameError
-TypeError
-ValueError
-ZeroDivisionError
-Untuk lengkapnya bisa dilihat pada: https://docs.python.org/3/library/exceptions.html
-Dalam membuat program, selain correctness (seperti yang ditekankan pada penggunaan assertion) kita juga perlu memperhatikan aspek robustness atau ketangguhan. Program yang robust artinya tidak mudah crash atau terhenti walau terjadi error. Sekilas kedua prinsip tersebut terasa bertentangan, namun sebenarnya, masing-masing dapat diterapkan pada kondisi yang tepat.
-Sebagai contoh, anggaplah kita membuat program yang meminta inputan user berupa 4 buah integer sebagai representasi 2 koordinat titik pojok (kiri bawah dan kanan atas) pada segi empat, yaitu x0, y0, x1, y1.
-x0 = int(input("Koordinat x0:"))
-y0 = int(input("Koordinat y0:"))
-x1 = int(input("Koordinat x1:"))
-y1 = int(input("Koordinat y1:"))
-luas = luas_segiempat(x0, y0, x1, y1)
-print("Luas segi empat adalah:", luas)
-Koordinat x0:
----------------------------------------------------------------------------
-ValueError
-Traceback (most recent call last)
-<ipython-input-4-54c43d00cd70> in <module>()
-----> 1 x0 = int(input("Koordinat x0:"))
-2 y0 = int(input("Koordinat y0:"))
-3 x1 = int(input("Koordinat x1:"))
-4 y1 = int(input("Koordinat y1:"))
-5
-ValueError: invalid literal for int() with base 10: ''
-Ternyata, saat dijalankan user yang niat awalnya memasukkan nilai 1, 1, 5, 5 ternyata tidak sengaja memasukkan 1, 1, 5, t, sehingga akan muncul exception berupa ValueError. Kesalahan user seperti ini sangat mungkin terjadi, baik disengaja maupun tidak disengaja. Oleh karena itu, akan lebih baik jika kesalahan ini bisa ditangani sehingga program tidak langsung terhenti, melainkan dapat tetap berjalan dengan memberikan informasi kepada user untuk memperbaikinya.
-Penanganan exception, agar program tidak terhenti biasa disebut dengan exception handling.
-Penggunaan Exception Handling
-try:
-# kode yang mungkin menimbulkan exception
-except:
-# apa yang dilakukan jika terjadi exception
-else:
-# dijalankan jika kode pada try tidak menimbulkan exception
-body try berisi kode yang mungkin menimbulkan eksepsi yang ingin kita tangani agar program tidak crash. Jika try berhasil (tidak muncul exception), maka eksekusi akan dilanjutkan ke block else (jika ada), atau ke statemen setelah try-except.
-except bertugas menangkap jenis exception yang muncul pada block try, lalu mengeksekusi statement di body except.
-else bersifat opsional, dan body else hanya dijalankan ketika semua kode di dalam try berhasil dieksekusi tanpa memunculkan exception.
-Berikut ini contoh penggunaan try-except untuk menghindari error akibat kesalahan input.
-try:
-x0 = int(input("Koordinat x0:"))
-y0 = int(input("Koordinat y0:"))
-x1 = int(input("Koordinat x1:"))
-y1 = int(input("Koordinat y1:"))
-except:
-print("Koordinat harus integer")
-luas = luas_segiempat(x0, y0, x1, y1)
-print("Luas segi empat adalah:", luas)
-Koordinat x0:1
-Koordinat y0:1
-Koordinat x1:5
-Koordinat y1:t
-Koordinat harus integer
----------------------------------------------------------------------------
-NameError
-Traceback (most recent call last)
-<ipython-input-5-b39738a0c8ef> in <module>()
-7
-print("Koordinat harus integer")
-8
-----> 9 luas = luas_segiempat(x0, y0, x1, y1)
-10 print("Luas segi empat adalah:", luas)
-NameError: name 'y1' is not defined
-Terlihat bahwa jika diinputkan seperti sebelumnya, yaitu 1, 1, 5, t maka program tetap akan terhenti, namun sekarang program berhenti bukan saat mengeksekusi statement assignment y1 yang diberikan input tidak valid berupa t. Hal ini menunjukkan bahwa exception yang timbul pada bagian tersebut sudah bisa ditangani oleh try-except.
-Error yang terjadi sekarang yaitu dikarenakan saat memanggil fungsi luas_segiempat, argument y1 tidak memiliki nilai. Hal ini dikarenakan statement assignment y1 tidak berhasil dieksekusi, walau program tidak berhenti saat itu. Salah satu solusinya, kita bisa menggunakan else agar pemanggilan fungsi dan print luas hanya dilakukan jika kode try dapat dieksekusi dengan sempurna.
-try:
-x0 = int(input("Koordinat x0:"))
-y0 = int(input("Koordinat y0:"))
-x1 = int(input("Koordinat x1:"))
-y1 = int(input("Koordinat y1:"))
-except:
-print("Koordinat harus integer")
-else:
-# hanya dieksekusi jika tidak ada exception
-luas = luas_segiempat(x0, y0, x1, y1)
-print("Luas segi empat adalah:", luas)
-Koordinat x0:1
-Koordinat y0:1
-Koordinat x1:5
-Koordinat y1:t
-Koordinat harus integer
-Program di atas jika diberikan input yang tidak valid maka tidak akan mengeluarkan error.
-Sebagai tambahan, bagaimana jika kita ingin memberikan kesempatan kepada user untuk mengulangi input maksimal sebanyak 3 kali? Anda bisa menggunakan contoh kode di bawah ini.
-count = 0
-while count < 3: # memastikan bahwa akan ada 4 nilai integer yang valid
-try:
-x0 = int(input("Koordinat x0:"))
-y0 = int(input("Koordinat y0:"))
-x1 = int(input("Koordinat x1:"))
-y1 = int(input("Koordinat y1:"))
-except ValueError:
-count += 1
-print("Koordinat harus integer. Sisa percobaan:", 3 - count)
-else:
-luas = luas_segiempat(x0, y0, x1, y1)
-print("Luas segi empat adalah:", luas)
-Koordinat x0:
-Koordinat harus integer. Sisa percobaan: 2
-Koordinat x0:
-Koordinat harus integer. Sisa percobaan: 1
-Koordinat x0:
-Koordinat harus integer. Sisa percobaan: 0
-Testing¶
-Ketika anda selesai membuat sebuah fungsi atau program, dan sudah melakukan prinsip-prinsip defensive programming di atas, maka langkah selanjutnya adalah
-menguji kebenaran fungsi atau program tersebut dengan berbagai kemungkinan input.
-Pada umumnya, pengujian dilakukan dengan tahapan berikut:
-membuat test-case, yaitu sejumlah pasangan data input beserta output yang diharapkan.
-untuk setiap input pada test-case, jalankan fungsi, lalu bandingkan output fungsi dengan output yang diharapkan pada test-case.
-Ada 2 pendekatan dalam melakukan testing:
-black box testing: penyusunan test-case dan pengujian hanya berdasarkan spesifikasi fungsi atau program, tanpa melihat atau mengerti tentang kode fungsi tersebut. Pengujian ini biasanya bersifat high-level dan dilakukan oleh software tester.
-glass box testing: penyusunan test-case dan pengujian berdasarkan penelusuran kode dan melihat berbagai kemungkinan jalur eksekusi (misalnya kondisional dan looping). Pengujian ini bersifat low-level dan dilakukan oleh software developer.
-Black box testing¶
-Mari kita lihat contoh spesifikasi fungsi yang akan dilakukan pengetesan.
-def konversi_nilai(nilai):
-"""menerima input berupa float 0 <= nilai <= 100 (antara 0 sampai 100)
-return "A" jika nilai > 80, "B" jika 50 < nilai <= 80, "E" selainnya.
-"""
-pass
-Sebelum menguji, maka kita perlu membuat test-case berdasarkan spesifikasi fungsi di atas. Beberapa panduan dalam menyusun test-cases menggunakan black-box testing adalah:
-Carilah batasan-batasan (partition) input yang memberikan output yang berbeda-beda.
-Jika tidak ada batasan yang jelas, maka bisa menggunakan random testing. Semakin banyak random input-output yang dibuat, semakin besar meningkat kemungkinan keakuratan kode yang diuji.
-Pertimbangkan keadaan ekstrim, misalnya nilai sangat besar, sangat kecil, list kosong.
-Berdasarkan panduan tersebut, maka dari spesifikasi fungsi di atas, kita dapat menemukan partisi input yang memberikan hasil berbeda, yaitu 50 dan 80. Sementara kita juga perlu mengecek nilai ekstrim, yaitu 0 dan 100, serta nilai yang tidak valid. Berikut contoh test-cases yang bisa digunakan untuk menguji fungsi konversi_nilai.
-no
-case
-nilai
-return
-1
-perbatasan
-80
-“B”
-2
-perbatasan
-80.01
-“A”
-3
-perbatasan
-50
-“E”
-4
-perbatasan
-50.01
-“B”
-5
-ekstrim
-100
-“A”
-6
-ekstrim
+TypeError: 'float' object cannot be interpreted as an integer
+Register
+Login
+Python
+Photoshop
+SAP
+Java
+PHP
+Android
+C++
+Hadoop
+Oracle
+Interview Questions
+Articles
+Other
+HomeLearn Python ProgrammingPython Online CompilerPython Training Tutorials for BeginnersSquare Root in PythonAddition of two numbers in PythonNull Object in PythonPython vs PHPTypeError: 'int' object is not subscriptablepip is not recognizedPython CommentPython Min()Python FactorialPython Continue StatementArmstrong Number in PythonPython lowercasePython UppercasePython map()Python String ReplacePython String findPython Max() FunctionInvalid literal for int() with base 10 in PythonTop Online Python CompilerPolymorphism in PythonInheritance in PythonPython : end parameter in print()Python String ConcatenationPython Pass StatementPython EnumeratePython New 3.6 FeaturesPython input()Python String ContainsPython evalPython zip()Python Range Python IDEInstall Opencv Python PIP WindowsPython String Title() MethodString Index Out of Range PythonPython Print Without NewlineId() function in PythonPython Split()Reverse Words in a String PythonOrd Function in PythonOnly Size-1 Arrays Can be Converted to Python ScalarsArea of Circle in PythonPython Reverse StringBubble Sort in PythonAttribute Error PythonPython Combine ListsPython slice() functionConvert List to String PythonPython list append and extendPython Sort Dictionary by Key or Valueindentationerror: unindent does not match any outer indentation level in PythonRemove Punctuation PythonCompare Two Lists in PythonPython InfinityPython KeyErrorPython Return Outside FunctionPangram Program in Python
+Python » Python Tutorial					TypeError: 'float' object cannot be interpreted as an integer
+In this article, we will learn about the TypeError: ‘float’ object can not be interpreted as an integer.
+This error will occur in all the functions or methods. Where the function or method accepts only the integer value as a parameter. But instead, we have passed float values. The most common example is the range function. Since the range function only accepts an integer as a parameter.
+For example, when we divide 16 by 8 using division operator ‘/’ in python, it’ll return a float value i.e. 2.0 and not an integer. This raises an error when we want an int as a parameter, but we have a float value.
+Let us understand it more with the help of an example.
+Example 1:
+for i in range(3.0):
+print(i)
+print('end of loop')
+Output:
+File "float.py", line 1, in <module>
+for i in range(3.0):
+TypeError: 'float' object cannot be interpreted as an integer
+In the above example, we did not perform any arithmetic operations. Instead, we passed a float value as a range parameter. In this case, the cause for the TypeError is that the range function does not take float value as a parameter.
+Solution:
+for i in range(3):
+print(i)
+print('end of loop')
+Output:
 0
-“E”
-7
-invalid
-100.01
-Error
-8
-invalid
--1
-Error
-Menjalankan testing¶
-Berikut ini adalah implementasi fungsi konversi_nilai yang akan di-test.
-def konversi_nilai(nilai):
-"""menerima input berupa float 0 <= nilai <= 100 (antara 0 sampai 100)
-return "A" jika nilai > 80, "B" jika 50 < nilai <= 80, "E" selainnya.
-"""
-if nilai >= 80:
-return "A"
-elif nilai >= 50:
-return "B"
-else:
-return "E"
-Setelah menyusun test-case, langkah selanjutnya adalah menjalankan proses testing. Ada berbagai cara untuk melakukan ini, namun kita bisa mulai dengan yang paling sederhana, yaitu dengan print perbandingan output fungsi dengan output pada test-case seperti di bawah ini.
-print("Test case 1:", konversi_nilai(80) == "B")
-print("Test case 2:", konversi_nilai(80.01) == "A")
-print("Test case 3:", konversi_nilai(50) == "E")
-print("Test case 4:", konversi_nilai(50.01) == "B")
-print("Test case 5:", konversi_nilai(100) == "A")
-print("Test case 6:", konversi_nilai(0) == "E")
-try:
-r = konversi_nilai(100.01)
-print("Test case 7: False")
-except:
-print("Test case 7: True")
-try:
-r = konversi_nilai(-1)
-print("Test case 8: False")
-except:
-print("Test case 8: True")
-Test case 1: False
-Test case 2: True
-Test case 3: False
-Test case 4: True
-Test case 5: True
-Test case 6: True
-Test case 7: False
-Test case 8: False
-Ternyata dari 8 test case yang kita ajukan, ada 4 yang gagal. Coba anda temukan letak kesalahannya, dan perbaiki agar bisa lulus di semua test case tersebut.
-Berikut versi fungsi konversi_nilai yang sudah diperbaiki.
-def konversi_nilai(nilai):
-"""menerima input berupa float 0 <= nilai <= 100 (antara 0 sampai 100)
-return "A" jika nilai > 80, "B" jika 50 < nilai <= 80, "E" selainnya.
-"""
-assert 0 <= nilai and nilai <= 100, "nilai harus antara 0 sampai 100"
-if nilai > 80:
-return "A"
-elif nilai > 50:
-return "B"
-else:
-return "E"
-print("Test case 1:", konversi_nilai(80) == "B")
-print("Test case 2:", konversi_nilai(80.01) == "A")
-print("Test case 3:", konversi_nilai(50) == "E")
-print("Test case 4:", konversi_nilai(50.01) == "B")
-print("Test case 5:", konversi_nilai(100) == "A")
-print("Test case 6:", konversi_nilai(0) == "E")
-try:
-r = konversi_nilai(100.01)
-print("Test case 7: False")
-except:
-print("Test case 7: True")
-try:
-r = konversi_nilai(-1)
-print("Test case 8: False")
-except:
-print("Test case 8: True")
-Test case 1: True
-Test case 2: True
-Test case 3: True
-Test case 4: True
-Test case 5: True
-Test case 6: True
-Test case 7: True
-Test case 8: True
-Cara lainnya kita bisa menggunakan assertion dan fungsi, serta membuat file khusus yang berisi semua testing. Misalnya kita membuat file baru bernama my_test.py yang isinya adalah sebagai berikut:
-def test_konversi_nilai():
-print("Test case 1:", konversi_nilai(80) == "B")
-print("Test case 2:", konversi_nilai(80.01) == "A")
-print("Test case 3:", konversi_nilai(50) == "E")
-print("Test case 4:", konversi_nilai(50.01) == "B")
-print("Test case 5:", konversi_nilai(100) == "A")
-print("Test case 6:", konversi_nilai(0) == "E")
-try:
-r = konversi_nilai(100.01)
-print("Test case 7: False")
-except:
-print("Test case 7: True")
-try:
-r = konversi_nilai(-1)
-print("Test case 8: False")
-except:
-print("Test case 8: True")
-print('Pengujian fungsi konversi_nilai')
-test_konversi_nilai()
-print('Pengujian selesai')
-Pengujian fungsi konversi_nilai
-Test case 1: True
-Test case 2: True
-Test case 3: True
-Test case 4: True
-Test case 5: True
-Test case 6: True
-Test case 7: True
-Test case 8: True
-Pengujian selesai
-Glass box testing¶
-Pembuatan test-case pada glass box testing dilakukan berdasarkan kode program. Tujuannya adalah memastikan bahwa setiap jalur yang ada pada kode pernah dieksekusi minimal satu kali. Beberapa panduan antara lain:
-Kondisional: Memastikan bahwa semua kemungkinan yang ada pada kondisional telah tercover dalam test-case
-Looping: Memastikan test-case meliputi kemungkinan:
-tidak masuk looping,
-body looping dieksekusi hanya sekali,
-body looping dieksekusi lebih dari sekali,
-kasus yang mengharuskan keluar looping segera
-def konversi_nilai(nilai):
-"""menerima input berupa float 0 <= nilai <= 100 (antara 0 sampai 100)
-return "A" jika nilai > 80, "B" jika 50 < nilai <= 80, "E" selainnya.
-"""
-if nilai >= 80:
-return "A"
-elif nilai >= 50:
-return "B"
-else:
-return "E"
-Berdasarkan fungsi konversi_nilai asli di atas, maka beberapa test-case yang bisa dibuat adalah:
-no
-case
-nilai
-return
 1
-if nilai >= 80
-85
-“A”
 2
-elif nilai >= 50
-60
-“B”
-3
-else
-30
-“E”
-Kita sudah melihat bahwa, jika test-case tersebut diberikan pada fungsi konversi_nilai yang masih salah di atas, maka akan terlihat semua baik-baik saja, tanpa terlihat adanya bug. Hal ini dikarenakan kita tidak memasukkan nilai-nilai perbatasan pada test-case seperti yang dilakukan pada Black box testing. Ini adalah kelemahan pada glass box testing, yaitu meskipun semua kemungkinan jalur eksekusi sudah tercover, kita masih mungkin melewatkan beberapa bug. Di sisi lain, dengan Black box testing saja terkadang kita kesulitan untuk membuat test-case yang meng-cover semua kemungkinan jalur eksekusi, terutama untuk program yang komplek yang melibatkan looping dan kondisional. Untuk itu, sebaiknya dalam membuat test-case, kedua cara tersebut dipertimbangkan.
-Debugging¶
-Testing vs Debugging
-Testing dan debugging sama-sama terkait dengan usaha agar kode kita tidak memiliki bug, namun keduanya adalah proses yang berbeda. Berikut perbedaannya:
-Testing: memastikan apakah ada bug atau tidak dalam program/fungsi
-Debugging: mencari di mana letak bug, dan mencari tau apa yang salah
-Cara-cara dalam melakukan debugging:
-Menggunakan statement print untuk mengoutputkan isi variable atau sekedar memastikan bagian kode tertentu dieksekusi oleh program
-Menggunakan tool debugger seperti pada IDLE yang memiliki fitur khusus yang membantu mencari posisi bug
-Debugging dengan Print¶
-Pertama-tama, mari kita lihat contoh program di bawah ini. Fungsi sum_genap_ganjil manerima sebuah input non-negatif integer n, lalu akan mengembalikan dua buah nilai, yaitu jumlah bilangan ganjil yang terdapat pada deret 1 sampai n, dan jumlah bilangan genapnya.
-# sum_genap_ganjil_v1.py
-def sum_genap_ganjil(n):
-assert isinstance(n, int) and n >= 0, "n harus berupa non-negatif integer"
-sum1 = 0
-sum2 = 0
-for i in range(1, n):
-if i % 2 == 1: #ganjil
-suml = sum1 + i
-else: #genap
-sum2 = sum2 + i
-return sum1, sum2
-Pertama-tama, mari kita buat beberapa test-case untuk menguji fungsi tersebut.
-no
-case
-n
-return
-1
-perbatasan
+end of loop
+Example 2:
+for i in range(16/8):
+print(i)
+print('end of loop')
+Output:
+Traceback (most recent call last):
+File "pyprogram.py", line 1, in <module>
+for i in range(16/8):
+TypeError: 'float' object cannot be interpreted as an integer
+In the above example, when we performed division operation inside the range() function. We got a float value (2.0). But the range function takes only an integer value as a parameter.
+Thus the error “TypeError: 'float' object cannot be interpreted as an integer” is encountered.
+Solution:
+for i in range(5//8):
+print(i)
+print('end of loop')
+Output:
 0
-(0, 0)
-2
-perbatasan
 1
-(1, 0)
-3
-perbatasan
-2
-(1, 2)
-4
-random
-5
-(9, 6)
-5
-random
-6
-(9, 12)
-# testing_sum_genap_ganjil.py
-print(sum_genap_ganjil(0) == (0, 0)) # gunakan tuple () jika terdapat lebih dari 1 nilai pada return
-print(sum_genap_ganjil(1) == (1, 0))
-print(sum_genap_ganjil(2) == (1, 2))
-print(sum_genap_ganjil(5) == (9, 6))
-print(sum_genap_ganjil(6) == (9, 12))
-True
-False
-False
-False
-False
-Terlihat bahwa masih terdapat bug pada fungsi tersebut sehingga dari 5 test-case hanya 1 yang benar. Mari kita coba debug menggunakan fungsi print. Pertama-tama, mari kita lihat output fungsi terhadap salah satu test-case, misalnya n=5.
-print(sum_genap_ganjil(5))
-(0, 6)
-Saat n=5 output fungsi adalah (0, 6), padahal seharusnya (9, 6). Maka terdapat bug pada penjumlahan bilangan ganjil. Mari kita inspeksi menggunakan print. Kita bisa tambahkan beberapa statement print untuk mengoutputkan nilai variable yang mungkin ada kaitannya dengan kesalahan. Dalam hal ini, kesalahan jelas terjadi pada variable sum1 yang menyimpan jumlah ganjil. Agar lebih detil melihat waktu eksekusi sum1, maka kita tambahkan statement print setelah perubahan pada sum1. Selain itu kita juga perlu curigai jumlah perulangan, apakah sudah sesuai atau tidak, sehingga variable i juga perlu dioutputkan. Hasilnya adalah seperti berikut ini:
-# sum_genap_ganjil_v2.py
-def sum_genap_ganjil(n):
-assert isinstance(n, int) and n >= 0, "n harus berupa non-negatif integer"
-sum1 = 0
-sum2 = 0
-for i in range(1, n):
-print('i', i)
-if i % 2 == 1: #ganjil
-suml = sum1 + i
-print('sum ganjil:', sum1)
-else: #genap
-sum2 = sum2 + i
-print('sum genap:', sum2)
-return sum1, sum2
-print(sum_genap_ganjil(5))
-i 1
-sum ganjil: 0
-i 2
-sum genap: 2
-i 3
-sum ganjil: 0
-i 4
-sum genap: 6
-(0, 6)
-Dari output di atas, kita bisa melihat beberapa kesalahan.
-print('sum ganjil:', sum1) dieksekusi, namun nilainya adalah 0. Padahal seharusnya saat ini nilainya adalah sum1 = 0 + 1, karena i=1. Maka kita perlu curigai statement suml = sum1 + 1 mengandung kesalahan. Jika kita teliti lebih jauh, kesalahan ada di penggunaan nama variable yang berbeda antara sum1 (sum dan angka 1), dengan suml (sum dan huruf l).
-i yang terakhir bernilai 4, padahal karena n=5 maka seharusnya nilai i terakhir adalah 5. Maka kondisi perulangan menjadi hal yang perlu dicurigai. Dalam hal ini penggunaan range(1, n) harusnya range(1, n+1).
-Berikut adalah fungsi yang telah diperbaiki:
-# sum_genap_ganjil.py
-def sum_genap_ganjil(n):
-assert isinstance(n, int) and n >= 0, "n harus berupa non-negatif integer"
-sum1 = 0
-sum2 = 0
-for i in range(1, n+1):
-if i % 2 == 1: #ganjil
-sum1 = sum1 + i
-else: #genap
-sum2 = sum2 + i
-return sum1, sum2
-Mari kita lakukan testing kembali.
-print(sum_genap_ganjil(0) == (0, 0)) # gunakan tuple () jika terdapat lebih dari 1 nilai pada return
-print(sum_genap_ganjil(1) == (1, 0))
-print(sum_genap_ganjil(2) == (1, 2))
-print(sum_genap_ganjil(5) == (9, 6))
-print(sum_genap_ganjil(6) == (9, 12))
-True
-True
-True
-True
-True
-Terkadang error terjadi karena hal yang sepele, misalnya karena typo. Namun jika kita tidak menggunakan cara yang tepat dalam mendebug, misalnya hanya dengan membaca kembali kode, mungkin kita akan kesulitan menemukan kesalahannya.
-Debugger pada IDLE¶
-Fitur standard sebuah debugger:
-Mengatur kecepatan eksekusi, sehingga kita bisa mengeksekusi dan memeriksa kode step by step
-Mengatur breakpoints agar eksekusi hanya pause di titik tertentu yang ingin kita perhatikan lebih jauh, untuk selanjutnya kita mulai eksekusi step by step.
-Memperlihatkan isi local dan global variable yang sedang digunakan
-Mengaktifkan Debugger
-Pada python Shell, klik menu Debug -> Debugger
-Akan muncul Debugger window seperti di bawah ini:
-Menu Debug Control IDLE
-Go: Mengeksekusi kode, dan hanya berhenti pada breakpoint
-Step: Mengeksekusi kode step by step
-Over: Saat eksekusi dengan step, kita mungkin ingin mempercepat dengan tidak memperhatikan step by step suatu fungsi, dan langsung ingin outputnya saja
-Out: Ketika kita sudah masuk ke dalam suatu fungsi, dan tidak tertarik melihat detailnya, lalu ingin langsung keluar ke 1 level di atasnya
-Quit: Stop eksekusi program
-Menjalankan Debug Program
-Setelah mengaktifkan Debug Mode pada Python Shell, kita langsung run file program yang diikuti step by step
-Atau bisa juga kita set breakpoint terlebih dahulu, agar nanti program running normal dan baru pause pada bagian breakpoint untuk dilanjutkan dengan Step.
-Ceklist pada bagian Source untuk melihat alur eksekusi pada source code/editor. Ceklist pada bagian Hlobal untuk menampilkan global variable.
-Klik Go untuk memulai, dan eksekusi akan berhenti di breakpoint, lalu lanjutkan pelan-pelan dengan Step
-Terlihat bahwa ada yang aneh saat program eksekusi baris suml = sum1 + i, yaitu muncul variable tambahan yaitu suml. Sehingga hal ini bisa menyadarkan kita bahwa kita menggunakan nama variable yang salah. Jika diteruskan sampai akhir, akan terlihat juga bahwa nilai i terakhir adalah 4.
-Selamat anda telah menyelesaikan Modul 7!!
-Mohon berkenan memberikan
-Rating dan Feedback agar kami dapat meningkatkan kualitas modul ini!
-Modul 6: Fungsi
-Modul 8: Tipe Data Terstruktur
-By Tim Dosen FIF
-© Copyright 2020.
+end of loop
+Unlike the division operator ‘/’ the floor division operator ‘//’ in python, returns an integer value. The floor division operator removes the digits after the decimal point. Thus we get an integer value.
+So on dividing 16 by 8 using floor division operator ‘//’ we get ‘2’ as a parameter in range function. Thus no error is encountered, and we get the desired output.
+Recommended Posts:
+Python Training Tutorials for Beginners
+TypeError: 'int' object is not subscriptable
+Armstrong Number in Python
+Python String Replace
+Python Max() Function
+Python : end parameter in print()
+Python Pass Statement
+Python New 3.6 Features
+Python input()
+Python String Contains
+Python eval
+Python Range
+Python IDE
+String Index Out of Range Python
+Python Reverse String
+Bubble Sort in Python
+Python Sort Dictionary by Key or Value
+Python Infinity
+Python KeyError
+Pangram Program in Python
+Tutorials
+Learn Python Programming
+Python Online Compiler
+Python Training Tutorials for Beginners
+Square Root in Python
+Addition of two numbers in Python
+Null Object in Python
+Python vs PHP
+TypeError: 'int' object is not subscriptable
+pip is not recognized
+Python Comment
+Python Min()
+Python Factorial
+Python Continue Statement
+Armstrong Number in Python
+Python lowercase
+Python Uppercase
+Python map()
+Python String Replace
+Python String find
+Python Max() Function
+Invalid literal for int() with base 10 in Python
+Top Online Python Compiler
+Polymorphism in Python
+Inheritance in Python
+Python : end parameter in print()
+Python String Concatenation
+Python Pass Statement
+Python Enumerate
+Python New 3.6 Features
+Python input()
+Python String Contains
+Python eval
+Python zip()
+Python Range
+Python IDE
+Install Opencv Python PIP Windows
+Python String Title() Method
+String Index Out of Range Python
+Python Print Without Newline
+Id() function in Python
+Python Split()
+Reverse Words in a String Python
+Ord Function in Python
+Only Size-1 Arrays Can be Converted to Python Scalars
+Area of Circle in Python
+Python Reverse String
+Bubble Sort in Python
+Attribute Error Python
+Python Combine Lists
+Python slice() function
+Convert List to String Python
+Python list append and extend
+Python Sort Dictionary by Key or Value
+indentationerror: unindent does not match any outer indentation level in Python
+Remove Punctuation Python
+Compare Two Lists in Python
+Python Infinity
+Python KeyError
+Python Return Outside Function
+Pangram Program in Python
+Follow Us
+Contact Information
+#3940 Sector 23,Gurgaon, Haryana (India)Pin :- 122015
+contact@stechies.com
+Top Tutorials
+SAP Tutorial
+SAP HANA Tutorial
+SAP BASIS Tutorial
+Android Tutorial
+Python Tutorial
+Java Tutorial
+Hadoop Tutorial
+Photoshop Tutorial
+Difference Between Article
+Interview Questions
+Top Interview Questions
+ABAP Interview Questions
+BASIS Interview Questions
+HANA Interview Questions
+SD Interview Questions
+FICO Interview Questions
+Hibernate Interview Questions
+QTP/UFT Interview Questions
+Tableau Interview Questions
+TestNG Interview Questions
+Hive Interview Questions
+Quick Links
+Write for us
+Career Guidance Tool
+SAP Transaction Codes
+Sample Resume
+Institutes
+SAP PDF Books
+Classifieds
+Recent Articles
+Contact Us
+About Us
+Terms of Use
+Privacy Policy
+Cookies Policy
