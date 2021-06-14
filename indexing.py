@@ -1,7 +1,6 @@
 from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 from sklearn.preprocessing import normalize
 from nltk.tokenize import word_tokenize
-from nltk.corpus import stopwords
 
 import pandas as pd
 import json
@@ -9,9 +8,11 @@ import re
 
 dataframe = []
 url = json.load(open('resource/dataset.json'))['url']
-stopwords = 
-stopwords = stopwords.words('english')
-print(stopwords)
+with open('resource/stopwords/stopword.txt', 'r') as f:
+    f = f.read()
+    stopwords = f.split('\n')
+# stopwords = stopwords.words('english')
+# print(stopwords.read())
 
 def indexing(folder_dataset, json_dataset):
     dataset = json.load(open(folder_dataset + json_dataset,))
