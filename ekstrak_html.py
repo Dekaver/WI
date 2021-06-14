@@ -14,6 +14,8 @@ data_preproccess = {}
 data_preproccess['doc'] = {}
 len(data)
 for i in data['url']:
+    if int(i) < 134:
+        continue
     url = data['url'][i]
     try:
         html = urlopen(url).read()
@@ -32,8 +34,8 @@ for i in data['url']:
     number = 1000 + int(i)
     data_preproccess['doc'][i] = f'document_{str(number)[1::]}.txt'
     
-    with open(f'resource/preprocessed/document_{str(number)[1::]}.txt', 'w', encoding='utf-8') as f:
-        f.write(text)
+    # with open(f'resource/preprocessed/document_{str(number)[1::]}.txt', 'w', encoding='utf-8') as f:
+    #     f.write(text)
     print(f'write success document_{str(number)[1::]}.txt')
-with open('resource/preprocessed/data_preprocessed.json', 'w') as f:
-    json.dump(data_preproccess, f)
+# with open('resource/preprocessed/data_preprocessed.json', 'w') as f:
+#     json.dump(data_preproccess, f)

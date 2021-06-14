@@ -19,24 +19,28 @@ def ranking(query, df):
         if j != '':
             keywords.append(f'{j} {i}')
         j = i
-    keys = []
+    keys = keywords
 
-    #hapus unigram "buah" jika terdapat index bigram "buah mangga"
-    for key in keywords: 
-        if key in df.index.tolist():
-            keys.append(key)
-            words = key.split(' ')
-            if len(words) >1:
-                for word in words:
-                    if word in keys:
-                        keys.remove(word)
+    # #hapus unigram "buah" jika terdapat index bigram "buah mangga"
+    # for key in keywords: 
+    #     if key in df.index.tolist():
+    #         keys.append(key)
+    #         words = key.split(' ')
+    #         if len(words) >1:
+    #             for word in words:
+    #                 if word in keys:
+    #                     keys.remove(word)
 
     start_time = time.time()
 
     rank_doc = df.loc[keys]
+    print(df.loc[keys])
     rank_doc.loc['ranking_value',:] = rank_doc.sum(axis=0)
-    relavan_doc = rank_doc.loc[:, (rank_doc > 0.01).any(axis=0)]
+
+    relavan_doc = rank_doc.loc[:, (rank_doc != 0).any(axis=0)]
+
     relavan_doc = relavan_doc.loc['ranking_value']
+    print(relavan_doc)
     relavan_doc = relavan_doc.sort_values(ascending=False)
     list_doc = relavan_doc.index.tolist()
     

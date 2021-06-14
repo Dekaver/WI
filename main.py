@@ -28,4 +28,7 @@ feature_name = json.load(open("resource/index/tfidf_feature_name.json"))
 feature_name = feature_name['feature']
 
 df = pd.DataFrame(indexing_data.toarray(), index=feature_name)
-print(df.head(10))
+index = df.to_dict('index')
+
+# print(df.head(20))
+# print(feature_name)

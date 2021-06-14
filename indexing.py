@@ -9,7 +9,9 @@ import re
 
 dataframe = []
 url = json.load(open('resource/dataset.json'))['url']
-stopwords=stopwords.words('english')
+stopwords = 
+stopwords = stopwords.words('english')
+print(stopwords)
 
 def indexing(folder_dataset, json_dataset):
     dataset = json.load(open(folder_dataset + json_dataset,))
