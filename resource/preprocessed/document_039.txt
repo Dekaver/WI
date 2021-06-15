@@ -1,182 +1,503 @@
-TypeError: 'float' object cannot be interpreted as an integer
-Register
-Login
-Python
-Photoshop
-SAP
-Java
-PHP
-Android
-C++
-Hadoop
-Oracle
-Interview Questions
-Articles
-Other
-HomeLearn Python ProgrammingPython Online CompilerPython Training Tutorials for BeginnersSquare Root in PythonAddition of two numbers in PythonNull Object in PythonPython vs PHPTypeError: 'int' object is not subscriptablepip is not recognizedPython CommentPython Min()Python FactorialPython Continue StatementArmstrong Number in PythonPython lowercasePython UppercasePython map()Python String ReplacePython String findPython Max() FunctionInvalid literal for int() with base 10 in PythonTop Online Python CompilerPolymorphism in PythonInheritance in PythonPython : end parameter in print()Python String ConcatenationPython Pass StatementPython EnumeratePython New 3.6 FeaturesPython input()Python String ContainsPython evalPython zip()Python Range Python IDEInstall Opencv Python PIP WindowsPython String Title() MethodString Index Out of Range PythonPython Print Without NewlineId() function in PythonPython Split()Reverse Words in a String PythonOrd Function in PythonOnly Size-1 Arrays Can be Converted to Python ScalarsArea of Circle in PythonPython Reverse StringBubble Sort in PythonAttribute Error PythonPython Combine ListsPython slice() functionConvert List to String PythonPython list append and extendPython Sort Dictionary by Key or Valueindentationerror: unindent does not match any outer indentation level in PythonRemove Punctuation PythonCompare Two Lists in PythonPython InfinityPython KeyErrorPython Return Outside FunctionPangram Program in Python
-Python » Python Tutorial					TypeError: 'float' object cannot be interpreted as an integer
-In this article, we will learn about the TypeError: ‘float’ object can not be interpreted as an integer.
-This error will occur in all the functions or methods. Where the function or method accepts only the integer value as a parameter. But instead, we have passed float values. The most common example is the range function. Since the range function only accepts an integer as a parameter.
-For example, when we divide 16 by 8 using division operator ‘/’ in python, it’ll return a float value i.e. 2.0 and not an integer. This raises an error when we want an int as a parameter, but we have a float value.
-Let us understand it more with the help of an example.
-Example 1:
-for i in range(3.0):
-print(i)
-print('end of loop')
-Output:
-File "float.py", line 1, in <module>
-for i in range(3.0):
-TypeError: 'float' object cannot be interpreted as an integer
-In the above example, we did not perform any arithmetic operations. Instead, we passed a float value as a range parameter. In this case, the cause for the TypeError is that the range function does not take float value as a parameter.
-Solution:
-for i in range(3):
-print(i)
-print('end of loop')
-Output:
+Problem HTTP error 403 in Python 3 Web Scraping - Stack Overflow
+Stack Overflow
+About
+Products
+For Teams
+Stack Overflow
+Public questions & answers
+Stack Overflow for Teams
+Where developers & technologists share private knowledge with coworkers
+Jobs
+Programming & related technical career opportunities
+Talent
+Recruit tech talent & build your employer brand
+Advertising
+Reach developers & technologists worldwide
+About the company
+Loading…
+Log in
+Sign up
+current community
+Stack Overflow
+help
+chat
+Meta Stack Overflow
+your communities
+Sign up or log in to customize your list.
+more stack exchange communities
+company blog
+People who code: we want your input.
+Take the Survey
+Join Stack Overflow to learn, share knowledge, and build your career.
+Sign up with email
+Sign up
+Sign up with Google
+Sign up with GitHub
+Sign up with Facebook
+Home
+Public
+Questions
+Tags
+Users
+Find a Job
+Jobs
+Companies
+Teams
+Stack Overflow for Teams
+– Collaborate and share knowledge with a private group.
+Create a free Team
+What is Teams?
+Teams
+What’s this?
+Create free Team
+Teams
+Q&A for work
+Connect and share knowledge within a single location that is structured and easy to search.
+Learn more
+Problem HTTP error 403 in Python 3 Web Scraping
+Ask Question
+Asked
+8 years ago
+Active
+6 days ago
+Viewed
+197k times
+125
+56
+I was trying to scrape a website for practice, but I kept on getting the HTTP Error 403 (does it think I'm a bot)?
+Here is my code:
+#import requests
+import urllib.request
+from bs4 import BeautifulSoup
+#from urllib import urlopen
+import re
+webpage = urllib.request.urlopen('http://www.cmegroup.com/trading/products/#sortField=oi&sortAsc=false&venues=3&page=1&cleared=1&group=1').read
+findrows = re.compile('<tr class="- banding(?:On|Off)>(.*?)</tr>')
+findlink = re.compile('<a href =">(.*)</a>')
+row_array = re.findall(findrows, webpage)
+links = re.finall(findlink, webpate)
+print(len(row_array))
+iterator = []
+The error I get is:
+File "C:\Python33\lib\urllib\request.py", line 160, in urlopen
+return opener.open(url, data, timeout)
+File "C:\Python33\lib\urllib\request.py", line 479, in open
+response = meth(req, response)
+File "C:\Python33\lib\urllib\request.py", line 591, in http_response
+'http', request, response, code, msg, hdrs)
+File "C:\Python33\lib\urllib\request.py", line 517, in error
+return self._call_chain(*args)
+File "C:\Python33\lib\urllib\request.py", line 451, in _call_chain
+result = func(*args)
+File "C:\Python33\lib\urllib\request.py", line 599, in http_error_default
+raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 403: Forbidden
+python http web http-status-code-403
+Share
+Follow
+edited Jun 8 at 19:49
+barny
+5,49244 gold badges1616 silver badges2121 bronze badges
+asked May 18 '13 at 17:47
+JoshJosh
+2,59177 gold badges3333 silver badges5252 bronze badges
 0
+Add a comment
+|
+7 Answers
+7
+Active
+Oldest
+Votes
+261
+This is probably because of mod_security or some similar server security feature which blocks known spider/bot user agents (urllib uses something like python urllib/3.3.0, it's easily detected). Try setting a known browser user agent with:
+from urllib.request import Request, urlopen
+req = Request('http://www.cmegroup.com/trading/products/#sortField=oi&sortAsc=false&venues=3&page=1&cleared=1&group=1', headers={'User-Agent': 'Mozilla/5.0'})
+webpage = urlopen(req).read()
+This works for me.
+By the way, in your code you are missing the () after .read in the urlopen line, but I think that it's a typo.
+TIP: since this is exercise, choose a different, non restrictive site. Maybe they are blocking urllib for some reason...
+Share
+Follow
+edited May 18 '13 at 18:06
+answered May 18 '13 at 17:52
+Stefano SanfilippoStefano Sanfilippo
+29.2k77 gold badges7171 silver badges7878 bronze badges
+3
+I assume it's safe to reuse req for multiple urlopen calls.
+– Acumenus
+Feb 2 '19 at 0:28
 1
+It might be little late, but I already have User-Agent in my code, still it gives me Error 404: Access denied
+– Reema Parakh
+Jul 24 '19 at 4:23
+This works but I feel like they must have a good reason to block bots and I'm violating their terms of service
+– xjcl
+Oct 11 '19 at 7:19
+Add a comment
+|
+47
+Definitely it's blocking because of your use of urllib based on the user agent. This same thing is happening to me with OfferUp. You can create a new class called AppURLopener which overrides the user-agent with Mozilla.
+import urllib.request
+class AppURLopener(urllib.request.FancyURLopener):
+version = "Mozilla/5.0"
+opener = AppURLopener()
+response = opener.open('http://httpbin.org/user-agent')
+Source
+Share
+Follow
+answered Aug 1 '15 at 6:00
+zetazeta
+1,33211 gold badge1818 silver badges1313 bronze badges
+7
+3
+The top answer didn't work for me, while yours did. Thanks a lot!
+– Tarun Uday
+Mar 31 '16 at 19:32
+This works just fine but I need to attach the ssl configuration to this. How do I do this? Before I just added it as a second parameter (urlopen(request,context=ctx))
+– Hauke
+Apr 25 '17 at 17:40
 2
-end of loop
-Example 2:
-for i in range(16/8):
-print(i)
-print('end of loop')
-Output:
-Traceback (most recent call last):
-File "pyprogram.py", line 1, in <module>
-for i in range(16/8):
-TypeError: 'float' object cannot be interpreted as an integer
-In the above example, when we performed division operation inside the range() function. We got a float value (2.0). But the range function takes only an integer value as a parameter.
-Thus the error “TypeError: 'float' object cannot be interpreted as an integer” is encountered.
-Solution:
-for i in range(5//8):
-print(i)
-print('end of loop')
-Output:
-0
+looks like it did open but it says 'ValueError: read of closed file'
+– Martian2049
+May 11 '17 at 15:37
+@zeta How did you manage to scrape OfferUp and provide the requisite geo coordinates to perform the search from a script?
+– CJ Travis
+Jun 21 '17 at 14:35
+@CJTravis , I wasn't scraping OfferUp. I was just retrieving item values based on an exact URL of an item. That didn't require any geo coordinates for me
+– zeta
+Jun 23 '17 at 8:00
+|
+Show 2 more comments
+18
+"This is probably because of mod_security or some similar server security feature which blocks known
+spider/bot
+user agents (urllib uses something like python urllib/3.3.0, it's easily detected)" - as already mentioned by Stefano Sanfilippo
+from urllib.request import Request, urlopen
+url="https://stackoverflow.com/search?q=html+error+403"
+req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+web_byte = urlopen(req).read()
+webpage = web_byte.decode('utf-8')
+The web_byte is a byte object returned by the server and the content type present in webpage is mostly utf-8.
+Therefore you need to decode web_byte using decode method.
+This solves complete problem while I was having trying to scrape from a website using PyCharm
+P.S -> I use python 3.4
+Share
+Follow
+edited Jun 8 at 19:50
+barny
+5,49244 gold badges1616 silver badges2121 bronze badges
+answered Dec 25 '17 at 7:57
+royatirekroyatirek
+1,48811 gold badge1515 silver badges3030 bronze badges
+Add a comment
+|
+5
+Based on previous answers this has worked for me with Python 3.7 by increasing the timeout to 10.
+from urllib.request import Request, urlopen
+req = Request('Url_Link', headers={'User-Agent': 'XYZ/3.0'})
+webpage = urlopen(req, timeout=10).read()
+print(webpage)
+Share
+Follow
+edited Mar 24 at 11:23
+royatirek
+1,48811 gold badge1515 silver badges3030 bronze badges
+answered Apr 16 '20 at 18:48
+Jonny_PJonny_P
+5111 silver badge33 bronze badges
+Add a comment
+|
+2
+Since the page works in browser and not when calling within python program, it seems that the web app that serves that url recognizes that you request the content not by the browser.
+Demonstration:
+curl --dump-header r.txt http://www.cmegroup.com/trading/products/#sortField=oi&sortAsc=false&venues=3&page=1&cleared=1&group=1
+...
+<HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+You don't have permission to access ...
+</HTML>
+and the content in r.txt has status line:
+HTTP/1.1 403 Forbidden
+Try posting header 'User-Agent' which fakes web client.
+NOTE: The page contains Ajax call that creates the table you probably want to parse. You'll need to check the javascript logic of the page or simply using browser debugger (like Firebug / Net tab) to see which url you need to call to get the table's content.
+Share
+Follow
+edited May 18 '13 at 18:00
+answered May 18 '13 at 17:55
+Robert LujoRobert Lujo
+13k44 gold badges4646 silver badges6464 bronze badges
+Add a comment
+|
 1
-end of loop
-Unlike the division operator ‘/’ the floor division operator ‘//’ in python, returns an integer value. The floor division operator removes the digits after the decimal point. Thus we get an integer value.
-So on dividing 16 by 8 using floor division operator ‘//’ we get ‘2’ as a parameter in range function. Thus no error is encountered, and we get the desired output.
-Recommended Posts:
-Python Training Tutorials for Beginners
-TypeError: 'int' object is not subscriptable
-Armstrong Number in Python
-Python String Replace
-Python Max() Function
-Python : end parameter in print()
-Python Pass Statement
-Python New 3.6 Features
-Python input()
-Python String Contains
-Python eval
-Python Range
-Python IDE
-String Index Out of Range Python
-Python Reverse String
-Bubble Sort in Python
-Python Sort Dictionary by Key or Value
-Python Infinity
-Python KeyError
-Pangram Program in Python
-Tutorials
-Learn Python Programming
-Python Online Compiler
-Python Training Tutorials for Beginners
-Square Root in Python
-Addition of two numbers in Python
-Null Object in Python
-Python vs PHP
-TypeError: 'int' object is not subscriptable
-pip is not recognized
-Python Comment
-Python Min()
-Python Factorial
-Python Continue Statement
-Armstrong Number in Python
-Python lowercase
-Python Uppercase
-Python map()
-Python String Replace
-Python String find
-Python Max() Function
-Invalid literal for int() with base 10 in Python
-Top Online Python Compiler
-Polymorphism in Python
-Inheritance in Python
-Python : end parameter in print()
-Python String Concatenation
-Python Pass Statement
-Python Enumerate
-Python New 3.6 Features
-Python input()
-Python String Contains
-Python eval
-Python zip()
-Python Range
-Python IDE
-Install Opencv Python PIP Windows
-Python String Title() Method
-String Index Out of Range Python
-Python Print Without Newline
-Id() function in Python
-Python Split()
-Reverse Words in a String Python
-Ord Function in Python
-Only Size-1 Arrays Can be Converted to Python Scalars
-Area of Circle in Python
-Python Reverse String
-Bubble Sort in Python
-Attribute Error Python
-Python Combine Lists
-Python slice() function
-Convert List to String Python
-Python list append and extend
-Python Sort Dictionary by Key or Value
-indentationerror: unindent does not match any outer indentation level in Python
-Remove Punctuation Python
-Compare Two Lists in Python
-Python Infinity
-Python KeyError
-Python Return Outside Function
-Pangram Program in Python
-Follow Us
-Contact Information
-#3940 Sector 23,Gurgaon, Haryana (India)Pin :- 122015
-contact@stechies.com
-Top Tutorials
-SAP Tutorial
-SAP HANA Tutorial
-SAP BASIS Tutorial
-Android Tutorial
-Python Tutorial
-Java Tutorial
-Hadoop Tutorial
-Photoshop Tutorial
-Difference Between Article
-Interview Questions
-Top Interview Questions
-ABAP Interview Questions
-BASIS Interview Questions
-HANA Interview Questions
-SD Interview Questions
-FICO Interview Questions
-Hibernate Interview Questions
-QTP/UFT Interview Questions
-Tableau Interview Questions
-TestNG Interview Questions
-Hive Interview Questions
-Quick Links
-Write for us
-Career Guidance Tool
-SAP Transaction Codes
-Sample Resume
-Institutes
-SAP PDF Books
-Classifieds
-Recent Articles
-Contact Us
-About Us
-Terms of Use
+You can try in two ways. The detail is in this link.
+1) Via pip
+pip install --upgrade certifi
+2) If it doesn't work, try to run a Cerificates.command that comes bundled with Python 3.* for Mac:(Go to your python installation location and double click the file)
+open /Applications/Python\ 3.*/Install\ Certificates.command
+Share
+Follow
+answered Nov 16 '18 at 3:55
+JohnsonJohnson
+911 bronze badge
+Add a comment
+|
+1
+If you feel guilty about faking the user-agent as Mozilla (comment in the top answer from Stefano), it could work with a non-urllib User-Agent as well. This worked for the sites I reference:
+req = urlrequest.Request(link, headers={'User-Agent': 'XYZ/3.0'})
+urlrequest.urlopen(req, timeout=10).read()
+My application is to test validity by scraping specific links that I refer to, in my articles. Not a generic scraper.
+Share
+Follow
+answered Mar 14 '20 at 3:22
+Sudeep PrasadSudeep Prasad
+5111 bronze badge
+Add a comment
+|
+Your Answer
+Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
+Draft saved
+Draft discarded
+Sign up or log in
+Sign up using Google
+Sign up using Facebook
+Sign up using Email and Password
+Submit
+Post as a guest
+Name
+Email
+Required, but never shown
+Post as a guest
+Name
+Email
+Required, but never shown
+Post Your Answer
+Discard
+By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
+Not the answer you're looking for? Browse other questions tagged python http web http-status-code-403
+or ask your own question.
+The Overflow Blog
+Podcast 347: Information foraging – the tactics great developers use to find…
+Let’s enhance: use Intel AI to increase image resolution in this demo
+Featured on Meta
+Take the 2021 Developer Survey
+Linked
+3
+How to get round the HTTP Error 403: Forbidden with urllib.request using Python 3
+3
+Python - Scraping with BeautifulSoup and Urllib
+3
+Python 3, urlopen - HTTP Error 403: Forbidden
+2
+Using python re.compile with beautiful soup to match a string
+2
+Python urllib.request.urlopen() returning error 403
+0
+Urllib HTTP Error 403
+-1
+HTML parsing forbidden error
+0
+Webscraping with urllib
+0
+Python 3 Web Scraping error 403
+0
+Web scraping issue
+See more linked questions
+Related
+3093
+403 Forbidden vs 401 Unauthorized HTTP responses
+0
+python: urllib2.HTTPError: HTTP Error 405: Method Not Allowed
+2
+Python 3.5 urllib.request 403 Forbidden Error
+2
+HTTP Error 404: Not Found python urllib
+0
+urllib.error.HTTPError: HTTP Error 400: Bad Request
+0
+Web Scraping - Detective Conan
+0
+urllib.error.HTTPError: HTTP Error 404: Not found - python
+0
+How to use pastebin API with python?[specific error]
+Hot Network Questions
+How can I show a friend of mine that his behavior is about to make me quit playing?
+Help understanding sequence proof
+False hrm results
+How do the inhabitants of my city-wide death trap figure out that nobody will be let out until only 100 people are left alive?
+Positioning of multiple `pic` using `below=of` not properly aligned
+Are wheelchairs allowed in US Wilderness Areas?
+What is this stainless-steel item's intended use? Is it a cheese grater?
+Why didn't Wanda keep a small Hex in the end?
+Is it legal to put a death row inmate in harms way if their execution is near?
+Requirements for creatures to wake others when put to sleep by magic
+Heuristic lower bounds on small sums of roots of unity
+What should I do if my dog fails a cycle of her separation training?
+Garlic as staple food for colonies?
+The Passive Voice
+Is black hole pattern possible in Conway's Game of Life that eats/clears everything?
+How to use Python's Scipy, Numpy functions in Mathematica to find minimum of a function?
+What’s wrong with the plumbing setup under this kitchen sink?
+The best way to travel between Milton Keynes and Cambridge, England
+How do electrical devices limit the current flow from a socket?
+B+W movie with men in togas and Roman style buildings and several shots of rockets fired out of huge vertical gun
+English equivalent for the expression "only iron can cut iron"
+70s-80s novel about a naval fleet in a post-nuclear war world
+Man testifies before senate committee. He invented super-powerful easily-made gun which will change society. He just released plans
+Why do relays, solenoids, and motors have a DC voltage across them if they're inductors?
+more hot questions
+Question feed
+Subscribe to RSS
+Question feed
+To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+lang-py
+Stack Overflow
+Questions
+Jobs
+Developer Jobs Directory
+Salary Calculator
+Help
+Mobile
+Products
+Teams
+Talent
+Advertising
+Enterprise
+Company
+About
+Press
+Work Here
+Legal
 Privacy Policy
-Cookies Policy
+Terms of Service
+Contact Us
+Cookie Settings
+Cookie Policy
+Stack Exchange Network
+Technology
+Life / Arts
+Culture / Recreation
+Science
+Other
+Stack Overflow
+Server Fault
+Super User
+Web Applications
+Ask Ubuntu
+Webmasters
+Game Development
+TeX - LaTeX
+Software Engineering
+Unix & Linux
+Ask Different (Apple)
+WordPress Development
+Geographic Information Systems
+Electrical Engineering
+Android Enthusiasts
+Information Security
+Database Administrators
+Drupal Answers
+SharePoint
+User Experience
+Mathematica
+Salesforce
+ExpressionEngine® Answers
+Stack Overflow em Português
+Blender
+Network Engineering
+Cryptography
+Code Review
+Magento
+Software Recommendations
+Signal Processing
+Emacs
+Raspberry Pi
+Stack Overflow на русском
+Code Golf
+Stack Overflow en español
+Ethereum
+Data Science
+Arduino
+Bitcoin
+Software Quality Assurance & Testing
+Sound Design
+Windows Phone
+more (29)
+Photography
+Science Fiction & Fantasy
+Graphic Design
+Movies & TV
+Music: Practice & Theory
+Worldbuilding
+Video Production
+Seasoned Advice (cooking)
+Home Improvement
+Personal Finance & Money
+Academia
+Law
+Physical Fitness
+Gardening & Landscaping
+Parenting
+more (10)
+English Language & Usage
+Skeptics
+Mi Yodeya (Judaism)
+Travel
+Christianity
+English Language Learners
+Japanese Language
+Chinese Language
+French Language
+German Language
+Biblical Hermeneutics
+History
+Spanish Language
+Islam
+Русский язык
+Russian Language
+Arqade (gaming)
+Bicycles
+Role-playing Games
+Anime & Manga
+Puzzling
+Motor Vehicle Maintenance & Repair
+Board & Card Games
+Bricks
+Homebrewing
+Martial Arts
+The Great Outdoors
+Poker
+Chess
+Sports
+more (16)
+MathOverflow
+Mathematics
+Cross Validated (stats)
+Theoretical Computer Science
+Physics
+Chemistry
+Biology
+Computer Science
+Philosophy
+Linguistics
+Psychology & Neuroscience
+Computational Science
+more (10)
+Meta Stack Exchange
+Stack Apps
+API
+Data
+Blog
+Facebook
+Twitter
+LinkedIn
+Instagram
+site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
+rev 2021.6.14.39488
+Stack Overflow works best with JavaScript enabled
+Your privacy
+By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
+Accept all cookies
+Customize settings

@@ -1,58 +1,72 @@
-Python hex() Method Example | Python Built-In Methods - JavaExercise
-Home(current)
-Beautify HTML
-Python Built-In Methods
-Python abs() Method
-Python any() Method
-Python all() Method
-Python ascii() Method
-Python bin() Method
-Python bool() Method
-Python filter() Method
-Python float() Method
-Python frozenset() Method
-Python hex() Method
-Python isinstance() Method
-Python range() Method
-Python hex() Method
-Python hex() method is a built-in method. It is used to convert an integer value to a hexadecimal string. It returns a lowercase string prefix with ‘0x’.
-Signature
-hex(x)
-Parameter
-Description
-x
-It is an integer argument and if not given, define an index method that returns an integer.
-Return Value
-It returns a lowercase hexadecimal string.
-Error: It returns an error (TypeError), if the argument is not an integer.
-Python hex() Method Example
-Let’s first understand, how this method works and what does it return?
-# hex() method
-a = hex(12)
-b = hex(-12)
-print(a)
-print(b)
-print(type(a))
-Output
-0xc
--0xc
-< class 'str'>
-See, in the above example, hex() method returns hexadecimal string and the type of return value is string.
-Python hex() Method Example
-As we said, this method takes an integer argument only. If we give any other type of argument, it throws an error. See the example below.
-# hex() method
-a = hex("23")
-print(a)
-Output
-TypeError: 'str' object cannot be interpreted as an integer
-© Copyright 2021, JavaExercise.com
-Resources
-Java Tutorials
-Python Tutorials
-Java Quiz
-Python Quiz
-Company
-Contact Us
-Privacy Policy
-Terms and Conditions
-Disclaimer
+HTTPError: HTTP Error 403: Forbidden - site OLX | Scraping com Python: Coleta de dados na web | Solucionado
+Qual curso procura?
+Buscar
+Ainda não tem acesso? Estude com a gente!
+Matricule-se
+Login
+Ainda não tem acesso? Estude com a gente!
+Matricule-se
+Login
+Fórum
+Solucionado (ver solução)
+HTTPError: HTTP Error 403: Forbidden - site OLX
+Data Science
+Data Science
+Scraping com Python
+Referente ao curso Scraping com Python: Coleta de dados na web,
+no capítulo Obtendo e limpando o HTML
+e atividade Obtendo o conteúdo HTML de um site
+17/06/2020
+Tiago Spiandorello
+(236.7k xp, 5 posts)
+Olá
+Estou tentando extrair dados do site OLX e continua aparecendo o erro HTTPError: HTTP Error 403: Forbidden mesmo após informar o user-agent. Existe alguma forma de extrair os dados do OLX?
+from urllib.request import Request, urlopen
+from urllib.error import URLError, HTTPError
+url = 'https://www.webmotors.com.br/carros/sc-florianopolis'
+headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36'}
+try:
+req = Request(url, headers = headers)
+response = urlopen(req)
+print(response.read())
+except HTTPError as e:
+print(e.status, e.reason)
+except URLError as e:
+print(e.reason)
+1
+resposta
+solução
+Tiago Spiandorello
+(236.7k xp, 5 posts)
+28/07/2020
+Consegui acessar dessa forma:
+url = 'https://sc.olx.com.br/florianopolis-e-regiao/grande-florianopolis/autos-e-pecas/carros-vans-e-utilitarios?o=' + str(i + 1)
+headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36'}
+try:
+req = Request(url, headers= headers)
+response = urlopen(req)
+html = response.read()
+except HTTPError as e:
+print(e.status, e.reason)
+except URLerror as e:
+print(e.reason)
+soup = BeautifulSoup(html, 'lxml')
+Quer mergulhar em tecnologia e aprendizagem?
+Receba a newsletter que o nosso CEO escreve pessoalmente, com insights do mercado de trabalho, ciência e desenvolvimento de software
+Me inscreva
+Confira mais conteúdo com nossos artigos sobre Data Science. Conheça nossos cursos de
+Data Science.
+Comece pela nossa formação de
+SQL com Microsoft SQL Server 2017,
+BI e Data Warehouse com Pentaho,
+BI e Data Warehouse com SQL Server e Power BI,
+entre outros!
+Assista as primeiras aulas sobre sobre Scraping com Python: Coleta de dados na web.
+Matricule-se
+Sobre a Alura
+Dúvidas frequentes
+Sugira um curso
+Sugira uma funcionalidade
+Blog da Alura
+Acompanhe-nos
+Apps

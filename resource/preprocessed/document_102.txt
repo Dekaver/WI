@@ -1,67 +1,436 @@
-Help: Index out of range · YourBasic Go
+php - json_decode() expects parameter 1 to be string, array given - Stack Overflow
+Stack Overflow
 About
+Products
+For Teams
+Stack Overflow
+Public questions & answers
+Stack Overflow for Teams
+Where developers & technologists share private knowledge with coworkers
+Jobs
+Programming & related technical career opportunities
+Talent
+Recruit tech talent & build your employer brand
+Advertising
+Reach developers & technologists worldwide
+About the company
+Loading…
+Log in
+Sign up
+current community
+Stack Overflow
+help
+chat
+Meta Stack Overflow
+your communities
+Sign up or log in to customize your list.
+more stack exchange communities
+company blog
+People who code: we want your input.
+Take the Survey
+Join Stack Overflow to learn, share knowledge, and build your career.
+Sign up with email
+Sign up
+Sign up with Google
+Sign up with GitHub
+Sign up with Facebook
 Home
-Algorithms
-Go
-Index out of range
-yourbasic.org/golang
-Why does this program crash?
-a := []int{1, 2, 3}
-for i := 1; i <= len(a); i++ {
-fmt.Println(a[i])
-}
-panic: runtime error: index out of range
-goroutine 1 [running]:
-main.main()
-../main.go:3 +0xe0
-Answer
-In the last iteration, i equals len(a) which is outside the bounds of a.
-Arrays, slices and strings are indexed starting from zero so the values of a are found at a[0], a[1], a[2], …, a[len(a)-1].
-Loop from 0 to len(a)-1 instead.
-for i := 0; i < len(a); i++ {
-fmt.Println(a[i])
-}
-Or, better yet, use a range loop.
-for _, n := range a {
-fmt.Println(n)
-}
-« Prev
-Index
-Next »
-Share this page:
-Go Gotchas
-Assignment to entry in nil map
-Invalid memory address or nil pointer dereference
-Multiple-value in single-value context
-Array won’t change
-Shadowed variables
-Unexpected newline
-Immutable strings
-How does characters add up?
-What happened to ABBA?
-Where is my copy?
-Why doesn’t append work every time? [scary bug]
-Constant overflows int
-Unexpected ++, expecting expression
-Get your priorities right
-Go and Pythagoras
-No end in sight
-Numbers that start with zero
-Whatever remains
-Time is not a number
-» Index out of range
-Unexpected values in range loop
-Can’t change entries in range loop
-Iteration variable doesn’t see change in range loop
-Iteration variables and closures
-No JSON in sight
-Is "three" a digit?
-Nil is not nil
-Follow on Twitter
-Algorithms to Go
+Public
+Questions
+Tags
+Users
+Find a Job
+Jobs
+Companies
+Teams
+Stack Overflow for Teams
+– Collaborate and share knowledge with a private group.
+Create a free Team
+What is Teams?
+Teams
+What’s this?
+Create free Team
+Teams
+Q&A for work
+Connect and share knowledge within a single location that is structured and easy to search.
+Learn more
+json_decode() expects parameter 1 to be string, array given
+Ask Question
+Asked
+9 years, 9 months ago
+Active
+1 year ago
+Viewed
+137k times
+18
+7
+What causes this error in my code?
+$query = $this->db->query("SELECT * FROM tour_foreign ORDER BY id desc");
+$data = array();
+foreach ($query->result() as $row)
+$data[] = array('guide' => $row->guide);
+echo json_decode($data); //Line 167
+error:
+erro: json_decode() expects parameter 1 to be string, array given: Line Number: 167
+UPDATE:
+If I use json_encode instead of json_decode, my output is this:
+[{"guide":["\u0633\u06cc\u062f \u0633\u0639\u06cc\u062f \u062f\u0627\u062f\u0627\u0634\u0632\u0627\u062f\u0647"]},{"guide":["\u0633\u06c‌​c\u062f \u0633\u0639\u06cc\u062f \u062f\u0627\u062f\u0627\u0634\u0632\u0627\u062f\u0647"]},{"guide":null}]
+They are persian words.
+php json
+Share
+Improve this question
+Follow
+edited Jul 18 '19 at 9:50
+DarkWiiPlayer
+5,92122 gold badges1818 silver badges2929 bronze badges
+asked Sep 15 '11 at 20:14
+Jennifer AnthonyJennifer Anthony
+2,06799 gold badges3333 silver badges5555 bronze badges
+3
+You are passing an array where a string is expected. You are creating the array in the line before - is that necessary? Why not just use $row->guide directly?
+– Pekka
+Sep 15 '11 at 20:15
+1
+What are you trying to accomplish ?
+– aziz punjani
+Sep 15 '11 at 20:20
+What are you trying to do here?
+– Rocket Hazmat
+Sep 15 '11 at 20:40
+Add a comment
+|
+6 Answers
+6
+Active
+Oldest
+Votes
+51
+I think you want json_encode, not json_decode.
+Share
+Improve this answer
+Follow
+edited Apr 15 '12 at 14:46
+Tim Cooper
+145k3535 gold badges302302 silver badges262262 bronze badges
+answered Sep 15 '11 at 20:15
+Rocket HazmatRocket Hazmat
+205k3939 gold badges283283 silver badges323323 bronze badges
+7
+if use of json_encode my output is this: [{"guide":["\u0633\u06cc\u062f \u0633\u0639\u06cc\u062f \u062f\u0627\u062f\u0627\u0634\u0632\u0627\u062f\u0647"]},{"guide":["\u0633\u06cc\u062f \u0633\u0639\u06cc\u062f \u062f\u0627\u062f\u0627\u0634\u0632\u0627\u062f\u0647"]},{"guide":null}], they are persian word
+– Jennifer Anthony
+Sep 15 '11 at 20:18
+@Selena: The \u0633 characters are just Unicode characters that are encoded.
+The first guide is سید سعید داداشزاده.
+Is that right?
+– Rocket Hazmat
+Sep 15 '11 at 20:23
+@Selena: Show it where?
+If you echo the string (in JavaScript) they will print correctly.
+You don't need to do anything special, just echo them normally.
+– Rocket Hazmat
+Sep 15 '11 at 20:29
+i not want echo they in JavaScript, What do you mean of just echo them normally!?
+– Jennifer Anthony
+Sep 15 '11 at 20:33
+@Selena: What are you trying to do here?
+What do you want to do with the words?
+– Rocket Hazmat
+Sep 15 '11 at 20:34
+|
+Show 2 more comments
+23
+Set decoding to true
+Your decoding is not set to true.
+If you don't have access to set the source to true. The code below will fix it for you.
+$WorkingArray = json_decode(json_encode($data),true);
+Share
+Improve this answer
+Follow
+edited Apr 25 '19 at 9:51
+answered Oct 19 '14 at 11:46
+KareemKareem
+4,1503737 silver badges3434 bronze badges
+Add a comment
+|
+3
+json_decode() is used to decode a json string to an array/data object. json_encode() creates a json string from an array or data. You are using the wrong function my friend, try json_encode();
+Share
+Improve this answer
+Follow
+answered Sep 15 '11 at 20:42
+macintosh264macintosh264
+97322 gold badges1010 silver badges2626 bronze badges
+Add a comment
+|
+1
+here is the solution for similar problem which i was facing while extracting name from user profile facebook json object
+$uname=json_encode($userprof);
+$uname=json_decode($uname);
+echo "Welcome " . $uname -> name
+;
+Share
+Improve this answer
+Follow
+edited Jun 17 '15 at 4:58
+answered Feb 28 '12 at 7:17
+Akhil JainAkhil Jain
+12.8k1313 gold badges5151 silver badges8888 bronze badges
+0
+Add a comment
+|
+0
+Make an object
+$obj = json_decode(json_encode($need_to_json));
+Show data from this $obj
+$obj->{'needed'};
+Reference
+Share
+Improve this answer
+Follow
+answered Dec 10 '19 at 11:04
+Ayman ElshehawyAyman Elshehawy
+81777 silver badges1010 bronze badges
+Add a comment
+|
+0
+Ok I was running into the same issue. What I failed to notice is that I was using json_decode() instead of using json_encode() so for those who are going to come here please make sure you are using the right function, which is json_encode()
+Note: Depends on what you are working on but make sure you are using the right function.
+Share
+Improve this answer
+Follow
+edited Jun 11 '20 at 15:15
+answered Jun 11 '20 at 14:41
+ZaMyZaMy
+34044 silver badges99 bronze badges
+Add a comment
+|
+Your Answer
+Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
+Draft saved
+Draft discarded
+Sign up or log in
+Sign up using Google
+Sign up using Facebook
+Sign up using Email and Password
+Submit
+Post as a guest
+Name
+Email
+Required, but never shown
+Post as a guest
+Name
+Email
+Required, but never shown
+Post Your Answer
+Discard
+By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
+Not the answer you're looking for? Browse other questions tagged php json
+or ask your own question.
+The Overflow Blog
+Podcast 347: Information foraging – the tactics great developers use to find…
+Let’s enhance: use Intel AI to increase image resolution in this demo
+Featured on Meta
+Take the 2021 Developer Survey
+Linked
+3
+Querying a collection with an array of mongoID
 Related
-4 basic range loop (for-each) patterns
-A range loop is used to iterate over the values in a slice, array or channel, the keys and values in a map, or the characters in a string.
-yourbasic.org
-See all 178 Go articles
-This work is licensed under a CC BY 3.0 license.
+1405
+Safely turning a JSON string into an object
+2738
+Deleting an element from an array in PHP
+1244
+JavaScriptSerializer - JSON serialization of enum as string
+980
+mysql_fetch_array()/mysql_fetch_assoc()/mysql_fetch_row()/mysql_num_rows etc… expects parameter 1 to be resource
+1301
+Convert JS object to JSON string
+2660
+How do I check if a string contains a specific word?
+443
+json_decode to array
+0
+How to use Json URL in android application
+0
+json_decode() expects parameter 1 to be string, array given
+1
+json_decode() expects parameter 1 to be string, array given?
+Hot Network Questions
+What is the story of Parvati closing the eyes of Shiva?
+Would there be more decisive games if we began to see stalemates as checkmates? And hence more "interesting" chess?
+Convert/migrate QGIS 2 Project to QGIS 3 Project automatically
+How do electrical devices limit the current flow from a socket?
+Generalised multi-dimensional chess knight's moves
+Puppy safety for tug of war
+An introductory example for Taylor series (12th grade)
+Is there a left-right connection?
+Why doesn't an electron rip itself apart?
+When I walk down the stairs where does my potential energy go?
+Are situps considered a good core workout?
+English equivalent for the expression "only iron can cut iron"
+Delete the word in which the text cursor is
+I feel like male professors don't feel comfortable taking me as a student. How should I address this problem?
+9-pin vs 10-pin serial port ribbon cables
+Garlic as staple food for colonies?
+How to generate all possible functions combinations
+Gravity Shielding: How to defeat it?
+Does the "Cantrip Formulas" optional Wizard feature allow a racial cantrip to be swapped for another?
+Is black hole pattern possible in Conway's Game of Life that eats/clears everything?
+False hrm results
+Is every nonsingular linear transformation invertible?
+Why do relays, solenoids, and motors have a DC voltage across them if they're inductors?
+Which is better large feature branches or merging frequently? Which is better small work items vs large work items?
+more hot questions
+Question feed
+Subscribe to RSS
+Question feed
+To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+lang-php
+Stack Overflow
+Questions
+Jobs
+Developer Jobs Directory
+Salary Calculator
+Help
+Mobile
+Products
+Teams
+Talent
+Advertising
+Enterprise
+Company
+About
+Press
+Work Here
+Legal
+Privacy Policy
+Terms of Service
+Contact Us
+Cookie Settings
+Cookie Policy
+Stack Exchange Network
+Technology
+Life / Arts
+Culture / Recreation
+Science
+Other
+Stack Overflow
+Server Fault
+Super User
+Web Applications
+Ask Ubuntu
+Webmasters
+Game Development
+TeX - LaTeX
+Software Engineering
+Unix & Linux
+Ask Different (Apple)
+WordPress Development
+Geographic Information Systems
+Electrical Engineering
+Android Enthusiasts
+Information Security
+Database Administrators
+Drupal Answers
+SharePoint
+User Experience
+Mathematica
+Salesforce
+ExpressionEngine® Answers
+Stack Overflow em Português
+Blender
+Network Engineering
+Cryptography
+Code Review
+Magento
+Software Recommendations
+Signal Processing
+Emacs
+Raspberry Pi
+Stack Overflow на русском
+Code Golf
+Stack Overflow en español
+Ethereum
+Data Science
+Arduino
+Bitcoin
+Software Quality Assurance & Testing
+Sound Design
+Windows Phone
+more (29)
+Photography
+Science Fiction & Fantasy
+Graphic Design
+Movies & TV
+Music: Practice & Theory
+Worldbuilding
+Video Production
+Seasoned Advice (cooking)
+Home Improvement
+Personal Finance & Money
+Academia
+Law
+Physical Fitness
+Gardening & Landscaping
+Parenting
+more (10)
+English Language & Usage
+Skeptics
+Mi Yodeya (Judaism)
+Travel
+Christianity
+English Language Learners
+Japanese Language
+Chinese Language
+French Language
+German Language
+Biblical Hermeneutics
+History
+Spanish Language
+Islam
+Русский язык
+Russian Language
+Arqade (gaming)
+Bicycles
+Role-playing Games
+Anime & Manga
+Puzzling
+Motor Vehicle Maintenance & Repair
+Board & Card Games
+Bricks
+Homebrewing
+Martial Arts
+The Great Outdoors
+Poker
+Chess
+Sports
+more (16)
+MathOverflow
+Mathematics
+Cross Validated (stats)
+Theoretical Computer Science
+Physics
+Chemistry
+Biology
+Computer Science
+Philosophy
+Linguistics
+Psychology & Neuroscience
+Computational Science
+more (10)
+Meta Stack Exchange
+Stack Apps
+API
+Data
+Blog
+Facebook
+Twitter
+LinkedIn
+Instagram
+site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
+rev 2021.6.14.39488
+Stack Overflow works best with JavaScript enabled
+Your privacy
+By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
+Accept all cookies
+Customize settings

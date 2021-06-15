@@ -1,11 +1,13 @@
 from nltk.tokenize import word_tokenize
-from nltk.corpus import stopwords
 import time
 import re
 
-stopwords=stopwords.words('english')
+with open('resource/stopwords/stopword.txt', 'r') as f:
+    f = f.read()
+    stopwords = f.split('\n')
 
 def ranking(query, df):
+    query = query.lower()
     query = re.sub("</?.*?>"," <> ",query)
     query = re.sub("(\\d|\\W)+"," ",query)
     query = word_tokenize(query)
@@ -19,18 +21,13 @@ def ranking(query, df):
         if j != '':
             keywords.append(f'{j} {i}')
         j = i
-    keys = keywords
+    keys = []
 
-    # #hapus unigram "buah" jika terdapat index bigram "buah mangga"
-    # for key in keywords: 
-    #     if key in df.index.tolist():
-    #         keys.append(key)
-    #         words = key.split(' ')
-    #         if len(words) >1:
-    #             for word in words:
-    #                 if word in keys:
-    #                     keys.remove(word)
-
+    #hapus unigram "buah" jika terdapat index bigram "buah mangga"
+    for key in keywords: 
+        if key in df.index.tolist():
+            keys.append(key)
+    print(keys)
     start_time = time.time()
 
     rank_doc = df.loc[keys]
@@ -42,6 +39,7 @@ def ranking(query, df):
     relavan_doc = relavan_doc.loc['ranking_value']
     print(relavan_doc)
     relavan_doc = relavan_doc.sort_values(ascending=False)
+    print(relavan_doc)
     list_doc = relavan_doc.index.tolist()
     
     end_time = time.time()

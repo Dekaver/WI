@@ -1,206 +1,894 @@
-TypeError: 'float' object cannot be interpreted as an integer Code Example
-Follow
-GREPPER
-SEARCH SNIPPETS
-FAQ
-USAGE DOCS
-INSTALL GREPPER
-Log In
-Signup
-All Languages
->>
-Python
->>
-TypeError: 'float' object cannot be interpreted as an integer
-“TypeError: 'float' object cannot be interpreted as an integer” Code Answer’s
-TypeError: 'float' object cannot be interpreted as an integer
-python by
-Obsequious Octopus
-on
-Nov 17 2020
-Donate
-Comment
-3
-# Error:
-TypeError: 'float' object cannot be interpreted as an integer
-# Solution:
-# This error usually comes up if you're trying to use floats in a
-# function/context that can only use integers. A common example is
-# trying to use floats in the range() function which only takes integers.
-# A common way to get around this with range() is to use a multiple of
-# the float series you want and then to divide the resulting numbers
-# inside your loop. E.g.:
-for i in range(10):
-print(i/10)
---> 0.0
-0.1
-0.2
-0.3
-0.4
-0.5
-0.6
-0.7
-0.8
-0.9
-# This way you can get the floats 0.0 - 0.9 without using floats in range
-Source: stackoverflow.com
-numpy.float64' object cannot be interpreted as an integer
-python by
-Friendly Frog
-on
-Nov 23 2020
-Donate
-Comment
-0
-false:
-np.zeros(np.float(3))
-Right:
-np.zeros(np.int(np.float(3)))
-Add a Grepper Answer
-Python answers related to “TypeError: 'float' object cannot be interpreted as an integer”
-check if can convert to float python check if float is integer python convert float in datetime python convert float to int python DeprecationWarning: an integer is required (got type float). Implicit conversion to integers using __int__ is deprecated, and may be removed in a future version of Python. float error python float to int in python float() argument must be a string or a number, not 'dict_values' how convert float to int in python how to convert float64 to int64 in python int to float python int type cast to float in python isinstance float or int python check if number is float or int python check if number is integer or float python float to int TypeError: can't multiply sequence by non-int of type 'float' ValueError: Failed to convert a NumPy array to a Tensor (Unsupported object type float).
-Python queries related to “TypeError: 'float' object cannot be interpreted as an integer”
-TypeError: 'float' object cannot be interpreted as an integer reshape TypeError: 'float' object cannot be interpreted as an integer list comprehension TypeError: 'numpy.float64' object cannot be interpreted as an integer sounddevice 'numpy.float32' object cannot be interpreted as an integer float cannot be interpreted as an integer TypeError: 'numpy.float64' object cannot be interpreted as an integer coco tools
-'float' object cannot be interpreted as an integer for loop typeerror 'numpy.float64' object cannot be interpreted as an integer tensorflow object detection float' object cannot be interpreted as an integer np.random.choice np.max 'numpy.float64' object cannot be interpreted as an integer float' object cannot be interpreted as an integer meaning 'numpy.float16' object cannot be interpreted as an integer typeerror float object cannot be interpreted as an integer fastai TypeError: 'float' object cannot be interpreted as an integer Test Failed: 'numpy.float64' object cannot be interpreted as an integer float' object cannot be interpreted as an integer np.zeros numpy max 'numpy.float64' object cannot be interpreted as an integer E TypeError: 'float' object cannot be interpreted as an integer builtins.TypeError: 'float' object cannot be interpreted as an integer 'float' object cannot be interpreted as an integer range TypeError: 'float' object cannot be interpreted as an integer in for loop typeerror 'float' object cannot be interpreted as an integer numpy 'float' object cannot be interpreted as an integer list ypeError: 'float' object cannot be interpreted as an integer num = operator.index(num) TypeError: 'numpy.float64' object cannot be interpreted as an integer float cannot be interpreted as integer float object cannot be interpreted as an integer python 'float' object cannot be interpreted as an integer crj,rb TypeError: 'float' object cannot be interpreted as an integer site:stackoverflow.com learn.fit_one_cycle for i in range Cannot interpret as a data type python float' object cannot be interpreted as an integer turtle.py turtle user input
-TypeError: 'float' object cannot be interpreted as an integer turtle.py" use input in <module> for x in range(NUM_CIRCLES): TypeError: 'float' object cannot be interpreted as an integer turtle.py", line 9, in <module> for x in range(NUM_CIRCLES): TypeError: 'float' object cannot be interpreted as an integer TypeError: 'float' object cannot be interpreted as an integer python
-TypeError: 'float' object cannot be interpreted as an integer python TypeError: 'float' object cannot be interpreted as an integer for i in range(pages):\nTypeError: \'float\' object cannot be interpreted as an integer' 'numpy.float64' object cannot be interpreted as an integer Line 90 in _driver (Solution.py) float' object cannot be interpreted as an integer python def fbprophet numpy.float64' object cannot be interpreted as an integer site:stackoverflow.com fbprphet numpy.float64' object cannot be interpreted as an integer prophet error
-'numpy.float64' object cannot be interpreted as an integer prophet fit 'numpy.float64' object cannot be interpreted as an integer prophet.fit 'numpy.float64' object cannot be interpreted as an integer prophet 'numpy.float64' object cannot be interpreted as an integer float' object cannot be interpreted as an integer python TypeError: 'float' object cannot be interpreted as an integer in xgbregressor TypeError: 'float' object cannot be interpreted as an integer site:stackoverflow.com float' object cannot be interpreted as an integer python float object cannot be interpreted as an integer python 'float' object cannot be interpreted as an integer typeerror: 'numpy.float64' object cannot be interpreted as an integer tensorflow object detection TypeError: 'float' object cannot be interpreted as an integer django form 'float' object cannot be interpreted as an integer python 'float' object cannot be interpreted as an integer python' float object cannot be interpreted as an integer numpy.float64' object cannot be interpreted as an integer TypeError: 'numpy.float64' object cannot be interpreted as an integer 'float' object cannot be interpreted as an integer TypeError: 'float' object cannot be interpreted as an integer
-Browse Python Answers by Framework
-Django
-Flask
-More “Kinda” Related Python Answers
-View All Python Answers »
-UnicodeDecodeError: 'charmap' codec can't decode byte 0x9d in position 6148: character maps to <undefined> how to make a unit converter in python hex to rgb python how to make otp generator in python bytes to string python generate a color python python to c++ transpiler python convert image to base64 python string to bytes pyspark convert float results to integer replace base64 encode python utf8 python encodage line translate sentences in python argparse python convert nan to empty string python f string float precision 'utf-8' codec can't decode byte 0x85 in position 715: invalid start byte f string float format 'charmap' codec can't decode byte 0x98 in position ERROR:
-character with byte sequence 0xd0 0x9f in encoding "UTF8" has no equivalent in encoding "LATIN1" python open encoding utf-8 pandas - from umeric to string input float python display python 001 python get numbers from string how to change the rate of speech in pyttsx3 how to find the datatype of a variable in python python parse args check if can convert to float python password generator python python simple columnar cipher change type of array python Roman numerals to int python convert int to binary python python password generator charmap codec can't encode character prettytable python one hot encoding python code python random string python columnar cipher python url encoding f-string ponto decimal python check if string can be converted to int python python format only 1 decimal place python: transform as type numeirc how to check if a letter is lowercase in python python vernam cipher python raandom string override python print for class __str__() extract float from string python format integer to be money python decode base64 python python import json into pymongo python random password generator python text to speech python lowercase hex to string python python test if uppercase dart char is uppercase how to make a morse code translator in python python roman numeral converter python write json to file utf8 python print float in scientific notation TextToSpeech python3 generate random string python text to speech to specific language python python argparse base64 decode python convert mp3 to wav python python write to json with indent string to hex python python convert a string of tuples to a tuple of tuples how to create a password generator in python python hex to bytes string table to ascii python json encode in python python automatic caesar cipher decrypt print decimal formatting in python convert hex to decimal python python string to hex double slash python python convert xd8 to utf8 how to convert string to byte without encoding python python psycopg2 utf8 how to make a PKCS8 RSA signature in python python typing as int or float python fdr correction bytes-like object c
-to python converter convert between bases python UnicodeDecodeError: 'utf-8' codec can't decode byte invalid start byte truncate add weird symbols in python python saveAsTextFile python querystring parse python generate uid print variable type python how to format 1000 to 1k in python Expected ")" python fstring number format python char to binary python float print format python python convert binary / hexadecimal / decimal to binary / hexadecimal / decimal pydotprint text to sound python python convert hex to binary how to encrypt a string python encrypt and decrypt python how to parse json in python python string interpolation UnicodeDecodeError: 'utf-8' codec can't decode byte 0xe7 in position 5: invalid continuation byte print string + int in python convert accented characters to normal python converting tuples to string convert string to lowercase in python invoice parsing ocr python text to ascii art python SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 15-16: truncated \UXXXXXXXX escape UnicodeDecodeError: 'charmap' codec can't decode byte 0x9d in position 340: character maps to <undefined> how to convert fahrenheit to celsius in python pretty json python python3 base64 encode basic authentication config python load integer convert string to binary python float to percentage python python decimal input how to change a string to small letter in python is alphanumeric python python AES how to use speech recognition in python python convert character to integer python ieee 754 converter encryption using python python ascii add colour to text in python convert a tuple into string python python best docstring format python convert string to lowercase python format float uppercase string python convert response to json python modulo string python fasttext python cryptography python string to ascii value python python ascii caesar cipher f string in python converting capital letters to lowercase
-and viceversa in python otp generation in python python utf8 python string to int python generate random string int to string python python raw string json dumps python from uppercase to lowercase python python int binary python create hash from string binary search in python python speech recognition binary to text python python unsupported operand type(s) for /: 'str' and 'str' python typewriter effect cast string to double python python upper binary to decimal in python python convert string to bytes static typing in python how to encrypt text in python concatenate string and int python python convert b string to dict modulo str python SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 5-6: truncated \UXXXXXXXX escape python convert string to integer in base convert int to byte python decimal in python python convert to hmac sha256 how to store a number in a variable python python convert set to string unicode error python python3 lowercase python get int from string string hex to decimal python python convert base python Non-UTF-8 code starting with speech recognition in python json to csv python string to float python how to get a number from a string in python random number generator in python python2 to python3 converter python string cut python string how to convert decimal to binary python TypeError: 'float' object cannot be interpreted as an integer UnicodeDecodeError: 'utf-8' codec can't decode byte 0xb0 in position 1968: invalid start byte python urlencode python sha256 of file how to make an int into a string python convert ui to py concatenate int to string python python convert hex number to decimal python speech to text float to string python make int into string python convert \x unicode utf 8 bytes to \u python formatted string python byte strings python how do you change a string to only uppercase in python python get object attribute by string json python python f string convert float to int python python convert string to
-byte array python json stringify Exception: 'ascii' codec can't decode byte 0xe2 in position 7860: ordinal not in range(128) python string to xml parse json python python fstring python bit enum in python python caesar cipher base64 python decode python binary python write txt utf8 how to convert to string in python how to write the character from its ascii value in python python parse string python lower scientific notation to decimal python python convert string to int int to ascii python python string format long to_bytes python how to use it binary search python python .format python int to char how to concatenate a string with int in python TypeError: can only concatenate str (not "method") to str extract number from string in python Json in python text recognition python library convert string to number python UnicodeDecodeError: 'charmap' codec can't decode byte 0x81 in position 92: character maps to <undefined> lsb steganography python python bytes to int mapping in python string python string to lower hex to binary python3 python translator python argparse file argument to str python how to check uppercase and lowercase in python how to convert types of variablesin python python to uppercase formatting in python how to convert tuple to int in python python format numeric output f string decimal places int to char python pdf to string python python color binary representation python python how to detect if
-uppercase is used in input python import stringIO python hmac sha256 python get type of variable std python python 3 stringio usage python cast to float how to use %s python python hash string how to fix speech recognition in python python code to convert a string to lowercase what is f behind string python no implicit conversion of String into Integer (TypeError) python colors code unicode() python 3 print hexadecimal in python python add numbers to string convert string to float
-python how to convert utf-16 file to utf-8 in python convert decimal to hex python convert string to float python python int to binary to string python python converting float to binary python binary string to int .encode python python parse int as string decimal to binary in python python f string literal f string python convert string to boolean python write xor decrypt python python parse xml string pyspark import stringtype random string generate python of 2.7 get char from ascii value python convert number to char python python uppercase 'xml.etree.ElementTree.Element' to string python convert float to string python convert binary string to base 10 value in python camelcase naming convention python how to convert from base 2 to base 10 in python python format specifier python casting format for unit test python str.format python 3 enum python python function docstring how to print data type in python python3 print format float boolean to integer python python format strings string to float in python ascii to decimal python python to json pyhon string what should you call a decimal value in python python ascii code to string python password script Python ValueError: invalid literal for int() with base 10: python unexpected eof while parsing folium float inf in python docstrings in python variable string in string python speech recognition python python ignore unicodedecodeerror python convert ascii to char convert character to unicode python caesar cipher python python f-strings python pickle 'ascii' codec can't decode byte 0x80 in position 0 convert price to float python how to make string to int in python python translate py convert binary to int decimal to int python raw string python url encoded path using python convert 1 digit to 2 digit python decode base64 with python python safe password string generator string formatting in python what is the type of the data python how to convert a binary number to decimal in python new python string formatting python json how to convert uppercase to lowercase and vice versa in python python deserialize json python convert html to text json.stringify equivalent in python concatenate strings and int python format on str int in python python toupper printing float number python python program to get all the integers in a given string convert pdf to base64 python convert base64 to image python python yyyymmdd encapsulation in python python argument parser default value python inf how to play mp3 audio in python {} string python SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 2-3: truncated \UXXXXXXXX escape” Code Answer Python Strings capitalize python hash python png json dump python python offline translate pypi how to get a int from string python find pdf encrypted password with python declare float python python print integer in string python test if you can convert to int python how to import a module given a stringg can only concatenate str (not "int") to str parse int python python convert input into lowercase UnicodeDecodeError: 'charmap' codec can't decode byte 0x9e in position 3359: character maps to <undefined> format string python python: convert variable as character how to convert from binary to base 10 in python acronym generator in python standard deviation in python how to covert integer to float in pyhton python float to int python - convert to lowercase change text color docx-python json decode py string format zero padded int python how to check if string is in byte formate pythin how to get the binary value in python ascii values in python of b'string' python convert characters in ascii in python convert int to string python how to turn a string into an integer python speech to text in python convert to roman number code sql enum type hash symbol in python python get ppretty string representaiton of dictinary caesar cipher in python python 3 f string float format get value from enum python character to ascii python how to generate a random code in python python string lowercase python json write utf 8 python csv reader cast to float python path from string How to use .format in python format binary string python aes in python argparse python python print utf-8 python data type conversion pyhton to upper case typeof() python python int to string encoding character or string to integer in python speech recognition hexadecimal with python python unicode point to utf8 string how to install a font in python how to check if a string is lowercase in python convert string to int python function in oythin test if letter is capital python ascii art enumeration python json.dumps python str in python camel case in python convert int to ascii python float to int in python text to speech in python how to know if the numbers is par in python int to float python python get type python argparser flags turn characters to alpgabetic numper python python string methods python string procedures int to byte array python python json random number generator how stract avery .jpg string in a website python shebang line ubuntu python phyton 2.7 convert timedelta to string python alphabet to number convert image to binary python astype numpy python is uppercase str to tuple of float pandas convert string from INT TO str generate random float python python elementTree tostring write() argument must be str, not bytes ctypes python playfair cipher python python export 16 bit tiff how to change dtype object to int password guessing game python python ascii() how to encrypt and decrypt strings python validate string using six library python 'unicodeescape' codec can't decode bytes python class tostring extract audio from .mp4 python .mp3 python ascii to string How would you express the hexadecimal value a5 as a base-16 integer constant in Python? override to string python python to uppercase function w3schools receipt ocr python convert utm to decimal degrees python norm.pdf python glob.glob python get_int python 16 digit number generate on python parse invoice python binary to decimal python float python python doctype decimal to octal python int to alphabet letter python double char python convert video to text python xpath parsing in python python json serialize object show number as 3 digit python how to add string with number in python python integer to string format caesar's encrption python' python 2 format string initialization string python hexadecimal in python python cast to int python escape quotes python convert long floats to usd int ot char python how to check if string is camelcase python python random how to get trng python library to convert decimal into octal and hexadecimal convert string to integer in python python print int in string decimal conversion python invalid literal for int() with base 10 python pycryptodome rsa encrypt python serialize scale of
-decimal place in python how to convert int in python formatted string in python python file hashlib number to write string python typeof python c like struct Python bytes string to int decoding encoding script for pythong parsing text in python .format python 3 type in python python return double quotes instead of single format specificer f strings python string lowercase python TypeError: can only concatenate str (not "int") to str float('inf') formatter in python how to make gtts text to speech converter Free online converter of c ++ code to Python python convert xml to csv Python Practice Problems based on type casting tkinter convert Entry to string change variable type python common header format python pyshark decode_as bytestring python how to code a raycast python python message from byte Python - Format - Strings file.write must be string python python pytesseract
-int python input byte array frozenset literals python fsting in python python XGBoost how to pass in f string python python tabulate float format python read binary quote_from_bytes() expected bytes python return something as a float dtype cannot be bool python python map string to int convert 1 to "one" python gTTs Basic convert math equation from string to int how to import capstone in python python rsa encryption and decryption with password python format float as currency convert python code to C code convert alphanumeric to numeric python python sha256 crypt decrypt idwt pywt how to use decode method on python to convert hex to ascii _pickle.UnpicklingError: the STRING opcode argument must be quoted python how to convert unicode to string python unicodeescape python path error Install gTTs python octal conversion in python f then string meaning print("%.2F" S) ^ SyntaxError: invalid syntax convert python 2 to 3 convert c++ code to python python how to request query string korean encode how to compare byte string in python Python convert dcm to png python random string for password generator python convert number with a comma and decimal to a float str convert sentence to words python python string with si suffix to number python format new applymap(lambda x: x.encode('unicode_escape'). decode('utf-8') if isinstance(x, str) else x) multipart/form data
-multipart encoder python java to python conversion how to write string in python python json indented encrypt password with sha512 + python format number of digits python micropython string to int float() argument must be a string or a number, not 'dict_values' md5 decrypt python print in binary python python find the numbers in the thousands, hundreds, units, tens value python slit python split string into floats python docstring use int to hex python without 0x Python logging comma to dot sring to name variable pyton how to change the type of a values in list from str to object python how to print in double quotes in python f struings pytohn json payload python function python put double quotes in string parse receipt python shebang line python unit converter idle python update string in python python - extract the price from a string auto encoding in python python evaluate string python to lua converter pdf parsing python int() python argparse type how to convert variable in Python ? print lowercase in python python write request must be str not bytes from string to flaot python numpy numpy.float64' object cannot be interpreted as an integer java to python converter receipt parsing python float to 2 decimals python integer to string how to write a program that installs a font in python decimal characters python inject dynamic value into string python python char to byte string representation of object python how to type shashank in python long int in python c++ to python code converter bin to int python python code to c code converter bytearray to string python python how to hash string into pbkdf2 pandas convert hex string to int passport parsing python python how to make integer show 2 numbers show range as a string how to translate to string to different alphabet python lower upper in pytho lamda in f string py type python format 001 decimal to ascii python python unsupported operand type(s) for & 'str' and 'str' c="He is {} and he is {}".format(a,b) python python type casting python utf upper() arabic in python how to save string json to json object python py fhir python buffer python hash md5 unicode how to convert float64 to int64 in python pyttsx3 speech to mp3 format when turning float into string typecasting inpython how to extract integers from string python python convert ylabel to currency numpy array serialize to string python convert to percentage English alphabet in caps convert math expression as string to int c++ to python converter online python currency format locale python docstring python add hyphen to string data parsing app python python catch int conversion error format 100 python unsupported operand type(s) for -: 'str' and 'str' int type cast to float in python python indian currency formatter base conversion python string maniupulation in python give utton a number python formatted print in python asdf python string to tuple python python enumerlate python digit string not using f string in python matplotlib convert color string to int how to convert string to int in python python to c converter how to print string data type in c++ how to tyoecast in python python postfix conversion python string caps lock cast python isupper() in python lowercase letters python python int to ascii string python is ascii %s %d python rgb to hex python cast as float python dtype python python print float format python string tutorial python font python literal string ast python python binary to ascii how convert float to int in python python input lowercase convert to base64 python python f-string padding python binary to string bytearray to hex python int to string python random uuid object to string pandas python to c converter online text extraction from pdf using python type python fast "2 + 2" operación en string python python print bool as string how to convert cost to float in python py to flag converter online ascii python list quotes generator python python converter to c python to java converter python convert number to binar Python to C++ converter python to c
-transpiler arabic text recognition from pdf using python python char to hex python togli spazio online python to c converter python from string to bytes to hex encode decode python â\x80\x99 python hello world change background color of tkinter sleep function python how to save matplotlib figure to png src/_portaudiomodule.c:29:10: fatal error: 'portaudio.h' file not found python loop through list python iterate through dictionary python text fromatting rows how to import matplotlib in python print multiple lines python how to get the remainder in python python add one python f string how to check if there are duplicates in a list python if list item in string python how to execute bash commands in python script python initialize multidimensional list how to check django version sorting python array python how to align text writen to a file how to use startswith() with list django psql setup Detect Word Then Send Message (discord.py) python scipy.stats.t.ppf how to replace first line of a textfile python ValueError: I/O operation on closed file. scrapy itemloader example discord bot slash how to send a message in a specific channel discord.py Young C so new(pro.cashmoneyap x nazz music) soundcloud python split string python classes python if else python write to file python remove element from list python random python list to string python iterate dictionary key value python virtual environment python list install opencv python try except python python read json file lambda python enumerate in python python date and time get index of list python drop a column pandas how to add a column to a pandas df random number python python sort list code how pandas save csv file csv python write virtual env create python api in python python check if file exists python project ideas python loops python date format python read file line by line python zip function pycharm how to upgrade pip round python python pip install matplotlib python list length python dictionary methods add something to list python pandas remove duplicates python do while python pandas drop pandas read csv python to exe python if statement how to check python version update tensorflow pip python find index by value python string methods python beginner practice problems python add to list for loop python list methods python python dict class how do i sort list in python reverse list python python last element in list request post python datetime python add new keys to a dictionary python how to split a string by character in python python datetime now pandas loop through rows python loop through list ubuntu install python python delete key from dict python replace char in string convert string to list python python iterate through dictionary how to make a class in python python matplotlib bot discord python how to import discord in python how to read a csv file in python using pandas reset index pandas queue python df.drop pandas unique values in column open text file in python execute command in python script python pyautogui save pandas into csv dataframe create sleep function python python get date and time exception pyton print python insert pd.to_datetime python python beginner projects simple flask app convert into date python python create directory sleep in py py sleep function selenium python conda create environment open file python how to calculate the sum of a list in python python read file django admin create superuser threading python reset_index pandas how to plot a graph using matplotlib scikit learn linear regression read csv python python filter python current date python for loop range python make txt file python csv reader list to dict python python get square root threading python example python string to datetime how can I sort a dictionary in python according to its values? add rows to dataframe pandas delete a row in pandas dataframe python substring export a dataframe to excel pandas convert dataframe to numpy array pillow python iterate over rows dataframe rename columns pandas create csv file python python delete file df sort values string to date python python floor python append to file mac os install python 3 python list .remove increase figure size in matplotlib python install pip python join list to string python list with only unique values if substring not in string python python get a substring of a string python assert python get command line arguments Write python program to take command line arguments (word count).
-how to get length of string python send email python delete certain characters from a string python replacing values in pandas dataframe python string trim linux ubuntu install python 3.7 python pygame python print time reverse string in python December global holidays matplotlib legend subplots matplotlib save dataframe to csv python remove string from string drop if nan in column pandas how to define main in python pandas dataframe from dict flask how to run app replace column values pandas append to list python how to update pip python confusion matrix python join on column pandas email in python dotenv python python os remove file python list methods python print without newline how to make a python exe python string contains substring python try catch raise python throwing an exception python python find in list append element to an array python install pip in python static methods in python how to round a float in python create a dataframe python enumerate python python defaultdict python file reading delete file python python capitalize first letter python what does yield do round to two decimal places python 'pip' is not recognized as an internal or external command, operable program or batch file. python read csv file how to install python libraries python how to return unique entries in a list python datetime string how to print on the same line python pandas read excel how to make a python list install python in mac python sleep pandas read from excel scikit learn svm how to check the type of a variable in python sort a dataframe by a column valuepython python square root matplotlib histogram how to start a django project one. line if statement. python python absolute value python for loop python print format train test split sklearn create new django project how to print error in try except python python post request sort dataframe by column python check key press decorator python install django rest framework python pip install matplotlib python main python 2 decimal places import python module from another directory pil python install json dump to file python debugger check tensorflow version print colored text python try catch in python how to write a while statement in python combining 2 dataframes pandas copy a list python python write datetime to string python run python file using python code self in python python save df to csv python new line get text from txt file python check package version python python loop through dictionary python requests header youtube.oc yotuube ytouube command to upgrade python version create a virtual environment python 3 except as Exception: system pause in python how to wait in python print no new line python declare class python python version python iterate over list how to make a comment python removing spaces in a string python python merge list into string python plot python replace regex numpy merge arrays copy files python python randint how to change indeces in pandas dataframe python print python rename file python how to use input iterate through dictionary python copy file python continue python file handling python get filename from path gridsearchcv format time python create and use python classes check type of variable python check if string is empty python python lambda python find the key with max value python count characters in string getting time python python matplt python input timestamp python try catch python python3 iterate through indexes python remove last character from string python shuffle list how to print something in python python async await drop columns pandas python os if file exists change dataframe column type replace nan in pandas python how to rename columns in pandas dataframe how to label column names and row names in pandas dataframe python input integer how to install python3 in ubuntu python factorial python create virtualenv how to make a discord bot python httpresponse django how to run a .exe through python create new thread python django runserver django-admin list files in directory python python access index in for loop python largest value in list django create app python datetime from string python open file python requirements.txt pythagorean theorem python pyautogui install if else python get wd in python python round up use beautifulsoup ParserError: Error tokenizing data. C error: Expected 1 fields in line 87, saw 2 how to check if datapoint is in pandas column find nan value in dataframe python timestamp to date python conda env how to use virtual environment python python file open python sort list in reverse one-line for loop python create folder python python bitwise operators python remove last characters from string python convert json to pandas dataframe lambda function in python python get dictionary keys python get input convert list to array python size array python python list files in current directory count nan pandas install selenium python take off character in python string python reverse string round to the nearest integer python delete a value in list python how to install tkinter only keep rows of a dataframe based on a column value pip install specific version how to check if a number is odd python python choose random element from list python check if key is pressed python wait 1 sec python logging to file play music from python python startswith sorting by column in pandas Quick Sort python how to import turtle in python django make migrations rename column name pandas dataframe average value of list elements in python merge two dataframes based on column python comments python time delay selenium webdriver python pandas apply function to column how to randomly choose from a list python how to write csv from a dataframe pythin installing django Merge Sort python get list as input python hotkey pyautogui print new line python install python on ubuntu python test is nan python remove duplicates from list append to front of list python datetime python timezone empty set python how to start a new django project how to stop the program in python urllib python how to create migrations in django numpy list to array sort dictionary by value python drop rows with condition pandas for loop in python get request python how to install pyaudio in python python type on keyboard how to reverse a string in python remove special characters from string python python square root function python multiline comment convert str to dict python python if name == main example pandas print column names python check if folder exists while loop python dropping nan in pandas dataframe pandas rename column write json pythonb python how to measure code run in time count values pandas odd or even python how to run cmd line commands in python pandas to list how to generate requirements.txt django how do i convert a list to a string in python python how to append to a list is int python logistic regression algorithm in python append a line to a text file python how to sort a dictionary by value in python files python csv split string by spaces python python exception list python delay get working directory python python delete key from dictionary python numpy array to list sort list of dictionaries by key python for in python remove element from list different ways to print a list in python sklearn random forest numpy linspace python create environment variable add item to list python delete element list python python is integer python install pil convert column in pandas to datetime declare numpy zeros matrix python main function python\ matplotlib plot pandas list to df clear screen python python list of random values taking input of array in python python3 webserver command line create dictionary comprehension python get files in directory python plot a histogram in python matplotlib what is lambda in python discord py get user by id how to replace nan with 0 in pandas python input function square root in python how to set datetime format in python python local server command how to get a row from a dataframe in python read argument from terminal matplotlib line plot python removing \n from string matplotlib set size add pip to path python arguments python colours How to see how many times somting is in a list python input in a list in python file exist python import matplotlib.pyplot as plt python exit program rename file python plt figsize mean of a column pandas convert to timestamp python convert dict to dataframe python time a funciton empty dataframe python get out of loop get environment variables python if type is string python python find index of first matching element in a list how to find python version load model keras python write file factorial in python how to find no of times a elements in list python cv2.resize() remove item from list python python if __main__ determine if number is prime python python get current file location how to get user input of list in python how to make a numpy array python make a random number how to get distinct value in a column dataframe in python how to use argparse print key of dictionary python how to print hello world in python how to get user inout in python redirect django get
-IP address python python selenium explicit wait dataframe groupby multiple columns remove substring python save json to file how to install tkinter for python python string length how to use random in python extend a list python python create file cv2 resize pandas left join
-Browse Popular Code Answers by Language
-SQL
-sql update query sql insert query sql add column create table sql sql order by sql case when sql foreign key insert into mysql mysql create user create table in mysql mysql add foreign key sql select unique sql delete row create database mysql sql server delete column alter table delete column ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO) update value postgresql mysql format date insert into select alter table add column postgresql list db mysql list databases mysql grant all privileges to a user mysql delete row update column sql server sql server convert string to date mysql auto increment install postgresql ubuntu sql server substringShell/Bash
-delete local branch create remore git branch install node js ubuntu delete a branch in git install angular cli git add remote remove directory linux git command to create a branch how to install docker ubuntu git force pull delete local branch git git switch branch how to switch branch how to revert back to previous commit in git oh my zsh install deb file linux how to see ports in use install jupyter notebook git undo last commit install react bootstrap how to see all branches in git install latest npm how to uninstall npm packages git push to branch set up git repository delete branch git rename branch git git delete branch git discard local changes git rename branchSwift
-swift for loop how to loop swift use timer swift create dictionary swift time formats swift swift generate random number create alert in swift show alert swiftui Split a String into an array in Swift convert string to int swift dart capitalize first letter of each word swift change navigation bar color display image from url swift swift get current time add navigation bar button swiftui set image width and height swiftui fnb swift code swift filter array swift hide navigation bar conert data to string swift swift loop through array center text swiftui swift append element to array ios swift convert int to string add top corner radius swift format decimal place swift give background color swiftui replace character in swift play sound swift stack overflow add buton border swiftJavascript
-Javascript remove array item by value remove element from array javascript remove a particular element from array javascript removing item from array javascript array remove element javascript remove element from array js remove speific item from array array remove element js how do you remove a remove element from array in javascript Javascript Remove Element By Id Code Example parse integer javascript Javascript string to int string to number js javascript to integer string to int javascript javascript string to integer javascript convert string to number javascript parse a json string js json to object Javascript parse json string javascript json decode json parse string javascript parse json javascript json parse create react app javascript for loop how to convert string to int js js switch case javascript set and get cookie javascript get cookieVBA
-excel vba find get last row in column vba for loop vba for next loop skip excel vba for next loop skip message box VBA regex numeric digits excel vba find last column excel date to string conversion vba range to array excel vba array vba array from worksheet data excel formula how to create strings containing double quotes xlvba double quotes in string literal xl vba double quotes in string literal excelvba declare global constant xl-vba declare global constant xlvba declare globals vba global vs public excel vba how to declare a global variable excel vba check cell not empty excel add leading zeros to existing values excel vba wait string to date vb excel vba how to check if a worksheet cell is empty xlvba function sheet exists excel vba test or check if sheet exists xl-vba function sheet exists xlvba check if sheet exists vba function sheet exists vb switch casePython
-python split string python if else python write to file python remove element from list python list to string python iterate dictionary key value python virtual environment install opencv python try except python python string to int python read json file enumerate in python python date and time get index of list python how to add a column to a pandas df random number python python sort list drop a column pandas code how pandas save csv file csv python write python check if file exists api in python python project ideas virtual env create python python date format python read file line by line python zip function python pip install python dictionary methods python list lengthR
-bootstrap cdn link read csv in r r install package r for loop simple data frame in R read csv file in r r remove na from dataset how to do linear regression in r r remove row dataframe how to import csv file in r r write to csv r replace na with 0 how to read excel file in r r create a vector fuction in r print in r r combine strings write to csv in r how to change column names in r r language legend parameters write csv in r r read file rep in r r set dataframe column names normalization in r r create a list drop na in R rename column in r read xlsx in r r data typesRuby
-how create migration rails ruby for loop ruby each do method ruby each with index how to add column to table rails how to delete a table in rails ruby array has element change column rails example rails kill server comment in ruby how to check ruby version how to I change the name of a column in rails uruby to lower case A Ruby write to file example Add references rails migration how to remove columns from rails how to add to an array ruby ruby find in array if string contain
-string ruby default value rails migration ruby replace certain character get size of array in ruby ruby each array string interpolation ruby append array in ruby drop rails all db rails remove column from model ruby get current datetime heroku restart rails server rails link_to classRust
-hello world rust for loops in rust rust convertinging string to int how to make an array in rust rust match string read file rust rustlang error: linker `link.exe` not found how to index a string in rust range in rust rust get command line arguments how to read from stdin rust array as a parameter rust how to concatenate two &str in rust if let some rust how to split a string by spaces rust casting in rust rust get current directory rust printing string on stdout how to create a window in rust lang display trait rust how to convert int to float in rust rust non derived debug trait example check if a file exists rust rust replace characters rust trait inheritance rust random number in range rust lang sleep rust reverse range rust impl display rustlang try fromPHP
-php append to array php format date php check if string contains word php string contains substring php string to int php parse json php length of array php split string php sql insert php get current date and time php try catch laravel clear cache laravel run seed php loop through array count array php Allowed memory size of 1610612736 bytes exhausted in array php php connect to mysql php array length php sql connection php json encode query sql in php php array to string array_search in php php date now php for loop phhp for loop php delete array item by value not key common array methods php php delete element by valueJava
-int to string java java scanner stack overflow java random number java array declaration How to split a string in Java sort array java java string to int string to int java how to get a user input in java java split string convert string to int java java how to get current date array in java scanner in java how to create an array in java how to take input in java java string to char array convert char to string java list in java .length array java java convert String to int java parse ineger java read from file writing to a file in java length of string java java how to print an array string replace java java data types java check if string is number java check for string lengthHtml
-bootstrap text color bootstarp btn colors radio buttons html HTML button onclick html drop down list how to link css to html bootstrap login form html navigation bar html input types commenting in html html form checkbox bootstrap 4 dropdown html input textarea http status codes bootstrap border color bootstrap 4 center div html background image html select list new line html create a dropdown in html bootstrap bootstrap select box how to use the label tag in html html center button include script in html bootstrap align right video tag html html a href bootstrap display none import js in html html font sizeC++
-change int to string cpp getline in c++ c++ get length of array range of long long in c++ length of string c++ how to sort a vector in c++ convert stirng to int c++ how to reverse a string in c++ string to int c++ c++ reverse string remove value from vector c++ array length c++ linkedlist implementation in c++ find vector in c++ c++ switch case statement remove element by index from vector c++ declaring 2d vector in c++ read a file c++ flutter datetime format convert entire string to lowercase c++ making random numbers in c++ c++ for loop input a string in c++ c++ template function string in cpp convert decimal to binary in c++ list conda environments random number in c++ how to declare a function in c++ how to sort an array c++CSS
-css background image css media queries background color gradient css center a div in css css center image bootstrap btn classes Attack on titan css box shadow background image size css css align center link css with html css bold text css opacity example table border css linear gradient css css flex center background image css css rounded corners box shadow css font size css hide scrollbar css css style placeholder media query css image cover css image size css justify content css text shadow css position sticky css css align items vertical center css media queryTypeScript
-angular navigate using component check if dict key exists python How to download windows 10 ISO React with Typescript how to see all commits in git comments in css angular date pipe how to check whether file exists in python how to check list of open ports in linux how to print array elements in java for loop typescript cannot be loaded because running scripts is disabled on this system Can't bind to 'formGroup' since it isn't a known property of 'form install typescript using npm use google fonts in css angular number pipe see what ports are in use typescript remove object from array looping through two lists python voting results 2020 live google fonts roboto font awesome angular python requests get proxy How to Reload a Component in Angular typescript optional parameters mat-form-field must contain a MatFormFieldControl append to lists python create react app with typescript config get arguments from url flask react children typescriptC#
-c sharp split string c# switct case foreach syntax c# c# get set c# date formats custom string to int c# c# two dimensional array c sharp substring c# string to datetime try catch c# csharp datetime string format how to make a for loop in c# c# how to convert string to int c sharp string replace regex in c# c# initialize array c# user input c sharp int to string c sharp how to read a text file c# create array asp.net c# write string to text file c# length of array c# throw new exception population of the world c sharp string interpolation movement script c# .sh script: check if file exist how to rotate object unity c sharp tryparse for loop c#Kotlin
-for loop kotlin coroutines kotlin android dependency toast in kotlin make array list kotlin setOnClickListener example kotlin kotlin static method user input in kotlin make hashmap kotlin intent kotlin example how to write hello world in kotlin Kotlin round double string 2d array in kotlin kotlin add element to array what is difference between val and var kotlin comments in kotlin kotlin remove name from an activity how to declare string array in kotlin kotlin list add implement spinner in android kotlin Cannot inline bytecode built with JVM target 1.8 into bytecode that is being built with JVM target 1.6. Please specify proper '-jvm-target' option on click in kotlin android recyclerview scroll to bottom android custom AlertDialog theme how to call a function after delay in kotlin android android disable landscape mode kotlin not configured android studio create empty array in kotlin kotlin mutable list implementation random string generator kotlin kotlin in how to set without findviewbyidC
-struct in C size of an array c for loop c ModuleNotFoundError: No module named 'cv2' string to int c read files in c c int to string write in file in c switch statement in c c concatenate strings for loop in c string length c merge sort in c latex font sizes c bubble sort fahrenheit to celsius formula c data types switch case c visual studio code fibonacci series using recursion enum in c c user input how to run a update comand in linux factorial of a given number in c typedef in c fibonacci series in c bool in c how to print in c boolean in c how to print int in cLua
-lua for loop where can i learn lua where do lua tables start loop true childs roblox lua how to make a loop lua while loops lua add table to value lua click detection roblox on touch script length of table lua block commenting lua wait function lua while in lua Lua array add item lua in pairs repeating loop roblox lua How to remove index from table lua not equal print table lua how to get a random number in lua lua string to number roblox check if player has gamepass lua loop through table lua variable types lua round number sleep function lua break in lua Roblox Studio TweenService Example in lua 2020 lua for each in table how to execute scripts when a button gui is pressed robloxMatlab
-ModuleNotFoundError: No module named 'tkinter' to detect if a data frame has nan values matlab matrix zeros matlab zero vector matlab matrix index matlab matrix size find location of max value in array matlab zsh corrupt history file matlab length of array No module named 'imblearn' break loop for matlab matlab read image num to string matlab wait time matlab matlab clear plot fprintf in directory matlab multiple of value matlab if directory exist matlab save mat file script in matlab directory diff(x) matrix matlab matlab time function mean without nan matlab eval matlab variable name matlab read audio isnull in matlab matlab unix time to datetime Unrecognized function or variable 'matlab.internal.addons.updates.file exchange addon.getType FromPackageInfoUrl'. wait until job matlab load value inside job matlab nan size matlabDart
-Flutter turn string to int flutter push route flutter image asset how to show snackbar in flutter flutter list tile how to use hexadecimal color in flutter color() in flutter flutter container rounded corners timer in flutter flutter get current date rounded raisedbutton in flutter switch case in dart how to add padding flutter loop in dart dart card outline container flutter border radius flutter button border radius how to create a toast in flutter generate random int dart declaring and initializing a list in dart text fieldform color flutter toast in flutter New Year's Eve tabs flutter example dart random number text overflow ellipsis flutter text in column flutter overflow ellipsis not working conditionalstatement in widget flutter flutter container margin flutter center rowGo
-mongo console find by id throw new TypeError('Router.use() requires a middleware function but got a ' + gettype(fn)) drop mongo database signIn google firebase flutter golang convert int to string connect google drive to colab drop a collection in mongodb google forms answers golang string split golang convert string to int go add to slice set up google analytics make image go to center of page how to see number of words in google docs mongodb export entire database golang convert string to int64 initialize map in golang google cloudb pricing golang array syntax Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.20.1:test (default-test) on project upload drop mongodb database cross out google docs csgo jump throw bind go string to byte array how to stop google colab from disconnecting mongo db show datbae unzip a file in google colab go for loop how to search google how to delete google projectBASIC
-Microsoft Flight Simulator. how to send basic auth using fetch basic latex document visual basic how to declare a variable vb string to int32 how to open d drive using conda prompt add combobox in datagridview vb.net visual basic script msgbox how to add basic authentication on haproxy backend server mid visual basic function itextsharp landscape a4 Custom exception visual basic shortcut to rename the file on lenovo s340 Delete all data in neo4j removing illlegal char from filename How to configure cryptodredge docker-compose.yml reusable variablesAssembly
-the answer to life the universe and everything hello world in assembly using shape property in flutter for circular corner appending a vector in vector boku ni pico start learning assembly MOD OPERATOR for register in arm assembly array month name hello world x64 assembly cancel shutdown timer No assembly found containing an OwinStartupAttribute. array days of the week Arm assembly fibonacci dot net core 3.1 The type or namespace name 'TestClassAttribute' could not be found (are you missing a using directive or an assembly reference?) matlab machine epsilon program in assembly language to find even numbers from 1 to 10Perl
-perl for loop perl print array perl get date perl array loop perl set date perl print hash perl string length perl set a specific datetime perl http request perl replace substring perl datetime formatting perl last characters perl hash size perl get first characters perl validate integer perl validate id numberDelphi
-groblersdal to middelburg How to read text files in delphi for loop delphi delphi read file get current date delphi Delphi how copy works delete in delphi how to make message
-in delphi Erro ao inserir invalid byte sequence for encoding “UTF8”: 0x00 delphi postgresql length of string in delphi criar procedure/function delphi atalho delphi keydown enter Multi thread delphi get last element of array delphi delphi asking for inpot via dialog boxObjective-C
-get product image woocommerce xcode format code Error: EPERM: operation not permitted, mkdir 'C:\Users\SHUBHAM~KUNWAR' command not found: create-react-app uialertcontroller example objective c nstimer example objective c loop array objective c Error: EPERM: operation not permitted, mkdir 'C:\Users\Anubhab' command not found: create-react-app obj c write file worst programming language vc_map type number how to add undelete texts to textfield in ios obj c get point of intersection of 2 linesScala
-ValueError: If using all scalar values, you must pass an index scala hello world how to add comment in scala comments in scala scala get the first element of a seq how to get the nth element in a list in scala scala get file from url as string scala last element in listHaskell
-list comprehension haskell haskell multiline comment haskell get last element of list last element of list haskell string to list haskell hello world in haskell get first char from string haskellPascal
-pascal online compiler comment in pascal comments in pascal producto de matrices pascalJulia
-how to push an element to array in julia remove character from string julia julia dereference pointerGroovy
-for loop groovy groovy wait time groovy implementation of the interfaceElixir
-map merge elixir elixir random number elixir length of listFortran
-fortran do while fortran int to string write integer value in name fortran 90ActionScript
-visual studio code change terminal color TypeError: Cannot read property 'version' of undefinedClojure
-clojure get list first item how to make a range clojureAbap
-abap concatenate table abap loop exampleScheme
-how to pass unction in scheme how to make a list in scheme
-Browse Other Code Languages
-Abap
-ActionScript
-Assembly
-BASIC
-C
-Clojure
-Cobol
-C++
-C#
-CSS
-Dart
-Delphi
-Elixir
-Erlang
-Fortran
-F#
-Go
-Groovy
-Haskell
-Html
-Java
-Javascript
-Julia
-Kotlin
-Lisp
-Lua
-Matlab
-Objective-C
-Pascal
-Perl
-PHP
-PostScript
-Prolog
-Python
-R
-Ruby
-Rust
-Scala
-Scheme
-Shell/Bash
-Smalltalk
-SQL
-Swift
-TypeScript
-VBA
-WebAssembly
-Whatever
-Grepper
-Features
-Reviews
-Code Answers
-Search Code Snippets
+urllib.error.HTTPError: HTTP Error 403: Forbidden · Issue #399 · pytube/pytube · GitHub
+Skip to content
+Sign up
+Why GitHub?
+Features →
+Mobile →
+Actions →
+Codespaces →
+Packages →
+Security →
+Code review →
+Project management →
+Integrations →
+GitHub Sponsors →
+Customer stories→
+Team
+Enterprise
+Explore
+Explore GitHub →
+Learn and contribute
+Topics →
+Collections →
+Trending →
+Learning Lab →
+Open source guides →
+Connect with others
+The ReadME Project →
+Events →
+Community forum →
+GitHub Education →
+GitHub Stars program →
+Marketplace
 Pricing
-FAQ
-Welcome
-Browsers Supported
-Grepper Teams
-Documentation
-Adding a Code Snippet
-Viewing & Copying Snippets
-Social
-Twitter
-Facebook
-Legal
-Privacy Policy
+Plans →
+Compare plans →
+Contact Sales →
+Education →
+In this repository
+All GitHub
+↵
+Jump to
+↵
+No suggested jump to results
+In this repository
+All GitHub
+↵
+Jump to
+↵
+In this organization
+All GitHub
+↵
+Jump to
+↵
+In this repository
+All GitHub
+↵
+Jump to
+↵
+Sign in
+Sign up
+{{ message }}
+pytube
+/
+pytube
+Notifications
+Star
+4.4k
+Fork
+1.1k
+Code
+Issues
+13
+Pull requests
+2
+Actions
+Wiki
+Security
+Insights
+More
+Code
+Issues
+Pull requests
+Actions
+Wiki
+Security
+Insights
+New issue
+Have a question about this project? Sign up for a free GitHub account to open an issue and contact its maintainers and the community.
+Pick a username
+Email Address
+Password
+Sign up for GitHub
+By clicking “Sign up for GitHub”, you agree to our terms of service and
+privacy statement. We’ll occasionally send you account related emails.
+Already on GitHub?
+Sign in
+to your account
+Jump to bottom
+urllib.error.HTTPError: HTTP Error 403: Forbidden
+#399
+Closed
+NeverAskWhy
+opened this issue
+Jun 6, 2019
+· 63 comments
+Closed
+urllib.error.HTTPError: HTTP Error 403: Forbidden
+#399
+NeverAskWhy
+opened this issue
+Jun 6, 2019
+· 63 comments
+Labels
+stat: stale
+Comments
+Copy link
+NeverAskWhy
+commented
+Jun 6, 2019
+Hi all,
+I'm aware that there are some older issues with the same error, howevery I thought I would just give it a try. For some videos (like this one: https://www.youtube.com/watch?v=393C3pr2ioY ) I get a 403 error...others work fine though. Do you know of any workaround for that? I saw this thread in the older issue https://stackoverflow.com/questions/16627227/http-error-403-in-python-3-web-scraping but I'm not good enough in Python to find the right spot to implement it. Any help would be appreciated.
+PS: I already updated to the most current version (9.5.0).
+The text was updated successfully, but these errors were encountered:
+👍
+3
+Copy link
+Waarbubble
+commented
+Jun 7, 2019
+I am having the same problem, but for me, it is random whether the same youtube link will generate a 403 or not. My current testing links are:
+https://www.youtube.com/watch?v=pAgnJDJN4VA&index=117&list=PL3LCt07uiILKduYr52ZMYrE_PvbSuUdZM
+https://www.youtube.com/watch?v=t9psCAWrISg&index=136&list=PL3LCt07uiILKduYr52ZMYrE_PvbSuUdZM
+I am only trying to download the audio stream.
+Copy link
+Nowbob
+commented
+Jun 7, 2019
+It's a hack of a fix, but this is how I've got mine working for now (I'm running in python 2.7, you may need to fiddle depending on your version):
+In pytube/request.py:
+At line 4 I added:
+from urllib2 import Request
+And above line 21 (response = urlopen(url)):
+req = Request(url, headers = {"User-Agent": "Mozilla/5.0"})
+And then replace the line below:
+response = urlopen(url)
+with:
+response = urlopen(req)
+👍
+6
+Copy link
+Waarbubble
+commented
+Jun 7, 2019
+Just tested the solution, keeps randomly giving 403, and then working again.
+Copy link
+Author
+NeverAskWhy
+commented
+Jun 7, 2019
+@Waarbubble : you mean you tested @Nowbob's solution?
+Copy link
+Waarbubble
+commented
+Jun 7, 2019
+•
+edited
+yes
+Tested in python 3
+Copy link
+Nowbob
+commented
+Jun 7, 2019
+Yeah I was having the same "sometimes it works sometimes it doesn't" problem, but it's the best I could come up with in a short time.
+Copy link
+Waarbubble
+commented
+Jun 7, 2019
+It was worth a try.
+Copy link
+Author
+NeverAskWhy
+commented
+Jun 7, 2019
+I'm doing something wrong...
+In line for of request.py:
+from urllib import request
+then line 22/23:
+req = request(url, headers = {"User-Agent": "Mozilla/5.0"})
+response = urlopen(req)
+now I'm getting this error:
+self.watch_html = request.get(url=self.watch_url)
+File "C:\Users\janvo\AppData\Local\Programs\Python\Python37-32\lib\site-packages\pytube\request.py", line 22, in get
+req = request(url, headers = {"User-Agent": "Mozilla/5.0"})
+TypeError: 'module' object is not callable
+Copy link
+Waarbubble
+commented
+Jun 7, 2019
+If you are using python 3 the
+fourth line needs to be from urllib.request import Request
+and then line 22 will need a capital R in request
+👍
+3
+Copy link
+Author
+NeverAskWhy
+commented
+Jun 7, 2019
+Thanks...I changed it now. It's behaving the same way...three times I got the 403-error and then it worked.
+Copy link
+hoetaek
+commented
+Jun 11, 2019
+Getting the same error. I tried all the solutions above. And some works and some don't.
+👍
+1
+Copy link
+danielgordon10
+commented
+Jun 11, 2019
+This got much more frequent for me today for some reason. The above solutions do not seem to work for the new cases. Example video https://www.youtube.com/watch?v=ZYoUXaU81Gk
+Copy link
+fofofofofofofofo
+commented
+Jun 11, 2019
+I believe I've managed to fix this by changing &signature= in line 64 of mixins.py to &sig=.
+👍
+11
+This was referenced Jun 11, 2019
+The stream is empty since today. Alexa accept the command and make the response correctly but nothing is to hear
+ndg63276/alexa-youtube#74
+Closed
+cant find any enabled video skills
+ndg63276/alexa-youtube#72
+Closed
+Copy link
+Waarbubble
+commented
+Jun 11, 2019
+The solution works for me, no more random 403
+Copy link
+danielgordon10
+commented
+Jun 11, 2019
+•
+edited
+Neither suggested solution fixes my test video https://www.youtube.com/watch?v=ZYoUXaU81Gk
+👍
+1
+Copy link
+fofofofofofofofo
+commented
+Jun 11, 2019
+•
+edited
+@danielgordon10 What error are you getting? I just tried downloading that link and it seems to be working with the &sig= fix.
+pytube https://www.youtube.com/watch?v=ZYoUXaU81Gk --list
+<Stream: itag="43" mime_type="video/webm" res="360p" fps="30fps" vcodec="vp8.0" acodec="vorbis">
+<Stream: itag="18" mime_type="video/mp4" res="360p" fps="30fps" vcodec="avc1.42001E" acodec="mp4a.40.2">
+<Stream: itag="135" mime_type="video/mp4" res="480p" fps="30fps" vcodec="avc1.4d400b">
+<Stream: itag="244" mime_type="video/webm" res="480p" fps="30fps" vcodec="vp9">
+<Stream: itag="134" mime_type="video/mp4" res="360p" fps="30fps" vcodec="avc1.4d401e">
+<Stream: itag="243" mime_type="video/webm" res="360p" fps="30fps" vcodec="vp9">
+<Stream: itag="133" mime_type="video/mp4" res="240p" fps="30fps" vcodec="avc1.4d400c">
+<Stream: itag="242" mime_type="video/webm" res="240p" fps="30fps" vcodec="vp9">
+<Stream: itag="160" mime_type="video/mp4" res="144p" fps="30fps" vcodec="avc1.4d400b">
+<Stream: itag="278" mime_type="video/webm" res="144p" fps="30fps" vcodec="vp9">
+<Stream: itag="140" mime_type="audio/mp4" abr="128kbps" acodec="mp4a.40.2">
+<Stream: itag="171" mime_type="audio/webm" abr="128kbps" acodec="vorbis">
+<Stream: itag="249" mime_type="audio/webm" abr="50kbps" acodec="opus">
+<Stream: itag="250" mime_type="audio/webm" abr="70kbps" acodec="opus">
+<Stream: itag="251" mime_type="audio/webm" abr="160kbps" acodec="opus">
+pytube https://www.youtube.com/watch?v=ZYoUXaU81Gk --itag 251
+Мисс Новоуральск 2012.webm | 7446370 bytes
+Copy link
+danielgordon10
+commented
+Jun 11, 2019
+So I am able to get the stream but I can't download it.
+import pytube
+video_url = 'https://www.youtube.com/watch?v=ZYoUXaU81Gk'
+yt = pytube.YouTube(video_url)
+streams = yt.streams
+streams = (
+streams.filter(progressive=True, custom_filter_functions=[lambda x: x.resolution is not None])
+.order_by("resolution")
+.all()
+)
+stream = streams[0]
+video = stream.download()
+Then I get the urllib.error.HTTPError
+video = stream.download()
+File "/home/xkcd/miniconda3/envs/video-env/lib/python3.7/site-packages/pytube/streams.py", line 217, in download
+bytes_remaining = self.filesize
+File "/home/xkcd/miniconda3/envs/video-env/lib/python3.7/site-packages/pytube/streams.py", line 164, in filesize
+headers = request.get(self.url, headers=True)
+File "/home/xkcd/miniconda3/envs/video-env/lib/python3.7/site-packages/pytube/request.py", line 22, in get
+response = urlopen(url)
+File "/home/xkcd/miniconda3/envs/video-env/lib/python3.7/urllib/request.py", line 222, in urlopen
+return opener.open(url, data, timeout)
+File "/home/xkcd/miniconda3/envs/video-env/lib/python3.7/urllib/request.py", line 531, in open
+response = meth(req, response)
+File "/home/xkcd/miniconda3/envs/video-env/lib/python3.7/urllib/request.py", line 641, in http_response
+'http', request, response, code, msg, hdrs)
+File "/home/xkcd/miniconda3/envs/video-env/lib/python3.7/urllib/request.py", line 569, in error
+return self._call_chain(*args)
+File "/home/xkcd/miniconda3/envs/video-env/lib/python3.7/urllib/request.py", line 503, in _call_chain
+result = func(*args)
+File "/home/xkcd/miniconda3/envs/video-env/lib/python3.7/urllib/request.py", line 649, in http_error_default
+raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 403: Forbidden
+👍
+3
+Copy link
+fofofofofofofofo
+commented
+Jun 12, 2019
+I've only used this in CLI before so I'm not sure, my guess would be to check if it's importing the correct one.
+Copy link
+danielgordon10
+commented
+Jun 12, 2019
+It works fine for other videos...
+Copy link
+danielgordon10
+commented
+Jun 13, 2019
+I think I have a working fix now for this and a related issue (#392). It's not pretty, but it seems to get the job done.
+in mixins.py
+if ('signature=' in url or
+('s' not in stream and
+('&sig=' in url or '&lsig=' in url))):
+# For certain videos, YouTube will just provide them pre-signed, in
+# which case there's no real magic to download them and we can skip
+# the whole signature descrambling entirely.
+logger.debug('signature found, skip decipher')
+continue
+if js is not None:
+signature = cipher.get_signature(js, stream['s'])
+else:
+# signature not present in url (line 33), need js to descramble
+# TypeError caught in __main__
+raise TypeError('JS is None')
+logger.debug(
+'finished descrambling signature for itag=%s\n%s',
+stream['itag'], pprint.pformat(
+{
+'s': stream['s'],
+'signature': signature,
+}, indent=2,
+),
+)
+stream_manifest[i]['url'] = url + '&sig=' + signature
+👍
+20
+🎉
+10
+❤️
+4
+🚀
+1
+Copy link
+rsistema
+commented
+Jun 17, 2019
+I believe I've managed to fix this by changing &signature= in line 64 of mixins.py to &sig=.
+I tried the first fix from @Nowbob, but the problem persisted.
+Change the line 64 as you said and now it's working again. Perfectly on Python 2.7
+FearlessENT
+mentioned this issue
+Jun 18, 2019
+NameError: name 'pytube' is not defined
+#404
+Closed
+Copy link
+t4ke0
+commented
+Jun 18, 2019
+still have that error !?
+Copy link
+genesysvip
+commented
+Jun 27, 2019
+I think I have a working fix now for this and a related issue (#392). It's not pretty, but it seems to get the job done.
+in mixins.py
+if ('signature=' in url or
+('s' not in stream and
+('&sig=' in url or '&lsig=' in url))):
+# For certain videos, YouTube will just provide them pre-signed, in
+# which case there's no real magic to download them and we can skip
+# the whole signature descrambling entirely.
+logger.debug('signature found, skip decipher')
+continue
+if js is not None:
+signature = cipher.get_signature(js, stream['s'])
+else:
+# signature not present in url (line 33), need js to descramble
+# TypeError caught in __main__
+raise TypeError('JS is None')
+logger.debug(
+'finished descrambling signature for itag=%s\n%s',
+stream['itag'], pprint.pformat(
+{
+'s': stream['s'],
+'signature': signature,
+}, indent=2,
+),
+)
+stream_manifest[i]['url'] = url + '&sig=' + signature
+It's work thank you!
+But I modify two file mixins.py & cipher.py
+% mixins.py
+ref #402
+if ('signature=' in url) or ('&sig=' in url) or ('&lsig=' in url):
+to
+if ('signature=' in url or
+('s' not in stream and
+('&sig=' in url or '&lsig=' in url))):
+and
+stream_manifest[i]['url'] = url + '&signature=' + signature
+to
+stream_manifest[i]['url'] = url + '&sig=' + signature
+and change pattern in cipher.py
+pattern = [
+r'yt.akamaized.net/)\s*||\s*'
+r'.?\sc\s*&&\sd.set([^,]+\s,\s*(?:encodeURIComponent'
+r'\s*()?(?P[a-zA-Z0-9$]+)(',
+r'.sig||(?P[a-zA-Z0-9$]+)(',
+r'\bc\s*&&\sd.set([^,]+\s,\s*(?:encodeURIComponent'
+r'\s*()?(?P[a-zA-Z0-9$]+)(',
+]
+to
+pattern = [
+r'\b[cs]\s*&&\s*[adf].set([^,]+\s*,\sencodeURIComponent\s(\s*(?P[a-zA-Z0-9$]+)(',
+r'\b[a-zA-Z0-9]+\s*&&\s*[a-zA-Z0-9]+.set([^,]+\s*,\sencodeURIComponent\s(\s*(?P[a-zA-Z0-9$]+)(',
+r'(?P[a-zA-Z0-9$]+)\s*=\sfunction(\sa\s*)\s*{\sa\s=\sa.split(\s""\s*)',
+r'(["'])signature\1\s*,\s*(?P[a-zA-Z0-9$]+)(',
+r'.sig||(?P[a-zA-Z0-9$]+)(',
+r'yt.akamaized.net/)\s*||\s*.?\s[cs]\s*&&\s*[adf].set([^,]+\s*,\s*(?:encodeURIComponent\s*()?\s*'
+r'(?P[a-zA-Z0-9$]+)(',
+r'\b[cs]\s*&&\s*[adf].set([^,]+\s*,\s*(?P[a-zA-Z0-9$]+)(',
+r'\b[a-zA-Z0-9]+\s*&&\s*[a-zA-Z0-9]+.set([^,]+\s*,\s*(?P[a-zA-Z0-9$]+)(',
+r'\bc\s*&&\sa.set([^,]+\s,\s*([^)])\s(\s*(?P[a-zA-Z0-9$]+)(',
+r'\bc\s*&&\s*[a-zA-Z0-9]+.set([^,]+\s*,\s*([^)])\s(\s*(?P[a-zA-Z0-9$]+)(',
+r'\bc\s*&&\s*[a-zA-Z0-9]+.set([^,]+\s*,\s*([^)])\s(\s*(?P[a-zA-Z0-9$]+)('
+]
+I forget this issue number, someone can help me to link?
+work on python 3.6, pytube 9.5.0, urllib3 1.25.3
+👍
+2
+marcounetB
+mentioned this issue
+Jun 27, 2019
+HTTP Error 403: Forbidden
+#414
+Closed
+This was referenced Jun 29, 2019
+Pytube don't works with some videos
+#413
+Closed
+Regex Pattern
+#416
+Closed
+403 error
+#407
+Closed
+22 hidden items
+Load more…
+Copy link
+martis-git
+commented
+Aug 16, 2019
+•
+edited
+@gittethis
+You're the best!
+Thanks for fixing solution
+😄
+1
+gittethis
+mentioned this issue
+Aug 18, 2019
+pytube --bug KeyError: 'title' who can help me
+#450
+Closed
+nicholsonjf
+mentioned this issue
+Aug 20, 2019
+AttributeError: 'NoneType' object has no attribute 'default_filename'
+#457
+Closed
+jscpeterson
+mentioned this issue
+Aug 20, 2019
+Accidental issue, please ignore or delete
+#458
+Closed
+Copy link
+snwfdhmp
+commented
+Aug 26, 2019
+I tried for 15 minutes before realising that : for the mixins.py fix, you have to replace the whole snippet, not just replace signature to sig.
+Now it works, thanks a lot !
+👍
+2
+Copy link
+ogspeace
+commented
+Aug 27, 2019
+•
+edited
+With 9.5.1 (the latest downloaded) I tinkered with all the fixes from this thread and finally got it working. There are two separate issues that i had to tackle:
+1. KeyError:['title'] and
+2. "403: Forbidden"
+1)FIrst one to solve was the KeyError:['title']
+For some reason the 'title' key is not retrieved anymore in the root of the player_config_args dictionary, hence the error. Upon debugging of the req/reply I found It is instead present in "player_response/videoDetails/title", so edit main.py:
+def title(self):
+#Get the video title.
+#:rtype: str
+try:
+tt1 = self.player_config_args['title']
+except:
+tt1 = self.player_config_args.get('player_response', {}).get('videoDetails', {}).get('title')
+finally:
+if not tt1:
+tt1 = "Unknown YTube video"
+return tt1
+and streams.py:
+def default_filename(self):
+"""Generate filename based on the video title.
+:rtype: str
+:returns:
+An os file system compatible filename.
+"""
+try:
+title = self.player_config_args['title']
+except:
+title = self.player_config_args.get('player_response', {}).get('videoDetails', {}).get('title')
+finally:
+if not title:
+title = "Unknown YTube video"
+filename = safe_filename(title)
+return '{filename}.{s.subtype}'.format(filename=filename, s=self)
+I did also apply the fix found in this thread to request.py about the Agent-User:
+from urllib2 import Request
+and
+req = Request(url, headers = {"User-Agent": "Mozilla/5.0"})
+#response = urlopen(url)
+response = urlopen(req)
+2)For the "403 Forbidden" I applied first the suggestion about mixins.py in the apply_signature function:
+if ('signature=' in url or
+('s' not in stream and
+('&sig=' in url or '&lsig=' in url))):
+# For certain videos, YouTube will just provide them pre-signed, in
+# which case there's no real magic to download them and we can skip
+# the whole signature descrambling entirely.
+logger.debug('signature found, skip decipher')
+continue
+if js is not None:
+signature = cipher.get_signature(js, stream['s'])
+else:
+# signature not present in url (line 33), need js to descramble
+# TypeError caught in __main__
+raise TypeError('JS is None')
+logger.debug(
+'finished descrambling signature for itag=%s\n%s',
+stream['itag'], pprint.pformat(
+{
+'s': stream['s'],
+'signature': signature,
+}, indent=2,
+),
+)
+stream_manifest[i]['url'] = url + '&sig=' + signature
+then in the cipher.py I replaced the regex pattern as suggested in another post of this thread:
+pattern = [
+r'\b[cs]\s*&&\s*[adf]\.set\([^,]+\s*,\s*encodeURIComponent\s*\(\s*(?P<sig>[a-zA-Z0-9$]+)\(',
+r'\b[a-zA-Z0-9]+\s*&&\s*[a-zA-Z0-9]+\.set\([^,]+\s*,\s*encodeURIComponent\s*\(\s*(?P<sig>[a-zA-Z0-9$]+)\(',
+r'(?P<sig>[a-zA-Z0-9$]+)\s*=\s*function\(\s*a\s*\)\s*{\s*a\s*=\s*a\.split\(\s*""\s*\)',
+r'(["\'])signature\1\s*,\s*(?P<sig>[a-zA-Z0-9$]+)\(',
+r'\.sig\|\|(?P<sig>[a-zA-Z0-9$]+)\(',
+r'yt\.akamaized\.net/\)\s*\|\|\s*.*?\s*[cs]\s*&&\s*[adf]\.set\([^,]+\s*,\s*(?:encodeURIComponent\s*\()?\s*(?P<si$',
+r'\b[cs]\s*&&\s*[adf]\.set\([^,]+\s*,\s*(?P<sig>[a-zA-Z0-9$]+)\(',
+r'\b[a-zA-Z0-9]+\s*&&\s*[a-zA-Z0-9]+\.set\([^,]+\s*,\s*(?P<sig>[a-zA-Z0-9$]+)\(',
+r'\bc\s*&&\s*a\.set\([^,]+\s*,\s*\([^)]*\)\s*\(\s*(?P<sig>[a-zA-Z0-9$]+)\(',
+r'\bc\s*&&\s*[a-zA-Z0-9]+\.set\([^,]+\s*,\s*\([^)]*\)\s*\(\s*(?P<sig>[a-zA-Z0-9$]+)\(',
+r'\bc\s*&&\s*[a-zA-Z0-9]+\.set\([^,]+\s*,\s*\([^)]*\)\s*\(\s*(?P<sig>[a-zA-Z0-9$]+)\('
+]
+@gitethis 's solutions work, and tried it on my scripts, however, here's a slight tweak for python3 users:
+in request.py instead of: from urllib2 import Request
+use this: from urllib.request import Request
+/ogs
+👍
+5
+Copy link
+jrial
+commented
+Aug 27, 2019
+Seeing as how this appears to be solved with the changes described in various comments, did anyone create a pull request already? I noticed one while quickly scanning this issue, but that one's CI tests failed.
+Copy link
+Algomorph
+commented
+Sep 8, 2019
+@jrial ,
+Unfortunately, I seem to have applied all the fixes so helpfully summarized
+by @ogspeace, and I'm still getting "urllib.error.HTTPError: HTTP Error 403: Forbidden"
+Copy link
+halfendt
+commented
+Sep 12, 2019
+Thank you! Works for me as well on Python 3.6.5, urllib3 1.25.3, and PyTube 9.5.1.
+To summarize the patches needed:
+mixins.py - patch by @danielgordon10 in #399 (comment)
+cipher.py - edit of @GravelCZ's patch by @nhatton96 at the bottom of #399 (comment)
+This also worked very well for me.
+Copy link
+xyang5987
+commented
+Sep 16, 2019
+I changed both mixins.py and cipher.py, but I still got HTTPError: Forbidden
+Copy link
+xyang5987
+commented
+Sep 16, 2019
+I use Python 3.7 and pytube 9.5.2 with win 10.
+Copy link
+Algomorph
+commented
+Sep 18, 2019
+Thank you! Works for me as well on Python 3.6.5, urllib3 1.25.3, and PyTube 9.5.1.
+To summarize the patches needed:
+mixins.py - patch by @danielgordon10 in #399 (comment)
+cipher.py - edit of @GravelCZ's patch by @nhatton96 at the bottom of #399 (comment)
+I tried this in Windows 10, and it did finally work. Python 3.7.4, PyTube 9.5.2 with the above 2 patches. I also had to apply the title retrieval patch in main.py and streams.py as outlined by @ogspeace. Did not have to mess with urllib for whatever reason, but maybe just got lucky on the ~50 videos I've tried.
+👍
+1
+😄
+1
+Copy link
+gittethis
+commented
+Sep 18, 2019
+I use Python 3.7 and pytube 9.5.2 with win 10.
+did you use also my patches on "title" retrieval for main.py and streams.py, as outlined and confirmed by @ogspeace ?
+Copy link
+Algomorph
+commented
+Sep 18, 2019
+To keep things clear here, the 'title' retrieval patches fixed a separate issue, e.g. using you_tube_object.video after it's been created. It doesn't affect the "HTTPError: Forbidden" issue, and as such should be kept in a separate PR.
+Copy link
+eyobofficial
+commented
+Sep 26, 2019
+For me, the errors are not occurring randomly. They always seem to occur when I attempt to download music videos.
+Copy link
+santoslopes
+commented
+Oct 19, 2019
+Not working
+It seems to be a good option to download youtube contents but no support, therefore let's look after other options.
+VanDenHendeSimon
+referenced
+this issue
+in VanDenHendeSimon/youtube-downloader
+Oct 28, 2019
+changes to pytube scripts
+67b0b41
+Copy link
+MrSlagovich
+commented
+Nov 2, 2019
+I think I have a working fix now for this and a related issue (#392). It's not pretty, but it seems to get the job done.
+in mixins.py
+if ('signature=' in url or
+('s' not in stream and
+('&sig=' in url or '&lsig=' in url))):
+# For certain videos, YouTube will just provide them pre-signed, in
+# which case there's no real magic to download them and we can skip
+# the whole signature descrambling entirely.
+logger.debug('signature found, skip decipher')
+continue
+if js is not None:
+signature = cipher.get_signature(js, stream['s'])
+else:
+# signature not present in url (line 33), need js to descramble
+# TypeError caught in __main__
+raise TypeError('JS is None')
+logger.debug(
+'finished descrambling signature for itag=%s\n%s',
+stream['itag'], pprint.pformat(
+{
+'s': stream['s'],
+'signature': signature,
+}, indent=2,
+),
+)
+stream_manifest[i]['url'] = url + '&sig=' + signature
+How do i find this mixins py file?
+👍
+1
+Copy link
+YashKarthik
+commented
+Dec 3, 2019
+I tried @Nowbob fix but does'nt work, it says Request not defined.
+Copy link
+gittethis
+commented
+Dec 3, 2019
+You’re missing the Request module in your python installation.
+Sent with the great iPhone
+…
+On 3 Dec 2019, at 15:17, Yash ***@***.***> wrote:
+﻿
+I tried @Nowbob fix but does'nt work, it says Request not defined.
+—
+You are receiving this because you were mentioned.
+Reply to this email directly, view it on GitHub, or unsubscribe.
+Copy link
+Contributor
+hbmartin
+commented
+Feb 6, 2020
+@YashKarthik @gittethis fixed in pytube3: https://github.com/hbmartin/pytube3/
+Copy link
+yijun-li-20
+commented
+Feb 9, 2020
+Cannot work with the solutions in this thread
+Probably because of copyright?
+Mac OS Mojave, Python 3.7
+Copy link
+Contributor
+hbmartin
+commented
+Feb 9, 2020
+@yijun-li-20 what url are you looking at? what version of pytube are you using?
+Copy link
+makesnosense
+commented
+Mar 29, 2020
+hi, pytube3 9.6.4 get urllib.error.HTTPError: HTTP Error 403: Forbidden on this video:
+https://www.youtube.com/watch?v=yEG2VTHS9yg
+Copy link
+aulorbe
+commented
+May 5, 2020
+Where is the mixins.py file in urllib3?
+Copy link
+amitbirajdar
+commented
+Aug 1, 2020
+I am using Python3 and the following changes worked for me:
+So, you basically study the structure of your URL. In my case since I'm working with Youtube Data API and hence a sample URL for me looked like:
+https://www.googleapis.com/youtube/v3/videos?part=snippet&id=8SbUC-UaAxE&key=AIzaSyAVtcurxxUyQznBtLU5UmxqrRSENZ6gAIA
+I used the urllib.parse library and then generated the above URL using the strategy below:
+params = {'part':'snippet','id':VIDEO_KEY_goes_here', 'key':'YOUR_API_KEY_goes_here'}
+querystring = urllib.parse.urlencode(params)
+stats_url = 'https://www.googleapis.com/youtube/v3/videos'+'?'+querystring
+👍
+1
+Copy link
+github-actions
+bot
+commented
+Sep 30, 2020
+This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs. Thank you for your contributions.
+github-actions
+bot
+added
+the
+stat: stale
+label
+Sep 30, 2020
+github-actions
+bot
+closed this
+Oct 7, 2020
+Copy link
+cha1m
+commented
+Mar 25, 2021
+With 9.5.1 (the latest downloaded) I tinkered with all the fixes from this thread and finally got it working. There are two separate issues that i had to tackle:
+KeyError:['title'] and
+"403: Forbidden"
+1)FIrst one to solve was the KeyError:['title']
+For some reason the 'title' key is not retrieved anymore in the root of the player_config_args dictionary, hence the error. Upon debugging of the req/reply I found It is instead present in "player_response/videoDetails/title", so edit main.py:
+def title(self):
+#Get the video title.
+#:rtype: str
+try:
+tt1 = self.player_config_args['title']
+except:
+tt1 = self.player_config_args.get('player_response', {}).get('videoDetails', {}).get('title')
+finally:
+if not tt1:
+tt1 = "Unknown YTube video"
+return tt1
+and streams.py:
+def default_filename(self):
+"""Generate filename based on the video title.
+:rtype: str
+:returns:
+An os file system compatible filename.
+"""
+try:
+title = self.player_config_args['title']
+except:
+title = self.player_config_args.get('player_response', {}).get('videoDetails', {}).get('title')
+finally:
+if not title:
+title = "Unknown YTube video"
+filename = safe_filename(title)
+return '{filename}.{s.subtype}'.format(filename=filename, s=self)
+I did also apply the fix found in this thread to request.py about the Agent-User:
+from urllib2 import Request
+and
+req = Request(url, headers = {"User-Agent": "Mozilla/5.0"})
+#response = urlopen(url)
+response = urlopen(req)
+2)For the "403 Forbidden" I applied first the suggestion about mixins.py in the apply_signature function:
+if ('signature=' in url or
+('s' not in stream and
+('&sig=' in url or '&lsig=' in url))):
+# For certain videos, YouTube will just provide them pre-signed, in
+# which case there's no real magic to download them and we can skip
+# the whole signature descrambling entirely.
+logger.debug('signature found, skip decipher')
+continue
+if js is not None:
+signature = cipher.get_signature(js, stream['s'])
+else:
+# signature not present in url (line 33), need js to descramble
+# TypeError caught in __main__
+raise TypeError('JS is None')
+logger.debug(
+'finished descrambling signature for itag=%s\n%s',
+stream['itag'], pprint.pformat(
+{
+'s': stream['s'],
+'signature': signature,
+}, indent=2,
+),
+)
+stream_manifest[i]['url'] = url + '&sig=' + signature
+then in the cipher.py I replaced the regex pattern as suggested in another post of this thread:
+pattern = [
+r'\b[cs]\s*&&\s*[adf]\.set\([^,]+\s*,\s*encodeURIComponent\s*\(\s*(?P<sig>[a-zA-Z0-9$]+)\(',
+r'\b[a-zA-Z0-9]+\s*&&\s*[a-zA-Z0-9]+\.set\([^,]+\s*,\s*encodeURIComponent\s*\(\s*(?P<sig>[a-zA-Z0-9$]+)\(',
+r'(?P<sig>[a-zA-Z0-9$]+)\s*=\s*function\(\s*a\s*\)\s*{\s*a\s*=\s*a\.split\(\s*""\s*\)',
+r'(["\'])signature\1\s*,\s*(?P<sig>[a-zA-Z0-9$]+)\(',
+r'\.sig\|\|(?P<sig>[a-zA-Z0-9$]+)\(',
+r'yt\.akamaized\.net/\)\s*\|\|\s*.*?\s*[cs]\s*&&\s*[adf]\.set\([^,]+\s*,\s*(?:encodeURIComponent\s*\()?\s*(?P<si$',
+r'\b[cs]\s*&&\s*[adf]\.set\([^,]+\s*,\s*(?P<sig>[a-zA-Z0-9$]+)\(',
+r'\b[a-zA-Z0-9]+\s*&&\s*[a-zA-Z0-9]+\.set\([^,]+\s*,\s*(?P<sig>[a-zA-Z0-9$]+)\(',
+r'\bc\s*&&\s*a\.set\([^,]+\s*,\s*\([^)]*\)\s*\(\s*(?P<sig>[a-zA-Z0-9$]+)\(',
+r'\bc\s*&&\s*[a-zA-Z0-9]+\.set\([^,]+\s*,\s*\([^)]*\)\s*\(\s*(?P<sig>[a-zA-Z0-9$]+)\(',
+r'\bc\s*&&\s*[a-zA-Z0-9]+\.set\([^,]+\s*,\s*\([^)]*\)\s*\(\s*(?P<sig>[a-zA-Z0-9$]+)\('
+]
+any chance get your help in privet? on e mail maybe?
+🚀
+1
+Sign up for free
+to join this conversation on GitHub.
+Already have an account?
+Sign in to comment
+Assignees
+No one assigned
+Labels
+stat: stale
+Projects
+None yet
+Milestone
+No milestone
+Linked pull requests
+Successfully merging a pull request may close this issue.
+None yet
+39 participants
+and others
+© 2021 GitHub, Inc.
 Terms
-Contact
-support@codegrepper.com
-X
-Register to vote on and add code examples. Join our developer community to improve your dev skills and code like a boss!
-No Good?
-Help us improve our code examples by registering to vote on and add answers. Join our developer community to improve your dev skills and code like a boss!
-Continue with Google
-By continuing, I agree that I have read and agree to Greppers's Terms of Service and Privacy Policy.
-X
-Grepper Account Login Required
-Oops, You will need to install Grepper and log-in to perform this action.
-Install Grepper Here
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+You can’t perform that action at this time.
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.

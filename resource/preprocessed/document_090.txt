@@ -1,101 +1,481 @@
-Menjalankan php artisan make:auth di Laravel 6 - Kawan Koding
-PROMO !!
-DISKON 99RB BUKU LARAVEL & VUEJS
-Menu
-Artikel
-Video
-Kursus
-Podcast
-Blog Baru
-Login
-Daftar
-Menjalankan php artisan make:auth di Laravel 6
-09 September 2019
-/ Muhammad Amirul Ihsan
-Assalamualaikum Warrahmatullah Wabarakatuh,
-Pada Laravel 6 kita tidak bisa lagi menjalankan perintah php artisan make:auth karena di Laravel 6 untuk frontend scaffolding dipindahkan ke dalam komponen laravel/ui jadi akan ada sedikit perubahan dalam proses pembuatan auth scaffolding juga.
-Di Laravel 6 pertama kita harus menginstall package laravel/ui terlebih dulu sebelum membuat auth scaffoldingnya dengan menjalankan perintah ini.
-composer require laravel/ui
-Setelah terinstall langkah berikutnya kita bisa menjalankan perintah
-php artisan ui vue --auth
-Pada bagian vue bisa diganti dengan pilihan lainnya seperti bootstrap, react  sesuaikan dengan kebutuhan kawan kawan, berikutnya setelah menjalankan perintah tersebut kita harus menjalankan perintah untuk mengambil dependency dan mengcompile dengan perintah
-npm install && npm run dev
-Untuk menjalankan perintah diatas pastikan di komputer / laptop kawan kawan sudah terinstall nodeJS dan npm ya.
-Dan auth scaffolding yang kita inginkan sudah bisa kita gunakan seperti biasanya, mungkin terasa agak lebih memakan waktu untuk proses ini tapi tetap terasa mudah dengan fitur yang didapatakan seperti register, login, forgot password.
-Wassalamualaikum Warrahmatullah Wabarakatuh,
-Suka dengan artikel ini? Bantu bagikan ke yang lainnya :)
-Artikel Terkait
-Belajar Laravel 6 - Menginstall Laravel
-Laravel 6 - Fix Bug Langsung dari Browser
-Laravel 7 Akan Meminindahkan Auth Controller ke Package laravel/ui
-Promosi
-Topik
+list - Python - TypeError: 'int' object is not iterable - Stack Overflow
+Stack Overflow
+About
+Products
+For Teams
+Stack Overflow
+Public questions & answers
+Stack Overflow for Teams
+Where developers & technologists share private knowledge with coworkers
+Jobs
+Programming & related technical career opportunities
+Talent
+Recruit tech talent & build your employer brand
+Advertising
+Reach developers & technologists worldwide
+About the company
+Loading…
+Log in
+Sign up
+current community
+Stack Overflow
+help
+chat
+Meta Stack Overflow
+your communities
+Sign up or log in to customize your list.
+more stack exchange communities
+company blog
+People who code: we want your input.
+Take the Survey
+Join Stack Overflow to learn, share knowledge, and build your career.
+Sign up with email
+Sign up
+Sign up with Google
+Sign up with GitHub
+Sign up with Facebook
+Home
+Public
+Questions
+Tags
+Users
+Find a Job
+Jobs
+Companies
+Teams
+Stack Overflow for Teams
+– Collaborate and share knowledge with a private group.
+Create a free Team
+What is Teams?
+Teams
+What’s this?
+Create free Team
+Teams
+Q&A for work
+Connect and share knowledge within a single location that is structured and easy to search.
+Learn more
+Python - TypeError: 'int' object is not iterable
+Ask Question
+Asked
+7 years, 7 months ago
+Active
+5 months ago
+Viewed
+855k times
+80
+31
+Here's my code:
+import math
+print "Hey, lets solve Task 4 :)"
+number1 = input ("How many digits do you want to look at? ")
+number2 = input ("What would you like the digits to add up to? ")
+if number1 == 1:
+cow = range(0,10)
+elif number1 == 2:
+cow = range(10,100)
+elif number1 == 3:
+cow = range(100,1000)
+elif number1 == 4:
+cow = range(1000,10000)
+elif number1 == 5:
+cow = range(10000,100000)
+elif number1 == 6:
+cow = range(100000,1000000)
+elif number1 == 7:
+cow = range(1000000,10000000)
+elif number1 == 8:
+cow = range(10000000,100000000)
+elif number1 == 9:
+cow = range(100000000,1000000000)
+elif number1 == 10:
+cow = range(1000000000,10000000000)
+number3 = cow[-1] + 1
+n = 0
+while n < number3:
+number4 = list(cow[n])
+n += 1
+I am looking to make a loop so that for each element in the list, it will get broken down into each of it's characters. For example, say the number 137 was in the list then it would be turned into [1,3,7]. Then I want to add these numbers together (I haven't started that bit yet but I have some idea of how to do it).
+However, I keep getting the error message
+TypeError: 'int' object is not iterable
+when I try and run this.
+What am I doing wrong?
+python list loops iterable
+Share
+Improve this question
+Follow
+edited Sep 3 '15 at 11:08
+perror
+6,3291616 gold badges5656 silver badges7272 bronze badges
+asked Oct 22 '13 at 16:37
+user2908001user2908001
+4
+3
+What do you expect list(cow[n]) to do ?
+– Jon Clements♦
+Oct 22 '13 at 16:39
+12
+Hint: you can give range() dynamic arguments too: cow = range(10 ** (number1 - 1) if number1 > 1 else 0, 10 ** number1) would give you the exact same results as all your if statements, in just one line.
+– Martijn Pieters♦
+Oct 22 '13 at 16:42
+1
+@MartijnPieters I was just thinking about that - but think IIRC, 10 ** 0 is 1 not 0
+– Jon Clements♦
+Oct 22 '13 at 16:43
+1
+@JonClements: adjusted. :-) That 0 is quite inconsistent in this case; all the other numbers are powers of 10..
+– Martijn Pieters♦
+Oct 22 '13 at 16:45
+Add a comment
+|
+3 Answers
+3
+Active
+Oldest
+Votes
+112
+Your problem is with this line:
+number4 = list(cow[n])
+It tries to take cow[n], which returns an integer, and make it a list.
+This doesn't work, as demonstrated below:
+>>> a = 1
+>>> list(a)
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+TypeError: 'int' object is not iterable
+>>>
+Perhaps you meant to put cow[n] inside a list:
+number4 = [cow[n]]
+See a demonstration below:
+>>> a = 1
+>>> [a]
+[1]
+>>>
+Also, I wanted to address two things:
+Your while-statement is missing a : at the end.
+It is considered very dangerous to use input like that, since it evaluates its input as real Python code.
+It would be better here to use raw_input and then convert the input to an integer with int.
+To split up the digits and then add them like you want, I would first make the number a string.
+Then, since strings are iterable, you can use sum:
+>>> a = 137
+>>> a = str(a)
+>>> # This way is more common and preferred
+>>> sum(int(x) for x in a)
+11
+>>> # But this also works
+>>> sum(map(int, a))
+11
+>>>
+Share
+Improve this answer
+Follow
+edited Oct 22 '13 at 17:02
+answered Oct 22 '13 at 16:40
+user2555451user2555451
+6
+Thanks for answering so quickly. How would I then split the number up into individual characters? I tried putting a list(number4) beneath it but that then causes it to run forever when I run it on terminal.
+– user2908001
+Oct 22 '13 at 16:48
+Integers don't have characters. However, you could convert it to a string, which does: str(..).
+You might not need to convert it to a list after that, depending on what you intend to do with it, because strings are iterable and yield their constituent characters.
+– kindall
+Oct 22 '13 at 16:54
+@Mikey6743 - See my edit.
+While you could use a for-loop for this, the quickest option is to use sum.
+– user2555451
+Oct 22 '13 at 16:58
+This is great guys, thank you so much! I've just started learning how to code :) I'm still confused on how to repeat get this to repeat without using a loop. For example, say the user want's to look at 3 digits then I must work it out from 100 to 999. E.g. sum of the integers in 100 = 1 and sum of the integers in 999 = 27.
+– user2908001
+Oct 22 '13 at 19:28
+@Mikey6743 - Hmm, then you might have to use a loop.
+However, since the topic of this question was the TypeError (which my post fixes), why not first close this question as answered (click the tick next to my answer) and then ask another question that focuses on that problem in particular?
+You'll get better help that way.
+You definitely have to make the number a string first though so that you can split it into digits.
+– user2555451
+Oct 22 '13 at 20:07
+|
+Show 1 more comment
+3
+This is very simple you are trying to convert an integer to a list object !!! of course it will fail and it should ...
+To demonstrate/prove this to you by using the example you provided ...just use type function for each case as below and the results will speak for itself !
+>>> type(cow)
+<class 'range'>
+>>>
+>>> type(cow[0])
+<class 'int'>
+>>>
+>>> type(0)
+<class 'int'>
+>>>
+>>> >>> list(0)
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+TypeError: 'int' object is not iterable
+>>>
+Share
+Improve this answer
+Follow
+answered Dec 29 '18 at 23:19
+grepitgrepit
+16.6k66 gold badges8383 silver badges7272 bronze badges
+Add a comment
+|
+1
+If the case is:
+n=int(input())
+Instead of -> for i in n: -> gives error- 'int' object is not iterable
+Use -> for i in range(0,n): -> works fine..!
+Share
+Improve this answer
+Follow
+answered Dec 30 '20 at 20:22
+Augustine JoseAugustine Jose
+72944 silver badges66 bronze badges
+Add a comment
+|
+Your Answer
+Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
+Draft saved
+Draft discarded
+Sign up or log in
+Sign up using Google
+Sign up using Facebook
+Sign up using Email and Password
+Submit
+Post as a guest
+Name
+Email
+Required, but never shown
+Post as a guest
+Name
+Email
+Required, but never shown
+Post Your Answer
+Discard
+By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
+The Overflow Blog
+Podcast 347: Information foraging – the tactics great developers use to find…
+Let’s enhance: use Intel AI to increase image resolution in this demo
+Featured on Meta
+Take the 2021 Developer Survey
+Linked
+-1
+How does type casting happens in Python between list and tuple?
+-2
+python program to reverse the list iterable problem
+3
+list comprehension vs iterable. Python newbie
+0
+Failing to understand simple error message
+0
+How do I print lists side by side in Python?
+-3
+For Loop at Python
+0
+Python Web Scraping Error TypeError: 'int' object is not iterable
+-3
+Compare each number from the same integer
+-3
+How can I create a function in Python that takes a list of numbers and an integer?
+0
+Problems Listing Gmail Messages with User Created Label via Google API
+See more linked questions
+Related
+5335
+How to execute a program or call a system command from Python
+6203
+What are metaclasses in Python?
+6705
+Does Python have a ternary conditional operator?
+3274
+How to get the current time in Python
+1927
+How to know if an object has an attribute in Python
+3180
+How do I loop through or enumerate a JavaScript object?
+2955
+How do I concatenate two lists in Python?
+1206
+In Python, how do I determine if an object is iterable?
+3596
+Does Python have a string 'contains' substring method?
+2190
+Iterate through object properties
+Hot Network Questions
+Am I overreacting to a new rule where I have to check-in my status every morning?
+Where exactly are the Apollo space suit sublimators venting steam into space? is there a photo of an astronaut in space that shows the opening?
+Requirements for creatures to wake others when put to sleep by magic
+The best way to travel between Milton Keynes and Cambridge, England
+Idiom/phrase for achieving just the tip of the iceberg
+What is this stainless-steel item's intended use? Is it a cheese grater?
+Is there any benefit to grouping similar programs into a single path directory?
+How do electrical devices limit the current flow from a socket?
+Why does the solar analemma have a strange shape on Jupiter?
+How insert into Text cell chevron symbols used for Inline GroupOpener icons?
+Probabilistic prediction (quantum mechanics) - what is the meaning of such a prediction and how do you falsify it?
+Command 'time' works on its own but not in a pipeline
+How do I report a gain in bitcoin that I received as reimbursement for buying as waffle iron?
+Delete the word in which the text cursor is
+What is this radial-engined US Navy aircraft in Iceland?
+What should I do if my dog fails a cycle of her separation training?
+Is it possible to send money to my friend in the US using a wire transfer?
+Are wheelchairs allowed in US Wilderness Areas?
+I feel like male professors don't feel comfortable taking me as a student. How should I address this problem?
+In a world where wood is scarce, what are the most important things you need wood for?
+When I walk down the stairs where does my potential energy go?
+9-pin vs 10-pin serial port ribbon cables
+Should Thank You Cards be Written After an Acceptance or After an Educational Experience's Conclusion?
+A Cat’s Game to Claim
+more hot questions
+Question feed
+Subscribe to RSS
+Question feed
+To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+lang-py
+Stack Overflow
+Questions
+Jobs
+Developer Jobs Directory
+Salary Calculator
+Help
+Mobile
+Products
+Teams
+Talent
+Advertising
+Enterprise
+Company
+About
+Press
+Work Here
+Legal
+Privacy Policy
+Terms of Service
+Contact Us
+Cookie Settings
+Cookie Policy
+Stack Exchange Network
+Technology
+Life / Arts
+Culture / Recreation
+Science
+Other
+Stack Overflow
+Server Fault
+Super User
+Web Applications
+Ask Ubuntu
+Webmasters
+Game Development
+TeX - LaTeX
+Software Engineering
+Unix & Linux
+Ask Different (Apple)
+WordPress Development
+Geographic Information Systems
+Electrical Engineering
+Android Enthusiasts
+Information Security
+Database Administrators
+Drupal Answers
+SharePoint
+User Experience
+Mathematica
+Salesforce
+ExpressionEngine® Answers
+Stack Overflow em Português
+Blender
+Network Engineering
+Cryptography
+Code Review
+Magento
+Software Recommendations
+Signal Processing
+Emacs
+Raspberry Pi
+Stack Overflow на русском
+Code Golf
+Stack Overflow en español
+Ethereum
+Data Science
+Arduino
+Bitcoin
+Software Quality Assurance & Testing
+Sound Design
+Windows Phone
+more (29)
+Photography
+Science Fiction & Fantasy
+Graphic Design
+Movies & TV
+Music: Practice & Theory
+Worldbuilding
+Video Production
+Seasoned Advice (cooking)
+Home Improvement
+Personal Finance & Money
+Academia
+Law
+Physical Fitness
+Gardening & Landscaping
+Parenting
+more (10)
+English Language & Usage
+Skeptics
+Mi Yodeya (Judaism)
+Travel
+Christianity
+English Language Learners
+Japanese Language
+Chinese Language
+French Language
+German Language
+Biblical Hermeneutics
+History
+Spanish Language
+Islam
+Русский язык
+Russian Language
+Arqade (gaming)
+Bicycles
+Role-playing Games
+Anime & Manga
+Puzzling
+Motor Vehicle Maintenance & Repair
+Board & Card Games
+Bricks
+Homebrewing
+Martial Arts
+The Great Outdoors
+Poker
+Chess
+Sports
+more (16)
+MathOverflow
+Mathematics
+Cross Validated (stats)
+Theoretical Computer Science
+Physics
+Chemistry
+Biology
+Computer Science
+Philosophy
+Linguistics
+Psychology & Neuroscience
+Computational Science
+more (10)
+Meta Stack Exchange
+Stack Apps
 API
-Atom Editor
-Belajar Android
-Belajar CI 4
-Belajar Codeigniter
-Belajar Dart
-Belajar Flutter
-Belajar JavaScript
-Belajar Laravel
-CI 4
-Codeigniter
-Codeigniter 4
-CSS
-Dart
-Database
-Flutter
-Git
-HTML
-Ignition
-Info Laravel
-Informasi
-Jatim Developer Day
-JavaScript
-Komunitas
-Komunitas Koding
-Komunitas Koding Jawa Timur
-Komunitas Pemrograman
-Lain Lain
-Laravel
-Laravel 5.8
-Laravel 6
-Laravel 7
-Laravel 8
-Laravel Livewire
-Laravel MIgration
-MySQL
-Perlengkapan
-PHP
-PHP 7.4
-Podcast
-PostgreSQL
-Referensi
-REST API
-SEO
-Sublime Text
-Tailwind CSS
-Text Editor
-Tips Laravel
-Tutorial Android
-Tutorial Flutter
-Tutorial Javascript
-Tutorial Laravel
-VSCode
-VueJS
-Sosial Media
-Instagram Kawan Koding
-Youtube Kawan Koding
-Facebook Kawan Koding
-Telegram Kawan Koding
-Tautan
-Artikel
-Video
-Lainnya
-Kursus
-Laravel
-Podcast
-© Kawan Koding, Sidoarjo, Indonesia
-Please enable JavaScript to view the comments powered by
-Disqus.
+Data
+Blog
+Facebook
+Twitter
+LinkedIn
+Instagram
+site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
+rev 2021.6.14.39488
+Stack Overflow works best with JavaScript enabled
+Your privacy
+By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
+Accept all cookies
+Customize settings

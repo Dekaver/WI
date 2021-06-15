@@ -1,1 +1,467 @@
-Kotakode.com | Komunitas Developer IndonesiaYou need to enable JavaScript to run this app.
+PHP undefined key and variable | Edureka Community
+101428/php-undefined-key-and-variable
+Toggle navigation
+Back
+Ask a question
+Blogs
+Browse Categories
+Browse Categories
+Apache KafkaApache SparkBig Data HadoopBlockchainCareer CounsellingCloud ComputingCyber Security & Ethical HackingData AnalyticsDatabaseDevOps & AgileEvents & Trending TopicsIoT (Internet of Things)JavaLinux AdministrationMachine LearningMicroStrategyPMPPower BIPythonRPASeleniumSoftware TestingTableauTalendWeb DevelopmentAsk us Anything!Others
+Log In
+Sign Up
+Home
+Community
+Categories
+Web Development
+PHP
+PHP undefined key and variable
+PHP undefined key and variable
+0 votes
+I followed your tutorial here about user registration using PHP and MySQL here: https://youtu.be/qjwc8ScTHnY
+However, Im getting these errors:
+Warning: Undefined array key "username" in C:\xampp\htdocs\Sublime\Web1\server.php on line 17
+Warning: Undefined array key "email" in C:\xampp\htdocs\Sublime\Web1\server.php on line 18
+Warning: Undefined array key "password" in C:\xampp\htdocs\Sublime\Web1\server.php on line 19
+Warning: Undefined array key "confirmpassword" in C:\xampp\htdocs\Sublime\Web1\server.php on line 20
+This are those line:
+$username = mysqli_real_escape_string($db, $_POST['username']);
+$email = mysqli_real_escape_string($db, $_POST['email']);
+$password = mysqli_real_escape_string($db, $_POST['password']);
+$confirmpassword = mysqli_real_escape_string($db, $_POST['confirmpassword']);
+I did a work around by doing this:
+if (isset($_POST['username']) || isset($_POST['email']) || isset($_POST['password']) || isset($_POST['confirmpassword'])) {
+$username = mysqli_real_escape_string($db, $_POST['username']);
+$email = mysqli_real_escape_string($db, $_POST['email']);
+$password = mysqli_real_escape_string($db, $_POST['password']);
+$confirmpassword = mysqli_real_escape_string($db, $_POST['confirmpassword']);
+}
+But now Im getting undefined variable at line 30 which are $password and $confirmpassword which is the line:
+if ($password != $confirmpassword) {array_push($errors, "Password must be the same");};
+Please help! And why am I getting these errors? Thanks!
+php
+html
+Dec 29, 2020
+in PHP
+by
+Dann carlo
+• 120 points
+•
+12,387 views
+answer
+comment
+flag
+Your comment on this question:
+Your name to display (optional):
+Email me at this address if a comment is added after mine:Email me if a comment is added after mine
+Privacy: Your email address will only be used for sending these notifications.
+Add comment
+Cancel
+1 answer to this question.
+Your answer
+Your name to display (optional):
+Email me at this address if my answer is selected or commented on:Email me if my answer is selected or commented on
+Privacy: Your email address will only be used for sending these notifications.
+Add answer
+Cancel
+0 votes
+Hi, @Dann,
+If you are using some variable then please check if its set or not
+<?=$user_name;?> you need to chnage to <?=(isset($user_name)?$user_name:""?> and same for ot
+answered
+Dec 29, 2020
+by
+anonymous
+• 65,910 points
+comment
+flag
+ask related question
+Your comment on this answer:
+Your name to display (optional):
+Email me at this address if a comment is added after mine:Email me if a comment is added after mine
+Privacy: Your email address will only be used for sending these notifications.
+Add comment
+Cancel
+Related Questions In PHP
+0 votes
+1 answer
+Error:“Notice: Undefined variable”, “Notice: Undefined index”, and “Notice: Undefined offset” using PHP
+Hello @kartik,
+The best way for getting input string is:
+$value ...READ MORE
+answered
+Apr 1, 2020
+in PHP
+by
+Niroj
+• 82,760 points
+•
+20,536 views
+html
+css
+javascript
+php
+laravel
+0 votes
+1 answer
+What is meant by passing the variable by value and reference in PHP?
+Hello,
+When the variable is passed as value ...READ MORE
+answered
+Mar 27, 2020
+in PHP
+by
+Niroj
+• 82,760 points
+•
+534 views
+html
+css
+javascript
+php
+laravel
+angular
+0 votes
+1 answer
+How
+to validate E-mail and URL of Php form?
+hey,
+The code below shows a simple way ...READ MORE
+answered
+Feb 13, 2020
+in PHP
+by
+manish
+•
+646 views
+html
+css
+nodejs
+javascript
+angularjs
+0 votes
+1 answer
+Complete PHP form with proper validation and syntax
+Hey @kartik,
+It's quite simple to have php ...READ MORE
+answered
+Feb 19, 2020
+in PHP
+by
+Niroj
+• 82,760 points
+•
+311 views
+html
+css
+javascript
+php
+angularjs
+0 votes
+1 answer
+What is type casting and type juggling in php?
+Hey,
+The way by which PHP can assign ...READ MORE
+answered
+Mar 27, 2020
+in PHP
+by
+Niroj
+• 82,760 points
+•
+1,197 views
+html
+css
+javascript
+php
+angularjs
+laravel
+0 votes
+1 answer
+What is the use of $_REQUEST variable in php?
+Hii @kartik,
+The $_REQUEST variable is used to read the ...READ MORE
+answered
+Mar 27, 2020
+in PHP
+by
+Niroj
+• 82,760 points
+•
+339 views
+html
+css
+javascript
+php
+angularjs
+laravel
+0 votes
+2 answers
+Define a SQL query? What is the difference between SELECT and UPDATE Query? How do you use SQL in SAS?
+HI..
+SQL is Structured Query Language, which is ...READ MORE
+answered
+Aug 8, 2020
+in PHP
+by
+anonymous
+•
+2,532 views
+mysql
+linux-database
+linux
+php
+html
+css
+0 votes
+1 answer
+Vertically centering text in a div
+Try this code:
+.smallUnitBox {
+...READ MORE
+answered
+Sep 3, 2018
+in Blockchain
+by
+digger
+• 26,720 points
+•
+150 views
+blockchain
+bitcoin
+html
+php
+0 votes
+1 answer
+Can i learn back-end web development without having any knowledge on front end web development?
+Hi
+Unfortunately no, you have to know the ...READ MORE
+answered
+Apr 22, 2020
+in Web Development
+by
+Chyanit
+• 160 points
+•
+549 views
+html
+css
+javascript
+php
+mysql
+linux-database
+linux
+nodejs
+0 votes
+0 answers
+Anyone can help me out to understand the semantic of (document.getElementBYId("demo").innerHTML="Hello") ?
+Hello guys,
+Can Someone helps me to find ...READ MORE
+Jan 17, 2020
+in Web Development
+by
+anonymous
+• 37,520 points
+•
+187 views
+html
+css
+javascript
+nodejs
+php
+sql
+Recent in PHPerror display_errors = On Dec 2, 2020 How do I resize pngs with transparency in PHP? Nov 23, 2020 PHP __PHP_Incomplete_Class Object with my $_SESSION data Nov 23, 2020 How to embed images in html email? Nov 23, 2020 Fatal error: Call to undefined function mysql_connect() Nov 23, 2020
+All categories
+Apache Kafka
+(84)
+Apache Spark
+(598)
+Big Data Hadoop
+(1,860)
+Blockchain
+(1,513)
+Career Counselling
+(1,058)
+Cloud Computing
+(3,097)
+Cyber Security & Ethical Hacking
+(90)
+Data Analytics
+(1,196)
+Database
+(270)
+DevOps & Agile
+(3,096)
+Events & Trending Topics
+(27)
+IoT (Internet of Things)
+(361)
+Java
+(968)
+Linux Administration
+(234)
+Machine Learning
+(173)
+MicroStrategy
+(5)
+PMP
+(367)
+Power BI
+(460)
+Python
+(2,950)
+RPA
+(649)
+Selenium
+(1,550)
+Software Testing
+(56)
+Tableau
+(474)
+Talend
+(73)
+Web Development
+(1,457)
+Ask us Anything!
+(62)
+Others
+(303)
+×
+Join the world's most active Tech Community!
+Welcome back to the World's most active Tech Community!
+Sign up with Gmail
+Sign up with Facebook
+OR
+Please provide a valid input
+SIGN UP
+Already have an Edureka Account? Login
+Please enter a valid emailid
+Forgot Password?
+LOGIN
+Don’t have edureka account? Sign Up
+resend ?
+reset password
+Don’t have edureka account? Sign Up
+reset password
+Don’t have edureka account? Sign Up
+Send Code
+Don’t have edureka account? Sign Up
+Subscribe to our Newsletter, and get personalized recommendations.
+Sign up with Google
+Signup with Facebook
+Already have an account? Sign in.
+×
+TRENDING CERTIFICATION COURSES
+DevOps Certification Training
+AWS Architect Certification Training
+Big Data Hadoop Certification Training
+Tableau Training & Certification
+Python Certification Training for Data Science
+Selenium Certification Training
+PMP® Certification Exam Training
+Robotic Process Automation Training using UiPath
+Apache Spark and Scala Certification Training
+Microsoft Power BI Training
+Online Java Course and Training
+Python Certification Course
+TRENDING MASTERS COURSES
+Data Scientist Masters Program
+DevOps Engineer Masters Program
+Cloud Architect Masters Program
+Big Data Architect Masters Program
+Machine Learning Engineer Masters Program
+Full Stack Web Developer Masters Program
+Business Intelligence Masters Program
+Data Analyst Masters Program
+Test Automation Engineer Masters Program
+Post-Graduate Program in Artificial Intelligence & Machine Learning
+Post-Graduate Program in Big Data Engineering
+COMPANY
+About us
+News & Media
+Reviews
+Contact us
+Blog
+Community
+Sitemap
+Blog Sitemap
+Community Sitemap
+WORK WITH US
+Careers
+Become an Instructor
+Become an Affiliate
+Become a Partner
+Hire from Edureka
+DOWNLOAD APP
+CATEGORIES
+CATEGORIES
+Cloud Computing
+DevOps
+Big Data
+Data Science
+BI and Visualization
+Programming & Frameworks
+Software Testing
+Project Management and Methodologies
+Robotic Process Automation
+Frontend Development
+Data Warehousing and ETL
+Artificial Intelligence
+Blockchain
+Databases
+Cyber Security
+Mobile Development
+Operating Systems
+Architecture & Design Patterns
+Digital Marketing
+TRENDING BLOG ARTICLES
+TRENDING BLOG ARTICLES
+Selenium tutorial
+Selenium interview questions
+Java tutorial
+What is HTML
+Java interview questions
+PHP tutorial
+JavaScript interview questions
+Spring tutorial
+PHP interview questions
+Inheritance in Java
+Polymorphism in Java
+Spring interview questions
+Pointers in C
+Linux commands
+Android tutorial
+JavaScript tutorial
+jQuery tutorial
+SQL interview questions
+MySQL tutorial
+Machine learning tutorial
+Python tutorial
+What is machine learning
+Ethical hacking tutorial
+SQL injection
+AWS certification career opportunities
+AWS tutorial
+What Is cloud computing
+What is blockchain
+Hadoop tutorial
+What is artificial intelligence
+Node Tutorial
+Collections in Java
+Exception handling in java
+Python Programming Language
+Python interview questions
+Multithreading in Java
+ReactJS Tutorial
+Data Science vs Big Data vs Data Analytics
+Software Testing Interview Questions
+R Tutorial
+Java Programs
+JavaScript Reserved Words and Keywords
+Implement thread.yield() in Java: Examples
+Implement Optical Character Recognition in Python
+All you Need to Know About Implements In Java
+© 2021 Brain4ce Education Solutions Pvt. Ltd. All rights Reserved.
+Terms & Conditions
+Legal & Privacy
+"PMP®","PMI®", "PMI-ACP®" and "PMBOK®" are registered marks of the Project Management Institute, Inc.
+MongoDB®, Mongo and the leaf logo are the registered trademarks of MongoDB, Inc.

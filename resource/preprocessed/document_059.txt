@@ -1,57 +1,397 @@
-Download Image from URL using Python - jdhao's blogjdhao's blogHomeArchivesTagsCategoriesAboutjdhao's blogHomeArchivesTagsCategoriesAboutDownload Image from URL using Python2020-06-17Python322 words
-2 mins read
-times readContentsUsing urllib packageUsing requests packageDownloading large files with streamingresponse.iter_contentresponse.rawReferencesRecently, I want to download some images using Python. This is what I’ve
-learned after survey.Using urllib packageThe native and naive way is to use
-urllib.request module to download an image.import urllib.request
-url = "https://cdn.pixabay.com/photo/2020/05/12/17/04/wind-turbine-5163993_960_720.jpg"
-r = urllib.request.urlopen(url)
-with open("wind_turbine.jpg", "wb") as f:
-f.write(r.read())
-However, the above code may error out with following message:urllib.error.HTTPError: HTTP Error 403: ForbiddenIn this case, we need to add a HTTP header to the request:import urllib.request
-# The following way works. Ref: https://stackoverflow.com/a/45358832/6064933
-req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-with open("wind_turbine.jpg", "wb") as f:
-with urllib.request.urlopen(req) as r:
-f.write(r.read())
-Using requests packageA better way is to use requests
-package. Here is a simple example to download an image using requests:import requests
-url = "https://cdn.pixabay.com/photo/2020/05/12/17/04/wind-turbine-5163993_960_720.jpg"
-r = requests.get(url)
-with open("wind-turbine.jpg", "wb") as f:
-f.write(r.content)
-Downloading large files with streamingresponse.iter_contentIn the above code, all content of the image will be read into memory at once.
-If the image is large, it may consume too much memory.Alternatively, we can set stream parameter to True to stream request. In
-this case, only the response header is downloaded. We can retrieve the image in
-a whole using response.content1 or chunk by chunk by using
-response.iter_content method:# Using requests to download large files.
-with requests.get(url, stream=True) as r:
-with open("wind-turbine.jpg", "wb") as f:
-for chunk in r.iter_content(chunk_size=1024):
-if chunk:
-f.write(chunk)
-response.rawWhen stream is True, we can also use response.raw to stream the download.
-response.raw is a file-like object. With the help of shutil.copyfileobj(),
-we can save the image like this:# using r.raw
-with requests.get(url, stream=True) as r:
-with open("wind-turbine.jpg", "wb") as f:
-r.raw.decode_content = True
-shutil.copyfileobj(r.raw, f)
-# or f.write(r.raw.read())
-ReferencesPython 3 urllib HTTP 403 error.Why to use iter_content and chunk_size in python requests?How to download image using requests?Download large file in python with requests.https://requests.readthedocs.io/en/latest/user/advanced/#body-content-workflowYou may want to avoid this for large files! ↩︎Author
-jdhaoLastMod
-2020-06-18License
-CC BY-NC-ND 4.0
-Reward
-wechat
-alipayrequestsDuplicate Logging Messages in Python
-Prev
-Tmux: Open Terminal Failed in Kitty Terminal
-Next
-Please enable JavaScript to view the comments powered by Disqus.Powered by Hugo
+dictionary - Python AttributeError: 'dict' object has no attribute 'append' - Stack Overflow
+Stack Overflow
+About
+Products
+For Teams
+Stack Overflow
+Public questions & answers
+Stack Overflow for Teams
+Where developers & technologists share private knowledge with coworkers
+Jobs
+Programming & related technical career opportunities
+Talent
+Recruit tech talent & build your employer brand
+Advertising
+Reach developers & technologists worldwide
+About the company
+Loading…
+Log in
+Sign up
+current community
+Stack Overflow
+help
+chat
+Meta Stack Overflow
+your communities
+Sign up or log in to customize your list.
+more stack exchange communities
+company blog
+People who code: we want your input.
+Take the Survey
+Join Stack Overflow to learn, share knowledge, and build your career.
+Sign up with email
+Sign up
+Sign up with Google
+Sign up with GitHub
+Sign up with Facebook
+Home
+Public
+Questions
+Tags
+Users
+Find a Job
+Jobs
+Companies
+Teams
+Stack Overflow for Teams
+– Collaborate and share knowledge with a private group.
+Create a free Team
+What is Teams?
+Teams
+What’s this?
+Create free Team
+Teams
+Q&A for work
+Connect and share knowledge within a single location that is structured and easy to search.
+Learn more
+Python AttributeError: 'dict' object has no attribute 'append'
+Ask Question
+Asked
+3 years, 5 months ago
+Active
+1 year, 8 months ago
+Viewed
+79k times
+14
+7
+I am creating a loop in order to append continuously values from user input to a dictionary but i am getting this error:
+AttributeError: 'dict' object has no attribute 'append'
+This is my code so far:
+for index, elem in enumerate(main_feeds):
+print(index,":",elem)
+temp_list = index,":",elem
+li = {}
+print_user_areas(li)
+while True:
+n = (input('\nGive number: '))
+if n == "":
+break
+else:
+if n.isdigit():
+n=int(n)
+print('\n')
+print (main_feeds[n])
+temp = main_feeds[n]
+for item in user:
+user['areas'].append[temp]
+Any ideas?
+python dictionary for-loop tuples
+Share
+Follow
+edited Jan 12 '18 at 22:00
+DYZ
+45.8k99 gold badges4848 silver badges7676 bronze badges
+asked Jan 12 '18 at 21:50
+anonymousanonymous
+16111 gold badge11 silver badge33 bronze badges
+3
+3
+Well, a dict doesn't have an append method. And even if it did, you couldn't call it with square brackets.
+– Daniel Roseman
+Jan 12 '18 at 21:56
+use defaultdict instead (with list in it)
+– RandomB
+Jan 12 '18 at 21:59
+You assign values to a dict using its key like this : user['areas'] = temp. Your code would only work IF user[areas] was already a list. If you need it to be a list, construct the list first, THEN assign that list to the key.
+– JacobIRR
+Jan 12 '18 at 22:00
+Add a comment
 |
-Theme -
-Evensite pv:
+2 Answers
+2
+Active
+Oldest
+Votes
+15
+Like the error message suggests, dictionaries in Python do not provide an append operation.
+You can instead just assign new values to their respective keys in a dictionary.
+mydict = {}
+mydict['item'] = input_value
+If you're wanting to append values as they're entered you could instead use a list.
+mylist = []
+mylist.append(input_value)
+Your line user['areas'].append[temp] looks like it is attempting to access a dictionary at the value of key 'areas', if you instead use a list you should be able to perform an append operation.
+Using a list instead:
+user['areas'] = []
+On that note, you might want to check out the possibility of using a defaultdict(list) for your problem. See here
+Share
+Follow
+edited Jan 12 '18 at 22:15
+answered Jan 12 '18 at 22:12
+Shane WilliamsonShane Williamson
+15111 silver badge55 bronze badges
+2
+4
+Dictionaries in Python do provide an update method though.
+So, if you want to add more key-value pairs: dict.update({'another_key': 'another_value'}).
+Maybe of value here.
+update will overwrite existing keys of the same name, so caveat emptor.
+– Matt Morgan
+Jan 12 '18 at 22:15
+Very true Matt! Although, it looks like they're trying to just append values here.
+– Shane Williamson
+Jan 12 '18 at 22:17
+Add a comment
 |
-site uv: ©
-2017 -
-2021jdhao
+-2
+Either
+use dict.setdefault() if the key is not added yet to dictionary :
+dict.setdefault(key,[]).append(value)
+or use, if you already have the keys set up:
+dict[key].append(value)
+source: stackoverflow answers
+Share
+Follow
+answered Oct 18 '19 at 8:50
+sivisivi
+9,06822 gold badges4343 silver badges4747 bronze badges
+1
+you should at least add a link to which answer from stackoverflow you're refering to
+– João Ciocca
+May 10 at 19:52
+Add a comment
+|
+Your Answer
+Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
+Draft saved
+Draft discarded
+Sign up or log in
+Sign up using Google
+Sign up using Facebook
+Sign up using Email and Password
+Submit
+Post as a guest
+Name
+Email
+Required, but never shown
+Post as a guest
+Name
+Email
+Required, but never shown
+Post Your Answer
+Discard
+By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
+Not the answer you're looking for? Browse other questions tagged python dictionary for-loop tuples
+or ask your own question.
+The Overflow Blog
+Podcast 347: Information foraging – the tactics great developers use to find…
+Let’s enhance: use Intel AI to increase image resolution in this demo
+Featured on Meta
+Take the 2021 Developer Survey
+Linked
+631
+How does collections.defaultdict work?
+6
+'dict' object has no attribute 'append' Json
+1
+'dict' object has no attribute 'append'
+Related
+1927
+How to know if an object has an attribute in Python
+220
+AttributeError: 'module' object has no attribute
+591
+Convert nested Python dict to object?
+1206
+In Python, how do I determine if an object is iterable?
+1310
+Referring to the null object in Python
+1429
+Why do Python classes inherit object?
+348
+Accessing dict keys like an attribute?
+373
+Converting Python dict to kwargs?
+345
+Why do I get AttributeError: 'NoneType' object has no attribute 'something'?
+504
+Error: “ 'dict' object has no attribute 'iteritems' ”
+Hot Network Questions
+How do you say "in the year of the plague" in Latin?
+How can I show a friend of mine that his behavior is about to make me quit playing?
+Why is the 0 exponent to any number always equal to 1?
+Why aren't the pillars of Gringotts Bank straight?
+How to cut a UV sphere in half?
+How realistic is it to pay for one's living and tuition with a student job?
+English equivalent for the expression "only iron can cut iron"
+Generalised multi-dimensional chess knight's moves
+Ship of Theseus in Halacha
+Is there any benefit to grouping similar programs into a single path directory?
+Gravity Shielding: How to defeat it?
+I feel like male professors don't feel comfortable taking me as a student. How should I address this problem?
+Longest "Cycle" word chain
+In a world where wood is scarce, what are the most important things you need wood for?
+Should Thank You Cards be Written After an Acceptance or After an Educational Experience's Conclusion?
+I'm seeing gyms in Pokémon Go with pokémon that have ridiculous CP numbers, and I have no clue what they are
+What should I do if my dog fails a cycle of her separation training?
+Is every nonsingular linear transformation invertible?
+How to generate all possible functions combinations
+Making bold math symbols more bold
+Am I overreacting to a new rule where I have to check-in my status every morning?
+Delete the word in which the text cursor is
+A Cat’s Game to Claim
+How do mathematicians read math books?
+more hot questions
+Question feed
+Subscribe to RSS
+Question feed
+To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+lang-py
+Stack Overflow
+Questions
+Jobs
+Developer Jobs Directory
+Salary Calculator
+Help
+Mobile
+Products
+Teams
+Talent
+Advertising
+Enterprise
+Company
+About
+Press
+Work Here
+Legal
+Privacy Policy
+Terms of Service
+Contact Us
+Cookie Settings
+Cookie Policy
+Stack Exchange Network
+Technology
+Life / Arts
+Culture / Recreation
+Science
+Other
+Stack Overflow
+Server Fault
+Super User
+Web Applications
+Ask Ubuntu
+Webmasters
+Game Development
+TeX - LaTeX
+Software Engineering
+Unix & Linux
+Ask Different (Apple)
+WordPress Development
+Geographic Information Systems
+Electrical Engineering
+Android Enthusiasts
+Information Security
+Database Administrators
+Drupal Answers
+SharePoint
+User Experience
+Mathematica
+Salesforce
+ExpressionEngine® Answers
+Stack Overflow em Português
+Blender
+Network Engineering
+Cryptography
+Code Review
+Magento
+Software Recommendations
+Signal Processing
+Emacs
+Raspberry Pi
+Stack Overflow на русском
+Code Golf
+Stack Overflow en español
+Ethereum
+Data Science
+Arduino
+Bitcoin
+Software Quality Assurance & Testing
+Sound Design
+Windows Phone
+more (29)
+Photography
+Science Fiction & Fantasy
+Graphic Design
+Movies & TV
+Music: Practice & Theory
+Worldbuilding
+Video Production
+Seasoned Advice (cooking)
+Home Improvement
+Personal Finance & Money
+Academia
+Law
+Physical Fitness
+Gardening & Landscaping
+Parenting
+more (10)
+English Language & Usage
+Skeptics
+Mi Yodeya (Judaism)
+Travel
+Christianity
+English Language Learners
+Japanese Language
+Chinese Language
+French Language
+German Language
+Biblical Hermeneutics
+History
+Spanish Language
+Islam
+Русский язык
+Russian Language
+Arqade (gaming)
+Bicycles
+Role-playing Games
+Anime & Manga
+Puzzling
+Motor Vehicle Maintenance & Repair
+Board & Card Games
+Bricks
+Homebrewing
+Martial Arts
+The Great Outdoors
+Poker
+Chess
+Sports
+more (16)
+MathOverflow
+Mathematics
+Cross Validated (stats)
+Theoretical Computer Science
+Physics
+Chemistry
+Biology
+Computer Science
+Philosophy
+Linguistics
+Psychology & Neuroscience
+Computational Science
+more (10)
+Meta Stack Exchange
+Stack Apps
+API
+Data
+Blog
+Facebook
+Twitter
+LinkedIn
+Instagram
+site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
+rev 2021.6.14.39488
+Stack Overflow works best with JavaScript enabled
+Your privacy
+By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
+Accept all cookies
+Customize settings

@@ -68,7 +68,6 @@ I get an error message when I try FreqDist() in NLTK -- NameError: name 'nltk' i
 however, I still get the error below.
 nltk
 Share
-Improve this question
 Follow
 asked Jul 15 '14 at 14:26
 MindBrainMindBrain
@@ -94,11 +93,10 @@ Or use namespaces,
 >>> ConditionalFreqDist()
 <ConditionalFreqDist with 0 conditions>
 Share
-Improve this answer
 Follow
 answered Jul 15 '14 at 14:32
 alvasalvas
-95.2k9191 gold badges367367 silver badges644644 bronze badges
+95.3k9191 gold badges367367 silver badges644644 bronze badges
 Add a comment
 |
 0
@@ -111,7 +109,6 @@ import nltk
 if nltk is installed properly then you will be returned with console.
 then you can use your code without any error.
 Share
-Improve this answer
 Follow
 answered Oct 22 '14 at 11:35
 Manjunath NManjunath N
@@ -146,8 +143,8 @@ By clicking “Post Your Answer”, you agree to our terms of service, privacy p
 Not the answer you're looking for? Browse other questions tagged nltk
 or ask your own question.
 The Overflow Blog
-Using low-code tools to iterate products faster
-Podcast 345: A good software tutorial explains the How. A great one explains…
+Podcast 347: Information foraging – the tactics great developers use to find…
+Let’s enhance: use Intel AI to increase image resolution in this demo
 Featured on Meta
 Take the 2021 Developer Survey
 Related
@@ -168,30 +165,30 @@ NameError: name 'word' is not defined ,python
 10
 Architecture Not Supported Error when installing nltk with pip on Mac
 Hot Network Questions
-Why did this gallon of milk stay fresh for so long?
-How to get real-looking rust that will be safe to the touch?
-Dedekind-"finiteness" for arbitrary limit cardinals
-What are the safety and warranty implications of steaming bread in a domestic oven?
-short story: future gameshow in which failure is fatal
-Revisiting the unreasonable effectiveness of mathematics
-What are the numbers below the notes in Sarasate's "Gypsy Airs"
-Can an American state ban a (minor) political party?
-Does folic acid contain a benzyl or a phenyl group?
-Is LUKS still an effective option for consumer FDE considering Elcomsoft can break it?
-Why put a resistor in series with the postive terminal in a non inverting op-amp circuit?
-Why are high power LEDs categorized by wattage, not voltage & amperage?
-"She need not worry" or "she needs to not worry"?
-Trying to identify this symbol ⎋ used for a key in a tutorial
-Can a Rogue find an undetectable Trap?
-Is Occam's Razor a Prior?
-Where is Lorentz contraction centered on?
-Interview by fellow PhD students, not the professor himself
-Is there objective proof that recent bills (1st half of 2021) that restrict voting are targeting Democratic voters specifically?
-Why is the integral of the tangent function a natural log function?
-Is the speed of light through a medium invariant, just like the speed of light through vacuum is invariant? Also, do time dilation etc. still occur?
-Showing the bounding box for every coordinate system in QGIS
-QGIS grouping by attributes
-Did I design my LED circuit correctly?
+Why is the 0 exponent to any number always equal to 1?
+How are constellations intact if the stars are rotating around galactic nuclei?
+Making bold math symbols more bold
+How can I show a friend of mine that his behavior is about to make me quit playing?
+Requirements for creatures to wake others when put to sleep by magic
+A meeting has 12 employees. Given that 8 of the employees are female, what is the probability that all employees are female?
+Friend Needs Help in Turkey
+How do I report a gain in bitcoin that I received as reimbursement for buying as waffle iron?
+How do electrical devices limit the current flow from a socket?
+Is it legal to put a death row inmate in harms way if their execution is near?
+Why aren't the pillars of Gringotts Bank straight?
+Why do relays, solenoids, and motors have a DC voltage across them if they're inductors?
+Longest "Cycle" word chain
+Why is support for parties so low in Belarus?
+9-pin vs 10-pin serial port ribbon cables
+When I walk down the stairs where does my potential energy go?
+Where exactly are the Apollo space suit sublimators venting steam into space? is there a photo of an astronaut in space that shows the opening?
+A Cat’s Game to Claim
+The best way to travel between Milton Keynes and Cambridge, England
+English equivalent for the expression "only iron can cut iron"
+How do the inhabitants of my city-wide death trap figure out that nobody will be let out until only 100 people are left alive?
+Countering the threat posed by a rogue Moon-spanning AI
+B+W movie with men in togas and Roman style buildings and several shots of rockets fired out of huge vertical gun
+Bash partitioning script
 more hot questions
 Question feed
 Subscribe to RSS
@@ -339,7 +336,7 @@ Twitter
 LinkedIn
 Instagram
 site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.6.10.39473
+rev 2021.6.14.39488
 Stack Overflow works best with JavaScript enabled
 Your privacy
 By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.

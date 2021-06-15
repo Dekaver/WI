@@ -143,7 +143,6 @@ print("Bayes_error: ",cross_val(error))
 return result
 python numpy machine-learning scikit-learn
 Share
-Improve this question
 Follow
 edited Nov 22 '13 at 20:45
 Learner
@@ -177,11 +176,10 @@ Votes
 2
 TruncatedSVD.transform returns an array, not a sparse matrix. In fact, in the present version of scikit-learn, only the vectorizers return sparse matrices.
 Share
-Improve this answer
 Follow
 answered Nov 23 '13 at 13:07
 Fred FooFred Foo
-329k6969 gold badges690690 silver badges802802 bronze badges
+330k6969 gold badges691691 silver badges803803 bronze badges
 1
 @Learner: it's in the docstring for that method.
 – Fred Foo
@@ -211,16 +209,16 @@ By clicking “Post Your Answer”, you agree to our terms of service, privacy p
 Not the answer you're looking for? Browse other questions tagged python numpy machine-learning scikit-learn
 or ask your own question.
 The Overflow Blog
-Using low-code tools to iterate products faster
-Podcast 345: A good software tutorial explains the How. A great one explains…
+Podcast 347: Information foraging – the tactics great developers use to find…
+Let’s enhance: use Intel AI to increase image resolution in this demo
 Featured on Meta
 Take the 2021 Developer Survey
 Related
-1923
+1927
 How to know if an object has an attribute in Python
 1919
 Determine the type of an object?
-502
+504
 Error: “ 'dict' object has no attribute 'iteritems' ”
 2
 How to split sparse matrix into train and test sets?
@@ -231,30 +229,30 @@ ValueError: Input arrays should have the same number of samples as target arrays
 1
 How to Increase accuracy and precision for my logistic regression model?
 Hot Network Questions
-Revisiting the unreasonable effectiveness of mathematics
-Why some CRS are deprecated in QGIS?
-Sharing a research proposal when applying for funds
-Decode USB packets
-Photo Competition 2021-06-07: Long Exposure
-Mansfield 40 toilet flush levers keep breaking
-Where is Lorentz contraction centered on?
-Is co-authoring with friends a good idea?
-Why put a resistor in series with the postive terminal in a non inverting op-amp circuit?
-Is Occam's Razor a Prior?
-Is the speed of light through a medium invariant, just like the speed of light through vacuum is invariant? Also, do time dilation etc. still occur?
-Grep and Cut command in linux
-Former coworker I gave a reference for sabotaged the company on his last day - Should I update the reference contact with this new information?
-How to indicate a checkbox/toggle is "always on"
-Refueling a Mars mission on the way
-How come full throttle is meaning full speed instead of the opposite?
-Are there any greater risks of traveling significantly faster to another planet?
-How to get real-looking rust that will be safe to the touch?
-How do trademarks apply to Open Source?
-Why don't demons possess children until after puberty?
-How can I use basename with parallel?
-Automatically get points in a given triangular lattice and vice versa？
-When is it appropriate to foam a landing strip? (example JB292)
-Being forced to take annual leave against my wishes, what are my options
+What does "a stroke a hole" refers to in "The Thirty-Nine Steps"?
+Idiom/phrase for achieving just the tip of the iceberg
+Are mobile air conditioning systems an inherently flawed design?
+What does "fruit" in Mat 12:33 refer to?
+What’s wrong with the plumbing setup under this kitchen sink?
+I'm seeing gyms in Pokémon Go with pokémon that have ridiculous CP numbers, and I have no clue what they are
+Is black hole pattern possible in Conway's Game of Life that eats/clears everything?
+Visualize a Risky program
+A Cat’s Game to Claim
+How insert into Text cell chevron symbols used for Inline GroupOpener icons?
+9-pin vs 10-pin serial port ribbon cables
+Quoting a book whose title contains a racial slur
+How can I get honest intent about future plans from employees?
+Probabilistic prediction (quantum mechanics) - what is the meaning of such a prediction and how do you falsify it?
+What does "Joggleberry", "celestial limit" and "pink penultimate" mean in "The Power-House"?
+Are wheelchairs allowed in US Wilderness Areas?
+How do mathematicians read math books?
+When I walk down the stairs where does my potential energy go?
+Delete the word in which the text cursor is
+I feel like male professors don't feel comfortable taking me as a student. How should I address this problem?
+How was a government formed in Israel with only 60 supporting votes, rather than 61?
+A meeting has 12 employees. Given that 8 of the employees are female, what is the probability that all employees are female?
+What is this radial-engined US Navy aircraft in Iceland?
+Has Bennett (Israeli prime minister) said what his stance on Palestine is?
 more hot questions
 Question feed
 Subscribe to RSS
@@ -403,7 +401,7 @@ Twitter
 LinkedIn
 Instagram
 site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.6.10.39473
+rev 2021.6.14.39488
 Stack Overflow works best with JavaScript enabled
 Your privacy
 By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.

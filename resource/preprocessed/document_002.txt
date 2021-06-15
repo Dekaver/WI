@@ -68,7 +68,6 @@ I get an error message when I try FreqDist() in NLTK -- NameError: name 'nltk' i
 however, I still get the error below.
 nltk
 Share
-Improve this question
 Follow
 asked Jul 15 '14 at 14:26
 MindBrainMindBrain
@@ -94,11 +93,10 @@ Or use namespaces,
 >>> ConditionalFreqDist()
 <ConditionalFreqDist with 0 conditions>
 Share
-Improve this answer
 Follow
 answered Jul 15 '14 at 14:32
 alvasalvas
-95.2k9191 gold badges367367 silver badges644644 bronze badges
+95.3k9191 gold badges367367 silver badges644644 bronze badges
 Add a comment
 |
 0
@@ -111,7 +109,6 @@ import nltk
 if nltk is installed properly then you will be returned with console.
 then you can use your code without any error.
 Share
-Improve this answer
 Follow
 answered Oct 22 '14 at 11:35
 Manjunath NManjunath N
@@ -146,8 +143,8 @@ By clicking “Post Your Answer”, you agree to our terms of service, privacy p
 Not the answer you're looking for? Browse other questions tagged nltk
 or ask your own question.
 The Overflow Blog
-Using low-code tools to iterate products faster
-Podcast 345: A good software tutorial explains the How. A great one explains…
+Podcast 347: Information foraging – the tactics great developers use to find…
+Let’s enhance: use Intel AI to increase image resolution in this demo
 Featured on Meta
 Take the 2021 Developer Survey
 Related
@@ -168,30 +165,30 @@ NameError: name 'word' is not defined ,python
 10
 Architecture Not Supported Error when installing nltk with pip on Mac
 Hot Network Questions
-How to indicate a checkbox/toggle is "always on"
-Sum of set bits from 1 to n
-What does existential unforgeability mean in a digital signature scheme?
-Decode USB packets
-Why was the neutrino thought to be massless?
-Is maximum speed a thing?
-Critical differences between Ubuntu Server and Ubuntu Desktop for 20.04 LTS?
-Do the murder statistics of 5 cities bring the USA to the 3rd highest country, from 189th?
-Interviewer was two hours late
-Why don't demons possess children until after puberty?
-Are there any greater risks of traveling significantly faster to another planet?
-Telling a coworker they aren't invited into my house
-Does folic acid contain a benzyl or a phenyl group?
-Why put a resistor in series with the postive terminal in a non inverting op-amp circuit?
-How are intersex people explained by Christianity?
-Why aren't resistors being used here?
-Can a Rogue find an undetectable Trap?
-Why do CMOS NOT gate designs differ from BJT NOT gate designs?
-What are the DM's responsibilities when dealing with a character's death?
-Make git diff aware of Emacs Lisp functions?
-Does Ubuntu Server have any special preinstalled packages
-Is it suspicious that gravitational waves propagate at the speed of light?
-Being forced to take annual leave against my wishes, what are my options
-How can I use basename with parallel?
+False hrm results
+Bash partitioning script
+Command 'time' works on its own but not in a pipeline
+Is there a left-right connection?
+Is it possible to send money to my friend in the US using a wire transfer?
+How can I show a friend of mine that his behavior is about to make me quit playing?
+I'm seeing gyms in Pokémon Go with pokémon that have ridiculous CP numbers, and I have no clue what they are
+Is every nonsingular linear transformation invertible?
+Is there any benefit to grouping similar programs into a single path directory?
+Puppy safety for tug of war
+Am I overreacting to a new rule where I have to check-in my status every morning?
+Are mobile air conditioning systems an inherently flawed design?
+Positioning of multiple `pic` using `below=of` not properly aligned
+Garlic as staple food for colonies?
+Why doesn't an electron rip itself apart?
+What would the wavelength of the Cosmic Background Gravitational Wave radiation be?
+Quoting a book whose title contains a racial slur
+Is it legal to put a death row inmate in harms way if their execution is near?
+A meeting has 12 employees. Given that 8 of the employees are female, what is the probability that all employees are female?
+Why does the solar analemma have a strange shape on Jupiter?
+Why does gay marriage support seem to be "inversely" racially polarized particularly comparing White and Black Americans?
+Gravity Shielding: How to defeat it?
+Denormalising a database for speed - is it an anti-pattern
+What is this radial-engined US Navy aircraft in Iceland?
 more hot questions
 Question feed
 Subscribe to RSS
@@ -339,7 +336,7 @@ Twitter
 LinkedIn
 Instagram
 site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.6.10.39473
+rev 2021.6.14.39488
 Stack Overflow works best with JavaScript enabled
 Your privacy
 By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.

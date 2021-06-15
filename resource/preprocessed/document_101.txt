@@ -1,20 +1,117 @@
-Python NameError: name ‘string’ is not defined - Python Examples
-Python Examples
-Basics Strings Lists Dictionary Files Logging sqlite3 OpenCV Pillow Pandas Numpy PyMongo
-Python String Operations Python Read String from Console Python Print String to Console Output Example Python String Length Python Substring Python Reverse String Python Strip() - Remove White Spaces at Start and End of String Python Convert String to Lowercase Python Convert String to Uppercase Python Replace String Python Replace String in File Python Check if the String contains only Alphabets Python Generate Random String of Specific Length Python Split String Python Split String into Specific Length Chunks Python Split String by Regex Python Split String by Space Python Split String by Underscore Python Split String by New Line Python Split String by Comma Python Split String into List of Characters Python Regex - Check if String starts with Specific Word Python Regex - Check if String ends with Specific Word Python RegEx - Extract or Find All the Numbers in a String Python RegEx - Find numbers of specific length in String Python String - Replace character at Specific Position Python String - Find the index of first occurrence of substring Python String - Find the number of overlapping occurrences of a substring Python String Capitalize First Character Python - Check if String contains only Alphanumeric Characters Python - Iterate over words of String Python NameError: name 'string' is not defined
-Python NameError: name ‘string’ is not defined
-Contents
-Introduction Recreate NameError Solution to NameError Summary
-NameError: name ‘string’ is not defined This is the common Python Error when you use the word string instead of the keyword str while type conversion or such in your program. In this tutorial, we shall learn how to recreate this NameError and ways to handle this error.
-Recreate NameError Let us recreate this error. Python Program n = 100
-s = string(n)
-Run Output Traceback (most recent call last):
-File "example1.py", line 2, in <module>
-s = string(n)
-NameError: name 'string' is not defined What we tried here is to convert a number to string. But we all know that str(number) converts number to string but not string(number). This is kind of a typo error from the programmer point of view.
-Solution to NameError You have to use the correct Python keywords. For example, let us correct the above Python program, by replacing the word –string with the correct keyword str. Python Program n = 100
-s = str(n)
-Run
-Summary In this tutorial of Python Examples, we learned how to solve NameError in our Python programs. Related Tutorials
-How to solve Python NameError: name ‘logging’ is not defined? Handling Python FileNotFoundError Python TypeError: method() takes 0 positional arguments but 1 was given ModuleNotFoundError: No module named ‘openpyxl’ Python Logging ERROR Lines
-Sitemap Privacy Policy Terms of Use Contact Us
+Typeerror int object is not iterable : Root cause and Fix
+0
+Home
+Data Science Library
+Computer Vision
+Data Preprocessing
+Data Science Foundation
+Statistics
+Probability
+Data Visualization
+Machine Learning
+NLP
+Numpy
+Pandas
+Python
+Data Science Latest Trend
+Data Scientist Career Guide
+Data Science Store
+Data Science Trend
+Udemy Courses
+Data Science
+Big Data
+Chatbot
+NLP
+Web Framework
+Contact Us
+Blog
+Write for us
+contact@datasciencelearner.com
+Search for:
+Search for:
+HomeData Science Library
+Computer Vision	Data Preprocessing	Data Science Foundation
+Statistics		Probability
+Data Visualization	Machine Learning	NLP	Numpy	Pandas	Python
+Data Science Latest Trend
+Data Scientist Career Guide	Data Science Store	Data Science Trend
+Udemy Courses
+Data Science	Big Data	Chatbot	NLP	Web Framework
+Contact UsBlogWrite for us
+0
+Search for:
+HomeData Science Library
+Computer Vision	Data Preprocessing	Data Science Foundation
+Statistics		Probability
+Data Visualization	Machine Learning	NLP	Numpy	Pandas	Python
+Data Science Latest Trend
+Data Scientist Career Guide	Data Science Store	Data Science Trend
+Udemy Courses
+Data Science	Big Data	Chatbot	NLP	Web Framework
+Contact UsBlogWrite for us
+0
+Search for:
+Python
+Typeerror int object is not iterable : Root cause and Fix
+READ NEXT
+Best Python Data Validation Library : In 2021
+Typeerror int object is not iterable occurs when try to iterate int type object in the place of an iterable object like loop, tuple, and list, etc.
+In this article, we will see the root cause and fix for the error (int object is not iterable) in detail.
+Typeerror int object is not iterable – (Root cause)
+Let’s see a real scenario where we get this above error. Then see will discuss the root cause.
+my_list=[1,2,3,4,5,6]
+for i in len(my_list):
+print(i)
+When we run the above code, we get the below error.
+typeerror int object is not iterable example
+As we can see in the above example, We have used len(my_list) which is nothing but int type object. That’s the reason we get this error int object is not iterable. Anyways in the next section, We will see how to fix this.
+Typeerror int object is not iterable (Fix)-
+Well, We have two different ways to fix this.
+1.Using list as an iterable object-
+we can use list (my_list) directly in the place of using len(my_list). Just because the list is an iterable object.
+int object is not iterable Fix-1
+2.Using range() function-
+Secondly, We can use range() function over len(my_list). Here is the way can we achieve it.
+my_list=[1,2,3,4,5,6]
+for i in range(len(my_list)):
+print(my_list[i])
+int object is not iterable Fix-2
+One more important thing is that we are using the range function. Which is just an iterable object. Hence in the print statement, we use list subscription.
+Conclusion-
+See, There may be very real scenarios where we get the error int object is not iterable. But Underline root cause will be the same as we have mentioned in the above section. Hence We can use the above solution in those situations.
+Int object is not iterable is one the most common error for python developers. I hope now you must solve the above error. Please let me know if you have doubts about this topic. Please comment below in the comment box.
+Thanks
+Data Science Learner Team
+Total0 Facebook Twitter Pinterest LinkedIn BufferJoin our listSubscribe to our mailing list and get interesting stuff and updates to your email inbox.We respect your privacy and take protecting it seriously
+Thank you for signup. A Confirmation Email has been sent to your Email Address.Something went wrong.
+Tags:
+python
+python error
+What’s your reaction?
+Love0Sad1Happy0Sleepy0Wink0
+Share on
+Share on Facebook
+Share on Twitter
+Share on Pinterest
+Share on WhatsApp
+Share on WhatsApp
+Share on Linkedin
+Share on Email
+Previous Article
+Numpy zeros_like Function Implementation in Python with Examples
+Next Article
+Numpy Linspace in Python: Know np.linspace() in 4 Examples
+FOLLOW SOCIALS
+Facebook
+like
+Twitter
+follow
+Privacy Policy
+Cookie Policy
+Disclaimer
+Earnings Disclosure
+© 2021 Data Science Learner. Site Hosted on Digital Ocean
+Total0
+Thank you For sharing.We appreciate your support.
+Don't Forget to LIKE and FOLLOW our SITE to keep UPDATED with Data Science Learner
+Follow @DataScienceL

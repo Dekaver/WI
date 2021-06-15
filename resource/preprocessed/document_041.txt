@@ -1,234 +1,243 @@
-Google login with Flask: authorize_redirect - TypeError: 'str' object cannot be interpreted as an integer · Issue #271 · lepture/authlib · GitHub
-Skip to content
-Sign up
-Why GitHub?
-Features →
-Mobile →
-Actions →
-Codespaces →
-Packages →
-Security →
-Code review →
-Project management →
-Integrations →
-GitHub Sponsors →
-Customer stories→
-Team
-Enterprise
-Explore
-Explore GitHub →
-Learn and contribute
-Topics →
-Collections →
-Trending →
-Learning Lab →
-Open source guides →
-Connect with others
-The ReadME Project →
-Events →
-Community forum →
-GitHub Education →
-GitHub Stars program →
-Marketplace
-Pricing
-Plans →
-Compare plans →
-Contact Sales →
-Education →
-In this repository
-All GitHub
-↵
-Jump to
-↵
-No suggested jump to results
-In this repository
-All GitHub
-↵
-Jump to
-↵
-In this user
-All GitHub
-↵
-Jump to
-↵
-In this repository
-All GitHub
-↵
-Jump to
-↵
-Sign in
-Sign up
-{{ message }}
-lepture
-/
-authlib
-Sponsor
-Sponsor lepture/authlib
-Notifications
-Star
-2.5k
-Fork
-260
-Code
-Issues
-24
-Pull requests
-4
-Discussions
-Actions
-Projects
-2
-Security
-Insights
-More
-Code
-Issues
-Pull requests
-Discussions
-Actions
-Projects
-Security
-Insights
-New issue
-Have a question about this project? Sign up for a free GitHub account to open an issue and contact its maintainers and the community.
-Pick a username
-Email Address
+How To Solve python urllib.error.httperror: http error 403: forbidden - Kodlogs
+menu
+Login
+Register
+search
+Log Inaccount_circle
+Log In
+Email or Username
 Password
-Sign up for GitHub
-By clicking “Sign up for GitHub”, you agree to our terms of service and
-privacy statement. We’ll occasionally send you account related emails.
-Already on GitHub?
-Sign in
-to your account
-Jump to bottom
-Google login with Flask: authorize_redirect - TypeError: 'str' object cannot be interpreted as an integer
-#271
-Closed
-Jupiops
-opened this issue
-Sep 11, 2020
-· 1 comment
-Closed
-Google login with Flask: authorize_redirect - TypeError: 'str' object cannot be interpreted as an integer
-#271
-Jupiops
-opened this issue
-Sep 11, 2020
-· 1 comment
-Assignees
-Labels
-bug
-Comments
-Copy link
-Jupiops
-commented
-Sep 11, 2020
-Describe the bug
-authorize_redirect not working for Google login with Flask
-Error Stacks
-Traceback (most recent call last):
-File "C:\Users\Jupio\PycharmProjects\FlaskApp\venv\lib\site-packages\flask\app.py", line 2464, in __call__
-return self.wsgi_app(environ, start_response)
-File "C:\Users\Jupio\PycharmProjects\FlaskApp\venv\lib\site-packages\flask\app.py", line 2450, in wsgi_app
-response = self.handle_exception(e)
-File "C:\Users\Jupio\PycharmProjects\FlaskApp\venv\lib\site-packages\flask\app.py", line 1867, in handle_exception
-reraise(exc_type, exc_value, tb)
-File "C:\Users\Jupio\PycharmProjects\FlaskApp\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
-raise value
-File "C:\Users\Jupio\PycharmProjects\FlaskApp\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
-response = self.full_dispatch_request()
-File "C:\Users\Jupio\PycharmProjects\FlaskApp\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
-rv = self.handle_user_exception(e)
-File "C:\Users\Jupio\PycharmProjects\FlaskApp\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
-reraise(exc_type, exc_value, tb)
-File "C:\Users\Jupio\PycharmProjects\FlaskApp\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
-raise value
-File "C:\Users\Jupio\PycharmProjects\FlaskApp\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
-rv = self.dispatch_request()
-File "C:\Users\Jupio\PycharmProjects\FlaskApp\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
-return self.view_functions[rule.endpoint](**req.view_args)
-File "C:\Users\Jupio\PycharmProjects\FlaskApp\app\routes.py", line 19, in login
-return oauth.google.authorize_redirect(redirect_uri)
-File "C:\Users\Jupio\PycharmProjects\FlaskApp\venv\lib\site-packages\authlib\integrations\flask_client\remote_app.py", line 58, in authorize_redirect
-rv = self.create_authorization_url(redirect_uri, **kwargs)
-File "C:\Users\Jupio\PycharmProjects\FlaskApp\venv\lib\site-packages\authlib\integrations\base_client\remote_app.py", line 75, in create_authorization_url
-client, authorization_endpoint, **kwargs)
-File "C:\Users\Jupio\PycharmProjects\FlaskApp\venv\lib\site-packages\authlib\integrations\base_client\base_app.py", line 186, in _create_oauth2_authorization_url
-authorization_endpoint, **kwargs)
-File "C:\Users\Jupio\PycharmProjects\FlaskApp\venv\lib\site-packages\authlib\oauth2\client.py", line 154, in create_authorization_url
-state=state, **kwargs)
-File "C:\Users\Jupio\PycharmProjects\FlaskApp\venv\lib\site-packages\authlib\oauth2\rfc6749\parameters.py", line 66, in prepare_grant_uri
-return add_params_to_uri(uri, params)
-File "C:\Users\Jupio\PycharmProjects\FlaskApp\venv\lib\site-packages\authlib\common\urls.py", line 115, in add_params_to_uri
-query = add_params_to_qs(query, params)
-File "C:\Users\Jupio\PycharmProjects\FlaskApp\venv\lib\site-packages\authlib\common\urls.py", line 106, in add_params_to_qs
-return url_encode(qs)
-File "C:\Users\Jupio\PycharmProjects\FlaskApp\venv\lib\site-packages\authlib\common\urls.py", line 44, in url_encode
-encoded.append((to_bytes(k), to_bytes(v)))
-File "C:\Users\Jupio\PycharmProjects\FlaskApp\venv\lib\site-packages\authlib\common\encoding.py", line 27, in to_bytes
-return byte_type(x)
-TypeError: 'str' object cannot be interpreted as an integer
-To Reproduce
-@app.route('/login')
-def login():
-if current_user.is_authenticated:
-return redirect(url_for('index'))
-redirect_uri = url_for('authorize', _external=True)
-return oauth.google.authorize_redirect(redirect_uri)
-Expected behavior
-Should redirect to google login page
-Environment:
-OS:
-Python Version: 3.7
-Authlib Version: 0.14.3
-The text was updated successfully, but these errors were encountered:
-Jupiops
-added
-the
-bug
-label
-Sep 11, 2020
-Jupiops
-assigned
-lepture
-Sep 11, 2020
-Copy link
-Author
-Jupiops
-commented
-Sep 16, 2020
-a comma in the wrong place was what broke my neck
-Jupiops
-closed this
-Sep 16, 2020
-Sign up for free
-to join this conversation on GitHub.
-Already have an account?
-Sign in to comment
-Assignees
-lepture
-Labels
-bug
-Projects
-None yet
-Milestone
-No milestone
-Linked pull requests
-Successfully merging a pull request may close this issue.
-None yet
-2 participants
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-You can’t perform that action at this time.
-You signed in with another tab or window. Reload to refresh your session.
-You signed out in another tab or window. Reload to refresh your session.
+Remember
+Log In
+Register
+I forgot my password
+Register
+Username
+Email
+Password
+Register
+add
+Tags
+Users
+Articles
+Post An Article
+How To Solve python urllib.error.httperror: http error 403: forbidden
+0 votes
+1.4k views
+On trying to scrap a website for practice, but I kept on getting the HTTP Error 403 (does it think the user is a bot)?Here is the code:#import requests
+import urllib.request
+from bs4 import BeautifulSoup
+#from urllib import urlopen
+import re
+webpage = urllib.request.urlopen('http://www.cmegroup.com/trading/products/#sortField=oi&sortAsc=false&venues=3&page=1&cleared=1&group=1').read
+findrows = re.compile('<tr class="- banding(?:On|Off)>(.*?)</tr>')
+findlink = re.compile('<a href =">(.*)</a>')
+row_array = re.findall(findrows, webpage)
+links = re.finall(findlink, webpate)
+print(len(row_array))
+iterator = [] with error : File "C:\Python33\lib\urllib\request.py", line 160, in urlopen
+return opener.open(url, data, timeout)
+File "C:\Python33\lib\urllib\request.py", line 479, in open
+response = meth(req, response)
+File "C:\Python33\lib\urllib\request.py", line 591, in http_response
+'http', request, response, code, msg, hdrs)
+File "C:\Python33\lib\urllib\request.py", line 517, in error
+return self._call_chain(*args)
+File "C:\Python33\lib\urllib\request.py", line 451, in _call_chain
+result = func(*args)
+File "C:\Python33\lib\urllib\request.py", line 599, in http_error_default
+raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 403: Forbidden
+urllib
+http-status-code-403
+python
+python-3
+asked
+Oct 24, 2020
+psandprop
+2.4k points
+answer
+Please log in or register to answer this question.
+1 Answer
+0 votes
+This is probably because of mod_security or some similar server security feature which blocks known spider/bot user agents (urllib uses something like python urllib/3.3.0, it's easily detected). Try setting a known browser user agent with:from urllib.request import Request, urlopen
+req = Request('site link)', headers={'User-Agent': 'Mozilla/5.0'})
+webpage = urlopen(req).read()
+This works for me.By the way, in your code you are missing the () after .read in the urlopen line, but I think that it's a typo.TIP: since this is exercise, choose a different, non restrictive site. Maybe they are blocking urllib for some reason… Definitely it's blocking because of the use of urllib based on the user agent. This same thing is happened with OfferUp. You can create a new class called AppURLopener which overrides the user-agent with Mozilla.import urllib.request
+class AppURLopener(urllib.request.FancyURLopener):
+version = "Mozilla/5.0"
+opener = AppURLopener()
+response = opener.open('site link*')Source - https://docs.python.org/3.0/library/urllib.request.html#urllib.request._urlopener"This is probably because of mod_security or some similar server security feature which blocks known user agents (urllib uses something like python urllib/3.3.0, it's easily detected)" - as already mentioned by Stefano Sanfilippofrom urllib.request import Request, urlopen
+url="site link"
+req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+web_byte = urlopen(req).read()
+webpage = web_byte.decode('utf-8')The web_byte is a byte object returned by the server and the content type present in webpage is mostly utf-8. Therefore you need to decode web_byte using decode method.This solves complete problem while I was having trying to scrap from a website.Based on the previous answer,from urllib.request import Request, urlopen
+#specify url
+url = 'site link'
+req = Request(url, headers={'User-Agent': 'XYZ/3.0'})
+response = urlopen(req, timeout=20).read()This worked  by extending the timeout
+answered
+Oct 29, 2020
+hubconcepts
+4.1k points
+ask related question
+comment
+Your comment on this answer:
+Your name to display (optional):
+Email me at this address if a comment is added after mine:Email me if a comment is added after mine
+Privacy: Your email address will only be used for sending these notifications.
+Anti-spam verification:
+What is the color of the sky?
+To avoid this verification in future, please log in or register.
+Add comment
+Cancel
+Related questions
+0 votes
+1 answer
+37 views
+37 views
+Urllib.error.httperror: http error 403: forbidden
+Problem: Why is this fix urllib.error.httperror: http error 403: forbidden?
+asked
+Apr 13
+jamuna1
+30.2k points
+urllib
+http-status-code-403
+0 votes
+1 answer
+63 views
+63 views
+urllib.error.httperror: http error 404: not found
+Problem: I wrote a script to find spelling mistakes in SO questions' titles. I used it for about a month.This was working fine UPDATE This is the url causing the problem.Even though this url exists. I tried changing the range to some lower values. It works fine now. Why this happened with above url?
+asked
+Feb 21
+Mashhoodch
+13k points
+python
+urllib
+http-status-code-403
+python-3
+0 votes
+1 answer
+18 views
+18 views
+Urllib.error.httperror: http error 500: internal server error
+Problem: How can I solve this? > Urllib.error.httperror: http error 500: internal server error
+asked
+May 7
+Junia Phoebe
+83.8k points
+urllib
+python
+sockets
+http
+0 votes
+1 answer
+168 views
+168 views
+module 'urllib' has no attribute 'request'
+1 I have tried import urllib.request or import urllib The path for my urllib is /Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/urllib/__init__.py I am wondering where is urlopen, or is my python module pointing to the wrong file?
+asked
+Oct 25, 2020
+psandprop
+2.4k points
+urllib
+attributeerror
+python
+python-3
+1 vote
+1 answer
+34 views
+34 views
+Verifying HTTPS certificates with urllib.request
+I am trying to open an https URL using the urlopen method in Python 3's urllib.request module. It seems to work fine, but the documentation warns that "[i]f neither cafile nor capath is specified, an HTTPS request will not do any verification of the server&rsquo;s
+...
+get this list from? Is there any simple and cross-platform way to use the same list of certificates that my OS or browser uses?
+asked
+Sep 13, 2020
+Marivoke
+530 points
+python
+ssl
+python-3
+https
+urllib
+0 votes
+1 answer
+6 views
+6 views
+How to get around a 403 forbidden error
+Problem: I'm looking for a solution : How to get around a 403 forbidden error?
+asked
+Jun 4
+Rada Gracelynn
+42.6k points
+http-status-code-403
+1 vote
+1 answer
+114 views
+114 views
+403 Forbidden: the server understood the request, but is refusing to fulfill it.
+Problem : I keep on facing the below 403 error while performing the AJAX call to the API. &ldquo;403 forbidden: the server understood the request, but is refusing to fulfill it.&rdquo; Above error occurs usually in Microsoft Edge, but does not come up in IE,
+... browsers and also the response/request headers match to one another - So is it the case that the POST request is sending the incorrect?
+asked
+Jan 2, 2020
+alecxe
+7.5k points
+javascript
+ajax
+http-status-code-403
+0 votes
+1 answer
+80 views
+80 views
+attributeerror: module 'urllib' has no attribute 'request'
+Problem: I have tried import urllib.request or import urllib The path for my urllib is /Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/urllib/__init__.py I am wondering where is urlopen, or is my python module pointing to the wrong file?
+asked
+Feb 18
+Mashhoodch
+13k points
+python-3
+attributeerror
+urllib
+url
+module
+0 votes
+1 answer
+125 views
+125 views
+module 'urllib' has no attribute 'urlencode'
+Problem: When I try to follow the Python Wiki's example related to URL encoding: >>> import urllib >>> params = urllib.urlencode({'spam': 1, 'eggs': 2, 'bacon': 0}) >>> f = urllib.urlopen("http://www.musi-cal.com/cgi-bin/query", params) >>> print ...
+(most recent call last): File "<stdin>", line 1, in <module> AttributeError: 'module' object has no attribute 'urlencode' What am I missing?
+asked
+Jan 21
+Mashhoodch
+13k points
+python-3
+url
+urllib
+attributeerror
+0 votes
+1 answer
+468 views
+468 views
+Attributeerror: module 'urllib' has no attribute 'urlretrieve'.
+Problem: I have only basic knowledge in python and urllib. Currently I am trying to write the program which should download the mp3's from the website and after that join them together but on every occasion I try to download the mp3 files I face below error: Traceback ( ... usc.edu/~chiso/oldspice/m-b1-hello.mp3") Looking for the python and urlllib expert who can help me in fixing my above error.
+asked
+Jul 22, 2020
+Raphael Pacheco
+4.9k points
+python-3
+x
+urllib
+attributeerror
+Send feedback
+About Us
+Privacy Policy
+Guest Blog
+XML Sitemap
+Facebook
+Twitter
+Pinterest
+Dark theme

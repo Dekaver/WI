@@ -1,189 +1,92 @@
-TypeError int object is not iterable | Python | cppsecrets.com
-Articles
-C++
-C++ Algorithms
-Python
-Python Django
-GDB
-Linux
-Data Science
-Assignment
-Shell Scripting
-Vim
-OpenSSL
-Docker
-AWS
-SQL
-Tech News
-Git
-Blockchain
-Authors
-All Authors
-Leaderboard
-Services
-Certification
-Workshops
-Internship
-Sign In
-×
-Password Recovery
-To recover your password please fill in your email address
-Email
-Submit
-Back To Login
-Don't Have An Account Yet ?
-Signup!
-×
-Create An Account
-Please fill in below form to create an account with us
-First Name
-First Name
-Email
-Gender
-Male
-Female
-Password
-Signup
-Back To Login
-×
-Login
-Email
-Password
-Forgot Your Password ?
-Don't Have An Account Yet ?
-Signup!
-×
-Search
-Search
-Cateogry
-Select Category
-C++
-C++ Algorithms
-Python
-Python Django
-GDP
-Linux
-Data Science
-Assignment
-Shell Scripting
-Vim
-OpenSSL
-Docker
-AWS
-SQL
-Tech News
-Other
-TypeError int object is not iterable
-Python
-/
-TypeError int object is not iterable
-C++C++ AlgorithmsPythonPython DjangoGDBLinuxData ScienceAssignmentShell ScriptingVimOpenSSLDockerAWSSQLTech NewsGitBlockchain
-Top Latest Articles
-Top Viewed Articles
-Authors
-Certificates
-Code Formatter
-TypeError int object is not iterableArticle Creation Date : 06-Jan-2020 10:10:22 AMTypeError: 'int' object is not iterable -In python 'int' object is not iterable. This error is shown whenever we are trying to iterate the integers.Iterables - In python iterable is anything that can be looped over like list, string, files, etc. Integers, float, etc. are not iterable in python.In the below example we are going to calculate the sum of numbers in a list.The code for the program -The output of the program - Here in the add_list() function, we are using loop over the length of the list which is an integer, hence we aregetting TypeError. For calculating the sum of the list we need to iterate on the list.The corrected code for the program -The output of the program -Try and Except is used for handling exceptions in python. The TypeError error is handled by it.Read about Python Error and Exceptions before reading this part. The code of the program using try and except - The output of the program -
-Views : 1642
-ABOUT THE AUTHOR
-Photo Credit : Designed by Freepik
-Shaswat Srivastava
-India
-View Profile
-More Articles of Shaswat Srivastava:
-Name
-Views
-Likes
-Python ModuleNotFoundError No module named fasttext
-1222
-1
-Python ModuleNotFoundError No module named pyVim
-722
-2
-Python ModuleNotFoundError No module named pickle
-1385
-2
-Python ModuleNotFoundError
-No module named instabot
-902
-2
-Python ModuleNotFoundError No module named SoftLayer
-457
-1
-TypeError int
-object does not support item assignment
-3794
-1
-Python KeyError
-327
-1
-Assertion Error in Python
-325
-1
-Python IndexError list index out of range
-402
-1
-ZeroDivisionError division by zero
-310
-1
-Python ModuleNotFoundError No module named pygame
-1064
-2
-Python ModuleNotFoundError No module named Tkinter
-351
-2
-Python ModuleNotFoundError No module named Crypto
-1242
-2
-Python ModuleNotFoundError No module named qrcode
-1413
-2
-Python ModuleNotFoundError No module named sklearn
-4403
-3
-Python ModuleNotFoundError No module named speech_recognition
-2258
-1
-Python How to add both a variable and string into the same print statement?
-208
-1
-Python IndexError string index out of range
-409
-1
-Python IndexError list assignment out of range
-299
-2
-TypeError int object is not iterable
-1642
-2
-Converting Image to PDF
-445
-2
-Comments
-cppsecrets.com
-A platform for C++ and Python Engineers, where they can contribute their C++ and Python experience along with tips and tricks.
-Articles
-C++
-C++ Algorithms
-Python
-Python Django
-GDB
-Linux
-Tech News
-Other
-Quick Links
+Discord PY TypeError: can only concatenate str (not "int") to str – Cloud Stack Ninja
+Skip to content
+Cloud Stack Ninja
+Main Menu
 Home
-About us
-Portfolio
-Articles
-Leaderboard
-News and Highlights
-Author's
-Services
-Internships
-Webinar
-Campus Ambassador
-Contact Us
-Terms and Conditions
-Copyright © 2017 - 2020 CPPSECRETS TECHNOLOGIES PVT LTD
-All Rights Reserved.
+Contact
+Discord PY TypeError: can only concatenate str (not "int") to strdiscord.py, python / By
+LopeKinz
+i am trying to make my own level
+bot
+but i am getting : TypeError: can only concatenate str (not "int") to str
+This is my Code:
+@client.event
+async def on_message(message):
+for badword in file:
+if badword in message.content.lower():
+await message.delete()
+await message.channel.send(f'{message.author.mention}! Your message has not passed moderation!')
+else:
+await client.process_commands(message)
+with open("users.json","r") as f:
+users = json.load(f)
+lvl = users[str(message.author.id)]
+error-> sum = lvl + 1
+with open("users.json", "r") as f:
+users = json.load(f)
+users[str(message.author.id)] = sum
+with open("users.json", "w") as f:
+json.dump(users, f, indent=4)
+and this is my json :
+{
+"763339711988236328" : "0"
+}
+how can i get the "0"
+and add "1" to make the user level up?
+like:
+{
+"763339711988236328" : "7"
+}
+7 +
+1 = 8
+After :
+{
+"763339711988236328" : "8"
+}
+sorry for my bad english i am from germany
+Ignoring exception in on_message
+Traceback (most recent call last):
+File "C:\Users\admin\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 343, in _run_event
+await coro(*args, **kwargs)
+File "c:\Users\admin\Desktop\Marc\Bot\dcbot.py", line 71, in on_message
+sum = lvl + 1
+TypeError: can only concatenate str (not "int") to str
+Read more here: https://stackoverflow.com/questions/67576625/discord-py-typeerror-can-only-concatenate-str-not-int-to-str
+Content AttributionThis content was originally published by LopeKinz at Recent Questions - Stack Overflow, and is syndicated here via their RSS feed. You can read the original post over there.
+Post navigation
+← Previous PostNext Post →
+Recent Posts
+How to link submodules of Terraform so to use my users from users module to group modules. thank
+June 15, 2021
+html datalist options disappear on whitespace
+June 15, 2021
+Force file download with header is corrupting file
+June 15, 2021
+Getting attribute error : module ‘pandas’ has no attribute ‘json_normalize’
+June 15, 2021
+postgresql: update multiple values within one jsonb object
+June 15, 2021
+No module named (image_dehazer)
+June 15, 2021
+lottie-player: Is there any way to stop the animation after it loads?
+June 15, 2021
+Is my sata cable damaged or my os is corrupted?
+June 15, 2021
+Exec Procedure Mysql with EF net core
+June 15, 2021
+"Warning: Each child in a list should have a unique "key" prop" when adding new element to the list [duplicate]
+June 15, 2021
+Legal DisclaimerCloudStack.Ninja is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com. We also participates in other affiliate programs too. CloudStack.Ninja is compensated for referring traffic and business to these companies. Build5Nines Featured PostsWe are back live for a conference!How my passion for BCDR saved my lifeStopping Azure subdomain takeoversLatest Cloud News: IoT, Security, Azure Sphere, and more! (December 4, 2020 – Build5Nines Weekly)Latest Cloud News: Apple on K8s, IoT, Microsoft Pluton and more! (November 20, 2020 – Build5Nines Weekly)Category CloudAndroid Angular arrays Azure C# css django Flutter github html ios java JavaScript jquery linux Microsoft mysql node.js pandas php python python-3.x r reactjs SQL Startups swift TC Thurrott TypeScript
+Recent Posts
+How to link submodules of Terraform so to use my users from users module to group modules. thank
+June 15, 2021
+html datalist options disappear on whitespace
+June 15, 2021
+Force file download with header is corrupting file
+June 15, 2021
+Getting attribute error : module ‘pandas’ has no attribute ‘json_normalize’
+June 15, 2021
+postgresql: update multiple values within one jsonb object
+June 15, 2021
+Copyright © 2021 Cloud Stack Ninja | Powered by Astra WordPress Theme
+%d bloggers like this:

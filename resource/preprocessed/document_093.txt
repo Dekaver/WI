@@ -1,46 +1,252 @@
-Laravel 6 make:auth not defined! [Solved] | Laravel Article
-Laravel Article
-Search
-Laravel 6 make:auth not defined! [Solved]
-Published Oct 23, 2019
-Topic: Articles
-Author: Harun
-If you used Laravel version up to 5.8 and now trying to run artisan command make:auth to make authentication scaffolding in Laravel 6 but is it's saying like command make:auth is not defined! In Laravel 6 the command php artisan make:auth removed. This command no longer available in Laravel 6 version. From Laravel version 6 the command php artisan make:auth that's mean auth scaffolding will be available via another official package called Laravel UI. See the Laravel 6 release note at the bottom section. You are thinking now, why Taylor Otwell removed authentication UI scaffolding in Laravel 6? The think behind is Modern frontend development. Now you are free to use any preset in your Laravel application where previously you had to use Bootstrap as a default UI scaffold. Now you can choose preset which you like to work as a frontend part like Bootstrap, Vue, React. To archive the authentication UI scaffolding in your Laravel 6 project, you have to install Laravel UI package. Let's do that. First, run the command composer require laravel/ui --dev After successfully installation laravel UI package, check the ui:auth command available instead of   make:auth command in your artisan command list. php artisan list
-Now you can see the UI scaffolding command available. For generating the auth scaffold run the artisan command below.
-Presets Command
-For VueJs preset php artisan ui vue --auth
-For Bootstrap preset php artisan ui bootstrap --auth
-For ReactJs Preset php artisan ui react --auth
-Choose any one command which frontend you like to work in frontend of your application. Suppose we want to use bootstrap without VueJs or ReactJs. So we have to run the command like as below. php artisan ui bootstrap --auth After running this command all authentication scaffold will generate successfully in your resources/views folder. Now we have to use npm install the command to install all js dependency in our project. npm install npm run dev   Wait until finished the npm dependency installation. After finish the process you will find everything working as expected :)
-Share on
-Facebook
-Twitter
-Linkedin
-Newsletter
-To get new article, Please subscribe with your e-mail
-Submit
-Topics
-ArticlesPackagesToolsCRUDLaravel SEO
-Related Post - Latest Post
-Laravel Barcode generation tutorial
-Jun 29, 2020
-Articles
-Make laravel site super fast by page-cache!
-Jan 05, 2021
-Articles
-Laravel maintenance mode bypass by Secret Route!
-Dec 30, 2020
-Articles
-Laravel database backup automatically - cPanel shared hosting, VPS
-Dec 13, 2020
-Articles
-Laravel Datatables - Ajax, Column, Buttons, Customization
-Dec 04, 2020
-Articles
-Laravel 8 authentication tutorial
-Sep 16, 2020
-Articles
-TinkerPad Giveaway2020 Contest
-Close What is TinkerPad? Contest Details
-Home | About | Advertise | Faq | Terms | Privacy Policy | Sitemap | Contact
-© Copyright 2021 | all rights reserved
+How to Solve Python “TypeError: ‘int’ object is not iterable”? | Finxter
+Skip to content
+Main Menu
+Python + BusinessMenu ToggleWebinar FreelancerCourse Python FreelancerBooksMenu ToggleAll Finxter BooksTop Book Recommendations[Bundle] The Intelligent CoderCoffee Break SeriesPython One-LinersCoursesMenu Toggle10+ Python, ML, Algorithm, Data Science CoursesThe World’s #1 Python Freelancer CourseResourcesMenu ToggleTutorialsPuzzlesCheat SheetsPEP8 CheckerFinxter Computer Science AcademyPython One-Liners Book ResourcesFinxter Computer Science Email AcademyAboutMenu ToggleAboutTestimonialsSupport Free Education AcademyHow to Solve Python “TypeError: ‘int’ object is not iterable”?Computer Science, Data Structures, Python, Python Dictionary, Python List, Python Set, Python String, Python Tuple, Scripting / By
+Igor Suchilov
+It’s quite common for your code to throw a typeerror, especially if you’re just starting out with Python. The reason for this is that the interpreter expects variables of certain types in certain places in the code.We’ll look at a specific example of such an error: "typeerror: 'int' object is not iterable". Exercise: Run this minimal example and reproduce the error in your online Python shell!Let’s start decomposing this error step-by-step!Background Integer & IterableFirst, it’s worth understanding what int and iterable are.The int type in Python, as in almost all programming languages, is a type for storing integers such as 1, 2, 3, -324, 0. There can be many variables of type int in our program. We can assign values ​​to them ourselves directly:a = 5In this case, we will most often understand what is a type of our variable. But the value can, for example, be returned from a function. Python uses implicit typing. Implicit typing means that when declaring a variable, you do not need to specify its type; when explicitly, you must. Therefore, by assigning the result of a function to a variable, you may not be clearly aware of what type your variable will be.s1 = sum([1, 2, 3])
+print(s1)
+print(type(s1))Output:6
+<class 'int'>Here’s another example:s2 = iter([1, 2, 3])
+print(s2)
+print(type(s2))Output:<list_iterator object at 0x7fdcf416eac8>
+<class 'list_iterator'>In this example, s1 is an integer and is of type int. This number is returned by the sum function with an argument in the form of a list of 3 elements. And the variable s2 is of type list_iterator, an object of this type is returned by the iter function, whose argument is the same list of 3 elements. We’ll talk about iteration now.Iteration is a general term that describes the procedure for taking the elements of something in turn.More generally, it is a sequence of instructions that is repeated a specified number of times or until a specified condition is met.An iterable is an object that is capable of returning elements one at a time. It is also an object from which to get an iterator.Examples of iterable objects:all sequences: list, string, tupledictionariesfilesIt seems that the easiest way to find out what exactly our function is returning is to look at the documentation.So we see for the iter: iter(object[, sentinel]) Return an iterator object.But for the sum we have nothing about a type of returning value. Check it out by yourself!So, the typeerror: ‘int’ object is not iterable error occurs when the interpreter expects an iterable object and receives just an integer. Let’s consider the most common examples of such cases.Invalid ‘sum’ ArgumentWe already wrote about the sum function. It returns the int value. The sum function takes at most two arguments. The first argument must be an object that is iterable. If it’s a collection of some sort, then it’s probably a safe assumption that it’s iterable. The second argument to the sum function is optional. It’s a number that represents the first number you’ll start adding to. If you omit the second argument, then you’ll start adding to 0. For novice Python programmers, it seems common sense that a function should return the sum of its arguments. Often they try to apply it like this:a = 4
+b = 3
+sum(a, b)Output:TypeError Traceback (most recent call last)
+<ipython-input-12-35b280174f65> in <module>()
+1 a = 4
+2 b = 3
+----> 3 sum(a, b)
+TypeError: 'int' object is not iterableBut we see that this leads to an error. We can fix this situation by pre-writing our variables for summation in an iterable object, in a list or a tuple, or a set, for example:a = 4
+b = 3
+tuple_sum = (a, b)
+list_sum = [a, b]
+set_sum = {a, b}
+dict_sum = {a: 0, b: 1}
+print(sum(tuple_sum))
+print(sum(list_sum))
+print(sum(set_sum))
+print(sum(dict_sum))Output:7
+7
+7
+7As you can see, the result remains the same. Whether we are using pre-entry into a tuple, list, set, or even a dictionary. Note that for dictionaries, the sum function sums key values by default.You can even write one variable to a list and calculate the sum of this list. As a search on stackoverflow shows, newbies in programming often try to calculate the sum of one element, which of course leads to an error.a = 2
+sum(a)Output:TypeError
+Traceback (most recent call last)
+<ipython-input-21-5db7366faaa2> in <module>()
+1 a = 2
+----> 2 sum(a)
+TypeError: 'int' object is not iterableBut if we pass an iterable object for example a list (even if it consists of one element) to the function then the calculation is successful.a = 2
+list_sum = [a]
+print(sum(list_sum))Output:2Another way to form such a list is to use the list.append method:a = 2
+list_sum = []
+list_sum.append(a)
+print('Sum of "a":', sum(list_sum))
+b = 5
+list_sum.append(b)
+print('Sum of "a" and "b":',sum(list_sum))Output:'''
+Sum of "a": 2
+Sum of "a" and "b": 7
+'''Let’s consider a more complex version of the same error. We have a function that should calculate the sum of the elements of the list including the elements of the nested lists.def nested_sum(list_):
+total = 0
+for item in list_:
+item = sum(item)
+total = total + item
+return total
+list1 = [1, 2, 3, [4, 5]]
+print(nested_sum(list1))Output:TypeError
+Traceback (most recent call last)
+<ipython-input-35-c30be059e3a4> in <module>()
+6
+return total
+7 list1 = [1, 2, 3, [4, 5]]
+----> 8 nested_sum(list1)
+<ipython-input-35-c30be059e3a4> in nested_sum(list_)
+2
+total = 0
+3
+for item in list_:
+----> 4
+item = sum(item)
+5
+total = total + item
+6
+return total
+TypeError: 'int' object is not iterableYou can probably already see what the problem is here. The loop parses the list into its elements and goes through them. The items in our list are numbers 1, 2, 3 and a list [4, 5]. You can compute a sum of the list but you can’t get the sum of one number in Python. So we have to rewrite code.def nested_sum(list_):
+total = 0
+for item in list_:
+if type(item) == list:
+item = sum(item)
+total = total + item
+return total
+list1 = [1, 2, 3, [4, 5]]
+print(nested_sum(list1))Output:15Now, in the loop, we first of all check the type of our local variable 'item' and if it is a list, then with a clear conscience we calculate its sum and rewrite the variable 'item' with the resulting value. If it’s just a single element, then we add its value to the 'total'.Incorrect use of ‘for’ loopLet’s consider another common case of this error. Can you see right away where the problem is?n = 10
+for i in n:
+print(i)Output:TypeError
+Traceback (most recent call last)
+<ipython-input-24-7bedb9f8cc4c> in <module>()
+1 n = 10
+----> 2 for i in n:
+3
+print(i)
+TypeError: 'int' object is not iterablePerhaps the error in this construction is associated with the tradition of teaching children the Pascal language at school. There you can actually write something similar: for i:=1 to n do.But in Python ‘for’ loops are used for sequential traversal. Their construction assumes the presence of an iterable object. In other languages, a ‘for each’ construct is usually used for such a traversal.Thus, the ‘for’ construct in Python expects an iterable object which to be traversed, and cannot interpret an integer. This error can be easily corrected using the function ‘range’. Let’s see how our example would look in this case.n = 10
+for i in range(n):
+print(i)Output:0
+1
+2
+3
+4
+5
+6
+7
+8
+9The ‘range’ function can take 3 arguments like this: range(start, stop[, step]). The ‘start’ is the first number from which the loop will begin, ‘stop’ is the number at which the loop will end. Please note that the number ‘stop’ will not be included in the cycle. The ‘step’ is how much the number will differ at each next iteration from the previous one. By default, ‘start’ has a value of 0, ‘step’=1, and the stop parameter must be passed compulsory. More details with examples can be found in the documentation. https://docs.python.org/3.3/library/stdtypes.html?highlight=range#rangefor i in range(4, 18, 3):
+print(i)Output:4
+7
+10
+13
+16Here is a small example of using all three parameters of the ‘range’ function. In the loop, the variable ‘i’ in the first step will be equal to 4, ‘i’ will never be greater than or equal to 18, and will increase in increments of 3.Problems With TuplesThe next example where an error "typeerror: ‘int’ object is not iterable" can occur is multiple assignment of values using a tuple. Let’s take a look at an example.a, b = 0Output:---------------------------------------------------------------------------
+TypeError
+Traceback (most recent call last)
+<ipython-input-6-6ffc3a683bb5> in <module>()
+----> 1 a, b = 0
+TypeError: 'int' object is not iterableIt’s a very pythonic way of assignment but you should be careful with it. On the left we see a tuple of two elements ‘a’ and ‘b’, so to the right of the equal sign there must also be a tuple (or any other iterable object) of two elements. Don’t be intimidated by writing a tuple without parentheses, this is an allowable way in Python.So to fix this error, we can write the assignment like this:a, b = 0, 0
+print(a)
+print(b)Output:0
+0And a few more examples of how you can assign values to several variables at once:a, b = (1, 2)
+c, d = {3, 4}
+e, f = [5, 6]
+print(a, b, c ,d ,e, f)Output:1 2 3 4 5 6A similar problem can arise if you use a function that returns multiple values as a tuple. Consider, for example, a function that returns the sum, product, and result of division of two numbers.def sum_product_division(a, b):
+if b != 0:
+return a + b, a * b, a / b
+else:
+return -1
+sum_, product, division = sum_product_division(6, 2)
+print("The sum of numbers is:", sum_)
+print("The product of numbers is:", product)
+print("The division of numbers is:", division)Output:The sum of numbers is: 8
+The product of numbers is: 12
+The division of numbers is: 3.0Note that I have added an underscore to the variable name ‘sum_’. This is because the word ‘sum’ is the name of the built-in function that we discussed above. As you can see, in the case when ‘b’ is not equal to zero, our code works correctly, the variables take the appropriate values. Now let’s try to pass the value ‘b’ equal to 0 to the function. Division by zero will not occur, since we provided for this in the function and return -1 as an error code.sum_, product, division = sum_product_division(6, 0)
+print("The sum of numbers is:", sum_)
+print("The product of numbers is:", product)
+print("The division of numbers is:", division)Output:---------------------------------------------------------------------------
+TypeError
+Traceback (most recent call last)
+<ipython-input-9-6c197be50200> in <module>()
+----> 1 sum_, product, division = sum_product_division(6, 0)
+2 print("The sum of numbers is:", sum_)
+3 print("The product of numbers is:", product)
+4 print("The division of numbers is:", division)
+TypeError: 'int' object is not iterableThe error “TypeError: 'int' object is not iterable” occurs again. What’s the matter? As I already said, this situation is similar to the previous one. Here we also try to assign values to several variables using a tuple. But our function when there is a danger of division by zero returns not a tuple but the only value of the error code ‘-1’.How to fix it? For example, we can check the type of a returning value. And depending on this type, already output the result. Let’s do it!result = sum_product_division(6, 0)
+if type(result) == int:
+print("Error, b should not be zero!")
+else:
+sum_, product, division = result
+print("The sum of numbers is:", sum_)
+print("The product of numbers is:", product)
+print("The division of numbers is:", division)Output:Error, b should not be zero!Here’s another example:result = sum_product_division(6, 3)
+if type(result) == int:
+print("Error, b should not be zero!")
+else:
+sum_, product, division = result
+print("The sum of numbers is:", sum_)
+print("The product of numbers is:", product)
+print("The division of numbers is:", division)Output:The sum of numbers is: 9
+The product of numbers is: 18
+The division of numbers is: 2.0We can also redesign our function to return the result of the operation from the beginning of the tuple. And use some trick when assigning variables. Take a look at this:def sum_product_division(a, b):
+if b != 0:
+return "Ok", a + b, a * b, a / b
+else:
+return ("Error",)
+status, *results = sum_product_division(6, 0)
+print(status, results)
+status, *results = sum_product_division(6, 2)
+print(status, results)Output:Error []
+Ok [8, 12, 3.0]If division by zero is possible we return a tuple with a single element – the string ‘Error’. If everything is correct then we return a tuple where the first element is a status message – the string ‘Ok’ and then the results of the calculations follow sequentially: sum, product, result of division.There can be many options here, because this is a function that we wrote ourselves, so we can fix it as we please. But it so happens that we use functions from libraries. For example here is an error from a topic on stackoverflow.import subprocess
+data = subprocess.call(["echo", '''Hello World!
+Hello!'''])
+sum_lines = 0
+for line in data:
+print(line)
+sum_lines += 1
+print(sum_lines)Output:---------------------------------------------------------------------------
+TypeError
+Traceback (most recent call last)
+<ipython-input-32-8d4cf2cb9ee0> in <module>()
+3 Hello!'''])
+4 sum_lines = 0
+----> 5 for line in data:
+6
+print(line)
+7
+sum_lines += 1
+TypeError: 'int' object is not iterableI rewrote the code a bit so that the essence is clear. We want to run a command on the command line and count the number of lines printed on the screen. In our case, it will be just a command to display a little message to the World.We should read a documentation to figure it out. The subprocess module allows you to spawn new processes, connect to their input /output /error pipes, and obtain their return codes. We see that the ‘call’ function starts the process on the command line, then waits for its execution and returns the execution result code! That’s it! The function returned the code of execution. It’s integer and we are trying to traverse this integer in a loop. Which is impossible, as I described above.What to do? Explore the documentation for the module further. And so we find what we need. The ‘check_output’ function. It returns everything that should be displayed in the console when the command being passed is executed. See how it works:import subprocess
+data=subprocess.check_output(["echo", '''Hello World!
+Hello!'''])
+sum_lines = 0
+for line in data.splitlines():
+print(line)
+sum_lines +=1
+print(sum_lines)Output:b'Hello World!'
+b'Hello!'
+2Great! We got a byte string separated by newline symbols ‘\n’ at the output. And we can traverse over it as shown with a ‘splitlines’ function. It returns a list of the lines in the string, breaking at line boundaries. This method uses the universal newlines approach to splitting lines. Line breaks are not included in the resulting list unless ‘keepends’ parameter is given and true.Thus, we fixed the error and got what we needed, but had to do a little research in the documentation. This study of documentation is one of the most effective ways to improve your programming skills.The snag with listsOften the error "TypeError: 'int' object is not iterable" appears when using various functions related to lists. For example I have a list of my exam grades. I want to add to it a grade in physical education which I passed perfectly in contrast to math. I am trying to do it like this:grades = [74, 85, 61]
+physical_education_mark = 100
+grades += physical_education_markI’m using the most conventional method to perform the list concatenation, the use of “+” operator. It can easily add the whole of one list behind the other list and hence perform the concatenation. But it doesn’t work here. Because list concatenation is only possible for two lists. We cannot combine list and number. The most obvious way to solve this problem is to use the ‘append’ function. It is designed just to do that. It adds an item to the list. The argument can also be an integer.grades = [74, 85, 61]
+physical_education_mark = 100
+grades.append(physical_education_mark)
+print(grades)Output:[74, 85, 61, 100]Voila! We did it! Of course, if we really want to use the ‘+’ operator, we can pre-write our physical education grade in a list with one element, for example like this:grades = [74, 85, 61]
+physical_education_mark = 100
+grades += [physical_education_mark]
+print(grades)Output:[74, 85, 61, 100]The result is expectedly the same as the previous one. Move on.Another list-related problem is when you’re trying to add element with ‘extend‘ method. This method can be very useful to concatenate lists. Unlike the ‘+’ operator, it changes the list from which it is called. For example, I need to add new semester grades to the grades list. It’s easy to do with the method ‘extend’:grades = [74, 85, 61]
+new_semestr_grades = [85, 79]
+physical_education_mark = 100
+grades.extend(new_semestr_grades)
+print(grades)Output:[74, 85, 61, 85, 79]So we did it easily but wait! We forgot our perfect physical education score!grades = [74, 85, 61]
+new_semestr_grades = [85, 79]
+physical_education_mark = 100
+grades.extend(new_semestr_grades)
+grades.extend(physical_education_mark)
+print(grades)Output:---------------------------------------------------------------------------
+TypeError
+Traceback (most recent call last)
+<ipython-input-48-6d49503fc731> in <module>()
+3 physical_education_mark = 100
+4 grades.extend(new_semestr_grades)
+----> 5 grades.extend(physical_education_mark)
+6 print(grades)
+TypeError: 'int' object is not iterableAnd we can’t do it like this. ‘extend’ is waiting for iterable object as an argument. We can use ‘append’ method or pre-writing manner.grades = [74, 85, 61]
+new_semestr_grades = [85, 79]
+physical_education_mark = [100]
+grades.extend(new_semestr_grades)
+grades.extend(physical_education_mark)
+print(grades)Output:[74, 85, 61, 85, 79, 100]Did you notice the difference? I originally defined the variable ‘physical_education_mark’ as a list with one item. And this works perfect!Now suppose we need a function that will find the location of variables in the formula “A + C = D – 6”. If you know that each variable in the formula is denoted by one capital letter. We’re trying to write it:def return_variable_indexes(formula):
+for element in formula:
+if element.isupper():
+indexes = list(formula.index(element))
+return indexes
+print(return_variable_indexes("A + C = D - 6"))Output:---------------------------------------------------------------------------
+TypeError
+Traceback (most recent call last)
+<ipython-input-44-5a9b17ff47ae> in <module>()
+5
+return indexes
+6
+----> 7 print(return_variable_indexes("A + C = D - 6"))
+<ipython-input-44-5a9b17ff47ae> in return_variable_indexes(formula)
+2
+for element in formula:
+3
+if element.isupper():
+----> 4
+indexes = list(formula.index(element))
+5
+return indexes
+6
+TypeError: 'int' object is not iterableYes, we got the same error again. Let’s try to understand what’s the matter. We go through the elements of the string ‘formula’. And if this element is a upper-case letter then we use the ‘index’ function to find its position in the string. And try to write it into a list ‘indexes’. So we have two functions ‘index’ and ‘list’. What is returning value of the ‘index’ function? It is an integer number the position at the first occurrence of the specified value. So we’re trying to add this to the list ‘indexes’ with a ‘list’ function. And stop here! The ‘list’ constructor takes one argument. It should be an iterable object so that could be a sequence (string, tuples) or collection (set, dictionary) or any iterator object. Not an integer number of course. So we can use ‘append’ method again and get the result we need:def return_variable_indexes(formula):
+indexes = []
+for element in formula:
+if element.isupper():
+indexes.append(formula.index(element))
+return indexes
+print(return_variable_indexes("A + C = D - 6"))Output:[0, 4, 8]And just for fun you can do it as a one-liner using a list comprehension and the ‘enumerate’ method. It takes iterable object as an argument and returns its elements with index as tuples (index, element) one tuple by another:def return_variable_indexes(formula):
+return [index_ for index_, element in enumerate(formula) if element.isupper()]
+print(return_variable_indexes("A + C = D - 6"))Output:[0, 4, 8]ConclusionWe have considered some cases in which an error “TypeError: ‘int’ object is not iterable” occurs. This is always a situation where the interpreter expects an iterable object, and we provide it an integer.The most common cases of such errors:incorrect sum argument;incorrect handling of tuples;related to various functions and methods of listsI hope that after reading this article you will never have a similar problem. And if it suddenly arises then you can easily solve it. You may need to read the documentation for this though =) Related PostsThe World’s Most Concise Python Cheat Sheet How To Split A String And Keep The Separators? How to Remove Duplicates From a Python List While Preserving Order? Why Slicing With Index Out Of Range Works In Python? Negative Indexing in Python Python List to Set Conversion [Interactive Guide] The Most Pythonic Way to Check If a List Contains an Element Dict to List — How to Convert a Dictionary to a List in Python Python One Line X Python Define Multiple Variables in One Line 56 Python One-Liners to Impress Your Friends Slice Notation – A Simple Illustrated Guide Post navigation← Previous PostNext Post →MenuAboutImpressumPrivacyTermsEarnings DisclaimerPuzzlesAcademyBooks & Courses
+Copyright © 2021 Finxter

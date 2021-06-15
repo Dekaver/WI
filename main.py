@@ -30,5 +30,5 @@ feature_name = feature_name['feature']
 df = pd.DataFrame(indexing_data.toarray(), index=feature_name)
 index = df.to_dict('index')
 
-# print(df.head(20))
+print(df.head(20))
 # print(feature_name)

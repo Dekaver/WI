@@ -1,111 +1,601 @@
-Undefined array key when trying to reuse old token after upgrading to Symfony 5.2 - symfony
-profile
-viewpoint
-nodejs
-Spring Boot
-React
-Rust
-tensorflow
-Ask
-questionsUndefined array key when trying to reuse old token after upgrading to Symfony 5.2
-Symfony version(s) affected: 5.2.0-rc2 tested
-Description
-Reusing existing token after upgrade causes "ErrorException: Warning: Undefined array key 2" error on first page load only
-How to reproduce
-Run your app in Symfony 4... login...
-Composer upgrade to 5.2.0-rc2
-Reload browser window
-See ErrorException error
-ErrorException:
-Warning: Undefined array key 2
-at vendor/symfony/security-core/Authentication/Token/SwitchUserToken.php:62
-at Symfony\Component\Security\Core\Authentication\Token\SwitchUserToken->__unserialize()
-at unserialize()
-(vendor/symfony/security-http/Firewall/ContextListener.php:287)
-at Symfony\Component\Security\Http\Firewall\ContextListener->safelyUnserialize()
-(vendor/symfony/security-http/Firewall/ContextListener.php:121)
-at Symfony\Component\Security\Http\Firewall\ContextListener->authenticate()
-(vendor/symfony/security-bundle/Debug/WrappedLazyListener.php:49)
-at Symfony\Bundle\SecurityBundle\Debug\WrappedLazyListener->authenticate()
-(vendor/symfony/security-bundle/Security/LazyFirewallContext.php:73)
-at Symfony\Bundle\SecurityBundle\Security\LazyFirewallContext->Symfony\Bundle\SecurityBundle\Security\{closure}()
-(vendor/symfony/security-core/Authentication/Token/Storage/TokenStorage.php:37)
-at Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage->getToken()
-(vendor/symfony/security-core/Authentication/Token/Storage/UsageTrackingTokenStorage.php:46)
-at Symfony\Component\Security\Core\Authentication\Token\Storage\UsageTrackingTokenStorage->getToken()
-(vendor/sentry/sentry-symfony/src/EventListener/RequestListener.php:76)
-at Sentry\SentryBundle\EventListener\RequestListener->onKernelRequest()
-(vendor/symfony/event-dispatcher/Debug/WrappedListener.php:117)
-at Symfony\Component\EventDispatcher\Debug\WrappedListener->__invoke()
-(vendor/symfony/event-dispatcher/EventDispatcher.php:230)
-at Symfony\Component\EventDispatcher\EventDispatcher->callListeners()
-(vendor/symfony/event-dispatcher/EventDispatcher.php:59)
-at Symfony\Component\EventDispatcher\EventDispatcher->dispatch()
-(vendor/symfony/event-dispatcher/Debug/TraceableEventDispatcher.php:151)
-at Symfony\Component\EventDispatcher\Debug\TraceableEventDispatcher->dispatch()
-(vendor/symfony/http-kernel/HttpKernel.php:133)
-at Symfony\Component\HttpKernel\HttpKernel->handleRaw()
-(vendor/symfony/http-kernel/HttpKernel.php:79)
-at Symfony\Component\HttpKernel\HttpKernel->handle()
-(vendor/symfony/http-kernel/Kernel.php:195)
-at Symfony\Component\HttpKernel\Kernel->handle()
-(public/index.php:31)
-Possible Solution
-Simple better handling of array data?
-Additional context
-Problem caused by __unserialize of the data array
-https://github.com/symfony/symfony/blob/49eafee03323253328d76ec9cb4c515f94d2f202/src/Symfony/Component/Security/Core/Authentication/Token/SwitchUserToken.php#L62
-Change that caused this was https://github.com/symfony/symfony/commit/c1e3703efd27a3510f415327a526a2b5d37abad4 for PR https://github.com/symfony/symfony/pull/32841 from @dFayet
-symfony/symfony
-Answer
-questions
-derrabus
-#39187
-useful!
-Related questions
-SF4 Deployment to Prod "Script cache:clear returned with error code 255"
-hot 43
-TranslatorInterface not compatible with LocalAwareInterface
-hot 32
-All kinds of weird bugs in Symfony with PHP 8
-hot 32
-All kinds of weird bugs in Symfony with PHP 8
-hot 30
-[Messenger] Message not sent to AMQP failure transport
-hot 23
-User Deprecated: The "Doctrine\Common\Inflector\Inflector::classify" method is deprecated and will be dropped in doctrine/inflector 2.0. Please update to the new Inflector API
-hot 23
-[Mailer] Mailer DSN is invalid with AWS credentials
-hot 23
-Error to use Protocol AMQP - symfony
-hot 22
-[Serializer] Groups not working
-hot 21
-[HttpClient] Uncatchable fatal error on class destruction
-hot 19
-Serialization of 'Closure' is not allowed
-hot 19
-Twig_Error_Runtime - Variable "Form" does not exist.
-hot 18
-[ERROR] The database schema is not in sync with the current mapping file.
-hot 18
-[DoctrineBridge] By default cannot use @UniqueEntity constraint
-hot 16
-Real environment variable APP_ENV does not win over .env
-hot 16
-source：https://uonfu.com/
-answerer
-Alexander M. Turek derrabus
-Alexander M. Turek
-Düsseldorf, Germany
-https://derrabus.de
-Developer. @symfony Core Team. Consultant. Freelancer. Code Modernizer. Likes working with code that has the age of a good whisky.
-repos
-82
-gists
+laravel - Php artisan make:auth command is not defined - Stack Overflow
+Stack Overflow
+About
+Products
+For Teams
+Stack Overflow
+Public questions & answers
+Stack Overflow for Teams
+Where developers & technologists share private knowledge with coworkers
+Jobs
+Programming & related technical career opportunities
+Talent
+Recruit tech talent & build your employer brand
+Advertising
+Reach developers & technologists worldwide
+About the company
+Loading…
+Log in
+Sign up
+current community
+Stack Overflow
+help
+chat
+Meta Stack Overflow
+your communities
+Sign up or log in to customize your list.
+more stack exchange communities
+company blog
+People who code: we want your input.
+Take the Survey
+Join Stack Overflow to learn, share knowledge, and build your career.
+Sign up with email
+Sign up
+Sign up with Google
+Sign up with GitHub
+Sign up with Facebook
+Home
+Public
+Questions
+Tags
+Users
+Find a Job
+Jobs
+Companies
+Teams
+Stack Overflow for Teams
+– Collaborate and share knowledge with a private group.
+Create a free Team
+What is Teams?
+Teams
+What’s this?
+Create free Team
+Teams
+Q&A for work
+Connect and share knowledge within a single location that is structured and easy to search.
+Learn more
+Php artisan make:auth command is not defined
+Ask Question
+Asked
+5 years, 5 months ago
+Active
+2 months ago
+Viewed
+220k times
+95
+30
+I am trying to run this command in laravel 5.2 but it's not working.
+php artisan make:auth
+and prompts with these statements.
+[InvalidArgumentException]
+Command "make:auth" is not defined
+Did you mean one of these?
+make:test
+make:request
+make:migration
+make:seeder
+make:middleware
+make:controller
+make:provider
+make:policy
+make:event
+make:console
+make:job
+make:listener
+make:model
+make:command
+php laravel
+Share
+Follow
+edited Oct 18 '19 at 0:16
+Saeed
+2,61222 gold badges2121 silver badges3636 bronze badges
+asked Dec 31 '15 at 11:16
+naannaan
+1,03111 gold badge99 silver badges1010 bronze badges
 6
-followers
-133
-following
-101
-Github User Rank List
+their is nothing like use Illuminate\Contracts\Auth\Authenticator; in AuthenticateUser.php.as i mentioned i'm using laravel 5.2
+– naan
+Dec 31 '15 at 11:34
+Have you tried to composer update?
+– Yauheni Prakopchyk
+Dec 31 '15 at 12:05
+yes just last night..
+– naan
+Dec 31 '15 at 12:27
+@YauheniPrakopchyk do you use laravel 5.2?
+– naan
+Dec 31 '15 at 12:29
+There must be any problem with your exist code, You must try with new fresh installation. laravel.com/docs/master/installation . Probably your would understand the exact problem.
+– user3737083
+Dec 31 '15 at 13:14
+|
+Show 1 more comment
+8 Answers
+8
+Active
+Oldest
+Votes
+156
+For Laravel >=6
+composer require laravel/ui
+php artisan ui vue --auth
+php artisan migrate
+Reference : Laravel Documentation for authentication
+it looks you are not using Laravel 5.2, these are the available make commands in L5.2 and you are missing more than just the make:auth command
+make:auth
+Scaffold basic login and registration views and routes
+make:console
+Create a new Artisan command
+make:controller
+Create a new controller class
+make:entity
+Create a new entity.
+make:event
+Create a new event class
+make:job
+Create a new job class
+make:listener
+Create a new event listener class
+make:middleware
+Create a new middleware class
+make:migration
+Create a new migration file
+make:model
+Create a new Eloquent model class
+make:policy
+Create a new policy class
+make:presenter
+Create a new presenter.
+make:provider
+Create a new service provider class
+make:repository
+Create a new repository.
+make:request
+Create a new form request class
+make:seeder
+Create a new seeder class
+make:test
+Create a new test class
+make:transformer
+Create a new transformer.
+Be sure you have this dependency in your composer.json file
+"laravel/framework": "5.2.*",
+Then run
+composer update
+Share
+Follow
+edited Oct 25 '19 at 13:10
+Rameez Rami
+4,07911 gold badge2222 silver badges3030 bronze badges
+answered Dec 31 '15 at 12:55
+Luis Fernando MontoyaLuis Fernando Montoya
+2,12711 gold badge1212 silver badges1717 bronze badges
+4
+my mistake.sorry.I didn't checked my composr.json file.
+– naan
+Jan 1 '16 at 19:57
+3
+This answer needs to be updated - Laravel is at 7.0 at the moment.
+– Fresz
+Jun 10 '20 at 9:13
+composer require laravel/ui doesn't work with me
+– TECNO
+Aug 2 '20 at 9:30
+Worked with Laravel 8.5. Thank you.
+– s3c
+Mar 7 at 15:53
+Add a comment
+|
+88
+Update for Laravel 8
+laravel/ui still works but is considered legacy. Consider using Laravel Breeze or Laravel Jetstream.
+Update for Laravel 6
+Now that Laravel 6 is released you need to install laravel/ui.
+composer require laravel/ui --dev
+php artisan ui vue --auth
+You can change vue with react or bootstrap if you use React or Bootstrap in your project (see Using React).
+And then you need to perform the migrations and compile the frontend
+php artisan migrate
+npm install && npm run dev
+Source : Laravel Documentation for authentication
+Want to get started fast? Install the laravel/ui Composer package and
+run php artisan ui vue --auth in a fresh Laravel application. After
+migrating your database, navigate your browser to
+http://your-app.test/register or any other URL that is assigned to
+your application. These commands will take care of scaffolding your
+entire authentication system!
+Note: That's only if you want to use scaffolding, you can use the default User model and the Eloquent authentication driver.
+Share
+Follow
+edited Apr 5 at 8:09
+answered Sep 4 '19 at 14:44
+NinoNino
+1,05711 gold badge66 silver badges1212 bronze badges
+6
+3
+Thanks. What if I don't want Vue, just the auth scaffolding?
+– Amir Asyraf
+Sep 5 '19 at 13:57
+@AmirAsyraf I would recommend to write it yourself, the auth middleware is native, you just need to write the routes then.
+– Nino
+Sep 7 '19 at 9:48
+This should be the accepted answer. After adding laravel/ui, the ui:auth command is available.
+– zeljko_a
+Oct 5 '19 at 19:06
+1
+Thanks. What if I don't want Vue, just the auth scaffolding? use php artisan ui:auth check answer stackoverflow.com/a/58449383/9978078
+– Dilip Hirapara
+Oct 18 '19 at 10:54
+1
+@Nino You have missed bootstrap parameter. like php artisan ui bootstrap --auth
+– Mahmood Jenami
+Apr 2 at 14:54
+|
+Show 1 more comment
+69
+In Laravel 6.0 make:auth no longer exists. Read more here
+A- Shorthand:
+Update Nov 18th:
+Taylor just released Laravel Installer 2.3.0 added a new "--auth" flag to create a new project with the authentication scaffolding installed!
+To update laravel installer read here
+It means we can do:
+laravel new project --auth
+cd project
+php artisan migrate
+npm install
+npm run dev
+Which is a shorthand of commands in the Section B. Also read more here
+B - Details:
+Follow these three steps
+Step 1 - First do this:
+laravel new project
+cd project
+composer require laravel/ui --dev
+Note:
+Laravel UI Composer package is a new first-party package that extracts the UI portion of a Laravel project ( frontend scaffolding typically provided with previous releases of Laravel ) into a separate laravel/ui package. The separate package enables the Laravel team to update, develop and version UI scaffolding package separately from the primary framework and the main Laravel codebase.
+Step 2 - Then do this:
+php artisan ui bootstrap --auth
+php artisan migrate
+or
+php artisan ui vue --auth
+php artisan migrate
+instead of
+php artisan make:auth
+( which works for Laravel 5.8 and older versions )
+More Options here
+php artisan ui:auth
+The above command will generate only the auth routes, a HomeController, auth views, and a app.blade.php layout file.
+You can also generate the views only with:
+php artisan ui:auth --views
+The console command will prompt you to confirm overwriting auth files if you've already run the command before.
+// Generate basic scaffolding...
+php artisan ui vue
+php artisan ui react
+and also:
+// Generate login / registration scaffolding...
+php artisan ui vue --auth
+php artisan ui react --auth
+To see differences read this article
+Step 3 - Then you need to do:
+npm install
+npm run dev
+Share
+Follow
+edited Jun 20 '20 at 9:12
+Community♦
+111 silver badge
+answered Sep 9 '19 at 12:13
+panjehpanjeh
+1,01311 gold badge1010 silver badges1010 bronze badges
+1
+4
+You're largely just duplicating @Nino's answer from a week ago.
+– ceejayoz
+Sep 10 '19 at 14:16
+Add a comment
+|
+13
+In the Laravel 6 application the make:auth command no longer exists.
+Laravel UI is a new first-party package that extracts the UI portion of a Laravel project into a separate laravel/ui
+package. The separate package enables the Laravel team to iterate on the UI package separately from the main Laravel codebase.
+You can install the laravel/ui package via composer:
+composer require laravel/ui
+The ui:auth Command
+Besides the new ui command, the laravel/ui package comes with another command for generating the auth scaffolding:
+php artisan ui:auth
+If you run the ui:auth command, it will generate the auth routes, a HomeController, auth views, and a app.blade.php layout file.
+If you want to generate the views alone, type the following command instead:
+php artisan ui:auth --views
+If you want to generate the auth scaffolding at the same time:
+php artisan ui vue --auth
+php artisan ui react --auth
+php artisan ui vue --auth command will create all of the views you need for authentication and place them in the resources/views/auth directory
+The ui command will also create a resources/views/layouts directory containing a base layout for your application. All of these views use the Bootstrap CSS framework, but you are free to customize them however you wish.
+More detail follow. laravel-news & documentation
+Simply you've to follow this two-step.
+composer require laravel/ui
+php artisan ui:auth
+Share
+Follow
+edited Nov 21 '19 at 10:06
+code_master
+522 bronze badges
+answered Oct 18 '19 at 10:53
+Dilip HiraparaDilip Hirapara
+11.7k22 gold badges2020 silver badges4343 bronze badges
+Add a comment
+|
+7
+In short and precise, all you need to do is
+composer require laravel/ui --dev
+php artisan ui vue --auth and then the migrate php artisan migrate.
+Just for an overview of Laravel Authentication
+Laravel Authentication facilities comes with Guard and Providers, Guards define how users are authenticated for each request whereas Providers define how users are retrieved from you persistent storage.
+Database Consideration - By default Laravel includes an App\User Eloquent Model in your app directory.
+Auth Namespace - App\Http\Controllers\Auth
+Controllers - RegisterController, LoginController, ForgotPasswordController and ResetPasswordController, all names are meaningful and easy to understand!
+Routing - Laravel/ui package provides a quick way to scaffold all the routes and views you need for authentication using a few simple commands (as mentioned in the start instead of make:auth).
+You can disable any newly created controller, e. g. RegisterController and modify your route declaration like, Auth::routes(['register' => false]);
+For further detail please look into the Laravel Documentation.
+Share
+Follow
+answered Sep 25 '19 at 11:01
+zaffarzaffar
+49155 silver badges1212 bronze badges
+Add a comment
+|
+3
+If you using >5 version of laravel then you will use.
+composer require laravel/ui --dev **or** composer require laravel/ui
+And then
+php artisan ui:auth
+Share
+Follow
+answered Nov 28 '20 at 9:52
+Siraj AliSiraj Ali
+14388 bronze badges
+Add a comment
+|
+2
+This two commands work for me in my project
+composer require laravel/ui --dev
+Then
+php artisan ui:auth
+Share
+Follow
+answered Oct 24 '20 at 16:38
+MuktaMukta
+79588 silver badges1010 bronze badges
+Add a comment
+|
+1
+Checkout your laravel/framework version on your composer.json file,
+If it's either "^6.0" or higher than "^5.9",
+you have to use php artisan ui:auth instead of php artisan make:auth.
+Before using that you have to install new dependencies by calling
+composer require laravel/ui --dev in the current directory.
+Share
+Follow
+answered Oct 28 '20 at 5:39
+Hanan RatnamHanan Ratnam
+4144 bronze badges
+Add a comment
+|
+Highly active question. Earn 10 reputation in order to answer this question. The reputation requirement helps protect this question from spam and non-answer activity.
+Not the answer you're looking for? Browse other questions tagged php laravel
+or ask your own question.
+The Overflow Blog
+Podcast 347: Information foraging – the tactics great developers use to find…
+Let’s enhance: use Intel AI to increase image resolution in this demo
+Featured on Meta
+Take the 2021 Developer Survey
+Linked
+-1
+php artisan make auth is not defined in laravel 6
+24
+Artisan command “make:auth” is not defined in Laravel 6
+0
+How can i show a modal through a route and a controller in laravel?
+0
+Laravel artisan QueryExceptions and dependency problems
+1
+why auth login view won't extend basic layouts
+Related
+2773
+How can I prevent SQL injection in PHP?
+2738
+Deleting an element from an array in PHP
+4727
+Reference — What does this symbol mean in PHP?
+1194
+Reference - What does this error mean in PHP?
+2584
+Why shouldn't I use mysql_* functions in PHP?
+312
+Could not open input file: artisan
+3
+Command “make:seeder” is not defined in laravel 5.0
+1
+error while trying to run artisan command with Artisan Facade
+1
+Artisan make:auth login failing
+Hot Network Questions
+Are wheelchairs allowed in US Wilderness Areas?
+Command 'time' works on its own but not in a pipeline
+Positioning of multiple `pic` using `below=of` not properly aligned
+Man testifies before senate committee. He invented super-powerful easily-made gun which will change society. He just released plans
+How was a government formed in Israel with only 60 supporting votes, rather than 61?
+Why didn't Wanda keep a small Hex in the end?
+How do I record zither, harp etc. with a pickup?
+What's the best way to resolve a paradox created when a mage shapeshifted into a larger creature enters an antimagic field, but its true form doesn't?
+How do mathematicians read math books?
+I'm seeing gyms in Pokémon Go with pokémon that have ridiculous CP numbers, and I have no clue what they are
+Requirements for creatures to wake others when put to sleep by magic
+running shell or bash scripts with zsh (Big Sur)
+What should I do if my dog fails a cycle of her separation training?
+Is it possible to send money to my friend in the US using a wire transfer?
+The Passive Voice
+How to cut a UV sphere in half?
+When to use air dielectric cables for antenna installation
+70s-80s novel about a naval fleet in a post-nuclear war world
+What kind of yeast is this?
+How do you say "in the year of the plague" in Latin?
+Garlic as staple food for colonies?
+What is this stainless-steel item's intended use? Is it a cheese grater?
+What does "Joggleberry", "celestial limit" and "pink penultimate" mean in "The Power-House"?
+Why aren't the pillars of Gringotts Bank straight?
+more hot questions
+Question feed
+Subscribe to RSS
+Question feed
+To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+lang-php
+Stack Overflow
+Questions
+Jobs
+Developer Jobs Directory
+Salary Calculator
+Help
+Mobile
+Products
+Teams
+Talent
+Advertising
+Enterprise
+Company
+About
+Press
+Work Here
+Legal
+Privacy Policy
+Terms of Service
+Contact Us
+Cookie Settings
+Cookie Policy
+Stack Exchange Network
+Technology
+Life / Arts
+Culture / Recreation
+Science
+Other
+Stack Overflow
+Server Fault
+Super User
+Web Applications
+Ask Ubuntu
+Webmasters
+Game Development
+TeX - LaTeX
+Software Engineering
+Unix & Linux
+Ask Different (Apple)
+WordPress Development
+Geographic Information Systems
+Electrical Engineering
+Android Enthusiasts
+Information Security
+Database Administrators
+Drupal Answers
+SharePoint
+User Experience
+Mathematica
+Salesforce
+ExpressionEngine® Answers
+Stack Overflow em Português
+Blender
+Network Engineering
+Cryptography
+Code Review
+Magento
+Software Recommendations
+Signal Processing
+Emacs
+Raspberry Pi
+Stack Overflow на русском
+Code Golf
+Stack Overflow en español
+Ethereum
+Data Science
+Arduino
+Bitcoin
+Software Quality Assurance & Testing
+Sound Design
+Windows Phone
+more (29)
+Photography
+Science Fiction & Fantasy
+Graphic Design
+Movies & TV
+Music: Practice & Theory
+Worldbuilding
+Video Production
+Seasoned Advice (cooking)
+Home Improvement
+Personal Finance & Money
+Academia
+Law
+Physical Fitness
+Gardening & Landscaping
+Parenting
+more (10)
+English Language & Usage
+Skeptics
+Mi Yodeya (Judaism)
+Travel
+Christianity
+English Language Learners
+Japanese Language
+Chinese Language
+French Language
+German Language
+Biblical Hermeneutics
+History
+Spanish Language
+Islam
+Русский язык
+Russian Language
+Arqade (gaming)
+Bicycles
+Role-playing Games
+Anime & Manga
+Puzzling
+Motor Vehicle Maintenance & Repair
+Board & Card Games
+Bricks
+Homebrewing
+Martial Arts
+The Great Outdoors
+Poker
+Chess
+Sports
+more (16)
+MathOverflow
+Mathematics
+Cross Validated (stats)
+Theoretical Computer Science
+Physics
+Chemistry
+Biology
+Computer Science
+Philosophy
+Linguistics
+Psychology & Neuroscience
+Computational Science
+more (10)
+Meta Stack Exchange
+Stack Apps
+API
+Data
+Blog
+Facebook
+Twitter
+LinkedIn
+Instagram
+site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
+rev 2021.6.14.39488
+Stack Overflow works best with JavaScript enabled
+Your privacy
+By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
+Accept all cookies
+Customize settings

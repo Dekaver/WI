@@ -1,1 +1,435 @@
-Kotakode.com | Komunitas Developer IndonesiaYou need to enable JavaScript to run this app.
+python - AttributeError: 'numpy.ndarray' object has no attribute 'toarray' - Recalll
+beta
+Find a Job
+Login
+Loading...
+All
+Code
+Import from Url
+Cat1
+Cat2
+Cat3
+Cat4
+Cat5
+Cat2
+Cat3
+Cat4
+Cat5
+×
+About 2437 results.
+Rectangle 27
+13
+numpy.concatenate(list1 , list2)
+numpy.append()
+python - AttributeError: 'numpy.ndarray' object has no attribute 'appe...
+python
+matplotlib
+Rectangle 27
+13
+numpy.concatenate(list1 , list2)
+numpy.append()
+python - AttributeError: 'numpy.ndarray' object has no attribute 'appe...
+python
+matplotlib
+Rectangle 27
+7
+Probably you created a numpy array named time somewhere before this code snippet. You should not do that, because the module time now gets overwritten. Rename your array (to something like time_list), and it works.
+python - AttributeError: 'numpy.ndarray' object has no attribute 'cloc...
+python
+python-2.7
+numpy
+Rectangle 27
+5
+for root, dirs, files in os.walk(directory):
+for file in files:
+floc = file
+im = Image.open(str(directory) + '\\' + floc)
+pix = np.array(im.getdata())
+pixels.append(pix)
+labels.append(1)
+# append(i)???
+So far ok. But you want to leave pixels as a list until you are done with the iteration.
+pixels = np.array(pixels)
+labels = np.array(labels)
+You had this indention right in your other question.
+What happened?
+previous
+Iterating, collecting values in a list, and then at the end joining things into a bigger array is the right way.
+To make things clear I often prefer to use notation like:
+alist = []
+for ..
+alist.append(...)
+arr = np.array(alist)
+If names indicate something about the nature of the object I'm less likely to get errors like yours.
+I don't understand what you are trying to do with traindata.
+I doubt if you need to build it during the loop.
+pixels and labels have the basic information.
+traindata = np.array([traindata[i][i],traindata[1]], dtype=object)
+comes from the previous question.
+I'm not sure you understand that answer.
+traindata = []
+traindata.append(pixels)
+traindata.append(labels)
+if done outside the loop is just
+traindata = [pixels, labels]
+labels is a 1d array, a bunch of 1s (or [0,1,2,3...] if my guess is right).
+pixels is a higher dimension array.
+What is its shape?
+Stop right there.
+There's no point in turning that list into an array.
+You can save the list with pickle.
+You are copying code from an earlier question, and getting the formatting wrong.
+cPickle very large amount of data
+Python - AttributeError: 'numpy.ndarray' object has no attribute 'appe...
+python
+numpy
+pickle
+Rectangle 27
+5
+for root, dirs, files in os.walk(directory):
+for file in files:
+floc = file
+im = Image.open(str(directory) + '\\' + floc)
+pix = np.array(im.getdata())
+pixels.append(pix)
+labels.append(1)
+# append(i)???
+So far ok. But you want to leave pixels as a list until you are done with the iteration.
+pixels = np.array(pixels)
+labels = np.array(labels)
+You had this indention right in your other question.
+What happened?
+previous
+Iterating, collecting values in a list, and then at the end joining things into a bigger array is the right way.
+To make things clear I often prefer to use notation like:
+alist = []
+for ..
+alist.append(...)
+arr = np.array(alist)
+If names indicate something about the nature of the object I'm less likely to get errors like yours.
+I don't understand what you are trying to do with traindata.
+I doubt if you need to build it during the loop.
+pixels and labels have the basic information.
+traindata = np.array([traindata[i][i],traindata[1]], dtype=object)
+comes from the previous question.
+I'm not sure you understand that answer.
+traindata = []
+traindata.append(pixels)
+traindata.append(labels)
+if done outside the loop is just
+traindata = [pixels, labels]
+labels is a 1d array, a bunch of 1s (or [0,1,2,3...] if my guess is right).
+pixels is a higher dimension array.
+What is its shape?
+Stop right there.
+There's no point in turning that list into an array.
+You can save the list with pickle.
+You are copying code from an earlier question, and getting the formatting wrong.
+cPickle very large amount of data
+Python - AttributeError: 'numpy.ndarray' object has no attribute 'appe...
+python
+numpy
+pickle
+Rectangle 27
+5
+It takes a dict as the second argument not an array:
+I am not overly familiar but I imagine you pass the name as the key and the array as the value, something like:
+sio.savemat('final.mat',{"foo":temp})
+Thanks! Do we have to convert arrays to dictionaries in order to save them as .mat file?
+@A.M., as far as I can tell you pass a string as the key and the array as the value. There are other keywords that affect how the array is stored
+python - AttributeError: 'numpy.ndarray' object has no attribute 'item...
+python
+numpy
+Rectangle 27
+5
+It takes a dict as the second argument not an array:
+I am not overly familiar but I imagine you pass the name as the key and the array as the value, something like:
+sio.savemat('final.mat',{"foo":temp})
+Thanks! Do we have to convert arrays to dictionaries in order to save them as .mat file?
+@A.M., as far as I can tell you pass a string as the key and the array as the value. There are other keywords that affect how the array is stored
+python - AttributeError: 'numpy.ndarray' object has no attribute 'item...
+python
+numpy
+Rectangle 27
+4
+Although numpy.ndarray has a mean, max, std etc. method, it does not have a median method. For a list of all methods available for an ndarray, see the numpy documentation for ndarray.
+It is available as a function that takes the array as an argument:
+>>> import numpy as np
+>>> a = np.array([1,2,3,4,5,6,7,8,9,10])
+>>> np.median(a)
+5.5
+As you will see in the documentation for ndarray.mean, ndarray.mean and np.mean are "equivalent functions," so this is just a matter of semantics.
+python - AttributeError: 'numpy.ndarray' object has no attribute 'medi...
+python
+numpy
+Rectangle 27
+4
+If len(X) is >1, axes will be a 2D array of AxesSubplot instances. So when you loop over axes, you actually get a slice along one dimension of the axes array.
+axes.flat
+for ax,_x in zip(axes.flat,X):
+Also if you are trying to plot all these on one figure, you don't need to call plt.subplots twice, as that will create two figures.
+axes
+yy = func(*X)
+fig, axes = plt.subplots(2, len(X))
+for i,_x in enumerate(X):
+axes[0, i].plot(_x, y, 'b.')
+axes[0, i].plot(_x, yy, 'r.')
+axes[1, i].plot(_x, yy/y-1, 'r.')
+plt.show()
+python - AttributeError: 'numpy.ndarray' object has no attribute 'plot...
+python
+matplotlib
+Rectangle 27
+4
+append
+roi_pixels = np.append(roi_pixels, c_roi_pixels)
+Note that the append function creates and returns a copy! It does not modify the original.
+So the problem is due to the fact that I specify a zero matrix?
+No. The problem is that append is not a method of the ndarray class.
+python - AttributeError: 'numpy.ndarray' object has no attribute 'appe...
+python
+image
+numpy
+Rectangle 27
+1
+TruncatedSVD.transform returns an array, not a sparse matrix. In fact, in the present version of scikit-learn, only the vectorizers return sparse matrices.
+@Learner: it's in the docstring for that method.
+python - AttributeError: 'numpy.ndarray' object has no attribute 'toar...
+python
+numpy
+machine-learning
+scikit-learn
+Rectangle 27
+3
+Numpy arrays do not have an append method. Use the Numpy append function instead:
+import numpy as np
+array_3 = np.append(array_1, array_2, axis=n)
+# you can either specify an integer axis value n or remove the keyword argument completely
+For example, if array_1 and array_2 have the following values:
+array_1 = np.array([1, 2])
+array_2 = np.array([3, 4])
+If you call np.append without specifying an axis value, like so:
+array([1, 2, 3, 4])
+Else, if you call np.append with an axis value of 0, like so:
+array_3 = np.append(array_1, array_2, axis=0)
+array_3 will have the following value:
+array([[1, 2],
+[3, 4]])
+He could also avoid converting the lists to arrays during the loop (i.e. move pixels = np.array(pixels) to end of loop)
+Don't use np.append, especially not in a loop.
+It is inefficient.
+Python - AttributeError: 'numpy.ndarray' object has no attribute 'appe...
+python
+numpy
+pickle
+Rectangle 27
+3
+Numpy arrays do not have an append method. Use the Numpy append function instead:
+import numpy as np
+array_3 = np.append(array_1, array_2, axis=n)
+# you can either specify an integer axis value n or remove the keyword argument completely
+For example, if array_1 and array_2 have the following values:
+array_1 = np.array([1, 2])
+array_2 = np.array([3, 4])
+If you call np.append without specifying an axis value, like so:
+array([1, 2, 3, 4])
+Else, if you call np.append with an axis value of 0, like so:
+array_3 = np.append(array_1, array_2, axis=0)
+array_3 will have the following value:
+array([[1, 2],
+[3, 4]])
+He could also avoid converting the lists to arrays during the loop (i.e. move pixels = np.array(pixels) to end of loop)
+Don't use np.append, especially not in a loop.
+It is inefficient.
+Python - AttributeError: 'numpy.ndarray' object has no attribute 'appe...
+python
+numpy
+pickle
+Rectangle 27
+10
+Check the shape of mealarray.
+If the argument to fit_transform is an array of strings, it must be a one-dimensional array. (That is, mealarray.shape must be of the form (n,).)
+For example, you'll get the "no attribute" error if mealarray has a shape such as (n, 1).
+data = vectorizer.fit_transform(mealarray.ravel())
+I tried it with ravel and got the following error. AttributeError: 'NoneType' object has no attribute 'lower'.
+The shape of mealarray is (5000,1) because I created it using "mealarray = np.empty((plen,1), dtype=object)"
+OK, so you then populate the array afterwards.
+Then you must have a count of the actual number of words in mealarray, correct?
+Let's say it is nwords.
+Then pass mealarray[:nwords].ravel() to fit_transform().
+(Although I wonder why you create the array with shape (plen,1) instead of just (plen,).)
+Note: In my previous comment, I assume that you fill mealarray from the beginning, with no indices containing None between indices containing words.
+ravel()
+python - Numpy CountVectorizer: AttributeError: 'numpy.ndarray' object...
+python
+numpy
+scikit-learn
+text-classification
+Rectangle 27
+2
+In Python2.7 adding a print('alpha',alpha) at the start of the loop produces:
+('alpha', 0.5235987755982988)
+('alpha', array([ 1.85083849,
+2.29325173]))
+('alpha', array([[array([ 1.98227296,
+1.95343536]), 1.7138098231972174],
+[array([ 1.81303794,
+1.7604074 ]), 2.2932517265367176]], dtype=object))
+Traceback (most recent call last):
+File "stack32444132.py", line 17, in <module>
+g1 = L1 * np.cos(theta) + L2 * np.cos(alpha) - L3
+AttributeError: 'numpy.ndarray' object has no attribute 'cos'
+So the error is caused by calling np.cos(alpha) where alpha is an object array.
+alpha is (2,2); the 1st column contains length 2 arrays; the 2nd contains floats.
+So at some point in the loop you are appending or conconatenating arrays or lists of different length.
+s = np.array([[alpha], [L3]]) - J/np.array([[g1], [g2]])
+alpha = s[0]
+('J', (2, 2), dtype('float64'))
+('alpha', 0.5235987755982988)
+('L3', 1.5)
+....
+('J', (2, 2), dtype('O'))
+('alpha', array([ 1.85083849,
+2.29325173]))
+('L3', array([-10.61649234,
+1.5
+]))
+In the 2nd loop J changes from a 2x2 matrix of floats to a 2x2 of objects.
+Python3 raises an error earlier, at the first encounter of the epsilon = max(epsilon_alpha.all, epsilon_L3.all) expression.
+epsilon_alpha.all is a method; epsilon_alpha.all() is a boolean.
+But even that produces an error when epsilon_alpha becomes an array.
+OK, this loop runs (alpha remains a scalar); it doesn't stop, presumably because epsilon does not get small enough; but I'll leave that to you.
+while epsilon > 0.0001:
+# print('alpha', alpha)
+g1 = L1 * np.cos(theta) + L2 * np.cos(alpha) - L3
+dg1dalpha = -L2 * np.sin(alpha)
+dg1dL3 = -1;
+g2 = L1 * np.sin(theta) - L2 * np.sin(alpha)
+dg2dalpha = -L2 * np.cos(alpha);
+dg2dL3 = 0
+J = np.array([[dg1dalpha, dg1dL3], [dg2dalpha, dg2dL3]])
+print('J', J.shape,J.dtype)
+# (2,2) floats
+s = np.array([[alpha], [L3]]) - J/np.array([[g1], [g2]])
+s = s[:,0]
+# fudge to turn (2,2) array into a (2,) array
+epsilon_alpha = abs(s[0] - alpha)
+epsilon_L3 = abs(s[1] - L3)
+epsilon = max(epsilon_alpha, epsilon_L3)
+# max on 2 scalars is ok
+alpha = s[0] # scalar
+L3 = s[1]
+# scalar
+n = n + 1
+The root of the problem is in the
+s = np.array([[alpha], [L3]]) - J/np.array([[g1], [g2]])
+If alpha and L3 are scalars, then np.array([[alpha], [L3]]) is (2,1).
+So is np.array([[g1], [g2]]).
+But since J is (2,2), s is also (2,2).
+But you've been using s[0] and s[1], evidently assuming s is `(2,).
+s = s[:,0]
+makes s a (2,) so the rest of the code works.
+Since epsilon does not converge it probably is the wrong fix.
+May I stress - when developing numpy code, pay close attention to the array shapes.
+If the shapes are wrong you'll get errors like this.
+In my experience getting the shapes right is 80% of the debugging work.
+Wow, @hpaulj thanks for the detailed post. I need to learn how to do efficient debugging like you just did. I'll keep working on getting the shapes right as you suggested.
+python - AttributeError: 'numpy.ndarray' object has no attribute 'cos'...
+python
+numpy
+Rectangle 27
+2
+Check the Pandas documentation, but I think
+X_train =df_train.drop(['ID','TARGET'], axis=1).values
+.values returns a numpy array, not a Pandas dataframe.
+An array does not have a columns attribute.
+remove_features_identical - if you pass this an array, make sure you are only using array, not dataframe, features.
+Otherwise, make sure you pass it a dataframe.
+And don't use variable names like DataFrame.
+python - AttributeError: 'numpy.ndarray' object has no attribute 'colu...
+python
+numpy
+pandas
+Rectangle 27
+1
+pixels = np.array(pixels) in this line you reassign pixels. So, it may not a list anyhow. Though pixels is not a list it has no attributes append. Does it make sense?
+Python - AttributeError: 'numpy.ndarray' object has no attribute 'appe...
+python
+numpy
+pickle
+Rectangle 27
+1
+pixels = np.array(pixels) in this line you reassign pixels. So, it may not a list anyhow. Though pixels is not a list it has no attributes append. Does it make sense?
+Python - AttributeError: 'numpy.ndarray' object has no attribute 'appe...
+python
+numpy
+pickle
+Rectangle 27
+1
+append on an ndarray is ambiguous; to which axis do you want to append the data? Without knowing precisely what your data looks like, I can only provide an example using numpy.concatenate that I hope will help:
+import numpy as np
+pixels = np.array([[3,3]])
+pix = [4,4]
+pixels = np.concatenate((pixels,[pix]),axis=0)
+# [[3 3]
+#
+[4 4]]
+Python - AttributeError: 'numpy.ndarray' object has no attribute 'appe...
+python
+numpy
+pickle
+Rectangle 27
+1
+append on an ndarray is ambiguous; to which axis do you want to append the data? Without knowing precisely what your data looks like, I can only provide an example using numpy.concatenate that I hope will help:
+import numpy as np
+pixels = np.array([[3,3]])
+pix = [4,4]
+pixels = np.concatenate((pixels,[pix]),axis=0)
+# [[3 3]
+#
+[4 4]]
+Python - AttributeError: 'numpy.ndarray' object has no attribute 'appe...
+python
+numpy
+pickle
+Hidden
+Contact Now
+Contact to your favourite celebrities now like Shahnaz Gill, Mayur Verma, Shahbaz Badisha and many more.
+Similar Queries
+python - AttributeError: 'numpy.ndarray' object has no attribute 'toarray' in py-faster-rcnn - Stack Overflow
+python - AttributeError: 'numpy.ndarray' object has no attribute 'toarray' - Stack Overflow
+python - AttributeError: 'numpy.ndarray' object has no attribute 'toarray' - Stack Overflow
+Top Queries
+angularjs - Invoking $setValidity from jQuery
+asp.net - Passing parameter with @html.beginform and dropdownlist to controller
+dependency injection - Spring @Autowired confusion (container or session)
+Similar Queries
+Cras justo odio
+Dapibus ac facilisis in
+Morbi leo risus
+Porta ac consectetur ac
+Vestibulum at eros
+Collections
+Take The Fast Company News Quiz
+Fast Feed
+July 3, 2015
+Rose Pastore
+Take The Fast Company News Quiz
+Fast Feed
+July 3, 2015
+Rose Pastore
+Take The Fast Company News Quiz
+Fast Feed
+July 3, 2015
+Rose Pastore
+Bookmark Topics
+Bookmark topics by just clicking on bookmark icon.
+contact
+| privacy policy
+| terms of use
+© 2015-16 recalll
+×
+Modal header
+Body...
+Close
+Save

@@ -11,8 +11,6 @@ url = json.load(open('resource/dataset.json'))['url']
 with open('resource/stopwords/stopword.txt', 'r') as f:
     f = f.read()
     stopwords = f.split('\n')
-# stopwords = stopwords.words('english')
-# print(stopwords.read())
 
 def indexing(folder_dataset, json_dataset):
     dataset = json.load(open(folder_dataset + json_dataset,))
@@ -29,19 +27,18 @@ def indexing(folder_dataset, json_dataset):
             text = word_tokenize(text)
 
             text_without_sw = [word for word in text if not word in stopwords]
-            
             text = " ".join(text_without_sw)
             
             dataframe.append(text)
 
     #menghitung term frekuensi
-    cv = CountVectorizer(max_features=50000, binary=True, ngram_range=(1, 2))
+    cv = CountVectorizer(max_features=60000, binary=True, ngram_range=(1, 2))
     ct = cv.fit_transform(dataframe)
 
     norm_ct = normalize(ct, norm = "l1", axis=1)
 
     #menghitung documen frekuensi
-    tv = TfidfVectorizer(max_features=50000, binary=True, norm=None , smooth_idf=False, ngram_range=(1, 2))
+    tv = TfidfVectorizer(max_features=60000, binary=True, norm=None , smooth_idf=False, ngram_range=(1, 2))
     tv.fit_transform(dataframe)
 
     #menghitung invers dokumen frekuensi

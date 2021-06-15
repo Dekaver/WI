@@ -1,234 +1,58 @@
-Google login with Flask: authorize_redirect - TypeError: 'str' object cannot be interpreted as an integer · Issue #271 · lepture/authlib · GitHub
-Skip to content
-Sign up
-Why GitHub?
-Features →
-Mobile →
-Actions →
-Codespaces →
-Packages →
-Security →
-Code review →
-Project management →
-Integrations →
-GitHub Sponsors →
-Customer stories→
-Team
-Enterprise
-Explore
-Explore GitHub →
-Learn and contribute
-Topics →
-Collections →
-Trending →
-Learning Lab →
-Open source guides →
-Connect with others
-The ReadME Project →
-Events →
-Community forum →
-GitHub Education →
-GitHub Stars program →
-Marketplace
-Pricing
-Plans →
-Compare plans →
-Contact Sales →
-Education →
-In this repository
-All GitHub
-↵
-Jump to
-↵
-No suggested jump to results
-In this repository
-All GitHub
-↵
-Jump to
-↵
-In this user
-All GitHub
-↵
-Jump to
-↵
-In this repository
-All GitHub
-↵
-Jump to
-↵
-Sign in
-Sign up
-{{ message }}
-lepture
-/
-authlib
-Sponsor
-Sponsor lepture/authlib
-Notifications
-Star
-2.5k
-Fork
-260
-Code
-Issues
-24
-Pull requests
-5
-Discussions
-Actions
-Projects
-2
-Security
-Insights
-More
-Code
-Issues
-Pull requests
-Discussions
-Actions
-Projects
-Security
-Insights
-New issue
-Have a question about this project? Sign up for a free GitHub account to open an issue and contact its maintainers and the community.
-Pick a username
-Email Address
-Password
-Sign up for GitHub
-By clicking “Sign up for GitHub”, you agree to our terms of service and
-privacy statement. We’ll occasionally send you account related emails.
-Already on GitHub?
-Sign in
-to your account
-Jump to bottom
-Google login with Flask: authorize_redirect - TypeError: 'str' object cannot be interpreted as an integer
-#271
-Closed
-Jupiops
-opened this issue
-Sep 11, 2020
-· 1 comment
-Closed
-Google login with Flask: authorize_redirect - TypeError: 'str' object cannot be interpreted as an integer
-#271
-Jupiops
-opened this issue
-Sep 11, 2020
-· 1 comment
-Assignees
-Labels
-bug
-Comments
-Copy link
-Jupiops
-commented
-Sep 11, 2020
-Describe the bug
-authorize_redirect not working for Google login with Flask
-Error Stacks
-Traceback (most recent call last):
-File "C:\Users\Jupio\PycharmProjects\FlaskApp\venv\lib\site-packages\flask\app.py", line 2464, in __call__
-return self.wsgi_app(environ, start_response)
-File "C:\Users\Jupio\PycharmProjects\FlaskApp\venv\lib\site-packages\flask\app.py", line 2450, in wsgi_app
-response = self.handle_exception(e)
-File "C:\Users\Jupio\PycharmProjects\FlaskApp\venv\lib\site-packages\flask\app.py", line 1867, in handle_exception
-reraise(exc_type, exc_value, tb)
-File "C:\Users\Jupio\PycharmProjects\FlaskApp\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
-raise value
-File "C:\Users\Jupio\PycharmProjects\FlaskApp\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
-response = self.full_dispatch_request()
-File "C:\Users\Jupio\PycharmProjects\FlaskApp\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
-rv = self.handle_user_exception(e)
-File "C:\Users\Jupio\PycharmProjects\FlaskApp\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
-reraise(exc_type, exc_value, tb)
-File "C:\Users\Jupio\PycharmProjects\FlaskApp\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
-raise value
-File "C:\Users\Jupio\PycharmProjects\FlaskApp\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
-rv = self.dispatch_request()
-File "C:\Users\Jupio\PycharmProjects\FlaskApp\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
-return self.view_functions[rule.endpoint](**req.view_args)
-File "C:\Users\Jupio\PycharmProjects\FlaskApp\app\routes.py", line 19, in login
-return oauth.google.authorize_redirect(redirect_uri)
-File "C:\Users\Jupio\PycharmProjects\FlaskApp\venv\lib\site-packages\authlib\integrations\flask_client\remote_app.py", line 58, in authorize_redirect
-rv = self.create_authorization_url(redirect_uri, **kwargs)
-File "C:\Users\Jupio\PycharmProjects\FlaskApp\venv\lib\site-packages\authlib\integrations\base_client\remote_app.py", line 75, in create_authorization_url
-client, authorization_endpoint, **kwargs)
-File "C:\Users\Jupio\PycharmProjects\FlaskApp\venv\lib\site-packages\authlib\integrations\base_client\base_app.py", line 186, in _create_oauth2_authorization_url
-authorization_endpoint, **kwargs)
-File "C:\Users\Jupio\PycharmProjects\FlaskApp\venv\lib\site-packages\authlib\oauth2\client.py", line 154, in create_authorization_url
-state=state, **kwargs)
-File "C:\Users\Jupio\PycharmProjects\FlaskApp\venv\lib\site-packages\authlib\oauth2\rfc6749\parameters.py", line 66, in prepare_grant_uri
-return add_params_to_uri(uri, params)
-File "C:\Users\Jupio\PycharmProjects\FlaskApp\venv\lib\site-packages\authlib\common\urls.py", line 115, in add_params_to_uri
-query = add_params_to_qs(query, params)
-File "C:\Users\Jupio\PycharmProjects\FlaskApp\venv\lib\site-packages\authlib\common\urls.py", line 106, in add_params_to_qs
-return url_encode(qs)
-File "C:\Users\Jupio\PycharmProjects\FlaskApp\venv\lib\site-packages\authlib\common\urls.py", line 44, in url_encode
-encoded.append((to_bytes(k), to_bytes(v)))
-File "C:\Users\Jupio\PycharmProjects\FlaskApp\venv\lib\site-packages\authlib\common\encoding.py", line 27, in to_bytes
-return byte_type(x)
+Python hex() Method Example | Python Built-In Methods - JavaExercise
+Home(current)
+Beautify HTML
+Python Built-In Methods
+Python abs() Method
+Python any() Method
+Python all() Method
+Python ascii() Method
+Python bin() Method
+Python bool() Method
+Python filter() Method
+Python float() Method
+Python frozenset() Method
+Python hex() Method
+Python isinstance() Method
+Python range() Method
+Python hex() Method
+Python hex() method is a built-in method. It is used to convert an integer value to a hexadecimal string. It returns a lowercase string prefix with ‘0x’.
+Signature
+hex(x)
+Parameter
+Description
+x
+It is an integer argument and if not given, define an index method that returns an integer.
+Return Value
+It returns a lowercase hexadecimal string.
+Error: It returns an error (TypeError), if the argument is not an integer.
+Python hex() Method Example
+Let’s first understand, how this method works and what does it return?
+# hex() method
+a = hex(12)
+b = hex(-12)
+print(a)
+print(b)
+print(type(a))
+Output
+0xc
+-0xc
+< class 'str'>
+See, in the above example, hex() method returns hexadecimal string and the type of return value is string.
+Python hex() Method Example
+As we said, this method takes an integer argument only. If we give any other type of argument, it throws an error. See the example below.
+# hex() method
+a = hex("23")
+print(a)
+Output
 TypeError: 'str' object cannot be interpreted as an integer
-To Reproduce
-@app.route('/login')
-def login():
-if current_user.is_authenticated:
-return redirect(url_for('index'))
-redirect_uri = url_for('authorize', _external=True)
-return oauth.google.authorize_redirect(redirect_uri)
-Expected behavior
-Should redirect to google login page
-Environment:
-OS:
-Python Version: 3.7
-Authlib Version: 0.14.3
-The text was updated successfully, but these errors were encountered:
-Jupiops
-added
-the
-bug
-label
-Sep 11, 2020
-Jupiops
-assigned
-lepture
-Sep 11, 2020
-Copy link
-Author
-Jupiops
-commented
-Sep 16, 2020
-a comma in the wrong place was what broke my neck
-Jupiops
-closed this
-Sep 16, 2020
-Sign up for free
-to join this conversation on GitHub.
-Already have an account?
-Sign in to comment
-Assignees
-lepture
-Labels
-bug
-Projects
-None yet
-Milestone
-No milestone
-Linked pull requests
-Successfully merging a pull request may close this issue.
-None yet
-2 participants
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-You can’t perform that action at this time.
-You signed in with another tab or window. Reload to refresh your session.
-You signed out in another tab or window. Reload to refresh your session.
+© Copyright 2021, JavaExercise.com
+Resources
+Java Tutorials
+Python Tutorials
+Java Quiz
+Python Quiz
+Company
+Contact Us
+Privacy Policy
+Terms and Conditions
+Disclaimer

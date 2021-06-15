@@ -1,130 +1,182 @@
-Lr_find throws error "TypeError: 'float' object cannot be interpreted as an integer" - fastai users - Deep Learning Course Forums
-Lr_find throws error "TypeError: 'float' object cannot be interpreted as an integer"
-fastai users
-DomMIas
-(Dominique MIAS)
-April 4, 2019, 12:16pm
-#1
-Hello.
-I’m trying to create a text classifier, but during lr_find, it throws this error:
-LR Finder is complete, type {learner_name}.recorder.plot() to see the graph.
----------------------------------------------------------------------------
-TypeError
-Traceback (most recent call last)
-<ipython-input-24-d81c6bd29d71> in <module>
-----> 1 learn.lr_find()
-~\Anaconda3\envs\fast-ai_projetT\lib\site-packages\fastai\train.py in lr_find(learn, start_lr, end_lr, num_it, stop_div, **kwargs)
-29
-cb = LRFinder(learn, start_lr, end_lr, num_it, stop_div)
-30
-a = int(np.ceil(num_it/len(learn.data.train_dl)))
----> 31
-learn.fit(a, start_lr, callbacks=[cb], **kwargs)
-32
-33 def to_fp16(learn:Learner, loss_scale:float=512., flat_master:bool=False)->Learner:
-~\Anaconda3\envs\fast-ai_projetT\lib\site-packages\fastai\basic_train.py in fit(self, epochs, lr, wd, callbacks)
-164
-callbacks = [cb(self) for cb in self.callback_fns] + listify(callbacks)
-165
-fit(epochs, self.model, self.loss_func, opt=self.opt, data=self.data, metrics=self.metrics,
---> 166
-callbacks=self.callbacks+callbacks)
-167
-168
-def create_opt(self, lr:Floats, wd:Floats=0.)->None:
-~\Anaconda3\envs\fast-ai_projetT\lib\site-packages\fastai\basic_train.py in fit(epochs, model, loss_func, opt, data, callbacks, metrics)
-92
-except Exception as e:
-93
-exception = e
----> 94
-raise e
-95
-finally: cb_handler.on_train_end(exception)
-96
-~\Anaconda3\envs\fast-ai_projetT\lib\site-packages\fastai\basic_train.py in fit(epochs, model, loss_func, opt, data, callbacks, metrics)
-82
-for xb,yb in progress_bar(data.train_dl, parent=pbar):
-83
-xb, yb = cb_handler.on_batch_begin(xb, yb)
----> 84
-loss = loss_batch(model, xb, yb, loss_func, opt, cb_handler)
-85
-if cb_handler.on_batch_end(loss): break
-86
-~\Anaconda3\envs\fast-ai_projetT\lib\site-packages\fastai\basic_train.py in loss_batch(model, xb, yb, loss_func, opt, cb_handler)
-16
-if not is_listy(xb): xb = [xb]
-17
-if not is_listy(yb): yb = [yb]
----> 18
-out = model(*xb)
-19
-out = cb_handler.on_loss_begin(out)
-20
-~\Anaconda3\envs\fast-ai_projetT\lib\site-packages\torch\nn\modules\module.py in __call__(self, *input, **kwargs)
-487
-result = self._slow_forward(*input, **kwargs)
-488
-else:
---> 489
-result = self.forward(*input, **kwargs)
-490
-for hook in self._forward_hooks.values():
-491
-hook_result = hook(self, input, result)
-~\Anaconda3\envs\fast-ai_projetT\lib\site-packages\torch\nn\modules\container.py in forward(self, input)
-90
-def forward(self, input):
-91
-for module in self._modules.values():
----> 92
-input = module(input)
-93
-return input
-94
-~\Anaconda3\envs\fast-ai_projetT\lib\site-packages\torch\nn\modules\module.py in __call__(self, *input, **kwargs)
-487
-result = self._slow_forward(*input, **kwargs)
-488
-else:
---> 489
-result = self.forward(*input, **kwargs)
-490
-for hook in self._forward_hooks.values():
-491
-hook_result = hook(self, input, result)
-~\Anaconda3\envs\fast-ai_projetT\lib\site-packages\fastai\text\models.py in forward(self, input)
-168
-self.reset()
-169
-raw_outputs, outputs = [],[]
---> 170
-for i in range(0, sl, self.bptt):
-171
-r, o = super().forward(input[:,i: min(i+self.bptt, sl)])
-172
-if i>(sl-self.max_seq):
-TypeError: 'str' object cannot be interpreted as an integer
-and I have no idea why…
-Do you ? Thanks, D.
-sgugger
-April 4, 2019, 12:53pm
-#2
-Us neither since we can’t guess from just lr_find
-If you want help, you have to provide your whole code.
-DomMIas
-(Dominique MIAS)
-April 4, 2019,
-2:31pm
-#3
-It seems it was an issue with the version I used (1.30). I upgraded to the last one, and everything is alright.
-More specificaly, on an earlier line, the model was not downloaded, which raise an error during training.
-Thank you anyway,
-D.
-Home
-Categories
-FAQ/Guidelines
-Terms of Service
+TypeError: 'float' object cannot be interpreted as an integer
+Register
+Login
+Python
+Photoshop
+SAP
+Java
+PHP
+Android
+C++
+Hadoop
+Oracle
+Interview Questions
+Articles
+Other
+HomeLearn Python ProgrammingPython Online CompilerPython Training Tutorials for BeginnersSquare Root in PythonAddition of two numbers in PythonNull Object in PythonPython vs PHPTypeError: 'int' object is not subscriptablepip is not recognizedPython CommentPython Min()Python FactorialPython Continue StatementArmstrong Number in PythonPython lowercasePython UppercasePython map()Python String ReplacePython String findPython Max() FunctionInvalid literal for int() with base 10 in PythonTop Online Python CompilerPolymorphism in PythonInheritance in PythonPython : end parameter in print()Python String ConcatenationPython Pass StatementPython EnumeratePython New 3.6 FeaturesPython input()Python String ContainsPython evalPython zip()Python Range Python IDEInstall Opencv Python PIP WindowsPython String Title() MethodString Index Out of Range PythonPython Print Without NewlineId() function in PythonPython Split()Reverse Words in a String PythonOrd Function in PythonOnly Size-1 Arrays Can be Converted to Python ScalarsArea of Circle in PythonPython Reverse StringBubble Sort in PythonAttribute Error PythonPython Combine ListsPython slice() functionConvert List to String PythonPython list append and extendPython Sort Dictionary by Key or Valueindentationerror: unindent does not match any outer indentation level in PythonRemove Punctuation PythonCompare Two Lists in PythonPython InfinityPython KeyErrorPython Return Outside FunctionPangram Program in Python
+Python » Python Tutorial					TypeError: 'float' object cannot be interpreted as an integer
+In this article, we will learn about the TypeError: ‘float’ object can not be interpreted as an integer.
+This error will occur in all the functions or methods. Where the function or method accepts only the integer value as a parameter. But instead, we have passed float values. The most common example is the range function. Since the range function only accepts an integer as a parameter.
+For example, when we divide 16 by 8 using division operator ‘/’ in python, it’ll return a float value i.e. 2.0 and not an integer. This raises an error when we want an int as a parameter, but we have a float value.
+Let us understand it more with the help of an example.
+Example 1:
+for i in range(3.0):
+print(i)
+print('end of loop')
+Output:
+File "float.py", line 1, in <module>
+for i in range(3.0):
+TypeError: 'float' object cannot be interpreted as an integer
+In the above example, we did not perform any arithmetic operations. Instead, we passed a float value as a range parameter. In this case, the cause for the TypeError is that the range function does not take float value as a parameter.
+Solution:
+for i in range(3):
+print(i)
+print('end of loop')
+Output:
+0
+1
+2
+end of loop
+Example 2:
+for i in range(16/8):
+print(i)
+print('end of loop')
+Output:
+Traceback (most recent call last):
+File "pyprogram.py", line 1, in <module>
+for i in range(16/8):
+TypeError: 'float' object cannot be interpreted as an integer
+In the above example, when we performed division operation inside the range() function. We got a float value (2.0). But the range function takes only an integer value as a parameter.
+Thus the error “TypeError: 'float' object cannot be interpreted as an integer” is encountered.
+Solution:
+for i in range(5//8):
+print(i)
+print('end of loop')
+Output:
+0
+1
+end of loop
+Unlike the division operator ‘/’ the floor division operator ‘//’ in python, returns an integer value. The floor division operator removes the digits after the decimal point. Thus we get an integer value.
+So on dividing 16 by 8 using floor division operator ‘//’ we get ‘2’ as a parameter in range function. Thus no error is encountered, and we get the desired output.
+Recommended Posts:
+Learn Python Programming
+Python Training Tutorials for Beginners
+Square Root in Python
+Null Object in Python
+Python Comment
+Python Continue Statement
+Python lowercase
+Python String find
+Python Max() Function
+Polymorphism in Python
+Python Range
+Python IDE
+String Index Out of Range Python
+Python Split()
+Reverse Words in a String Python
+Only Size-1 Arrays Can be Converted to Python Scalars
+Area of Circle in Python
+Python list append and extend
+Remove Punctuation Python
+Pangram Program in Python
+Tutorials
+Learn Python Programming
+Python Online Compiler
+Python Training Tutorials for Beginners
+Square Root in Python
+Addition of two numbers in Python
+Null Object in Python
+Python vs PHP
+TypeError: 'int' object is not subscriptable
+pip is not recognized
+Python Comment
+Python Min()
+Python Factorial
+Python Continue Statement
+Armstrong Number in Python
+Python lowercase
+Python Uppercase
+Python map()
+Python String Replace
+Python String find
+Python Max() Function
+Invalid literal for int() with base 10 in Python
+Top Online Python Compiler
+Polymorphism in Python
+Inheritance in Python
+Python : end parameter in print()
+Python String Concatenation
+Python Pass Statement
+Python Enumerate
+Python New 3.6 Features
+Python input()
+Python String Contains
+Python eval
+Python zip()
+Python Range
+Python IDE
+Install Opencv Python PIP Windows
+Python String Title() Method
+String Index Out of Range Python
+Python Print Without Newline
+Id() function in Python
+Python Split()
+Reverse Words in a String Python
+Ord Function in Python
+Only Size-1 Arrays Can be Converted to Python Scalars
+Area of Circle in Python
+Python Reverse String
+Bubble Sort in Python
+Attribute Error Python
+Python Combine Lists
+Python slice() function
+Convert List to String Python
+Python list append and extend
+Python Sort Dictionary by Key or Value
+indentationerror: unindent does not match any outer indentation level in Python
+Remove Punctuation Python
+Compare Two Lists in Python
+Python Infinity
+Python KeyError
+Python Return Outside Function
+Pangram Program in Python
+Follow Us
+Contact Information
+#3940 Sector 23,Gurgaon, Haryana (India)Pin :- 122015
+contact@stechies.com
+Top Tutorials
+SAP Tutorial
+SAP HANA Tutorial
+SAP BASIS Tutorial
+Android Tutorial
+Python Tutorial
+Java Tutorial
+Hadoop Tutorial
+Photoshop Tutorial
+Difference Between Article
+Interview Questions
+Top Interview Questions
+ABAP Interview Questions
+BASIS Interview Questions
+HANA Interview Questions
+SD Interview Questions
+FICO Interview Questions
+Hibernate Interview Questions
+QTP/UFT Interview Questions
+Tableau Interview Questions
+TestNG Interview Questions
+Hive Interview Questions
+Quick Links
+Write for us
+Career Guidance Tool
+SAP Transaction Codes
+Sample Resume
+Institutes
+SAP PDF Books
+Classifieds
+Recent Articles
+Contact Us
+About Us
+Terms of Use
 Privacy Policy
-Powered by Discourse, best viewed with JavaScript enabled
+Cookies Policy

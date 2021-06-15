@@ -1,335 +1,493 @@
-TypeError: ‘str’ object cannot be interpreted as an integer | Career Karma
-Home
-Top Projects
-All Star Projects
-Web Development
-Mobile Development
-Design
-Data Science
-Bootcamps
-Best Coding Bootcamps
-Best Online Bootcamps
-Best Web Design
-Bootcamps
-Best Data Science Bootcamps
-Best Data Analytics Bootcamps
-Best Cyber Security Bootcamps
-Best ISA Bootcamps 2020
-Programs
-Web Development
-Mobile Development
-Software Engineer
-Data Science
-Cybersecurity
-Product Management
-Digital Marketing
-UX/UI Designer
-Database Administration
-Social Media Management
-InfoSec Analyst
-Quality Assurance Engineer
-SEO Manager
-Computer Systems Analyst
-WordPress developer
-Blog
-Bootcamps
-Coding
-Career Resources
-Tech Fields
-News & Commentary
+python - TypeError: 'list' object cannot be interpreted as an integer - Stack Overflow
+Stack Overflow
 About
-Company
+Products
+For Teams
+Stack Overflow
+Public questions & answers
+Stack Overflow for Teams
+Where developers & technologists share private knowledge with coworkers
 Jobs
-Values
-Publication
-Press
+Programming & related technical career opportunities
+Talent
+Recruit tech talent & build your employer brand
+Advertising
+Reach developers & technologists worldwide
+About the company
+Loading…
+Log in
+Sign up
+current community
+Stack Overflow
+help
+chat
+Meta Stack Overflow
+your communities
+Sign up or log in to customize your list.
+more stack exchange communities
+company blog
+People who code: we want your input.
+Take the Survey
+Join Stack Overflow to learn, share knowledge, and build your career.
+Sign up with email
+Sign up
+Sign up with Google
+Sign up with GitHub
+Sign up with Facebook
 Home
-Top Projects
-All Star Projects
-Web Development
-Mobile Development
-Design
-Data Science
-Bootcamps
-Best Coding Bootcamps
-Best Online Bootcamps
-Best Web Design
-Bootcamps
-Best Data Science Bootcamps
-Best Data Analytics Bootcamps
-Best Cyber Security Bootcamps
-Best ISA Bootcamps 2020
-Programs
-Web Development
-Mobile Development
-Software Engineer
-Data Science
-Cybersecurity
-Product Management
-Digital Marketing
-UX/UI Designer
-Database Administration
-Social Media Management
-InfoSec Analyst
-Quality Assurance Engineer
-SEO Manager
-Computer Systems Analyst
-WordPress developer
-Blog
-Bootcamps
-Coding
-Career Resources
-Tech Fields
-News & Commentary
-About
-Company
+Public
+Questions
+Tags
+Users
+Find a Job
 Jobs
-Values
-Publication
-Press
-Sign in
-Front Page
-Bootcamps
-Popular Bootcamps
-Bootcamp Prep
-Bootcamp Financing
-University Bootcamps
-Bootcamp Grads
-Coding
-Coding Tools
-HTML
-CSS
-Java
-JavaScript
-Python
-C++
-Ruby
-SQL
-Git
-Career Resources
-Career Advice
-Tech Interviews
-Tech Salaries
-Tech Cities
-Research
-Tech Fields
-Web Development
-Software Engineering
-Web Design
-Data Science
-Higher Ed
-Associate
-Bachelor’s
-Master’s
-Doctoral
-Certifications
-Trade Schools
-About
-HomePython TutorialsPython TypeError: ‘str’ object cannot be interpreted as an integer Solution
-Python Tutorials
-Python TypeError: ‘str’ object cannot be interpreted as an integer Solution
-James Gallagher
-Sep 10, 2020
+Companies
+Teams
+Stack Overflow for Teams
+– Collaborate and share knowledge with a private group.
+Create a free Team
+What is Teams?
+Teams
+What’s this?
+Create free Team
+Teams
+Q&A for work
+Connect and share knowledge within a single location that is structured and easy to search.
+Learn more
+TypeError: 'list' object cannot be interpreted as an integer
+Ask Question
+Asked
+6 years, 4 months ago
+Active
+6 months ago
+Viewed
+186k times
+37
+3
+The playSound function is taking a list of integers, and is going to play a sound for every different number. So if one of the numbers in the list is 1, 1 has a designated sound that it will play.
+def userNum(iterations):
+myList = []
+for i in range(iterations):
+a = int(input("Enter a number for sound: "))
+myList.append(a)
+return myList
+print(myList)
+def playSound(myList):
+for i in range(myList):
+if i == 1:
+winsound.PlaySound("SystemExit", winsound.SND_ALIAS)
+I am getting this error:
+TypeError: 'list' object cannot be interpreted as an integer
+I have tried a few ways to convert the list to integers. I am not too sure what I need to change. I am sure that there is a more efficient way of doing this. Any help would be very greatly appreciated.
+python list for-loop typeerror
+Share
+Follow
+edited Jan 20 '15 at 1:32
+user2555451
+asked Jan 20 '15 at 1:24
+GreysusGreysus
+42511 gold badge44 silver badges99 bronze badges
+1
+range(myList) is basically an integer. So for eg. if myList contains 7 items then that would mean {i in 7}, which does not make sense over here. Rather simply traverse myList using {for i in mylist}.
+– Geo Mukkath
+Apr 13 '20 at 14:41
+Add a comment
+|
+9 Answers
+9
+Active
+Oldest
+Votes
+39
+Error messages usually mean precisely what they say.
+So they must be read very carefully.
+When you do that, you'll see that this one is not actually complaining, as you seem to have assumed, about what sort of object your list contains, but rather about what sort of object it is.
+It's not saying it wants your list to contain integers (plural)—instead, it seems to want your list to be an integer (singular) rather than a list of anything. And since you can't
+convert a list into a single integer (at least, not in a way that is meaningful in this context) you shouldn't be trying.
+So the question is:
+why does the interpreter seem to want to interpret your list as an integer?
+The answer is that you are passing your list as the input argument to range, which expects an integer.
+Don't do that.
+Say for i in myList instead.
+Share
+Follow
+edited Jan 20 '15 at 1:51
+answered Jan 20 '15 at 1:34
+jezjez
+12.9k22 gold badges3030 silver badges5454 bronze badges
+2
+6
+or for i in range(len(myList)) if looking to iterate over indices rather than elements themselves.
+– 3yakuya
+Mar 9 '16 at 11:12
+5
+or
+for index, item in enumerate(myList) to get you both, IMO more readably
+– jez
+Mar 10 '16 at 13:10
+Add a comment
+|
+14
+For me i was getting this error because i needed to put the arrays in paratheses. The error is a bit tricky in this case...
+ie. concatenate((a, b)) is right
+not concatenate(a, b)
+hope that helps.
+Share
+Follow
+edited Dec 7 '20 at 16:09
+answered Jan 25 '19 at 2:32
+Ben ArnaoBen Arnao
+41444 silver badges99 bronze badges
+Add a comment
+|
+7
+range is expecting an integer argument, from which it will build a range of integers:
+>>> range(10)
+range(0, 10)
+>>> list(range(10))
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+>>>
+Moreover, giving it a list will raise a TypeError because range will not know how to handle it:
+>>> range([1, 2, 3])
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+TypeError: 'list' object cannot be interpreted as an integer
+>>>
+If you want to access the items in myList, loop over the list directly:
+for i in myList:
+...
+Demo:
+>>> myList = [1, 2, 3]
+>>> for i in myList:
+...
+print(i)
+...
+1
+2
+3
+>>>
+Share
+Follow
+answered Jan 20 '15 at 1:27
+user2555451user2555451
+Add a comment
+|
+7
+The error is from this:
+def playSound(myList):
+for i in range(myList): # <= myList is a list, not an integer
+You cannot pass a list to range which expects an integer. Most likely, you meant to do:
+def playSound(myList):
+for list_item in myList:
+OR
+def playSound(myList):
+for i in range(len(myList)):
+OR
+def playSound(myList):
+for i, list_item in enumerate(myList):
+Share
+Follow
+answered Jan 20 '15 at 1:27
+Michael Aaron SafyanMichael Aaron Safyan
+87.7k1414 gold badges131131 silver badges195195 bronze badges
+Add a comment
+|
+5
+remove the range.
+for i in myList
+range takes in an integer. you want for each element in the list.
+Share
+Follow
+answered Jan 20 '15 at 1:27
+Saher AhwalSaher Ahwal
+8,2502828 gold badges7575 silver badges136136 bronze badges
+Add a comment
+|
+3
+You should do this instead:
+for i in myList:
+# etc.
+That is, remove the range() part. The range() function is used to generate a sequence of numbers, and it receives as parameters the limits to generate the range, it won't work to pass a list as parameter. For iterating over the list, just write the loop as shown above.
+Share
+Follow
+answered Jan 20 '15 at 1:26
+Óscar LópezÓscar López
+217k3333 gold badges290290 silver badges367367 bronze badges
+Add a comment
+|
+1
+In playSound(), instead of
+for i in range(myList):
+try
+for i in myList:
+This will iterate over the contents of myList, which I believe is what you want. range(myList) doesn't make any sense.
+Share
+Follow
+answered Jan 20 '15 at 1:27
+MattDMoMattDMo
+90.5k2020 gold badges215215 silver badges210210 bronze badges
+Add a comment
+|
+1
+def userNum(iterations):
+myList = []
+for i in range(iterations):
+a = int(input("Enter a number for sound: "))
+myList.append(a)
+print(myList) # print before return
+return myList # return outside of loop
+def playSound(myList):
+for i in range(len(myList)): # range takes int not list
+if i == 1:
+winsound.PlaySound("SystemExit", winsound.SND_ALIAS)
+Share
+Follow
+answered Jan 20 '15 at 1:29
+Malik BrahimiMalik Brahimi
+15.3k44 gold badges2828 silver badges6262 bronze badges
+Add a comment
+|
+1
+since it's a list it cannot be taken directly into range function as the singular integer value of the list is missing.
+use this
+for i in range(len(myList)):
+with this, we get the singular integer value which can be used easily
+Share
+Follow
+answered Dec 9 '20 at 5:19
+Ritwik2994Ritwik2994
+4622 bronze badges
+Add a comment
+|
+Your Answer
+Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
+Draft saved
+Draft discarded
+Sign up or log in
+Sign up using Google
+Sign up using Facebook
+Sign up using Email and Password
+Submit
+Post as a guest
+Name
+Email
+Required, but never shown
+Post as a guest
+Name
+Email
+Required, but never shown
+Post Your Answer
+Discard
+By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
+Not the answer you're looking for? Browse other questions tagged python list for-loop typeerror
+or ask your own question.
+The Overflow Blog
+Podcast 347: Information foraging – the tactics great developers use to find…
+Let’s enhance: use Intel AI to increase image resolution in this demo
+Featured on Meta
+Take the 2021 Developer Survey
+Linked
 0
+For loop error with array of float numbers
+2
+Spyder and Jupyter: difference with error “TypeError: 'list' object cannot be interpreted as an integer”
+Related
+3231
+How do I check if a list is empty?
+3645
+Finding the index of an item in a list
+3114
+What is the difference between Python's list methods append and extend?
+2567
+How do you split a list into evenly sized chunks?
+3180
+How do I loop through or enumerate a JavaScript object?
+2412
+Getting the last element of a list
+4106
+How to make a flat list out of a list of lists?
+2070
+How do I get the number of elements in a list?
+2860
+List changes unexpectedly after assignment. Why is this and how can I prevent it?
+3467
+How do I list all files of a directory?
+Hot Network Questions
+9-pin vs 10-pin serial port ribbon cables
+When to use air dielectric cables for antenna installation
+I'm seeing gyms in Pokémon Go with pokémon that have ridiculous CP numbers, and I have no clue what they are
+What is the story of Parvati closing the eyes of Shiva?
+How are constellations intact if the stars are rotating around galactic nuclei?
+Denormalising a database for speed - is it an anti-pattern
+What would the wavelength of the Cosmic Background Gravitational Wave radiation be?
+Is there an example of a classic aviation engineering moment when engineers had to discard all their work due to the wrong approach?
+What does "a stroke a hole" refers to in "The Thirty-Nine Steps"?
+Should I use AC or DC between buildings?
+An introductory example for Taylor series (12th grade)
+The best way to travel between Milton Keynes and Cambridge, England
+How can I get honest intent about future plans from employees?
+How do I record zither, harp etc. with a pickup?
+Is there a left-right connection?
+Positioning of multiple `pic` using `below=of` not properly aligned
+Longest "Cycle" word chain
+I feel like male professors don't feel comfortable taking me as a student. How should I address this problem?
+What does "Joggleberry", "celestial limit" and "pink penultimate" mean in "The Power-House"?
+Help understanding sequence proof
+B+W movie with men in togas and Roman style buildings and several shots of rockets fired out of huge vertical gun
+When I walk down the stairs where does my potential energy go?
+Why was `!` chosen for negation?
+Is it possible to send money to my friend in the US using a wire transfer?
+more hot questions
+Question feed
+Subscribe to RSS
+Question feed
+To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+lang-py
+Stack Overflow
+Questions
+Jobs
+Developer Jobs Directory
+Salary Calculator
+Help
+Mobile
+Products
+Teams
+Talent
+Advertising
+Enterprise
+Company
+About
+Press
+Work Here
+Legal
+Privacy Policy
+Terms of Service
+Contact Us
+Cookie Settings
+Cookie Policy
+Stack Exchange Network
+Technology
+Life / Arts
+Culture / Recreation
+Science
+Other
+Stack Overflow
+Server Fault
+Super User
+Web Applications
+Ask Ubuntu
+Webmasters
+Game Development
+TeX - LaTeX
+Software Engineering
+Unix & Linux
+Ask Different (Apple)
+WordPress Development
+Geographic Information Systems
+Electrical Engineering
+Android Enthusiasts
+Information Security
+Database Administrators
+Drupal Answers
+SharePoint
+User Experience
+Mathematica
+Salesforce
+ExpressionEngine® Answers
+Stack Overflow em Português
+Blender
+Network Engineering
+Cryptography
+Code Review
+Magento
+Software Recommendations
+Signal Processing
+Emacs
+Raspberry Pi
+Stack Overflow на русском
+Code Golf
+Stack Overflow en español
+Ethereum
+Data Science
+Arduino
+Bitcoin
+Software Quality Assurance & Testing
+Sound Design
+Windows Phone
+more (29)
+Photography
+Science Fiction & Fantasy
+Graphic Design
+Movies & TV
+Music: Practice & Theory
+Worldbuilding
+Video Production
+Seasoned Advice (cooking)
+Home Improvement
+Personal Finance & Money
+Academia
+Law
+Physical Fitness
+Gardening & Landscaping
+Parenting
+more (10)
+English Language & Usage
+Skeptics
+Mi Yodeya (Judaism)
+Travel
+Christianity
+English Language Learners
+Japanese Language
+Chinese Language
+French Language
+German Language
+Biblical Hermeneutics
+History
+Spanish Language
+Islam
+Русский язык
+Russian Language
+Arqade (gaming)
+Bicycles
+Role-playing Games
+Anime & Manga
+Puzzling
+Motor Vehicle Maintenance & Repair
+Board & Card Games
+Bricks
+Homebrewing
+Martial Arts
+The Great Outdoors
+Poker
+Chess
+Sports
+more (16)
+MathOverflow
+Mathematics
+Cross Validated (stats)
+Theoretical Computer Science
+Physics
+Chemistry
+Biology
+Computer Science
+Philosophy
+Linguistics
+Psychology & Neuroscience
+Computational Science
+more (10)
+Meta Stack Exchange
+Stack Apps
+API
+Data
+Blog
 Facebook
 Twitter
 LinkedIn
-The range() method only accepts integer values as a parameter. If you try to use the range() method with a string value, you’ll encounter the “TypeError: ‘str’ object cannot be interpreted as an integer” error.
-This guide discusses why you may encounter this error and what it means. We’ll walk through an example scenario to help you understand this problem and fix it in your program.
-TypeError: ‘str’ object cannot be interpreted as an integer
-The range() method creates a list of values in a particular range. It is commonly used with a for loop to run a certain number of iterations.
-The method only accepts integer values as arguments. This is because the values that range() creates are integers. Consider the following program:
-create_range = range(5, 10)
-for n in create_range:
-print(n)
-Our program prints out five integers to the console:
-5
-6
-7
-8
-9
-If range() accepted strings, it would be more difficult for the function to determine what range of numbers should be created. That’s why you always need to specify integers as arguments. In the above example, 5 and 10 were our arguments.
-An Example Scenario
-We’re going to build a program that lets a pizza restaurant view the names and prices of the most popular pizzas on their menu. To start, define two lists that store the information with which our program will work:
-names = ["Pepperoni", "Margherita", "Ham and Pineapple", "Brie and Chive"]
-prices = [9.00, 8.40, 8.40, 9.50]
-These lists are parallel and appear in order of how popular a pizza is. That means the values at a particular position in the list correspond with each other. For instance, the price of a “Brie and Chive” pizza is $9.50.
-» MORE:  Python Tuples: A Step-By-Step GuideOur next task is to ask the user how many pizzas they would like to display. We can do this using an input() statement:
-to_display = input("Enter the number of pizzas you would like to display: ")
-Now we know the number of pizzas about which the user is seeking information, we can use a for loop to print each pizza and its price to the console:
-for p in range(0, to_display):
-print("{} costs ${}.".format(names[p], prices[p]))
-Our program prints out a message containing the name of each pizza and the price of that pizza. Our loop stops when it has iterated through the number of pizzas a user has requested to display to the console.
-Let’s run our program and see if it works:
-Enter the number of pizzas you would like to display: 2
-Traceback (most recent call last):
-File "main.py", line 6, in <module>
-for p in range(0, to_display):
-TypeError: 'str' object cannot be interpreted as an integer
-Our program returns an error on the line of code where we define our for loop.
-The Solution
-We have created a for loop that runs a particular set of times depending on the value the user inserted into the console.
-The problem with our code is that input() returns a string, not an integer. This means our range() statement is trying to create a range of values using a string, which is not allowed. This is what our code evaluated in our program:
-for p in range(0, "2"):
-print("{} costs ${}.".format(names[p], prices[p]))
-To fix this error, we must convert “to_display” to an integer. We can do this using the int() method:
-for p in range(0, int(to_display)):
-print("{} costs ${}.".format(names[p], prices[p]))
-“to_display” is now an integer. This means we can use the value to create a range of numbers. Let’s run our code:
-Enter the number of pizzas you would like to display: 2
-Pepperoni costs $9.0.
-Margherita costs $8.4.
-Our code successfully prints out the information that we requested. We can see the names of the two most popular pizzas and the prices of those pizzas.
-» MORE:  Python Pass: A How to GuideConclusion
-The “TypeError: ‘str’ object cannot be interpreted as an integer” error is raised when you pass a string as an argument into a range() statement. To fix this error, make sure all the values you use in a range() statement are integers.
-Now you have the knowledge you need to fix this error like a professional!
-About us: Career Karma is a platform designed to help job seekers find, research, and connect with job training programs to advance their careers. Learn about the CK publication.
-What's Next?
-Want to take action?
-Get matched with top bootcamps
-Want to dive deeper?
-Ask a question to our community
-Want to explore tech careers?
-Take our careers quiz
-James Gallagher
-James Gallagher is a self-taught programmer and the technical content manager at Career Karma. He has experience in range of programming languages and extensive expertise in Python, HTML, CSS, and JavaScript. James has written hundreds of programming tutorials, and he frequently contributes to publications like Codecademy, Treehouse, Repl.it, Afrotech, and others. He also serves as a researcher at Career Karma, publishing comprehensive reports on the bootcamp market and income share agreements.
-Read more by James Gallagher
-Share This
-Previous ArticlePython TypeError: object of type ‘int’ has no len() Solution
-Next ArticlePython TypeError: slice indices must be integers or None or have an __index__ method Solution
-Sep 10, 2020
-Comments (0)
-Leave a Reply Cancel replyYour email address will not be published. Required fields are marked *Your CommentName *
-Email *
-Website
-Get offers from top bootcampsTake the stress out of picking a bootcamp
-See matches nowTop Community PostsHow long does it take to become a full stack web developer?Marcus Hayes in Full-stack DevelopmentWhat are the laptop requirements for programming?Danny Fuentes in Beginners$2 million in COVID19 ScholarshipsTimur Meyster in Applying to BootcampsPopular ArticlesBest Online BootcampsBest Tech Jobs 2021What is Coding Used For?How Much Do Coders Make?Best Free BootcampsSee all articlesCareer GuidesWeb DevelopmentSoftware EngineeringData ScienceWeb DesignCyber SecuritySee all guidesFree prep coursesFlatiron School Prep80+ hours
-Easy80+ hours of HTML, CSS & JavaScriptKenzie School Prep80+ hours
-Easy20+ hours of HTML & CSSGeneral Assembly Prep50+ hours
-EasyLearn web development basics in HTML, CSS, JavaScript by building projectssee all prep courses
-Get matches
-from top bootcamps
-Select your interest:
-Interest
-Software Engineering
-Design
-Data Science
-Data Analytics
-Cybersecurity Analytics
-Technology Sales
-Select your preferred pace:
-Begin typing a name to filter
-Full-time
-Part-time
-Self-paced
-Begin typing a name to filter
-Full-time
-Part-time
-Self-paced
-See Matches
-Find the Best Online Course for YouGet Matched
-Related Articles
-Python Tutorials
-Python ‘numpy.ndarray’ object is not callable Solution
-Python Tutorials
-Python FileNotFoundError: [Errno 2] No such file or directory Solution
-Python Tutorials
-Python JSONDecodeError Explanation and Solution
-Python Tutorials
-Python ValueError: list.remove(x): x not in list Solution
-Home
-About
-Careers
-Mission
-Blog
-Press
-Terms & conditions
-© 2021 Career Karma
-Rankings
-Best Coding Bootcamps
-Best Online Bootcamps
-Best Web Design Bootcamps
-Best Data Science Bootcamps
-Best Data Analytics Bootcamps
-Best Cyber Security Bootcamps
-Best ISA Bootcamps 2020
-See all
-Comparisons
-Flatiron School vs Fullstack Academy
-Hack Reactor vs App Academy
-Fullstack Academy vs Hack Reactor
-Thinkful vs General Assembly
-Flatiron School vs Thinkful
-General Assembly vs Flatiron School
-App Academy vs Lambda School
-General Assembly vs Hack Reactor
-Springboard vs Thinkful
-See all
-Locations
-San Francisco Bootcamps
-New York Bootcamps
-Los Angeles Bootcamps
-Chicago Bootcamps
-Seattle Bootcamps
-Atlanta Bootcamps
-Austin Bootcamps
-See all
-Schools
-Kenzie Academy
-Flatiron School
-Thinkful
-General Assembly
-Springboard
-Galvanize
-Hack Reactor
-App Academy
-Bloc
-See all
-Careers
-Software Engineering
-UX/UI Design
-Data Science
-Web Development
-Mobile Development
-Cybersecurity
-Product Management
-See all
-Subjects
-JavaScript
-Python
-Ruby
-Java
-Swift
-Android
-.Net
-React
-Angular
-See all
-Tell us about you and we will match you with top rated bootcamps with flexible payment options, income sharing (ISAs), or money-back guarantees.
-Select your interest:
-Software Engineering
-Design
-Data Science
-Data Analytics
-Cybersecurity Analytics
-Technology Sales
-First Name
-Last Name
-Email
-Phone Number
-GET MATCHED
-Find the right bootcamp for you
-By continuing you indicate that you have read and agree to
-Career Karma Terms of Service and Privacy Policy
-X
-X
-Jump start your tech career
-Learn the most in-demand skills
-Get started now
-Lost Password Back ⟶
-Login
-Register
-Get new password
-Lost Password?
-Login
-Registration is disabled.
+Instagram
+site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
+rev 2021.6.14.39488
+Stack Overflow works best with JavaScript enabled
+Your privacy
+By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
+Accept all cookies
+Customize settings

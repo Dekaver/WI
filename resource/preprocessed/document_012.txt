@@ -38,7 +38,7 @@ Related questions
 1 answer
 AttributeError: 'tuple' object has no attribute 'sort'
 asked
-6 days ago
+Jun 4
 in Programming Languages
 by
 pythonuser

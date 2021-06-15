@@ -68,7 +68,6 @@ My Code
 I've already tried putting 'import nltk' at first but it is still the same, and also I've tried 'from nltk.tokenize import 'PunktSentenceTokenizer'. I don't know why the Python shell can't find the definition of the nltk. How should I address this? I am still learning how to write and code python.
 nltk
 Share
-Improve this question
 Follow
 edited Mar 1 '19 at 6:33
 Terry Jan Reedy
@@ -106,11 +105,10 @@ pip install nltk
 Then you need to import it...
 import nltk
 Share
-Improve this answer
 Follow
 edited Sep 4 '19 at 12:24
 Andrew Brēza
-5,79922 gold badges3030 silver badges3939 bronze badges
+5,80922 gold badges3030 silver badges3939 bronze badges
 answered Mar 27 '19 at 18:01
 Anasta SiaAnasta Sia
 1111 bronze badge
@@ -124,7 +122,6 @@ tagged = ntlk.pos_tag(words)
 to
 tagged = nltk.pos_tag(words)
 Share
-Improve this answer
 Follow
 edited Sep 4 '19 at 12:56
 manish Prasad
@@ -157,10 +154,11 @@ By clicking “Post Your Answer”, you agree to our terms of service, privacy p
 Not the answer you're looking for? Browse other questions tagged nltk
 or ask your own question.
 The Overflow Blog
-Using low-code tools to iterate products faster
-Podcast 345: A good software tutorial explains the How. A great one explains…
+Podcast 347: Information foraging – the tactics great developers use to find…
+Let’s enhance: use Intel AI to increase image resolution in this demo
 Featured on Meta
 Take the 2021 Developer Survey
+Visit chat
 Related
 84
 Creating a new corpus with NLTK
@@ -173,30 +171,30 @@ Using British National Corpus in NLTK
 0
 Finding NLTK module in python
 Hot Network Questions
-Has physics ever given a physical significance to a mathematically abstract idea?
-Where is Lorentz contraction centered on?
-Is it a coincidence that on the far side of the moon almost no seas are visible?
-What are the safety and warranty implications of steaming bread in a domestic oven?
-Grep and Cut command in linux
-How do trademarks apply to Open Source?
-Is it suspicious that gravitational waves propagate at the speed of light?
-If I use the word "enumerated", must the list be numeric or can it be bullet points?
-Showing the bounding box for every coordinate system in QGIS
-How to solve these algebraic identities?
-What can US senators do against diversity trainings in the US Army?
-Does Ubuntu Server have any special preinstalled packages
-How to use df.loc (or some other method) to make a new column based on specific conditions?
-Why would they use human soldiers over undead ones?
-Why are (many) bike multitools not stainless, unlike penknives?
-How does this switch statement do "multiple things"?
-Do AFCI and GFCI protect against cheap equipment and bad wiring?
-Why is angular momentum a vector?
-Why is there so much reluctance to make the COVID vaccine mandatory for adults?
-How is it possible for Jesus to be quoted in the NT during moments of solitude (Gethsemane) or away from the disciples (Nicodemus, Pilate etc.)?
-Parallelogram law of vectors
-Why can an easily graphable definite integral, be labyrinthine to evaluate?
-Why did this gallon of milk stay fresh for so long?
-Are noun+noun and noun's (aphostrope) + noun the same?
+How to use Python's Scipy, Numpy functions in Mathematica to find minimum of a function?
+Collatz's ice cream cone factory
+How do I record zither, harp etc. with a pickup?
+Longest "Cycle" word chain
+Command 'time' works on its own but not in a pipeline
+Heuristic lower bounds on small sums of roots of unity
+B+W movie with men in togas and Roman style buildings and several shots of rockets fired out of huge vertical gun
+Is it possible to send money to my friend in the US using a wire transfer?
+Why was `!` chosen for negation?
+Help understanding sequence proof
+What kind of yeast is this?
+Is black hole pattern possible in Conway's Game of Life that eats/clears everything?
+Should I use AC or DC between buildings?
+Visualize a Risky program
+False hrm results
+Gravity Shielding: How to defeat it?
+Making bold math symbols more bold
+Why doesn't an electron rip itself apart?
+How realistic is it to pay for one's living and tuition with a student job?
+The best way to travel between Milton Keynes and Cambridge, England
+What would the wavelength of the Cosmic Background Gravitational Wave radiation be?
+What is this stainless-steel item's intended use? Is it a cheese grater?
+How to generate all possible functions combinations
+What’s wrong with the plumbing setup under this kitchen sink?
 more hot questions
 Question feed
 Subscribe to RSS
@@ -344,7 +342,7 @@ Twitter
 LinkedIn
 Instagram
 site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.6.10.39473
+rev 2021.6.14.39488
 Stack Overflow works best with JavaScript enabled
 Your privacy
 By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.

@@ -1,272 +1,99 @@
-ValueError: literal tidak valid untuk int () dengan basis 10: ''
-Pemrograman
-Tag
-Account
-Sign In
-Signup
-ValueError: literal tidak valid untuk int () dengan basis 10: ''
-333
-Saya membuat program yang membaca file dan jika baris pertama file tidak kosong, itu membaca empat baris berikutnya. Perhitungan dilakukan pada baris tersebut dan kemudian baris berikutnya dibaca. Jika baris itu tidak kosong, baris itu berlanjut. Namun, saya mendapatkan kesalahan ini:
-ValueError: invalid literal for int() with base 10: ''.
-Itu membaca baris pertama tetapi tidak dapat mengubahnya menjadi bilangan bulat.
-Apa yang bisa saya lakukan untuk memperbaiki masalah ini?
-Kode:
-file_to_read = raw_input("Enter file name of tests (empty string to end program):")
-try:
-infile = open(file_to_read, 'r')
-while file_to_read != " ":
-file_to_write = raw_input("Enter output file name (.csv will be appended to it):")
-file_to_write = file_to_write + ".csv"
-outfile = open(file_to_write, "w")
-readings = (infile.readline())
-print readings
-while readings != 0:
-global count
-readings = int(readings)
-minimum = (infile.readline())
-maximum = (infile.readline())
-python
-—
-Sarah Cox
-sumber
-3
-Anda harus mempertimbangkan menggunakannya di with open(file_to_read, 'r') as infile:sana.
-—
-Mahakuasa
-Jawaban:
-313
-Sebagai catatan:
->>> int('55063.000000')
-Traceback (most recent call last):
-File "<stdin>", line 1, in <module>
-ValueError: invalid literal for int() with base 10: '55063.000000'
-Punya aku di sini ...
->>> int(float('55063.000000'))
-55063.0
-Harus digunakan!
-—
-FdoBad
-sumber
-101
-Saya hanya akan menambahkan, untuk memberikan kejelasan lebih bagi pembaca masa depan, bahwa memang, int (float ('1.0')) berfungsi ketika int ('1.0') melempar ValueError.
-—
-katyhuff
-5
-Ini harus menjadi jawaban atas yang diterima untuk pertanyaan ini. Saya hampir menutup halaman dan tidak melihatnya. Terima kasih!
-—
-iTurki
-2
-tambahkan ke jawab int (float ('55063.000000')) karena pertanyaannya adalah int (). Daripada itu akan benar-benar jawaban teratas
-—
-Max
-Mengapa ini terjadi? @katyhuff
-—
-Muhamed Huseinbašić
-7
-Jawaban ini sepertinya tidak ada hubungannya dengan pertanyaan. Pertanyaannya adalah bagaimana seseorang dapat mencegah ValueError ketika Anda memanggil int()string kosong. "Gunakan float () sebagai gantinya" tidak menyelesaikan masalah itu. Anda masih mendapatkan ValueError.
-—
-Kevin
-74
-Berikut ini benar-benar dapat diterima dalam python:
-meneruskan representasi string integer ke int
-melewati representasi string float ke float
-meneruskan representasi string integer ke float
-melewati pelampung ke int
-melewatkan bilangan bulat ke dalam float
-Tetapi Anda mendapatkan ValueErrorjika Anda melewatkan representasi string float ke int, atau representasi string apa pun kecuali bilangan bulat (termasuk string kosong). Jika Anda ingin meneruskan representasi string float ke int, seperti yang ditunjukkan @katyhuff di atas, Anda dapat mengonversi ke float terlebih dahulu, kemudian ke integer:
->>> int('5')
-5
->>> float('5.0')
-5.0
->>> float('5')
-5.0
->>> int(5.0)
-5
->>> float(5)
-5.0
->>> int('5.0')
-Traceback (most recent call last):
-File "<stdin>", line 1, in <module>
-ValueError: invalid literal for int() with base 10: '5.0'
->>> int(float('5.0'))
-5
-—
-Peter
-sumber
-7
-Jawaban ini sepertinya tidak ada hubungannya dengan pertanyaan. Pertanyaannya adalah bagaimana seseorang dapat mencegah ValueError ketika Anda memanggil int()string kosong. "Gunakan float () sebagai gantinya" tidak menyelesaikan masalah itu. Anda masih mendapatkan ValueError.
-—
-Kevin
-3
-@Kevin Meskipun ini tidak secara langsung menjawab pertanyaan OP. Namun itu membantu orang yang memiliki masalah ini dan tidak keberatan int(float(x)). Karena ini adalah pertanyaan pertama yang muncul ketika mencari kesalahan ini.
-—
-Kerwin Sneijders
-57
-Cara Pythonic untuk mengulangi file dan mengkonversi ke int:
-for line in open(fname):
-if line.strip():
-# line contains eol character(s)
-n = int(line)
-# assuming single integer on each line
-Apa yang Anda coba lakukan sedikit lebih rumit, tetapi masih belum jelas:
-h = open(fname)
-for line in h:
-if line.strip():
-[int(next(h).strip()) for _ in range(4)]
-# list of integers
-Dengan cara ini memproses 5 baris pada saat itu. Gunakan h.next()alih-alih next(h)sebelum Python 2.6.
-Alasan yang Anda miliki ValueErroradalah karena inttidak dapat mengonversi string kosong ke integer. Dalam hal ini, Anda perlu memeriksa konten string sebelum konversi, atau kecuali kesalahan:
-try:
-int('')
-except ValueError:
-pass
-# or whatever
-—
-SilentGhost
-sumber
-4
-Percobaan Anda / kecuali tidak membedakan antara sesuatu yang masuk akal yang diharapkan (baris kosong / kosong) dan sesuatu yang buruk seperti non-integer.
-—
-John Machin
-dan mengapa Anda ingin membedakan hal-hal itu?
-—
-SilentGhost
-3
-karena salah satu cukup expectable dan dapat diketahui tetapi yang lain merupakan indikasi dari kesalahan
-—
-John Machin
-3
-dan mengapa garis kosong cukup diharapkan dan non-integer bukan?
-—
-SilentGhost
-1
-ini bagus jika Anda yakin bahwa daftar Anda sebenarnya adalah daftar bilangan bulat yang dikodifikasi. Jika Anda tidak yakin dapat melakukannyan = int(line) if line.is_integer() else int(float(line))
-—
-Mike Furlender
-23
-Saya menemukan pekerjaan di sekitar. Python akan mengonversi angka menjadi float. Cukup dengan memanggil float terlebih dahulu kemudian mengubahnya menjadi int akan berfungsi:
-output = int(float(input))
-—
-Brad123
-sumber
-11
-Alasannya adalah bahwa Anda mendapatkan string kosong atau string sebagai argumen ke int. Periksa apakah kosong atau mengandung karakter alfa. Jika berisi karakter, abaikan saja bagian itu.
-—
-rajender kumar
-sumber
-2
-Ini lebih mirip komentar. Ketika Anda memiliki reputasi yang cukup, Anda akan dapat mengomentari setiap pos.
-—
-Joshua Drake
-8
-Alasan Anda mendapatkan kesalahan ini adalah karena Anda mencoba mengubah karakter spasi menjadi integer, yang sama sekali tidak mungkin dan dibatasi. Dan itulah sebabnya Anda mendapatkan kesalahan ini.
-Periksa kode Anda dan perbaiki, itu akan berfungsi dengan baik
-—
-Joish
-sumber
-8
-Jadi kalau sudah
-floatInString = '5.0'
-Anda dapat mengubahnya intdenganfloatInInt = int(float(floatInString))
-—
-Harvey
-sumber
-3
-Anda punya masalah dengan baris ini:
-while file_to_read != " ":
-Ini tidak menemukan string kosong. Ia menemukan string yang terdiri dari satu ruang. Agaknya ini bukan yang Anda cari.
-Dengarkan saran orang lain. Ini bukan kode python yang sangat idiomatis, dan akan jauh lebih jelas jika Anda beralih ke file secara langsung, tapi saya pikir masalah ini patut dicatat juga.
-—
-jcdyer
-sumber
-3
-Silakan uji fungsi ini ( split()) pada file sederhana. Saya menghadapi masalah yang sama dan menemukan bahwa itu karena split()tidak ditulis dengan benar (pengecualian penanganan).
-—
-elixenide
-sumber
-1
-readings = (infile.readline())
-print readings
-while readings != 0:
-global count
-readings = int(readings)
-Ada masalah dengan kode itu. readingsadalah baris baru yang dibaca dari file - ini adalah string. Oleh karena itu Anda tidak boleh membandingkannya dengan 0. Selanjutnya, Anda tidak bisa hanya mengubahnya menjadi bilangan bulat kecuali Anda yakin itu memang satu. Misalnya, baris kosong akan menghasilkan kesalahan di sini (seperti yang pasti Anda ketahui).
-Dan mengapa Anda membutuhkan perhitungan global? Itu pasti desain yang buruk di Python.
-—
-Eli Bendersky
-sumber
-1
-Ini juga bisa terjadi ketika Anda harus memetakan bilangan bulat yang dipisahkan ruang ke daftar tetapi Anda memasukkan bilangan bulat baris demi baris menggunakan .input(). Seperti misalnya saya sedang memecahkan masalah ini pada HackerRank Bon-Appetit , dan mendapat kesalahan berikut saat kompilasi
-Jadi alih-alih memberikan input ke program baris demi baris cobalah untuk memetakan bilangan bulat yang dipisahkan ruang menjadi daftar menggunakan map()metode ini.
-—
-Amit Kumar
-sumber
-0
-Saya membuat program yang membaca file dan jika baris pertama file tidak kosong, itu membaca empat baris berikutnya. Perhitungan dilakukan pada baris tersebut dan kemudian baris berikutnya dibaca.
-Sesuatu seperti ini seharusnya bekerja:
-for line in infile:
-next_lines = []
-if line.strip():
-for i in xrange(4):
-try:
-next_lines.append(infile.next())
-except StopIteration:
-break
-# Do your calculation with "4 lines" here
-—
-Imran
-sumber
-0
-Saya mendapatkan kesalahan yang serupa, ternyata dataset memiliki nilai kosong yang tidak dapat dikonversi oleh python menjadi integer.
-—
-pengguna2162611
-sumber
-4
-Bisakah Anda menguraikan sedikit lebih banyak dengan beberapa contoh tentang bagaimana OP bisa menyelesaikannya?
-—
-fmendez
-nilai kosong berarti kosong yang dapat dikonversi ke string float. Jika Anda mencoba mengonversi ke float juga akan menampilkan kesalahan
-—
-saravanan saminathan
-0
-Saya masuk ke masalah yang sama ketika mencoba menggunakan readlines () di dalam untuk loop untuk objek file yang sama ... Kecurigaan saya adalah menembak readling () di dalam readline () untuk objek file yang sama menyebabkan kesalahan ini.
-Solusi terbaik dapat digunakan seek (0) untuk mengatur ulang penunjuk file atau Kondisi penanganan dengan menetapkan beberapa flag kemudian membuat objek baru untuk file yang sama dengan memeriksa ketentuan yang ditetapkan ....
-—
-Abhishek Jain
-sumber
-0
-Baru-baru ini saya menemukan sebuah kasus di mana tidak ada jawaban yang berfungsi. Saya menemukan data CSV di mana ada byte nol yang dicampur dengan data, dan byte nol itu tidak dilucuti. Jadi, string numerik saya, setelah pengupasan, terdiri dari byte seperti ini:
-\x00\x31\x00\x0d\x00
-Untuk mengatasi ini, saya lakukan:
-countStr = fields[3].replace('\x00', '').strip()
-count = int(countStr)
-... di mana bidang adalah daftar nilai csv yang dihasilkan dari pemisahan garis.
-—
-T. Reed
-sumber
-0
-Sepertinya pembacaan terkadang berupa string kosong dan jelas kesalahan muncul. Anda dapat menambahkan pemeriksaan tambahan ke loop sementara Anda sebelum perintah int (bacaan) seperti:
-while readings != 0 | readings != '':
-global count
-readings = int(readings)
-—
-Kanishk Mair
-sumber
-0
-Saya kesulitan menemukan alasan sebenarnya, itu terjadi ketika kita tidak membaca dengan benar dari file. Anda perlu membuka file dan membaca dengan metode readlines () seperti di bawah ini:
-with open('/content/drive/pre-processed-users1.1.tsv') as f:
-file=f.readlines()
-Ini mengoreksi output yang diformat
-—
-Shaina Raza
-sumber
-0
-jawaban Anda melempar kesalahan karena baris ini
-readings = int(readings)
-Di sini Anda mencoba mengubah string menjadi tipe int yang bukan basis-10. Anda dapat mengonversi string menjadi int hanya jika basis-10 jika tidak maka akan membuang ValueError, yang menyatakan literal tidak valid untuk int () dengan basis 10.
-—
-Shubham
-sumber
-Dengan menggunakan situs kami, Anda mengakui telah membaca dan memahami Kebijakan Cookie dan Kebijakan Privasi kami.
-Licensed under cc by-sa 3.0
-with attribution required.
+Warning: openssl_encrypt() expects parameter 1 to be string, object given in D:\filephp\blockchain\testblock.php on line 31 – Cloud Stack Ninja
+Skip to content
+Cloud Stack Ninja
+Main Menu
+Home
+Contact
+Warning: openssl_encrypt() expects parameter 1 to be string, object given in D:\filephp\blockchain\testblock.php on line 31Blockchain, Encryption, php, sha256 / By
+Arash Ahmad
+I want to try to make a simple voting system with blockchain. I want to encrypt and decrypt the voter data. The decryption is for the voter to verify their voted data. But I have a problem with encryption.
+Class Block in 'testblock.php'
+function __construct($index, $timestamp, $serverid, $voterid, $candidateid, $previousHash = null)
+{
+$this->index = $index;
+$this->timestamp = $timestamp;
+$this->serverid = $serverid;
+$this->voterid = $voterid;
+$this->candidateid = $candidateid;
+$this->previousHash = $previousHash;
+$this->output = $this->encrypt_decrypt($action = null, $string = null, $output = null);
+$this->nonce = 0;
+}
+public function encrypt_decrypt($action = null, $string = null, $output = null)
+{
+$output = false;
+$encrypt_method = "AES-256-CBC";
+$key = hash('sha256', $this->index.$this->timestamp.$this->serverid.$this->voterid.((string)$this->candidateid).$this->previousHash.$this->nonce);
+$iv = substr(hash('sha256', $this->index.$this->timestamp.$this->serverid.$this->voterid.((string)$this->candidateid).$this->previousHash.$this->timestamp.$this->nonce), 0, 16);
+if ($action == 'encrypt')
+{
+$output = openssl_encrypt($string, $encrypt_method, $key, 0, $iv); //line 30
+$output = base64_encode($output);
+}
+else if ($action == 'decrypt')
+{
+$output = openssl_decrypt(base64_decode($string), $encrypt_method, $key, 0, $iv);
+}
+return $output;
+}
+Class BlockChain in 'testblockchain.php'
+public function push($block)
+{
+$block->previousHash = $this->getLastBlock()->output;
+$this->mine($block);
+array_push($this->chain, $block);
+}
+public function mine($block)
+{
+while (substr($block->output, 0, $this->difficulty) !== str_repeat("0", $this->difficulty)) {
+$block->nonce++;
+$block->output = $block->encrypt_decrypt('encrypt');
+}
+echo "Block mined: ".$block->output."\n";
+}
+Retrieve data from database in 'testchain.php'
+$testCoin = new BlockChain();
+while($row = mysqli_fetch_array($result)){
+echo "mining block\n";
+$testCoin->push(new Block($row['id'], $row['timestamp'], $row['serverid'], $row['voterid'], $row['candidateid']));
+echo json_encode($testCoin, JSON_PRETTY_PRINT);
+}
+Read more here: https://stackoverflow.com/questions/65667091/warning-openssl-encrypt-expects-parameter-1-to-be-string-object-given-in-d
+Content AttributionThis content was originally published by Arash Ahmad at Recent Questions - Stack Overflow, and is syndicated here via their RSS feed. You can read the original post over there.
+Post navigation
+← Previous PostNext Post →
+Recent Posts
+How to link submodules of Terraform so to use my users from users module to group modules. thank
+June 15, 2021
+html datalist options disappear on whitespace
+June 15, 2021
+Force file download with header is corrupting file
+June 15, 2021
+Getting attribute error : module ‘pandas’ has no attribute ‘json_normalize’
+June 15, 2021
+postgresql: update multiple values within one jsonb object
+June 15, 2021
+No module named (image_dehazer)
+June 15, 2021
+lottie-player: Is there any way to stop the animation after it loads?
+June 15, 2021
+Is my sata cable damaged or my os is corrupted?
+June 15, 2021
+Exec Procedure Mysql with EF net core
+June 15, 2021
+"Warning: Each child in a list should have a unique "key" prop" when adding new element to the list [duplicate]
+June 15, 2021
+Legal DisclaimerCloudStack.Ninja is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com. We also participates in other affiliate programs too. CloudStack.Ninja is compensated for referring traffic and business to these companies. Build5Nines Featured PostsWe are back live for a conference!How my passion for BCDR saved my lifeStopping Azure subdomain takeoversLatest Cloud News: IoT, Security, Azure Sphere, and more! (December 4, 2020 – Build5Nines Weekly)Latest Cloud News: Apple on K8s, IoT, Microsoft Pluton and more! (November 20, 2020 – Build5Nines Weekly)Category CloudAndroid Angular arrays Azure C# css django Flutter github html ios java JavaScript jquery linux Microsoft mysql node.js pandas php python python-3.x r reactjs SQL Startups swift TC Thurrott TypeScript
+Recent Posts
+How to link submodules of Terraform so to use my users from users module to group modules. thank
+June 15, 2021
+html datalist options disappear on whitespace
+June 15, 2021
+Force file download with header is corrupting file
+June 15, 2021
+Getting attribute error : module ‘pandas’ has no attribute ‘json_normalize’
+June 15, 2021
+postgresql: update multiple values within one jsonb object
+June 15, 2021
+Copyright © 2021 Cloud Stack Ninja | Powered by Astra WordPress Theme
+%d bloggers like this:

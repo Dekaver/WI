@@ -1,477 +1,323 @@
-list - Python - TypeError: 'int' object is not iterable - Stack Overflow
-Stack Overflow
-About
-Products
-For Teams
-Stack Overflow
-Public questions & answers
-Stack Overflow for Teams
-Where developers & technologists share private knowledge with coworkers
-Jobs
-Programming & related technical career opportunities
-Talent
-Recruit tech talent & build your employer brand
-Advertising
-Reach developers & technologists worldwide
-About the company
-Loading…
-Log in
-Sign up
-current community
-Stack Overflow
-help
-chat
-Meta Stack Overflow
-your communities
-Sign up or log in to customize your list.
-more stack exchange communities
-company blog
-People who code: we want your input.
-Take the Survey
-Join Stack Overflow to learn, share knowledge, and build your career.
-Sign up with email
-Sign up
-Sign up with Google
-Sign up with GitHub
-Sign up with Facebook
+Python typeerror: can only concatenate str (not "int") to str
 Home
-Public
-Questions
-Tags
-Users
-Find a Job
-Jobs
-Companies
-Teams
-Stack Overflow for Teams
-– Collaborate and share knowledge with a private group.
-Create a free Team
-What is Teams?
-Teams
-What’s this?
-Create free Team
-Teams
-Q&A for work
-Connect and share knowledge within a single location that is structured and easy to search.
-Learn more
-Python - TypeError: 'int' object is not iterable
-Ask Question
-Asked
-7 years, 7 months ago
-Active
-5 months ago
-Viewed
-854k times
-80
-31
-Here's my code:
-import math
-print "Hey, lets solve Task 4 :)"
-number1 = input ("How many digits do you want to look at? ")
-number2 = input ("What would you like the digits to add up to? ")
-if number1 == 1:
-cow = range(0,10)
-elif number1 == 2:
-cow = range(10,100)
-elif number1 == 3:
-cow = range(100,1000)
-elif number1 == 4:
-cow = range(1000,10000)
-elif number1 == 5:
-cow = range(10000,100000)
-elif number1 == 6:
-cow = range(100000,1000000)
-elif number1 == 7:
-cow = range(1000000,10000000)
-elif number1 == 8:
-cow = range(10000000,100000000)
-elif number1 == 9:
-cow = range(100000000,1000000000)
-elif number1 == 10:
-cow = range(1000000000,10000000000)
-number3 = cow[-1] + 1
-n = 0
-while n < number3:
-number4 = list(cow[n])
-n += 1
-I am looking to make a loop so that for each element in the list, it will get broken down into each of it's characters. For example, say the number 137 was in the list then it would be turned into [1,3,7]. Then I want to add these numbers together (I haven't started that bit yet but I have some idea of how to do it).
-However, I keep getting the error message
-TypeError: 'int' object is not iterable
-when I try and run this.
-What am I doing wrong?
-python list loops iterable
-Share
-Follow
-edited Sep 3 '15 at 11:08
-perror
-6,3291616 gold badges5656 silver badges7272 bronze badges
-asked Oct 22 '13 at 16:37
-user2908001user2908001
-4
-3
-What do you expect list(cow[n]) to do ?
-– Jon Clements♦
-Oct 22 '13 at 16:39
-12
-Hint: you can give range() dynamic arguments too: cow = range(10 ** (number1 - 1) if number1 > 1 else 0, 10 ** number1) would give you the exact same results as all your if statements, in just one line.
-– Martijn Pieters♦
-Oct 22 '13 at 16:42
-1
-@MartijnPieters I was just thinking about that - but think IIRC, 10 ** 0 is 1 not 0
-– Jon Clements♦
-Oct 22 '13 at 16:43
-1
-@JonClements: adjusted. :-) That 0 is quite inconsistent in this case; all the other numbers are powers of 10..
-– Martijn Pieters♦
-Oct 22 '13 at 16:45
-Add a comment
-|
-3 Answers
-3
-Active
-Oldest
-Votes
-112
-Your problem is with this line:
-number4 = list(cow[n])
-It tries to take cow[n], which returns an integer, and make it a list.
-This doesn't work, as demonstrated below:
->>> a = 1
->>> list(a)
-Traceback (most recent call last):
-File "<stdin>", line 1, in <module>
-TypeError: 'int' object is not iterable
->>>
-Perhaps you meant to put cow[n] inside a list:
-number4 = [cow[n]]
-See a demonstration below:
->>> a = 1
->>> [a]
-[1]
->>>
-Also, I wanted to address two things:
-Your while-statement is missing a : at the end.
-It is considered very dangerous to use input like that, since it evaluates its input as real Python code.
-It would be better here to use raw_input and then convert the input to an integer with int.
-To split up the digits and then add them like you want, I would first make the number a string.
-Then, since strings are iterable, you can use sum:
->>> a = 137
->>> a = str(a)
->>> # This way is more common and preferred
->>> sum(int(x) for x in a)
-11
->>> # But this also works
->>> sum(map(int, a))
-11
->>>
-Share
-Follow
-edited Oct 22 '13 at 17:02
-answered Oct 22 '13 at 16:40
-user2555451user2555451
-6
-Thanks for answering so quickly. How would I then split the number up into individual characters? I tried putting a list(number4) beneath it but that then causes it to run forever when I run it on terminal.
-– user2908001
-Oct 22 '13 at 16:48
-Integers don't have characters. However, you could convert it to a string, which does: str(..).
-You might not need to convert it to a list after that, depending on what you intend to do with it, because strings are iterable and yield their constituent characters.
-– kindall
-Oct 22 '13 at 16:54
-@Mikey6743 - See my edit.
-While you could use a for-loop for this, the quickest option is to use sum.
-– user2555451
-Oct 22 '13 at 16:58
-This is great guys, thank you so much! I've just started learning how to code :) I'm still confused on how to repeat get this to repeat without using a loop. For example, say the user want's to look at 3 digits then I must work it out from 100 to 999. E.g. sum of the integers in 100 = 1 and sum of the integers in 999 = 27.
-– user2908001
-Oct 22 '13 at 19:28
-@Mikey6743 - Hmm, then you might have to use a loop.
-However, since the topic of this question was the TypeError (which my post fixes), why not first close this question as answered (click the tick next to my answer) and then ask another question that focuses on that problem in particular?
-You'll get better help that way.
-You definitely have to make the number a string first though so that you can split it into digits.
-– user2555451
-Oct 22 '13 at 20:07
-|
-Show 1 more comment
-3
-This is very simple you are trying to convert an integer to a list object !!! of course it will fail and it should ...
-To demonstrate/prove this to you by using the example you provided ...just use type function for each case as below and the results will speak for itself !
->>> type(cow)
-<class 'range'>
->>>
->>> type(cow[0])
-<class 'int'>
->>>
->>> type(0)
-<class 'int'>
->>>
->>> >>> list(0)
-Traceback (most recent call last):
-File "<stdin>", line 1, in <module>
-TypeError: 'int' object is not iterable
->>>
-Share
-Follow
-answered Dec 29 '18 at 23:19
-grepitgrepit
-16.6k66 gold badges8383 silver badges7272 bronze badges
-Add a comment
-|
-1
-If the case is:
-n=int(input())
-Instead of -> for i in n: -> gives error- 'int' object is not iterable
-Use -> for i in range(0,n): -> works fine..!
-Share
-Follow
-answered Dec 30 '20 at 20:22
-Augustine JoseAugustine Jose
-72944 silver badges66 bronze badges
-Add a comment
-|
-Your Answer
-Thanks for contributing an answer to Stack Overflow!Please be sure to answer the question. Provide details and share your research!But avoid …Asking for help, clarification, or responding to other answers.Making statements based on opinion; back them up with references or personal experience.To learn more, see our tips on writing great answers.
-Draft saved
-Draft discarded
-Sign up or log in
-Sign up using Google
-Sign up using Facebook
-Sign up using Email and Password
-Submit
-Post as a guest
-Name
-Email
-Required, but never shown
-Post as a guest
-Name
-Email
-Required, but never shown
-Post Your Answer
-Discard
-By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
-The Overflow Blog
-Using low-code tools to iterate products faster
-Podcast 345: A good software tutorial explains the How. A great one explains…
-Featured on Meta
-Take the 2021 Developer Survey
-Linked
--1
-How does type casting happens in Python between list and tuple?
--2
-python program to reverse the list iterable problem
-3
-list comprehension vs iterable. Python newbie
-0
-Failing to understand simple error message
-0
-How do I print lists side by side in Python?
--3
-For Loop at Python
-0
-Python Web Scraping Error TypeError: 'int' object is not iterable
--3
-Compare each number from the same integer
--3
-How can I create a function in Python that takes a list of numbers and an integer?
-0
-Problems Listing Gmail Messages with User Created Label via Google API
-See more linked questions
-Related
-5328
-How to execute a program or call a system command from Python
-6197
-What are metaclasses in Python?
-6698
-Does Python have a ternary conditional operator?
-3270
-How to get the current time in Python
-1923
-How to know if an object has an attribute in Python
-3175
-How do I loop through or enumerate a JavaScript object?
-2954
-How do I concatenate two lists in Python?
-1204
-In Python, how do I determine if an object is iterable?
-3596
-Does Python have a string 'contains' substring method?
-2189
-Iterate through object properties
-Hot Network Questions
-Interviewer was two hours late
-Revisiting the unreasonable effectiveness of mathematics
-Can I gain AC efficiency by spraying condensate water on the outdoor coils?
-Can a Rogue find an undetectable Trap?
-When is it appropriate to foam a landing strip? (example JB292)
-Sharing a research proposal when applying for funds
-Dedekind-"finiteness" for arbitrary limit cardinals
-Critical differences between Ubuntu Server and Ubuntu Desktop for 20.04 LTS?
-Is Occam's Razor a Prior?
-Remove All Smalltalk Comments for Code Golf
-Make git diff aware of Emacs Lisp functions?
-How is it possible for Jesus to be quoted in the NT during moments of solitude (Gethsemane) or away from the disciples (Nicodemus, Pilate etc.)?
-Grep and Cut command in linux
-Decode USB packets
-Why are (many) bike multitools not stainless, unlike penknives?
-Why aren't resistors being used here?
-Is co-authoring with friends a good idea?
-Did the Kohen Gadol minister barefoot?
-What's the easiest way to change from MS-DOS 6.22 to DR-DOS?
-Why some CRS are deprecated in QGIS?
-How does black proceed in the following position?
-Why don't demons possess children until after puberty?
-Telling a coworker they aren't invited into my house
-How should a company manage physical 2FA tokens?
-more hot questions
-Question feed
-Subscribe to RSS
-Question feed
-To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
-lang-py
-Stack Overflow
-Questions
-Jobs
-Developer Jobs Directory
-Salary Calculator
-Help
-Mobile
-Products
-Teams
-Talent
-Advertising
-Enterprise
-Company
-About
-Press
-Work Here
-Legal
-Privacy Policy
-Terms of Service
-Contact Us
-Cookie Settings
-Cookie Policy
-Stack Exchange Network
-Technology
-Life / Arts
-Culture / Recreation
-Science
-Other
-Stack Overflow
-Server Fault
-Super User
-Web Applications
-Ask Ubuntu
-Webmasters
-Game Development
-TeX - LaTeX
-Software Engineering
-Unix & Linux
-Ask Different (Apple)
-WordPress Development
-Geographic Information Systems
-Electrical Engineering
-Android Enthusiasts
-Information Security
-Database Administrators
-Drupal Answers
-SharePoint
-User Experience
-Mathematica
-Salesforce
-ExpressionEngine® Answers
-Stack Overflow em Português
-Blender
-Network Engineering
-Cryptography
-Code Review
-Magento
-Software Recommendations
-Signal Processing
-Emacs
-Raspberry Pi
-Stack Overflow на русском
-Code Golf
-Stack Overflow en español
-Ethereum
+Top Projects
+All Star Projects
+Web Development
+Mobile Development
+Design
 Data Science
-Arduino
-Bitcoin
-Software Quality Assurance & Testing
-Sound Design
-Windows Phone
-more (29)
-Photography
-Science Fiction & Fantasy
-Graphic Design
-Movies & TV
-Music: Practice & Theory
-Worldbuilding
-Video Production
-Seasoned Advice (cooking)
-Home Improvement
-Personal Finance & Money
-Academia
-Law
-Physical Fitness
-Gardening & Landscaping
-Parenting
-more (10)
-English Language & Usage
-Skeptics
-Mi Yodeya (Judaism)
-Travel
-Christianity
-English Language Learners
-Japanese Language
-Chinese Language
-French Language
-German Language
-Biblical Hermeneutics
-History
-Spanish Language
-Islam
-Русский язык
-Russian Language
-Arqade (gaming)
-Bicycles
-Role-playing Games
-Anime & Manga
-Puzzling
-Motor Vehicle Maintenance & Repair
-Board & Card Games
-Bricks
-Homebrewing
-Martial Arts
-The Great Outdoors
-Poker
-Chess
-Sports
-more (16)
-MathOverflow
-Mathematics
-Cross Validated (stats)
-Theoretical Computer Science
-Physics
-Chemistry
-Biology
-Computer Science
-Philosophy
-Linguistics
-Psychology & Neuroscience
-Computational Science
-more (10)
-Meta Stack Exchange
-Stack Apps
-API
-Data
+Bootcamps
+Best Coding Bootcamps
+Best Online Bootcamps
+Best Web Design
+Bootcamps
+Best Data Science Bootcamps
+Best Data Analytics Bootcamps
+Best Cyber Security Bootcamps
+Best ISA Bootcamps 2020
+Programs
+Web Development
+Mobile Development
+Software Engineer
+Data Science
+Cybersecurity
+Product Management
+Digital Marketing
+UX/UI Designer
+Database Administration
+Social Media Management
+InfoSec Analyst
+Quality Assurance Engineer
+SEO Manager
+Computer Systems Analyst
+WordPress developer
 Blog
+Bootcamps
+Coding
+Career Resources
+Tech Fields
+News & Commentary
+About
+Company
+Jobs
+Values
+Publication
+Press
+Home
+Top Projects
+All Star Projects
+Web Development
+Mobile Development
+Design
+Data Science
+Bootcamps
+Best Coding Bootcamps
+Best Online Bootcamps
+Best Web Design
+Bootcamps
+Best Data Science Bootcamps
+Best Data Analytics Bootcamps
+Best Cyber Security Bootcamps
+Best ISA Bootcamps 2020
+Programs
+Web Development
+Mobile Development
+Software Engineer
+Data Science
+Cybersecurity
+Product Management
+Digital Marketing
+UX/UI Designer
+Database Administration
+Social Media Management
+InfoSec Analyst
+Quality Assurance Engineer
+SEO Manager
+Computer Systems Analyst
+WordPress developer
+Blog
+Bootcamps
+Coding
+Career Resources
+Tech Fields
+News & Commentary
+About
+Company
+Jobs
+Values
+Publication
+Press
+Sign in
+Front Page
+Bootcamps
+Popular Bootcamps
+Bootcamp Prep
+Bootcamp Financing
+University Bootcamps
+Bootcamp Grads
+Coding
+Coding Tools
+HTML
+CSS
+Java
+JavaScript
+Python
+C++
+Ruby
+SQL
+Git
+Career Resources
+Career Advice
+Tech Interviews
+Tech Salaries
+Tech Cities
+Research
+Tech Fields
+Web Development
+Software Engineering
+Web Design
+Data Science
+Higher Ed
+Associate
+Bachelor’s
+Master’s
+Doctoral
+Certifications
+Trade Schools
+About
+HomePython TutorialsPython typeerror: can only concatenate str (not “int”) to str Solution
+Python Tutorials
+Python typeerror: can only concatenate str (not “int”) to str Solution
+James Gallagher
+Jul 30, 2020
+0
 Facebook
 Twitter
 LinkedIn
-Instagram
-site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.6.10.39473
-Stack Overflow works best with JavaScript enabled
-Your privacy
-By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
-Accept all cookies
-Customize settings
+You’ve just started writing a Python program and then it hits you: a TypeError. This one’s new to you: “typeerror: can only concatenate str (not “int”) to str”. What does it mean? Why is it being raised in your code? These are all good questions.
+In this guide, we’re going to talk about what this Python error means and how you can solve it. We’ll walk through an example program with this error so that you can see how it works. Without further ado, let’s get started!
+The Problem: typeerror: can only concatenate str (not “int”) to str
+In Python, values can only be concatenated if they are the same type. You cannot concatenate a string and an integer, or a string and a list. If you do, a TypeError is raised:
+typeerror: can only concatenate str (not "int") to str
+There are a few programming languages, like JavaScript, which allow you to concatenate strings and integers together. In Python, you cannot do this. If you want to concatenate a string and an integer, you’ve got to convert the integer to a string first before you concatenate it to a string.
+An Example Situation
+This error is raised when you try to concatenate a string and an integer.
+Let’s take a look at a program which suffers from this problem:
+gatsby = {
+"title": "The Great Gatsby",
+"author": "F. Scott Fitzgerald",
+"price": 4.99,
+"quantity_in_stock": 4
+}
+print("There are " + gatsby["quantity_in_stock"] + " copies of The Great Gatsby in stock.")
+This program prints out how many copies of the book The Great Gatsby are in stock at a bookstore. First, we declare a dictionary called “gatsby”. This dictionary contains four pieces of information about the book: its title, the author, its price, and how many copies are in stock.
+» MORE:  Python Uppercase: A Step-By-Step GuideNext, we print out a message informing the user how many copies are in stock at the bookstore.
+Let’s try to run our code:
+Traceback (most recent call last):
+File "main.py", line 8, in <module>
+print("There are " + gatsby["quantity_in_stock"] + " copies of The Great Gatsby in stock.")
+TypeError: can only concatenate str (not "int") to str
+As we expected, a TypeError has been raised.
+The Solution
+The value of gatsby[“quantity_in_stock”] is an integer. A TypeError has been raised because we have tried to concatenate that value, an integer, to a string.
+We can solve this problem by converting the value of gatsby[“quantity_in_stock”] to a string before we concatenate it to our other strings. We can do this using the str() method, which converts an integer to a string:
+print("There are " + str(gatsby["quantity_in_stock"]) + " copies of The Great Gatsby in stock.")
+Let’s try to run our code again:
+There are 4 copies of The Great Gatsby in stock.
+Our code has found how many copies of The Great Gatsby are in stock. Then, it has printed out how many copies are in stock to the console. This value is printed in the following format:
+There are X copies of The Great Gatsby in stock.
+“X” refers to how many copies are in stock.
+Conclusion
+The error “typeerror: can only concatenate str (not “int”) to str” is raised when you try to concatenate a string and an integer. To solve this error, make sure that all values in a line of code are strings before you try to concatenate them.
+Now you’re ready to solve this Python TypeError like a pro!
+» MORE:  Python Print Without Newline: Step-by-Step Guide
+About us: Career Karma is a platform designed to help job seekers find, research, and connect with job training programs to advance their careers. Learn about the CK publication.
+What's Next?
+Want to take action?
+Get matched with top bootcamps
+Want to dive deeper?
+Ask a question to our community
+Want to explore tech careers?
+Take our careers quiz
+James Gallagher
+James Gallagher is a self-taught programmer and the technical content manager at Career Karma. He has experience in range of programming languages and extensive expertise in Python, HTML, CSS, and JavaScript. James has written hundreds of programming tutorials, and he frequently contributes to publications like Codecademy, Treehouse, Repl.it, Afrotech, and others. He also serves as a researcher at Career Karma, publishing comprehensive reports on the bootcamp market and income share agreements.
+Read more by James Gallagher
+Share This
+Previous ArticlePython 'str' object does not support item assignment solution
+Next ArticlePython typeerror: list indices must be integers or slices, not str Solution
+Jul 30, 2020
+Comments (0)
+Leave a Reply Cancel replyYour email address will not be published. Required fields are marked *Your CommentName *
+Email *
+Website
+Get offers from top bootcampsTake the stress out of picking a bootcamp
+See matches nowTop Community PostsHow long does it take to become a full stack web developer?Marcus Hayes in Full-stack DevelopmentWhat are the laptop requirements for programming?Danny Fuentes in Beginners$2 million in COVID19 ScholarshipsTimur Meyster in Applying to BootcampsPopular ArticlesBest Online BootcampsBest Tech Jobs 2021What is Coding Used For?How Much Do Coders Make?Best Free BootcampsSee all articlesCareer GuidesWeb DevelopmentSoftware EngineeringData ScienceWeb DesignCyber SecuritySee all guidesFree prep coursesFlatiron School Prep80+ hours
+Easy80+ hours of HTML, CSS & JavaScriptKenzie School Prep80+ hours
+Easy20+ hours of HTML & CSSGeneral Assembly Prep50+ hours
+EasyLearn web development basics in HTML, CSS, JavaScript by building projectssee all prep courses
+Get matches
+from top bootcamps
+Select your interest:
+Interest
+Software Engineering
+Design
+Data Science
+Data Analytics
+Cybersecurity Analytics
+Technology Sales
+Select your preferred pace:
+Begin typing a name to filter
+Full-time
+Part-time
+Self-paced
+Begin typing a name to filter
+Full-time
+Part-time
+Self-paced
+See Matches
+Find the Best Online Course for YouGet Matched
+Related Articles
+Python Tutorials
+Python FileNotFoundError: [Errno 2] No such file or directory Solution
+Python Tutorials
+Python JSONDecodeError Explanation and Solution
+Python Tutorials
+Python Index: A Step-By-Step Guide
+Python Tutorials
+Python AttributeError: ‘numpy.ndarray’ object has no attribute ‘append’ Solution
+Home
+About
+Careers
+Mission
+Blog
+Press
+Terms & conditions
+© 2021 Career Karma
+Rankings
+Best Coding Bootcamps
+Best Online Bootcamps
+Best Web Design Bootcamps
+Best Data Science Bootcamps
+Best Data Analytics Bootcamps
+Best Cyber Security Bootcamps
+Best ISA Bootcamps 2020
+See all
+Comparisons
+Flatiron School vs Fullstack Academy
+Hack Reactor vs App Academy
+Fullstack Academy vs Hack Reactor
+Thinkful vs General Assembly
+Flatiron School vs Thinkful
+General Assembly vs Flatiron School
+App Academy vs Lambda School
+General Assembly vs Hack Reactor
+Springboard vs Thinkful
+See all
+Locations
+San Francisco Bootcamps
+New York Bootcamps
+Los Angeles Bootcamps
+Chicago Bootcamps
+Seattle Bootcamps
+Atlanta Bootcamps
+Austin Bootcamps
+See all
+Schools
+Kenzie Academy
+Flatiron School
+Thinkful
+General Assembly
+Springboard
+Galvanize
+Hack Reactor
+App Academy
+Bloc
+See all
+Careers
+Software Engineering
+UX/UI Design
+Data Science
+Web Development
+Mobile Development
+Cybersecurity
+Product Management
+See all
+Subjects
+JavaScript
+Python
+Ruby
+Java
+Swift
+Android
+.Net
+React
+Angular
+See all
+Tell us about you and we will match you with top rated bootcamps with flexible payment options, income sharing (ISAs), or money-back guarantees.
+Select your interest:
+Software Engineering
+Design
+Data Science
+Data Analytics
+Cybersecurity Analytics
+Technology Sales
+First Name
+Last Name
+Email
+Phone Number
+GET MATCHED
+Find the right bootcamp for you
+By continuing you indicate that you have read and agree to
+Career Karma Terms of Service and Privacy Policy
+X
+X
+Jump start your tech career
+Learn the most in-demand skills
+Get started now
+Lost Password Back ⟶
+Login
+Register
+Get new password
+Lost Password?
+Login
+Registration is disabled.

@@ -1,205 +1,280 @@
-Undefined array key 1 in PHP 8 | WordPress.org
-About WordPressAbout WordPressWordPress.orgDocumentationSupportFeedbackSearchLog InRegister
-Skip to content	WordPress.org
-Search WordPress.org for:
-Submit
-Toggle Menu
-Showcase
-Learn
-Themes
-Plugins
-Mobile
-SupportDocumentationForums
-Get InvolvedFive for the Future
-About
-Blog
-Hosting
-Get WordPress
-Skip to content
-Support
-Forums
-Guidelines
-Documentation
-Get Involved
-Search for:
-Search forums
-Support » Plugin: Autoptimize » Undefined array key 1 in PHP 8
-Undefined array key 1 in PHP 8
-Resolved
-Knightycool
-(@knightycool)
-1 month, 3 weeks ago
-I get this warning after upgrading to php 8.0.3
-[17-Apr-2021 09:38:57 UTC] PHP Warning:
-Undefined array key 1 in /var/www/mywebsite/wp-content/plugins/autoptimize/classes/autoptimizeStyles.php on line 275
-Viewing 15 replies - 1 through 15 (of 16 total)
-1
-2
-→
-Plugin Author
-Optimizing Matters
-(@optimizingmatters)
-1 month, 3 weeks ago
-Hmm …
-The code runs a regular expression if media= is found and the regex _should_ return the attribute value in $medias[1], so it looks like somehow that regex is not (always) returning an attribute value.
-Can you check the HTML source of a couple of pages on your site and tell me what different media attribute-values are there for your CSS?
-Thread Starter
-Knightycool
-(@knightycool)
-1 month, 3 weeks ago
-itemprop, viewbox (for svg),
-Thread Starter
-Knightycool
-(@knightycool)
-1 month, 3 weeks ago
-I added this line up to the original line:
-error_log(print_r($medias[1],true));
-$medias = explode( ‘,’, $medias[1] );
-And i’ll check the error log.
-Thread Starter
-Knightycool
-(@knightycool)
-1 month, 3 weeks ago
-ok here is an update
-Normally the entry in the error log is like this:
-[17-Apr-2021 12:31:52 UTC] Array
-(
-[0] => media=’all’
-[1] => all
-)`
-BUT sometimes it becomes this:
-17-Apr-2021 12:32:22 UTC] Array
-(
-)
-[17-Apr-2021 12:32:22 UTC] PHP Warning:
-Undefined array key 1 in /var/www/mywebsite/wp-content/plugins/autoptimize/classes/autoptimizeStyles.php on line 276`
-This reply was modified 1 month, 3 weeks ago by Knightycool.
-This reply was modified 1 month, 3 weeks ago by Knightycool.
-Thread Starter
-Knightycool
-(@knightycool)
-1 month, 3 weeks ago
-Is there a way to learn in which post this happens?
-Thread Starter
-Knightycool
-(@knightycool)
-1 month, 3 weeks ago
-Ok i get it now. I added the id number and could pinpoint where it happened…
-In the custom css of a single page (where it happens), there is a comment like this:
-/*! CSS Used from: https://www.mysite.net/wp-content/myapp.css ; media=all */
-So it matches media=all
-I removed it and try to see if the warning happens again. Perhaps you may find a way to capture media=all only if its between certain html tags.
-Plugin Author
-Optimizing Matters
-(@optimizingmatters)
-1 month, 3 weeks ago
-that’s unlikely to be the culprit; the code I referenced earlier is only applied on <style and <link rel=stylesheet tags, see https://github.com/futtta/autoptimize/blob/2.8.3/classes/autoptimizeStyles.php#L266 … :-/
-could you share the URL of the page/post with the id so I can have a look at the HTML source?
-Thread Starter
-Knightycool
-(@knightycool)
-1 month, 3 weeks ago
-It was the reason because the said comment was inside <style> </style>
-<style>
-.myclass {
-font-size: 10px;
-background-color: red;
+Smartsheet Data Tracker: AttributeError: 'dict' object has no attribute 'append'
+Quabr
+answers we find
+Explore tags
+No more boring flashcards learning!
+Learn languages, math, history, economics, chemistry and more with free Studylib Extension!
+Distribute all flashcards reviewing into small sessions
+Get inspired with a daily photo
+Import sets from Anki, Quizlet, etc
+Add Active Recall to your learning and get higher grades!
+Add to Chrome
+It's free
+Related questions
+HuggingFace Saving-Loading Model (Colab) to Make Predictions
+What is the regex pattern for repeating and non-repeating text sequences?
+By using multiple checkboxes in html, how should I fetch the data and store in the database in django?
+Is there any easy method to getting the Column Title when using GET Row with the Smartsheet API?
+Access Smartsheet by column Name instead of Column Id
+Get hyperlink to sheet based on SheetID
+Smartsheet Data Tracker: AttributeError: 'dict' object has no attribute 'append'
+2014-04-11 15:19
+David
+imported from Stackoverflow
+python
+smartsheet-api
+I am new to Python and I'm working with Smartsheet Data Tracker to update a sheet from a CSV file.
+I have problems about the array list management in Python; I don't know about this error, I was reading about this error on StackOverflow but I don't understand it:
+The error:
+"File "C:\Users\David\DataTraker\connectors\CSVCon.py", line 61, in __init__
+self.csvData.append(readerRow)
+AttributeError: 'dict' object has no attribute 'append'"
+And my code:
+def __init__(self, sourceConfig):
+self.csvData = []
+self.csvData = {"sourceId": "siniestros",
+"connectorClassName": "CSVCon",
+"fileName": "siniestros.csv",
+"isStrict": False}
+for readerRow in sourceReader:
+self.csvData.append(readerRow)
+2 answers
+answered 2014-04-11 15:23
+Alex Thornton
+What is going wrong is that you create a list to which you would like to append later. However you overwrite that afterwards with a dictionary, to which you cannot append. This is why you get an AttributeError.
+To fix this, I would rename your dictionary (self.csvData={stuff}) that you created after your list to something else such as self.meta, perhaps. Alternatively, you could rename your list.
+It doesn't matter which, you just need to remove the naming conflict so both variables can co-exist in the namespace.
+answered 2014-04-17 23:38
+stmcallister
+Actually, this was more an issue of poorly commented code in the Data Tracker project that caused the confusion in the CSVCon.py file. The CSV Configuration settings that are in those comments are an example of what should be in the settings/sources.json file.
+The Configure Source section in the project documentation provides some more detail on setting up your source in the sources.json file.
+There is also a section with an explanation of the CSV source specifically.
+The confusing commenting has been updated to be more clear.
+See also questions close to this topic
+HuggingFace Saving-Loading Model (Colab) to Make Predictions
+Using HuggingFace to train a transformer model to predict a target variable (e.g., movie ratings). I'm new to Python and this is likely a simple question, but I can’t figure out how to save a trained classifier model (via Colab) and then reload so to make target variable predictions on new data. As an example, I trained a model to predict imbd ratings with an example from the HuggingFace resources, shown below. I’ve tried a number of ways (save_model, save_pretrained) and either am struggling to save it at all or when loaded, can’t figure out what to call to get predictions. Any help would be incredibly appreciated on the steps that involve saving, loading, then creating new predicted scores based on the model on test data.
+#example mainly from here: https://huggingface.co/transformers/training.html
+!pip install transformers
+!pip install datasets
+from datasets import load_dataset
+raw_datasets = load_dataset("imdb")
+from transformers import AutoTokenizer
+tokenizer = AutoTokenizer.from_pretrained("bert-base-cased")
+def tokenize_function(examples):
+return tokenizer(examples["text"], max_length = 128, padding="max_length", truncation=True)
+tokenized_datasets = raw_datasets.map(tokenize_function, batched=True)
+#choosing small datasets for example#
+small_train_dataset = tokenized_datasets["train"].shuffle(seed=42).select(range(1000))
+small_eval_dataset = tokenized_datasets["test"].shuffle(seed=42).select(range(500))
+### TRAINING classification ###
+from transformers import AutoModelForSequenceClassification
+model = AutoModelForSequenceClassification.from_pretrained("bert-base-cased", num_labels=2)
+from transformers import TrainingArguments
+from transformers import Trainer
+training_args = TrainingArguments("test_trainer", evaluation_strategy="epoch", num_train_epochs=2, weight_decay=.0001, learning_rate=0.00001, per_device_train_batch_size=32)
+trainer = Trainer(model=model, args=training_args, train_dataset=small_train_dataset, eval_dataset=small_eval_dataset)
+trainer.train()
+y_test_predicted_original = model_loaded.predict(small_eval_dataset)
+#### Saving ###
+from google.colab import drive
+drive.mount('/content/gdrive')
+%cd /content/gdrive/My\ Drive/FOLDER
+trainer.save_pretrained ("Trained model") #assumed this would save but did not
+model.save_pretrained ("Trained model") #did save
+### Loading Model and Creating Predicted Scores ###
+#perhaps this....#
+from transformers import BertConfig, BertModel
+conf = BertConfig.from_pretrained("Trained model", num_labels=2)
+model_loaded = AutoModelForSequenceClassification.from_pretrained("Trained model", config=conf)
+#or...#
+model_loaded = AutoModelForSequenceClassification.from_pretrained("Trained model", local_files_only=True)
+model_loaded
+#with ultimate goal of getting predicted scores (not sure what to call here)...
+y_test_predicted_loaded = model_loaded.predict(small_eval_dataset)
+What is the regex pattern for repeating and non-repeating text sequences?
+Here is an example of the text and description of desired matching groups.
+The text example is as follows that represents color, size and quantity information.
+NAVY BLUE: XS-5
+NAVY BLUE: S-30, M-10, L-15, XL-35
+I would ideally like to have a match for the color text, and a matching group for all the size-quantity pairs. I can either get the color and the first size-qty pair, or all the size-qty pairs but not color. Any hint or guidance is appreciated!
+By using multiple checkboxes in html, how should I fetch the data and store in the database in django?
+I am creating multiple checkboxes in html and now I want to fetch this data and store it in the database. I'm using MySQL as the database and I'm using the django-multiselectfield(django-multiselectfield) library in django for creating checkboxes in django.
+models.py file 👇
+from multiselectfield import MultiSelectField
+from django.db import models
+class Teacher(models.Model):
+id=models.AutoField(primary_key=True)
+SCHOOL_BOARD_CHOICES = [
+('State', 'State'),
+('CBSE', 'CBSE'),
+('ICSE', 'ICSE'),
+]
+school_board = MultiSelectField(choices=SCHOOL_BOARD_CHOICES, blank=True, null=True)
+This is how it is looking in django's admin dashboard
+html file 👇
+<form role="form" action="{% url 'register_save' %}" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+<div class="form-group">
+<label for="username">Username</label>
+<input type="text" class="form-control" name="username" id="username" placeholder="Enter username">
+</div>
+<div class="form-group">
+<label for="fname">First Name</label>
+<input type="text" class="form-control" name="fname" id="fname" placeholder="Enter your first name">
+</div>
+<div class="form-group">
+<label for="lname">Last Name</label>
+<input type="text" class="form-control" name="lname" id="lname" placeholder="Enter your last name">
+</div>
+<div class="form-group">
+<label for="email">Email address</label>
+<input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp"
+placeholder="Enter email">
+</div>
+<div class="form-group">
+<label for="pass">Password</label>
+<input type="password" class="form-control" name="pass" id="pass" placeholder="Password">
+</div>
+<div class="form-group">
+<label for="cpass">Confirm Password</label>
+<input type="password" class="form-control" name="cpass" id="cpass" placeholder="Confirm Password">
+</div>
+<div class="form-group">
+<label for="category">Choose Category</label>
+<select class="form-control" id="category" name="category">
+<option>School</option>
+<option>College</option>
+<option>Engineering</option>
+<option>Professional</option>
+</select>
+</div>
+<p>Class(es) you teach</p>
+<div style="margin-top: 0.5px;" class="form-group form-check">
+<input type="checkbox" class="form-check-input" name="school_class" id="jrkg">
+<label class="form-check-label" for="school_class">Jr. Kg</label><br>
+<input type="checkbox" class="form-check-input" name="school_class" id="srkg">
+<label class="form-check-label" for="school_class">Sr. Kg</label><br>
+<input type="checkbox" class="form-check-input" name="school_class" id="first">
+<label class="form-check-label" for="school_class">I</label><br>
+<input type="checkbox" class="form-check-input" name="school_class" id="secind">
+<label class="form-check-label" for="school_class">II</label><br>
+<input type="checkbox" class="form-check-input" name="school_class" id="third">
+<label class="form-check-label" for="school_class">III</label><br>
+</div>
+<div class="form-group">
+<label for="profile_pic">Profile Pic</label>
+<input type="file" class="form-control-file" name="profile_pic" id="profile_pic">
+</div><br>
+<button type="submit" class="btn btn-primary">Register</button>
+</form>
+views.py file 👇
+def register(request):
+return render(request, "register.html")
+def register_save(request):
+if request.method!="POST":
+return HttpResponse("Method Not Allowed")
+else:
+username=request.POST.get("username")
+first_name=request.POST.get("fname")
+last_name=request.POST.get("lname")
+email=request.POST.get("email")
+password=request.POST.get("pass")
+# confirm_password=request.POST.get("cpass")
+category=request.POST.get("category")
+school_class=request.POST.get("school_class")
+profile_pic=request.FILES["profile_pic"]
+try:
+user=CustomUser.objects.create_user(username=username,password=password,email=email,first_name=first_name, last_name=last_name,user_type=1)
+user.teacher.i_will_teach_for=category
+user.teacher.school_class=school_class
+user.teacher.profile_pic=profile_pic
+user.save()
+messages.success(request,"Successfully Created The Account")
+return HttpResponseRedirect(reverse("register"))
+except Exception as e:
+messages.error(request, f"Failed to register. Error{e}")
+return HttpResponseRedirect(reverse("register"))
+When I'm saving the data, the other fields data is being stored but I'm not getting how to store the chekboxes data. Can someone please guide through this?
+Is there any easy method to getting the Column Title when using GET Row with the Smartsheet API?
+Is there any easy method to getting the Column Title when using GET Row with the API? New to API. I'm utilizing Microsoft Power Automate for these calls to push updates to Teams and such (more custom than what comes natively from Smartsheet).
+I'm utilizing this address from the documentation:
+https://api.smartsheet.com/2.0/sheets/{SheetID}/rows/{rowID}, and then I add this string to the end of that URL to get discussions and columns: "?include=discussions,columns"
+which will include a separate array named "Columns".
+What I'm wanting to do is get the "Column title" within the initial GET Row action. It would show up within the "cells" array when doing a GET Row API call.
+Here's an example of what is obtained in the "cells" array when GET Row is used:
+"cells": [
+{
+"columnId": 4151830841190276,
+"value": "New task.",
+"displayValue": "New task."
 }
-.myclass2 {
-height: 100px;
-width: 100px;
+]
+And here's an example of what's obtained in that Columns array, which comes separate:
+"columns":
+[
+{
+"id": 4151830841190276,
+"version": 0,
+"index": 3,
+"title": "Item Name",
+"type": "TEXT_NUMBER",
+"primary": true,
+"validation": false,
+"width": 300
 }
-/*! CSS Used from: https://www.mysite.net/wp-content/myapp.css ; media=all */
-.myclass3 {
-border-color: black;
-}
-</style>
-Plugin Author
-Optimizing Matters
-(@optimizingmatters)
-1 month, 3 weeks ago
-OK, I’ll test with that code locally, more soon 🙂
-Thread Starter
-Knightycool
-(@knightycool)
-1 month, 3 weeks ago
-If you want, i can add back the comment and email you the url but i dont want to post the url here.
-Plugin Author
-Optimizing Matters
-(@optimizingmatters)
-1 month, 3 weeks ago
-OK, I have a fix in AO beta, could you download from https://github.com/futtta/autoptimize/archive/refs/heads/beta.zip, install that instead of 2.8.3 and test if that fixes the notice?
-(the beta has some other new features already;
-per page/post settings for AO + new “defer inline JS” option)
-Thread Starter
-Knightycool
-(@knightycool)
-1 month, 3 weeks ago
-umm ok, the notice has already disappeared but i will re enter the comment and then install the beta and try to see what happens.
-Thread Starter
-Knightycool
-(@knightycool)
-1 month, 3 weeks ago
-Ok. This is what i did:
-1) Added back the comment line.
-2) Check to see the warning happens. And it happened when i visit the post.
-3) I installed beta
-4) Visited the post and there is no warning. I think it is fixed.
-Thanks a lot. What have you changed exactly? May you show me line? And when a new update comes, i can just update this via wordpress right?
-Plugin Author
-Optimizing Matters
-(@optimizingmatters)
-1 month, 3 weeks ago
-Great!
-this is the change: https://github.com/futtta/autoptimize/commit/37b13d4e19269bb2f50df123257de51afa37244f
-And indeed when 2.9 is released this will be in it. If you keep the beta active you will receive updates of that as well by the way, so you can keep track of both 😉
-Thread Starter
-Knightycool
-(@knightycool)
-1 month, 3 weeks ago
-Thanks a lot. You are great. Loves from Turkey..
-Viewing 15 replies - 1 through 15 (of 16 total)
-1
-2
-→
-You must be logged in to reply to this topic.
-Autoptimize
-Frequently Asked Questions
-Support Threads
-Active Topics
-Unresolved Topics
-Reviews
-In: Plugins
-16 replies
-2 participants
-Last reply from: Optimizing Matters
-Last activity: 1 month, 3 weeks ago
-Status: resolved
-Views
-Topics with no replies
-Non-support topics
-Resolved topics
-Unresolved topics
-All topics
-About
-Blog
-Hosting
-Donate
-Support
-Developers
-Get Involved
-Learn
-Showcase
-Plugins
-Themes
-WordCamp
-WordPress.TV
-BuddyPress
-bbPress
-WordPress.com
-Matt
-Privacy
-Public Code
-@WordPress
-WordPress
-Code is Poetry.
+Which is fine, I can do lookups to bridge the gap between the ColumnID I obtain from "get row" and the Columns array that's also returned...but ideally I'd like to just get the ColumnID Title in the native "GET Row" action, preventing this workaround. Any ideas, or am I doing it the best way?
+Access Smartsheet by column Name instead of Column Id
+I am a newbie working with Smartsheet, I am trying to access the values of columns and store them in a list, and I am able to access the values by the index. In my use case, people can delete random columns from the smartsheet and that can cause my index numbering affected while reading the data. For Example - My smartsheet looks like below:
+Vin | Owner | Use | Location
+123
+abc
+test
+CA
+456
+xyz
+prod
+TX
+The code I used so far to access the data is:
+import smartsheet
+from simple_smartsheet import Smartsheet
+from simple_smartsheet.models import Sheet, Column, Row, Cell, ColumnType
+from pprint import pprint
+import pandas as pd
+import re
+import sasl
+import json
+from fastparquet import write
+# from influxdb import InfluxDBClient
+import thrift_sasl
+import prestodb
+import s3fs
+import boto3
+from pyhive import hive
+smartsheet = smartsheet.Smartsheet('adjgdjcdjchbdclkcn')
+# Get current user
+#user_profile = smartsheet.Users.get_current_user()
+# Get all columns.
+MySheet = smartsheet.Sheets.get_sheet(1234567891234567)
+Vin = []
+Owner = []
+Use = []
+Location = []
+def Data():
+for RowIndex in range(0, len(MySheet.rows)):
+Vin.append(MySheet.rows[RowIndex].cells[2].display_value)
+Use.append(MySheet.rows[RowIndex].cells[3].display_value)
+Owner.append(MySheet.rows[RowIndex].cells[4].display_value)
+Location.append(MySheet.rows[RowIndex].cells[5].display_value)
+print(Vin)
+print(Use)
+Print(Owner)
+Print(Location)
+Result I want is (Using the column name instead of Index):
+Vin = [123, 456]
+Owner = [abc, xyz]
+Use = [test, prod]
+Location = [CA, TX]
+Now Instead of accessing the values by index, how can I append the values in a list using column name instead? Any help or lead is much appreciated. Thank You in advance!
+Get hyperlink to sheet based on SheetID
+I am importing a Smartsheet Report through Python, using an API. One of the columns in this report contains a hyperlink that works in Smartsheet, however when importing the report with Python I only receive the words of this column, and not the link behind them. Is it possible to get the URLs of the sheets that these hyperlinks are referring to in any other way? I was thinking maybe based on SheetID (which I can find using the title of the indepentent sheets), but all other suggestions are very welcome!
+Quabr.com is StackOverFlow proxy site | Sitemap

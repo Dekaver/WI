@@ -1,355 +1,331 @@
-composer php - Did they remove the make:auth command in Laravel 6.0? - Stack Overflow
-Stack Overflow
-About
-Products
-For Teams
-Stack Overflow
-Public questions & answers
-Stack Overflow for Teams
-Where developers & technologists share private knowledge with coworkers
-Jobs
-Programming & related technical career opportunities
-Talent
-Recruit tech talent & build your employer brand
-Advertising
-Reach developers & technologists worldwide
-About the company
-Loading…
-Log in
-Sign up
-current community
-Stack Overflow
-help
-chat
-Meta Stack Overflow
-your communities
-Sign up or log in to customize your list.
-more stack exchange communities
-company blog
-People who code: we want your input.
-Take the Survey
-Join Stack Overflow to learn, share knowledge, and build your career.
-Sign up with email
-Sign up
-Sign up with Google
-Sign up with GitHub
-Sign up with Facebook
+Python typeerror: ‘int’ object is not iterable Solution | Career Karma
 Home
-Public
-Questions
-Tags
-Users
-Find a Job
-Jobs
-Companies
-Teams
-Stack Overflow for Teams
-– Collaborate and share knowledge with a private group.
-Create a free Team
-What is Teams?
-Teams
-What’s this?
-Create free Team
-Teams
-Q&A for work
-Connect and share knowledge within a single location that is structured and easy to search.
-Learn more
-Did they remove the make:auth command in Laravel 6.0? [duplicate]
-Ask Question
-Asked
-1 year, 9 months ago
-Active
-1 year, 9 months ago
-Viewed
-6k times
-1
-This question already has answers here:
-Artisan command “make:auth” is not defined in Laravel 6
-(9 answers)
-Closed 1 year ago.
-I wanted to create a new project so I can fiddle with the authentication a bit, see what I could do. However, when I tried to run the make:auth command, I got an error.
-I decided to look in the composer.json file to see if I maybe had an outdated Composer version, but I saw the updated laravel/framework.
-I can't find anything about the make:auth command being removed on so I thought I'd come here and ask about it.
-Command "make:auth" is not defined.
-Did you mean one of these?
-make:channel
-make:command
-make:controller
-make:event
-make:exception
-make:factory
-make:job
-make:listener
-make:mail
-make:middleware
-make:migration
-make:model
-make:notification
-make:observer
-make:policy
-make:provider
-make:request
-make:resource
-make:rule
-make:seeder
-make:test
-laravel composer-php laravel-6
-Share
-Follow
-edited Sep 5 '19 at 2:34
-Karl Hill
-7,05033 gold badges4040 silver badges6464 bronze badges
-asked Sep 4 '19 at 7:42
-bartske2002bartske2002
-3711 silver badge66 bronze badges
-2
-Reading the documentation is the greatest help :)
-– nakov
-Sep 4 '19 at 7:45
-You can install the laravel/ui package via composer: composer require laravel/ui
-The ui:auth Command php artisan ui:auth
-– Pervez
-Nov 1 '19 at 9:59
-Add a comment
-|
-2 Answers
-2
-Active
-Oldest
-Votes
-8
-First Install the laravel/ui Composer package with the following command:
-composer require laravel/ui
-and then run the following command in a new
-Laravel application:
-php artisan ui vue --auth
-Laravel 6 has moved the Auth Scaffolding into a seperate package.
-Source : https://laravel.com/docs/6.0/authentication
-Share
-Follow
-edited Sep 6 '19 at 11:17
-answered Sep 4 '19 at 7:50
-ShamsheerShamsheer
-56622 silver badges77 bronze badges
-1
-php artisan ui:auth
-– Pervez
-Nov 1 '19 at 10:00
-Add a comment
-|
-2
-Yes in Laravel 6 auth command has been removed and authentication scaffolding has been moved as separate package named laravel/ui
-Here you can read about Laravel 6 and laravel/ui and also here you can read about laravel/ui in laravel documentation
-Thanks
-Share
-Follow
-edited Sep 4 '19 at 8:19
-answered Sep 4 '19 at 7:48
-Salman ZafarSalman Zafar
-3,08944 gold badges1616 silver badges3636 bronze badges
-Add a comment
-|
-Not the answer you're looking for? Browse other questions tagged laravel composer-php laravel-6
-or ask your own question.
-The Overflow Blog
-Using low-code tools to iterate products faster
-Podcast 345: A good software tutorial explains the How. A great one explains…
-Featured on Meta
-Take the 2021 Developer Survey
-Linked
-24
-Artisan command “make:auth” is not defined in Laravel 6
-Related
-1
-Composer update “could not completely remove doctrine/dbal”, Laravel 4 broken
-496
-How to remove a package from Laravel using composer?
-1
-Where exactly does laravel require the illuminate folder?
-6
-how to prevent over writing file while 'composer update' command
-3
-Command “make:seeder” is not defined in laravel 5.0
-1
-error while trying to run artisan command with Artisan Facade
-4
-Can't require laravel/passport with composer
-0
-How do I connect and use bootstrap 4 in Laravel 6?
-2
-Installing Laravel with Composer create-project - how to use the newest version?
-Hot Network Questions
-Dedekind-"finiteness" for arbitrary limit cardinals
-Why did this gallon of milk stay fresh for so long?
-What is "Horse and Pony II", created by the Battlefield devs (Refraction Games)?
-Parallelogram law of vectors
-Does machine learning really need data-efficient algorithms?
-Do the murder statistics of 5 cities bring the USA to the 3rd highest country, from 189th?
-Does folic acid contain a benzyl or a phenyl group?
-Photo Competition 2021-06-07: Long Exposure
-Why is angular momentum a vector?
-"She need not worry" or "she needs to not worry"?
-Interview by fellow PhD students, not the professor himself
-What are the benefits of hand built wheels over automated ones?
-Why do CMOS NOT gate designs differ from BJT NOT gate designs?
-How is it possible for Jesus to be quoted in the NT during moments of solitude (Gethsemane) or away from the disciples (Nicodemus, Pilate etc.)?
-How can I use basename with parallel?
-Is there objective proof that recent bills (1st half of 2021) that restrict voting are targeting Democratic voters specifically?
-Is it suspicious that gravitational waves propagate at the speed of light?
-Dealing with extremely inexperienced developers who have daily deadlines?
-QGIS grouping by attributes
-Being forced to take annual leave against my wishes, what are my options
-How to get real-looking rust that will be safe to the touch?
-Are there any greater risks of traveling significantly faster to another planet?
-Is Occam's Razor a Prior?
-What can US senators do against diversity trainings in the US Army?
-more hot questions
-lang-php
-Stack Overflow
-Questions
-Jobs
-Developer Jobs Directory
-Salary Calculator
-Help
-Mobile
-Products
-Teams
-Talent
-Advertising
-Enterprise
-Company
-About
-Press
-Work Here
-Legal
-Privacy Policy
-Terms of Service
-Contact Us
-Cookie Settings
-Cookie Policy
-Stack Exchange Network
-Technology
-Life / Arts
-Culture / Recreation
-Science
-Other
-Stack Overflow
-Server Fault
-Super User
-Web Applications
-Ask Ubuntu
-Webmasters
-Game Development
-TeX - LaTeX
-Software Engineering
-Unix & Linux
-Ask Different (Apple)
-WordPress Development
-Geographic Information Systems
-Electrical Engineering
-Android Enthusiasts
-Information Security
-Database Administrators
-Drupal Answers
-SharePoint
-User Experience
-Mathematica
-Salesforce
-ExpressionEngine® Answers
-Stack Overflow em Português
-Blender
-Network Engineering
-Cryptography
-Code Review
-Magento
-Software Recommendations
-Signal Processing
-Emacs
-Raspberry Pi
-Stack Overflow на русском
-Code Golf
-Stack Overflow en español
-Ethereum
+Top Projects
+All Star Projects
+Web Development
+Mobile Development
+Design
 Data Science
-Arduino
-Bitcoin
-Software Quality Assurance & Testing
-Sound Design
-Windows Phone
-more (29)
-Photography
-Science Fiction & Fantasy
-Graphic Design
-Movies & TV
-Music: Practice & Theory
-Worldbuilding
-Video Production
-Seasoned Advice (cooking)
-Home Improvement
-Personal Finance & Money
-Academia
-Law
-Physical Fitness
-Gardening & Landscaping
-Parenting
-more (10)
-English Language & Usage
-Skeptics
-Mi Yodeya (Judaism)
-Travel
-Christianity
-English Language Learners
-Japanese Language
-Chinese Language
-French Language
-German Language
-Biblical Hermeneutics
-History
-Spanish Language
-Islam
-Русский язык
-Russian Language
-Arqade (gaming)
-Bicycles
-Role-playing Games
-Anime & Manga
-Puzzling
-Motor Vehicle Maintenance & Repair
-Board & Card Games
-Bricks
-Homebrewing
-Martial Arts
-The Great Outdoors
-Poker
-Chess
-Sports
-more (16)
-MathOverflow
-Mathematics
-Cross Validated (stats)
-Theoretical Computer Science
-Physics
-Chemistry
-Biology
-Computer Science
-Philosophy
-Linguistics
-Psychology & Neuroscience
-Computational Science
-more (10)
-Meta Stack Exchange
-Stack Apps
-API
-Data
+Bootcamps
+Best Coding Bootcamps
+Best Online Bootcamps
+Best Web Design
+Bootcamps
+Best Data Science Bootcamps
+Best Data Analytics Bootcamps
+Best Cyber Security Bootcamps
+Best ISA Bootcamps 2020
+Programs
+Web Development
+Mobile Development
+Software Engineer
+Data Science
+Cybersecurity
+Product Management
+Digital Marketing
+UX/UI Designer
+Database Administration
+Social Media Management
+InfoSec Analyst
+Quality Assurance Engineer
+SEO Manager
+Computer Systems Analyst
+WordPress developer
 Blog
+Bootcamps
+Coding
+Career Resources
+Tech Fields
+News & Commentary
+About
+Company
+Jobs
+Values
+Publication
+Press
+Home
+Top Projects
+All Star Projects
+Web Development
+Mobile Development
+Design
+Data Science
+Bootcamps
+Best Coding Bootcamps
+Best Online Bootcamps
+Best Web Design
+Bootcamps
+Best Data Science Bootcamps
+Best Data Analytics Bootcamps
+Best Cyber Security Bootcamps
+Best ISA Bootcamps 2020
+Programs
+Web Development
+Mobile Development
+Software Engineer
+Data Science
+Cybersecurity
+Product Management
+Digital Marketing
+UX/UI Designer
+Database Administration
+Social Media Management
+InfoSec Analyst
+Quality Assurance Engineer
+SEO Manager
+Computer Systems Analyst
+WordPress developer
+Blog
+Bootcamps
+Coding
+Career Resources
+Tech Fields
+News & Commentary
+About
+Company
+Jobs
+Values
+Publication
+Press
+Sign in
+Front Page
+Bootcamps
+Popular Bootcamps
+Bootcamp Prep
+Bootcamp Financing
+University Bootcamps
+Bootcamp Grads
+Coding
+Coding Tools
+HTML
+CSS
+Java
+JavaScript
+Python
+C++
+Ruby
+SQL
+Git
+Career Resources
+Career Advice
+Tech Interviews
+Tech Salaries
+Tech Cities
+Research
+Tech Fields
+Web Development
+Software Engineering
+Web Design
+Data Science
+Higher Ed
+Associate
+Bachelor’s
+Master’s
+Doctoral
+Certifications
+Trade Schools
+About
+HomePython TutorialsPython typeerror: ‘int’ object is not iterable Solution
+Python Tutorials
+Python typeerror: ‘int’ object is not iterable Solution
+James Gallagher
+Jul 30, 2020
+0
 Facebook
 Twitter
 LinkedIn
-Instagram
-site design / logo © 2021 Stack Exchange Inc; user contributions licensed under cc by-sa.
-rev 2021.6.10.39473
-Stack Overflow works best with JavaScript enabled
-Your privacy
-By clicking “Accept all cookies”, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
-Accept all cookies
-Customize settings
+Encountering an error is not a problem; it’s a learning opportunity. While developing in Python, you may have seen an error “‘int’ object is not iterable”.
+What does this mean? How do I solve it? Those are the questions we’re going to answer in this article. We will discuss what the “‘int’ object is not iterable” error is, why it is raised, and how you can solve it.
+The Problem: typeerror: ‘int’ object is not iterable
+“typeerror: ‘int’ object is not iterable”
+There are two parts to this error message: TypeError and the error message.
+A TypeError is raised when a function is applied to an object of the wrong data type. For instance, if you try to apply a mathematical function to a string, or call a value like a function which is not a function, a TypeError is raised.
+The error message tells us that you have tried to iterate over an object that is not iterable. Iterable objects are items whose values you can access using a “for loop”.
+A Practice Scenario
+One of the most common scenarios in which this error is raised is when you try to use a for loop with a number. This mistake is made because it’s easy to forget to use the range() function when you are using a for loop.
+Consider the following code snippet:
+def count_occurrence(values, to_find):
+number_of_occurrences = 0
+for v in len(values):
+if values[v] == to_find:
+number_of_occurrences += 1
+return number_of_occurrences
+values = [1, 2, 3, 3]
+check_for_threes = count_occurrence(values, 3)
+print(check_for_threes)
+This code snippet uses one function. The count_occurance function counts how many times a number appears in the “values” list. This function iterates over all the values in “values” and keeps a running total of all those equal to a particular number. This number is specified as a parameter called “to_find”.
+» MORE:  Python AttributeError: ‘numpy.ndarray’ object has no attribute ‘append’ SolutionIn our main program, we define a list called “values” with four values. We call our count_occurrence function to count how many threes are in our list of values. We then print out the response to the console.
+Let’s run our code:
+Traceback (most recent call last):
+File "main.py", line 9, in <module>
+check_for_threes = count_occurrence(values, 3)
+File "main.py", line 3, in count_occurrence
+for v in len(values):
+TypeError: 'int' object is not iterable
+Oh no! An error has been raised. Now that we’ve replicated this error, we can solve it.
+The Solution
+Our error tells us that we’ve tried to iterate over an object that is not iterable. If we look at the error message in detail, we can see it points us to the line where the problem occurs:
+for v in len(values):
+The problem with this line is that we are trying to iterate over a number.
+len(values) is equal to 4. That’s how many values are in the list “values”. If we try to iterate over a number, nothing happens. This is because for loops only work with iterable objects.
+To solve this problem, we need to make sure our for loop iterates over an iterable object. We can add a range() statement to our code to do this:
+for v in range(len(values)):
+This statement will create an iterable object with a list of values in the range of 0 and the number of items in the “values” list.
+Let’s try to run our code again with the range() statement. Our code returns:
+2
+Our code has successfully found all the instances of 3 in the list. Our code has counted them all up and then printed the total number of times 3 appears in the list to the console.
+» MORE:  Python Shuffle List: A Step-By-Step Guide
+Conclusion
+TypeErrors are a common type of error in Python. They occur when you try to apply a function on a value of the wrong type. An “‘int’ object is not iterable” error is raised when you try to iterate over an integer value.
+To solve this error, make sure that you are iterating over an iterable rather than a number.
+Now you’re ready to solve this error like a Pythonista!
+About us: Career Karma is a platform designed to help job seekers find, research, and connect with job training programs to advance their careers. Learn about the CK publication.
+What's Next?
+Want to take action?
+Get matched with top bootcamps
+Want to dive deeper?
+Ask a question to our community
+Want to explore tech careers?
+Take our careers quiz
+James Gallagher
+James Gallagher is a self-taught programmer and the technical content manager at Career Karma. He has experience in range of programming languages and extensive expertise in Python, HTML, CSS, and JavaScript. James has written hundreds of programming tutorials, and he frequently contributes to publications like Codecademy, Treehouse, Repl.it, Afrotech, and others. He also serves as a researcher at Career Karma, publishing comprehensive reports on the bootcamp market and income share agreements.
+Read more by James Gallagher
+Share This
+Previous ArticlePython typeerror: list indices must be integers or slices, not str Solution
+Next ArticlePython typeerror: a bytes-like object is required, not ‘str’ Solution
+Jul 30, 2020
+Comments (0)
+Leave a Reply Cancel replyYour email address will not be published. Required fields are marked *Your CommentName *
+Email *
+Website
+Get offers from top bootcampsTake the stress out of picking a bootcamp
+See matches nowTop Community PostsHow long does it take to become a full stack web developer?Marcus Hayes in Full-stack DevelopmentWhat are the laptop requirements for programming?Danny Fuentes in Beginners$2 million in COVID19 ScholarshipsTimur Meyster in Applying to BootcampsPopular ArticlesBest Online BootcampsBest Tech Jobs 2021What is Coding Used For?How Much Do Coders Make?Best Free BootcampsSee all articlesCareer GuidesWeb DevelopmentSoftware EngineeringData ScienceWeb DesignCyber SecuritySee all guidesFree prep coursesFlatiron School Prep80+ hours
+Easy80+ hours of HTML, CSS & JavaScriptKenzie School Prep80+ hours
+Easy20+ hours of HTML & CSSGeneral Assembly Prep50+ hours
+EasyLearn web development basics in HTML, CSS, JavaScript by building projectssee all prep courses
+Get matches
+from top bootcamps
+Select your interest:
+Interest
+Software Engineering
+Design
+Data Science
+Data Analytics
+Cybersecurity Analytics
+Technology Sales
+Select your preferred pace:
+Begin typing a name to filter
+Full-time
+Part-time
+Self-paced
+Begin typing a name to filter
+Full-time
+Part-time
+Self-paced
+See Matches
+Find the Best Online Course for YouGet Matched
+Related Articles
+Python Tutorials
+Python JSONDecodeError Explanation and Solution
+Python Tutorials
+Python ValueError: list.remove(x): x not in list Solution
+Python Tutorials
+How to Use Python extend()
+Python Tutorials
+Python FileNotFoundError: [Errno 2] No such file or directory Solution
+Home
+About
+Careers
+Mission
+Blog
+Press
+Terms & conditions
+© 2021 Career Karma
+Rankings
+Best Coding Bootcamps
+Best Online Bootcamps
+Best Web Design Bootcamps
+Best Data Science Bootcamps
+Best Data Analytics Bootcamps
+Best Cyber Security Bootcamps
+Best ISA Bootcamps 2020
+See all
+Comparisons
+Flatiron School vs Fullstack Academy
+Hack Reactor vs App Academy
+Fullstack Academy vs Hack Reactor
+Thinkful vs General Assembly
+Flatiron School vs Thinkful
+General Assembly vs Flatiron School
+App Academy vs Lambda School
+General Assembly vs Hack Reactor
+Springboard vs Thinkful
+See all
+Locations
+San Francisco Bootcamps
+New York Bootcamps
+Los Angeles Bootcamps
+Chicago Bootcamps
+Seattle Bootcamps
+Atlanta Bootcamps
+Austin Bootcamps
+See all
+Schools
+Kenzie Academy
+Flatiron School
+Thinkful
+General Assembly
+Springboard
+Galvanize
+Hack Reactor
+App Academy
+Bloc
+See all
+Careers
+Software Engineering
+UX/UI Design
+Data Science
+Web Development
+Mobile Development
+Cybersecurity
+Product Management
+See all
+Subjects
+JavaScript
+Python
+Ruby
+Java
+Swift
+Android
+.Net
+React
+Angular
+See all
+Tell us about you and we will match you with top rated bootcamps with flexible payment options, income sharing (ISAs), or money-back guarantees.
+Select your interest:
+Software Engineering
+Design
+Data Science
+Data Analytics
+Cybersecurity Analytics
+Technology Sales
+First Name
+Last Name
+Email
+Phone Number
+GET MATCHED
+Find the right bootcamp for you
+By continuing you indicate that you have read and agree to
+Career Karma Terms of Service and Privacy Policy
+X
+X
+Jump start your tech career
+Learn the most in-demand skills
+Get started now
+Lost Password Back ⟶
+Login
+Register
+Get new password
+Lost Password?
+Login
+Registration is disabled.

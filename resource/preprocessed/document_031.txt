@@ -1,298 +1,183 @@
-TypeError: 'str' object cannot be interpreted as an integer despite using int() function
-Quabr
-answers we find
-Explore tags
-Advanced Dictionary for Chrome
-1
-Translate worlds/phrases
-Translation unknown words or phrases by selection text in a small pop-up bubble.
-2
-Add flashcards
-Create cards in one click with the translated words.
-3
-Build vocabulary lists
-Organize flashcards in different themed decks as you wish.
-Get Free Extension
-Related questions
-My VS code interface for Jupyter notebook is very different from the new version
-pd.read_csv optimization to reduce the running time
-Cannot locate child element Selenium
-TypeError at /api/questions/ 'list' object is not callable (Django)
-creationDate.getTime is not a function when comparing dates
-TypeError: not all arguments converted during string formatting python in if-else loop
-TypeError: 'str' object cannot be interpreted as an integer despite using int() function
-2021-01-23 14:48
-Irealisment
-imported from Stackoverflow
+Not able to convert column to date - 'str' object cannot be interpreted as an integer - Non-DQ Courses - Dataquest Community
+Not able to convert column to date - 'str' object cannot be interpreted as an integer
+Q&A
+Non-DQ Courses
 python
-typeerror
-I'm getting type error for following line:
-a, b = task_one(int(input("Enter number of your choosing: "), input("Enter second number: " )))
-TypeError: 'str' object cannot be interpreted as an integer
-I don't understand why input is classified as a string when I enter integers and use int() function.
-3 answers
-answered 2021-01-23 14:49
-Tom Ron
-My guess is that you would like each of the inputs to be integers, therefore you need to convert each of them on their own -
-a, b = task_one(int(input("Enter number of your choosing: ")), int(input("Enter second number: " )))
-answered 2021-01-23 14:50
-Shag
-I think this is the better way when you are taking multiple inputs in single line.
-a,b = list(map(int, input().split()))
-answered 2021-01-23 14:51
-Jannchie
-This code:
-input("Enter number of your choosing: "), input("Enter second number: " )
-For example, input 1 and 2, returns ('1', '2'). It cannot be converted to int:
->>> input("Enter number of your choosing: "), input("Enter second number: " )
-Enter number of your choosing: 1
-Enter second number: 2
-('1', '2')
-If task_one is a function that takes two ints, you should write it this way:
-a, b = task_one(int(input("Enter number of your choosing: ")), int(input("Enter second number: " ))))
-See also questions close to this topic
-My VS code interface for Jupyter notebook is very different from the new version
-I recently started learning python for data analysis and decided to use VS code for its new Jupyter notebook feature. I installed the extension for python and jupyter notebook in VS code but for some reason my interface is very different from the one in the new update.
-I understand this is a small issue but, It's really throwing me off. Can someone please let me know what I am doing wrong here?
-Thank you
-pd.read_csv optimization to reduce the running time
-My input file is 20GB .txt file, So It faces performance issues when I test run the below code.
-pd.read_csv is taking more than 3 hours. Need to optimization in the reading stage.
-Sample input file.
-007064770000|SODIUM|95 MILLIGRAM|0
-007064770000|MULTI|001|0
-007064770000|PET STARCH FREE|NOT APPLICABLE|0
-007064770000|GRAIN TYPE|FLOUR|0
-003980010200|MULTI|001|0
-003980010200|DEAL|NON-DEAL|0
-003980010200|PRODUCT SIZE|1 COUNT|0
-003980010200|BASE SIZE|1 COUNT|0
-757582821517|HW APPLIANCES|001|0
-757582821516|HW APPLIANCES|001|0
-757582821517|PACKAGE GENERAL SHAPE|BOTTLE|0
-757582821517|SYND FORM|CREAM|0
-757582821517|FORM|CREAM|0
-757582821517|TARGET SKIN CONDITION|DRY SKIN|0
-003980010205|HW MEDICINE|NON-DEAL|0
-003980010205|PRODUCT SIZE|1 COUNT|0
-003980010205|BASE SIZE|1 COUNT|0
-007064770054|SODIUM|95 MILLIGRAM|0
-007064770054|HW SPORTS|001|0
-007064770054|PET STARCH FREE|NOT APPLICABLE|0
-007064770054|GRAIN TYPE|FLOUR|0
-003980010312|HW DIAMETER|1 COUNT|0
-003980010312|BASE SIZE|1 COUNT|0
-Output file
-UPC code HW APPLIANCES HW DIAMETER HW MEDICINE HW SPORTS
-0
-3980010205
-NaN
-NaN
-NON-DEAL
-NaN
-1
-3980010312
-NaN
-1 COUNT
-NaN
-NaN
-2
-7064770054
-NaN
-NaN
-NaN
-001
-3
-757582821516
-001
-NaN
-NaN
-NaN
-4
-757582821517
-001
-NaN
-NaN
-NaN
-Existing code
+willx
+June 5, 2020,
+1:49pm
+#1
+Hi i am trying to clean up the column here converting this column to date, but am afraid i was not able to get it.
 import pandas as pd
-import datetime
-df = pd.read_csv('sample.txt', sep='|', names=['upc_cd', 'chr_typ', 'chr_vl', 'chr_vl_typ'], engine='python')
-df = df[df['chr_typ'].str.contains('HW ')]
-df.sort_values('chr_typ')
-df = (
-df.iloc[:, :-1]
-# Remove last Column
-.pivot(index=['upc_cd'], columns=['chr_typ'])
-.droplevel(0, axis=1)
-# Fix Levels and axes names
-.rename_axis('UPC code')
-.rename_axis(None, axis=1)
-.reset_index()
-)
-print(df)
-df.to_csv('output.csv', sep=',', index=None, mode='w', encoding='utf-8')
-Please suggest the modification to the code in order to reduce the running time
-Cannot locate child element Selenium
-Trying to pick out single restaurant elements under the All Restaurants category on this page. https://www.foodpanda.sg/restaurants/new?lat=1.2915902&lng=103.8379066&vertical=restaurants
-All li elements have a different class name. The only working xpath, I have been able to figure out is this one.
-//ul[@class="vendor-list"]//li[3]
-I cannot figure out how to increase this number and get all the restaurants, which is complicated by the fact that there is an infinite scroll as well.
-j = 1
-def get_rest():
-global j
-while True:
-driver.execute_script("window.scrollBy(0,2525)", "")
-time.sleep(5)
-var = f'{[j]}'
-elems = driver.find_elements_by_xpath(f'//ul[@class="vendor-list"]//li{var})
-return elems
-TypeError at /api/questions/ 'list' object is not callable (Django)
-When I go to this http://127.0.0.1:8000/api/questions/ I get
-TypeError at /api/questions/
-'list' object is not callable
-urls.py
-(in project)
-"""QuestionTime URL Configuration
-The `urlpatterns` list routes URLs to views. For more information please see:
-https://docs.djangoproject.com/en/3.2/topics/http/urls/
-Examples:
-Function views
-1. Add an import:
-from my_app import views
-2. Add a URL to urlpatterns:
-path('', views.home, name='home')
-Class-based views
-1. Add an import:
-from other_app.views import Home
-2. Add a URL to urlpatterns:
-path('', Home.as_view(), name='home')
-Including another URLconf
-1. Import the include() function: from django.urls import include, path
-2. Add a URL to urlpatterns:
-path('blog/', include('blog.urls'))
-"""
-from django.contrib import admin
-from django.urls import include, path, re_path
-from django_registration.backends.one_step.views import RegistrationView
-from core.views import IndexTemplateView
-from users.forms import CustomUserForm
-# https://django-registration.readthedocs.io/en/3.1.2/activation-workflow.html
-urlpatterns = [
-path('admin/', admin.site.urls),
-path("accounts/register/", RegistrationView.as_view(
-form_class=CustomUserForm,
-success_url="/",
-), name="django_registration_register"),
-path("accounts/", include("django_registration.backends.one_step.urls")),
-path("accounts/", include("django.contrib.auth.urls")),
-path("api/", include("users.api.urls")),
-path("api/", include("questions.api.urls")),
-path("api-auth/", include("rest_framework.urls")),
-path("api/rest-auth/", include("rest_auth.urls")),
-path("api/rest-auth/registration/", include("rest_auth.registration.urls")),
-re_path(r"^.*$", IndexTemplateView.as_view(), name="entry-point"),
-]
-urls.py
-(in appName1/api
-from django.urls import include, path
-from rest_framework import urlpatterns
-from rest_framework.routers import DefaultRouter
-from questions.api import views as qv
-router = DefaultRouter()
-router.register(r"questions", qv.QuestionViewSet)
-urlpatterns = [
-path("", include(router.urls)),
-path("questions/<slug:slug>/answers/", qv.AnswerListAPIView.as_view(), name="answer-list"),
-path("questions/<slug:slug>/answer/", qv.AnswerCreateAPIView.as_view(), name="answer-create"),
-path("answers/<int:pk>/", qv.AnswerRUDAPIView.as_view(), name="answer-detail"),
-path("answers/<int:pk>/like/", qv.AnswerLikeAPIView.as_view(), name="answer-like"),
-]
-views.py
-(in appName1/api)
-Only showing QuestionViewSet
-class QuestionViewSet(viewsets.ModelViewSet):
-queryset = Question.objects.all()
-lookup_field = "slug"
-serializer_class = QuestionSerializer
-permission_classes = [IsAuthenticated, IsAuthorOrReadOnly]
-def perform_create(self, serializer):
-serializer.save(author=self.request.user)
-From the settings.py
-REST_FRAMEWORK = {
-'DEFAULT_AUTHENTICATION_CLASSES': (
-'rest_framework.authentication.TokenAuthentication',
-'rest_framework.authentication.SessionAuthentication',
-),
-'DEFAULT_PERMISSION_CLASSES': (
-'rest_framework.permissions.IsAuthenticated',
-),
-'DEFAULT_PAGINATION_CLASS': (
-'rest_framework.pagination.PageNumberPagination',
-),
-'PAGE_SIZE': 2,
-}
-Error could come from somewhere else.
-I don't know where I can find "list".
-appName1 = questions
-Exception Location: lib/python3.9/site-packages/rest_framework/generics.py, line 162, in paginator
-creationDate.getTime is not a function when comparing dates
-I'm trying to create a function which returns the number of days that has elapsed. Currently, the test is passing but also failing.
-This is my function inside a class called application.service.ts
-private getElapsedDays(creationDate: Date) {
-const creationTime = creationDate.getTime();
-const currentTime = new Date().getTime();
-const elapsedTime = currentTime - creationTime;
-return Math.ceil(elapsedTime / (1000 * 60 * 60 * 24));
-}
-And this is the test inside application.service.spec.ts
-describe("getElapsedDays", () => {
-test("returns correct elapsed days", () => {
-const oneWeekAgo = new Date();
-oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
-const elapsedDays = applicationService["getElapsedDays"](oneWeekAgo);
-expect(elapsedDays).toBe(7);
-});
-});
-so basically this test suite is running fine and passing strangely enough (it returns the number 7), but I'm still getting an error for the actual function itself.
-TypeError: creationDate.getTime is not a function
-99 |
-100 |
-private getElapsedDays(creationDate: Date) {
-> 101 |
-const creationTime = creationDate.getTime();
-|
-^
-102 |
-const currentTime = new Date().getTime();
-103 |
-const elapsedTime = currentTime - creationTime;
-104 |
-return Math.ceil(elapsedTime / (1000 * 60 * 60 * 24));
-Any help would be appreciated!
-TypeError: not all arguments converted during string formatting python in if-else loop
-This porgram is supposed split a string into two different strings where the even indices are in message1 and odd indices are in message2. There seems to be an error in the code in the if statment in line 7.
-input_str = 'bmaunmdbraai'
-#Type your code here
-message1 = input_str[0]
-for i in range(0, len(input_str)):
-if (input_str[i] % 2 == 0):
-message1 = message1 + input_str[i]
-else:
-message2 = message2 + input_str[i]
-print(message1, message2)
-The error message:
+import matplotlib.pyplot as plt
+import seaborn as sns
+from datetime import datetime as dt
+%matplotlib inline
+This is part of the info for the columns.
+S/N
+44 non-null int64
+Date
+44 non-null object
+Time of Reporting
+44 non-null object
+Month
+44 non-null int64
+When i try this
+fraud['Date'] = pd.to_datetime(fraud['Date'], format='%Y%m%d')
+i get the following error message
+---------------------------------------------------------------------------
 TypeError
 Traceback (most recent call last)
-<ipython-input-31-28323eb4095a> in <module>
-5
-6 for i in range(0, len(input_str)):
-----> 7
-if (input_str[i] % 2 == 0):
-8
-message1 = message1 + input_str[i]
-9
+C:\ProgramData\Anaconda3_64\lib\site-packages\pandas\core\indexes\base.py in get_value(self, series, key)
+4380
+try:
+-> 4381
+return libindex.get_value_box(s, key)
+4382
+except IndexError:
+pandas/_libs/index.pyx in pandas._libs.index.get_value_box()
+pandas/_libs/index.pyx in pandas._libs.index.get_value_at()
+pandas/_libs/util.pxd in pandas._libs.util.get_value_at()
+pandas/_libs/util.pxd in pandas._libs.util.validate_indexer()
+TypeError: 'str' object cannot be interpreted as an integer
+During handling of the above exception, another exception occurred:
+KeyError
+Traceback (most recent call last)
+<ipython-input-19-b32e0288d98d> in <module>
+----> 1 fraud['Date'] = pd.to_datetime(fraud['Date'], format='%Y%m%d')
+C:\ProgramData\Anaconda3_64\lib\site-packages\pandas\core\series.py in __getitem__(self, key)
+866
+key = com.apply_if_callable(key, self)
+867
+try:
+--> 868
+result = self.index.get_value(self, key)
+869
+870
+if not is_scalar(result):
+C:\ProgramData\Anaconda3_64\lib\site-packages\pandas\core\indexes\category.py in get_value(self, series, key)
+452
+453
+# we might be a positional inexer
+--> 454
+return super(CategoricalIndex, self).get_value(series, key)
+455
+456
+def _can_reindex(self, indexer):
+C:\ProgramData\Anaconda3_64\lib\site-packages\pandas\core\indexes\base.py in get_value(self, series, key)
+4387
+raise InvalidIndexError(key)
+4388
 else:
-TypeError: not all arguments converted during string formatting
-Please help.
-Quabr.com is StackOverFlow proxy site | Sitemap
+-> 4389
+raise e1
+4390
+except Exception:
+# pragma: no cover
+4391
+raise e1
+C:\ProgramData\Anaconda3_64\lib\site-packages\pandas\core\indexes\base.py in get_value(self, series, key)
+4373
+try:
+4374
+return self._engine.get_value(s, k,
+-> 4375
+tz=getattr(series.dtype, 'tz', None))
+4376
+except KeyError as e1:
+4377
+if len(self) > 0 and (self.holds_integer() or self.is_boolean()):
+pandas/_libs/index.pyx in pandas._libs.index.IndexEngine.get_value()
+pandas/_libs/index.pyx in pandas._libs.index.IndexEngine.get_value()
+pandas/_libs/index.pyx in pandas._libs.index.IndexEngine.get_loc()
+pandas/_libs/index_class_helper.pxi in pandas._libs.index.Int8Engine._check_type()
+KeyError: 'Date'
+i tried googling this problem but not sure what’s causing it. am using PC for this exercise.
+info.victoromondi
+June 5, 2020,
+1:54pm
+#2
+hello can we see some rows of the fraud DataFrame and also fraud.columns array?
+willx:
+KeyError: 'Date'
+The error is here.
+willx
+June 7, 2020,
+1:26am
+#3
+Hi does this help?
+sorry, i am masking some of the data here. still learning how to anonymize data
+image1097×169 7.36 KB
+doyinsolamiolaoye
+June 7, 2020,
+2:05am
+#4
+Hello @willx,
+One of the errors in your code is that you put the wrong format. Either change the format value to format='%Y-%m-%d' or do not include the format parameter.
+Let me know if this helps.
+willx
+June 7, 2020,
+3:43am
+#5
+willx:
+format='%Y%m%d'
+oh hi thanks for replying @info.victoromondi @doyinsomoye
+Tried this
+image749×45 2.35 KB
+Tried this also
+format=’%Y/%m/%d’
+Even tried to escape the / with \
+and also removing the format. Still hittting the same problem.
+This is snapshot from the Excel file i am reading from
+austin-deccentric
+June 7, 2020,
+5:18am
+#6
+Have you tried converting the column to an int type and trying again?
+willx
+June 7, 2020, 12:11pm
+#7
+i tried that and get the same error as well. i am importing from Excel. could that be the reason?
+ksenia.kustanovich
+June 7, 2020,
+1:03pm
+#8
+That’s really weird. I get these types of errors when there’s a typo in the column name I try to refer to.
+I would check the fraud.columns attribute to see if there’s a space character
+or something like that…
+1 Like
+info.victoromondi
+June 7, 2020,
+1:10pm
+#9
+info.victoromondi:
+hello can we see some rows of the fraud DataFrame and also fraud.columns array?
+@ksenia.kustanovich that’s true, I adviced him to it here.
+willx
+June 7, 2020,
+2:17pm
+#10
+fraud_tidy_dt.xlsx (12.2 KB)
+sorry can you see this file. i have removed all the columns as i am having problems focusing on the date column as i am having problems anonymizing the data.
+rgds
+doyinsolamiolaoye
+June 8, 2020,
+1:42pm
+#11
+@willx,
+Check out what I did with the file you uploaded:
+DQ.ipynb (7.3 KB)
+BTW, is this all the values you have in the Date column?Click here to view the jupyter notebook file in a new tab
+willx
+June 8, 2020,
+1:42pm
+#12
+hi all, i convert the file a csv file and read from the csv file and it works.
+earlier i was facing problems reading from the csv file due to tokenizing data problem which is why i tried xlsx.
+i guess excel contains some hidden characters or formatting that prevents the reading of the string column. thank you so much guys for your help and time
+Home
+Categories
+FAQ/Guidelines
+Terms of Service
+Privacy Policy
+Powered by Discourse, best viewed with JavaScript enabled

@@ -1,243 +1,111 @@
-How To Solve python urllib.error.httperror: http error 403: forbidden - Kodlogs
-menu
-Login
-Register
-search
-Log Inaccount_circle
-Log In
-Email or Username
-Password
-Remember
-Log In
-Register
-I forgot my password
-Register
-Username
-Email
-Password
-Register
-add
-Tags
-Users
-Articles
-Post An Article
-How To Solve python urllib.error.httperror: http error 403: forbidden
-0 votes
-1.4k views
-On trying to scrap a website for practice, but I kept on getting the HTTP Error 403 (does it think the user is a bot)?Here is the code:#import requests
-import urllib.request
-from bs4 import BeautifulSoup
-#from urllib import urlopen
-import re
-webpage = urllib.request.urlopen('http://www.cmegroup.com/trading/products/#sortField=oi&sortAsc=false&venues=3&page=1&cleared=1&group=1').read
-findrows = re.compile('<tr class="- banding(?:On|Off)>(.*?)</tr>')
-findlink = re.compile('<a href =">(.*)</a>')
-row_array = re.findall(findrows, webpage)
-links = re.finall(findlink, webpate)
-print(len(row_array))
-iterator = [] with error : File "C:\Python33\lib\urllib\request.py", line 160, in urlopen
-return opener.open(url, data, timeout)
-File "C:\Python33\lib\urllib\request.py", line 479, in open
-response = meth(req, response)
-File "C:\Python33\lib\urllib\request.py", line 591, in http_response
-'http', request, response, code, msg, hdrs)
-File "C:\Python33\lib\urllib\request.py", line 517, in error
-return self._call_chain(*args)
-File "C:\Python33\lib\urllib\request.py", line 451, in _call_chain
-result = func(*args)
-File "C:\Python33\lib\urllib\request.py", line 599, in http_error_default
-raise HTTPError(req.full_url, code, msg, hdrs, fp)
-urllib.error.HTTPError: HTTP Error 403: Forbidden
-urllib
-http-status-code-403
-python
-python-3
-asked
-Oct 24, 2020
-psandprop
-2.4k points
-answer
-Please log in or register to answer this question.
-1 Answer
-0 votes
-This is probably because of mod_security or some similar server security feature which blocks known spider/bot user agents (urllib uses something like python urllib/3.3.0, it's easily detected). Try setting a known browser user agent with:from urllib.request import Request, urlopen
-req = Request('site link)', headers={'User-Agent': 'Mozilla/5.0'})
-webpage = urlopen(req).read()
-This works for me.By the way, in your code you are missing the () after .read in the urlopen line, but I think that it's a typo.TIP: since this is exercise, choose a different, non restrictive site. Maybe they are blocking urllib for some reason… Definitely it's blocking because of the use of urllib based on the user agent. This same thing is happened with OfferUp. You can create a new class called AppURLopener which overrides the user-agent with Mozilla.import urllib.request
-class AppURLopener(urllib.request.FancyURLopener):
-version = "Mozilla/5.0"
-opener = AppURLopener()
-response = opener.open('site link*')Source - https://docs.python.org/3.0/library/urllib.request.html#urllib.request._urlopener"This is probably because of mod_security or some similar server security feature which blocks known user agents (urllib uses something like python urllib/3.3.0, it's easily detected)" - as already mentioned by Stefano Sanfilippofrom urllib.request import Request, urlopen
-url="site link"
-req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-web_byte = urlopen(req).read()
-webpage = web_byte.decode('utf-8')The web_byte is a byte object returned by the server and the content type present in webpage is mostly utf-8. Therefore you need to decode web_byte using decode method.This solves complete problem while I was having trying to scrap from a website.Based on the previous answer,from urllib.request import Request, urlopen
-#specify url
-url = 'site link'
-req = Request(url, headers={'User-Agent': 'XYZ/3.0'})
-response = urlopen(req, timeout=20).read()This worked  by extending the timeout
-answered
-Oct 29, 2020
-hubconcepts
-4.1k points
-ask related question
-comment
-Your comment on this answer:
-Your name to display (optional):
-Email me at this address if a comment is added after mine:Email me if a comment is added after mine
-Privacy: Your email address will only be used for sending these notifications.
-Anti-spam verification:
-What is the color of the sky?
-To avoid this verification in future, please log in or register.
-Add comment
-Cancel
+Undefined array key when trying to reuse old token after upgrading to Symfony 5.2 - symfony
+profile
+viewpoint
+nodejs
+Spring Boot
+React
+Rust
+tensorflow
+Ask
+questionsUndefined array key when trying to reuse old token after upgrading to Symfony 5.2
+Symfony version(s) affected: 5.2.0-rc2 tested
+Description
+Reusing existing token after upgrade causes "ErrorException: Warning: Undefined array key 2" error on first page load only
+How to reproduce
+Run your app in Symfony 4... login...
+Composer upgrade to 5.2.0-rc2
+Reload browser window
+See ErrorException error
+ErrorException:
+Warning: Undefined array key 2
+at vendor/symfony/security-core/Authentication/Token/SwitchUserToken.php:62
+at Symfony\Component\Security\Core\Authentication\Token\SwitchUserToken->__unserialize()
+at unserialize()
+(vendor/symfony/security-http/Firewall/ContextListener.php:287)
+at Symfony\Component\Security\Http\Firewall\ContextListener->safelyUnserialize()
+(vendor/symfony/security-http/Firewall/ContextListener.php:121)
+at Symfony\Component\Security\Http\Firewall\ContextListener->authenticate()
+(vendor/symfony/security-bundle/Debug/WrappedLazyListener.php:49)
+at Symfony\Bundle\SecurityBundle\Debug\WrappedLazyListener->authenticate()
+(vendor/symfony/security-bundle/Security/LazyFirewallContext.php:73)
+at Symfony\Bundle\SecurityBundle\Security\LazyFirewallContext->Symfony\Bundle\SecurityBundle\Security\{closure}()
+(vendor/symfony/security-core/Authentication/Token/Storage/TokenStorage.php:37)
+at Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage->getToken()
+(vendor/symfony/security-core/Authentication/Token/Storage/UsageTrackingTokenStorage.php:46)
+at Symfony\Component\Security\Core\Authentication\Token\Storage\UsageTrackingTokenStorage->getToken()
+(vendor/sentry/sentry-symfony/src/EventListener/RequestListener.php:76)
+at Sentry\SentryBundle\EventListener\RequestListener->onKernelRequest()
+(vendor/symfony/event-dispatcher/Debug/WrappedListener.php:117)
+at Symfony\Component\EventDispatcher\Debug\WrappedListener->__invoke()
+(vendor/symfony/event-dispatcher/EventDispatcher.php:230)
+at Symfony\Component\EventDispatcher\EventDispatcher->callListeners()
+(vendor/symfony/event-dispatcher/EventDispatcher.php:59)
+at Symfony\Component\EventDispatcher\EventDispatcher->dispatch()
+(vendor/symfony/event-dispatcher/Debug/TraceableEventDispatcher.php:151)
+at Symfony\Component\EventDispatcher\Debug\TraceableEventDispatcher->dispatch()
+(vendor/symfony/http-kernel/HttpKernel.php:133)
+at Symfony\Component\HttpKernel\HttpKernel->handleRaw()
+(vendor/symfony/http-kernel/HttpKernel.php:79)
+at Symfony\Component\HttpKernel\HttpKernel->handle()
+(vendor/symfony/http-kernel/Kernel.php:195)
+at Symfony\Component\HttpKernel\Kernel->handle()
+(public/index.php:31)
+Possible Solution
+Simple better handling of array data?
+Additional context
+Problem caused by __unserialize of the data array
+https://github.com/symfony/symfony/blob/49eafee03323253328d76ec9cb4c515f94d2f202/src/Symfony/Component/Security/Core/Authentication/Token/SwitchUserToken.php#L62
+Change that caused this was https://github.com/symfony/symfony/commit/c1e3703efd27a3510f415327a526a2b5d37abad4 for PR https://github.com/symfony/symfony/pull/32841 from @dFayet
+symfony/symfony
+Answer
+questions
+derrabus
+#39187
+useful!
 Related questions
-0 votes
-1 answer
-35 views
-35 views
-Urllib.error.httperror: http error 403: forbidden
-Problem: Why is this fix urllib.error.httperror: http error 403: forbidden?
-asked
-Apr 13
-jamuna1
-30.2k points
-urllib
-http-status-code-403
-0 votes
-1 answer
-62 views
-62 views
-urllib.error.httperror: http error 404: not found
-Problem: I wrote a script to find spelling mistakes in SO questions' titles. I used it for about a month.This was working fine UPDATE This is the url causing the problem.Even though this url exists. I tried changing the range to some lower values. It works fine now. Why this happened with above url?
-asked
-Feb 21
-Mashhoodch
-13k points
-python
-urllib
-http-status-code-403
-python-3
-0 votes
-1 answer
-13 views
-13 views
-Urllib.error.httperror: http error 500: internal server error
-Problem: How can I solve this? > Urllib.error.httperror: http error 500: internal server error
-asked
-May 7
-Junia Phoebe
-83.8k points
-urllib
-python
-sockets
-http
-0 votes
-1 answer
-155 views
-155 views
-module 'urllib' has no attribute 'request'
-1 I have tried import urllib.request or import urllib The path for my urllib is /Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/urllib/__init__.py I am wondering where is urlopen, or is my python module pointing to the wrong file?
-asked
-Oct 25, 2020
-psandprop
-2.4k points
-urllib
-attributeerror
-python
-python-3
-1 vote
-1 answer
-34 views
-34 views
-Verifying HTTPS certificates with urllib.request
-I am trying to open an https URL using the urlopen method in Python 3's urllib.request module. It seems to work fine, but the documentation warns that "[i]f neither cafile nor capath is specified, an HTTPS request will not do any verification of the server&rsquo;s
-...
-get this list from? Is there any simple and cross-platform way to use the same list of certificates that my OS or browser uses?
-asked
-Sep 13, 2020
-Marivoke
-530 points
-python
-ssl
-python-3
-https
-urllib
-0 votes
-1 answer
-6 views
-6 views
-How to get around a 403 forbidden error
-Problem: I'm looking for a solution : How to get around a 403 forbidden error?
-asked
-6 days ago
-Rada Gracelynn
-42.6k points
-http-status-code-403
-1 vote
-1 answer
-110 views
-110 views
-403 Forbidden: the server understood the request, but is refusing to fulfill it.
-Problem : I keep on facing the below 403 error while performing the AJAX call to the API. &ldquo;403 forbidden: the server understood the request, but is refusing to fulfill it.&rdquo; Above error occurs usually in Microsoft Edge, but does not come up in IE,
-... browsers and also the response/request headers match to one another - So is it the case that the POST request is sending the incorrect?
-asked
-Jan 2, 2020
-alecxe
-7.5k points
-javascript
-ajax
-http-status-code-403
-0 votes
-1 answer
-77 views
-77 views
-attributeerror: module 'urllib' has no attribute 'request'
-Problem: I have tried import urllib.request or import urllib The path for my urllib is /Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/urllib/__init__.py I am wondering where is urlopen, or is my python module pointing to the wrong file?
-asked
-Feb 18
-Mashhoodch
-13k points
-python-3
-attributeerror
-urllib
-url
-module
-0 votes
-1 answer
-123 views
-123 views
-module 'urllib' has no attribute 'urlencode'
-Problem: When I try to follow the Python Wiki's example related to URL encoding: >>> import urllib >>> params = urllib.urlencode({'spam': 1, 'eggs': 2, 'bacon': 0}) >>> f = urllib.urlopen("http://www.musi-cal.com/cgi-bin/query", params) >>> print ...
-(most recent call last): File "<stdin>", line 1, in <module> AttributeError: 'module' object has no attribute 'urlencode' What am I missing?
-asked
-Jan 21
-Mashhoodch
-13k points
-python-3
-url
-urllib
-attributeerror
-0 votes
-1 answer
-462 views
-462 views
-Attributeerror: module 'urllib' has no attribute 'urlretrieve'.
-Problem: I have only basic knowledge in python and urllib. Currently I am trying to write the program which should download the mp3's from the website and after that join them together but on every occasion I try to download the mp3 files I face below error: Traceback ( ... usc.edu/~chiso/oldspice/m-b1-hello.mp3") Looking for the python and urlllib expert who can help me in fixing my above error.
-asked
-Jul 22, 2020
-Raphael Pacheco
-4.9k points
-python-3
-x
-urllib
-attributeerror
-Send feedback
-About Us
-Privacy Policy
-Guest Blog
-XML Sitemap
-Facebook
-Twitter
-Pinterest
-Dark theme
+SF4 Deployment to Prod "Script cache:clear returned with error code 255"
+hot 43
+TranslatorInterface not compatible with LocalAwareInterface
+hot 32
+All kinds of weird bugs in Symfony with PHP 8
+hot 32
+All kinds of weird bugs in Symfony with PHP 8
+hot 30
+[Messenger] Message not sent to AMQP failure transport
+hot 23
+User Deprecated: The "Doctrine\Common\Inflector\Inflector::classify" method is deprecated and will be dropped in doctrine/inflector 2.0. Please update to the new Inflector API
+hot 23
+[Mailer] Mailer DSN is invalid with AWS credentials
+hot 23
+Error to use Protocol AMQP - symfony
+hot 22
+[Serializer] Groups not working
+hot 21
+[HttpClient] Uncatchable fatal error on class destruction
+hot 19
+Serialization of 'Closure' is not allowed
+hot 19
+Twig_Error_Runtime - Variable "Form" does not exist.
+hot 18
+[ERROR] The database schema is not in sync with the current mapping file.
+hot 18
+[DoctrineBridge] By default cannot use @UniqueEntity constraint
+hot 16
+Real environment variable APP_ENV does not win over .env
+hot 16
+source：https://uonfu.com/
+answerer
+Alexander M. Turek derrabus
+Alexander M. Turek
+Düsseldorf, Germany
+https://derrabus.de
+Developer. @symfony Core Team. Consultant. Freelancer. Code Modernizer. Likes working with code that has the age of a good whisky.
+repos
+82
+gists
+6
+followers
+134
+following
+101
+Github User Rank List
