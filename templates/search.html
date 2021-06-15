@@ -40,10 +40,10 @@
     {% for doc in docs %}
         <li>
             <div>
-                <a href="{{ url[doc|string] }}">{{ url[doc|string] }}</a>
+                <p>{{dataframe[(doc+1)|string][:100:]}}...</p>
+                <a href="{{ url[doc|string] }}">{{ url[(doc+1)|string] }}</a>
             </div>
-            <h3>{{doc -1}}</h3>
-            <p>{{dataframe[doc - 1][:100:]}}...</p>
+            <h3>{{doc+1}}</h3>
         </li>
     {% endfor %}
     </ul>

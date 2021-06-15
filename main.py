@@ -4,16 +4,17 @@ import pandas as pd
 
 dataset = json.load(open('resource/preprocessed/data_preprocessed.json'))
 url = json.load(open('resource/dataset.json'))['url']
-dataframe = []
+dataframe = {}
 for i in dataset['doc']:
     name_doc = dataset['doc'][i]
+    print(name_doc)
     with open(f'resource/preprocessed/{name_doc}', 'rb') as f:
         text = f.read().decode("utf-8")
         
         text = " ".join(" ".join(str(text).split()).split('\\n'))
-        dataframe.append(text)
-
-
+        dataframe[i] = text[:100:]
+        
+# print(dataframe[89])
 def re_index():
     from indexing import indexing, save_to_json, get_dict_feature_name
     #jalankan indexing

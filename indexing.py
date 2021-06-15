@@ -32,13 +32,13 @@ def indexing(folder_dataset, json_dataset):
             dataframe.append(text)
 
     #menghitung term frekuensi
-    cv = CountVectorizer(max_features=60000, binary=True, ngram_range=(1, 2))
+    cv = CountVectorizer(max_features=40000, binary=True, ngram_range=(1, 2))
     ct = cv.fit_transform(dataframe)
 
     norm_ct = normalize(ct, norm = "l1", axis=1)
 
     #menghitung documen frekuensi
-    tv = TfidfVectorizer(max_features=60000, binary=True, norm=None , smooth_idf=False, ngram_range=(1, 2))
+    tv = TfidfVectorizer(max_features=40000, binary=True, norm=None , smooth_idf=True, ngram_range=(1, 2))
     tv.fit_transform(dataframe)
 
     #menghitung invers dokumen frekuensi
@@ -71,5 +71,5 @@ if __name__ == "__main__":
     # print(df.index.tolist())
     from scipy import sparse
     # save sparse matrix unigram, bigram and trigram to .npz file
-    sparse.save_npz("tfidf_mat.npz", sparse.csr_matrix(df))
-    save_to_json( get_dict_feature_name(term),"tfidf_feature_name.json")
+    sparse.save_npz("resource/index/tfidf_mat.npz", sparse.csr_matrix(df))
+    save_to_json( get_dict_feature_name(term),"resource/index/tfidf_feature_name.json")
